@@ -1,0 +1,25 @@
+-- Colors to avoid having to calculate each time on a function
+white = { r =   1, g =   1, b =   1}
+grey  = { r = 0.8, g = 0.8, b = 0.8}
+red   = { r =   1, g = 0.2, b = 0.1}
+
+-- Prints ONLY to the host, should never be in release builds
+function print_debug(msg)
+    print('[DEBUG] ' .. msg)
+end
+
+-- Messages that can be seen by everyone on the textbox
+function print_info(msg)
+    printToAll('[INFO] ' .. msg, grey)
+end
+
+-- Messages that can be seen by everyone on the textbox and indicate
+-- that the user may be doing something wrong
+function print_error(msg)
+    printToAll('[ERROR] ' .. msg, red)
+end
+
+-- Message that will appear TO EVERYONE ON THE SCREEN.
+function print_important(msg)
+    broadcastToAll('[IMPORTANT] ' .. msg, grey)
+end

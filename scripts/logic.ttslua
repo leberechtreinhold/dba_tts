@@ -1,0 +1,116 @@
+-- Given a base object, computes the 4 bounds points, returned in a table,
+-- each with a vector xyz of world pos coords
+--
+--   topleft         rotation      topright
+--      +-------------^--------------+
+--      |             |              |
+--      |             * center       |  z axis
+--      |                            |
+--      +----------------------------+
+--    botleft      x axis          botright
+function compute_corners_base(base_obj)
+    local bounds = base_obj.getBounds()
+    local rotation =  from_degrees_to_rad(base_obj.getRotation())['y']
+    print_debug(base_obj.getName() .. ' rotation is ' .. rotation)
+    local size = bounds['size']
+    local pos = base_obj.getPosition()
+    print_debug(base_obj.getName() .. ' pos is ' .. vec_to_str(vec_in_to_mm(pos)))
+    local xhalf = size['x'] / 2
+    local zhalf = size['z'] / 2
+    return {
+        topright = rotate_point({x = xhalf, y = 0, z = zhalf}, pos, rotation),
+        botright = rotate_point({x = xhalf, y = 0, z =-zhalf}, pos, rotation),
+        topleft  = rotate_point({x =-xhalf, y = 0, z = zhalf}, pos, rotation),
+        botleft  = rotate_point({x =-xhalf, y = 0, z =-zhalf}, pos, rotation)
+    }
+end
+
+-- Given two base objects, aligns them so they share on side, the closest
+-- base2 will align to base1, and it's assumed that base1 is to the left of
+-- base2 (that is, the X component is smaller)
+-- TODO this only aligns with the right side atm
+function align_two_bases(player, base1, base2)
+    if (distance_points_flat_sq(base1.getPosition(), base2.getPosition()) > 9) then
+        print(player.steam_name .. ' is trying to align but the bases are too far apart, more than 3inch between centers!')
+        return
+    end
+    print(player.steam_name .. ' is aligning ' .. base1.getName() .. ' with ' .. base2.getName())
+    base2.setRotation(base1.getRotation())
+
+    local corners1 = compute_corners_base(base1)
+    print_debug('CORNERS ' .. base1.getName() .. corners_to_str(corners_in_to_mm(corners1)))
+    local corners2 = compute_corners_base(base2)
+    print_debug('CORNERS ' .. base2.getName() .. corners_to_str(corners_in_to_mm(corners2)))
+    local translation = vec_sub(corners1['topright'], corners2['topleft'])
+    print_debug('Translation is ' .. vec_to_str(vec_in_to_mm(translation)))
+    base2.setPosition(vec_add(base2.getPosition(), translation))
+    print_info(base2.getName() .. ' has aligned to ' .. base1.getName())
+    print_debug('CORNERS AFTER' .. base2.getName() .. corners_to_str(corners_in_to_mm(corners2)))
+end
+
+-- Checks if the given str starts with substr
+function str_starts_with(str, substr)
+    return string.find(str, '^' .. substr) ~= nil
+end
+
+-- Given a list of objects in a table, returns another table with ONLY
+-- those who start with "base", ignoring the keys
+function filter_bases(list)
+    local filtered = {}
+    for _,obj in ipairs(list) do
+        if str_starts_with(obj.getName(), 'base') then
+            table.insert(filtered, obj)
+        end
+    end
+    return filtered
+end
+
+-- Moves one or more DBA bases g_paces_movements paces forward
+-- ASSUMES all bases are in a flat board!!!!
+-- Returns how much it moved (it cna move less in a collision)
+function move_base(obj, how_many_paces)
+    local current_world_pos = obj.getPosition()
+    local current_rotation = from_degrees_to_rad(obj.getRotation())
+    local displacement_vector = rad_to_vector(current_rotation['y'])
+    local magnitude = how_many_paces / 100
+    local destination = current_world_pos + vec_mul_escalar(displacement_vector, magnitude)
+    -- print_debug(player.steam_name .. 'Moving ' .. obj.getName() ..
+    -- ' from ' .. vec_to_str(current_world_pos) ..
+    -- ' with rotation ' .. vec_to_str(current_rotation) ..
+    -- ' to ' .. vec_to_str(destination))
+    obj.setPosition(destination)
+    -- TODO: COLISION
+
+    return how_many_paces
+end
+
+function get_spawn_model(pos, height_correction, model_scale, model_mesh, model_diffuse)
+    return {
+        spawn = {
+            type = 'Custom_Model',
+            position = { x = pos['x'], y = pos['y'] + height_correction, z = pos['z']},
+            rotation = { x = 0, y = 0, z = 0},
+            scale = { x = model_scale, y = model_scale, z = model_scale},
+            sound = false,
+            snap_to_grid = false
+        },
+        custom_obj_attrs = {
+            mesh = model_mesh,
+            diffuse = model_diffuse,
+            material = 1
+        }
+    }
+end
+
+function spawn_model(troop_name, pos, is_player_red)
+    -- Better pray that the input name actually exists! lol
+    local model_data = _G[troop_name]
+    local texture = model_data['player_blue_tex']
+
+    if is_player_red then
+        texture = model_data['player_red_tex']
+    end
+    spawn_data = get_spawn_model(pos, model_data['height_correction'], model_data['scale'], model_data['mesh'], texture)
+    local obj = spawnObject(spawn_data['spawn'])
+    obj.setCustomObject(spawn_data['custom_obj_attrs'])
+end

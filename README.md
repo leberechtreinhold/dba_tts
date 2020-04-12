@@ -9,7 +9,7 @@ The project is structured in the following way:
 - scripts/log: A simple script to centralize how the logs (printed to the console and to atom) are written.
 - scripts/uievents: The script that controls the uievents
 - scripts/utilities: A bunch of utilities since lua doesn't offer much, like vector operations, some algebra, rounding, string utilities, unit conversion etc etc.
-- scripts/troop_data: All the data to spawn troops.
+- scripts/troop_data: All the data to spawn troops, bases, and armies.
 - scripts/logic: All the game logic.
 - ui/main.xml: The XML for the UI, which, AFAIK, cannot be #included into TTS through ATOM and needs to be copy/pasted.
 

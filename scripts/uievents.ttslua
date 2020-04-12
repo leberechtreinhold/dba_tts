@@ -1,0 +1,50 @@
+-- Global number of paces moved
+g_paces_movement = 100
+
+-- Updates the global that manages the number of paces moved by the other functions, and updates the UI
+function slider_paces_changed(player, value, id)
+    g_paces_movement = round_to_power(value, 1)
+
+    -- It's undocumented, but changing the value of the button does not update the button_move_forward
+    -- Instead we have to change the undocumented text attribute. However, we still, need to
+    UI.setAttribute('button_move_forward', 'text', 'Move ' .. g_paces_movement .. ' paces')
+    UI.setValue('button_move_forward', 'text', 'Move ' .. g_paces_movement .. ' paces')
+end
+
+function move_bases(player, value, id)
+    local objs = filter_bases(player.getSelectedObjects())
+    if tlen(objs) < 1 then
+        print_error(player.steam_name ..' is trying to move 100 paces, but (s)he has no object selected, ignoring')
+    return
+    end
+
+    for k,obj in ipairs(objs) do
+        local moved_paces = move_base(obj, g_paces_movement)
+        print_info(player.steam_name .. ' is moving ' .. obj.getName() .. ' ' .. moved_paces .. ' paces forward')
+    end
+end
+
+function align_bases(player, value, id)
+    local objs = filter_bases(player.getSelectedObjects())
+    local n_objs = tlen(objs)
+    if n_objs < 2 then
+        print_error(player.steam_name ..' is trying to align ' .. n_objs .. ' bases, which is not supported')
+        return
+    end
+    table.sort(objs, function(l, r)
+        return l.getPosition()['x'] < r.getPosition()['x']
+    end)
+
+    for i=1,n_objs-1 do
+        align_two_bases(player, objs[i], objs[i + 1])
+    end
+end
+
+function create_army_player_blue()
+    spawn_model("troop_swordsman_latemedieval", {  x=0, y=0, z=2 }, false)
+end
+
+-- TODO This only summons a empire soldier..., should create menus and stuff
+function create_army_player_red()
+    spawn_model("troop_swordsman_latemedieval", { x=0, y=0, z=0 }, true)
+end
