@@ -113,4 +113,6 @@ function spawn_model(troop_name, pos, is_player_red)
     spawn_data = get_spawn_model(pos, model_data['rotation'], model_data['height_correction'], model_data['scale'], model_data['mesh'], texture)
     local obj = spawnObject(spawn_data['spawn'])
     obj.setCustomObject(spawn_data['custom_obj_attrs'])
+
+    print_info('Loading model ' .. model_data['description'] .. ', Author: ' .. model_data['author'])
 end
