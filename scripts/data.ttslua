@@ -13,7 +13,7 @@ tile_reference_40x15 = {
 }
 
 troop_swordsman_latemedieval = {
-    height_correction = 1.36,
+    height_correction = 0.315,
     scale = 0.3,
     rotation = 180,
     description = 'Late Medieval Swordsman',

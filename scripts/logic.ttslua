@@ -124,8 +124,8 @@ end
 g_base_index = 1
 
 function spawn_base(base, pos, is_red_player)
-    base_var_name = base['base']
-    base_obj = spawn_model(base_var_name, pos, 0, is_red_player)
+    local base_var_name = base['base']
+    local base_obj = spawn_model(base_var_name, pos, 0, is_red_player)
     base_obj.setName('base ' .. _G[base_var_name]['description'] .. ' #' .. g_base_index)
     g_base_index = g_base_index + 1
 
@@ -134,8 +134,12 @@ function spawn_base(base, pos, is_red_player)
     local half_width = base_width_inches / 2
     
     for i=1,n do
-        local relative_pos = { x = pos['x'] + i * chunk - half_width, y = pos['y'] + base_height_inches, z = pos['z'] }
-        spawn_model("troop_swordsman_latemedieval", relative_pos, math.random(-20, 20), is_red_player)
+        local relative_pos = { 
+            x = pos['x'] + i * chunk - half_width, 
+            y = pos['y'] + base_height_inches / 2 + base_obj.getPosition()['y'], 
+            z = pos['z'] }
+        local soldier_obj = spawn_model("troop_swordsman_latemedieval", relative_pos, math.random(-20, 20), is_red_player)
+        base_obj.addAttachment(soldier_obj)
     end
 end
 
