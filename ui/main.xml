@@ -1,0 +1,9 @@
+<Panel id="dba_panel" class="WindowBorder" width="200" height="400" color="#FFFFFF" outline="#000" outlineSize="2" rectAlignment="MiddleRight" >
+<VerticalLayout>
+    <Slider id="slider_paces" minValue="10" maxValue="500" wholeNumbers="true" value="100" colors="#00000000|#00000000|#00000000|#00000000" backgroundcolor="#FFFFFFF" onValueChanged="slider_paces_changed"></Slider>
+    <Button id="button_move_forward" onClick="move_bases">Move 100 paces</Button>
+    <Button onClick="align_bases">Align bases</Button>
+    <Button onClick="create_army_player_blue">Spawn army player 1</Button>
+    <Button onClick="create_army_player_red">Spawn army player 2</Button>
+</VerticalLayout>
+</Panel>
