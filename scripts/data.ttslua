@@ -1,9 +1,11 @@
+base_width_inches = 1.5748031496062992126
+base_height_inches = 0.19685039370078740157
 
-tile_reference = {
+tile_reference_40x15 = {
     height_correction = 0.96,
     scale = 1,
     rotation = 0,
-    description = 'Reference tile',
+    description = 'Ref 40x15',
     author = 'Original work by LeberechtReinhold.',
     mesh = 'http://cloud-3.steamusercontent.com/ugc/1022822649627841656/0661CBEA50787140409593ED30BE50AB0BB9E67A/',
     player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1022822649627845758/2A237F33E2A5A2E453A54DDA97706838B0DD0AD4/',
@@ -19,4 +21,23 @@ troop_swordsman_latemedieval = {
     mesh = 'http://cloud-3.steamusercontent.com/ugc/1022822649627337225/1437C085D4FFF74C2FBF2286FAFA4C555FA9AAAA/',
     player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1022822649627341435/6849CB89095D43654125ED506222AF73172C09C1/',
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1022822649627338507/BBA5455E7C52A92432746B828602DFAEB68142D2/'
+}
+
+armies = {
+    BookIV = {
+        Example = {
+            base1 = {
+                name = '4Bd',
+                base = 'tile_reference_40x15',
+                n_models = 4,
+                model_data = 'troop_swordsman_latemedieval'
+            },
+            base2 = {
+                name = '4Bd',
+                base = 'tile_reference_40x15',
+                n_models = 4,
+                model_data = 'troop_swordsman_latemedieval'
+            }
+        }
+    }
 }
