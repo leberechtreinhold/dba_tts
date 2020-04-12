@@ -111,7 +111,10 @@ function spawn_model(troop_name, pos, added_y_axis_rotation, is_player_red)
         texture = model_data['player_red_tex']
     end
 
-    local spawn_data = get_spawn_model(pos, model_data['rotation'], model_data['height_correction'], model_data['scale'], model_data['mesh'], texture)
+    local meshes = model_data['mesh']
+    local mesh_index = math.random(1, #model_data['mesh'])
+    local selected_mesh = meshes[mesh_index]
+    local spawn_data = get_spawn_model(pos, model_data['rotation'], model_data['height_correction'], model_data['scale'], selected_mesh, texture)
     spawn_data['spawn']['rotation']['y'] = spawn_data['spawn']['rotation']['y'] + added_y_axis_rotation
     local obj = spawnObject(spawn_data['spawn'])
     obj.setCustomObject(spawn_data['custom_obj_attrs'])
@@ -124,9 +127,8 @@ end
 g_base_index = 1
 
 function spawn_base(base, pos, is_red_player)
-    local base_var_name = base['base']
-    local base_obj = spawn_model(base_var_name, pos, 0, is_red_player)
-    base_obj.setName('base ' .. _G[base_var_name]['description'] .. ' #' .. g_base_index)
+    local base_obj = spawn_model(base['base'], pos, 0, is_red_player)
+    base_obj.setName('base ' .. base['name'] .. ' #' .. g_base_index)
     g_base_index = g_base_index + 1
 
     local n = base['n_models']
