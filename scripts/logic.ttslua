@@ -84,12 +84,12 @@ function move_base(obj, how_many_paces)
     return how_many_paces
 end
 
-function get_spawn_model(pos, height_correction, model_scale, model_mesh, model_diffuse)
+function get_spawn_model(pos, rotation_correction, height_correction, model_scale, model_mesh, model_diffuse)
     return {
         spawn = {
             type = 'Custom_Model',
             position = { x = pos['x'], y = pos['y'] + height_correction, z = pos['z']},
-            rotation = { x = 0, y = 0, z = 0},
+            rotation = { x = 0, y = rotation_correction, z = 0},
             scale = { x = model_scale, y = model_scale, z = model_scale},
             sound = false,
             snap_to_grid = false
@@ -110,7 +110,7 @@ function spawn_model(troop_name, pos, is_player_red)
     if is_player_red then
         texture = model_data['player_red_tex']
     end
-    spawn_data = get_spawn_model(pos, model_data['height_correction'], model_data['scale'], model_data['mesh'], texture)
+    spawn_data = get_spawn_model(pos, model_data['rotation'], model_data['height_correction'], model_data['scale'], model_data['mesh'], texture)
     local obj = spawnObject(spawn_data['spawn'])
     obj.setCustomObject(spawn_data['custom_obj_attrs'])
 end

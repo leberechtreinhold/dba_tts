@@ -41,7 +41,8 @@ function align_bases(player, value, id)
 end
 
 function create_army_player_blue()
-    spawn_model("troop_swordsman_latemedieval", {  x=0, y=0, z=2 }, false)
+    spawn_model("tile_reference", { x=0, y=0, z=0 }, false)
+    spawn_model("troop_swordsman_latemedieval", { x=0, y=0, z=0 }, false)
 end
 
 -- TODO This only summons a empire soldier..., should create menus and stuff
