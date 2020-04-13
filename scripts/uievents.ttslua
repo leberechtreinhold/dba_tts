@@ -1,6 +1,10 @@
 -- Global number of paces moved
 g_paces_movement = 100
 
+-- Global number of PIPs of each player
+g_pips_red = 0
+g_pips_blue = 0
+
 -- Updates the global that manages the number of paces moved by the other functions, and updates the UI
 function slider_paces_changed(player, value, id)
     g_paces_movement = round_to_power(value, 1)
@@ -8,7 +12,7 @@ function slider_paces_changed(player, value, id)
     -- It's undocumented, but changing the value of the button does not update the button_move_forward
     -- Instead we have to change the undocumented text attribute. However, we still, need to
     UI.setAttribute('button_move_forward', 'text', 'Move ' .. g_paces_movement .. ' paces')
-    UI.setValue('button_move_forward', 'text', 'Move ' .. g_paces_movement .. ' paces')
+    UI.setValue('button_move_forward', 'Move ' .. g_paces_movement .. ' paces')
 end
 
 function move_bases(player, value, id)
@@ -48,4 +52,24 @@ end
 -- TODO This only summons a empire soldier..., should create menus and stuff
 function create_army_player_red()
     spawn_model("troop_swordsman_latemedieval", { x=0, y=0, z=0 }, true)
+end
+
+function add_pip(player, value, id)
+    if value == "red" then
+        g_pips_red = g_pips_red + 1
+        UI.setValue("text_pips_player_red", g_pips_red)
+    else
+        g_pips_blue = g_pips_blue + 1
+        UI.setValue("text_pips_player_blue", g_pips_blue)
+    end
+end
+
+function remove_pip(player, value, id)
+    if value == "red" then
+        g_pips_red = g_pips_red - 1
+        UI.setValue("text_pips_player_red", g_pips_red)
+    else
+        g_pips_blue = g_pips_blue - 1
+        UI.setValue("text_pips_player_blue", g_pips_blue)
+    end
 end
