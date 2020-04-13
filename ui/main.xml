@@ -16,6 +16,8 @@
     <HorizontalLayout>
         <Text id="text_pips_player_blue" ignoreLayout="true" fontSize="64" position="-135 20">0</Text>
         <Text id="text_pips_player_red" ignoreLayout="true" fontSize="64" position="140 20">0</Text>
+
+        <!-- TODO The hightlighted thing is not working, investigate... -->
         <Button icon="plus" highlightedSprite="minus" pressedSprite="minus" transition="SpriteSwap"
                 iconWidth="31" color="#00000000" iconColor="#00000000" ignoreLayout="true" position="30 -30" interactable="true"
                 onClick="add_pip(blue)"></Button>
@@ -25,5 +27,48 @@
                 onClick="add_pip(red)"></Button>
         <Button icon="minus" iconWidth="31" color="#00000000" ignoreLayout="true" position="335 -30"
                 onClick="remove_pip(red)"></Button>
-</HorizontalLayout>
+    </HorizontalLayout>
+</Panel>
+
+<Panel id="panel_dba_troop_selection" width="500" height="300" rectAlignment="MiddleCenter" color="red">
+    <TableLayout padding="60" cellSpacing="10">
+        <Row preferredHeight="40">
+            <Cell columnSpan="1" dontUseTableCellBackground="true">
+                <Text fontSize="20">Book:</Text>
+            </Cell>
+            <Cell columnSpan="3" dontUseTableCellBackground="true">
+                <Dropdown id="dropdown_book" fontSize="20" >
+                   <Option selected="true">Book I</Option>
+                   <Option>Book II</Option>
+                   <Option>Book III</Option>
+                   <Option>Book IV</Option>
+                </Dropdown>
+            </Cell>
+       </Row>
+
+       <Row preferredHeight="40">
+           <Cell columnSpan="1" dontUseTableCellBackground="true">
+               <Text fontSize="20">Army:</Text>
+           </Cell>
+           <Cell columnSpan="5" dontUseTableCellBackground="true">
+               <Dropdown id="dropdown_army" fontSize="20">
+                  <Option selected="true">Army 1</Option>
+                  <Option>Army 2</Option>
+                  <Option>Army 3</Option>
+                  <Option>Army 4</Option>
+               </Dropdown>
+           </Cell>
+      </Row>
+      <Row>
+          <!-- Filler -->
+      </Row>
+      <Row preferredHeight="40">
+          <Cell columnSpan="5" dontUseTableCellBackground="true">
+              <!-- Filler -->
+          </Cell>
+          <Cell columnSpan="1" dontUseTableCellBackground="true">
+              <Button columnSpan="1" fontSize="20">Load</Button>
+          </Cell>
+      </Row>
+   </TableLayout>
 </Panel>
