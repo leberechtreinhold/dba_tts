@@ -19,6 +19,5 @@ function check_if_at_rest()
 end
 
 function on_dice_stopped(dice_obj)
-    g_pips_red = dice_obj.getRotationValue()
-    UI.setValue("text_pips_player_red", g_pips_red)
+    UI.setValue("text_pips_player_red", dice_obj.getRotationValue())
 end

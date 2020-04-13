@@ -1,10 +1,6 @@
 -- Global number of paces moved
 g_paces_movement = 100
 
--- Global number of PIPs of each player
-g_pips_red = 0
-g_pips_blue = 0
-
 -- Updates the global that manages the number of paces moved by the other functions, and updates the UI
 function slider_paces_changed(player, value, id)
     g_paces_movement = round_to_power(value, 1)
@@ -56,20 +52,24 @@ end
 
 function add_pip(player, value, id)
     if value == "red" then
-        g_pips_red = g_pips_red + 1
-        UI.setValue("text_pips_player_red", g_pips_red)
+        local pips_red = UI.getValue("text_pips_player_red")
+        pips_red = pips_red + 1
+        UI.setValue("text_pips_player_red", pips_red)
     else
-        g_pips_blue = g_pips_blue + 1
-        UI.setValue("text_pips_player_blue", g_pips_blue)
+        local pips_blue = UI.getValue("text_pips_player_blue")
+        pips_blue = pips_blue + 1
+        UI.setValue("text_pips_player_blue", pips_blue)
     end
 end
 
 function remove_pip(player, value, id)
     if value == "red" then
-        g_pips_red = g_pips_red - 1
-        UI.setValue("text_pips_player_red", g_pips_red)
+        local pips_red = UI.getValue("text_pips_player_red")
+        pips_red = pips_red - 1
+        UI.setValue("text_pips_player_red", pips_red)
     else
-        g_pips_blue = g_pips_blue - 1
-        UI.setValue("text_pips_player_blue", g_pips_blue)
+        local pips_blue = UI.getValue("text_pips_player_blue")
+        pips_blue = pips_blue - 1
+        UI.setValue("text_pips_player_blue", pips_blue)
     end
 end
