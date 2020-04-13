@@ -1,0 +1,24 @@
+function onRandomize()
+    self.setVar('')
+    startLuaCoroutine(self, 'check_if_at_rest')
+end
+
+function onObjectDrop()
+    startLuaCoroutine(self, 'check_if_at_rest')
+end
+
+function check_if_at_rest()
+    while not self.resting do
+        coroutine.yield(0)
+    end
+
+    -- Possible call some function that notifies that this object as at rest. This will probably get the value of the dice.
+    on_dice_stopped(self)
+
+    return 1
+end
+
+function on_dice_stopped(dice_obj)
+    g_pips_blue = dice_obj.getRotationValue()
+    UI.setValue("text_pips_player_blue", g_pips_blue)
+end
