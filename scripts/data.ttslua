@@ -8,8 +8,8 @@ tile_reference_40x15 = {
     description = 'Ref 40x15',
     author = 'Original work by LeberechtReinhold.',
     mesh = { 'http://cloud-3.steamusercontent.com/ugc/1022822649627841656/0661CBEA50787140409593ED30BE50AB0BB9E67A/' },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1022822649627845758/2A237F33E2A5A2E453A54DDA97706838B0DD0AD4/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1022822649627845758/2A237F33E2A5A2E453A54DDA97706838B0DD0AD4/'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1022822649631206192/906887263828029151B78353910D577B694EC891/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1022822649631207474/CAD627FA3F94A7A94C5E64DC55C06747F02797D9//'
 }
 
 troop_swordsman_latemedieval = {
