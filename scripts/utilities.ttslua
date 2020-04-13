@@ -110,3 +110,13 @@ end
 function round_to_power(number, power)
     return math.floor(number/(10^power) + 0.5) * 10^power
 end
+
+
+-- Checks if the given str starts with substr
+function str_starts_with(str, substr)
+    return string.find(str, '^' .. substr) ~= nil
+end
+
+function str_has_substr(str, substr)
+    return string.find(str, substr) ~= nil
+end

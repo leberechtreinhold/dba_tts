@@ -48,11 +48,6 @@ function align_two_bases(player, base1, base2)
     print_debug('CORNERS AFTER' .. base2.getName() .. corners_to_str(corners_in_to_mm(corners2)))
 end
 
--- Checks if the given str starts with substr
-function str_starts_with(str, substr)
-    return string.find(str, '^' .. substr) ~= nil
-end
-
 -- Given a list of objects in a table, returns another table with ONLY
 -- those who start with "base", ignoring the keys
 function filter_bases(list)
