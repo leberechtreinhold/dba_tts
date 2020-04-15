@@ -213,18 +213,21 @@ end
 -- methodfs than change the UI using setXmlTable they may enter in conflict
 -- since it takes time to update.
 -- This is a very terrible way of doing things and should not be used, doesn't
--- support more than one at once
+-- support more than one at once. However, you can nest them.
 g_func_next_frame = nil
 function on_next_frame(f)
     if (g_func_next_frame == nil) then
         g_func_next_frame = f
         startLuaCoroutine(self, 'on_next_frame_coroutine')
+    else
+        print_error('Trying to add a new coroutine when the next frame has yet to pass')
     end
 end
 
 function on_next_frame_coroutine()
     coroutine.yield(0)
-    g_func_next_frame()
+    local cur_f = g_func_next_frame
     g_func_next_frame = nil
+    cur_f()
     return 1
 end

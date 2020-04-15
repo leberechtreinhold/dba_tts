@@ -45,23 +45,37 @@ function create_army_player_blue()
     spawn_army(army, false)
 end
 
-function update_book_menu()
+function update_book_menu(book_selected)
+    local options = {}
+    for book_name, book_armies in pairs(armies) do
+        local friendly_name,_ = book_name:gsub("_", " ")
+        table.insert(options, friendly_name)
+    end
+    set_options_dropdown_by_id('dropdown_book', options, book_selected) 
 end
+
+function update_armies_menu(book, army_selected)
+    local options = {}
+    for army_name,_ in pairs(book) do
+        local friendly_name,_ = army_name:gsub("_", " ")
+        table.insert(options, friendly_name)
+    end
+    set_options_dropdown_by_id('dropdown_army', options, army_selected) 
+end
+
+
 
 function create_army_options_menu()
     local status = UI.getAttribute('panel_dba_troop_selection', 'active')
     if status == "True" then
         return
     end
-    
-    local options = {}
-    for book_name, book_armies in pairs(armies) do
-        local friendly_name,_ = book_name:gsub("_", " ")
-        table.insert(options, friendly_name)
-    end
-    set_options_dropdown_by_id('dropdown_book', options, 1) 
-    on_next_frame(function() 
-        UI.setAttribute('panel_dba_troop_selection', 'active', true)
+    update_book_menu(1)
+    on_next_frame(function()
+        update_armies_menu(armies['Book_I'], 1)
+        on_next_frame(function()
+            UI.setAttribute('panel_dba_troop_selection', 'active', true)
+        end)
     end)
 end
 
