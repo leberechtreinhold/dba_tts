@@ -45,50 +45,25 @@ function create_army_player_blue()
     spawn_army(army, false)
 end
 
-function update_book_menu(book_selected)
-    local options = {}
-    for book_name, book_armies in pairs(armies) do
-        table.insert(options, dataname_to_friendlyname(book_name))
-    end
-    set_options_dropdown_by_id('dropdown_book', options, book_selected) 
-end
-
-function update_armies_menu(book, army_selected)
-    local options = {}
-    for army_name,_ in pairs(book) do
-        table.insert(options, dataname_to_friendlyname(army_name))
-    end
-    set_options_dropdown_by_id('dropdown_army', options, army_selected) 
-end
-
 function create_army_options_menu()
     local status = UI.getAttribute('panel_dba_troop_selection', 'active')
     if status == "True" then
         -- Ignore, the user is clicking despite the menu already being there
         return
     end
+
+    local book = first_value_table(armies)
+    local army = first_value_table(book)
     update_book_menu(1)
     on_next_frame(function()
-        update_armies_menu(armies['Book_I'], 1)
+        update_armies_menu(book, 1)
         on_next_frame(function()
-            update_authors_text(armies['Book_I']['Hoplite_Greek_Example'])
+            update_authors_text(army)
             on_next_frame(function()
                 UI.setAttribute('panel_dba_troop_selection', 'active', true)
             end)
         end)
     end)
-end
-
-function update_authors_text(army)
-    local authorship_models = "The authors of the models are:\n"
-    for _, base in pairs(army) do
-        local model = base['model_data']
-        print(model)
-        local model_data = _G[model]
-        local author = model_data['author']
-        authorship_models = authorship_models .. ' - ' .. author .. '\n'
-    end
-    UI.setValue('text_authors', authorship_models)
 end
 
 function on_book_selected(player, value, id)
@@ -102,12 +77,7 @@ function on_book_selected(player, value, id)
         i = i + 1
     end
 
-    -- We need to use the first army for the author text
-    local army = nil
-    for _, army_data in pairs(armies[new_book_name]) do
-        army = army_data
-        break
-    end
+    local army = first_value_table(armies[new_book_name])
 
     on_next_frame(function()
         update_book_menu(selected_book_index)

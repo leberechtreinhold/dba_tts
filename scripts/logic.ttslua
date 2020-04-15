@@ -153,3 +153,36 @@ function spawn_army(army, is_red_player)
         i = i + 1
     end
 end
+
+function update_authors_text(army)
+    local authorship_models = "The authors of the models are:\n\n"
+    local authors_set = {}
+    for _, base in pairs(army) do
+        local model = base['model_data']
+        print(model)
+        local model_data = _G[model]
+        local author = model_data['author']
+
+        if authors_set[author] == nil then
+            authorship_models = authorship_models .. ' - ' .. author .. '\n\n'
+            authors_set[author] = 1
+        end
+    end
+    UI.setValue('text_authors', authorship_models)
+end
+
+function update_book_menu(book_selected)
+    local options = {}
+    for book_name, book_armies in pairs(armies) do
+        table.insert(options, dataname_to_friendlyname(book_name))
+    end
+    set_options_dropdown_by_id('dropdown_book', options, book_selected) 
+end
+
+function update_armies_menu(book, army_selected)
+    local options = {}
+    for army_name,_ in pairs(book) do
+        table.insert(options, dataname_to_friendlyname(army_name))
+    end
+    set_options_dropdown_by_id('dropdown_army', options, army_selected) 
+end

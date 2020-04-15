@@ -261,7 +261,6 @@ function on_next_frame_coroutine()
     return 1
 end
 
-
 function dataname_to_friendlyname(dataname)
     local friendly_name,_ = dataname:gsub("_", " ")
     return friendly_name
@@ -270,4 +269,16 @@ end
 function friendlyname_to_dataname(friendly_name)
     local dataname,_ = friendly_name:gsub(" ", "_")
     return dataname
+end
+
+function first_key_table(table)
+    for k,_ in pairs(table) do
+        return k
+    end
+end
+
+function first_value_table(table)
+    for _,v in pairs(table) do
+        return v
+    end
 end
