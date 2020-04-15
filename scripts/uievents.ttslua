@@ -61,16 +61,6 @@ function update_armies_menu(book, army_selected)
     set_options_dropdown_by_id('dropdown_army', options, army_selected) 
 end
 
-function dataname_to_friendlyname(dataname)
-    local friendly_name,_ = dataname:gsub("_", " ")
-    return friendly_name
-end
-
-function friendlyname_to_dataname(friendly_name)
-    local dataname,_ = friendly_name:gsub(" ", "_")
-    return dataname
-end
-
 function create_army_options_menu()
     local status = UI.getAttribute('panel_dba_troop_selection', 'active')
     if status == "True" then
@@ -81,9 +71,24 @@ function create_army_options_menu()
     on_next_frame(function()
         update_armies_menu(armies['Book_I'], 1)
         on_next_frame(function()
-            UI.setAttribute('panel_dba_troop_selection', 'active', true)
+            update_authors_text(armies['Book_I']['Hoplite_Greek_Example'])
+            on_next_frame(function()
+                UI.setAttribute('panel_dba_troop_selection', 'active', true)
+            end)
         end)
     end)
+end
+
+function update_authors_text(army)
+    local authorship_models = "The authors of the models are:\n"
+    for _, base in pairs(army) do
+        local model = base['model_data']
+        print(model)
+        local model_data = _G[model]
+        local author = model_data['author']
+        authorship_models = authorship_models .. ' - ' .. author .. '\n'
+    end
+    UI.setValue('text_authors', authorship_models)
 end
 
 function on_book_selected(player, value, id)
@@ -97,12 +102,31 @@ function on_book_selected(player, value, id)
         i = i + 1
     end
 
+    -- We need to use the first army for the author text
+    local army = nil
+    for _, army_data in pairs(armies[new_book_name]) do
+        army = army_data
+        break
+    end
+
     on_next_frame(function()
         update_book_menu(selected_book_index)
         on_next_frame(function()
             update_armies_menu(armies[new_book_name], 1)
+            on_next_frame(function()
+                update_authors_text(army)
+            end)
         end)
     end)
+end
+
+function on_army_selected(player, value, id)
+    local book_name_friendly = get_option_selected_dropdown_by_id('dropdown_book')
+    local book_name = friendlyname_to_dataname(book_name_friendly)
+    local army_name = friendlyname_to_dataname(value)
+    local army = armies[book_name][army_name]
+
+    update_authors_text(army)
 end
 
 function add_pip(player, value, id)

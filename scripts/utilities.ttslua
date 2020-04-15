@@ -168,7 +168,36 @@ function get_options_dropdown(dropdown_element)
     end
     for i,option in ipairs(children) do
         list.insert(option['value'])
-    end  
+    end
+end
+
+
+-- Given a dropdown element as returned by find_ui_element, returns the
+-- currently selected one
+function get_option_selected_dropdown(dropdown_element)
+    local children = dropdown_element['children']
+    if children == nil then
+        return list
+    end
+    for i,option in ipairs(children) do
+        if option['attributes'] ~= nil then
+            if option['attributes']['selected'] == "true" then
+                print('selected' .. option['value'] )
+                return option['value']
+            end
+        end
+    end
+end
+
+
+-- Given an id corresponding to an existing <Dropdown> element on the current
+-- XML UI, returns the currently selected element.
+-- This is because UI.getAttribute('dropdownid', 'text') doesn't work, despite
+-- what the official docs say... it returns nil
+-- NOTE It's perf intensive
+function get_option_selected_dropdown_by_id(id)
+    local element = find_ui_element(id)
+    return get_option_selected_dropdown(element)
 end
 
 -- Given a dropdown element as returned by find_ui_element, changes the element
@@ -230,4 +259,15 @@ function on_next_frame_coroutine()
     g_func_next_frame = nil
     cur_f()
     return 1
+end
+
+
+function dataname_to_friendlyname(dataname)
+    local friendly_name,_ = dataname:gsub("_", " ")
+    return friendly_name
+end
+
+function friendlyname_to_dataname(friendly_name)
+    local dataname,_ = friendly_name:gsub(" ", "_")
+    return dataname
 end

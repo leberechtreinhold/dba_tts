@@ -30,7 +30,7 @@
     </HorizontalLayout>
 </Panel>
 
-<Panel id="panel_dba_troop_selection" width="600" height="400" rectAlignment="MiddleCenter" color="red" active="false">
+<Panel id="panel_dba_troop_selection" width="600" height="500" rectAlignment="MiddleCenter" color="red" active="false">
     <TableLayout padding="60" cellSpacing="20">
         <Row preferredHeight="40">
             <Cell columnSpan="1" dontUseTableCellBackground="true">
@@ -50,7 +50,7 @@
                <Text fontSize="20">Army:</Text>
            </Cell>
            <Cell columnSpan="5" dontUseTableCellBackground="true">
-               <Dropdown id="dropdown_army" fontSize="20">
+               <Dropdown id="dropdown_army" onValueChanged="on_army_selected" fontSize="20">
                   <Option selected="true">Army 1</Option>
                   <Option>Army 2</Option>
                   <Option>Army 3</Option>
@@ -72,7 +72,7 @@
       <Row>
           <Cell columnSpan="6" dontUseTableCellBackground="true">
               <VerticalScrollView color="#00000000">
-                  <Text alignment="UpperLeft" fontSize="18">
+                  <Text id="text_authors" alignment="UpperLeft" fontSize="18">
                       The authors of the models are:
                       - Empire Swordsmen by Veer
                       - Whatever by Example
