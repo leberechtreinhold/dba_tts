@@ -48,8 +48,7 @@ end
 function update_book_menu(book_selected)
     local options = {}
     for book_name, book_armies in pairs(armies) do
-        local friendly_name,_ = book_name:gsub("_", " ")
-        table.insert(options, friendly_name)
+        table.insert(options, dataname_to_friendlyname(book_name))
     end
     set_options_dropdown_by_id('dropdown_book', options, book_selected) 
 end
@@ -57,17 +56,25 @@ end
 function update_armies_menu(book, army_selected)
     local options = {}
     for army_name,_ in pairs(book) do
-        local friendly_name,_ = army_name:gsub("_", " ")
-        table.insert(options, friendly_name)
+        table.insert(options, dataname_to_friendlyname(army_name))
     end
     set_options_dropdown_by_id('dropdown_army', options, army_selected) 
 end
 
+function dataname_to_friendlyname(dataname)
+    local friendly_name,_ = dataname:gsub("_", " ")
+    return friendly_name
+end
 
+function friendlyname_to_dataname(friendly_name)
+    local dataname,_ = friendly_name:gsub(" ", "_")
+    return dataname
+end
 
 function create_army_options_menu()
     local status = UI.getAttribute('panel_dba_troop_selection', 'active')
     if status == "True" then
+        -- Ignore, the user is clicking despite the menu already being there
         return
     end
     update_book_menu(1)
@@ -75,6 +82,25 @@ function create_army_options_menu()
         update_armies_menu(armies['Book_I'], 1)
         on_next_frame(function()
             UI.setAttribute('panel_dba_troop_selection', 'active', true)
+        end)
+    end)
+end
+
+function on_book_selected(player, value, id)
+    local new_book_name = friendlyname_to_dataname(value)
+    local i = 1
+    local selected_book_index = 1
+    for book_name, book_armies in pairs(armies) do
+        if book_name == new_book_name then
+            selected_book_index = i
+        end
+        i = i + 1
+    end
+
+    on_next_frame(function()
+        update_book_menu(selected_book_index)
+        on_next_frame(function()
+            update_armies_menu(armies[new_book_name], 1)
         end)
     end)
 end

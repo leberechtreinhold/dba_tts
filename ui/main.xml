@@ -37,7 +37,7 @@
                 <Text fontSize="20">Book:</Text>
             </Cell>
             <Cell columnSpan="3" dontUseTableCellBackground="true">
-                <Dropdown id="dropdown_book" fontSize="20" >
+                <Dropdown id="dropdown_book" onValueChanged="on_book_selected" fontSize="20" >
                    <Option selected="true">Book I</Option>
                    <Option>Book II</Option>
                    <Option>Book III</Option>
