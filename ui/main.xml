@@ -3,8 +3,8 @@
     <Slider id="slider_paces" minValue="10" maxValue="500" wholeNumbers="true" value="100" colors="#00000000|#00000000|#00000000|#00000000" backgroundcolor="#FFFFFFF" onValueChanged="slider_paces_changed"></Slider>
     <Button id="button_move_forward" onClick="move_bases">Move 100 paces</Button>
     <Button onClick="align_bases">Align bases</Button>
-    <Button onClick="create_army_player_blue">Spawn army player 1</Button>
-    <Button onClick="create_army_player_red">Spawn army player 2</Button>
+    <Button onClick="create_army_player_blue">Spawn army player (debug)</Button>
+    <Button onClick="create_army_options_menu">Deploy an army</Button>
 </VerticalLayout>
 </Panel>
 
@@ -30,8 +30,8 @@
     </HorizontalLayout>
 </Panel>
 
-<Panel id="panel_dba_troop_selection" width="500" height="300" rectAlignment="MiddleCenter" color="red">
-    <TableLayout padding="60" cellSpacing="10">
+<Panel id="panel_dba_troop_selection" width="600" height="400" rectAlignment="MiddleCenter" color="red" active="false">
+    <TableLayout padding="60" cellSpacing="20">
         <Row preferredHeight="40">
             <Cell columnSpan="1" dontUseTableCellBackground="true">
                 <Text fontSize="20">Book:</Text>
@@ -45,7 +45,6 @@
                 </Dropdown>
             </Cell>
        </Row>
-
        <Row preferredHeight="40">
            <Cell columnSpan="1" dontUseTableCellBackground="true">
                <Text fontSize="20">Army:</Text>
@@ -59,8 +58,37 @@
                </Dropdown>
            </Cell>
       </Row>
+     <Row preferredHeight="40">
+         <Cell columnSpan="1" dontUseTableCellBackground="true">
+             <Text fontSize="20">Player color:</Text>
+         </Cell>
+         <Cell columnSpan="5" dontUseTableCellBackground="true">
+             <Dropdown id="dropdown_color" fontSize="20">
+                <Option selected="true">Red</Option>
+                <Option>Blue</Option>
+             </Dropdown>
+         </Cell>
+    </Row>
       <Row>
-          <!-- Filler -->
+          <Cell columnSpan="6" dontUseTableCellBackground="true">
+              <VerticalScrollView color="#00000000">
+                  <Text alignment="UpperLeft" fontSize="18">
+                      The authors of the models are:
+                      - Empire Swordsmen by Veer
+                      - Whatever by Example
+                      - Base 3
+                      - Base 4
+                      - Base 5
+                      - Base 6
+                      - Base 7
+                      - Base 8
+                      - Base 9
+                      - Base 10
+                      - Base 11
+                      - Base 12
+                  </Text>
+              </VerticalScrollView>
+          </Cell>
       </Row>
       <Row preferredHeight="40">
           <Cell columnSpan="5" dontUseTableCellBackground="true">

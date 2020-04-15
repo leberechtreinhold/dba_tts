@@ -49,7 +49,7 @@ function align_two_bases(player, base1, base2)
 end
 
 -- Given a list of objects in a table, returns another table with ONLY
--- those who start with "base", ignoring the keys
+-- those who start with 'base', ignoring the keys
 function filter_bases(list)
     local filtered = {}
     for _,obj in ipairs(list) do
@@ -135,7 +135,7 @@ function spawn_base(base, pos, is_red_player)
             x = pos['x'] + i * chunk - half_width, 
             y = pos['y'] + base_height_inches / 2 + base_obj.getPosition()['y'], 
             z = pos['z'] }
-        local soldier_obj = spawn_model("troop_swordsman_latemedieval", relative_pos, math.random(-20, 20), is_red_player)
+        local soldier_obj = spawn_model('troop_swordsman_latemedieval', relative_pos, math.random(-20, 20), is_red_player)
         base_obj.addAttachment(soldier_obj)
     end
 end

@@ -185,7 +185,7 @@ function set_options_dropdown(dropdown_element, options, idx_selected)
 
     for i, option in ipairs(options) do
         local new_options = {
-            tag = "option",
+            tag = 'option',
             value = option
         }
         if i == idx_selected then
@@ -207,4 +207,24 @@ function set_options_dropdown_by_id(id,  options, idx_selected)
     local element = find_ui_element_list(xml, id)
     set_options_dropdown(element, options, idx_selected)
     UI.setXmlTable(xml)
+end
+
+-- Executes f() on the next frame. This is useful because if you are using
+-- methodfs than change the UI using setXmlTable they may enter in conflict
+-- since it takes time to update.
+-- This is a very terrible way of doing things and should not be used, doesn't
+-- support more than one at once
+g_func_next_frame = nil
+function on_next_frame(f)
+    if (g_func_next_frame == nil) then
+        g_func_next_frame = f
+        startLuaCoroutine(self, 'on_next_frame_coroutine')
+    end
+end
+
+function on_next_frame_coroutine()
+    coroutine.yield(0)
+    g_func_next_frame()
+    g_func_next_frame = nil
+    return 1
 end

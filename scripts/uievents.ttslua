@@ -41,35 +41,50 @@ function align_bases(player, value, id)
 end
 
 function create_army_player_blue()
-    local army = armies['BookIV']['Example']
+    local army = armies['Book_IV']['Example']
     spawn_army(army, false)
 end
 
--- TODO This only summons a empire soldier..., should create menus and stuff
-function create_army_player_red()
-    spawn_model("troop_swordsman_latemedieval", { x=0, y=0, z=0 }, true)
+function update_book_menu()
+end
+
+function create_army_options_menu()
+    local status = UI.getAttribute('panel_dba_troop_selection', 'active')
+    if status == "True" then
+        return
+    end
+    
+    local options = {}
+    for book_name, book_armies in pairs(armies) do
+        local friendly_name,_ = book_name:gsub("_", " ")
+        table.insert(options, friendly_name)
+    end
+    set_options_dropdown_by_id('dropdown_book', options, 1) 
+    on_next_frame(function() 
+        UI.setAttribute('panel_dba_troop_selection', 'active', true)
+    end)
 end
 
 function add_pip(player, value, id)
-    if value == "red" then
-        local pips_red = UI.getValue("text_pips_player_red")
+    if value == 'red' then
+        local pips_red = UI.getValue('text_pips_player_red')
         pips_red = pips_red + 1
-        UI.setValue("text_pips_player_red", pips_red)
+        UI.setValue('text_pips_player_red', pips_red)
     else
-        local pips_blue = UI.getValue("text_pips_player_blue")
+        local pips_blue = UI.getValue('text_pips_player_blue')
         pips_blue = pips_blue + 1
-        UI.setValue("text_pips_player_blue", pips_blue)
+        UI.setValue('text_pips_player_blue', pips_blue)
     end
 end
 
 function remove_pip(player, value, id)
-    if value == "red" then
-        local pips_red = UI.getValue("text_pips_player_red")
+    if value == 'red' then
+        local pips_red = UI.getValue('text_pips_player_red')
         pips_red = pips_red - 1
-        UI.setValue("text_pips_player_red", pips_red)
+        UI.setValue('text_pips_player_red', pips_red)
     else
-        local pips_blue = UI.getValue("text_pips_player_blue")
+        local pips_blue = UI.getValue('text_pips_player_blue')
         pips_blue = pips_blue - 1
-        UI.setValue("text_pips_player_blue", pips_blue)
+        UI.setValue('text_pips_player_blue', pips_blue)
     end
 end

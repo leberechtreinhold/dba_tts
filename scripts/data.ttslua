@@ -33,8 +33,24 @@ troop_swordsman_latemedieval = {
 }
 
 armies = {
-    BookIV = {
-        Example = {
+    Book_I = {
+        Hoplite_Greek_Example = {
+            base1 = {
+                name = '4Bd',
+                base = 'tile_reference_40x15',
+                n_models = 4,
+                model_data = 'troop_swordsman_latemedieval'
+            },
+            base2 = {
+                name = '4Bd',
+                base = 'tile_reference_40x15',
+                n_models = 4,
+                model_data = 'troop_swordsman_latemedieval'
+            }
+        }
+    },
+    Book_IV = {
+        Late_Medieval_German_Example = {
             base1 = {
                 name = '4Bd',
                 base = 'tile_reference_40x15',

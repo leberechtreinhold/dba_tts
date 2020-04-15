@@ -1,5 +1,4 @@
 function onRandomize()
-    self.setVar('')
     startLuaCoroutine(self, 'check_if_at_rest')
 end
 
