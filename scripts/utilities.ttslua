@@ -120,3 +120,91 @@ end
 function str_has_substr(str, substr)
     return string.find(str, substr) ~= nil
 end
+
+-- Helper function for find_ui_element
+function find_ui_element_in_element(root_element, id)
+    for k, v in pairs(root_element) do
+        if k == 'attributes' then
+            for kattr, vattr in pairs(v) do
+                if kattr == 'id' and vattr == id then
+                    return root_element
+                end
+            end
+        end
+        if k == 'children' then
+            return find_ui_element_list(v, id)
+        end
+    end
+    return nil
+end
+
+-- Helper function for find_ui_element
+function find_ui_element_list(root_list, id)
+    for i,element in ipairs(root_list) do
+        local element = find_ui_element_in_element(element, id)
+        if element ~= nil then
+            return element
+        end
+    end
+    return nil
+end
+
+-- Normally you can get the UI elements by using UI functions, but there are
+-- things that are not retrieved in that data, like the options tags from the
+-- XML in a dropdown. For those, this functions allows to get that info,
+-- including all children.
+-- This searches the full XML table, so it's perf intensive.
+function find_ui_element(id)
+    return find_ui_element_list(UI.getXmlTable(), id)
+end
+
+-- Given a dropdown element as returned by find_ui_element, returns a list of
+-- the options. All options should have a value set.
+function get_options_dropdown(dropdown_element)
+    local list = {}
+    local children = dropdown_element['children']
+    if children == nil then
+        return list
+    end
+    for i,option in ipairs(children) do
+        list.insert(option['value'])
+    end  
+end
+
+-- Given a dropdown element as returned by find_ui_element, changes the element
+-- to contain the options desired.
+-- NOTE This does NOT update the UI and should be used with find_ui_element
+-- and setXmlTable()
+function set_options_dropdown(dropdown_element, options, idx_selected)
+    local children = dropdown_element['children']
+    if children ~= nil then
+        -- Delete all elements on the table but keep the reference
+        local n = #children
+        for i=0, n do children[i]=nil end
+    end
+
+    for i, option in ipairs(options) do
+        local new_options = {
+            tag = "option",
+            value = option
+        }
+        if i == idx_selected then
+            new_options['attributes'] = {
+                selected = true
+            }
+        end
+        table.insert(children, i, new_options)
+    end
+end
+
+-- Given an id corresponding to an existing <Dropdown> element on the current
+-- XML UI, edits the options to those given.
+-- The list of options should be a plain array of strings
+-- The index (1 to n) represent which one is currently selected.
+-- This is perf intensive, beware. It's also not updated until the next frame.
+function set_options_dropdown_by_id(id,  options, idx_selected)
+    local xml = UI.getXmlTable()
+    local element = find_ui_element_list(xml, id)
+    set_options_dropdown(element, options, idx_selected)
+    UI.setXmlTable(xml)
+end
