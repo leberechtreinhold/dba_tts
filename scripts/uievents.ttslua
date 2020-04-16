@@ -45,16 +45,17 @@ function create_army_player_blue()
     spawn_army(army, false)
 end
 
-function on_load_army()
-    local book_name_friendly = get_option_selected_dropdown_by_id('dropdown_book')
-    local army_name_friendly = get_option_selected_dropdown_by_id('dropdown_army')
-    local color = get_option_selected_dropdown_by_id('dropdown_color')
-    local book_name = friendlyname_to_dataname(book_name_friendly)
-    local army_name = friendlyname_to_dataname(army_name_friendly)
 
-    spawn_army(armies[book_name][army_name], color == "Red")
+function on_cancel_load_army(player, value, id)
     UI.setAttribute('panel_dba_troop_selection', 'active', false)
+end
 
+function on_load_army(player, value, id)
+    local book_name = friendlyname_to_dataname(g_book_selected)
+    local army_name = friendlyname_to_dataname(g_army_selected)
+
+    spawn_army(armies[book_name][army_name], g_color_spawn_army_selected == "Red")
+    UI.setAttribute('panel_dba_troop_selection', 'active', false)
 end
 
 function create_army_options_menu()
@@ -64,21 +65,30 @@ function create_army_options_menu()
         return
     end
 
-    local book = first_value_table(armies)
-    local army = first_value_table(book)
+    g_book_selected = first_key_table(armies)
+    local bookname = friendlyname_to_dataname(g_book_selected)
+    local book = armies[bookname]
+    g_army_selected = first_key_table(book)
+    local army = armies[bookname][friendlyname_to_dataname(g_army_selected)]
+
     update_book_menu(1)
     on_next_frame(function()
         update_armies_menu(book, 1)
         on_next_frame(function()
             update_authors_text(army)
             on_next_frame(function()
-                UI.setAttribute('panel_dba_troop_selection', 'active', true)
+                update_player_color_menu(g_color_spawn_army_selected == "Red")
+                on_next_frame(function()
+                    UI.setAttribute('panel_dba_troop_selection', 'active', true)
+                end)
             end)
         end)
     end)
 end
 
+g_book_selected = ''
 function on_book_selected(player, value, id)
+    g_book_selected = value
     local new_book_name = friendlyname_to_dataname(value)
     local i = 1
     local selected_book_index = 1
@@ -89,26 +99,37 @@ function on_book_selected(player, value, id)
         i = i + 1
     end
 
-    local army = first_value_table(armies[new_book_name])
+    g_army_selected = first_key_table(armies[new_book_name])
+    local army = armies[new_book_name][friendlyname_to_dataname(g_army_selected)]
 
     on_next_frame(function()
         update_book_menu(selected_book_index)
         on_next_frame(function()
             update_armies_menu(armies[new_book_name], 1)
             on_next_frame(function()
-                update_authors_text(army)
+                update_player_color_menu(g_color_spawn_army_selected == "Red")
+                on_next_frame(function()
+                    update_authors_text(army)
+                end)
             end)
         end)
     end)
 end
 
+g_army_selected = ''
 function on_army_selected(player, value, id)
-    local book_name_friendly = get_option_selected_dropdown_by_id('dropdown_book')
+    g_army_selected = value
+    local book_name_friendly = g_book_selected
     local book_name = friendlyname_to_dataname(book_name_friendly)
     local army_name = friendlyname_to_dataname(value)
     local army = armies[book_name][army_name]
 
     update_authors_text(army)
+end
+
+g_color_spawn_army_selected = 'Red'
+function on_color_selected(player, value, id)
+    g_color_spawn_army_selected = value
 end
 
 function add_pip(player, value, id)

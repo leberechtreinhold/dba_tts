@@ -109,7 +109,12 @@ function spawn_model(troop_name, pos, added_y_axis_rotation, is_player_red)
     local meshes = model_data['mesh']
     local mesh_index = math.random(1, #model_data['mesh'])
     local selected_mesh = meshes[mesh_index]
-    local spawn_data = get_spawn_model(pos, model_data['rotation'], model_data['height_correction'], model_data['scale'], selected_mesh, texture)
+    local spawn_data = get_spawn_model(pos, 
+        model_data['rotation'], 
+        model_data['height_correction'], 
+        model_data['scale'], 
+        selected_mesh, 
+        texture)
     spawn_data['spawn']['rotation']['y'] = spawn_data['spawn']['rotation']['y'] + added_y_axis_rotation
     local obj = spawnObject(spawn_data['spawn'])
     obj.setCustomObject(spawn_data['custom_obj_attrs'])
@@ -174,6 +179,14 @@ function update_book_menu(book_selected)
         table.insert(options, dataname_to_friendlyname(book_name))
     end
     set_options_dropdown_by_id('dropdown_book', options, book_selected) 
+end
+
+function update_player_color_menu(is_player_red)
+    local selected = 2
+    if is_player_red then
+        selected = 1
+    end
+    set_options_dropdown_by_id('dropdown_color', { "Red", "Blue" },  selected) 
 end
 
 function update_armies_menu(book, army_selected)
