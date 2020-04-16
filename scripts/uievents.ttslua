@@ -134,24 +134,32 @@ end
 
 function add_pip(player, value, id)
     if value == 'red' then
-        local pips_red = UI.getValue('text_pips_player_red')
-        pips_red = pips_red + 1
+        local pips_red = tonumber(UI.getValue('text_pips_player_red'))
+        if pips_red < 6 then
+            pips_red = pips_red + 1
+        end
         UI.setValue('text_pips_player_red', pips_red)
     else
-        local pips_blue = UI.getValue('text_pips_player_blue')
-        pips_blue = pips_blue + 1
+        local pips_blue = tonumber(UI.getValue('text_pips_player_blue'))
+        if pips_blue < 6 then
+            pips_blue = pips_blue + 1
+        end
         UI.setValue('text_pips_player_blue', pips_blue)
     end
 end
 
 function remove_pip(player, value, id)
     if value == 'red' then
-        local pips_red = UI.getValue('text_pips_player_red')
-        pips_red = pips_red - 1
+        local pips_red = tonumber(UI.getValue('text_pips_player_red'))
+        if pips_red > 0 then
+            pips_red = pips_red - 1
+        end
         UI.setValue('text_pips_player_red', pips_red)
     else
-        local pips_blue = UI.getValue('text_pips_player_blue')
-        pips_blue = pips_blue - 1
+        local pips_blue = tonumber(UI.getValue('text_pips_player_blue'))
+        if pips_blue > 0 then
+            pips_blue = pips_blue - 1
+        end
         UI.setValue('text_pips_player_blue', pips_blue)
     end
 end
