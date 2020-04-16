@@ -76,7 +76,7 @@
       <Row>
           <Cell columnSpan="6" dontUseTableCellBackground="true">
               <VerticalScrollView color="#00000000">
-                  <Text id="text_authors" alignment="UpperLeft" fontSize="18">
+                  <Text id="text_authors" alignment="UpperLeft" fontSize="18" contentSizeFitter="vertical">
                       The authors of the models are:
                       - Empire Swordsmen by Veer
                       - Whatever by Example
