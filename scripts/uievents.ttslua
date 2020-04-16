@@ -48,6 +48,7 @@ end
 
 function on_cancel_load_army(player, value, id)
     UI.setAttribute('panel_dba_troop_selection', 'active', false)
+    UI.setAttribute('panel_dba_troop_selection_bg', 'active', false)
 end
 
 function on_load_army(player, value, id)
@@ -56,6 +57,7 @@ function on_load_army(player, value, id)
 
     spawn_army(armies[book_name][army_name], g_color_spawn_army_selected == "Red")
     UI.setAttribute('panel_dba_troop_selection', 'active', false)
+    UI.setAttribute('panel_dba_troop_selection_bg', 'active', false)
 end
 
 function create_army_options_menu()
@@ -79,6 +81,7 @@ function create_army_options_menu()
             on_next_frame(function()
                 update_player_color_menu(g_color_spawn_army_selected == "Red")
                 on_next_frame(function()
+                    UI.setAttribute('panel_dba_troop_selection_bg', 'active', true)
                     UI.setAttribute('panel_dba_troop_selection', 'active', true)
                 end)
             end)

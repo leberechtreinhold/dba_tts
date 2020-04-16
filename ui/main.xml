@@ -30,7 +30,11 @@
     </HorizontalLayout>
 </Panel>
 
-<Panel id="panel_dba_troop_selection" width="600" height="500" rectAlignment="MiddleCenter" color="red" active="false">
+<Panel id="panel_dba_troop_selection_bg" width="600" height="500" rectAlignment="MiddleCenter" active="false">
+        <Image image="select_army_bg"></Image>
+</Panel>
+
+<Panel id="panel_dba_troop_selection" width="600" height="500" rectAlignment="MiddleCenter" color="#00000000" active="false">
     <TableLayout padding="60" cellSpacing="20">
         <Row preferredHeight="40">
             <Cell columnSpan="1" dontUseTableCellBackground="true">
