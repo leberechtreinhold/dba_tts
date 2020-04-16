@@ -11,6 +11,9 @@ The project is structured in the following way:
 - scripts/utilities: A bunch of utilities since lua doesn't offer much, like vector operations, some algebra, rounding, string utilities, unit conversion etc etc.
 - scripts/troop_data: All the data to spawn troops, bases, and armies.
 - scripts/logic: All the game logic.
-- ui/main.xml: The XML for the UI, which, AFAIK, cannot be #included into TTS through ATOM and needs to be copy/pasted.
+- dice/dice_base: All the code for the different dices
+- dice/pip_blue-red: The code assigned to two dice objets, both should be D6 and they calculate the PIPs.
+- ui/main.xml: The XML for the UI, which, AFAIK, cannot be #included into TTS through ATOM and needs to be copy/pasted. Can be used directly using <include src="">
+- ui/ui_elements.txt: Since the UI is referenced by the Scripting window and must be imported in each game, this is a list to the elements with the corresponding url.
 
 This is still a WIP.
