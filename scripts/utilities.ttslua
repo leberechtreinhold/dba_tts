@@ -182,7 +182,6 @@ function get_option_selected_dropdown(dropdown_element)
     for i,option in ipairs(children) do
         if option['attributes'] ~= nil then
             if option['attributes']['selected'] == "true" then
-                print('selected' .. option['value'] )
                 return option['value']
             end
         end

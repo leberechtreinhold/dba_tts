@@ -31,10 +31,10 @@ end
 -- TODO this only aligns with the right side atm
 function align_two_bases(player, base1, base2)
     if (distance_points_flat_sq(base1.getPosition(), base2.getPosition()) > 9) then
-        print(player.steam_name .. ' is trying to align but the bases are too far apart, more than 3inch between centers!')
+        print_error(player.steam_name .. ' is trying to align but the bases are too far apart, more than 3inch between centers!')
         return
     end
-    print(player.steam_name .. ' is aligning ' .. base1.getName() .. ' with ' .. base2.getName())
+    print_info(player.steam_name .. ' is aligning ' .. base1.getName() .. ' with ' .. base2.getName())
     base2.setRotation(base1.getRotation())
 
     local corners1 = compute_corners_base(base1)
@@ -114,8 +114,6 @@ function spawn_model(troop_name, pos, added_y_axis_rotation, is_player_red)
     local obj = spawnObject(spawn_data['spawn'])
     obj.setCustomObject(spawn_data['custom_obj_attrs'])
 
-    print_info('Loading model ' .. model_data['description'] .. ', Author: ' .. model_data['author'])
-
     return obj
 end
 
@@ -159,7 +157,6 @@ function update_authors_text(army)
     local authors_set = {}
     for _, base in pairs(army) do
         local model = base['model_data']
-        print(model)
         local model_data = _G[model]
         local author = model_data['author']
 
