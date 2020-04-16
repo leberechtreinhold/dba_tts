@@ -45,6 +45,18 @@ function create_army_player_blue()
     spawn_army(army, false)
 end
 
+function on_load_army()
+    local book_name_friendly = get_option_selected_dropdown_by_id('dropdown_book')
+    local army_name_friendly = get_option_selected_dropdown_by_id('dropdown_army')
+    local color = get_option_selected_dropdown_by_id('dropdown_color')
+    local book_name = friendlyname_to_dataname(book_name_friendly)
+    local army_name = friendlyname_to_dataname(army_name_friendly)
+
+    spawn_army(armies[book_name][army_name], color == "Red")
+    UI.setAttribute('panel_dba_troop_selection', 'active', false)
+
+end
+
 function create_army_options_menu()
     local status = UI.getAttribute('panel_dba_troop_selection', 'active')
     if status == "True" then

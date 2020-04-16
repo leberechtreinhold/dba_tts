@@ -60,7 +60,7 @@
       </Row>
      <Row preferredHeight="40">
          <Cell columnSpan="1" dontUseTableCellBackground="true">
-             <Text fontSize="20">Player color:</Text>
+             <Text fontSize="20">Player:</Text>
          </Cell>
          <Cell columnSpan="5" dontUseTableCellBackground="true">
              <Dropdown id="dropdown_color" fontSize="20">
@@ -95,7 +95,7 @@
               <!-- Filler -->
           </Cell>
           <Cell columnSpan="1" dontUseTableCellBackground="true">
-              <Button columnSpan="1" fontSize="20">Load</Button>
+              <Button columnSpan="1" fontSize="20" onClick="on_load_army">Load</Button>
           </Cell>
       </Row>
    </TableLayout>
