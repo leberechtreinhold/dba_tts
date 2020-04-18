@@ -55,14 +55,14 @@ function on_load_army(player, value, id)
     local book_name = friendlyname_to_dataname(g_book_selected)
     local army_name = friendlyname_to_dataname(g_army_selected)
 
-    spawn_army(armies[book_name][army_name], g_color_spawn_army_selected == "Red")
+    spawn_army(armies[book_name][army_name], g_color_spawn_army_selected == 'Red')
     UI.setAttribute('panel_dba_troop_selection', 'active', false)
     UI.setAttribute('panel_dba_troop_selection_bg', 'active', false)
 end
 
 function create_army_options_menu()
     local status = UI.getAttribute('panel_dba_troop_selection', 'active')
-    if status == "True" then
+    if status == 'True' then
         -- Ignore, the user is clicking despite the menu already being there
         return
     end
@@ -79,7 +79,7 @@ function create_army_options_menu()
         on_next_frame(function()
             update_authors_text(army)
             on_next_frame(function()
-                update_player_color_menu(g_color_spawn_army_selected == "Red")
+                update_player_color_menu(g_color_spawn_army_selected == 'Red')
                 on_next_frame(function()
                     UI.setAttribute('panel_dba_troop_selection_bg', 'active', true)
                     UI.setAttribute('panel_dba_troop_selection', 'active', true)
@@ -110,7 +110,7 @@ function on_book_selected(player, value, id)
         on_next_frame(function()
             update_armies_menu(armies[new_book_name], 1)
             on_next_frame(function()
-                update_player_color_menu(g_color_spawn_army_selected == "Red")
+                update_player_color_menu(g_color_spawn_army_selected == 'Red')
                 on_next_frame(function()
                     update_authors_text(army)
                 end)

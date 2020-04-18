@@ -158,7 +158,7 @@ function spawn_army(army, is_red_player)
 end
 
 function update_authors_text(army)
-    local authorship_models = "The authors of the models are:\n\n"
+    local authorship_models = 'The authors of the models are:\n\n'
     local authors_set = {}
     for _, base in pairs(army) do
         local model = base['model_data']
@@ -186,7 +186,7 @@ function update_player_color_menu(is_player_red)
     if is_player_red then
         selected = 1
     end
-    set_options_dropdown_by_id('dropdown_color', { "Red", "Blue" },  selected) 
+    set_options_dropdown_by_id('dropdown_color', { 'Red', 'Blue' },  selected) 
 end
 
 function update_armies_menu(book, army_selected)

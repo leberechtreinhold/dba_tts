@@ -181,7 +181,7 @@ function get_option_selected_dropdown(dropdown_element)
     end
     for i,option in ipairs(children) do
         if option['attributes'] ~= nil then
-            if option['attributes']['selected'] == "true" then
+            if option['attributes']['selected'] == 'true' then
                 return option['value']
             end
         end
@@ -261,12 +261,12 @@ function on_next_frame_coroutine()
 end
 
 function dataname_to_friendlyname(dataname)
-    local friendly_name,_ = dataname:gsub("_", " ")
+    local friendly_name,_ = dataname:gsub('_', ' ')
     return friendly_name
 end
 
 function friendlyname_to_dataname(friendly_name)
-    local dataname,_ = friendly_name:gsub(" ", "_")
+    local dataname,_ = friendly_name:gsub(' ', '_')
     return dataname
 end
 
