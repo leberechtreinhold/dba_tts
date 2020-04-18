@@ -155,13 +155,9 @@ function spawn_base(base, pos, is_red_player)
     local column_width = base_width_inches / (columns + 1)
     local row_depth = depth / (rows + 1)
 
-    print(rows)
-    print(columns)
-
     for i=1,n do
         local column = (i - 1) % columns + 1
         local row = math.floor((i - 1) / columns) + 1
-        print('Row ' .. row .. ' Column ' .. column)
         local relative_pos = { 
             x = pos['x'] + column * column_width - half_width, 
             y = pos['y'] + base_height_inches / 2 + base_obj.getPosition()['y'], 
