@@ -61,6 +61,12 @@ function distance_points_flat_sq(point1, point2)
     return (point1['x'] - point2['x'])^2 + (point1['z'] - point2['z'])^2
 end
 
+-- Given two tables with x,y,z representing world coords, calculates the distance 
+-- between them in x,z
+function distance_points_flat(point1, point2)
+    return math.sqrt((point1['x'] - point2['x'])^2 + (point1['z'] - point2['z'])^2)
+end
+
 -- Given a number of radians (0, 2pi), returns a table with x,y,z components,
 -- where y 0 is always 0 and x,z is the rotation value corresponding to those
 -- radians, x being updown and z leftright
@@ -299,4 +305,20 @@ function get_coordinates_circle(center, radius, steps)
         })
     end
     return point_array
+end
+
+-- Given an array of numbers, like { 1, -3, 4, 5.3 }, computes the maximum
+-- and returns it
+function compute_max_array(array)
+    local max = nil
+    for _, n in ipairs(array) do
+        if max == nil then
+            max = n
+        else
+            if n > max then
+                max = n
+            end
+        end
+    end
+    return max
 end
