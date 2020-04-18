@@ -58,7 +58,7 @@ end
 -- Given two tables with x,y,z representing world coords, calculates the distance between them in x,z, SQUARED
 -- This is because we don't need the square root in most cases
 function distance_points_flat_sq(point1, point2)
-    return point1['x'] - point2['x'] + point1['z'] - point2['z']
+    return (point1['x'] - point2['x'])^2 + (point1['z'] - point2['z'])^2
 end
 
 -- Given a number of radians (0, 2pi), returns a table with x,y,z components,
