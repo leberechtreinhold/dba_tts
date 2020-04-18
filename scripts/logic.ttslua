@@ -124,6 +124,11 @@ function spawn_model(troop_name, pos, added_y_axis_rotation, collider, is_player
     return obj
 end
 
+function get_depth_base(base_name)
+    local base_data = _G[base_name]
+    return from_mm_to_in(base_data['depth'])
+end
+
 g_base_index = 1
 
 function spawn_base(base, pos, is_red_player)
@@ -135,15 +140,33 @@ function spawn_base(base, pos, is_red_player)
     if n == 0 then
         return
     end
-    
-    local chunk = base_width_inches / (n + 1)
+
+    local depth = get_depth_base(base['base'])
+    local half_depth = depth / 2
     local half_width = base_width_inches / 2
+    
+    local rows = 1
+    local columns = n
+    if n > 4 then
+        rows = math.floor(math.sqrt(n))
+        columns = math.ceil(n/rows)
+    
+    end
+    local column_width = base_width_inches / (columns + 1)
+    local row_depth = depth / (rows + 1)
+
+    print(rows)
+    print(columns)
 
     for i=1,n do
+        local column = (i - 1) % columns + 1
+        local row = math.floor((i - 1) / columns) + 1
+        print('Row ' .. row .. ' Column ' .. column)
         local relative_pos = { 
-            x = pos['x'] + i * chunk - half_width, 
+            x = pos['x'] + column * column_width - half_width, 
             y = pos['y'] + base_height_inches / 2 + base_obj.getPosition()['y'], 
-            z = pos['z'] }
+            z = pos['z'] + row * row_depth - half_depth 
+        }
         local soldier_obj = spawn_model(base['model_data'], relative_pos, math.random(-20, 20), minimal_collider, is_red_player)
         base_obj.addAttachment(soldier_obj)
     end

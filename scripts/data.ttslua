@@ -7,6 +7,7 @@ tile_reference_40x15 = {
     height_correction = 0.96,
     scale = 1,
     rotation = 0,
+    depth = 15,
     description = 'Ref 40x15',
     author = 'Original work by LeberechtReinhold',
     mesh = { 'http://cloud-3.steamusercontent.com/ugc/1022822649627841656/0661CBEA50787140409593ED30BE50AB0BB9E67A/' },
@@ -18,6 +19,7 @@ tile_grass_40x15 = {
     height_correction = 0.8,
     scale = 1,
     rotation = 0,
+    depth = 15,
     description = 'Grass 40x15',
     author = 'Original work by Arkein',
     mesh = { 'http://cloud-3.steamusercontent.com/ugc/1011563971410178992/C0E107CF728F0CBE4DC7A6391BB15ED51EFAE92A/' },
@@ -102,13 +104,31 @@ armies = {
             base1 = {
                 name = '4Pk',
                 base = 'tile_grass_40x15',
-                n_models = 8,
+                n_models = 4,
                 model_data = 'troop_pikeman_swiss'
             },
             base2 = {
                 name = '4Pk',
                 base = 'tile_grass_40x15',
-                n_models = 4,
+                n_models = 5,
+                model_data = 'troop_pikeman_swiss'
+            },
+            base3 = {
+                name = '4Pk',
+                base = 'tile_grass_40x15',
+                n_models = 6,
+                model_data = 'troop_pikeman_swiss'
+            },
+            base4 = {
+                name = '4Pk',
+                base = 'tile_grass_40x15',
+                n_models = 7,
+                model_data = 'troop_pikeman_swiss'
+            },
+            base5 = {
+                name = '4Pk',
+                base = 'tile_grass_40x15',
+                n_models = 8,
                 model_data = 'troop_pikeman_swiss'
             }
         }
