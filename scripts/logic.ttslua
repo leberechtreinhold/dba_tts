@@ -79,7 +79,7 @@ function move_base(obj, how_many_paces)
     return how_many_paces
 end
 
-function get_spawn_model(pos, rotation_correction, height_correction, model_scale, model_mesh, model_diffuse)
+function get_spawn_model(pos, rotation_correction, height_correction, model_scale, model_mesh, model_diffuse, collider_if_exists)
     return {
         spawn = {
             type = 'Custom_Model',
@@ -92,12 +92,13 @@ function get_spawn_model(pos, rotation_correction, height_correction, model_scal
         custom_obj_attrs = {
             mesh = model_mesh,
             diffuse = model_diffuse,
-            material = 1
+            material = 1,
+            collider = collider_if_exists
         }
     }
 end
 
-function spawn_model(troop_name, pos, added_y_axis_rotation, is_player_red)
+function spawn_model(troop_name, pos, added_y_axis_rotation, collider, is_player_red)
     -- Better pray that the input name actually exists! lol
     local model_data = _G[troop_name]
 
@@ -114,7 +115,8 @@ function spawn_model(troop_name, pos, added_y_axis_rotation, is_player_red)
         model_data['height_correction'], 
         model_data['scale'], 
         selected_mesh, 
-        texture)
+        texture,
+        collider)
     spawn_data['spawn']['rotation']['y'] = spawn_data['spawn']['rotation']['y'] + added_y_axis_rotation
     local obj = spawnObject(spawn_data['spawn'])
     obj.setCustomObject(spawn_data['custom_obj_attrs'])
@@ -125,7 +127,7 @@ end
 g_base_index = 1
 
 function spawn_base(base, pos, is_red_player)
-    local base_obj = spawn_model(base['base'], pos, 0, is_red_player)
+    local base_obj = spawn_model(base['base'], pos, 0, nil, is_red_player)
     base_obj.setName('base ' .. base['name'] .. ' #' .. g_base_index)
     g_base_index = g_base_index + 1
 
@@ -138,7 +140,7 @@ function spawn_base(base, pos, is_red_player)
             x = pos['x'] + i * chunk - half_width, 
             y = pos['y'] + base_height_inches / 2 + base_obj.getPosition()['y'], 
             z = pos['z'] }
-        local soldier_obj = spawn_model(base['model_data'], relative_pos, math.random(-20, 20), is_red_player)
+        local soldier_obj = spawn_model(base['model_data'], relative_pos, math.random(-20, 20), minimal_collider, is_red_player)
         base_obj.addAttachment(soldier_obj)
     end
 end

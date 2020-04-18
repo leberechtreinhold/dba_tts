@@ -1,19 +1,33 @@
 base_width_inches = 1.5748031496062992126
 base_height_inches = 0.19685039370078740157
 
+minimal_collider = 'http://cloud-3.steamusercontent.com/ugc/1022823184773057328/6E2E42ECBBD40D7501018921FC5898568FF9D748/'
+
 tile_reference_40x15 = {
     height_correction = 0.96,
     scale = 1,
     rotation = 0,
     description = 'Ref 40x15',
-    author = 'Original work by LeberechtReinhold.',
+    author = 'Original work by LeberechtReinhold',
     mesh = { 'http://cloud-3.steamusercontent.com/ugc/1022822649627841656/0661CBEA50787140409593ED30BE50AB0BB9E67A/' },
     player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1022822649631206192/906887263828029151B78353910D577B694EC891/',
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1022822649631207474/CAD627FA3F94A7A94C5E64DC55C06747F02797D9//'
 }
 
+tile_grass_40x15 = {
+    height_correction = 0.8,
+    scale = 1,
+    rotation = 0,
+    description = 'Grass 40x15',
+    author = 'Original work by Arkein',
+    mesh = { 'http://cloud-3.steamusercontent.com/ugc/1011563971410178992/C0E107CF728F0CBE4DC7A6391BB15ED51EFAE92A/' },
+    -- TODO: Fix Texture for both players
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011563971410113542/97E72CB91C04B35DADFD014CDD586B73C2E7FC15/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011563971410113542/97E72CB91C04B35DADFD014CDD586B73C2E7FC15/'
+}
+
 troop_swordsman_latemedieval = {
-    height_correction = 0.315,
+    height_correction = 0.35,
     scale = 0.3,
     rotation = 180,
     description = 'Late Medieval Swordsman',
@@ -32,24 +46,23 @@ troop_swordsman_latemedieval = {
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1022822649627338507/BBA5455E7C52A92432746B828602DFAEB68142D2/'
 }
 
-troop_spartan_example = {
-    height_correction = 0.315,
-    scale = 0.3,
+troop_pikeman_swiss = {
+    height_correction = 0.27,
+    scale = 0.32,
     rotation = 180,
-    description = 'Spartan Hoplite example fake',
-    author = 'Spartans for whoever, its only an example',
+    description = 'Swiss Pikeman',
+    author = 'Empire Spearman by Vess edited by Arkein',
     mesh = {
-        'http://cloud-3.steamusercontent.com/ugc/1022822649627337225/1437C085D4FFF74C2FBF2286FAFA4C555FA9AAAA/',
-        'http://cloud-3.steamusercontent.com/ugc/1022822649628563080/2F543EB07AA1B046FA49FCA7C9EF67194D266DD2/',
-        'http://cloud-3.steamusercontent.com/ugc/1022822649628565149/C08A32327A4329E24B03884EC8E9B00EDE08E102/',
-        'http://cloud-3.steamusercontent.com/ugc/1022822649628566503/035642E0FAE5DF4B5CEBC6434BAB41FC18EEF8E0/',
-        'http://cloud-3.steamusercontent.com/ugc/1022822649628567927/AE5F2D0422FDF434229A78A9E50438FF8B1E6349/',
-        'http://cloud-3.steamusercontent.com/ugc/1022822649628569273/FA02A88651EB70329816666DB1834AA119A943DB/',
-        'http://cloud-3.steamusercontent.com/ugc/1022822649628570664/C8F15D793175D0A6597B4A60BE790FDD5B503A1A/',
-        'http://cloud-3.steamusercontent.com/ugc/1022822649628571770/5F92C6D0BD1870F75B7E8219310EF8F67F984C30/'
+        'http://cloud-3.steamusercontent.com/ugc/1011563587907337570/FA06D09BBF2A9883914A95102255BB4014C01C15/',
+        'http://cloud-3.steamusercontent.com/ugc/1011563587907338468/DB053D21C8675A208DEF1DD44AE14315E40F4ADA/',
+        'http://cloud-3.steamusercontent.com/ugc/1011563720479902161/1C6513269360CACE4D19244C8B76423F20BF9FBF/',
+        'http://cloud-3.steamusercontent.com/ugc/1011563720479903800/AE3DCB2D3704C59617999704BCBA951CA653AA9F/',
+        'http://cloud-3.steamusercontent.com/ugc/1011563720479904949/3C32B243523FAA3E68465412E8CF7BC299A8D366/',
+        'http://cloud-3.steamusercontent.com/ugc/1011563720479908155/2022918F90424BEF626F85850A5869A4C3C821E4/',
+        'http://cloud-3.steamusercontent.com/ugc/1011563720479911827/73EC817DD18DBE4141D3063DB1C158EC286DCA51/'
     },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1022822649627341435/6849CB89095D43654125ED506222AF73172C09C1/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1022822649627338507/BBA5455E7C52A92432746B828602DFAEB68142D2/'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011563720479886107/0126B9342F205A48EC545C8315DCB76C61719C01/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011563720479886107/0126B9342F205A48EC545C8315DCB76C61719C01/'
 }
 
 armies = {
@@ -58,28 +71,14 @@ armies = {
             base1 = {
                 name = '4Bd',
                 base = 'tile_reference_40x15',
-                n_models = 4,
-                model_data = 'troop_spartan_example'
+                n_models = 12,
+                model_data = 'troop_swordsman_latemedieval'
             },
             base2 = {
                 name = '4Bd',
                 base = 'tile_reference_40x15',
                 n_models = 4,
                 model_data = 'troop_swordsman_latemedieval'
-            }
-        },        
-        Spartans_Example = {
-            base1 = {
-                name = '4Bd',
-                base = 'tile_reference_40x15',
-                n_models = 4,
-                model_data = 'troop_spartan_example'
-            },
-            base2 = {
-                name = '4Bd',
-                base = 'tile_reference_40x15',
-                n_models = 4,
-                model_data = 'troop_spartan_example'
             }
         }
     },
@@ -96,6 +95,21 @@ armies = {
                 base = 'tile_reference_40x15',
                 n_models = 4,
                 model_data = 'troop_swordsman_latemedieval'
+            }
+        },
+        -- TODO: Not finished yet
+        Late_Swiss = {
+            base1 = {
+                name = '4Pk',
+                base = 'tile_grass_40x15',
+                n_models = 8,
+                model_data = 'troop_pikeman_swiss'
+            },
+            base2 = {
+                name = '4Pk',
+                base = 'tile_grass_40x15',
+                n_models = 4,
+                model_data = 'troop_pikeman_swiss'
             }
         }
     }
