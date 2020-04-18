@@ -10,7 +10,7 @@
 --    botleft      x axis          botright
 function compute_corners_base(base_obj)
     local bounds = base_obj.getBounds()
-    local rotation =  from_degrees_to_rad(base_obj.getRotation())['y']
+    local rotation =  normalize_angle(from_degrees_to_rad(base_obj.getRotation())['y'])
     print_debug(base_obj.getName() .. ' rotation is ' .. rotation)
     local size = bounds['size']
     local pos = base_obj.getPosition()
@@ -220,4 +220,25 @@ function update_armies_menu(book, army_selected)
         table.insert(options, dataname_to_friendlyname(army_name))
     end
     set_options_dropdown_by_id('dropdown_army', options, army_selected) 
+end
+
+function onObjectPickUp(player_color,  picked_up_object)
+    if not str_has_substr(picked_up_object.getName(), 'base') then
+        return
+    end
+
+    local pos = picked_up_object.getPosition()
+    local radius = g_paces_movement / 100
+    Global.setVectorLines( {
+        {
+            points    = get_coordinates_circle(pos, radius, 32),
+            color     = { 0.2, 0.2, 0.9 },
+            thickness = 0.1,
+            rotation  = {0,0,0}
+        }
+    })
+end
+
+function onObjectDrop(player_color,  picked_up_object)
+    Global.setVectorLines({})
 end

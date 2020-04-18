@@ -80,7 +80,6 @@ end
 -- an angle theta, respective to a coordinate system with xyz coordinates,
 -- on that same plane (leaving y untouched)
 function rotate_point(point, center_coordinates, theta)
-    theta = normalize_angle(theta)
     return { x = point['x'] * math.cos(theta) - point['z'] * math.sin(theta) + center_coordinates['x'],
              y = point['y'] + center_coordinates['y'],
              z = point['x'] * math.sin(theta) + point['z'] * math.cos(theta) + center_coordinates['z']}
@@ -284,4 +283,20 @@ function first_value_table(table)
     for _,v in pairs(table) do
         return v
     end
+end
+
+-- Given a position for a center,  gets the coordinates of circle on the XZ
+-- plane 
+function get_coordinates_circle(center, radius, steps)
+    local point_array = {}
+    local degrees_per_step = 360 / steps
+    local radians_per_step = math.rad(degrees_per_step)
+    for i = 0, steps do
+        table.insert(point_array, {
+            center['x'] + math.cos(radians_per_step * i) * radius,
+            center['y'],
+            center['z'] + math.sin(radians_per_step * i) * radius
+        })
+    end
+    return point_array
 end
