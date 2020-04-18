@@ -132,6 +132,10 @@ function spawn_base(base, pos, is_red_player)
     g_base_index = g_base_index + 1
 
     local n = base['n_models']
+    if n == 0 then
+        return
+    end
+    
     local chunk = base_width_inches / (n + 1)
     local half_width = base_width_inches / 2
 
