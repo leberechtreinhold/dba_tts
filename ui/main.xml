@@ -5,7 +5,7 @@
     <Button id="button_move_forward" onClick="move_bases">Move 100 paces</Button>
     <Button onClick="align_bases">Align bases</Button>
     <Button onClick="create_army_options_menu">Deploy an army</Button>
-    <Button onClick="create_army_player_blue">DEBUG BUTTON</Button>
+    <Button onClick="debug_button">DEBUG BUTTON</Button>
 </VerticalLayout>
 </Panel>
 

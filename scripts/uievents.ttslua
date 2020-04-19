@@ -5,10 +5,15 @@ g_paces_movement = 100
 function slider_paces_changed(player, value, id)
     g_paces_movement = round_to_power(value, 1)
 
-    -- It's undocumented, but changing the value of the button does not update the button_move_forward
-    -- Instead we have to change the undocumented text attribute. However, we still, need to
+    -- It's undocumented, but changing the value of the button does not update 
+    -- the button_move_forward
+    -- Instead we have to change the undocumented text attribute, but we still
+    -- change the value because it's the proper thing
     UI.setAttribute('button_move_forward', 'text', 'Move ' .. g_paces_movement .. ' paces')
     UI.setValue('button_move_forward', 'Move ' .. g_paces_movement .. ' paces')
+
+    -- Update any gizmo
+    draw_gizmo_future_movements(player.getSelectedObjects())
 end
 
 function move_bases(player, value, id)
@@ -40,9 +45,12 @@ function align_bases(player, value, id)
     end
 end
 
-function create_army_player_blue()
-    local army = armies['Book_IV']['Example']
-    spawn_army(army, false)
+function debug_button(player, value, id)
+    local objs = player.getSelectedObjects()
+    for _, obj in ipairs(objs) do
+        local bounds = obj.getBoundsNormalized()['size']
+        print('SizeBounds for obj ' .. obj.getName() .. ' are ' .. vec_to_str(bounds))
+    end
 end
 
 
