@@ -222,6 +222,16 @@ function update_armies_menu(book, army_selected)
     set_options_dropdown_by_id('dropdown_army', options, army_selected) 
 end
 
+
+function max_distance_between_bases(base1_corners, base2_corners)
+    return compute_max_array({
+        distance_points_flat(base1_corners['topright'], base2_corners['topright']),
+        distance_points_flat(base1_corners['topleft'], base2_corners['topleft']),
+        distance_points_flat(base1_corners['botright'], base2_corners['botright']),
+        distance_points_flat(base1_corners['botleft'], base2_corners['botleft'])
+    })
+end
+
 g_picked_base_initial_corners = nil
 
 function onObjectPickUp(player_color,  picked_up_object)
@@ -249,16 +259,18 @@ function onObjectPickUp(player_color,  picked_up_object)
     })
 end
 
-function max_distance_between_bases(base1_corners, base2_corners)
-    return compute_max_array({
-        distance_points_flat(base1_corners['topright'], base2_corners['topright']),
-        distance_points_flat(base1_corners['topleft'], base2_corners['topleft']),
-        distance_points_flat(base1_corners['botright'], base2_corners['botright']),
-        distance_points_flat(base1_corners['botleft'], base2_corners['botleft'])
-    })
-end
-
 function onObjectDrop(player_color,  picked_up_object)
+    if not str_has_substr(picked_up_object.getName(), 'base') then
+        return
+    end
+
+    local objs = filter_bases(Player[player_color].getSelectedObjects())
+    local n_objs = tlen(objs)
+    if n_objs > 1 then
+        -- Ignoring this, we don't want to print the circle for more than one unit
+        return
+    end
+
     local new_corners = compute_corners_base(picked_up_object)
     print_important('Movement is: ' .. max_distance_between_bases(new_corners, g_picked_base_initial_corners))
     g_picked_base_initial_corners = nil
