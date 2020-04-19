@@ -1,3 +1,4 @@
+<!-- TODO Add more buttons and prettify -->
 <Panel id="panel_dba_orders" width="200" height="400" color="#FFFFFF" outline="#000" outlineSize="2" rectAlignment="MiddleRight" >
 <VerticalLayout>
     <Slider id="slider_paces" minValue="10" maxValue="500" wholeNumbers="true" value="100" colors="#00000000|#00000000|#00000000|#00000000" backgroundcolor="#FFFFFFF" onValueChanged="slider_paces_changed"></Slider>
@@ -6,6 +7,12 @@
     <Button onClick="create_army_options_menu">Deploy an army</Button>
     <Button onClick="create_army_player_blue">DEBUG BUTTON</Button>
 </VerticalLayout>
+</Panel>
+
+
+<!-- TODO Prettify -->
+<Panel id="panel_current_movement" color="#dddddd" width="400" height="70" rectAlignment="LowerCenter" offsetXY="0 200">
+    <Text id="text_current_movement_paces" fontSize="24">Current movement: 0 paces</Text>
 </Panel>
 
 <Panel id="panel_dba_pip"  width="400" height="150" color="#00000000" outline="#00000000" outlineSize="2" rectAlignment="LowerCenter" >

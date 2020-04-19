@@ -232,6 +232,7 @@ function max_distance_between_bases(base1_corners, base2_corners)
     })
 end
 
+g_picked_base_obj = nil
 g_picked_base_initial_corners = nil
 
 function onObjectPickUp(player_color,  picked_up_object)
@@ -246,6 +247,7 @@ function onObjectPickUp(player_color,  picked_up_object)
         return
     end
 
+    g_picked_base_obj = picked_up_object
     g_picked_base_initial_corners = compute_corners_base(picked_up_object)
     local pos = picked_up_object.getPosition()
     local radius = g_paces_movement / 100
@@ -272,7 +274,24 @@ function onObjectDrop(player_color,  picked_up_object)
     end
 
     local new_corners = compute_corners_base(picked_up_object)
-    print_important('Movement is: ' .. max_distance_between_bases(new_corners, g_picked_base_initial_corners))
+    print_info('Movement for ' .. picked_up_object.getName() .. ' is: ' .. max_distance_between_bases(new_corners, g_picked_base_initial_corners))
+    
+    g_picked_base_obj = nil
     g_picked_base_initial_corners = nil
     Global.setVectorLines({})
+end
+
+-- TODO: Move to a spawned coroutine that does something everyhalf a second
+-- or similar to improve perf, and only starts on pickup
+function onUpdate()
+    if g_picked_base_obj then
+        local new_corners = compute_corners_base(g_picked_base_obj)
+        local distance = max_distance_between_bases(new_corners, g_picked_base_initial_corners) * 100
+
+        UI.setAttribute('panel_current_movement', 'active', true)
+        UI.setValue('text_current_movement_paces', 
+            'Current movement: ' .. string.format('%.1f', distance) .. ' paces' )
+    else
+        UI.setAttribute('panel_current_movement', 'active', false)
+    end
 end
