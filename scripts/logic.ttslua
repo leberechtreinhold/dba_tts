@@ -276,7 +276,7 @@ function onObjectDrop(player_color,  picked_up_object)
     local objs = filter_bases(Player[player_color].getSelectedObjects())
     local n_objs = tlen(objs)
     if n_objs > 1 then
-        -- Ignoring this, we don't want to print the circle for more than one unit
+        draw_gizmo_future_movements(objs)
         return
     end
 
@@ -286,6 +286,10 @@ function onObjectDrop(player_color,  picked_up_object)
     g_picked_base_obj = nil
     g_picked_base_initial_corners = nil
     Global.setVectorLines({})
+    
+    -- If its dropped it may have moved, therefore update the gizmo, in case
+    -- its selected
+    draw_gizmo_future_movements(objs)
 end
 
 function get_strokes_future_position(base_obj, movement)

@@ -27,6 +27,9 @@ function move_bases(player, value, id)
         local moved_paces = move_base(obj, g_paces_movement)
         print_info(player.steam_name .. ' is moving ' .. obj.getName() .. ' ' .. moved_paces .. ' paces forward')
     end
+    
+    -- Moving the bases shpuld imply update the gizmos
+    draw_gizmo_future_movements(player.getSelectedObjects())
 end
 
 function align_bases(player, value, id)
@@ -43,6 +46,9 @@ function align_bases(player, value, id)
     for i=1,n_objs-1 do
         align_two_bases(player, objs[i], objs[i + 1])
     end
+    
+    -- Moving the bases shpuld imply update the gizmos
+    draw_gizmo_future_movements(player.getSelectedObjects())
 end
 
 function debug_button(player, value, id)
