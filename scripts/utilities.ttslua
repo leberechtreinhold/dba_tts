@@ -322,3 +322,35 @@ function compute_max_array(array)
     end
     return max
 end
+
+function find_in_array(table, what, comparison_function)
+    for _,element in ipairs(table) do
+        if comparison_function(element, what) then
+            return true
+        end
+    end
+    return false
+end
+
+-- Given two arrays, like {1,2,3} and {3,1,2} returns true if the content
+-- is the same. Since the objs may vary, and the comparison of those, you
+-- can give a comparison function to give something to compare
+function array_equals(t1, t2, comparison_function)
+    if t1 == t2 then
+        return true
+    end
+    if t1 == nil or t2 == nil then
+        return false
+    end
+    if #t1 ~= #t2 then 
+        return false
+    end
+    
+    for i=1,#t1 do
+        if not find_in_array(t2, t1[i], comparison_function) then
+            return false
+        end
+    end
+    return true
+  end
+  

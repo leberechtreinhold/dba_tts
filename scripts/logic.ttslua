@@ -15,13 +15,18 @@ function compute_corners_base(base_obj)
     local size = bounds['size']
     local pos = base_obj.getPosition()
     -- print_debug(base_obj.getName() .. ' pos is ' .. vec_to_str(vec_in_to_mm(pos)))
-    local xhalf = size['x'] / 2
-    local zhalf = size['z'] / 2
+    return compute_corners_coords(size, rotation, pos)
+end
+
+-- Like compute_corners_base but instead of a base obj all coords are given
+function compute_corners_coords(sizeXZ, rotationY, pos)
+    local xhalf = sizeXZ['x'] / 2
+    local zhalf = sizeXZ['z'] / 2
     return {
-        topright = rotate_point({x = xhalf, y = 0, z = zhalf}, pos, rotation),
-        botright = rotate_point({x = xhalf, y = 0, z =-zhalf}, pos, rotation),
-        topleft  = rotate_point({x =-xhalf, y = 0, z = zhalf}, pos, rotation),
-        botleft  = rotate_point({x =-xhalf, y = 0, z =-zhalf}, pos, rotation)
+        topright = rotate_point({x = xhalf, y = 0, z = zhalf}, pos, rotationY),
+        botright = rotate_point({x = xhalf, y = 0, z =-zhalf}, pos, rotationY),
+        topleft  = rotate_point({x =-xhalf, y = 0, z = zhalf}, pos, rotationY),
+        botleft  = rotate_point({x =-xhalf, y = 0, z =-zhalf}, pos, rotationY)
     }
 end
 
@@ -34,6 +39,7 @@ function align_two_bases(player, base1, base2)
         print_error(player.steam_name .. ' is trying to align but the bases are too far apart, more than 3inch between centers!')
         return
     end
+
     print_info(player.steam_name .. ' is aligning ' .. base1.getName() .. ' with ' .. base2.getName())
     base2.setRotation(base1.getRotation())
 
@@ -281,8 +287,57 @@ function onObjectDrop(player_color,  picked_up_object)
     Global.setVectorLines({})
 end
 
+function on_selection_changed(player, new_selected_items)
+    if #new_selected_items == 0 then
+        Global.setVectorLines({})
+        return
+    end
+
+    local strokes = {}
+    local magnitude = g_paces_movement / 100
+    for _, obj in ipairs(new_selected_items) do
+        if str_starts_with(obj.getName(), 'base') then
+            local rotation = normalize_angle(from_degrees_to_rad(obj.getRotation())['y'])
+            print('Rotation ' .. rotation)
+            local displacement_vector = rad_to_vector(rotation)
+            print(displacement_vector)
+            local destination = obj.getPosition() + vec_mul_escalar(displacement_vector, magnitude)
+            local size = obj.getBounds()['size']
+            print(size)
+            local corners = compute_corners_coords(size, rotation, destination)
+
+            local stroke_points = {}
+            table.insert(stroke_points, corners['topright'])
+            table.insert(stroke_points, corners['topleft'])
+            table.insert(stroke_points, corners['botleft'])
+            table.insert(stroke_points, corners['botright'])
+            table.insert(stroke_points, corners['topright'])
+
+            table.insert(strokes,
+            {
+                points    = stroke_points,
+                color     = { 0.2, 0.2, 0.9 },
+                thickness = 0.1,
+                rotation  = {0,0,0}
+            })
+        end
+    end
+    Global.setVectorLines(strokes)
+end
+
+function has_changed_selection_for_player(player_color, selected_objs)
+    return not array_equals(
+                selected_objs, 
+                g_selected_objects[player_color],
+                function(obj1, obj2)
+                    return obj1.guid == obj2.guid
+                end)
+end
+
 -- TODO: Move to a spawned coroutine that does something everyhalf a second
 -- or similar to improve perf, and only starts on pickup
+
+g_selected_objects = {}
 function onUpdate()
     if g_picked_base_obj then
         local new_corners = compute_corners_base(g_picked_base_obj)
@@ -293,5 +348,14 @@ function onUpdate()
             'Current movement: ' .. string.format('%.1f', distance) .. ' paces' )
     else
         UI.setAttribute('panel_current_movement', 'active', false)
+    end
+    
+    local players = Player.getPlayers()
+    for _, player in ipairs(players) do
+        local selected_objs = player.getSelectedObjects()
+        if has_changed_selection_for_player(player.color, selected_objs) then
+            on_selection_changed(player, selected_objs)
+            g_selected_objects[player.color] = selected_objs
+        end
     end
 end
