@@ -181,8 +181,10 @@ end
 function spawn_army(army, is_red_player)
     local i = 0
     math.randomseed(os.time())
+    local n_bases = tlen(army)
+    local width_army = n_bases * base_width_inches
     for base_id, base_data in pairs(army) do
-        local location = { x=0 + i * base_width_inches, y=0, z=0 }
+        local location = { x = 0 + i * base_width_inches - width_army / 2, y = 0, z = 0 }
         print_debug('Spawning ' .. base_id)
         spawn_base(base_data, location, is_red_player)
         i = i + 1
