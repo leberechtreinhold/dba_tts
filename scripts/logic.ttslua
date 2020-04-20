@@ -170,7 +170,11 @@ function spawn_base(base, pos, y_rotation, is_red_player)
             y = pos['y'] + base_height_inches / 2 + base_obj.getPosition()['y'],
             z = pos['z'] + row * row_depth - half_depth
         }
-        local soldier_obj = spawn_model(base['model_data'], relative_pos, math.random(-20, 20), minimal_collider, is_red_player)
+        local model_name = base['model_data']
+        if model_name == nil then
+            model_name = base['fixed_models'][i]
+        end
+        local soldier_obj = spawn_model(model_name, relative_pos, math.random(-20, 20), minimal_collider, is_red_player)
         base_obj.addAttachment(soldier_obj)
     end
     base_obj.setRotation({0, y_rotation, 0})
@@ -203,6 +207,9 @@ function update_authors_text(army)
     local authors_set = {}
     for _, base in pairs(army) do
         local model = base['model_data']
+        if model == nil then
+            model = base['fixed_models'][1]
+        end
         local model_data = _G[model]
         local author = model_data['author']
 

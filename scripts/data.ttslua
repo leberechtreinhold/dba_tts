@@ -80,7 +80,12 @@ armies = {
                 name = '4Bd',
                 base = 'tile_reference_40x15',
                 n_models = 4,
-                model_data = 'troop_swordsman_latemedieval'
+                fixed_models = {
+                    [1] = 'troop_swordsman_latemedieval',
+                    [2] = 'troop_pikeman_swiss',
+                    [3] = 'troop_swordsman_latemedieval',
+                    [4] = 'troop_pikeman_swiss',
+                }
             }
         }
     },
