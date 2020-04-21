@@ -8,6 +8,7 @@
 #include scripts/data_troops
 #include scripts/data
 #include scripts/log
+#include scripts/utilities_lua
 #include scripts/utilities
 #include scripts/logic
 #include scripts/uievents

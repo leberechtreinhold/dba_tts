@@ -1,0 +1,111 @@
+
+-- Executes f() on the next frame. This is useful because if you are using
+-- methodfs than change the UI using setXmlTable they may enter in conflict
+-- since it takes time to update.
+-- This is a very terrible way of doing things and should not be used, doesn't
+-- support more than one at once. However, you can nest them.
+g_func_next_frame = nil
+function on_next_frame(f)
+    if (g_func_next_frame == nil) then
+        g_func_next_frame = f
+        startLuaCoroutine(self, 'on_next_frame_coroutine')
+    else
+        print_error('Trying to add a new coroutine when the next frame has yet to pass')
+    end
+end
+
+function on_next_frame_coroutine()
+    coroutine.yield(0)
+    local cur_f = g_func_next_frame
+    g_func_next_frame = nil
+    cur_f()
+    return 1
+end
+
+
+function first_key_table(table)
+    for k,_ in pairs(table) do
+        return k
+    end
+end
+
+function first_value_table(table)
+    for _,v in pairs(table) do
+        return v
+    end
+end
+
+
+-- Given an array of numbers, like { 1, -3, 4, 5.3 }, computes the maximum
+-- and returns it
+function compute_max_array(array)
+    local max = nil
+    for _, n in ipairs(array) do
+        if max == nil then
+            max = n
+        else
+            if n > max then
+                max = n
+            end
+        end
+    end
+    return max
+end
+
+function find_in_array(table, what, comparison_function)
+    for _,element in ipairs(table) do
+        if comparison_function(element, what) then
+            return true
+        end
+    end
+    return false
+end
+
+-- Given two arrays, like {1,2,3} and {3,1,2} returns true if the content
+-- is the same. Since the objs may vary, and the comparison of those, you
+-- can give a comparison function to give something to compare
+function array_equals(t1, t2, comparison_function)
+    if t1 == t2 then
+        return true
+    end
+    if t1 == nil or t2 == nil then
+        return false
+    end
+    if #t1 ~= #t2 then 
+        return false
+    end
+    
+    for i=1,#t1 do
+        if not find_in_array(t2, t1[i], comparison_function) then
+            return false
+        end
+    end
+    return true
+  end
+  
+-- Rounds a number to the power of ten given
+-- For example, round_to_power(123, 1) => 120, round_to_power(123, 2) => 100
+function round_to_power(number, power)
+    return math.floor(number/(10^power) + 0.5) * 10^power
+end
+
+
+-- Checks if the given str starts with substr
+function str_starts_with(str, substr)
+    return string.find(str, '^' .. substr) ~= nil
+end
+
+function str_has_substr(str, substr)
+    return string.find(str, substr) ~= nil
+end
+  
+-- As insane as it sounds, tables in lua don't have a well-defined way
+-- of getting the number of entries
+-- If the table is anything but a contiguous array, the # operator 
+-- is useless. This computes that.
+-- Beware that this iterates the whole table and is therefore, perf intensive.
+function tlen(table)
+    local n = 0
+    for _ in pairs(table) do n = n + 1 end
+    return n
+end
