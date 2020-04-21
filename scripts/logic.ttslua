@@ -9,10 +9,9 @@
 --      +----------------------------+
 --    botleft      x axis          botright
 function compute_corners_base(base_obj)
-    local bounds = base_obj.getBoundsNormalized()
     local rotation =  normalize_angle(from_degrees_to_rad(base_obj.getRotation())['y'])
     -- print_debug(base_obj.getName() .. ' rotation is ' .. rotation)
-    local size = bounds['size']
+    local size = get_size(base_obj.getName())
     local pos = base_obj.getPosition()
     -- print_debug(base_obj.getName() .. ' pos is ' .. vec_to_str(vec_in_to_mm(pos)))
     return compute_corners_coords(size, rotation, pos)
@@ -131,18 +130,30 @@ function spawn_model(troop_name, pos, added_y_axis_rotation, collider, is_player
     return obj
 end
 
-function get_depth_base(base_name)
-    local base_data = _G[base_name]
+function get_depth_base(tile_name)
+    local base_data = _G[tile_name]
     return from_mm_to_in(base_data['depth'])
 end
 
+function get_size(base_name)
+    return { 
+        x = g_base_width_inches, 
+        y = g_base_height_inches, 
+        z = get_depth_base(g_bases[base_name]['tile'])
+    }
+end
+
 g_base_index = 1
+g_bases = {}
 function spawn_base(base, pos, y_rotation, is_red_player)
     local base_obj = spawn_model(base['base'], pos, 0, nil, is_red_player)
     local base_name = 'base ' .. base['name'] .. ' #' .. g_base_index
     base_obj.setName(base_name)
     print_info('Spawning ' .. base_name)
     g_base_index = g_base_index + 1
+    g_bases[base_name] = {
+        tile = base['base']
+    }
 
     local n = base['n_models']
     if n == 0 then
@@ -151,7 +162,7 @@ function spawn_base(base, pos, y_rotation, is_red_player)
 
     local depth = get_depth_base(base['base'])
     local half_depth = depth / 2
-    local half_width = base_width_inches / 2
+    local half_width = g_base_width_inches / 2
 
     local rows = 1
     local columns = n
@@ -160,7 +171,7 @@ function spawn_base(base, pos, y_rotation, is_red_player)
         columns = math.ceil(n/rows)
 
     end
-    local column_width = base_width_inches / (columns + 1)
+    local column_width = g_base_width_inches / (columns + 1)
     local row_depth = depth / (rows + 1)
 
     for i=1,n do
@@ -168,7 +179,7 @@ function spawn_base(base, pos, y_rotation, is_red_player)
         local row = math.floor((i - 1) / columns) + 1
         local relative_pos = {
             x = pos['x'] + column * column_width - half_width,
-            y = pos['y'] + base_height_inches / 2 + base_obj.getPosition()['y'],
+            y = pos['y'] + g_base_height_inches / 2 + base_obj.getPosition()['y'],
             z = pos['z'] + row * row_depth - half_depth
         }
         local model_name = base['model_data']
@@ -188,7 +199,7 @@ function spawn_army(army, is_red_player)
     local i = 0
     math.randomseed(os.time())
     local n_bases = tlen(army)
-    local width_army = n_bases * base_width_inches
+    local width_army = n_bases * g_base_width_inches
     local z_pos = g_spawn_from_center_in
     local y_rotation = 180
     if is_red_player then
@@ -196,7 +207,7 @@ function spawn_army(army, is_red_player)
         y_rotation = 0
     end
     for base_id, base_data in pairs(army) do
-        local location = { x = 0 + i * base_width_inches - width_army / 2, y = 0, z = z_pos }
+        local location = { x = 0 + i * g_base_width_inches - width_army / 2, y = 0, z = z_pos }
         spawn_base(base_data, location, y_rotation, is_red_player)
         i = i + 1
     end
@@ -245,7 +256,6 @@ function update_armies_menu(book, army_selected)
     set_options_dropdown_by_id('dropdown_army', options, army_selected)
 end
 
-
 function max_distance_between_bases(base1_corners, base2_corners)
     return compute_max_array({
         distance_points_flat(base1_corners['topright'], base2_corners['topright']),
@@ -257,7 +267,6 @@ end
 
 g_picked_base_obj = nil
 g_picked_base_initial_corners = nil
-
 function onObjectPickUp(player_color,  picked_up_object)
     if not str_has_substr(picked_up_object.getName(), 'base') then
         return
@@ -312,7 +321,7 @@ function get_strokes_future_position(base_obj, movement)
     local rotation = from_degrees_to_rad(base_obj.getRotation())['y']
     local displacement_vector = rad_to_vector(rotation)
     local destination = vec_add(base_obj.getPosition(), vec_mul_escalar(displacement_vector, movement))
-    local size = base_obj.getBoundsNormalized()['size']
+    local size = get_size(base_obj.getName())
     local corners = compute_corners_coords(size, normalize_angle(rotation), destination)
 
     local stroke_points = {}
