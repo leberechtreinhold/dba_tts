@@ -136,11 +136,19 @@ function get_depth_base(tile_name)
 end
 
 function get_size(base_name)
-    return { 
-        x = g_base_width_inches, 
-        y = g_base_height_inches, 
+    return {
+        x = g_base_width_inches,
+        y = g_base_height_inches,
         z = get_depth_base(g_bases[base_name]['tile'])
     }
+end
+
+function is_base_red_player(base_name)
+    return g_bases[base_name]['is_red_player']
+end
+
+function is_base_blue_player(base_name)
+    return not is_base_red_player(base_name)
 end
 
 g_base_index = 1
@@ -152,7 +160,8 @@ function spawn_base(base, pos, y_rotation, is_red_player)
     print_info('Spawning ' .. base_name)
     g_base_index = g_base_index + 1
     g_bases[base_name] = {
-        tile = base['base']
+        tile = base['base'],
+        is_red_player = is_red_player
     }
 
     local n = base['n_models']
@@ -311,7 +320,7 @@ function onObjectDrop(player_color,  picked_up_object)
     g_picked_base_obj = nil
     g_picked_base_initial_corners = nil
     Global.setVectorLines({})
-    
+
     -- If its dropped it may have moved, therefore update the gizmo, in case
     -- its selected
     draw_gizmo_future_movements(objs)
@@ -331,10 +340,15 @@ function get_strokes_future_position(base_obj, movement)
     table.insert(stroke_points, corners['botright'])
     table.insert(stroke_points, corners['topright'])
 
+    local color = { 0.9, 0.1, 0.1 }
+    if is_base_blue_player(base_obj.getName()) then
+        color = { 0.1, 0.1, 0.9 }
+    end
+
     return
     {
         points    = stroke_points,
-        color     = { 0.2, 0.2, 0.9 },
+        color     = color,
         thickness = 0.1,
         rotation  = {0,0,0}
     }
@@ -393,4 +407,3 @@ function onUpdate()
         end
     end
 end
-
