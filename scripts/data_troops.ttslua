@@ -8,23 +8,126 @@ tile_reference_40x15 = {
     rotation = 0,
     depth = 15,
     description = 'Ref 40x15',
-    author = 'Original work by LeberechtReinhold',
+    author = 'Reference tile, original work by LeberechtReinhold',
     mesh = { 'http://cloud-3.steamusercontent.com/ugc/1022822649627841656/0661CBEA50787140409593ED30BE50AB0BB9E67A/' },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1022822649631206192/906887263828029151B78353910D577B694EC891/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1022822649631207474/CAD627FA3F94A7A94C5E64DC55C06747F02797D9//'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672153/2ED568A7248F589F91D34CD523367300400F2342/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672930/C6A36660C85DA7B2B038F37D4EA638790A94FB12/'
 }
 
 tile_grass_40x15 = {
-    height_correction = 0.8,
+    height_correction = 0.96,
     scale = 1,
     rotation = 0,
     depth = 15,
     description = 'Grass 40x15',
-    author = 'Original work by Arkein',
-    mesh = { 'http://cloud-3.steamusercontent.com/ugc/1011563971410178992/C0E107CF728F0CBE4DC7A6391BB15ED51EFAE92A/' },
-    -- TODO: Fix Texture for both players
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011563971410113542/97E72CB91C04B35DADFD014CDD586B73C2E7FC15/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011563971410113542/97E72CB91C04B35DADFD014CDD586B73C2E7FC15/'
+    author = 'Grass tile, original work by Arkein.',
+    mesh = { 'http://cloud-3.steamusercontent.com/ugc/1011563971410178992/C0E107CF728F0CBE4DC7A6391BB15ED51EFAE92A/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410179743/3E0275B20E5F82674DD65D7C0A76086ACF12FF81/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410180308/589480EBD478B1210C7A9BDE8AF8007DB05860D0/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410180816/6E9E0382E668DED5CF304DA14817A06B2B97E82D/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410181292/4226B3FEE885A8C75A43B66896BCBE47501D9516/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410182274/BB85D93290C1425D935F419CBEEBAC1C57C4B249/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410182921/8DBC787A683DCE88D8E58F36258BC5427F188632/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410183590/F05371A49A6EAB22ECF3310ED929BFCD1C47E96A/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410184112/5A03353BBF0DD129287D164A1209311530446DA3/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410184580/0366219C4F572C128F209E551FC16FA312DF5883/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672153/2ED568A7248F589F91D34CD523367300400F2342/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672930/C6A36660C85DA7B2B038F37D4EA638790A94FB12/'
+}
+
+tile_grass_40x20 = {
+    height_correction = 0.96,
+    scale = 1,
+    rotation = 0,
+    depth = 20,
+    description = 'Grass 40x20',
+    author = 'Grass tile, original work by Arkein.',
+    mesh = { 'http://cloud-3.steamusercontent.com/ugc/1011563971410167382/E6A9A4E555778C6C285E15D0692521748982D325/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410168795/E7024FF10E2D502093BF84EBBE6FB5A2D8FC2059/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410169380/8A006B3F7B7E51E7F70031D49CB25BB190DFC23B/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410170277/815E247B18DE6A3E68906E028788B1CCD5D4C8E5/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410171272/0C3CD33DAA6B82F6F8068A5FC4DE8D33CE225493/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410171884/0A49CEB00565F8B9040661BEC9EEE9444F59DFDA/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410172466/340FB5B61685C68A16F2D104D979F7AE6554630E/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410173162/1C88E99638D3D138A2147529609CAC73E3F666CB/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410173818/529965B25F63DA04580F4C41DF6C12ACD93AA229/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410174399/00372239DF31450D2917AC640F8798B8F301069F/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672153/2ED568A7248F589F91D34CD523367300400F2342/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672930/C6A36660C85DA7B2B038F37D4EA638790A94FB12/'
+}
+
+tile_grass_40x30 = {
+    height_correction = 0.96,
+    scale = 1,
+    rotation = 0,
+    depth = 30,
+    description = 'Grass 40x30',
+    author = 'Grass tile, original work by Arkein.',
+    mesh = { 'http://cloud-3.steamusercontent.com/ugc/1011563971410156984/1624E7AD88648CEC5CC1F671FD74F9419655E72D/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410158109/4B09A8FCD5B54454F964C257015C100C568E0C3C/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410158656/DF3193A7C4AF1A6BF57064369AC6BB7BD7CC0E2D/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410159305/55E7B553702745BCB1926FE6AA00977F73ABC29C/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410160011/556556BB5A57F8E51E458C1E22062682401BC8F1/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410160515/306ED697DA1DF24D9CF3B59F4C3D96634DF79825/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410161219/DA3888DDA450F45A145CF746AF9C812D8C2A74FD/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410162142/AFF4C60A6FC8153E6348D6716838862B2DEFCFE3/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672153/2ED568A7248F589F91D34CD523367300400F2342/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672930/C6A36660C85DA7B2B038F37D4EA638790A94FB12/'
+}
+
+tile_grass_40x40 = {
+    height_correction = 0.96,
+    scale = 1,
+    rotation = 0,
+    depth = 40,
+    description = 'Grass 40x40',
+    author = 'Grass tile, original work by Arkein.',
+    mesh = { 'http://cloud-3.steamusercontent.com/ugc/1011563971410146171/5E9AE58E24078CCB24DE96BA86C22045EE8777A8/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410149146/055FD74E9182BA54EF4D8700D757CA6F0D0170D4/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410149860/BAE1CA2225EE7AF47E7D63B16F4D28C064B2910D/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410151844/04FDCD18A18FD0A5AA069806D76A83ADDC4997BF/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410152908/C965C3FB32EFA81EC32E50DAF091DB3BDAA173FA/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410153697/D600E2BB1B83EA8E3BDF7358EEB541FC0BD81CD1/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410154301/D3069A5D6D1FE133043A4049E77AD5F7EF8F0757/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410155046/40D6185017B382A90C7098BADA2A4A860F9DEEAD/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672153/2ED568A7248F589F91D34CD523367300400F2342/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672930/C6A36660C85DA7B2B038F37D4EA638790A94FB12/'
+}
+
+tile_grass_40x60 = {
+    height_correction = 0.96,
+    scale = 1,
+    rotation = 0,
+    depth = 60,
+    description = 'Grass 40x60',
+    author = 'Grass tile, original work by Arkein.',
+    mesh = { 'http://cloud-3.steamusercontent.com/ugc/1011563971410141194/4F84F59DFDC37932BE2CCCC03016A1437C281CA3/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410142077/CFC15D6108C2F30405E849F869627D2029F6D6CA/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410143651/CA6A503302339B9FF9A0C3B0543C62A8D6FD0329/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410144194/3EAB316D345B39EE70E639F7F34D1B0A2FEC560B/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672153/2ED568A7248F589F91D34CD523367300400F2342/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672930/C6A36660C85DA7B2B038F37D4EA638790A94FB12/'
+}
+
+tile_grass_40x80 = {
+    height_correction = 0.96,
+    scale = 1,
+    rotation = 0,
+    depth = 80,
+    description = 'Grass 40x80  ',
+    author = 'Grass tile, original work by Arkein.',
+    mesh = { 'http://cloud-3.steamusercontent.com/ugc/1011563971410135192/AA110290D2B406AE879309629A747CA0E30F9A62/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410136949/46F3BEE66DEF40A862262E250C508A5A9AEE7CE1/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410138457/74120A425C013CAB100669F3F418DAECC72439FB/',
+             'http://cloud-3.steamusercontent.com/ugc/1011563971410139042/9D67FE7EFF13062B1C1A260804AB0EC1399C5A70/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672153/2ED568A7248F589F91D34CD523367300400F2342/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672930/C6A36660C85DA7B2B038F37D4EA638790A94FB12/'
 }
 
 -------------------------------------------------------------------------------
@@ -36,7 +139,7 @@ troop_swordsman_latemedieval = {
     scale = 0.3,
     rotation = 180,
     description = 'Late Medieval Swordsman',
-    author = 'Late Medieval Swordsmen by Vess (edited by LeberechtReinhold)',
+    author = 'Late Medieval Swordsmen, using Empire Swordsmen by Vess (edited by LeberechtReinhold).',
     mesh = {
         'http://cloud-3.steamusercontent.com/ugc/1022822649627337225/1437C085D4FFF74C2FBF2286FAFA4C555FA9AAAA/',
         'http://cloud-3.steamusercontent.com/ugc/1022822649628563080/2F543EB07AA1B046FA49FCA7C9EF67194D266DD2/',
@@ -51,21 +154,158 @@ troop_swordsman_latemedieval = {
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1022822649627338507/BBA5455E7C52A92432746B828602DFAEB68142D2/'
 }
 
-troop_pikeman_swiss = {
-    height_correction = 0.27,
-    scale = 0.32,
+troop_pikeman_swiss_inclined = {
+    height_correction = 0.33,
+    scale = 0.37,
     rotation = 180,
     description = 'Swiss Pikeman',
-    author = 'Empire Spearman by Vess edited by Arkein',
+    author = 'Swiss Pikemen, using Empire Spearmen by Vess (edited by Arkein).',
     mesh = {
-        'http://cloud-3.steamusercontent.com/ugc/1011563587907337570/FA06D09BBF2A9883914A95102255BB4014C01C15/',
-        'http://cloud-3.steamusercontent.com/ugc/1011563587907338468/DB053D21C8675A208DEF1DD44AE14315E40F4ADA/',
-        'http://cloud-3.steamusercontent.com/ugc/1011563720479902161/1C6513269360CACE4D19244C8B76423F20BF9FBF/',
-        'http://cloud-3.steamusercontent.com/ugc/1011563720479903800/AE3DCB2D3704C59617999704BCBA951CA653AA9F/',
-        'http://cloud-3.steamusercontent.com/ugc/1011563720479904949/3C32B243523FAA3E68465412E8CF7BC299A8D366/',
-        'http://cloud-3.steamusercontent.com/ugc/1011563720479908155/2022918F90424BEF626F85850A5869A4C3C821E4/',
-        'http://cloud-3.steamusercontent.com/ugc/1011563720479911827/73EC817DD18DBE4141D3063DB1C158EC286DCA51/'
+        'http://cloud-3.steamusercontent.com/ugc/1011564198059104673/6ED4BB3626CDF672E1BCE327C88E58F28D116398/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564198059105755/4775664482748F772637DBB58CD46D1385E06919/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564198059106092/22C4BA8CCD7CF144C0D6DE57689E59BC5C2E23F3/'
     },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011563720479886107/0126B9342F205A48EC545C8315DCB76C61719C01/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011563720479886107/0126B9342F205A48EC545C8315DCB76C61719C01/'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430668415/85E0C6CD690FE08784456C3DCA30FC3628AA05BE/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430669854/17CE2D51E40EABE8CB8F828BF11462D7881EDD77/'
+}
+
+troop_pikeman_swiss_straight = {
+    height_correction = 0.33,
+    scale = 0.37,
+    rotation = 180,
+    description = 'Swiss Pikeman',
+    author = 'Swiss Pikemen, using Empire Spearmen by Vess (edited by Arkein).',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1011564198059104174/A0DAAED36C95A01AA1DF50D6936934A42CB29ED8/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564198059104940/A83C6771034717A199C71F0053106CCED4081D48/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564198059105255/0742BCCB70B4384839675E41E2046A9A8B57BA2E/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564198059106409/4C2922D44C8723F3896C9490E5E3C9CDCC5483FD/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430668415/85E0C6CD690FE08784456C3DCA30FC3628AA05BE/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430669854/17CE2D51E40EABE8CB8F828BF11462D7881EDD77/'
+}
+
+troop_pikeman_swiss_bannerman = {
+    height_correction = 0.33,
+    scale = 0.37,
+    rotation = 180,
+    description = 'Swiss Pikeman',
+    author = 'Swiss Pikemen, using Empire Spearmen by Vess (edited by Arkein).',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1011563720479886715/C4A1AB92BBFD82A9B1F3BFA1363EFFA69690F66D/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430668415/85E0C6CD690FE08784456C3DCA30FC3628AA05BE/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430669854/17CE2D51E40EABE8CB8F828BF11462D7881EDD77/'
+}
+
+troop_pikeman_swiss_captain = {
+    height_correction = 0.33,
+    scale = 0.37,
+    rotation = 180,
+    description = 'Swiss Pikeman',
+    author = 'Swiss Pikemen, using Empire Spearmen by Vess (edited by Arkein).',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1011563720479888273/0FE163F87747C3B6E5BED19C5F99EF3C6733A8DE/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430668415/85E0C6CD690FE08784456C3DCA30FC3628AA05BE/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430669854/17CE2D51E40EABE8CB8F828BF11462D7881EDD77/'
+}
+
+-- TODO: FIX, we must not use paste.ee as it's not secure
+-- and we should give proper credit
+troop_handgunner_swiss = {
+    height_correction = 0.256,
+    scale = 0.3,
+    rotation = 180,
+    description = 'Swiss Handgunner',
+    author = 'Empire Handgunner by Vess',
+    mesh = {
+        'https://paste.ee/r/iaXFF',
+        'https://paste.ee/r/nVCjs',
+        'https://paste.ee/r/9dEhd',
+        'https://paste.ee/r/ARLb9',
+        'https://paste.ee/r/5YxCS',
+        'https://paste.ee/r/ELzlw',
+        'https://paste.ee/r/3O7Wp',
+        'https://paste.ee/r/bC9sQ',
+        'https://paste.ee/r/dOWwS',
+        'https://paste.ee/r/WUbzG'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430668415/85E0C6CD690FE08784456C3DCA30FC3628AA05BE/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430669854/17CE2D51E40EABE8CB8F828BF11462D7881EDD77/'
+}
+
+troop_halberdier_swiss = {
+    height_correction = 0.256,
+    scale = 0.3,
+    rotation = 180,
+    description = 'Swiss Halberdier',
+    author = 'Empire Halberdier by Vess',
+    mesh = {
+        'https://paste.ee/r/wDMgh',
+        'https://paste.ee/r/QaDUT',
+        'https://paste.ee/r/Jgxcy',
+        'https://paste.ee/r/4TyXp',
+        'https://paste.ee/r/dwdCy',
+        'https://paste.ee/r/xlf6P',
+        'https://paste.ee/r/omlyE',
+        'https://paste.ee/r/wIfS0'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430668415/85E0C6CD690FE08784456C3DCA30FC3628AA05BE/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430669854/17CE2D51E40EABE8CB8F828BF11462D7881EDD77/'
+}
+
+troop_artillery_swiss = {
+    height_correction = -0.02,
+    scale = 0.3,
+    rotation = 225,
+    description = 'Swiss Artillery',
+    author = 'Empire Artillery by Vess',
+    mesh = {
+        'https://paste.ee/r/JuwEE'
+    },
+    player_red_tex = 'http://i.imgur.com/oYPhR39.png',
+    player_blue_tex = 'http://i.imgur.com/oYPhR39.png'
+}
+
+troop_horse_rider_swiss = {
+    height_correction = 0.536,
+    scale = 0.3,
+    rotation = 180,
+    description = 'Swiss Horse Rider',
+    author = 'Empire Horse Rider by Vess',
+    mesh = {
+        'https://paste.ee/r/Ju09W',
+        'https://paste.ee/r/5myFe',
+        'https://paste.ee/r/fyfsw',
+        'https://paste.ee/r/7qpan',
+        'https://paste.ee/r/veQqM',
+        'https://paste.ee/r/jZneI',
+        'https://paste.ee/r/5A6wH',
+        'https://paste.ee/r/aB52n',
+        'https://paste.ee/r/mu8FM',
+        'https://paste.ee/r/dMQGl',
+        'https://paste.ee/r/7IkHJ',
+        'https://paste.ee/r/lzKxY'
+    },
+    player_red_tex = 'http://i.imgur.com/0yir4dG.pngR2mNz8H.png',
+    player_blue_tex = 'http://i.imgur.com/0yir4dG.pngR2mNz8H.png'
+}
+
+troop_knight_swiss = {
+    height_correction = 0.536,
+    scale = 0.3,
+    rotation = 180,
+    description = 'Swiss Knight',
+    author = 'Empire Knight by Vess',
+    mesh = {
+        'https://paste.ee/r/D9lAB',
+        'https://paste.ee/r/kluF2',
+        'https://paste.ee/r/sBwKN',
+        'https://paste.ee/r/lmhud',
+        'https://paste.ee/r/8vQgW',
+        'https://paste.ee/r/l7mRJ'
+    },
+    player_red_tex = 'http://i.imgur.com/h9Pp9LH.png',
+    player_blue_tex = 'http://i.imgur.com/h9Pp9LH.png'
 }

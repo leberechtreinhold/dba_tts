@@ -205,7 +205,6 @@ end
 -- Hope nothing is in there and that all data is correct because this doesn't
 -- validate
 function spawn_army(army, is_red_player)
-    local i = 0
     math.randomseed(os.time())
     local n_bases = tlen(army)
     local width_army = n_bases * g_base_width_inches
@@ -215,27 +214,37 @@ function spawn_army(army, is_red_player)
         z_pos = g_spawn_from_center_in * -1
         y_rotation = 0
     end
+    
+    local i = 0
     for base_id, base_data in pairs(army) do
-        local location = { x = 0 + i * g_base_width_inches - width_army / 2, y = 0, z = z_pos }
-        spawn_base(base_data, location, y_rotation, is_red_player)
-        i = i + 1
+        if base_id ~= 'data' then
+            local location = { 
+                x = 0 + i * g_base_width_inches - width_army / 2, 
+                y = 0, 
+                z = z_pos 
+            }
+            spawn_base(base_data, location, y_rotation, is_red_player)
+            i = i + 1
+        end
     end
 end
 
 function update_authors_text(army)
     local authorship_models = 'The authors of the models are:\n\n'
     local authors_set = {}
-    for _, base in pairs(army) do
-        local model = base['model_data']
-        if model == nil then
-            model = base['fixed_models'][1]
-        end
-        local model_data = _G[model]
-        local author = model_data['author']
+    for base_id, base in pairs(army) do
+        if base_id ~= 'data' then
+            local model = base['model_data']
+            if model == nil then
+                model = base['fixed_models'][1]
+            end
+            local model_data = _G[model]
+            local author = model_data['author']
 
-        if authors_set[author] == nil then
-            authorship_models = authorship_models .. ' - ' .. author .. '\n\n'
-            authors_set[author] = 1
+            if authors_set[author] == nil then
+                authorship_models = authorship_models .. ' - ' .. author .. '\n\n'
+                authors_set[author] = 1
+            end
         end
     end
     UI.setValue('text_authors', authorship_models)

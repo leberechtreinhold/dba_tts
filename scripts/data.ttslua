@@ -12,6 +12,10 @@ minimal_collider = 'http://cloud-3.steamusercontent.com/ugc/1022823184773057328/
 armies = {
     Book_I = {
         Hoplite_Greek_Example = {
+            data = {
+                aggresiveness = 1,
+                terrain = 'Mountain'
+            },
             base1 = {
                 name = '4Bd',
                 base = 'tile_reference_40x15',
@@ -33,6 +37,10 @@ armies = {
     },
     Book_IV = {
         Late_Medieval_German_Example = {
+            data = {
+                aggresiveness = 1,
+                terrain = 'Mountain'
+            },
             base1 = {
                 name = '4Bd',
                 base = 'tile_reference_40x15',
@@ -46,37 +54,99 @@ armies = {
                 model_data = 'troop_swordsman_latemedieval'
             }
         },
-        -- TODO: Not finished yet
-        Late_Swiss = {
+        IV_79_Late_Swiss_1400dC_to_1522dC = {
+            data = {
+                aggresiveness = 3,
+                terrain = 'Mountain'
+            },
             base1 = {
-                name = '4Pk',
+                name = '4Pk_Gen',
                 base = 'tile_grass_40x15',
                 n_models = 4,
-                model_data = 'troop_pikeman_swiss'
+                fixed_models = {
+                    [1] = 'troop_pikeman_swiss_bannerman',
+                    [2] = 'troop_pikeman_swiss_bannerman',
+                    [3] = 'troop_pikeman_swiss_captain',
+                    [4] = 'troop_pikeman_swiss_bannerman',
+                }
             },
             base2 = {
                 name = '4Pk',
                 base = 'tile_grass_40x15',
-                n_models = 5,
-                model_data = 'troop_pikeman_swiss'
+                n_models = 4,
+                model_data = 'troop_pikeman_swiss_inclined'
             },
             base3 = {
                 name = '4Pk',
                 base = 'tile_grass_40x15',
-                n_models = 6,
-                model_data = 'troop_pikeman_swiss'
+                n_models = 4,
+                model_data = 'troop_pikeman_swiss_inclined'
             },
             base4 = {
                 name = '4Pk',
                 base = 'tile_grass_40x15',
-                n_models = 7,
-                model_data = 'troop_pikeman_swiss'
+                n_models = 4,
+                model_data = 'troop_pikeman_swiss_inclined'
             },
             base5 = {
                 name = '4Pk',
                 base = 'tile_grass_40x15',
-                n_models = 8,
-                model_data = 'troop_pikeman_swiss'
+                n_models = 4,
+                model_data = 'troop_pikeman_swiss_straight'
+            },
+            base6 = {
+                name = '4Pk',
+                base = 'tile_grass_40x15',
+                n_models = 4,
+                model_data = 'troop_pikeman_swiss_straight'
+            },
+            base7 = {
+                name = '4Pk',
+                base = 'tile_grass_40x15',
+                n_models = 4,
+                model_data = 'troop_pikeman_swiss_straight'
+            },
+            base8 = {
+                name = '4Pk',
+                base = 'tile_grass_40x15',
+                n_models = 4,
+                model_data = 'troop_pikeman_swiss_straight'
+            },
+            base9 = {
+                name = '6Kn',
+                base = 'tile_grass_40x60',
+                n_models = 6,
+                model_data = 'troop_knight_swiss'
+            },
+            base10 = {
+                name = '6Bd',
+                base = 'tile_grass_40x30',
+                n_models = 6,
+                model_data = 'troop_halberdier_swiss'
+            },
+            base11 = {
+                name = '2Ps',
+                base = 'tile_grass_40x20',
+                n_models = 2,
+                model_data = 'troop_handgunner_swiss'
+            },
+            base12 = {
+                name = '2Ps',
+                base = 'tile_grass_40x20',
+                n_models = 2,
+                model_data = 'troop_handgunner_swiss'
+            },
+            base13 = {
+                name = '2LH',
+                base = 'tile_grass_40x30',
+                n_models = 2,
+                model_data = 'troop_horse_rider_swiss'
+            },
+            base14 = {
+                name = 'Art',
+                base = 'tile_grass_40x40',
+                n_models = 1,
+                model_data = 'troop_artillery_swiss'
             }
         }
     }
