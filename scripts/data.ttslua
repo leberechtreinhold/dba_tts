@@ -4,6 +4,9 @@ g_base_width_inches = 1.5748031496062992126
 -- All bases are 5mm tall
 g_base_height_inches = 0.19685039370078740157
 
+-- Initial distance spawns from the center
+g_spawn_from_center_in = 3
+
 minimal_collider = 'http://cloud-3.steamusercontent.com/ugc/1022823184773057328/6E2E42ECBBD40D7501018921FC5898568FF9D748/'
 
 armies = {

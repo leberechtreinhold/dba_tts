@@ -137,10 +137,11 @@ function get_depth_base(base_name)
 end
 
 g_base_index = 1
-
 function spawn_base(base, pos, y_rotation, is_red_player)
     local base_obj = spawn_model(base['base'], pos, 0, nil, is_red_player)
-    base_obj.setName('base ' .. base['name'] .. ' #' .. g_base_index)
+    local base_name = 'base ' .. base['name'] .. ' #' .. g_base_index
+    base_obj.setName(base_name)
+    print_info('Spawning ' .. base_name)
     g_base_index = g_base_index + 1
 
     local n = base['n_models']
@@ -188,15 +189,14 @@ function spawn_army(army, is_red_player)
     math.randomseed(os.time())
     local n_bases = tlen(army)
     local width_army = n_bases * base_width_inches
-    local z_pos = 3
+    local z_pos = g_spawn_from_center_in
     local y_rotation = 180
     if is_red_player then
-        z_pos = -3
+        z_pos = g_spawn_from_center_in * -1
         y_rotation = 0
     end
     for base_id, base_data in pairs(army) do
         local location = { x = 0 + i * base_width_inches - width_army / 2, y = 0, z = z_pos }
-        print_debug('Spawning ' .. base_id)
         spawn_base(base_data, location, y_rotation, is_red_player)
         i = i + 1
     end
@@ -362,7 +362,6 @@ end
 
 -- TODO: Move to a spawned coroutine that does something everyhalf a second
 -- or similar to improve perf, and only starts on pickup
-
 g_selected_objects = {}
 function onUpdate()
     if g_picked_base_obj then
@@ -385,3 +384,4 @@ function onUpdate()
         end
     end
 end
+
