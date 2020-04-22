@@ -35,19 +35,43 @@ end
 -- base2 (that is, the X component is smaller)
 -- TODO this only aligns with the right side atm
 function align_two_bases(player, base1, base2)
-    if (distance_points_flat_sq(base1.getPosition(), base2.getPosition()) > 9) then
+    local pos1 = base1.getPosition()
+    local pos2 = base2.getPosition()
+    local distance_centers = distance_points_flat_sq(pos1, pos2)
+    if (distance_centers > g_max_distance_alignment) then
         print_error(player.steam_name .. ' is trying to align but the bases are too far apart, more than 3inch between centers!')
         return
     end
 
     print_info(player.steam_name .. ' is aligning ' .. base1.getName() .. ' with ' .. base2.getName())
-    base2.setRotation(base1.getRotation())
+    local rotation = base1.getRotation()
+    base2.setRotation(rotation)
 
     local corners1 = compute_corners_base(base1)
-    print_debug('CORNERS ' .. base1.getName() .. corners_to_str(corners_in_to_mm(corners1)))
     local corners2 = compute_corners_base(base2)
-    print_debug('CORNERS ' .. base2.getName() .. corners_to_str(corners_in_to_mm(corners2)))
-    local translation = vec_sub(corners1['topright'], corners2['topleft'])
+
+    local angle = normalize_angle(math.rad(rotation['y']))
+    local relative_angle = relative_angle_from_point(pos1, pos2, angle)
+
+    print_debug('Relativa angle is ' .. relative_angle)
+    local translation = nil
+    -- Note that since we know that base1 is to the left of base2, the angle
+    -- is 0-90 or 270-360
+    if relative_angle > g_alignment_angle_side 
+       and relative_angle < math.pi then
+        -- Angle the back of base2 with the front of base1
+        print('aligning back to front')
+        translation = vec_sub(corners1['topright'], corners2['botright'])
+    elseif relative_angle <= g_alignment_angle_side 
+           or relative_angle >= (2*math.pi - g_alignment_angle_side) then
+        -- Angle the left side of base2 with the right of base1
+        print('aligning left to right')
+        translation = vec_sub(corners1['topright'], corners2['topleft'])
+    else 
+        -- Angle the front of base2 with the back of base1
+        print('aligning front to back')
+        translation = vec_sub(corners1['botleft'], corners2['topleft'])
+    end
     print_debug('Translation is ' .. vec_to_str(vec_in_to_mm(translation)))
     base2.setPosition(vec_add(base2.getPosition(), translation))
     print_info(base2.getName() .. ' has aligned to ' .. base1.getName())
@@ -214,14 +238,14 @@ function spawn_army(army, is_red_player)
         z_pos = g_spawn_from_center_in * -1
         y_rotation = 0
     end
-    
+
     local i = 0
     for base_id, base_data in pairs(army) do
         if base_id ~= 'data' then
             local z_pos_modifier = get_depth_base(base_data['base']) / 2
-            local location = { 
-                x = 0 + i * g_base_width_inches - width_army / 2, 
-                y = 0, 
+            local location = {
+                x = 0 + i * g_base_width_inches - width_army / 2,
+                y = 0,
                 z = z_pos - z_pos_modifier
             }
             spawn_base(base_data, location, y_rotation, is_red_player)

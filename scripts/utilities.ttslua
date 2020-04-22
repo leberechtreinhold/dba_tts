@@ -34,6 +34,30 @@ function vec_to_str(vec)
 end
 
 
+-- Given two points represented by tables with x,z coords, determines the angle
+-- in radains, of point B relative to A, taking into account the orientation 
+-- of A (in the Y axis) in radians
+function relative_angle_from_point(pointA, pointB, rotationA)
+    local zdiff = pointB['z'] - pointA['z']
+    local xdiff = pointB['x'] - pointA['x']
+    print(string.format('Vector: (%.2f, %.2f)',xdiff, zdiff))
+    
+    local relative_angle = math.atan2(zdiff, xdiff)
+    print('Angle ' .. math.deg(relative_angle))
+    if relative_angle < 0 then
+        relative_angle = 2*math.pi + relative_angle
+    end
+    print('Angle positive ' .. math.deg(relative_angle))
+
+    local angle_adjusted_coords = relative_angle + rotationA
+    print('Angle adjusted ' .. math.deg(relative_angle))
+    if angle_adjusted_coords > 2*math.pi then
+        angle_adjusted_coords = angle_adjusted_coords - 2*math.pi
+    end
+    print('Angle final ' .. math.deg(relative_angle))
+    return angle_adjusted_coords
+end
+
 -- Given a tables with x,y,z each with a degree number [0-360], returns a table with x,y,z converted to radians (o, 2pi)
 function from_degrees_to_rad(vec)
     return { x = math.rad(vec['x']),  y = math.rad(vec['y']), z = math.rad(vec['z']) }

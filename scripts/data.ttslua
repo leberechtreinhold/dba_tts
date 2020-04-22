@@ -10,6 +10,9 @@ g_spawn_from_center_in = 3
 -- Maximum distance between the center of bases for autoalignment, squared
 g_max_distance_alignment = 3*3
 
+-- Angle for alignment front-to-back instead of side to side, in radians
+g_alignment_angle_side = math.rad(30)
+
 minimal_collider = 'http://cloud-3.steamusercontent.com/ugc/1022823184773057328/6E2E42ECBBD40D7501018921FC5898568FF9D748/'
 
 armies = {
