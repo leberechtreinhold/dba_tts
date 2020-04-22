@@ -10,8 +10,8 @@ tile_reference_40x15 = {
     description = 'Ref 40x15',
     author = 'Reference tile, original work by LeberechtReinhold',
     mesh = { 'http://cloud-3.steamusercontent.com/ugc/1022822649627841656/0661CBEA50787140409593ED30BE50AB0BB9E67A/' },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672153/2ED568A7248F589F91D34CD523367300400F2342/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672930/C6A36660C85DA7B2B038F37D4EA638790A94FB12/'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1022822649631206192/906887263828029151B78353910D577B694EC891/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1022822649631207474/CAD627FA3F94A7A94C5E64DC55C06747F02797D9//'
 }
 
 tile_grass_40x15 = {

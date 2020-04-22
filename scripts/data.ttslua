@@ -7,6 +7,9 @@ g_base_height_inches = 0.19685039370078740157
 -- Initial distance spawns from the center
 g_spawn_from_center_in = 3
 
+-- Maximum distance between the center of bases for autoalignment, squared
+g_max_distance_alignment = 3*3
+
 minimal_collider = 'http://cloud-3.steamusercontent.com/ugc/1022823184773057328/6E2E42ECBBD40D7501018921FC5898568FF9D748/'
 
 armies = {
@@ -28,9 +31,9 @@ armies = {
                 n_models = 4,
                 fixed_models = {
                     [1] = 'troop_swordsman_latemedieval',
-                    [2] = 'troop_pikeman_swiss',
+                    [2] = 'troop_swordsman_latemedieval',
                     [3] = 'troop_swordsman_latemedieval',
-                    [4] = 'troop_pikeman_swiss',
+                    [4] = 'troop_swordsman_latemedieval',
                 }
             }
         }
