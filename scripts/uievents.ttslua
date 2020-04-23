@@ -32,6 +32,20 @@ function move_bases(player, value, id)
     draw_gizmo_future_movements(player.getSelectedObjects())
 end
 
+function get_closest_transform(pos, transforms)
+    local min_distance = nil
+    local min_transform = nil
+
+    for base_name, transform in pairs(transforms) do
+        local distance = distance_points_flat_sq(transform['position'], pos)
+        if min_distance == nil or min_distance > distance then
+            min_distance = distance
+            min_transform = transform
+        end
+    end
+    return min_transform
+end
+
 function align_bases(player, value, id)
     local objs = filter_bases(player.getSelectedObjects())
     local n_objs = tlen(objs)
@@ -52,11 +66,11 @@ function align_bases(player, value, id)
         corners = compute_corners_base(objs[1]),
         rotation = objs[1].getRotation()
     }
-    
-    for i=2,n_objs do
-        local transform = future_transform[objs[i-1].getName()]
 
+    for i=2,n_objs do
         local pos = objs[i].getPosition()
+        local transform = get_closest_transform(pos, future_transform)
+
         local distance_centers = distance_points_flat_sq(transform['position'], pos)
         if (distance_centers > g_max_distance_alignment) then
             print_error(player.steam_name .. ' is trying to align but the bases are too far apart, more than 3inch between centers!')

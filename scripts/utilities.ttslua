@@ -40,21 +40,16 @@ end
 function relative_angle_from_point(pointA, pointB, rotationA)
     local zdiff = pointB['z'] - pointA['z']
     local xdiff = pointB['x'] - pointA['x']
-    print(string.format('Vector: (%.2f, %.2f)',xdiff, zdiff))
     
     local relative_angle = math.atan2(zdiff, xdiff)
-    print('Angle ' .. math.deg(relative_angle))
     if relative_angle < 0 then
         relative_angle = 2*math.pi + relative_angle
     end
-    print('Angle positive ' .. math.deg(relative_angle))
 
     local angle_adjusted_coords = relative_angle + rotationA
-    print('Angle adjusted ' .. math.deg(relative_angle))
     if angle_adjusted_coords > 2*math.pi then
         angle_adjusted_coords = angle_adjusted_coords - 2*math.pi
     end
-    print('Angle final ' .. math.deg(relative_angle))
     return angle_adjusted_coords
 end
 
