@@ -43,8 +43,31 @@ function align_bases(player, value, id)
         return l.getPosition()['x'] < r.getPosition()['x']
     end)
 
-    for i=1,n_objs-1 do
-        align_two_bases(player, objs[i], objs[i + 1])
+    -- Moving will mean that some attributes like the corner change, but they
+    -- won't update on the object until next frame. However we still have to
+    -- take into account here to aligning all the pieces together
+    local future_transform = {}
+    future_transform[objs[1].getName()] = {
+        position = objs[1].getPosition(),
+        corners = compute_corners_base(objs[1]),
+        rotation = objs[1].getRotation()
+    }
+    
+    for i=2,n_objs do
+        local transform = future_transform[objs[i-1].getName()]
+
+        local pos = objs[i].getPosition()
+        local distance_centers = distance_points_flat_sq(transform['position'], pos)
+        if (distance_centers > g_max_distance_alignment) then
+            print_error(player.steam_name .. ' is trying to align but the bases are too far apart, more than 3inch between centers!')
+            return
+        end
+
+        future_transform[objs[i].getName()] = align_two_bases(
+            objs[i], 
+            transform['position'], 
+            transform['corners'], 
+            transform['rotation'])
     end
     
     -- Moving the bases shpuld imply update the gizmos
