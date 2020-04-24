@@ -212,6 +212,7 @@ function spawn_base(base, pos, y_rotation, is_red_player)
         base_obj.addAttachment(soldier_obj)
     end
     base_obj.setRotation({0, y_rotation, 0})
+    base_obj.auto_raise = false
 end
 
 -- Given an army object data, spawns it on the center of the table.
