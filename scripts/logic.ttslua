@@ -23,10 +23,10 @@ function compute_corners_coords(sizeXZ, rotationY, pos)
     local zhalf = sizeXZ['z'] / 2
 
     return {
-        topright = rotate_point({x = xhalf, y = 0, z = zhalf}, pos, rotationY),
-        botright = rotate_point({x = xhalf, y = 0, z =-zhalf}, pos, rotationY),
-        topleft  = rotate_point({x =-xhalf, y = 0, z = zhalf}, pos, rotationY),
-        botleft  = rotate_point({x =-xhalf, y = 0, z =-zhalf}, pos, rotationY)
+        topright = rotate_point_relative({x = xhalf, y = 0, z = zhalf}, pos, rotationY),
+        botright = rotate_point_relative({x = xhalf, y = 0, z =-zhalf}, pos, rotationY),
+        topleft  = rotate_point_relative({x =-xhalf, y = 0, z = zhalf}, pos, rotationY),
+        botleft  = rotate_point_relative({x =-xhalf, y = 0, z =-zhalf}, pos, rotationY)
     }
 end
 
@@ -445,6 +445,7 @@ end
 function get_strokes_bow(base_obj, transform)
     local stroke_points = {}
     local p = transform['corners']['topright']
+
     table.insert(stroke_points, p)
     table.insert(stroke_points, {
         x = p['x'] + g_base_width_inches, 
@@ -502,6 +503,13 @@ function get_strokes_bow(base_obj, transform)
     })
     table.insert(stroke_points, p)
 
+    local rotation = transform['rotation']
+    for _, paux in ipairs(stroke_points) do
+        local paux_rotated = rotate_point(paux, p, rotation)
+        paux['x'] = paux_rotated['x']
+        -- We can ignore the y because we assume XZ plane
+        paux['z'] = paux_rotated['z']
+    end
 
     local color = { 0.9, 0.1, 0.1 }
     if is_base_blue_player(base_obj.getName()) then

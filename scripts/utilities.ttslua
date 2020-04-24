@@ -93,13 +93,21 @@ function normalize_angle(angle)
     return 2*math.pi - angle
 end
 
+-- Given a point with xyz coordinates, relative to the center, rotates along
+-- theta
+function rotate_point_relative(point, center_coordinates, theta)
+    return { 
+        x = point['x'] * math.cos(theta) - point['z'] * math.sin(theta) + center_coordinates['x'],
+        y = point['y'] + center_coordinates['y'],
+        z = point['x'] * math.sin(theta) + point['z'] * math.cos(theta) + center_coordinates['z']}
+end
+
 -- Given a point with xyz coordinates, where xz form a plane, rotates using
 -- an angle theta, respective to a coordinate system with xyz coordinates,
--- on that same plane (leaving y untouched)
+-- on that same plane
 function rotate_point(point, center_coordinates, theta)
-    return { x = point['x'] * math.cos(theta) - point['z'] * math.sin(theta) + center_coordinates['x'],
-             y = point['y'] + center_coordinates['y'],
-             z = point['x'] * math.sin(theta) + point['z'] * math.cos(theta) + center_coordinates['z']}
+    local relative = vec_sub(point, center_coordinates)
+    return rotate_point_relative(relative, center_coordinates, theta)
 end
 
 -- Given a table with four corners top/bot left/right, each with a xyz
@@ -258,11 +266,12 @@ function get_coordinates_circle(center, radius, steps)
     local degrees_per_step = 360 / steps
     local radians_per_step = math.rad(degrees_per_step)
     for i = 0, steps do
-        table.insert(point_array, {
-            center['x'] + math.cos(radians_per_step * i) * radius,
-            center['y'],
-            center['z'] + math.sin(radians_per_step * i) * radius
-        })
+        local p = {
+            x = center['x'] + math.cos(radians_per_step * i) * radius,
+            y = center['y'],
+            z = center['z'] + math.sin(radians_per_step * i) * radius
+        }
+        table.insert(point_array, p)
     end
     return point_array
 end
@@ -273,11 +282,12 @@ function get_coordinates_arc(center, radius, steps, start_angle, finish_angle)
     local radians_per_step = math.rad(degrees_per_step)
     local initial_radians = math.rad(start_angle)
     for i = 0, steps do
-        table.insert(point_array, {
-            center['x'] + math.cos(radians_per_step * i + initial_radians) * radius,
-            center['y'],
-            center['z'] + math.sin(radians_per_step * i + initial_radians) * radius
-        })
+        local p = {
+            x = center['x'] + math.cos(radians_per_step * i + initial_radians) * radius,
+            y = center['y'],
+            z = center['z'] + math.sin(radians_per_step * i + initial_radians) * radius
+        }
+        table.insert(point_array, p)
     end
     return point_array
 end
