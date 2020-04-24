@@ -301,7 +301,7 @@ end
 g_picked_base_obj = nil
 g_picked_base_initial_corners = nil
 function onObjectPickUp(player_color,  picked_up_object)
-    if not str_has_substr(picked_up_object.getName(), 'base') then
+    if g_bases[picked_up_object.getName()] == nil then
         return
     end
 
@@ -316,10 +316,16 @@ function onObjectPickUp(player_color,  picked_up_object)
     g_picked_base_initial_corners = compute_corners_base(picked_up_object)
     local pos = picked_up_object.getPosition()
     local radius = g_paces_movement / 100
+    
+    local color = { 0.9, 0.1, 0.1 }
+    if is_base_blue_player(picked_up_object.getName()) then
+        color = { 0.1, 0.1, 0.9 }
+    end
+
     Global.setVectorLines( {
         {
             points    = get_coordinates_circle(pos, radius, 32),
-            color     = { 0.2, 0.2, 0.9 },
+            color     = color,
             thickness = 0.1,
             rotation  = {0,0,0}
         }
@@ -327,7 +333,7 @@ function onObjectPickUp(player_color,  picked_up_object)
 end
 
 function onObjectDrop(player_color,  picked_up_object)
-    if not str_has_substr(picked_up_object.getName(), 'base') then
+    if g_bases[picked_up_object.getName()] == nil then
         return
     end
 
