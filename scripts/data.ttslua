@@ -24,6 +24,10 @@ g_alignment_angle_side = math.rad(30)
 -- Must be divisible by 4
 g_precision_circle = 32
 
+-- Movement gizmos, fire arcs and deployment guidelines all have
+-- lines painted. This control how thick in inches the lines are
+g_line_thickness = 0.04
+
 minimal_collider = 'http://cloud-3.steamusercontent.com/ugc/1022823184773057328/6E2E42ECBBD40D7501018921FC5898568FF9D748/'
 
 armies = {

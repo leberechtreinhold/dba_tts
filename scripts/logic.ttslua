@@ -326,7 +326,7 @@ function onObjectPickUp(player_color,  picked_up_object)
         {
             points    = get_coordinates_circle(pos, radius, g_precision_circle),
             color     = color,
-            thickness = 0.1,
+            thickness = g_line_thickness,
             rotation  = {0,0,0}
         }
     })
@@ -410,7 +410,7 @@ function get_strokes_future_position(base_obj, transform)
     {
         points    = stroke_points,
         color     = color,
-        thickness = 0.1,
+        thickness = g_line_thickness,
         rotation  = {0,0,0}
     }
 end
@@ -512,7 +512,7 @@ function get_strokes_bow(base_obj, transform)
     {
         points    = stroke_points,
         color     = color,
-        thickness = 0.1,
+        thickness = g_line_thickness,
         rotation  = {0,0,0}
     }
 end
