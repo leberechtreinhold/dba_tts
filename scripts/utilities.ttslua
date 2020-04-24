@@ -252,8 +252,7 @@ function friendlyname_to_dataname(friendly_name)
     return dataname
 end
 
--- Given a position for a center,  gets the coordinates of circle on the XZ
--- plane 
+-- Given a position for a center,  gets the coordinates of circle on the XZ plane 
 function get_coordinates_circle(center, radius, steps)
     local point_array = {}
     local degrees_per_step = 360 / steps
@@ -263,6 +262,21 @@ function get_coordinates_circle(center, radius, steps)
             center['x'] + math.cos(radians_per_step * i) * radius,
             center['y'],
             center['z'] + math.sin(radians_per_step * i) * radius
+        })
+    end
+    return point_array
+end
+
+function get_coordinates_arc(center, radius, steps, start_angle, finish_angle)
+    local point_array = {}
+    local degrees_per_step = (finish_angle - start_angle) / steps
+    local radians_per_step = math.rad(degrees_per_step)
+    local initial_radians = math.rad(start_angle)
+    for i = 0, steps do
+        table.insert(point_array, {
+            center['x'] + math.cos(radians_per_step * i + initial_radians) * radius,
+            center['y'],
+            center['z'] + math.sin(radians_per_step * i + initial_radians) * radius
         })
     end
     return point_array

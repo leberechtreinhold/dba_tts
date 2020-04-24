@@ -109,3 +109,11 @@ function tlen(table)
     for _ in pairs(table) do n = n + 1 end
     return n
 end
+
+-- Inserts the elments of t2 into t1
+function array_concat(t1,t2)
+    for _,el in pairs(t2) do
+        table.insert(t1, el)
+    end
+    return t
+end

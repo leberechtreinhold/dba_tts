@@ -324,7 +324,7 @@ function onObjectPickUp(player_color,  picked_up_object)
 
     Global.setVectorLines( {
         {
-            points    = get_coordinates_circle(pos, radius, 32),
+            points    = get_coordinates_circle(pos, radius, g_precision_circle),
             color     = color,
             thickness = 0.1,
             rotation  = {0,0,0}
@@ -356,19 +356,50 @@ function onObjectDrop(player_color,  picked_up_object)
     draw_gizmo_future_movements(objs)
 end
 
-function get_strokes_future_position(base_obj, movement)
+function calculate_future_position(base_obj, movement)
     local rotation = from_degrees_to_rad(base_obj.getRotation())['y']
     local displacement_vector = rad_to_vector(rotation)
     local destination = vec_add(base_obj.getPosition(), vec_mul_escalar(displacement_vector, movement))
     local size = get_size(base_obj.getName())
-    local corners = compute_corners_coords(size, normalize_angle(rotation), destination)
+    local normalized_rotation = normalize_angle(rotation)
+    local corners = compute_corners_coords(size, normalized_rotation, destination)
 
+    return get_transform(
+        destination,
+        corners,
+        normalized_rotation
+    )
+end
+
+function get_transform(position, corners, rotation)
+    return {
+        position = position,
+        corners = corners,
+        rotation = rotation
+    }
+end
+
+function get_closest_transform(pos, transforms)
+    local min_distance = nil
+    local min_transform = nil
+
+    for base_name, transform in pairs(transforms) do
+        local distance = distance_points_flat_sq(transform['corners']['topleft'], pos)
+        if min_distance == nil or min_distance > distance then
+            min_distance = distance
+            min_transform = transform
+        end
+    end
+    return min_transform
+end
+
+function get_strokes_future_position(base_obj, transform)
     local stroke_points = {}
-    table.insert(stroke_points, corners['topright'])
-    table.insert(stroke_points, corners['topleft'])
-    table.insert(stroke_points, corners['botleft'])
-    table.insert(stroke_points, corners['botright'])
-    table.insert(stroke_points, corners['topright'])
+    table.insert(stroke_points, transform['corners']['topright'])
+    table.insert(stroke_points, transform['corners']['topleft'])
+    table.insert(stroke_points, transform['corners']['botleft'])
+    table.insert(stroke_points, transform['corners']['botright'])
+    table.insert(stroke_points, transform['corners']['topright'])
 
     local color = { 0.9, 0.1, 0.1 }
     if is_base_blue_player(base_obj.getName()) then
@@ -384,6 +415,109 @@ function get_strokes_future_position(base_obj, movement)
     }
 end
 
+-- A bow fires 2" forward from each corner of the bases, but only up to a base
+-- width, not the full 2"
+--
+--           p4       p3
+--         **----------**
+--     ****  |        |  ****
+-- p5 **     |        |     **  p2
+--    |      |        |       |
+--    -------------------------
+--   p6               p       p1
+--
+-- The exact coordinates work like this
+--    p_x, p_z+2"
+--       |*****
+--       |     *****
+--       |         **** p_x + 40mm * cos(x), p_y + 40mm*sin(x) + p_z + 2"-40mm
+--       |             ***
+--       |               ***
+--       |                  *
+--       |                  **
+--       |                   * p_x+40mm, p_z + 2"-40mm
+--       |                   |
+--       |                   |
+--       ---------------------
+--     p_x, p_Z           p_x+40mm, p_z
+ 
+-- This is mirrored in two sides, then everything is adjusted for rotation
+function get_strokes_bow(base_obj, transform)
+    local stroke_points = {}
+    local p = transform['corners']['topright']
+    table.insert(stroke_points, p)
+    table.insert(stroke_points, {
+        x = p['x'] + g_base_width_inches, 
+        y = p['y'],
+        z = p['z']
+    })
+    table.insert(stroke_points, {
+        x = p['x'] + g_base_width_inches, 
+        y = p['y'],
+        z = p['z'] + g_bow_range - g_base_width_inches
+    })
+    local radius_right = {
+        x = p['x'], 
+        y = p['y'],
+        z = p['z'] + g_bow_range - g_base_width_inches
+    }
+    local right_arc = get_coordinates_arc(
+        radius_right, 
+        g_base_width_inches, 
+        g_precision_circle / 4,
+        0,
+        90)
+    array_concat(stroke_points, right_arc)
+    table.insert(stroke_points, {
+        x = p['x'], 
+        y = p['y'],
+        z = p['z'] + g_bow_range
+    })
+    table.insert(stroke_points, {
+        x = p['x'] - g_base_width_inches, 
+        y = p['y'],
+        z = p['z'] + g_bow_range
+    })
+    local radius_left = {
+        x = p['x'] - g_base_width_inches, 
+        y = p['y'],
+        z = p['z'] + g_bow_range - g_base_width_inches
+    }
+    local left_arc = get_coordinates_arc(
+        radius_left, 
+        g_base_width_inches, 
+        g_precision_circle / 4,
+        90,
+        180)
+    array_concat(stroke_points, left_arc)
+    table.insert(stroke_points, {
+        x = p['x'] - g_base_width_inches * 2, 
+        y = p['y'],
+        z = p['z'] + g_bow_range - g_base_width_inches
+    })
+    table.insert(stroke_points, {
+        x = p['x'] - g_base_width_inches * 2, 
+        y = p['y'],
+        z = p['z']
+    })
+    table.insert(stroke_points, p)
+
+
+    local color = { 0.9, 0.1, 0.1 }
+    if is_base_blue_player(base_obj.getName()) then
+        color = { 0.1, 0.1, 0.9 }
+    end
+
+    return
+    {
+        points    = stroke_points,
+        color     = color,
+        thickness = 0.1,
+        rotation  = {0,0,0}
+    }
+end
+
+
 function draw_gizmo_future_movements(new_selected_items)
     if #new_selected_items == 0 then
         Global.setVectorLines({})
@@ -393,9 +527,18 @@ function draw_gizmo_future_movements(new_selected_items)
     local strokes = {}
     local magnitude = g_paces_movement / 100
     for _, obj in ipairs(new_selected_items) do
-        if str_starts_with(obj.getName(), 'base') then
-            table.insert(strokes, get_strokes_future_position(obj, magnitude))
+        if g_bases[obj.getName()] ~= nil then
+            local transform = calculate_future_position(obj, magnitude)
+
+            table.insert(strokes, get_strokes_future_position(obj, transform))
+            
+            if str_has_substr(obj.getName(), 'Bw')
+               or str_has_substr(obj.getName(), 'Cb') then
+                table.insert(strokes, get_strokes_bow(obj, transform))
+            end
+
         end
+
     end
     Global.setVectorLines(strokes)
 end

@@ -4,6 +4,12 @@ g_base_width_inches = 1.5748031496062992126
 -- All bases are 5mm tall
 g_base_height_inches = 0.19685039370078740157
 
+-- Bow range in inches
+g_bow_range = 2
+
+-- Artillery range inches
+g_art_range = 5
+
 -- Initial distance spawns from the center
 g_spawn_from_center_in = 3
 
@@ -12,6 +18,11 @@ g_max_distance_alignment = 3*3
 
 -- Angle for alignment front-to-back instead of side to side, in radians
 g_alignment_angle_side = math.rad(30)
+
+-- When drawing a circle (moving troops, or bow arcs, we use a certain
+-- number of points (they are straight lines), this marks how many points
+-- Must be divisible by 4
+g_precision_circle = 32
 
 minimal_collider = 'http://cloud-3.steamusercontent.com/ugc/1022823184773057328/6E2E42ECBBD40D7501018921FC5898568FF9D748/'
 
@@ -38,7 +49,13 @@ armies = {
                     [3] = 'troop_swordsman_latemedieval',
                     [4] = 'troop_swordsman_latemedieval',
                 }
-            }
+            },
+            base3 = {
+                name = '4Bw',
+                base = 'tile_reference_40x15',
+                n_models = 12,
+                model_data = 'troop_swordsman_latemedieval'
+            },
         }
     },
     Book_IV = {

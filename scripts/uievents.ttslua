@@ -32,20 +32,6 @@ function move_bases(player, value, id)
     draw_gizmo_future_movements(player.getSelectedObjects())
 end
 
-function get_closest_transform(pos, transforms)
-    local min_distance = nil
-    local min_transform = nil
-
-    for base_name, transform in pairs(transforms) do
-        local distance = distance_points_flat_sq(transform['corners']['topleft'], pos)
-        if min_distance == nil or min_distance > distance then
-            min_distance = distance
-            min_transform = transform
-        end
-    end
-    return min_transform
-end
-
 function align_bases(player, value, id)
     local objs = filter_bases(player.getSelectedObjects())
     local n_objs = tlen(objs)
@@ -61,12 +47,12 @@ function align_bases(player, value, id)
     -- won't update on the object until next frame. However we still have to
     -- take into account here to aligning all the pieces together
     local future_transform = {}
-    future_transform[objs[1].getName()] = {
-        position = objs[1].getPosition(),
-        corners = compute_corners_base(objs[1]),
-        rotation = objs[1].getRotation()
-    }
-
+    future_transform[objs[1].getName()] = get_transform(
+        objs[1].getPosition(),
+        compute_corners_base(objs[1]),
+        objs[1].getRotation()
+    )
+    
     for i=2,n_objs do
         local pos = objs[i].getPosition()
         local corners = compute_corners_base(objs[i])
