@@ -227,3 +227,15 @@ function on_toggle_zoc(player, value, id)
     end
 
 end
+
+function on_spawn_table_grass(player, value, id)
+    spawn_table_obj(tables['model'], tables['height_correction'], tables['grass_textures'])
+end
+
+function on_spawn_table_mountain(player, value, id)
+    spawn_table_obj(tables['model'], tables['height_correction'], tables['mountain_textures'])
+end
+
+function on_spawn_table_desert(player, value, id)
+    spawn_table_obj(tables['model'], tables['height_correction'], tables['desert_textures'])
+end

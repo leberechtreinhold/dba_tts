@@ -137,6 +137,31 @@ function update_armies_menu(book, army_selected)
     set_options_dropdown_by_id('dropdown_army', options, army_selected)
 end
 
+function spawn_table_obj(model_url, height_correction, texture_array_urls)
+
+    local obj = spawnObject({
+        type = 'Custom_Model',
+        position = { x = 0, y = 0.059, z = 0},
+        rotation = { x = 0, y = 0, z = 0},
+        scale = { x = 1, y = 1, z = 1},
+        sound = false,
+        snap_to_grid = false,
+
+    })
+    local tex_index = math.random(1, #texture_array_urls)
+
+    obj.setCustomObject({
+        mesh = model_url,
+        diffuse = texture_array_urls[tex_index],
+        material = 1,
+        cast_shadows = false,
+        specular_sharpness = 1,
+        specular_intensity = 0.1,
+        freshnel_strength = 0
+    })
+
+end
+
 function spawn_model(troop_name, pos, added_y_axis_rotation, collider, is_player_red)
     -- Better pray that the input name actually exists! lol
     local model_data = _G[troop_name]
@@ -151,7 +176,7 @@ function spawn_model(troop_name, pos, added_y_axis_rotation, collider, is_player
     local selected_mesh = meshes[mesh_index]
     local spawn_data = get_spawn_model(pos,
         model_data['rotation'],
-        model_data['height_correction'],
+        model_data['height_correction'] + tables['height_correction'] * 2,
         model_data['scale'],
         selected_mesh,
         texture,

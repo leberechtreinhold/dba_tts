@@ -51,3 +51,17 @@ g_gizmo_zoc_color_player_blue = { 0.15, 0.25, 0.6 }
 
 -- Models use this collider so they are easier to move
 minimal_collider = 'http://cloud-3.steamusercontent.com/ugc/1022823184773057328/6E2E42ECBBD40D7501018921FC5898568FF9D748/'
+
+tables = {
+    height_correction = 0.06,
+    model = 'http://cloud-3.steamusercontent.com/ugc/1022823759371064859/C870FF6BCD014D8EC33CDFADBFC11EE555E44A6F/',
+    grass_textures = {
+        'http://cloud-3.steamusercontent.com/ugc/1022823759371066811/25B099510D6E351C7D82A5FBA8184397E4E7A005/'
+    },
+    mountain_textures = {
+        'http://cloud-3.steamusercontent.com/ugc/1022823759371068670/93B215277016C89BB490DCFCB65E313D63B1A9D7/'
+    },
+    desert_textures = {
+        'http://cloud-3.steamusercontent.com/ugc/1022823759371071004/DC4F81C7F92B971C1D1F83F2B12C0DE1E896ABEE/'
+    }
+}
