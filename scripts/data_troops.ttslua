@@ -154,8 +154,12 @@ troop_swordsman_latemedieval = {
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1022822649627338507/BBA5455E7C52A92432746B828602DFAEB68142D2/'
 }
 
+------------------------------------------------------------------------------
+--                                  SWISS
+------------------------------------------------------------------------------
+
 troop_pikeman_swiss_inclined = {
-    height_correction = 0.33,
+    height_correction = 0.43,
     scale = 0.37,
     rotation = 180,
     description = 'Swiss Pikeman',
@@ -165,12 +169,12 @@ troop_pikeman_swiss_inclined = {
         'http://cloud-3.steamusercontent.com/ugc/1011564198059105755/4775664482748F772637DBB58CD46D1385E06919/',
         'http://cloud-3.steamusercontent.com/ugc/1011564198059106092/22C4BA8CCD7CF144C0D6DE57689E59BC5C2E23F3/'
     },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430668415/85E0C6CD690FE08784456C3DCA30FC3628AA05BE/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430669854/17CE2D51E40EABE8CB8F828BF11462D7881EDD77/'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564754634987060/BD2560BFAA4379FBFA26F5BFE491534907996B84/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564754634895632/61E8C6D9EE73B8CBD6B43CB938996E1BD52C6E78/'
 }
 
 troop_pikeman_swiss_straight = {
-    height_correction = 0.33,
+    height_correction = 0.43,
     scale = 0.37,
     rotation = 180,
     description = 'Swiss Pikeman',
@@ -181,131 +185,198 @@ troop_pikeman_swiss_straight = {
         'http://cloud-3.steamusercontent.com/ugc/1011564198059105255/0742BCCB70B4384839675E41E2046A9A8B57BA2E/',
         'http://cloud-3.steamusercontent.com/ugc/1011564198059106409/4C2922D44C8723F3896C9490E5E3C9CDCC5483FD/'
     },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430668415/85E0C6CD690FE08784456C3DCA30FC3628AA05BE/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430669854/17CE2D51E40EABE8CB8F828BF11462D7881EDD77/'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564754634987060/BD2560BFAA4379FBFA26F5BFE491534907996B84/',
+      player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564754634895632/61E8C6D9EE73B8CBD6B43CB938996E1BD52C6E78/'
 }
 
 troop_pikeman_swiss_bannerman = {
-    height_correction = 0.33,
+    height_correction = 0.43,
     scale = 0.37,
     rotation = 180,
-    description = 'Swiss Pikeman',
-    author = 'Swiss Pikemen, using Empire Spearmen by Vess (edited by Arkein).',
+    description = 'Swiss Bannerman',
+    author = 'Swiss Bannerman, using Empire Spearmen by Vess (edited by Arkein, with the Uri Canton CoA from public domain and line texture from public domain).',
     mesh = {
         'http://cloud-3.steamusercontent.com/ugc/1011563720479886715/C4A1AB92BBFD82A9B1F3BFA1363EFFA69690F66D/'
     },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430668415/85E0C6CD690FE08784456C3DCA30FC3628AA05BE/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430669854/17CE2D51E40EABE8CB8F828BF11462D7881EDD77/'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564754634987060/BD2560BFAA4379FBFA26F5BFE491534907996B84/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564754634895632/61E8C6D9EE73B8CBD6B43CB938996E1BD52C6E78/'
 }
 
 troop_pikeman_swiss_captain = {
-    height_correction = 0.33,
+    height_correction = 0.43,
     scale = 0.37,
     rotation = 180,
-    description = 'Swiss Pikeman',
-    author = 'Swiss Pikemen, using Empire Spearmen by Vess (edited by Arkein).',
+    description = 'Swiss Captain',
+    author = 'Swiss Captain, using Empire Infantry Captain by Vess (edited by Arkein).',
     mesh = {
         'http://cloud-3.steamusercontent.com/ugc/1011563720479888273/0FE163F87747C3B6E5BED19C5F99EF3C6733A8DE/'
     },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430668415/85E0C6CD690FE08784456C3DCA30FC3628AA05BE/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430669854/17CE2D51E40EABE8CB8F828BF11462D7881EDD77/'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564754634987060/BD2560BFAA4379FBFA26F5BFE491534907996B84/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564754634895632/61E8C6D9EE73B8CBD6B43CB938996E1BD52C6E78/'
 }
 
--- TODO: FIX, we must not use paste.ee as it's not secure
--- and we should give proper credit
 troop_handgunner_swiss = {
-    height_correction = 0.256,
-    scale = 0.3,
+    height_correction = 0.43,
+    scale = 0.37,
     rotation = 180,
     description = 'Swiss Handgunner',
-    author = 'Empire Handgunner by Vess',
+    author = 'Swiss Handgunners, using Empire Handgunners by Vess (edited by Arkein).',
     mesh = {
-        'https://paste.ee/r/iaXFF',
-        'https://paste.ee/r/nVCjs',
-        'https://paste.ee/r/9dEhd',
-        'https://paste.ee/r/ARLb9',
-        'https://paste.ee/r/5YxCS',
-        'https://paste.ee/r/ELzlw',
-        'https://paste.ee/r/3O7Wp',
-        'https://paste.ee/r/bC9sQ',
-        'https://paste.ee/r/dOWwS',
-        'https://paste.ee/r/WUbzG'
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603368497/34140939A8133A0D8ED964FA09EF9DACA56448FA/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603368898/F44E8B4A0AA24809D3499561A8F9A5A1740B7AF0/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603369272/C244B82312E4D5C282EAB0FD706A65BAF1F88D90/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603369614/D6ACB880C9D28EF4D97AFEA9221C98286AF77B1E/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603369984/94C5A9575C6CA01A62DC5F8E131E6498CC6CC103/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603370425/78C24CA0AF181D2F6FCA74673085C907254A7DE5/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603370878/7FB11A38A746A52B1F5640CF515BB2B7DFCC562B/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603371821/E2D8573F87092ECBD5C6856AA40152ED0BD4E97C/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603372169/48E82971B69B6FA0329AA4C9B96A94D9FD2A434C/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603372935/5BB8FEB8D566D5A6EBC5EBB3F97A7CC1D4BEDEAB/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603373340/9590F076B2419429D3F9F01C4539C0E8D8940FB5/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603373563/86BACC5C24130107349D2620EB25C0AFCBB17567/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603373972/E669445FDBDF25B945DA7C456571B95A69213E3A/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603374206/BD81EBA16999851ECF12656D08C67380F2F560B3/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603374484/F5BAA4B6D2DF2F43D9CF0F3D7267CF7F49DDFB60/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603374739/C7A3FD7BDE2B2F68822F2CE3207DC1657CADAEA4/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603374973/3FBA68F9C94255B4434F999E5B192BB64D22500D/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603375302/3682E47B08FD13378D4B1C02BBAC01A5E8266D82/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603375567/75F09CA4F61192C3A55919E7274FAEDD33DAB109/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603376449/61425DDC9775C55CA172B6B8874AEF7546E939E8/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603376734/A4C2E549CBD79E4E91563D47B9A3BAF143D3C375/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603377011/BD84AE20AC252B1571EEB9D5A63099A1844DBD94/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603377343/AC60D72A6E1C2CF7F40B77C8EE96A2BEDBB0C0DF/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603377672/C0F6CC622DA6361C3490CD0F43F04CEA91DCC464/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603378200/4D0E74A729549B290B6B9E662715A1E7D5ED2285/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603378690/40D79843BA5996743D46BCB3EA7842F601209CF6/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603378971/708B60DC4BD6805B99203ECFFCDFD7BF68025592/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603379331/A211DAA7DFEAD2213ACD2190D95D10937C205C21/'
     },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430668415/85E0C6CD690FE08784456C3DCA30FC3628AA05BE/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430669854/17CE2D51E40EABE8CB8F828BF11462D7881EDD77/'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564754634987060/BD2560BFAA4379FBFA26F5BFE491534907996B84/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564754634895632/61E8C6D9EE73B8CBD6B43CB938996E1BD52C6E78/'
 }
 
 troop_halberdier_swiss = {
-    height_correction = 0.256,
-    scale = 0.3,
+    height_correction = 0.43,
+    scale = 0.37,
     rotation = 180,
     description = 'Swiss Halberdier',
-    author = 'Empire Halberdier by Vess',
+    author = 'Swiss Handgunners, using Empire Halberdiers by Vess (edited by Arkein).',
     mesh = {
-        'https://paste.ee/r/wDMgh',
-        'https://paste.ee/r/QaDUT',
-        'https://paste.ee/r/Jgxcy',
-        'https://paste.ee/r/4TyXp',
-        'https://paste.ee/r/dwdCy',
-        'https://paste.ee/r/xlf6P',
-        'https://paste.ee/r/omlyE',
-        'https://paste.ee/r/wIfS0'
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603306058/BCF4877DE1908B2029AFEBB53DA738390EA1A465/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603306433/BC504C6A8CA4CA04CA474FDD9AE951C7BB9A69AE/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603306951/B1031567A95C349C42EBD0B6E77BB5820B7E16A7/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603307277/DDAA9BDCDF8CBE919A7788A96A709C903403E9BE/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603307792/15D5B66CF1275445CBA3810AE85DBF9C556984FA/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603308146/29A5165EE25145148F83BF8E8AAA2B42BF243CFF/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603308404/C316D53DE1F19AAE8C61178D949AB5A037A21A60/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603309062/0CEDF423EFE7B698223EFF583E41BAA59E6635F9/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603309338/7FA80BC47214225C8ED2D8A292E6623DF7539649/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603309584/D8E7D817AAC89CC2B66D150D801795283D8001CC/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603310001/EB696C08160A6975015C593467545316FAA0B33F/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603310940/57C9EFE75A9F4FF4D9D91408490376F9A924F0D8/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603310277/15D5B66CF1275445CBA3810AE85DBF9C556984FA/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603311424/5BE5B0F041C094612AEE70FEBE33627ED8EF791A/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603311696/EEB280257A5AF897D35210AC687B9E8F69B3C18E/'
     },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430668415/85E0C6CD690FE08784456C3DCA30FC3628AA05BE/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430669854/17CE2D51E40EABE8CB8F828BF11462D7881EDD77/'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564754634987060/BD2560BFAA4379FBFA26F5BFE491534907996B84/',
+      player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564754634895632/61E8C6D9EE73B8CBD6B43CB938996E1BD52C6E78/'
 }
 
-troop_artillery_swiss = {
-    height_correction = -0.02,
-    scale = 0.3,
-    rotation = 225,
+
+troop_artillery_pieces_swiss = {
+  height_correction = 0.057,
+  scale = 0.28,
+    rotation = 180,
     description = 'Swiss Artillery',
-    author = 'Empire Artillery by Vess',
+    author = 'Swiss Artillery, using Empire Artillery by Vess (edited by Arkein).',
     mesh = {
-        'https://paste.ee/r/JuwEE'
+      -- Cannon
+      'http://cloud-3.steamusercontent.com/ugc/1011564617603437215/3FF112260B713845EB102293BC47E051B77045B0/',
+      -- Bombard
+      'http://cloud-3.steamusercontent.com/ugc/1011564617603437584/2EE6C6A89C788592FCF67AB29BE803F81818EC31/',
     },
-    player_red_tex = 'http://i.imgur.com/oYPhR39.png',
-    player_blue_tex = 'http://i.imgur.com/oYPhR39.png'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564617603529298/FAAB03D0A2A6BDDDEE4F1207D1AEDA739CE8A9E0/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564617603530100/BA39D637C8C382A09910D06205BDA277338599E9/'
 }
+
+troop_artillery_crew_swiss = {
+  height_correction = 0.43,
+  scale = 0.37,
+    rotation = 180,
+    description = 'Swiss Artillery Crew',
+    author = 'Swiss Artillery Crew, using Empire Artillery Crew by Vess (edited by Arkein).',
+    mesh = {
+      -- Loaders
+      'http://cloud-3.steamusercontent.com/ugc/1011564617603438030/32D6DC091E88FC1DFEE5692A6C947553A7AED18F/',
+      'http://cloud-3.steamusercontent.com/ugc/1011564617603438297/6A62ED1F0DFC234F2F22E7B64B7D0129FC05DBB4/',
+      -- Igniters
+      'http://cloud-3.steamusercontent.com/ugc/1011564617603440250/3107982A3FD6095DCE9F1BE0071AC8281D8DAB61/',
+      'http://cloud-3.steamusercontent.com/ugc/1011564617603441110/93F9FF3E307F7DBC4A0491CFF2311A4F5209D2AF/',
+      -- Overlooking
+      'http://cloud-3.steamusercontent.com/ugc/1011564617603441426/260B7A1823C531E4530265FD20BD9B82D71522D1/',
+      'http://cloud-3.steamusercontent.com/ugc/1011564617603441676/52FA446B66916C248CD66A4DC1F1E77C79A43FC5/',
+      'http://cloud-3.steamusercontent.com/ugc/1011564617603441960/64DE3F2EAD9462B72F699EE5EEFE9C54AE16947E/',
+      'http://cloud-3.steamusercontent.com/ugc/1011564617603442229/2A0599B03B45AB4826404B9ECC87A5AA5732ADA3/',
+      'http://cloud-3.steamusercontent.com/ugc/1011564617603442546/55AD1DB4E003B41E9B0591215B543B9F5D44D670/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564617603529298/FAAB03D0A2A6BDDDEE4F1207D1AEDA739CE8A9E0/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564617603530100/BA39D637C8C382A09910D06205BDA277338599E9/'
+}
+
 
 troop_horse_rider_swiss = {
-    height_correction = 0.536,
-    scale = 0.3,
+    height_correction = 0.78,
+    scale = 0.37,
     rotation = 180,
     description = 'Swiss Horse Rider',
-    author = 'Empire Horse Rider by Vess',
+    author = 'Swiss Horse Rider, using Empire Horse Rider by Vess (edited by Arkein).',
     mesh = {
-        'https://paste.ee/r/Ju09W',
-        'https://paste.ee/r/5myFe',
-        'https://paste.ee/r/fyfsw',
-        'https://paste.ee/r/7qpan',
-        'https://paste.ee/r/veQqM',
-        'https://paste.ee/r/jZneI',
-        'https://paste.ee/r/5A6wH',
-        'https://paste.ee/r/aB52n',
-        'https://paste.ee/r/mu8FM',
-        'https://paste.ee/r/dMQGl',
-        'https://paste.ee/r/7IkHJ',
-        'https://paste.ee/r/lzKxY'
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603297484/5F3F8D746BBA1B12757CAC6727E685009F81CEDA/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603297951/111DF0499B2CA870614F527CDAFB772EE56DA363/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603298430/B14DB2A8D7456F25926DA5441993B7A7750364E7/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603298786/1F82CB4B7B0A9BB16AE6280F016B05E31A00D97F/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603299172/0350D20493428E5392C72375CCA27E659C3F7BBA/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603300149/55BD13266159E134E933360B78422B661851A879/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603300569/9879FFC89B7FAEFE7E8D120C8AC40A41DB65FFBC/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603301104/E4021577529CE79C231816B102B9D8BE2D3220C0/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603301597/E0888F6D23AEDB861D988E65EE255BA8E8D4A897/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603302000/78EAA660981FCB35E2C710F9F11C260FD20325D2/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603302385/DF9AA138A32409343E12624A1356AF414CE07553/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603303443/D02EFC330CC3BEB32F2F60FBAA2B3B221B845F29/'
     },
-    player_red_tex = 'http://i.imgur.com/0yir4dG.pngR2mNz8H.png',
-    player_blue_tex = 'http://i.imgur.com/0yir4dG.pngR2mNz8H.png'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564754634445400/67EAD8730DD3878AB3B7BA39B8145FA6C28BB0D9/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564754634551067/FC2EFCE2711DC943D4CE399746F7A05F3C15C02A/'
 }
 
 troop_knight_swiss = {
-    height_correction = 0.536,
-    scale = 0.3,
+    height_correction = 0.78,
+    scale = 0.37,
     rotation = 180,
     description = 'Swiss Knight',
-    author = 'Empire Knight by Vess',
+    author = 'Swiss Knights, using Empire Knights by Vess (edited by Arkein).',
     mesh = {
-        'https://paste.ee/r/D9lAB',
-        'https://paste.ee/r/kluF2',
-        'https://paste.ee/r/sBwKN',
-        'https://paste.ee/r/lmhud',
-        'https://paste.ee/r/8vQgW',
-        'https://paste.ee/r/l7mRJ'
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603275660/92A4D9E1FF7FBED2D5D5A6EBACC010C5137C8522/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603275987/FEA7CE3315487025761EF653F1286FA64091D190/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603276290/1FA1DD986545F6014F95D1EC411B662598868728/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603277388/F13D0B168ABF029715757D825312B1A87BB3E7D1/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603277713/CFCC1F9B4843E85BA9173BA77E2A8A81E24041D1/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603277965/F09D7ACC7495FF75F6FBFE6F3C40E72A38796422/'
     },
-    player_red_tex = 'http://i.imgur.com/h9Pp9LH.png',
-    player_blue_tex = 'http://i.imgur.com/h9Pp9LH.png'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564754634445400/67EAD8730DD3878AB3B7BA39B8145FA6C28BB0D9/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564754634551067/FC2EFCE2711DC943D4CE399746F7A05F3C15C02A/'
+}
+
+troop_camp_swiss = {
+  height_correction = 0.057,
+  scale = 0.028 ,
+    rotation = 0,
+    description = 'Swiss Camp',
+    author = 'Swiss Camp, using Empire Camp by Vess (edited by Arkein).',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1011564754631755610/F53454B6AD7674E2867551A549EC6AAB7797F032/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564754634704049/BD4E1F2332E028516026E373B068FA69DBF931D4/'
+
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564754634704430/244DE3C85A0CD2BD2A580B7629EACDE1C581B38E/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564754634715491/3D77C899C1C05A665EB36DFD6451BA0A2FE996B1/'
 }

@@ -73,10 +73,10 @@ armies = {
                 base = 'tile_grass_40x15',
                 n_models = 4,
                 fixed_models = {
-                    [1] = 'troop_pikeman_swiss_bannerman',
+                    [1] = 'troop_pikeman_swiss_inclined',
                     [2] = 'troop_pikeman_swiss_bannerman',
                     [3] = 'troop_pikeman_swiss_captain',
-                    [4] = 'troop_pikeman_swiss_bannerman',
+                    [4] = 'troop_pikeman_swiss_inclined'
                 }
             },
             base2 = {
@@ -154,9 +154,20 @@ armies = {
             base14 = {
                 name = 'Art',
                 base = 'tile_grass_40x40',
+                n_models = 3,
+                fixed_models = {
+                    [1] = 'troop_artillery_crew_swiss',
+                    [2] = 'troop_artillery_pieces_swiss',
+                    [3] = 'troop_artillery_crew_swiss',
+                    [3] = 'troop_artillery_crew_swiss',
+                }
+            },
+            base15 = {
+                name = 'Camp',
+                base = 'tile_grass_40x40',
                 n_models = 1,
-                model_data = 'troop_artillery_swiss'
-            }
+                model_data = 'troop_camp_swiss'
+            },
         }
     }
 }
