@@ -225,7 +225,6 @@ function on_toggle_zoc(player, value, id)
         UI.setValue('toggle_zoc', 'Do not show ZOC')
         UI.setAttribute('toggle_zoc', 'text', 'Do not show ZOC')
     end
-
 end
 
 function on_spawn_table_grass(player, value, id)
