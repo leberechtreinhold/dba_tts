@@ -32,6 +32,12 @@ g_line_thickness = 0.04
 -- to this original position, making it easier to undo a move.
 g_max_inches_snap = 10/100
 
+-- Color of the gizmos for movement for each player
+g_gizmo_color_player_red = { 0.9, 0.1, 0.1 }
+g_gizmo_color_player_blue = { 0.1, 0.1, 0.9 }
+g_gizmo_fire_color_player_red = { 1, 0.6, 0.1 }
+g_gizmo_fire_color_player_blue = { 0.15, 0.6, 0.2 }
+
 minimal_collider = 'http://cloud-3.steamusercontent.com/ugc/1022823184773057328/6E2E42ECBBD40D7501018921FC5898568FF9D748/'
 
 armies = {
@@ -61,7 +67,13 @@ armies = {
             base3 = {
                 name = '4Bw',
                 base = 'tile_reference_40x15',
-                n_models = 12,
+                n_models = 4,
+                model_data = 'troop_swordsman_latemedieval'
+            },
+            base4 = {
+                name = 'Art',
+                base = 'tile_reference_40x15',
+                n_models = 6,
                 model_data = 'troop_swordsman_latemedieval'
             },
         }
