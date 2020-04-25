@@ -21,8 +21,8 @@
 
 <Panel id="panel_dba_pip_btns" width="400" height="150" color="#00000000" outline="#00000000" rectAlignment="LowerCenter" >
     <HorizontalLayout>
-        <Text id="text_pips_player_blue" ignoreLayout="true" fontSize="64" position="-135 20">0</Text>
-        <Text id="text_pips_player_red" ignoreLayout="true" fontSize="64" position="140 20">0</Text>
+        <Text id="text_pips_player_blue" ignoreLayout="true" fontSize="64" position="-135 20" color="#2e82ec">0</Text>
+        <Text id="text_pips_player_red" ignoreLayout="true" fontSize="64" position="140 20" color="#ec482e">0</Text>
 
         <!-- TODO The hightlighted thing is not working, investigate... -->
         <Button icon="plus" highlightedSprite="minus" pressedSprite="minus" transition="SpriteSwap"
