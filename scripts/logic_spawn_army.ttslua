@@ -67,7 +67,11 @@ function spawn_army(army, is_red_player)
     local i = 0
     for base_id, base_data in pairs(army) do
         if base_id ~= 'data' then
-            local z_pos_modifier = get_depth_base(base_data['base']) / 2
+            local z_pos_modifier = -1 * get_depth_base(base_data['base']) / 2
+            if is_red_player then
+                z_pos_modifier = -1* z_pos_modifier
+            end
+
             local location = {
                 x = 0 + i * g_base_width_inches - width_army / 2,
                 y = 0,
