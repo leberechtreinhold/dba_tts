@@ -35,6 +35,13 @@ armies = {
                 n_models = 6,
                 model_data = 'troop_swordsman_latemedieval'
             },
+            base5 = {
+                name = '3Wb',
+                base = 'tile_reference_40x15',
+                loose = true,
+                n_models = 3,
+                model_data = 'troop_swordsman_latemedieval'
+            }
         }
     },
     Book_IV = {

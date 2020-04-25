@@ -32,10 +32,20 @@ g_line_thickness = 0.04
 -- to this original position, making it easier to undo a move.
 g_max_inches_snap = 10/100
 
--- Color of the gizmos for movement for each player
+-- Troops spawn with a random facing angle, this control how much they can vary
+-- Note that this goes from -g_max_angle_spawn to g_max_angle_spawn
+-- It's in degrees
+g_max_angle_spawn = 20
+
+-- Troops that are marked as loose (warbands, psiloi etc) may be moved around
+-- a little bit for a better representation. This controls how much, in inches
+g_max_loose_spawn = 0.2
+
+-- Color of the gizmos for movement/firearcs for each player
 g_gizmo_color_player_red = { 0.9, 0.1, 0.1 }
 g_gizmo_color_player_blue = { 0.1, 0.1, 0.9 }
 g_gizmo_fire_color_player_red = { 1, 0.6, 0.1 }
 g_gizmo_fire_color_player_blue = { 0.15, 0.6, 0.2 }
 
+-- Models use this collider so they are easier to move
 minimal_collider = 'http://cloud-3.steamusercontent.com/ugc/1022823184773057328/6E2E42ECBBD40D7501018921FC5898568FF9D748/'

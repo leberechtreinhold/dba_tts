@@ -34,16 +34,25 @@ function spawn_base(base, pos, y_rotation, is_red_player)
     for i=1,n do
         local column = (i - 1) % columns + 1
         local row = math.floor((i - 1) / columns) + 1
+        
+        local random_rotation = math.random(-20, 20)
+        local random_x = 0
+        local random_z = 0
+        if base['loose'] == true then
+            random_x = random_float(-g_max_loose_spawn, g_max_loose_spawn)
+            random_z = random_float(-g_max_loose_spawn, g_max_loose_spawn)
+        end
+
         local relative_pos = {
-            x = pos['x'] + column * column_width - half_width,
+            x = pos['x'] + column * column_width - half_width + random_x,
             y = pos['y'] + g_base_height_inches / 2 + base_obj.getPosition()['y'],
-            z = pos['z'] + row * row_depth - half_depth
+            z = pos['z'] + row * row_depth - half_depth + random_x
         }
         local model_name = base['model_data']
         if model_name == nil then
             model_name = base['fixed_models'][i]
         end
-        local soldier_obj = spawn_model(model_name, relative_pos, math.random(-20, 20), minimal_collider, is_red_player)
+        local soldier_obj = spawn_model(model_name, relative_pos, random_rotation, minimal_collider, is_red_player)
         base_obj.addAttachment(soldier_obj)
     end
     base_obj.setRotation({0, y_rotation, 0})

@@ -117,3 +117,9 @@ function array_concat(t1,t2)
     end
     return t
 end
+
+-- Generates a random number with decimals between start and end
+-- By default random only generates integers in the range
+function random_float(start_range, end_range)
+    return start_range + math.random() * (end_range - start_range)
+end
