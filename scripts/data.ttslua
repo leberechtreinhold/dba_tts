@@ -28,6 +28,10 @@ g_precision_circle = 32
 -- lines painted. This control how thick in inches the lines are
 g_line_thickness = 0.04
 
+-- When moving, if you move less than this inches, the base will snap
+-- to this original position, making it easier to undo a move.
+g_max_inches_snap = 10/100
+
 minimal_collider = 'http://cloud-3.steamusercontent.com/ugc/1022823184773057328/6E2E42ECBBD40D7501018921FC5898568FF9D748/'
 
 armies = {

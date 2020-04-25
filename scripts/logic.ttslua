@@ -299,7 +299,7 @@ function max_distance_between_bases(base1_corners, base2_corners)
 end
 
 g_picked_base_obj = nil
-g_picked_base_initial_corners = nil
+g_picked_base_initial_transform = nil
 function onObjectPickUp(player_color,  picked_up_object)
     if g_bases[picked_up_object.getName()] == nil then
         return
@@ -313,8 +313,8 @@ function onObjectPickUp(player_color,  picked_up_object)
     end
 
     g_picked_base_obj = picked_up_object
-    g_picked_base_initial_corners = compute_corners_base(picked_up_object)
-    local pos = picked_up_object.getPosition()
+    g_picked_base_initial_transform = calculate_transform(picked_up_object)
+    local pos = g_picked_base_initial_transform['position']
     local radius = g_paces_movement / 100
     
     local color = { 0.9, 0.1, 0.1 }
@@ -345,10 +345,18 @@ function onObjectDrop(player_color,  picked_up_object)
     end
 
     local new_corners = compute_corners_base(picked_up_object)
-    print_info('Movement for ' .. picked_up_object.getName() .. ' is: ' .. max_distance_between_bases(new_corners, g_picked_base_initial_corners))
+    local distance = max_distance_between_bases(new_corners, g_picked_base_initial_transform['corners'])
+    if distance < g_max_inches_snap then
+        -- Snap back!
+        distance = 0
+        picked_up_object.setPosition(g_picked_base_initial_transform['position'])
+        picked_up_object.setRotation(transform_to_rotation_vector(g_picked_base_initial_transform))
+    end
+
+    print_info(string.format('Movement for %q is %.1f paces', picked_up_object.getName(), distance * 100))
 
     g_picked_base_obj = nil
-    g_picked_base_initial_corners = nil
+    g_picked_base_initial_transform = nil
     Global.setVectorLines({})
 
     -- If its dropped it may have moved, therefore update the gizmo, in case
@@ -371,11 +379,28 @@ function calculate_future_position(base_obj, movement)
     )
 end
 
+function calculate_transform(base_obj)
+    return {
+        position = base_obj.getPosition(),
+        corners = compute_corners_base(base_obj),
+        rotation = normalize_angle(math.rad(base_obj.getRotation()['y']))
+    }
+end
+
 function get_transform(position, corners, rotation)
     return {
         position = position,
         corners = corners,
         rotation = rotation
+    }
+end
+
+function transform_to_rotation_vector(transform)
+    -- The normalization of a normalized is the original
+    return { 
+        x = 0, 
+        y = math.deg(normalize_angle(transform['rotation'])), 
+        z = 0
     }
 end
 
@@ -570,7 +595,7 @@ g_selected_objects = {}
 function onUpdate()
     if g_picked_base_obj then
         local new_corners = compute_corners_base(g_picked_base_obj)
-        local distance = max_distance_between_bases(new_corners, g_picked_base_initial_corners) * 100
+        local distance = max_distance_between_bases(new_corners, g_picked_base_initial_transform['corners']) * 100
 
         UI.setAttribute('panel_current_movement', 'active', true)
         UI.setValue('text_current_movement_paces',

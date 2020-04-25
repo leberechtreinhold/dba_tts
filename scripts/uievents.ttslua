@@ -47,11 +47,7 @@ function align_bases(player, value, id)
     -- won't update on the object until next frame. However we still have to
     -- take into account here to aligning all the pieces together
     local future_transform = {}
-    future_transform[objs[1].getName()] = get_transform(
-        objs[1].getPosition(),
-        compute_corners_base(objs[1]),
-        objs[1].getRotation()
-    )
+    future_transform[objs[1].getName()] = calculate_transform(objs[1])
     
     for i=2,n_objs do
         local pos = objs[i].getPosition()
