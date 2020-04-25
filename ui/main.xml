@@ -6,6 +6,7 @@
     <Button onClick="align_bases">Align bases</Button>
     <Button id="button_create_army" onClick="create_army_options_menu">Deploy an army</Button>
     <Button onClick="debug_button">DEBUG BUTTON</Button>
+    <Toggle id="toggle_zoc" isOn="false" onValueChanged="on_toggle_zoc">Do not show ZOC</Toggle>
 </VerticalLayout>
 </Panel>
 

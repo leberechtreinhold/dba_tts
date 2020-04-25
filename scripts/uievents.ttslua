@@ -211,3 +211,19 @@ function remove_pip(player, value, id)
         UI.setValue('text_pips_player_blue', pips_blue)
     end
 end
+
+-- Global enabled or disabled ZOC
+g_zoc_enabled = false
+function on_toggle_zoc(player, value, id)
+    print(value)
+    g_zoc_enabled = value == "True"
+
+    if g_zoc_enabled then
+        UI.setValue('toggle_zoc', 'Show ZOC')
+        UI.setAttribute('toggle_zoc', 'text', 'Show ZOC')
+    else
+        UI.setValue('toggle_zoc', 'Do not show ZOC')
+        UI.setAttribute('toggle_zoc', 'text', 'Do not show ZOC')
+    end
+
+end

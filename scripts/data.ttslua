@@ -46,6 +46,8 @@ g_gizmo_color_player_red = { 0.9, 0.1, 0.1 }
 g_gizmo_color_player_blue = { 0.1, 0.1, 0.9 }
 g_gizmo_fire_color_player_red = { 1, 0.6, 0.1 }
 g_gizmo_fire_color_player_blue = { 0.15, 0.6, 0.2 }
+g_gizmo_zoc_color_player_red = { 0.6, 0.25, 0.15 }
+g_gizmo_zoc_color_player_blue = { 0.15, 0.25, 0.6 }
 
 -- Models use this collider so they are easier to move
 minimal_collider = 'http://cloud-3.steamusercontent.com/ugc/1022823184773057328/6E2E42ECBBD40D7501018921FC5898568FF9D748/'
