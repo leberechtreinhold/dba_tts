@@ -317,9 +317,9 @@ function onObjectPickUp(player_color,  picked_up_object)
     local pos = g_picked_base_initial_transform['position']
     local radius = g_paces_movement / 100
     
-    local color = { 0.9, 0.1, 0.1 }
+    local color = g_gizmo_color_player_red
     if is_base_blue_player(picked_up_object.getName()) then
-        color = { 0.1, 0.1, 0.9 }
+        color = g_gizmo_color_player_blue
     end
 
     Global.setVectorLines( {
@@ -426,9 +426,9 @@ function get_strokes_future_position(base_obj, transform)
     table.insert(stroke_points, transform['corners']['botright'])
     table.insert(stroke_points, transform['corners']['topright'])
 
-    local color = { 0.9, 0.1, 0.1 }
+    local color = g_gizmo_color_player_red
     if is_base_blue_player(base_obj.getName()) then
-        color = { 0.1, 0.1, 0.9 }
+        color = g_gizmo_color_player_blue
     end
 
     return
@@ -467,29 +467,29 @@ end
 --     p_x, p_Z           p_x+40mm, p_z
  
 -- This is mirrored in two sides, then everything is adjusted for rotation
-function get_strokes_bow(base_obj, transform)
+function get_strokes_fire_arc(base_obj, transform, shooting_range, max_width)
     local stroke_points = {}
     local p = transform['corners']['topright']
 
     table.insert(stroke_points, p)
     table.insert(stroke_points, {
-        x = p['x'] + g_base_width_inches, 
+        x = p['x'] + max_width, 
         y = p['y'],
         z = p['z']
     })
     table.insert(stroke_points, {
-        x = p['x'] + g_base_width_inches, 
+        x = p['x'] + max_width, 
         y = p['y'],
-        z = p['z'] + g_bow_range - g_base_width_inches
+        z = p['z'] + shooting_range - max_width
     })
     local radius_right = {
         x = p['x'], 
         y = p['y'],
-        z = p['z'] + g_bow_range - g_base_width_inches
+        z = p['z'] + shooting_range - max_width
     }
     local right_arc = get_coordinates_arc(
         radius_right, 
-        g_base_width_inches, 
+        max_width, 
         g_precision_circle / 4,
         0,
         90)
@@ -497,32 +497,32 @@ function get_strokes_bow(base_obj, transform)
     table.insert(stroke_points, {
         x = p['x'], 
         y = p['y'],
-        z = p['z'] + g_bow_range
+        z = p['z'] + shooting_range
     })
     table.insert(stroke_points, {
-        x = p['x'] - g_base_width_inches, 
+        x = p['x'] - max_width, 
         y = p['y'],
-        z = p['z'] + g_bow_range
+        z = p['z'] + shooting_range
     })
     local radius_left = {
-        x = p['x'] - g_base_width_inches, 
+        x = p['x'] - max_width, 
         y = p['y'],
-        z = p['z'] + g_bow_range - g_base_width_inches
+        z = p['z'] + shooting_range - max_width
     }
     local left_arc = get_coordinates_arc(
         radius_left, 
-        g_base_width_inches, 
+        max_width, 
         g_precision_circle / 4,
         90,
         180)
     array_concat(stroke_points, left_arc)
     table.insert(stroke_points, {
-        x = p['x'] - g_base_width_inches * 2, 
+        x = p['x'] - max_width * 2, 
         y = p['y'],
-        z = p['z'] + g_bow_range - g_base_width_inches
+        z = p['z'] + shooting_range - max_width
     })
     table.insert(stroke_points, {
-        x = p['x'] - g_base_width_inches * 2, 
+        x = p['x'] - max_width * 2, 
         y = p['y'],
         z = p['z']
     })
@@ -536,9 +536,9 @@ function get_strokes_bow(base_obj, transform)
         paux['z'] = paux_rotated['z']
     end
 
-    local color = { 0.9, 0.1, 0.1 }
+    local color = g_gizmo_fire_color_player_red
     if is_base_blue_player(base_obj.getName()) then
-        color = { 0.1, 0.1, 0.9 }
+        color = g_gizmo_fire_color_player_blue
     end
 
     return
@@ -550,6 +550,13 @@ function get_strokes_bow(base_obj, transform)
     }
 end
 
+function get_strokes_bow(base_obj, transform)
+    return get_strokes_fire_arc(base_obj, transform, g_bow_range, g_base_width_inches)
+end
+
+function get_strokes_art(base_obj, transform)
+    return get_strokes_fire_arc(base_obj, transform, g_art_range, g_base_width_inches)
+end
 
 function draw_gizmo_future_movements(new_selected_items)
     if #new_selected_items == 0 then
@@ -568,6 +575,8 @@ function draw_gizmo_future_movements(new_selected_items)
             if str_has_substr(obj.getName(), 'Bw')
                or str_has_substr(obj.getName(), 'Cb') then
                 table.insert(strokes, get_strokes_bow(obj, transform))
+            elseif str_has_substr(obj.getName(), 'Art') then
+                table.insert(strokes, get_strokes_art(obj, transform))
             end
 
         end
