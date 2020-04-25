@@ -201,7 +201,6 @@ function get_option_selected_dropdown(dropdown_element)
     end
 end
 
-
 -- Given an id corresponding to an existing <Dropdown> element on the current
 -- XML UI, returns the currently selected element.
 -- This is because UI.getAttribute('dropdownid', 'text') doesn't work, despite

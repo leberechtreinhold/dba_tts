@@ -2,7 +2,7 @@
 <Panel id="panel_dba_orders" width="200" height="400" color="#FFFFFF" outline="#000" outlineSize="2" rectAlignment="MiddleRight" >
 <VerticalLayout>
     <Slider id="slider_paces" minValue="0" maxValue="500" wholeNumbers="true" value="200" colors="#00000000|#00000000|#00000000|#00000000" backgroundcolor="#FFFFFFF" onValueChanged="slider_paces_changed"></Slider>
-    <Button id="button_move_forward" onClick="move_bases">Move 100 paces</Button>
+    <Button id="button_move_forward" onClick="move_bases">Move 200 paces</Button>
     <Button onClick="align_bases">Align bases</Button>
     <Button id="button_create_army" onClick="create_army_options_menu">Deploy an army</Button>
     <Button onClick="debug_button">DEBUG BUTTON</Button>

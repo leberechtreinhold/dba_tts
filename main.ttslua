@@ -6,10 +6,12 @@
 -- however.
 
 #include scripts/data_troops
+#include scripts/data_armies
 #include scripts/data
 #include scripts/log
 #include scripts/utilities_lua
 #include scripts/utilities
+#include scripts/logic_spawn_army
 #include scripts/logic
 #include scripts/uievents
 
