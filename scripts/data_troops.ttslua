@@ -3,7 +3,7 @@
 -------------------------------------------------------------------------------
 
 tile_reference_40x15 = {
-    height_correction = 0.96,
+    height_correction = 0,
     scale = 1,
     rotation = 0,
     depth = 15,
@@ -15,7 +15,7 @@ tile_reference_40x15 = {
 }
 
 tile_grass_40x15 = {
-    height_correction = 0.96,
+    height_correction = 0,
     scale = 1,
     rotation = 0,
     depth = 15,
@@ -37,7 +37,7 @@ tile_grass_40x15 = {
 }
 
 tile_grass_40x20 = {
-    height_correction = 0.96,
+    height_correction = 0,
     scale = 1,
     rotation = 0,
     depth = 20,
@@ -59,7 +59,7 @@ tile_grass_40x20 = {
 }
 
 tile_grass_40x30 = {
-    height_correction = 0.96,
+    height_correction = 0,
     scale = 1,
     rotation = 0,
     depth = 30,
@@ -79,7 +79,7 @@ tile_grass_40x30 = {
 }
 
 tile_grass_40x40 = {
-    height_correction = 0.96,
+    height_correction = 0,
     scale = 1,
     rotation = 0,
     depth = 40,
@@ -99,7 +99,7 @@ tile_grass_40x40 = {
 }
 
 tile_grass_40x60 = {
-    height_correction = 0.96,
+    height_correction = 0,
     scale = 1,
     rotation = 0,
     depth = 60,
@@ -115,7 +115,7 @@ tile_grass_40x60 = {
 }
 
 tile_grass_40x80 = {
-    height_correction = 0.96,
+    height_correction = 0,
     scale = 1,
     rotation = 0,
     depth = 80,
@@ -135,7 +135,7 @@ tile_grass_40x80 = {
 -------------------------------------------------------------------------------
 
 troop_swordsman_latemedieval = {
-    height_correction = 0.35,
+    height_correction = 0.4,
     scale = 0.3,
     rotation = 180,
     description = 'Late Medieval Swordsman',
@@ -159,7 +159,7 @@ troop_swordsman_latemedieval = {
 ------------------------------------------------------------------------------
 
 troop_pikeman_swiss_inclined = {
-    height_correction = 0.43,
+    height_correction = 0.41,
     scale = 0.37,
     rotation = 180,
     description = 'Swiss Pikeman',
@@ -174,7 +174,7 @@ troop_pikeman_swiss_inclined = {
 }
 
 troop_pikeman_swiss_straight = {
-    height_correction = 0.43,
+    height_correction = 0.41,
     scale = 0.37,
     rotation = 180,
     description = 'Swiss Pikeman',
@@ -190,7 +190,7 @@ troop_pikeman_swiss_straight = {
 }
 
 troop_pikeman_swiss_bannerman = {
-    height_correction = 0.43,
+    height_correction = 0.41,
     scale = 0.37,
     rotation = 180,
     description = 'Swiss Bannerman',
@@ -203,7 +203,7 @@ troop_pikeman_swiss_bannerman = {
 }
 
 troop_pikeman_swiss_captain = {
-    height_correction = 0.43,
+    height_correction = 0.41,
     scale = 0.37,
     rotation = 180,
     description = 'Swiss Captain',
@@ -216,7 +216,7 @@ troop_pikeman_swiss_captain = {
 }
 
 troop_handgunner_swiss = {
-    height_correction = 0.43,
+    height_correction = 0.41,
     scale = 0.37,
     rotation = 180,
     description = 'Swiss Handgunner',
@@ -256,7 +256,7 @@ troop_handgunner_swiss = {
 }
 
 troop_halberdier_swiss = {
-    height_correction = 0.43,
+    height_correction = 0.41,
     scale = 0.37,
     rotation = 180,
     description = 'Swiss Halberdier',
@@ -284,7 +284,7 @@ troop_halberdier_swiss = {
 
 
 troop_artillery_pieces_swiss = {
-  height_correction = 0.057,
+  height_correction = 0,
   scale = 0.28,
     rotation = 180,
     description = 'Swiss Artillery',
@@ -300,7 +300,7 @@ troop_artillery_pieces_swiss = {
 }
 
 troop_artillery_crew_swiss = {
-  height_correction = 0.43,
+  height_correction = 0.41,
   scale = 0.37,
     rotation = 180,
     description = 'Swiss Artillery Crew',
@@ -325,7 +325,7 @@ troop_artillery_crew_swiss = {
 
 
 troop_horse_rider_swiss = {
-    height_correction = 0.78,
+    height_correction = 0.76,
     scale = 0.37,
     rotation = 180,
     description = 'Swiss Horse Rider',
@@ -349,7 +349,7 @@ troop_horse_rider_swiss = {
 }
 
 troop_knight_swiss = {
-    height_correction = 0.78,
+    height_correction = 0.76,
     scale = 0.37,
     rotation = 180,
     description = 'Swiss Knight',
@@ -367,7 +367,7 @@ troop_knight_swiss = {
 }
 
 troop_camp_swiss = {
-  height_correction = 0.057,
+  height_correction = 0,
   scale = 0.028 ,
     rotation = 0,
     description = 'Swiss Camp',

@@ -1,8 +1,14 @@
 -- All bases have 40mm width
 g_base_width_inches = 1.5748031496062992126
 
--- All bases are 5mm tall
-g_base_height_inches = 0.19685039370078740157
+-- All bases are 3mm tall
+g_base_height_inches = 0.11811023622047244094
+
+-- The default table is not at y=0 position, but rather a bit higher
+g_base_height_tabletop = 0.92
+
+-- The DBA tables are 3mm thick/tall
+g_table_thickness = 0.11811023622047244094
 
 -- Bow range in inches
 g_bow_range = 2
@@ -53,7 +59,6 @@ g_gizmo_zoc_color_player_blue = { 0.15, 0.25, 0.6 }
 minimal_collider = 'http://cloud-3.steamusercontent.com/ugc/1022823184773057328/6E2E42ECBBD40D7501018921FC5898568FF9D748/'
 
 tables = {
-    height_correction = 0.06,
     model = 'http://cloud-3.steamusercontent.com/ugc/1022823759371064859/C870FF6BCD014D8EC33CDFADBFC11EE555E44A6F/',
     grass_textures = {
         'http://cloud-3.steamusercontent.com/ugc/1022823759371066811/25B099510D6E351C7D82A5FBA8184397E4E7A005/'

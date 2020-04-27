@@ -1,6 +1,7 @@
 
 g_base_index = 1
 g_bases = {}
+
 function spawn_base(base, pos, y_rotation, is_red_player)
     local base_obj = spawn_model(base['base'], pos, 0, nil, is_red_player)
     local base_name = 'base ' .. base['name'] .. ' #' .. g_base_index
@@ -45,7 +46,7 @@ function spawn_base(base, pos, y_rotation, is_red_player)
 
         local relative_pos = {
             x = pos['x'] + column * column_width - half_width + random_x,
-            y = pos['y'] + g_base_height_inches / 2 + base_obj.getPosition()['y'],
+            y = pos['y'] + g_base_height_inches / 2,
             z = pos['z'] + row * row_depth - half_depth + random_x
         }
         local model_name = base['model_data']
@@ -83,7 +84,7 @@ function spawn_army(army, is_red_player)
 
             local location = {
                 x = 0 + i * g_base_width_inches - width_army / 2,
-                y = 0,
+                y = g_base_height_tabletop + g_table_thickness + g_base_height_inches / 2,
                 z = z_pos - z_pos_modifier
             }
             spawn_base(base_data, location, y_rotation, is_red_player)
@@ -140,7 +141,7 @@ end
 function spawn_table_obj(model_url, height_correction, texture_array_urls)
     local obj = spawnObject({
         type = 'Custom_Model',
-        position = { x = 0, y = 0.059, z = 0},
+        position = { x = 0, y = g_base_height_tabletop, z = 0},
         rotation = { x = 0, y = 0, z = 0},
         scale = { x = 1, y = 1, z = 1},
         sound = false,
@@ -179,7 +180,7 @@ function spawn_model(troop_name, pos, added_y_axis_rotation, collider, is_player
     local selected_mesh = meshes[mesh_index]
     local spawn_data = get_spawn_model(pos,
         model_data['rotation'],
-        model_data['height_correction'] + tables['height_correction'] * 2,
+        model_data['height_correction'],
         model_data['scale'],
         selected_mesh,
         texture,
