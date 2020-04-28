@@ -242,13 +242,25 @@ function on_toggle_zoc(player, value, id)
 end
 
 function on_spawn_table_grass(player, value, id)
-    spawn_table_obj(tables['model'], tables['height_correction'], tables['grass_textures'])
+    if g_current_table == nil then
+        spawn_table_obj(tables['model'], tables['height_correction'], tables['grass_textures'])
+    else
+        print_error('There\'s already a table spawned')
+    end
 end
 
 function on_spawn_table_mountain(player, value, id)
-    spawn_table_obj(tables['model'], tables['height_correction'], tables['mountain_textures'])
+    if g_current_table == nil then
+        spawn_table_obj(tables['model'], tables['height_correction'], tables['mountain_textures'])
+    else
+        print_error('There\'s already a table spawned')
+    end
 end
 
 function on_spawn_table_desert(player, value, id)
-    spawn_table_obj(tables['model'], tables['height_correction'], tables['desert_textures'])
+    if g_current_table == nil then
+        spawn_table_obj(tables['model'], tables['height_correction'], tables['desert_textures'])
+    else
+        print_error('There\'s already a table spawned')
+    end
 end

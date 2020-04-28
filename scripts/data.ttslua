@@ -51,6 +51,9 @@ g_max_angle_spawn = 20
 -- a little bit for a better representation. This controls how much, in inches
 g_max_loose_spawn = 0.2
 
+-- How many seconds until the table locks itself
+g_seconds_until_table_lock = 5
+
 -- Color of the gizmos for movement/firearcs for each player
 g_gizmo_color_player_red = { 0.9, 0.1, 0.1 }
 g_gizmo_color_player_blue = { 0.1, 0.1, 0.9 }

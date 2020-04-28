@@ -150,6 +150,7 @@ function update_armies_menu(book, army_selected)
     set_options_dropdown_by_id('dropdown_army', options, army_selected)
 end
 
+g_current_table = nil
 function spawn_table_obj(model_url, height_correction, texture_array_urls)
     local obj = spawnObject({
         type = 'Custom_Model',
@@ -169,14 +170,13 @@ function spawn_table_obj(model_url, height_correction, texture_array_urls)
         specular_intensity = 0.1,
         freshnel_strength = 0
     })
-    print_info('The table will lock itself in 5s')
+    g_current_table = obj
+    print_important('The table will lock itself in 5s')
     Wait.time(function()
         obj.setLock(true)
-        print_info('Table is locked')
-    end, 5)
+        print_important('Table is locked')
+    end, g_seconds_until_table_lock)
 end
-
-
 
 function spawn_model(troop_name, pos, added_y_axis_rotation, collider, is_player_red)
     -- Better pray that the input name actually exists! lol
