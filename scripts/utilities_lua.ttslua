@@ -115,7 +115,6 @@ function array_concat(t1,t2)
     for _,el in pairs(t2) do
         table.insert(t1, el)
     end
-    return t
 end
 
 -- Generates a random number with decimals between start and end

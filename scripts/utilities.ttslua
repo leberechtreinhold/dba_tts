@@ -190,7 +190,7 @@ end
 function get_option_selected_dropdown(dropdown_element)
     local children = dropdown_element['children']
     if children == nil then
-        return list
+        return nil
     end
     for i,option in ipairs(children) do
         if option['attributes'] ~= nil then
