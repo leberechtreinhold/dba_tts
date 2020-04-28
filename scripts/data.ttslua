@@ -21,7 +21,7 @@ g_spawn_from_center_in = 3
 
 -- How many bases needed to create another row of bases
 -- on deployment
-g_max_bases_row = 6
+g_max_bases_row = 8
 
 -- Maximum distance between the center of bases for autoalignment, squared
 g_max_distance_alignment = 3*3
