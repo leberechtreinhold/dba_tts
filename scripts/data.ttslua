@@ -23,6 +23,16 @@ g_spawn_from_center_in = 3
 -- on deployment
 g_max_bases_row = 8
 
+-- Width and Depth (width in the Z azis) of the playing DBA table, in inches
+g_width_table_in = 23.62204724409448818898
+g_depth_table_in = 23.62204724409448818898
+
+-- How many inches to deploy from the sides
+g_deploy_side_in = 3
+
+-- How many inches to deploy from the home border
+g_deploy_home_in = 6
+
 -- Maximum distance between the center of bases for autoalignment, squared
 g_max_distance_alignment = 3*3
 

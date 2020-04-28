@@ -170,6 +170,7 @@ function spawn_table_obj(model_url, height_correction, texture_array_urls)
         specular_intensity = 0.1,
         freshnel_strength = 0
     })
+    obj.setName('table_dba')
     g_current_table = obj
     print_important('The table will lock itself in 5s')
     Wait.time(function()

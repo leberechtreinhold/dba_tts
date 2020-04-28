@@ -224,7 +224,6 @@ end
 -- Global enabled or disabled ZOC
 g_zoc_enabled = false
 function on_toggle_zoc(player, value, id)
-    print(value)
     g_zoc_enabled = value == "True"
 
     if g_zoc_enabled then
@@ -238,6 +237,35 @@ function on_toggle_zoc(player, value, id)
     -- Make it consistent for all players
     on_next_frame(function()
         UI.setAttribute('toggle_zoc', 'isOn', g_zoc_enabled)
+    end)
+end
+
+-- Global enabled or disabled deployment lines
+g_deployment_lines_enabled = false
+function on_toggle_deployment_lines(player, value, id)
+    g_deployment_lines_enabled = value == "True"
+
+    if g_deployment_lines_enabled then
+        UI.setValue('toggle_deployment_lines', 'Show deployment rules')
+        UI.setAttribute('toggle_deployment_lines', 'text', 'Show deployment rules')
+
+        if g_current_table == nil then
+            print_error('There\'s no table so deployment lines will have no effect. Please reenable when you spawned the table.')
+        else
+            draw_deployment_lines()
+        end
+    else
+        UI.setValue('toggle_deployment_lines', 'Do not show deployment rules')
+        UI.setAttribute('toggle_deployment_lines', 'text', 'Do not show deployment rules')
+        
+        if g_current_table ~= nil then
+            remove_deployment_lines()
+        end
+    end
+    
+    -- Make it consistent for all players
+    on_next_frame(function()
+        UI.setAttribute('toggle_deployment_lines', 'isOn', g_deployment_lines_enabled)
     end)
 end
 

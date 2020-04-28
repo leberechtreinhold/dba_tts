@@ -461,6 +461,63 @@ function draw_gizmo_future_movements(new_selected_items)
     Global.setVectorLines(strokes)
 end
 
+function get_strokes_deployment(pos, color)
+    local half_width = g_width_table_in / 2
+    local half_depth = g_depth_table_in / 2
+    
+    local xpos = 1
+    local zpos = 1
+
+    if pos == 'topright' then
+        xpos = 1
+        zpos = 1
+    elseif pos == 'topleft' then
+        xpos = -1
+        zpos = 1
+    elseif pos == 'botright' then
+        xpos = 1
+        zpos = -1
+    elseif pos == 'botleft' then
+        xpos = -1
+        zpos = -1
+    end
+
+    local pos1 = {
+        x = xpos * half_width, 
+        y = g_table_thickness, 
+        z = zpos * half_depth - zpos * g_deploy_home_in
+    }
+    local pos2 = {
+        x = xpos * half_width - xpos * g_deploy_side_in, 
+        y = g_table_thickness, 
+        z = zpos * half_depth - zpos * g_deploy_home_in
+    }
+    local pos3 = {
+        x = xpos * half_width - xpos * g_deploy_side_in, 
+        y = g_table_thickness, 
+        z = zpos * half_depth
+    }
+    return {
+        points    = {pos1, pos2, pos3},
+        color     = color,
+        thickness = g_line_thickness,
+        rotation  = {0,0,0}
+    }
+end
+
+function draw_deployment_lines()
+    local strokes = {}
+    table.insert(strokes, get_strokes_deployment('topright', g_gizmo_color_player_blue))
+    table.insert(strokes, get_strokes_deployment('topleft', g_gizmo_color_player_blue))
+    table.insert(strokes, get_strokes_deployment('botright', g_gizmo_color_player_red))
+    table.insert(strokes, get_strokes_deployment('botleft', g_gizmo_color_player_red))
+    g_current_table.setVectorLines(strokes)
+end
+
+function remove_deployment_lines()
+    g_current_table.setVectorLines({})
+end
+
 function on_selection_changed(player_color, new_selected_items)
     draw_gizmo_future_movements(new_selected_items)
 end
