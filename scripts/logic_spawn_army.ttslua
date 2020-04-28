@@ -222,3 +222,12 @@ function get_spawn_model(pos, rotation_correction, height_correction, model_scal
         }
     }
 end
+
+function onObjectDestroy(dying_object)
+    local name = dying_object.getName()
+    if str_starts_with(name, 'table_dba') then
+        g_current_table = nil
+    elseif g_bases[name] ~= nil then
+        g_bases[name] = nil
+    end
+end
