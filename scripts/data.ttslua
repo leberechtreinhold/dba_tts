@@ -59,7 +59,7 @@ g_max_angle_spawn = 20
 
 -- Troops that are marked as loose (warbands, psiloi etc) may be moved around
 -- a little bit for a better representation. This controls how much, in inches
-g_max_loose_spawn = 0.2
+g_max_loose_spawn = 0.15
 
 -- How many seconds until the table locks itself
 g_seconds_until_table_lock = 5
