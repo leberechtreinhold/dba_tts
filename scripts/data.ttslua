@@ -84,6 +84,7 @@ tables = {
         'http://cloud-3.steamusercontent.com/ugc/1022823759371068670/93B215277016C89BB490DCFCB65E313D63B1A9D7/'
     },
     desert_textures = {
-        'http://cloud-3.steamusercontent.com/ugc/1022823759371071004/DC4F81C7F92B971C1D1F83F2B12C0DE1E896ABEE/'
+        'http://cloud-3.steamusercontent.com/ugc/1022823759371071004/DC4F81C7F92B971C1D1F83F2B12C0DE1E896ABEE/',
+        'http://cloud-3.steamusercontent.com/ugc/1023950053147001338/5611385A6230432B6095F3065D321E456692FFC7/'
     }
 }

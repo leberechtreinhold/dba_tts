@@ -270,26 +270,71 @@ function on_toggle_deployment_lines(player, value, id)
     end)
 end
 
-function on_spawn_table_grass(player, value, id)
-    if g_current_table == nil then
-        spawn_table_obj(tables['model'], tables['height_correction'], tables['grass_textures'])
+function on_create_table_menu(player, value, id)
+    UI.setAttribute('panel_dba_table_selection_bg', 'active', true)
+    UI.setAttribute('panel_dba_table_selection_bg', 'visibility', player.color)
+    UI.setAttribute('panel_dba_table_selection', 'active', true)
+    UI.setAttribute('panel_dba_table_selection', 'visibility', player.color)
+    UI.setAttribute('button_spawn_table', 'interactable', false)
+    UI.setAttribute('button_create_army', 'interactable', false)
+end
+
+g_current_table_type = 0
+function on_toggle_table_type(player, value, id)
+    g_current_table_type = tonumber(value)
+end
+
+function from_toggle_number_to_table_type(value)
+    -- Must follow the order of the toggles on main.xml
+    if value == 0 then
+        return 'grass'
+    elseif value == 1 then
+        return 'forest'
+    elseif value == 2 then
+        return 'tropical'
+    elseif value == 3 then
+        return 'hilly'
+    elseif value == 4 then
+        return 'dry'
+    elseif value == 5 then
+        return 'steppe'
     else
-        print_error('There\'s already a table spawned')
+        return 'Error'
     end
 end
 
-function on_spawn_table_mountain(player, value, id)
+function on_load_table(player, value, id)
+    local type = from_toggle_number_to_table_type(g_current_table_type)
+    local tex = tables['grass_textures']
+    
+    if type == 'grass' or type == 'forest' or type == 'tropical' then
+        tex = tables['grass_textures']
+    elseif type == 'hilly' then
+        tex = tables['mountain_textures']
+    elseif type == 'dry' then
+        tex = tables['desert_textures']
+    end
+    
     if g_current_table == nil then
-        spawn_table_obj(tables['model'], tables['height_correction'], tables['mountain_textures'])
+        spawn_table_obj(tables['model'], tables['height_correction'], tex)
     else
         print_error('There\'s already a table spawned')
     end
+
+    
+    UI.setAttribute('panel_dba_table_selection_bg', 'active', false)
+    UI.setAttribute('panel_dba_table_selection_bg', 'visibility', '')
+    UI.setAttribute('panel_dba_table_selection', 'active', false)
+    UI.setAttribute('panel_dba_table_selection', 'visibility', '')
+    UI.setAttribute('button_spawn_table', 'interactable', true)
+    UI.setAttribute('button_create_army', 'interactable', true)
 end
 
-function on_spawn_table_desert(player, value, id)
-    if g_current_table == nil then
-        spawn_table_obj(tables['model'], tables['height_correction'], tables['desert_textures'])
-    else
-        print_error('There\'s already a table spawned')
-    end
+function on_cancel_load_table(player, value, id)
+    UI.setAttribute('panel_dba_table_selection_bg', 'active', false)
+    UI.setAttribute('panel_dba_table_selection_bg', 'visibility', '')
+    UI.setAttribute('panel_dba_table_selection', 'active', false)
+    UI.setAttribute('panel_dba_table_selection', 'visibility', '')
+    UI.setAttribute('button_spawn_table', 'interactable', true)
+    UI.setAttribute('button_create_army', 'interactable', true)
 end

@@ -166,8 +166,8 @@ function spawn_table_obj(model_url, height_correction, texture_array_urls)
         diffuse = texture_array_urls[tex_index],
         material = 1,
         cast_shadows = false,
-        specular_sharpness = 1,
-        specular_intensity = 0.1,
+        specular_sharpness = 0,
+        specular_intensity = 0,
         freshnel_strength = 0
     })
     obj.setName('table_dba')
