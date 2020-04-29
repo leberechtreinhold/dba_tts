@@ -158,8 +158,7 @@ armies = {
                 fixed_models = {
                     [1] = 'troop_artillery_crew_swiss',
                     [2] = 'troop_artillery_pieces_swiss',
-                    [3] = 'troop_artillery_crew_swiss',
-                    [3] = 'troop_artillery_crew_swiss',
+                    [3] = 'troop_artillery_crew_swiss'
                 }
             },
             base15 = {
