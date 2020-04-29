@@ -328,14 +328,14 @@ end
 --    p_x, p_z+2"
 --       |*****
 --       |     *****
---       |         **** p_x + 40mm * cos(x), p_y + 40mm*sin(x) + p_z + 2"-40mm
+--       |         **** p_x + 40mm * cos(x), p_y + 40mm*sin(x) + (complex_calc)
 --       |             ***
 --       |               ***
 --       |                  *
 --       |                  **
---       |                   * p_x+40mm, p_z + 2"-40mm
+--       |                   * p_x+40mm, (complex_calc)
 --       |                   |
---       |                   |
+--       |                   | side
 --       ---------------------
 --     p_x, p_Z           p_x+40mm, p_z
 --
@@ -343,6 +343,9 @@ end
 function get_strokes_fire_arc(base_obj, transform, shooting_range, max_width)
     local stroke_points = {}
     local p = transform['corners']['topright']
+
+    local max_angle_arc = math.acos(g_base_width_inches / shooting_range)
+    local side_height = math.sin(max_angle_arc) * shooting_range
 
     table.insert(stroke_points, p)
     table.insert(stroke_points, {
@@ -353,18 +356,18 @@ function get_strokes_fire_arc(base_obj, transform, shooting_range, max_width)
     table.insert(stroke_points, {
         x = p['x'] + max_width, 
         y = p['y'],
-        z = p['z'] + shooting_range - max_width
+        z = p['z'] + side_height
     })
     local radius_right = {
         x = p['x'], 
         y = p['y'],
-        z = p['z'] + shooting_range - max_width
+        z = p['z']
     }
     local right_arc = get_coordinates_arc(
         radius_right, 
-        max_width, 
+        shooting_range, 
         g_precision_circle / 4,
-        0,
+        math.deg(max_angle_arc),
         90)
     array_concat(stroke_points, right_arc)
     table.insert(stroke_points, {
@@ -380,19 +383,19 @@ function get_strokes_fire_arc(base_obj, transform, shooting_range, max_width)
     local radius_left = {
         x = p['x'] - max_width, 
         y = p['y'],
-        z = p['z'] + shooting_range - max_width
+        z = p['z']
     }
     local left_arc = get_coordinates_arc(
         radius_left, 
-        max_width, 
+        shooting_range, 
         g_precision_circle / 4,
         90,
-        180)
+        90 + (90 - math.deg(max_angle_arc)))
     array_concat(stroke_points, left_arc)
     table.insert(stroke_points, {
         x = p['x'] - max_width * 2, 
         y = p['y'],
-        z = p['z'] + shooting_range - max_width
+        z = p['z'] + side_height
     })
     table.insert(stroke_points, {
         x = p['x'] - max_width * 2, 
