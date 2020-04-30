@@ -76,21 +76,6 @@ function align_bases(player, value, id)
     draw_gizmo_future_movements(player.getSelectedObjects())
 end
 
-function debug_button(player, value, id)
-    local objs = player.getSelectedObjects()
-    for _, obj in ipairs(objs) do
-    
-        local corners_before = compute_corners_base(obj)
-        print_debug('CORNERS PRE ' .. obj.getName() .. corners_to_str(corners_in_to_mm(corners_before)))
-
-        obj.setRotation({0, 90, 0})
-    
-        local corners_after = compute_corners_base(obj)
-        print_debug('CORNERS POST ' .. obj.getName() .. corners_to_str(corners_in_to_mm(corners_after)))
-    end
-end
-
-
 function on_cancel_load_army(player, value, id)
     UI.setAttribute('panel_dba_troop_selection', 'active', false)
     UI.setAttribute('panel_dba_troop_selection_bg', 'active', false)
