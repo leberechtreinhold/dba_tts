@@ -13,9 +13,9 @@ function slider_paces_changed(player, value, id)
     UI.setValue('button_move_forward', 'Move ' .. g_paces_movement .. ' paces')
 
     -- Make it consistent for all players
-    on_next_frame(function()
+    Wait.frames(function()
         UI.setAttribute('slider_paces', 'value', value)
-    end)
+    end, 1)
 
     -- Update any gizmo
     draw_gizmo_future_movements(player.getSelectedObjects())
