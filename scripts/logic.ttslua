@@ -449,7 +449,8 @@ function draw_gizmo_future_movements(new_selected_items)
             table.insert(strokes, get_strokes_future_position(obj, transform))
 
             if str_has_substr(obj.getName(), 'Bw')
-               or str_has_substr(obj.getName(), 'Cb') then
+               or str_has_substr(obj.getName(), 'Cb') 
+               or str_has_substr(obj.getName(), 'Lb') then
                 table.insert(strokes, get_strokes_bow(obj, transform))
             elseif str_has_substr(obj.getName(), 'Art') then
                 table.insert(strokes, get_strokes_art(obj, transform))
