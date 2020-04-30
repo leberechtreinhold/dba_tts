@@ -556,7 +556,7 @@ troop_crossbowman_late_medieval = {
     height_correction = 0.36,
     scale = 0.37,
     rotation = 180,
-    description = 'Late Medieval Longbowman',
+    description = 'Late Medieval Crossbowman',
     author = 'Late Medieval Crossbowman, using Empire Crossbowman by Vess (edited by Arkein).',
     mesh = {
         'http://cloud-3.steamusercontent.com/ugc/1011564883556586580/E57975CC5F4E49567E5705ECF633E367EE1A8CD2/',
