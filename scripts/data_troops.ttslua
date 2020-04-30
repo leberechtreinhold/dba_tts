@@ -260,7 +260,7 @@ troop_halberdier_swiss = {
     scale = 0.37,
     rotation = 180,
     description = 'Swiss Halberdier',
-    author = 'Swiss Handgunners, using Empire Halberdiers by Vess (edited by Arkein).',
+    author = 'Swiss Halberdier, using Empire Halberdiers by Vess (edited by Arkein).',
     mesh = {
         'http://cloud-3.steamusercontent.com/ugc/1012691054073739330/AF0048D3BF00D66367793094A5B1436C77D0448D/',
         'http://cloud-3.steamusercontent.com/ugc/1012691054073739741/7ADF34B7BA35FF5A92343F7C79964FD083B6F8CA/',
@@ -371,4 +371,356 @@ troop_camp_swiss = {
     },
     player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564754634704430/244DE3C85A0CD2BD2A580B7629EACDE1C581B38E/',
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564754634715491/3D77C899C1C05A665EB36DFD6451BA0A2FE996B1/'
+}
+------------------------------------------------------------------------------
+--                            GENERIC LATE MEDIEVAL
+------------------------------------------------------------------------------
+
+troop_pikeman_late_medieval_inclined = {
+    height_correction = 0.36,
+    scale = 0.37,
+    rotation = 180,
+    description = 'Late Medieval Pikeman',
+    author = 'Late Medieval Pikemen, using Empire Spearmen by Vess (edited by Arkein).',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1011564198059104673/6ED4BB3626CDF672E1BCE327C88E58F28D116398/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564198059105755/4775664482748F772637DBB58CD46D1385E06919/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564198059106092/22C4BA8CCD7CF144C0D6DE57689E59BC5C2E23F3/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385658388/AF6BFB0A1BDBBC9DD4E5A04D546DB159A2F86B90/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385496172/D2F1435B661896C9743EE5427B7BBB2B959F1A2A/'
+}
+
+troop_pikeman_late_medieval_straight = {
+    height_correction = 0.36,
+    scale = 0.37,
+    rotation = 180,
+    description = 'Late Medieval Pikeman',
+    author = 'Late Medieval Pikemen, using Empire Spearmen by Vess (edited by Arkein).',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1011564198059104174/A0DAAED36C95A01AA1DF50D6936934A42CB29ED8/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564198059104940/A83C6771034717A199C71F0053106CCED4081D48/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564198059105255/0742BCCB70B4384839675E41E2046A9A8B57BA2E/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564198059106409/4C2922D44C8723F3896C9490E5E3C9CDCC5483FD/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385658388/AF6BFB0A1BDBBC9DD4E5A04D546DB159A2F86B90/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385496172/D2F1435B661896C9743EE5427B7BBB2B959F1A2A/'
+}
+
+troop_pikeman_late_medieval_bannerman = {
+    height_correction = 0.36,
+    scale = 0.37,
+    rotation = 180,
+    description = 'Late Medieval Bannerman',
+    author = 'Late Medieval Bannerman, using Empire Spearmen by Vess (edited by Arkein, with the Uri Canton CoA from public domain and line texture from public domain).',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1011563720479886715/C4A1AB92BBFD82A9B1F3BFA1363EFFA69690F66D/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385658388/AF6BFB0A1BDBBC9DD4E5A04D546DB159A2F86B90/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385496172/D2F1435B661896C9743EE5427B7BBB2B959F1A2A/'
+}
+
+troop_pikeman_late_medieval_captain = {
+    height_correction = 0.36,
+    scale = 0.37,
+    rotation = 180,
+    description = 'Late Medieval Captain',
+    author = 'Late Medieval Captain, using Empire Infantry Captain by Vess (edited by Arkein).',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1011563720479888273/0FE163F87747C3B6E5BED19C5F99EF3C6733A8DE/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385658388/AF6BFB0A1BDBBC9DD4E5A04D546DB159A2F86B90/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385496172/D2F1435B661896C9743EE5427B7BBB2B959F1A2A/'
+}
+
+troop_spearman_no_shield_late_medieval = {
+    height_correction = 0.36,
+    scale = 0.37,
+    rotation = 180,
+    description = 'Late Medieval Spearman',
+    author = 'Late Medieval Spearman, using Empire Spearman by Vess (edited by Arkein).',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1012691108385888219/0DED34571B666B38CA1AEC08DE82F31FC6C8D762/',
+        'http://cloud-3.steamusercontent.com/ugc/1012691108385890162/568768D8B80F77B47F59AD461123AAB565F9ACBA/',
+        'http://cloud-3.steamusercontent.com/ugc/1012691108385890468/492080EB672E45CD49ADDD7221FFBFDECCE387FE/',
+        'http://cloud-3.steamusercontent.com/ugc/1012691108385891017/5BF4A82C64EA575AEEF94AF5E437C2A2917A4ED5/',
+        'http://cloud-3.steamusercontent.com/ugc/1012691108385891276/EC9162AD0FFB574CAC97B8A8886D1BEE2D8E6C7A/',
+        'http://cloud-3.steamusercontent.com/ugc/1012691108385891578/AFEE9D10B064BF056AFE60839ABC8F6A86F27897/',
+        'http://cloud-3.steamusercontent.com/ugc/1012691108385891865/BD9350FF71243667CFC1F22E899F1D254EA90248/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385658388/AF6BFB0A1BDBBC9DD4E5A04D546DB159A2F86B90/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385496172/D2F1435B661896C9743EE5427B7BBB2B959F1A2A/'
+}
+
+troop_handgunner_late_medieval = {
+    height_correction = 0.36,
+    scale = 0.37,
+    rotation = 180,
+    description = 'Late Medieval Handgunner',
+    author = 'Late Medieval Handgunners, using Empire Handgunners by Vess (edited by Arkein).',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603368497/34140939A8133A0D8ED964FA09EF9DACA56448FA/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603368898/F44E8B4A0AA24809D3499561A8F9A5A1740B7AF0/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603369272/C244B82312E4D5C282EAB0FD706A65BAF1F88D90/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603369614/D6ACB880C9D28EF4D97AFEA9221C98286AF77B1E/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603369984/94C5A9575C6CA01A62DC5F8E131E6498CC6CC103/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603370425/78C24CA0AF181D2F6FCA74673085C907254A7DE5/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603370878/7FB11A38A746A52B1F5640CF515BB2B7DFCC562B/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603371821/E2D8573F87092ECBD5C6856AA40152ED0BD4E97C/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603372169/48E82971B69B6FA0329AA4C9B96A94D9FD2A434C/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603372935/5BB8FEB8D566D5A6EBC5EBB3F97A7CC1D4BEDEAB/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603373340/9590F076B2419429D3F9F01C4539C0E8D8940FB5/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603373563/86BACC5C24130107349D2620EB25C0AFCBB17567/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603373972/E669445FDBDF25B945DA7C456571B95A69213E3A/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603374206/BD81EBA16999851ECF12656D08C67380F2F560B3/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603374484/F5BAA4B6D2DF2F43D9CF0F3D7267CF7F49DDFB60/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603374739/C7A3FD7BDE2B2F68822F2CE3207DC1657CADAEA4/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603374973/3FBA68F9C94255B4434F999E5B192BB64D22500D/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603375302/3682E47B08FD13378D4B1C02BBAC01A5E8266D82/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603375567/75F09CA4F61192C3A55919E7274FAEDD33DAB109/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603376449/61425DDC9775C55CA172B6B8874AEF7546E939E8/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603376734/A4C2E549CBD79E4E91563D47B9A3BAF143D3C375/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603377011/BD84AE20AC252B1571EEB9D5A63099A1844DBD94/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603377343/AC60D72A6E1C2CF7F40B77C8EE96A2BEDBB0C0DF/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603377672/C0F6CC622DA6361C3490CD0F43F04CEA91DCC464/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603378200/4D0E74A729549B290B6B9E662715A1E7D5ED2285/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603378690/40D79843BA5996743D46BCB3EA7842F601209CF6/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603378971/708B60DC4BD6805B99203ECFFCDFD7BF68025592/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603379331/A211DAA7DFEAD2213ACD2190D95D10937C205C21/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385658388/AF6BFB0A1BDBBC9DD4E5A04D546DB159A2F86B90/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385496172/D2F1435B661896C9743EE5427B7BBB2B959F1A2A/'
+}
+
+troop_halberdier_late_medieval = {
+    height_correction = 0.36,
+    scale = 0.37,
+    rotation = 180,
+    description = 'Late Medieval Halberdier',
+    author = 'Late Medieval Halberdier, using Empire Halberdiers by Vess (edited by Arkein).',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1012691054073739330/AF0048D3BF00D66367793094A5B1436C77D0448D/',
+        'http://cloud-3.steamusercontent.com/ugc/1012691054073739741/7ADF34B7BA35FF5A92343F7C79964FD083B6F8CA/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603307792/15D5B66CF1275445CBA3810AE85DBF9C556984FA/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603308146/29A5165EE25145148F83BF8E8AAA2B42BF243CFF/',
+        'http://cloud-3.steamusercontent.com/ugc/1012691054073740027/8AA04116664D79207CBECA436834B4E13CE74D98/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603310001/EB696C08160A6975015C593467545316FAA0B33F/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603310940/57C9EFE75A9F4FF4D9D91408490376F9A924F0D8/',
+        'http://cloud-3.steamusercontent.com/ugc/1012691054073740363/8D2F90EAAAB0FA300D055DA335E392F4AA7F6852/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385658388/AF6BFB0A1BDBBC9DD4E5A04D546DB159A2F86B90/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385496172/D2F1435B661896C9743EE5427B7BBB2B959F1A2A/'
+}
+
+troop_bowman_late_medieval = {
+    height_correction = 0.36,
+    scale = 0.37,
+    rotation = 180,
+    description = 'Late Medieval Bowman',
+    author = 'Late Medieval Bowman, using Empire Bowman by Vess (edited by Arkein).',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1011564987005242163/FDE18A737EA15414FD6EE6F0A5DD99871EF6471F/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564987005242463/8B3391ED2E9F22EE8AA36E15151E3383C84D8489/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564987005242742/C3A7D456EE9924A592B31C2D5478AE3A1330A8C4/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564987005254614/61104E4EDDE8934C0B9B17780206ED8E293DF287/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564987005254902/A339C037B51D01967783AB029241E0F348B08300/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564987005255234/DD9BCE2170858F7315D7AE8399D906B633750CED/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564987005255560/D5F478D3B220DC5A397DDC57778BE6D268C59C06/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564987005255818/B8836C337063F3B87EFBAA57E3642C0716BD820B/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385657809/BF55D6FA977680CCC4AB2CE506CB55DB01D4CBCA/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385562296/67AAA5B0136052618BDD18CC48CA6D9D41102D06/'
+}
+
+troop_longbowman_late_medieval = {
+    height_correction = 0.36,
+    scale = 0.37,
+    rotation = 180,
+    description = 'Late Medieval Longbowman',
+    author = 'Late Medieval Longbowman, using Empire Longbowman by Vess (edited by Arkein).',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1011564987005256529/91A02768D89324DBE03708969633B06A64094148/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564987005256746/BB552A65A3FEAB88E4CE977179F99F847F4D0EF1/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564987005256995/E8DD1F445DD4EE8CFE2F2854EB22158F8AD9E2F3/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564987005257519/6ECF63412817E588CF14EA8F810DF0C21B81363F/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564987005257758/F62F3EE684B74AE7269E99B116642B5A4A1CB0C9/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564987005259427/4436291340608A922258CACFA4E5AA7FC15EB317/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564987005259730/081ECF532FA0D9ED2955F10F3E46D82475807715/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564987005260041/FC545B6F0709F2E92DC08A29BE4968C4D650C403/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385657809/BF55D6FA977680CCC4AB2CE506CB55DB01D4CBCA/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385562296/67AAA5B0136052618BDD18CC48CA6D9D41102D06/'
+}
+
+troop_crossbowman_late_medieval = {
+    height_correction = 0.36,
+    scale = 0.37,
+    rotation = 180,
+    description = 'Late Medieval Longbowman',
+    author = 'Late Medieval Longbowman, using Empire Crossbowman by Vess (edited by Arkein).',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1011564883556586580/E57975CC5F4E49567E5705ECF633E367EE1A8CD2/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564883556587148/E64859A80635D21AE10A5A204E6D5B029A47DC29/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564883556587575/E54B651B50F420A40624A88F96A76D6A9BAC5F06/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564883556587879/A8095395095E289CB397F95FAF9F392C841580AF/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385658388/AF6BFB0A1BDBBC9DD4E5A04D546DB159A2F86B90/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385496172/D2F1435B661896C9743EE5427B7BBB2B959F1A2A/'
+}
+
+troop_swordman_late_medieval = {
+    height_correction = 0.36,
+    scale = 0.37,
+    rotation = 180,
+    description = 'Late Medieval Swordman',
+    author = 'Late Medieval Swordman, using Empire Swordman by Vess (edited by Arkein).',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1011564883555622589/D84760B2EDBD8B03B681FB102A8E0D442D9E24AF/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564883555623517/D6C808541F17C4FA248282846DD2E21F7BEEBF42/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564883555623871/2497D82229BC32D11ED6A9D98B77993D8AE70F50/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564883555624183/05A2F58D9E53031ABE5131066CFF8839C367BD81/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564883555624932/035642E0FAE5DF4B5CEBC6434BAB41FC18EEF8E0/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564883555625264/2F543EB07AA1B046FA49FCA7C9EF67194D266DD2/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564883555626693/FA02A88651EB70329816666DB1834AA119A943DB/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564883555626999/002E78012BD735485317D0DB5474DD9D244CB1F5/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564883555627426/D9F761218EC6938BECD19655B01989C2575270F4/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564883555627750/77ACDFC5CF29A0C1739A9F916FAAC74AE599DA0B/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564883555628129/B163B34F2E278030A3F35B0E3900BE49E471987D/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564883555628425/C8F15D793175D0A6597B4A60BE790FDD5B503A1A/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564883555628768/5F92C6D0BD1870F75B7E8219310EF8F67F984C30/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564883555629068/CF8F13836A44A95E9834A5150EC14D37B4B7FE5A/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385658388/AF6BFB0A1BDBBC9DD4E5A04D546DB159A2F86B90/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385496172/D2F1435B661896C9743EE5427B7BBB2B959F1A2A/'
+}
+
+troop_swordman_two_handed_late_medieval = {
+    height_correction = 0.36,
+    scale = 0.37,
+    rotation = 180,
+    description = 'Late Medieval Swordman',
+    author = 'Late Medieval Swordman, using Empire Swordman by Vess (edited by Arkein).',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1011564883555797051/4AE2697986B0CFE0EC207FA349156951B8E04729/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564883555797369/4857D8B7C7A38339F2A619835B2C22069B6684CE/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564883555797646/A5EAF85D5E5D91A5B142E3F9AE63B70BDC9B6C41/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564883555797905/93690348DF15D743B197020C6FAB0548CEE0EB04/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564883555798217/9D60E1627DA4EE6CB07BC98BB52C060A0DFD65AC/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564883555798505/ED398D0BC534E375CA4E82FA182192FB1E83870F/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564883555798737/A03D0ECA1DD418599727A7867205E25E3498F0D2/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564883555798980/6C3B8086B07DC45AB601D8B6691B992B93EE7A9D/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564883555799315/124423D498E29D29B87C81EA090A0A9ED6FA9F49/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385658388/AF6BFB0A1BDBBC9DD4E5A04D546DB159A2F86B90/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385496172/D2F1435B661896C9743EE5427B7BBB2B959F1A2A/'
+}
+
+troop_artillery_pieces_late_medieval = {
+  height_correction = 0,
+  scale = 0.28,
+    rotation = 180,
+    description = 'Late Medieval Artillery',
+    author = 'Late Medieval Artillery, using Empire Artillery by Vess (edited by Arkein).',
+    mesh = {
+      -- Cannon
+      'http://cloud-3.steamusercontent.com/ugc/1011564617603437215/3FF112260B713845EB102293BC47E051B77045B0/',
+      -- Bombard
+      'http://cloud-3.steamusercontent.com/ugc/1011564617603437584/2EE6C6A89C788592FCF67AB29BE803F81818EC31/',
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385833539/D633564C43830DBF075AEF2F361F973C56927DD6/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385834051/83AC67E28A7CD41CD9F1EE5FF9A2E530AED52CDB/'
+}
+
+troop_artillery_crew_late_medieval = {
+  height_correction = 0.36,
+  scale = 0.37,
+    rotation = 180,
+    description = 'Late Medieval Artillery Crew',
+    author = 'Late Medieval Artillery Crew, using Empire Artillery Crew by Vess (edited by Arkein).',
+    mesh = {
+      -- Loaders
+      'http://cloud-3.steamusercontent.com/ugc/1011564617603438030/32D6DC091E88FC1DFEE5692A6C947553A7AED18F/',
+      'http://cloud-3.steamusercontent.com/ugc/1011564617603438297/6A62ED1F0DFC234F2F22E7B64B7D0129FC05DBB4/',
+      -- Igniters
+      'http://cloud-3.steamusercontent.com/ugc/1011564617603440250/3107982A3FD6095DCE9F1BE0071AC8281D8DAB61/',
+      'http://cloud-3.steamusercontent.com/ugc/1011564617603441110/93F9FF3E307F7DBC4A0491CFF2311A4F5209D2AF/',
+      -- Overlooking
+      'http://cloud-3.steamusercontent.com/ugc/1011564617603441426/260B7A1823C531E4530265FD20BD9B82D71522D1/',
+      'http://cloud-3.steamusercontent.com/ugc/1011564617603441676/52FA446B66916C248CD66A4DC1F1E77C79A43FC5/',
+      'http://cloud-3.steamusercontent.com/ugc/1011564617603441960/64DE3F2EAD9462B72F699EE5EEFE9C54AE16947E/',
+      'http://cloud-3.steamusercontent.com/ugc/1011564617603442229/2A0599B03B45AB4826404B9ECC87A5AA5732ADA3/',
+      'http://cloud-3.steamusercontent.com/ugc/1011564617603442546/55AD1DB4E003B41E9B0591215B543B9F5D44D670/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385833539/D633564C43830DBF075AEF2F361F973C56927DD6/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385834051/83AC67E28A7CD41CD9F1EE5FF9A2E530AED52CDB/'
+}
+
+troop_horse_rider_late_medieval = {
+    height_correction = 0.71,
+    scale = 0.37,
+    rotation = 180,
+    description = 'Late Medieval Horse Rider',
+    author = 'Late Medieval Horse Rider, using Empire Horse Rider by Vess (edited by Arkein).',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603297484/5F3F8D746BBA1B12757CAC6727E685009F81CEDA/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603297951/111DF0499B2CA870614F527CDAFB772EE56DA363/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603298430/B14DB2A8D7456F25926DA5441993B7A7750364E7/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603298786/1F82CB4B7B0A9BB16AE6280F016B05E31A00D97F/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603299172/0350D20493428E5392C72375CCA27E659C3F7BBA/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603300149/55BD13266159E134E933360B78422B661851A879/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603300569/9879FFC89B7FAEFE7E8D120C8AC40A41DB65FFBC/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603301104/E4021577529CE79C231816B102B9D8BE2D3220C0/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603301597/E0888F6D23AEDB861D988E65EE255BA8E8D4A897/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603302000/78EAA660981FCB35E2C710F9F11C260FD20325D2/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603302385/DF9AA138A32409343E12624A1356AF414CE07553/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603303443/D02EFC330CC3BEB32F2F60FBAA2B3B221B845F29/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385801708/97CF34AEA13AE496582B57D68B77613133B08C10/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385800537/21A78C9FB12E9D90CE28EBD4C3CA36BD5DA4DB17/'
+}
+
+troop_knight_late_medieval = {
+    height_correction = 0.71,
+    scale = 0.37,
+    rotation = 180,
+    description = 'Late Medieval Knight',
+    author = 'Late Medieval Knights, using Empire Knights by Vess (edited by Arkein).',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603275660/92A4D9E1FF7FBED2D5D5A6EBACC010C5137C8522/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564987009306253/0115329E85B9F4373E5A66D46B871C555CF138E4/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603276290/1FA1DD986545F6014F95D1EC411B662598868728/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603277388/F13D0B168ABF029715757D825312B1A87BB3E7D1/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603277713/CFCC1F9B4843E85BA9173BA77E2A8A81E24041D1/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603277965/F09D7ACC7495FF75F6FBFE6F3C40E72A38796422/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385801708/97CF34AEA13AE496582B57D68B77613133B08C10/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385800537/21A78C9FB12E9D90CE28EBD4C3CA36BD5DA4DB17/'
+}
+
+troop_knight_late_medieval_captain = {
+    height_correction = 0.71,
+    scale = 0.37,
+    rotation = 180,
+    description = 'Late Medieval Knight',
+    author = 'Late Medieval Knight, using Empire Knights by Vess (edited by Arkein).',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1011564617603278252/35BDEF46E8579A093A740773A4D2CCA17E3FD1AF/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385801708/97CF34AEA13AE496582B57D68B77613133B08C10/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385800537/21A78C9FB12E9D90CE28EBD4C3CA36BD5DA4DB17/'
+}
+
+troop_camp_late_medieval = {
+  height_correction = 0,
+  scale = 0.028 ,
+    rotation = 0,
+    description = 'Late Medieval Camp',
+    author = 'Late Medieval Camp, using Empire Camp by Vess (edited by Arkein).',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1011564754631755610/F53454B6AD7674E2867551A549EC6AAB7797F032/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564754634704049/BD4E1F2332E028516026E373B068FA69DBF931D4/'
+
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385863633/F4AF3441E409E2332B39871D2C4BA24D191E31C5/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385864161/CC79CEAB62CAEBC7B4A1C9424603E729BF4B6CD4/'
 }
