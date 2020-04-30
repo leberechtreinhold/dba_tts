@@ -412,7 +412,7 @@ troop_pikeman_late_medieval_bannerman = {
     scale = 0.37,
     rotation = 180,
     description = 'Late Medieval Bannerman',
-    author = 'Late Medieval Bannerman, using Empire Spearmen by Vess (edited by Arkein, with the Uri Canton CoA from public domain and line texture from public domain).',
+    author = 'Late Medieval Bannerman, using Empire Spearmen by Vess (edited by Arkein).',
     mesh = {
         'http://cloud-3.steamusercontent.com/ugc/1011563720479886715/C4A1AB92BBFD82A9B1F3BFA1363EFFA69690F66D/'
     },
@@ -557,7 +557,7 @@ troop_crossbowman_late_medieval = {
     scale = 0.37,
     rotation = 180,
     description = 'Late Medieval Longbowman',
-    author = 'Late Medieval Longbowman, using Empire Crossbowman by Vess (edited by Arkein).',
+    author = 'Late Medieval Crossbowman, using Empire Crossbowman by Vess (edited by Arkein).',
     mesh = {
         'http://cloud-3.steamusercontent.com/ugc/1011564883556586580/E57975CC5F4E49567E5705ECF633E367EE1A8CD2/',
         'http://cloud-3.steamusercontent.com/ugc/1011564883556587148/E64859A80635D21AE10A5A204E6D5B029A47DC29/',
