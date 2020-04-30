@@ -9,12 +9,14 @@ armies = {
             base1 = {
                 name = '4Bd',
                 base = 'tile_reference_40x15',
+                ignore_terrain = true,
                 n_models = 12,
                 model_data = 'troop_swordsman_latemedieval'
             },
             base2 = {
                 name = '4Bd',
                 base = 'tile_reference_40x15',
+                ignore_terrain = true,
                 n_models = 4,
                 fixed_models = {
                     [1] = 'troop_swordsman_latemedieval',
@@ -26,18 +28,21 @@ armies = {
             base3 = {
                 name = '4Bw',
                 base = 'tile_reference_40x15',
+                ignore_terrain = true,
                 n_models = 4,
                 model_data = 'troop_swordsman_latemedieval'
             },
             base4 = {
                 name = 'Art',
                 base = 'tile_reference_40x15',
+                ignore_terrain = true,
                 n_models = 6,
                 model_data = 'troop_swordsman_latemedieval'
             },
             base5 = {
                 name = '3Wb',
                 base = 'tile_reference_40x15',
+                ignore_terrain = true,
                 loose = true,
                 n_models = 3,
                 model_data = 'troop_swordsman_latemedieval'

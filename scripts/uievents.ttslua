@@ -278,9 +278,9 @@ function from_toggle_number_to_table_type(value)
     elseif value == 2 then
         return 'tropical'
     elseif value == 3 then
-        return 'hilly'
+        return 'mountain'
     elseif value == 4 then
-        return 'dry'
+        return 'desert'
     elseif value == 5 then
         return 'steppe'
     else
@@ -290,15 +290,11 @@ end
 
 function on_load_table(player, value, id)
     local type = from_toggle_number_to_table_type(g_current_table_type)
-    local tex = tables['grass_textures']
     
-    if type == 'grass' or type == 'forest' or type == 'tropical' then
-        tex = tables['grass_textures']
-    elseif type == 'hilly' then
-        tex = tables['mountain_textures']
-    elseif type == 'dry' then
-        tex = tables['desert_textures']
+    if tables[type] == nil then
+        type = 'grass'
     end
+    local tex = tables[type]['table_tex']
     
     if g_current_table == nil then
         spawn_table_obj(tables['model'], tables['height_correction'], tex)

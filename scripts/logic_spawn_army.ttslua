@@ -3,10 +3,28 @@ g_base_index = 1
 g_bases = {}
 
 function spawn_base(base, pos, y_rotation, is_red_player)
-    local base_obj = spawn_model(base['base'], pos, 0, nil, is_red_player)
+    local overriden_tex = nil
+    if base['ignore_terrain'] == nil then
+        local type = from_toggle_number_to_table_type(g_current_table_type)
+
+        if tables[type] == nil then
+            type = 'grass'
+        end
+
+        if is_red_player then
+            overriden_tex = tables[type]['red_player_base_tex']
+        else
+            overriden_tex = tables[type]['blue_player_base_tex']
+        end
+    end
+
+    local base_obj = spawn_model(base['base'], pos, 0, nil, is_red_player, overriden_tex)
+
+
     local base_name = 'base ' .. base['name'] .. ' #' .. g_base_index
     base_obj.setName(base_name)
     print_info('Spawning ' .. base_name)
+    
     g_base_index = g_base_index + 1
     g_bases[base_name] = {
         tile = base['base'],
@@ -53,7 +71,7 @@ function spawn_base(base, pos, y_rotation, is_red_player)
         if model_name == nil then
             model_name = base['fixed_models'][i]
         end
-        local soldier_obj = spawn_model(model_name, relative_pos, random_rotation, minimal_collider, is_red_player)
+        local soldier_obj = spawn_model(model_name, relative_pos, random_rotation, minimal_collider, is_red_player, nil)
         base_obj.addAttachment(soldier_obj)
     end
     base_obj.setRotation({0, y_rotation, 0})
@@ -179,13 +197,16 @@ function spawn_table_obj(model_url, height_correction, texture_array_urls)
     end, g_seconds_until_table_lock)
 end
 
-function spawn_model(troop_name, pos, added_y_axis_rotation, collider, is_player_red)
+function spawn_model(troop_name, pos, added_y_axis_rotation, collider, is_player_red, overridden_tex)
     -- Better pray that the input name actually exists! lol
     local model_data = _G[troop_name]
 
-    local texture = model_data['player_blue_tex']
-    if is_player_red then
-        texture = model_data['player_red_tex']
+    local texture = overridden_tex
+    if texture == nil then
+        texture = model_data['player_blue_tex']
+        if is_player_red then
+            texture = model_data['player_red_tex']
+        end
     end
 
     local meshes = model_data['mesh']

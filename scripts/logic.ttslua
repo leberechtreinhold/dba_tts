@@ -44,15 +44,15 @@ function align_two_bases(base2, position, corners, rotation)
     local translation = nil
     -- Note that since we know that base1 is to the left of base2, the angle
     -- is 0-90 or 270-360
-    if relative_angle > g_alignment_angle_side 
+    if relative_angle > g_alignment_angle_side
        and relative_angle < math.pi then
         -- Angle the back of base2 with the front of base1
         translation = vec_sub(corners['topright'], corners2['botright'])
-    elseif relative_angle <= g_alignment_angle_side 
+    elseif relative_angle <= g_alignment_angle_side
            or relative_angle >= (2*math.pi - g_alignment_angle_side) then
         -- Angle the left side of base2 with the right of base1
         translation = vec_sub(corners['topright'], corners2['topleft'])
-    else 
+    else
         -- Angle the front of base2 with the back of base1
         translation = vec_sub(corners['botleft'], corners2['topleft'])
     end
@@ -146,7 +146,7 @@ function onObjectPickUp(player_color,  picked_up_object)
     g_picked_base_initial_transform = calculate_transform(picked_up_object)
     local pos = g_picked_base_initial_transform['position']
     local radius = g_paces_movement / 100
-    
+
     local color = g_gizmo_color_player_red
     if is_base_blue_player(picked_up_object.getName()) then
         color = g_gizmo_color_player_blue
@@ -227,9 +227,9 @@ end
 
 function transform_to_rotation_vector(transform)
     -- The normalization of a normalized is the original
-    return { 
-        x = 0, 
-        y = math.deg(normalize_angle(transform['rotation'])), 
+    return {
+        x = 0,
+        y = math.deg(normalize_angle(transform['rotation'])),
         z = 0
     }
 end
@@ -349,56 +349,56 @@ function get_strokes_fire_arc(base_obj, transform, shooting_range, max_width)
 
     table.insert(stroke_points, p)
     table.insert(stroke_points, {
-        x = p['x'] + max_width, 
+        x = p['x'] + max_width,
         y = p['y'],
         z = p['z']
     })
     table.insert(stroke_points, {
-        x = p['x'] + max_width, 
+        x = p['x'] + max_width,
         y = p['y'],
         z = p['z'] + side_height
     })
     local radius_right = {
-        x = p['x'], 
+        x = p['x'],
         y = p['y'],
         z = p['z']
     }
     local right_arc = get_coordinates_arc(
-        radius_right, 
-        shooting_range, 
+        radius_right,
+        shooting_range,
         g_precision_circle / 4,
         math.deg(max_angle_arc),
         90)
     array_concat(stroke_points, right_arc)
     table.insert(stroke_points, {
-        x = p['x'], 
+        x = p['x'],
         y = p['y'],
         z = p['z'] + shooting_range
     })
     table.insert(stroke_points, {
-        x = p['x'] - max_width, 
+        x = p['x'] - max_width,
         y = p['y'],
         z = p['z'] + shooting_range
     })
     local radius_left = {
-        x = p['x'] - max_width, 
+        x = p['x'] - max_width,
         y = p['y'],
         z = p['z']
     }
     local left_arc = get_coordinates_arc(
-        radius_left, 
-        shooting_range, 
+        radius_left,
+        shooting_range,
         g_precision_circle / 4,
         90,
         90 + (90 - math.deg(max_angle_arc)))
     array_concat(stroke_points, left_arc)
     table.insert(stroke_points, {
-        x = p['x'] - max_width * 2, 
+        x = p['x'] - max_width * 2,
         y = p['y'],
         z = p['z'] + side_height
     })
     table.insert(stroke_points, {
-        x = p['x'] - max_width * 2, 
+        x = p['x'] - max_width * 2,
         y = p['y'],
         z = p['z']
     })
@@ -447,7 +447,7 @@ function draw_gizmo_future_movements(new_selected_items)
             local transform = calculate_future_position(obj, magnitude)
 
             table.insert(strokes, get_strokes_future_position(obj, transform))
-            
+
             if str_has_substr(obj.getName(), 'Bw')
                or str_has_substr(obj.getName(), 'Cb') then
                 table.insert(strokes, get_strokes_bow(obj, transform))
@@ -467,7 +467,7 @@ end
 function get_strokes_deployment(pos, color)
     local half_width = g_width_table_in / 2
     local half_depth = g_depth_table_in / 2
-    
+
     local xpos = 1
     local zpos = 1
 
@@ -486,18 +486,18 @@ function get_strokes_deployment(pos, color)
     end
 
     local pos1 = {
-        x = xpos * half_width, 
-        y = g_table_thickness, 
+        x = xpos * half_width,
+        y = g_table_thickness,
         z = zpos * half_depth - zpos * g_deploy_home_in
     }
     local pos2 = {
-        x = xpos * half_width - xpos * g_deploy_side_in, 
-        y = g_table_thickness, 
+        x = xpos * half_width - xpos * g_deploy_side_in,
+        y = g_table_thickness,
         z = zpos * half_depth - zpos * g_deploy_home_in
     }
     local pos3 = {
-        x = xpos * half_width - xpos * g_deploy_side_in, 
-        y = g_table_thickness, 
+        x = xpos * half_width - xpos * g_deploy_side_in,
+        y = g_table_thickness,
         z = zpos * half_depth
     }
     return {

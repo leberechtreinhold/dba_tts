@@ -77,14 +77,26 @@ minimal_collider = 'http://cloud-3.steamusercontent.com/ugc/1022823184773057328/
 
 tables = {
     model = 'http://cloud-3.steamusercontent.com/ugc/1022823759371064859/C870FF6BCD014D8EC33CDFADBFC11EE555E44A6F/',
-    grass_textures = {
-        'http://cloud-3.steamusercontent.com/ugc/1022823759371066811/25B099510D6E351C7D82A5FBA8184397E4E7A005/'
+    grass = {
+        table_tex = {
+            'http://cloud-3.steamusercontent.com/ugc/1022823759371066811/25B099510D6E351C7D82A5FBA8184397E4E7A005/'
+        },
+        red_player_base_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672153/2ED568A7248F589F91D34CD523367300400F2342/',
+        blue_player_base_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672930/C6A36660C85DA7B2B038F37D4EA638790A94FB12/'
     },
-    mountain_textures = {
-        'http://cloud-3.steamusercontent.com/ugc/1022823759371068670/93B215277016C89BB490DCFCB65E313D63B1A9D7/'
+    mountain = {
+        table_tex = {
+            'http://cloud-3.steamusercontent.com/ugc/1022823759371068670/93B215277016C89BB490DCFCB65E313D63B1A9D7/'
+        },
+        red_player_base_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672153/2ED568A7248F589F91D34CD523367300400F2342/',
+        blue_player_base_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672930/C6A36660C85DA7B2B038F37D4EA638790A94FB12/'
     },
-    desert_textures = {
-        'http://cloud-3.steamusercontent.com/ugc/1022823759371071004/DC4F81C7F92B971C1D1F83F2B12C0DE1E896ABEE/',
-        'http://cloud-3.steamusercontent.com/ugc/1023950053147001338/5611385A6230432B6095F3065D321E456692FFC7/'
+    desert = {
+        table_tex = {
+            'http://cloud-3.steamusercontent.com/ugc/1022823759371071004/DC4F81C7F92B971C1D1F83F2B12C0DE1E896ABEE/',
+            'http://cloud-3.steamusercontent.com/ugc/1023950053147001338/5611385A6230432B6095F3065D321E456692FFC7/'
+        },
+        red_player_base_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672153/2ED568A7248F589F91D34CD523367300400F2342/',
+        blue_player_base_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672930/C6A36660C85DA7B2B038F37D4EA638790A94FB12/'
     }
 }
