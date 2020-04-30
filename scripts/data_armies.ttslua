@@ -163,7 +163,7 @@ armies = {
                 model_data = 'troop_bowman_late_medieval'
             },
             base16 = {
-                name = '8Bw',
+                name = '2ps',
                 loose = true,
                 base = 'tile_grass_40x30',
                 n_models = 2,
