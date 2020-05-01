@@ -1,5 +1,5 @@
 <!-- TODO Add more buttons and prettify -->
-<Panel id="panel_dba_orders" width="200" height="400" color="#FFFFFF" outline="#000" outlineSize="2" rectAlignment="MiddleRight">
+<Panel id="panel_dba_orders" width="200" height="400" color="#FFFFFF" outline="#000" outlineSize="2" rectAlignment="MiddleRight" padding="20">
     <VerticalLayout>
         <Slider id="slider_paces" minValue="0" maxValue="500" wholeNumbers="true" value="200" colors="#00000000|#00000000|#00000000|#00000000" backgroundcolor="#FFFFFFF" onValueChanged="slider_paces_changed"></Slider>
         <Button id="button_move_forward" onClick="move_bases">Move 200 paces</Button>
