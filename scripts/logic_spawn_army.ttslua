@@ -23,7 +23,6 @@ function spawn_base(base, pos, y_rotation, is_red_player)
 
     local base_name = 'base ' .. base['name'] .. ' #' .. g_base_index
     base_obj.setName(base_name)
-    print_info('Spawning ' .. base_name)
     
     g_base_index = g_base_index + 1
     g_bases[base_name] = {
@@ -83,7 +82,7 @@ end
 -- validate
 function spawn_army(army, is_red_player)
     math.randomseed(os.time())
-    local n_bases = tlen(army)
+    local n_bases = tlen(army) - 1
     local rows = 1
     if n_bases > g_max_bases_row then
         n_bases = g_max_bases_row
@@ -121,6 +120,8 @@ function spawn_army(army, is_red_player)
             i = i + 1
         end
     end
+
+    print_info('Army deployed: ' .. army['data']['list'])
 end
 
 function update_authors_text(army)

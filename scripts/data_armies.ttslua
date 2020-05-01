@@ -4,7 +4,8 @@ armies = {
         Hoplite_Greek_Example = {
             data = {
                 aggresiveness = 1,
-                terrain = 'Mountain'
+                terrain = 'Mountain',
+                list = 'Ignore, it\'s ficticious, for testing'
             },
             base1 = {
                 name = '4Bd',
@@ -50,10 +51,11 @@ armies = {
         }
     },
     Book_IV = {
-        IV_79_Late_Swiss_1400dC_to_1522dC = {
+        IV_79_Late_Swiss_1400AD_to_1522AD = {
             data = {
                 aggresiveness = 3,
-                terrain = 'Mountain'
+                terrain = 'Mountain',
+                list = '1x4Pk (Gen), 1x6Kn o 6Bd, 7x4Pk, 2x2Ps, 1x2LH or Art.'
             },
             base1 = {
                 name = '4Pk_Gen',
@@ -158,7 +160,8 @@ armies = {
         IV_82a_French_Ordonnances_1445AD_to_1464AD = {
             data = {
                 aggresiveness = 2,
-                terrain = 'Arable'
+                terrain = 'Arable',
+                list = '1x3Kn//4Bd (Gen), 4x3Kn//4Bd, 1x4Cb, 1x4Bw, 2x3Bw, 1x4Bd or Art, 1x2Ps, 1xArt.'
             },
             base1 = {
                 name = '3Kn_Gen',
@@ -300,7 +303,8 @@ armies = {
         IV_82b_French_Ordonnances_1465AD_to_1503AD = {
             data = {
                 aggresiveness = 2,
-                terrain = 'Arable'
+                terrain = 'Arable',                
+                list = '1x3Kn (Gen), 4x3Kn, 1x3Cv//4Bw, 1x4Cb, 2x4Pk (Swiss if not allies) or 3Bw, 2x2Ps, 1xArt.'
             },
             base1 = {
                 name = '3Kn_Gen',
@@ -415,7 +419,8 @@ armies = {
         IV_83a_Wars_of_the_Roses_English_1455AD_to_1485AD = {
             data = {
                 aggresiveness = 1,
-                terrain = 'Arable'
+                terrain = 'Arable',
+                list = '1x3Kn o 4Bd (Gen), 1x3Kn o 3Cv or 4Bd, 3x4Bd, 6x3/4Lb, 1xArt or 3Sp.'
             },
             base1 = {
                 name = '3Kn_Gen',
@@ -541,7 +546,8 @@ armies = {
         IV_83b_Wars_of_the_Roses_English_1487AD = {
             data = {
                 aggresiveness = 1,
-                terrain = 'Arable'
+                terrain = 'Arable',
+                list = '1x3Kn or 4Bd (Gen), 1x3Kn or 3Cv or 4Bd, 2x4Bd, 1x4Bd or 3Lb, 1xArt or 2Ps, 6x3/4Lb or (2x4Pk+2x3Ax+2x2Ps).'
             },
             base1 = {
                 name = '3Kn_Gen',
@@ -714,7 +720,8 @@ armies = {
         IV_84_Burgundian_Ordonnance_1471AD_to_1477AD = {
             data = {
                 aggresiveness = 4,
-                terrain = 'Arable'
+                terrain = 'Arable',
+                list = '1x3Kn (Gen), 1x3Kn, 3x3Kn//4Bd, 2x4Lb, 1x4Cb, 2x4Pk or 8Bw, 1x2Ps, 1xArt.'
             },
             base1 = {
                 name = '3Kn_Gen',
@@ -834,6 +841,6 @@ armies = {
                 n_models = 1,
                 model_data = 'troop_camp_late_medieval'
             },
-        },
+        }
     }
 }
