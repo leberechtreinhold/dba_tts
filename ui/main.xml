@@ -3,12 +3,13 @@
     <VerticalLayout>
         <Slider id="slider_paces" minValue="0" maxValue="500" wholeNumbers="true" value="200" colors="#00000000|#00000000|#00000000|#00000000" backgroundcolor="#FFFFFFF" onValueChanged="slider_paces_changed"></Slider>
         <Button id="button_move_forward" onClick="move_bases">Move 200 paces</Button>
-        <Button onClick="align_bases" interactable="false">Align bases</Button>
+        <!--<Button onClick="align_bases" interactable="false">Align bases</Button>-->
         <Button onClick="on_push_back">Push back Column</Button>
-        <Button id="button_spawn_table" onClick="on_create_table_menu">Spawn table ass</Button>
+        <Button id="button_spawn_table" onClick="on_create_table_menu">Spawn table</Button>
         <Button id="button_create_army" onClick="create_army_options_menu">Deploy an army</Button>
         <Toggle id="toggle_zoc" isOn="false" onValueChanged="on_toggle_zoc">Do not show ZOC</Toggle>
         <Toggle id="toggle_deployment_lines" isOn="false" onValueChanged="on_toggle_deployment_lines">Do not show deployment rules</Toggle>
+        <Toggle id="toggle_snapping" isOn="true" onValueChanged="on_toggle_snapping">Snap bases</Toggle>
     </VerticalLayout>
 </Panel>
 

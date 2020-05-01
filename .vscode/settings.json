@@ -9,7 +9,8 @@
         "spawnObject",
         "Wait",
         "printToAll",
-        "broadcastToAll"
+        "broadcastToAll",
+        "getAllObjects"
     ],
     "Lua.diagnostics.disable": [
         "lowercase-global"

@@ -338,3 +338,22 @@ function on_push_back(player, value, id)
     push_back_column(objs)
     draw_gizmo_future_movements(player.getSelectedObjects())
 end
+
+-- Global enabled snapping
+g_snap_mode_enabled = true
+function on_toggle_snapping(player, value, id)
+    g_snap_mode_enabled = value == "True"
+
+    if g_snap_mode_enabled then
+        UI.setValue('toggle_snapping', 'Snap bases')
+        UI.setAttribute('toggle_snapping', 'text', 'Snap bases')
+    else
+        UI.setValue('toggle_snapping', 'Do not snap bases')
+        UI.setAttribute('toggle_snapping', 'text', 'Do not snap bases')
+    end
+    
+    -- Make it consistent for all players
+    on_next_frame(function()
+        UI.setAttribute('toggle_snapping', 'isOn', g_snap_mode_enabled)
+    end)
+end
