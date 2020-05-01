@@ -36,8 +36,14 @@ g_deploy_home_in = 6
 -- Maximum distance between the center of bases for autoalignment, squared
 g_max_distance_alignment = 3*3
 
--- Angle for alignment front-to-back instead of side to side, in radians
+-- Angle for alignment front-to-back instead of side-to-side, in radians
 g_alignment_angle_side = math.rad(30)
+
+-- Max angle between elements for pushing back a column
+g_max_angle_pushback_rad = math.rad(15)
+
+-- Max distance in inches between corenrs for aligment in pushback, squared
+g_max_corner_distance_pushback = 0.1*0.1
 
 -- When drawing a circle (moving troops, or bow arcs, we use a certain
 -- number of points (they are straight lines), this marks how many points

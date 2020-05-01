@@ -94,7 +94,23 @@ function move_base(obj, how_many_paces)
     -- ' to ' .. vec_to_str(destination))
     obj.setPosition(destination)
     -- TODO: COLISION
+    return how_many_paces
+end
 
+-- Moves ONE single DBA base by it's depth
+function push_back(obj)
+    local current_world_pos = obj.getPosition()
+    local angle = from_degrees_to_rad(obj.getRotation())['y']
+    angle = angle + math.pi
+    if angle > 2*math.pi then
+        angle = angle - 2*math.pi
+    end
+    local displacement_vector = rad_to_vector(angle)
+
+    local magnitude = get_size(obj.getName())['z']
+    local destination = vec_add(current_world_pos, vec_mul_escalar(displacement_vector, magnitude))
+    obj.setPosition(destination)
+    -- TODO: COLISION
     return how_many_paces
 end
 
