@@ -820,7 +820,7 @@ armies = {
             base16 = {
                 name = '2ps',
                 loose = true,
-                base = 'tile_grass_40x30',
+                base = 'tile_grass_40x20',
                 n_models = 2,
                 model_data = 'troop_handgunner_late_medieval'
             },
