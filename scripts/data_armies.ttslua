@@ -50,24 +50,6 @@ armies = {
         }
     },
     Book_IV = {
-        Late_Medieval_German_Example = {
-            data = {
-                aggresiveness = 1,
-                terrain = 'Mountain'
-            },
-            base1 = {
-                name = '4Bd',
-                base = 'tile_reference_40x15',
-                n_models = 4,
-                model_data = 'troop_swordsman_latemedieval'
-            },
-            base2 = {
-                name = '4Bd',
-                base = 'tile_reference_40x15',
-                n_models = 4,
-                model_data = 'troop_swordsman_latemedieval'
-            }
-        },
         IV_79_Late_Swiss_1400dC_to_1522dC = {
             data = {
                 aggresiveness = 3,
