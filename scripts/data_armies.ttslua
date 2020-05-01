@@ -161,7 +161,7 @@ armies = {
             data = {
                 aggresiveness = 2,
                 terrain = 'Arable',
-                list = '1x3Kn//4Bd (Gen), 4x3Kn//4Bd, 1x4Cb, 1x4Bw, 2x3Bw, 1x4Bd or Art, 1x2Ps, 1xArt.'
+                list = '1x3Kn//4Bw (Gen), 4x3Kn//4Bd, 1x4Cb, 1x4Bw, 2x3Bw, 1x4Bd or Art, 1x2Ps, 1xArt.'
             },
             base1 = {
                 name = '3Kn_Gen',
