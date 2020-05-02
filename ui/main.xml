@@ -1,5 +1,9 @@
 <!-- TODO Add more buttons and prettify -->
-<Panel id="panel_dba_orders" width="230" height="400" color="#FFFFFF" outline="#000" outlineSize="2" rectAlignment="MiddleRight" padding="20">
+
+<Panel id="panel_dba_orders_bg" width="230" height="400" rectAlignment="MiddleRight" color="#00000000" >
+    <Image image="rightside_menu_bg"></Image>
+</Panel>
+<Panel id="panel_dba_orders" width="230" height="400" color="#00000000" rectAlignment="MiddleRight" padding="20">
     <VerticalLayout>
         <Slider id="slider_paces" minValue="0" maxValue="500" wholeNumbers="true" value="200" colors="#00000000|#00000000|#00000000|#00000000" backgroundcolor="#FFFFFFF" onValueChanged="slider_paces_changed"></Slider>
         <Button id="button_move_forward" onClick="move_bases">Move 200 paces</Button>
@@ -34,10 +38,10 @@
 </Panel>
 
 <Panel id="panel_dba_table_selection_bg" width="600" height="500" rectAlignment="MiddleCenter" color="#00000000" active="false">
-    <Image image="select_army_bg"></Image>
+    <Image image="select_table_bg"></Image>
 </Panel>
 <Panel id="panel_dba_table_selection" width="600" height="500" rectAlignment="MiddleCenter" active="false">
-    <TableLayout padding="60 60 100 80" cellSpacing="20">
+    <TableLayout padding="100 100 80 80" cellSpacing="20">
         <Row preferredHeight="40">
             <Cell columnSpan="6" dontUseTableCellBackground="true">
                 <Text fontSize="20">Select the background for the table:</Text>
@@ -78,11 +82,11 @@
             <Cell columnSpan="2" dontUseTableCellBackground="true">
                 <Button columnSpan="2" fontSize="20" onClick="on_cancel_load_table">Cancel</Button>
             </Cell>
-            <Cell columnSpan="3" dontUseTableCellBackground="true">
+            <Cell columnSpan="2" dontUseTableCellBackground="true">
                 <!-- Filler -->
             </Cell>
-            <Cell columnSpan="1" dontUseTableCellBackground="true">
-                <Button columnSpan="1" fontSize="20" onClick="on_load_table">Load</Button>
+            <Cell columnSpan="2" dontUseTableCellBackground="true">
+                <Button fontSize="20" onClick="on_load_table">Load</Button>
             </Cell>
         </Row>
     </TableLayout>
