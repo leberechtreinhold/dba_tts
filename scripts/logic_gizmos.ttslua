@@ -327,7 +327,7 @@ function draw_gizmo_future_movements(new_selected_items)
                 table.insert(strokes, get_strokes_command(obj, transform, g_command_distance_short))
                 table.insert(strokes, get_strokes_command(obj, transform, g_command_distance_long))
             end
-            
+
             if g_zoc_enabled then
                 table.insert(strokes, get_strokes_zoc(obj, transform))
             end
@@ -381,12 +381,43 @@ function get_strokes_deployment(pos, color)
     }
 end
 
+function get_strokes_deployment_between(pos, color)
+    local half_width = g_width_table_in / 2
+    local half_depth = g_depth_table_in / 2
+
+    local zpos = 1
+    if pos == 'top' then
+        zpos = 1
+    elseif pos == 'bot' then
+        zpos = -1
+    end
+
+    local pos1 = {
+        x = -half_width,
+        y = g_table_thickness,
+        z = zpos * half_depth - zpos * g_deploy_home_in
+    }
+    local pos2 = {
+        x = half_width,
+        y = g_table_thickness,
+        z = zpos * half_depth - zpos * g_deploy_home_in
+    }
+    return {
+        points    = {pos1, pos2},
+        color     = color,
+        thickness = g_line_thickness,
+        rotation  = {0,0,0}
+    }
+end
+
 function draw_deployment_lines()
     local strokes = {}
     table.insert(strokes, get_strokes_deployment('topright', g_gizmo_color_player_blue))
     table.insert(strokes, get_strokes_deployment('topleft', g_gizmo_color_player_blue))
+    table.insert(strokes, get_strokes_deployment_between('top', g_gizmo_color_player_blue))
     table.insert(strokes, get_strokes_deployment('botright', g_gizmo_color_player_red))
-    table.insert(strokes, get_strokes_deployment('botleft', g_gizmo_color_player_red))
+    table.insert(strokes, get_strokes_deployment('botleft', g_gizmo_color_player_red))    table.insert(strokes, get_strokes_deployment_between('bot', g_gizmo_color_player_red))
+
     g_current_table.setVectorLines(strokes)
 end
 
