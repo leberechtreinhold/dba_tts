@@ -327,6 +327,7 @@ function draw_gizmo_future_movements(new_selected_items)
                 table.insert(strokes, get_strokes_command(obj, transform, g_command_distance_short))
                 table.insert(strokes, get_strokes_command(obj, transform, g_command_distance_long))
             end
+            
             if g_zoc_enabled then
                 table.insert(strokes, get_strokes_zoc(obj, transform))
             end
