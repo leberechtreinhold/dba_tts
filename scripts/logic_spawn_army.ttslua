@@ -80,7 +80,7 @@ end
 -- Given an army object data, spawns it on the center of the table.
 -- Hope nothing is in there and that all data is correct because this doesn't
 -- validate
-function spawn_army(army, is_red_player)
+function spawn_army(army_name, army, is_red_player)
     math.randomseed(os.time())
     local n_bases = tlen(army) - 1
     local rows = 1
@@ -121,7 +121,8 @@ function spawn_army(army, is_red_player)
         end
     end
 
-    print_info('Army deployed: ' .. army['data']['list'])
+    print_important('Army deployed: ' .. army_name .. ', see chat for options')
+    print_info('List: '.. army['data']['list'])
 end
 
 function update_authors_text(army)

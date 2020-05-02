@@ -88,7 +88,7 @@ function on_load_army(player, value, id)
     local book_name = friendlyname_to_dataname(g_book_selected)
     local army_name = friendlyname_to_dataname(g_army_selected)
 
-    spawn_army(armies[book_name][army_name], g_color_spawn_army_selected == 'Red')
+    spawn_army(army_name, armies[book_name][army_name], g_color_spawn_army_selected == 'Red')
     UI.setAttribute('panel_dba_troop_selection', 'active', false)
     UI.setAttribute('panel_dba_troop_selection_bg', 'active', false)
     UI.setAttribute('panel_dba_troop_selection', 'visibility', '')
