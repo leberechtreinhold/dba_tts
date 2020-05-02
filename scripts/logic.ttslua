@@ -302,6 +302,56 @@ function is_opposite_front(transformA, transformB)
     return false
 end
 
+-- Determines if A is in the of side of B, "closing its door", which in DBA
+-- terms means that the left corner of A is touching the left corner B, and A
+-- is looking at B, while B does NOT look at A.
+function is_closing_door_to_left(transformA, transformB)
+    local angleA = transformA['rotation']
+    local angleB = transformB['rotation']
+    local diff_angle = math.abs(angleB - angleA)
+    local angle_90 = math.abs(math.pi/2 - diff_angle)
+    local angle_270 = math.abs(1.5*math.pi - diff_angle)
+
+    if angle_90 >= g_max_angle_pushback_rad
+       and angle_270 >= g_max_angle_pushback_rad then
+       -- Angle is too different, skip
+       return false
+    end
+
+    local cornersA = transformA['corners']
+    local cornersB = transformB['corners']
+
+    local distance = distance_points_flat_sq(cornersA['topleft'], cornersB['topleft'])
+    if distance < g_max_corner_distance_pushback then
+        return true
+    end
+    return false
+end
+
+function is_closing_door_to_right(transformA, transformB)
+    local angleA = transformA['rotation']
+    local angleB = transformB['rotation']
+    local diff_angle = math.abs(angleB - angleA)
+    local angle_90 = math.abs(math.pi/2 - diff_angle)
+    local angle_270 = math.abs(1.5*math.pi - diff_angle)
+    
+    if angle_90 >= g_max_angle_pushback_rad
+       and angle_270 >= g_max_angle_pushback_rad then
+       -- Angle is too different, skip
+       return false
+    end
+
+    local cornersA = transformA['corners']
+    local cornersB = transformB['corners']
+
+    local distance = distance_points_flat_sq(cornersA['topright'], cornersB['topright'])
+    print('Distance is ' .. distance)
+    if distance < g_max_corner_distance_pushback then
+        return true
+    end
+    return false
+end
+
 function get_depth_base(tile_name)
     local base_data = _G[tile_name]
     return from_mm_to_in(base_data['depth'])
@@ -369,10 +419,19 @@ end
 function snap_to_base(obj, transformObj, base, transformBase, direction)
     print_info(obj.getName() .. ' is snapping to ' .. base.getName() .. ', ' .. direction)
     local new_rotation = base.getRotation()
-    if direction == 'opposite' then
-        new_y = new_rotation['y'] + 180
-        if new_y >= 360 then 
+    if direction == 'opposite' or direction == 'door_left' or direction == 'door_right' then
+        local new_y = 0
+        if direction == 'opposite' then
+            new_y = new_rotation['y'] + 180
+        elseif direction == 'door_left' then
+            new_y = new_rotation['y'] + 90
+        elseif direction == 'door_right' then
+            new_y = new_rotation['y'] - 90
+        end
+        if new_y >= 360 then
             new_y = new_y - 360
+        elseif new_y < 0 then
+            new_y = new_y + 360
         end
         new_rotation['y'] = new_y
     end
@@ -394,6 +453,12 @@ function snap_to_base(obj, transformObj, base, transformBase, direction)
     elseif direction == 'left' then
         relative_pos['x'] = -1*(sizeObj['x'] / 2 + sizeBase['x'] / 2)
         relative_pos['z'] = -1*(sizeObj['z'] - sizeBase['z']) / 2
+    elseif direction == 'door_left' then
+        relative_pos['x'] = -1*(sizeObj['z'] / 2 + sizeBase['x'] / 2)
+        relative_pos['z'] = -1*(sizeObj['x'] / 2) + (sizeBase['z'] / 2)
+    elseif direction == 'door_right' then
+        relative_pos['x'] = sizeObj['z'] / 2 + sizeBase['x'] / 2
+        relative_pos['z'] = -1*(sizeObj['x'] / 2) + (sizeBase['z'] / 2)
     else
         print_error('Tried to snap ' .. obj.getName() .. ' in unknown direction ' .. direction)
         return
@@ -440,9 +505,19 @@ function snap_picked_base(obj)
                 snap_to_base(obj, transformObj, base, transformBase, 'right')
                 local new_corners = compute_corners_base(obj)
                 return max_distance_between_bases(new_corners, initial_corners)
-            
+
             elseif is_opposite_front(transformObj, transformBase) then
                 snap_to_base(obj, transformObj, base, transformBase, 'opposite')
+                local new_corners = compute_corners_base(obj)
+                return max_distance_between_bases(new_corners, initial_corners)
+
+            elseif is_closing_door_to_left(transformObj, transformBase) then
+                snap_to_base(obj, transformObj, base, transformBase, 'door_left')
+                local new_corners = compute_corners_base(obj)
+                return max_distance_between_bases(new_corners, initial_corners)
+
+            elseif is_closing_door_to_right(transformObj, transformBase) then
+                snap_to_base(obj, transformObj, base, transformBase, 'door_right')
                 local new_corners = compute_corners_base(obj)
                 return max_distance_between_bases(new_corners, initial_corners)
             end
@@ -525,7 +600,7 @@ function calculate_transform(base_obj)
 end
 
 function transform_to_str(transform)
-    return 'Postion: ' .. vec_to_str(transform['position']) 
+    return 'Postion: ' .. vec_to_str(transform['position'])
         .. ' Rotation: ' .. math.deg(transform['rotation'])
 end
 
