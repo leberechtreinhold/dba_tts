@@ -168,7 +168,7 @@ armies = {
                 base = 'tile_grass_40x30',
                 n_models = 3,
                 fixed_models = {
-                    [1] = 'troop_knight_late_medieval',
+                    [1] = 'troop_knight_late_medieval_bannerman',
                     [2] = 'troop_knight_late_medieval_captain',
                     [3] = 'troop_knight_late_medieval'
                 }
@@ -313,7 +313,7 @@ armies = {
                 fixed_models = {
                     [1] = 'troop_knight_late_medieval',
                     [2] = 'troop_knight_late_medieval_captain',
-                    [3] = 'troop_knight_late_medieval'
+                    [3] = 'troop_knight_late_medieval_bannerman'
                 }
             },
             base2 = {
@@ -429,7 +429,7 @@ armies = {
                 fixed_models = {
                     [1] = 'troop_knight_late_medieval',
                     [2] = 'troop_knight_late_medieval_captain',
-                    [3] = 'troop_knight_late_medieval'
+                    [3] = 'troop_knight_late_medieval_bannerman'
                 }
             },
             base2 = {
@@ -554,7 +554,7 @@ armies = {
                 base = 'tile_grass_40x30',
                 n_models = 3,
                 fixed_models = {
-                    [1] = 'troop_knight_late_medieval',
+                    [1] = 'troop_knight_late_medieval_bannerman',
                     [2] = 'troop_knight_late_medieval_captain',
                     [3] = 'troop_knight_late_medieval'
                 }
@@ -730,7 +730,7 @@ armies = {
                 fixed_models = {
                     [1] = 'troop_knight_late_medieval',
                     [2] = 'troop_knight_late_medieval_captain',
-                    [3] = 'troop_knight_late_medieval'
+                    [3] = 'troop_knight_late_medieval_bannerman'
                 }
             },
             base2 = {
