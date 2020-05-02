@@ -222,7 +222,7 @@ end
 function is_behind(transformA, transformB)
     local angleA = transformA['rotation']
     local angleB = transformB['rotation']
-    local diff_angle = math.abs(angleB - angleB)
+    local diff_angle = math.abs(angleB - angleA)
 
     if diff_angle > g_max_angle_pushback_rad
        and diff_angle < (2*math.pi - g_max_angle_pushback_rad) then
@@ -247,7 +247,7 @@ end
 function is_left_side(transformA, transformB)
     local angleA = transformA['rotation']
     local angleB = transformB['rotation']
-    local diff_angle = math.abs(angleB - angleB)
+    local diff_angle = math.abs(angleB - angleA)
 
     if diff_angle > g_max_angle_pushback_rad
        and diff_angle < (2*math.pi - g_max_angle_pushback_rad) then
@@ -275,6 +275,31 @@ end
 -- Determines if A is in front of B
 function is_infront(transformA, transformB)
     return is_behind(transformB, transformA)
+end
+
+-- Determines if A is in front B, looking at B, while B looks at A
+function is_opposite_front(transformA, transformB)
+    local angleA = transformA['rotation']
+    local angleB = transformB['rotation']
+    local diff_angle = math.abs(angleB - angleA)
+    local angle_180 = math.abs(math.pi - diff_angle)
+
+    if angle_180 >= g_max_angle_pushback_rad then
+       -- Angle is too different, skip
+       return false
+    end
+
+    local cornersA = transformA['corners']
+    local cornersB = transformB['corners']
+
+    local distance = distance_points_flat_sq(cornersA['topright'], cornersB['topleft'])
+    if distance < g_max_corner_distance_pushback then
+        distance = distance_points_flat_sq(cornersA['topleft'], cornersB['topright'])
+        if distance < g_max_corner_distance_pushback then
+            return true
+        end
+    end
+    return false
 end
 
 function get_depth_base(tile_name)
@@ -342,15 +367,23 @@ function onObjectPickUp(player_color,  picked_up_object)
 end
 
 function snap_to_base(obj, transformObj, base, transformBase, direction)
-    print_info(obj.getName() .. ' is snapping to ' .. base.getName())
-    obj.setRotation(base.getRotation())
+    print_info(obj.getName() .. ' is snapping to ' .. base.getName() .. ', ' .. direction)
+    local new_rotation = base.getRotation()
+    if direction == 'opposite' then
+        new_y = new_rotation['y'] + 180
+        if new_y >= 360 then 
+            new_y = new_y - 360
+        end
+        new_rotation['y'] = new_y
+    end
+    obj.setRotation(new_rotation)
 
     local sizeObj = get_size(obj.getName())
     local sizeBase = get_size(base.getName())
 
     local relative_pos = {x = 0, y = 0, z = 0 }
 
-    if direction == 'infront' then
+    if direction == 'infront' or direction == 'opposite' then
         relative_pos['z'] = sizeObj['z'] / 2 + sizeBase['z'] / 2
     elseif direction == 'behind' then
         relative_pos['z'] = -1*(sizeObj['z'] / 2 + sizeBase['z'] / 2)
@@ -382,7 +415,8 @@ function snap_picked_base(obj)
         local pos_base = base.getPosition()
 
         -- Discard fast bases that are too far
-        if distance_points_flat_sq(pos, pos_base) then
+        local distance = distance_points_flat_sq(pos, pos_base)
+        if distance < g_max_distance_alignment and distance ~= 0 then
             local transformObj = calculate_transform(obj)
             local transformBase = calculate_transform(base)
 
@@ -404,6 +438,11 @@ function snap_picked_base(obj)
 
             elseif is_right_side(transformObj, transformBase) then
                 snap_to_base(obj, transformObj, base, transformBase, 'right')
+                local new_corners = compute_corners_base(obj)
+                return max_distance_between_bases(new_corners, initial_corners)
+            
+            elseif is_opposite_front(transformObj, transformBase) then
+                snap_to_base(obj, transformObj, base, transformBase, 'opposite')
                 local new_corners = compute_corners_base(obj)
                 return max_distance_between_bases(new_corners, initial_corners)
             end
@@ -483,6 +522,11 @@ function calculate_transform(base_obj)
         corners = compute_corners_base(base_obj),
         rotation = normalize_angle(math.rad(base_obj.getRotation()['y']))
     }
+end
+
+function transform_to_str(transform)
+    return 'Postion: ' .. vec_to_str(transform['position']) 
+        .. ' Rotation: ' .. math.deg(transform['rotation'])
 end
 
 function get_transform(position, corners, rotation)

@@ -34,7 +34,7 @@ g_deploy_side_in = 3
 g_deploy_home_in = 6
 
 -- Maximum distance between the center of bases for autoalignment, squared
-g_max_distance_alignment = 3*3
+g_max_distance_alignment = 2*2
 
 -- Angle for alignment front-to-back instead of side-to-side, in radians
 g_alignment_angle_side = math.rad(30)
