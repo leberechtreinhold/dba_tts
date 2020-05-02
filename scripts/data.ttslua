@@ -45,6 +45,10 @@ g_max_angle_pushback_rad = math.rad(15)
 -- Max distance in inches between corenrs for aligment in pushback, squared
 g_max_corner_distance_pushback = 0.1*0.1
 
+-- Command distances from the general
+g_command_distance_short = 600/100
+g_command_distance_long = 1200/100
+
 -- When drawing a circle (moving troops, or bow arcs, we use a certain
 -- number of points (they are straight lines), this marks how many points
 -- Must be divisible by 4
@@ -77,6 +81,7 @@ g_gizmo_fire_color_player_red = { 1, 0.6, 0.1 }
 g_gizmo_fire_color_player_blue = { 0.15, 0.6, 0.2 }
 g_gizmo_zoc_color_player_red = { 0.6, 0.25, 0.15 }
 g_gizmo_zoc_color_player_blue = { 0.15, 0.25, 0.6 }
+g_gizmo_color_command = { 0.5, 0.5, 0.5 }
 
 -- Models use this collider so they are easier to move
 minimal_collider = 'http://cloud-3.steamusercontent.com/ugc/1022823184773057328/6E2E42ECBBD40D7501018921FC5898568FF9D748/'

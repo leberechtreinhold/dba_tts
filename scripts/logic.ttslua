@@ -334,7 +334,7 @@ function is_closing_door_to_right(transformA, transformB)
     local diff_angle = math.abs(angleB - angleA)
     local angle_90 = math.abs(math.pi/2 - diff_angle)
     local angle_270 = math.abs(1.5*math.pi - diff_angle)
-    
+
     if angle_90 >= g_max_angle_pushback_rad
        and angle_270 >= g_max_angle_pushback_rad then
        -- Angle is too different, skip
@@ -821,6 +821,122 @@ function get_strokes_art(base_obj, transform)
     return get_strokes_fire_arc(base_obj, transform, g_art_range, g_base_width_inches)
 end
 
+function get_strokes_command(base_obj, transform, range)
+    local stroke_points = {}
+    local p = transform['corners']['topright']
+    local depth = get_size(base_obj.getName())['z']
+
+    table.insert(stroke_points, {
+        x = p['x'],
+        y = p['y'],
+        z = p['z'] + range
+    })
+    table.insert(stroke_points, {
+        x = p['x'] - g_base_width_inches,
+        y = p['y'],
+        z = p['z'] + range
+    })
+    local radius_topleft = {
+        x = p['x'] - g_base_width_inches,
+        y = p['y'],
+        z = p['z']
+    }
+    local topleft_arc = get_coordinates_arc(
+        radius_topleft,
+        range,
+        g_precision_circle / 4,
+        90,
+        180)
+    array_concat(stroke_points, topleft_arc)
+    table.insert(stroke_points, {
+        x = p['x'] - g_base_width_inches - range,
+        y = p['y'],
+        z = p['z']
+    })
+    table.insert(stroke_points, {
+        x = p['x'] - g_base_width_inches - range,
+        y = p['y'],
+        z = p['z'] - depth
+    })
+    local radius_botleft = {
+        x = p['x'] - g_base_width_inches,
+        y = p['y'],
+        z = p['z'] - depth
+    }
+    local botleft_arc = get_coordinates_arc(
+        radius_botleft,
+        range,
+        g_precision_circle / 4,
+        180,
+        270)
+    array_concat(stroke_points, botleft_arc)
+    table.insert(stroke_points, {
+        x = p['x'] - g_base_width_inches,
+        y = p['y'],
+        z = p['z'] - depth - range
+    })
+    table.insert(stroke_points, {
+        x = p['x'],
+        y = p['y'],
+        z = p['z'] - depth - range
+    })
+    local radius_botright = {
+        x = p['x'],
+        y = p['y'],
+        z = p['z'] - depth
+    }
+    local botright_arc = get_coordinates_arc(
+        radius_botright,
+        range,
+        g_precision_circle / 4,
+        270,
+        360)
+    array_concat(stroke_points, botright_arc)
+    table.insert(stroke_points, {
+        x = p['x'] + range,
+        y = p['y'],
+        z = p['z'] - depth
+    })
+    table.insert(stroke_points, {
+        x = p['x'] + range,
+        y = p['y'],
+        z = p['z']
+    })
+    local radius_topright = {
+        x = p['x'],
+        y = p['y'],
+        z = p['z']
+    }
+    local topright_arc = get_coordinates_arc(
+        radius_topright,
+        range,
+        g_precision_circle / 4,
+        0,
+        90)
+    array_concat(stroke_points, topright_arc)
+    table.insert(stroke_points, {
+        x = p['x'],
+        y = p['y'],
+        z = p['z'] + range
+    })
+
+    local rotation = transform['rotation']
+    for _, paux in ipairs(stroke_points) do
+        local paux_rotated = rotate_point(paux, p, rotation)
+        paux['x'] = paux_rotated['x']
+        -- We can ignore the y because we assume XZ plane
+        paux['z'] = paux_rotated['z']
+    end
+
+    return
+    {
+        points    = stroke_points,
+        color     = g_gizmo_color_command,
+        thickness = g_line_thickness,
+        rotation  = {0,0,0}
+    }
+end
+
 function draw_gizmo_future_movements(new_selected_items)
     if #new_selected_items == 0 then
         Global.setVectorLines({})
@@ -843,6 +959,10 @@ function draw_gizmo_future_movements(new_selected_items)
                 table.insert(strokes, get_strokes_art(obj, transform))
             end
 
+            if str_has_substr(obj.getName(), 'Gen') then
+                table.insert(strokes, get_strokes_command(obj, transform, g_command_distance_short))
+                table.insert(strokes, get_strokes_command(obj, transform, g_command_distance_long))
+            end
             if g_zoc_enabled then
                 table.insert(strokes, get_strokes_zoc(obj, transform))
             end

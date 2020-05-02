@@ -8,8 +8,8 @@ armies = {
                 list = 'Ignore, it\'s ficticious, for testing'
             },
             base1 = {
-                name = '4Bd',
-                base = 'tile_reference_40x15',
+                name = '4Bd Gen',
+                base = 'tile_grass_40x60',
                 ignore_terrain = true,
                 n_models = 12,
                 model_data = 'troop_swordsman_latemedieval'
