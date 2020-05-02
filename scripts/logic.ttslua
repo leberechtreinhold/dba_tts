@@ -308,12 +308,12 @@ end
 function is_closing_door_to_left(transformA, transformB)
     local angleA = transformA['rotation']
     local angleB = transformB['rotation']
-    local diff_angle = math.abs(angleB - angleA)
+    local diff_angle = angleB - angleA
+    if diff_angle < 0 then
+        diff_angle = diff_angle + 2*math.pi
+    end
     local angle_90 = math.abs(math.pi/2 - diff_angle)
-    local angle_270 = math.abs(1.5*math.pi - diff_angle)
-
-    if angle_90 >= g_max_angle_pushback_rad
-       and angle_270 >= g_max_angle_pushback_rad then
+    if angle_90 >= g_max_angle_pushback_rad then
        -- Angle is too different, skip
        return false
     end
@@ -331,12 +331,12 @@ end
 function is_closing_door_to_right(transformA, transformB)
     local angleA = transformA['rotation']
     local angleB = transformB['rotation']
-    local diff_angle = math.abs(angleB - angleA)
-    local angle_90 = math.abs(math.pi/2 - diff_angle)
-    local angle_270 = math.abs(1.5*math.pi - diff_angle)
-
-    if angle_90 >= g_max_angle_pushback_rad
-       and angle_270 >= g_max_angle_pushback_rad then
+    local diff_angle = angleB - angleA
+    if diff_angle < 0 then
+        diff_angle = diff_angle + 2*math.pi
+    end
+    local angle_270 = math.abs(3*math.pi/2 - diff_angle)
+    if angle_270 >= g_max_angle_pushback_rad then
        -- Angle is too different, skip
        return false
     end
@@ -345,7 +345,6 @@ function is_closing_door_to_right(transformA, transformB)
     local cornersB = transformB['corners']
 
     local distance = distance_points_flat_sq(cornersA['topright'], cornersB['topright'])
-    print('Distance is ' .. distance)
     if distance < g_max_corner_distance_pushback then
         return true
     end
