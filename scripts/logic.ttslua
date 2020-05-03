@@ -114,6 +114,18 @@ function push_back(obj)
     -- TODO: COLISION
 end
 
+-- Like push back but in the other direction
+function push_forward(obj)
+    local current_world_pos = obj.getPosition()
+    local angle = from_degrees_to_rad(obj.getRotation())['y']
+    local displacement_vector = rad_to_vector(angle)
+
+    local magnitude = get_size(obj.getName())['z']
+    local destination = vec_add(current_world_pos, vec_mul_escalar(displacement_vector, magnitude))
+    obj.setPosition(destination)
+    -- TODO: COLISION
+end
+
 -- Pushes back a whole column, that may not be exactly aligned
 function push_back_column(objs)
     -- We use many comparisons for the column so we precalculate all the

@@ -20,10 +20,23 @@ function spawn_base(base, pos, y_rotation, is_red_player)
 
     local base_obj = spawn_model(base['base'], pos, 0, nil, is_red_player, overriden_tex)
 
-
     local base_name = 'base ' .. base['name'] .. ' #' .. g_base_index
     base_obj.setName(base_name)
-    
+    base_obj.addContextMenuItem("Move forward", function()
+        local moved_paces = move_base(base_obj, g_paces_movement)
+        print_info(base_obj.getName() .. ' ' .. moved_paces .. ' paces forward')
+    end)
+    base_obj.addContextMenuItem("Move back", function()
+        local moved_paces = move_base(base_obj, -g_paces_movement)
+        print_info(base_obj.getName() .. ' ' .. moved_paces .. ' paces backwards')
+    end)
+    base_obj.addContextMenuItem("Push forward", function()
+        push_forward(base_obj)
+    end)
+    base_obj.addContextMenuItem("Push back", function()
+        push_back(base_obj)
+    end)
+
     g_base_index = g_base_index + 1
     g_bases[base_name] = {
         tile = base['base'],
