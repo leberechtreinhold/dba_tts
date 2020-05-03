@@ -387,8 +387,8 @@ troop_pikeman_late_medieval_inclined = {
         'http://cloud-3.steamusercontent.com/ugc/1011564198059105755/4775664482748F772637DBB58CD46D1385E06919/',
         'http://cloud-3.steamusercontent.com/ugc/1011564198059106092/22C4BA8CCD7CF144C0D6DE57689E59BC5C2E23F3/'
     },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691209063381845/5B391F2A750B852786D95A10BEBEB61146C98638/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691209063382179/30899673366803E55F42EF7262BA1086D1778B22/'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691401814459030/CC29D45DDBE1A471538B7E78ACA097D527B8F8CC/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691401814458523/75C0C25445C1D8DE41B6FE5790B519C382B2ADAF/'
 }
 
 troop_pikeman_late_medieval_straight = {
@@ -403,8 +403,8 @@ troop_pikeman_late_medieval_straight = {
         'http://cloud-3.steamusercontent.com/ugc/1011564198059105255/0742BCCB70B4384839675E41E2046A9A8B57BA2E/',
         'http://cloud-3.steamusercontent.com/ugc/1011564198059106409/4C2922D44C8723F3896C9490E5E3C9CDCC5483FD/'
     },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691209063381845/5B391F2A750B852786D95A10BEBEB61146C98638/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691209063382179/30899673366803E55F42EF7262BA1086D1778B22/'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691401814459030/CC29D45DDBE1A471538B7E78ACA097D527B8F8CC/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691401814458523/75C0C25445C1D8DE41B6FE5790B519C382B2ADAF/'
 }
 
 troop_pikeman_late_medieval_bannerman = {
@@ -416,8 +416,8 @@ troop_pikeman_late_medieval_bannerman = {
     mesh = {
         'http://cloud-3.steamusercontent.com/ugc/1011563720479886715/C4A1AB92BBFD82A9B1F3BFA1363EFFA69690F66D/'
     },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691209063381845/5B391F2A750B852786D95A10BEBEB61146C98638/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691209063382179/30899673366803E55F42EF7262BA1086D1778B22/'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691401814459030/CC29D45DDBE1A471538B7E78ACA097D527B8F8CC/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691401814458523/75C0C25445C1D8DE41B6FE5790B519C382B2ADAF/'
 }
 
 troop_pikeman_late_medieval_captain = {
@@ -429,15 +429,15 @@ troop_pikeman_late_medieval_captain = {
     mesh = {
         'http://cloud-3.steamusercontent.com/ugc/1011563720479888273/0FE163F87747C3B6E5BED19C5F99EF3C6733A8DE/'
     },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691209063381845/5B391F2A750B852786D95A10BEBEB61146C98638/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691209063382179/30899673366803E55F42EF7262BA1086D1778B22/'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691401814459030/CC29D45DDBE1A471538B7E78ACA097D527B8F8CC/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691401814458523/75C0C25445C1D8DE41B6FE5790B519C382B2ADAF/'
 }
 
 troop_spearman_no_shield_late_medieval = {
     height_correction = 0.36,
     scale = 0.37,
     rotation = 180,
-    description = 'Late Medieval Spearman',
+    description = 'Late Medieval Spearman Without Shield',
     author = 'Late Medieval Spearman, using Empire Spearman by Vess (edited by Arkein).',
     mesh = {
         'http://cloud-3.steamusercontent.com/ugc/1012691108385888219/0DED34571B666B38CA1AEC08DE82F31FC6C8D762/',
@@ -448,8 +448,27 @@ troop_spearman_no_shield_late_medieval = {
         'http://cloud-3.steamusercontent.com/ugc/1012691108385891578/AFEE9D10B064BF056AFE60839ABC8F6A86F27897/',
         'http://cloud-3.steamusercontent.com/ugc/1012691108385891865/BD9350FF71243667CFC1F22E899F1D254EA90248/'
     },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691209063381845/5B391F2A750B852786D95A10BEBEB61146C98638/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691209063382179/30899673366803E55F42EF7262BA1086D1778B22/'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691401814459030/CC29D45DDBE1A471538B7E78ACA097D527B8F8CC/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691401814458523/75C0C25445C1D8DE41B6FE5790B519C382B2ADAF/'
+}
+
+troop_spearman_late_medieval = {
+    height_correction = 0.36,
+    scale = 0.37,
+    rotation = 180,
+    description = 'Late Medieval Spearman',
+    author = 'Late Medieval Spearman, using Empire Spearman by Vess (edited by Arkein).',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1012691401814502586/EC2F572F2B09B3A4F07FD0F632C47BC972178615/',
+        'http://cloud-3.steamusercontent.com/ugc/1012691401814502857/A16D036AD412A7A0E5A8F4B22CDF2D02A698D463/',
+        'http://cloud-3.steamusercontent.com/ugc/1012691401814503146/7B2D8BE462FDE4CA6202C35588CE2A2FEB9AF451/',
+        'http://cloud-3.steamusercontent.com/ugc/1012691401814503414/5F03DBC9F020E99E1FCC99324B801FC22CA1822C/',
+        'http://cloud-3.steamusercontent.com/ugc/1012691401814503721/87D76A4E951499EA56CAC7EAF9392B7DC6FA917E/',
+        'http://cloud-3.steamusercontent.com/ugc/1012691401814503966/E25656EFE38828CA0A1CC7790C32438F54AF69AB/',
+        'http://cloud-3.steamusercontent.com/ugc/1012691401814504230/B72EBB33BECFAC2D0C41A20973B848F9EDA30069/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691401814459030/CC29D45DDBE1A471538B7E78ACA097D527B8F8CC/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691401814458523/75C0C25445C1D8DE41B6FE5790B519C382B2ADAF/'
 }
 
 troop_handgunner_late_medieval = {
@@ -488,8 +507,8 @@ troop_handgunner_late_medieval = {
         'http://cloud-3.steamusercontent.com/ugc/1011564617603378971/708B60DC4BD6805B99203ECFFCDFD7BF68025592/',
         'http://cloud-3.steamusercontent.com/ugc/1011564617603379331/A211DAA7DFEAD2213ACD2190D95D10937C205C21/'
     },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691209063381845/5B391F2A750B852786D95A10BEBEB61146C98638/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691209063382179/30899673366803E55F42EF7262BA1086D1778B22/'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691401814459030/CC29D45DDBE1A471538B7E78ACA097D527B8F8CC/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691401814458523/75C0C25445C1D8DE41B6FE5790B519C382B2ADAF/'
 }
 
 troop_halberdier_late_medieval = {
@@ -508,8 +527,8 @@ troop_halberdier_late_medieval = {
         'http://cloud-3.steamusercontent.com/ugc/1011564617603310940/57C9EFE75A9F4FF4D9D91408490376F9A924F0D8/',
         'http://cloud-3.steamusercontent.com/ugc/1012691054073740363/8D2F90EAAAB0FA300D055DA335E392F4AA7F6852/'
     },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691209063381845/5B391F2A750B852786D95A10BEBEB61146C98638/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691209063382179/30899673366803E55F42EF7262BA1086D1778B22/'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691401814459030/CC29D45DDBE1A471538B7E78ACA097D527B8F8CC/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691401814458523/75C0C25445C1D8DE41B6FE5790B519C382B2ADAF/'
 }
 
 troop_bowman_late_medieval = {
@@ -564,8 +583,8 @@ troop_crossbowman_late_medieval = {
         'http://cloud-3.steamusercontent.com/ugc/1011564883556587575/E54B651B50F420A40624A88F96A76D6A9BAC5F06/',
         'http://cloud-3.steamusercontent.com/ugc/1011564883556587879/A8095395095E289CB397F95FAF9F392C841580AF/'
     },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691209063381845/5B391F2A750B852786D95A10BEBEB61146C98638/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691209063382179/30899673366803E55F42EF7262BA1086D1778B22/'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691401814459030/CC29D45DDBE1A471538B7E78ACA097D527B8F8CC/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691401814458523/75C0C25445C1D8DE41B6FE5790B519C382B2ADAF/'
 }
 
 troop_swordman_late_medieval = {
@@ -590,8 +609,8 @@ troop_swordman_late_medieval = {
         'http://cloud-3.steamusercontent.com/ugc/1011564883555628768/5F92C6D0BD1870F75B7E8219310EF8F67F984C30/',
         'http://cloud-3.steamusercontent.com/ugc/1011564883555629068/CF8F13836A44A95E9834A5150EC14D37B4B7FE5A/'
     },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691209063381845/5B391F2A750B852786D95A10BEBEB61146C98638/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691209063382179/30899673366803E55F42EF7262BA1086D1778B22/'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691401814459030/CC29D45DDBE1A471538B7E78ACA097D527B8F8CC/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691401814458523/75C0C25445C1D8DE41B6FE5790B519C382B2ADAF/'
 }
 
 troop_swordman_two_handed_late_medieval = {
@@ -611,8 +630,8 @@ troop_swordman_two_handed_late_medieval = {
         'http://cloud-3.steamusercontent.com/ugc/1011564883555798980/6C3B8086B07DC45AB601D8B6691B992B93EE7A9D/',
         'http://cloud-3.steamusercontent.com/ugc/1011564883555799315/124423D498E29D29B87C81EA090A0A9ED6FA9F49/'
     },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691209063381845/5B391F2A750B852786D95A10BEBEB61146C98638/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691209063382179/30899673366803E55F42EF7262BA1086D1778B22/'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691401814459030/CC29D45DDBE1A471538B7E78ACA097D527B8F8CC/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691401814458523/75C0C25445C1D8DE41B6FE5790B519C382B2ADAF/'
 }
 
 troop_artillery_pieces_late_medieval = {
@@ -723,6 +742,19 @@ troop_knight_late_medieval_bannerman = {
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691328068101058/6F8A8AC48C788DA465D7A8FEA1AB18D237B93995/'
 }
 
+troop_war_wagon_late_medieval = {
+    height_correction = 0.4,
+    scale = 0.42,
+    rotation = 0,
+    description = 'Late Medieval War Wagon',
+    author = 'Late Medieval War Wagon, using Empire crossbowmen by Vess, cart and lateral items barriers by Bog Hardlog (all models and textures edited by Arkein).',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1012691401814459987/F1D15FB8BE976CB22B591A5488F1645308AB2E47/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691401814459030/CC29D45DDBE1A471538B7E78ACA097D527B8F8CC/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691401814458523/75C0C25445C1D8DE41B6FE5790B519C382B2ADAF/'
+}
+
 troop_camp_late_medieval = {
   height_correction = 0,
   scale = 0.028 ,
@@ -735,5 +767,23 @@ troop_camp_late_medieval = {
 
     },
     player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385863633/F4AF3441E409E2332B39871D2C4BA24D191E31C5/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385864161/CC79CEAB62CAEBC7B4A1C9424603E729BF4B6CD4/'
+}
+
+------------------------------------------------------------------------------
+--                            LATE GERMAN
+------------------------------------------------------------------------------
+troop_camp_late_german = {
+  height_correction = 0,
+  scale = 0.028 ,
+    rotation = 0,
+    description = 'Late Medieval Camp',
+    author = 'Late Medieval Camp, using Empire Camp by Vess (edited by Arkein).',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1011564754631755610/F53454B6AD7674E2867551A549EC6AAB7797F032/',
+        'http://cloud-3.steamusercontent.com/ugc/1011564754634704049/BD4E1F2332E028516026E373B068FA69DBF931D4/'
+
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691401814556787/089DD3D7BD4CDB6F65A163CDA20CE876BAACC57E/',
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691108385864161/CC79CEAB62CAEBC7B4A1C9424603E729BF4B6CD4/'
 }
