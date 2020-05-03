@@ -337,7 +337,7 @@ function draw_gizmo_future_movements(new_selected_items)
     Global.setVectorLines(strokes)
 end
 
-function get_strokes_deployment(pos, color)
+function get_strokes_deployment(pos, color, angle)
     local half_width = g_width_table_in / 2
     local half_depth = g_depth_table_in / 2
 
@@ -358,21 +358,23 @@ function get_strokes_deployment(pos, color)
         zpos = -1
     end
 
-    local pos1 = {
+    local center = { x=0, y=0, z=0 }
+    local pos1 = rotate_point_relative({
         x = xpos * half_width,
         y = g_table_thickness,
         z = zpos * half_depth - zpos * g_deploy_home_in
-    }
-    local pos2 = {
+    }, center, -angle)
+    local pos2 = rotate_point_relative({
         x = xpos * half_width - xpos * g_deploy_side_in,
         y = g_table_thickness,
         z = zpos * half_depth - zpos * g_deploy_home_in
-    }
-    local pos3 = {
+    }, center, -angle)
+    local pos3 = rotate_point_relative({
         x = xpos * half_width - xpos * g_deploy_side_in,
         y = g_table_thickness,
         z = zpos * half_depth
-    }
+    }, center, -angle)
+
     return {
         points    = {pos1, pos2, pos3},
         color     = color,
@@ -381,7 +383,7 @@ function get_strokes_deployment(pos, color)
     }
 end
 
-function get_strokes_deployment_between(pos, color)
+function get_strokes_deployment_between(pos, color, angle)
     local half_width = g_width_table_in / 2
     local half_depth = g_depth_table_in / 2
 
@@ -392,16 +394,17 @@ function get_strokes_deployment_between(pos, color)
         zpos = -1
     end
 
-    local pos1 = {
+    local center = { x=0, y=0, z=0 }
+    local pos1 = rotate_point_relative({
         x = -half_width,
         y = g_table_thickness,
         z = zpos * half_depth - zpos * g_deploy_home_in
-    }
-    local pos2 = {
+    }, center, -angle)
+    local pos2 = rotate_point_relative({
         x = half_width,
         y = g_table_thickness,
         z = zpos * half_depth - zpos * g_deploy_home_in
-    }
+    }, center, -angle)
     return {
         points    = {pos1, pos2},
         color     = color,
@@ -412,11 +415,20 @@ end
 
 function draw_deployment_lines()
     local strokes = {}
-    table.insert(strokes, get_strokes_deployment('topright', g_gizmo_color_player_blue))
-    table.insert(strokes, get_strokes_deployment('topleft', g_gizmo_color_player_blue))
-    table.insert(strokes, get_strokes_deployment_between('top', g_gizmo_color_player_blue))
-    table.insert(strokes, get_strokes_deployment('botright', g_gizmo_color_player_red))
-    table.insert(strokes, get_strokes_deployment('botleft', g_gizmo_color_player_red))    table.insert(strokes, get_strokes_deployment_between('bot', g_gizmo_color_player_red))
+    print('draw_deployment_lines')
+    local angle = normalize_angle(math.rad(g_current_table.getRotation()['y']))
+    table.insert(strokes, 
+        get_strokes_deployment('topright', g_gizmo_color_player_blue, angle))
+    table.insert(strokes, 
+        get_strokes_deployment('topleft', g_gizmo_color_player_blue, angle))
+    table.insert(strokes, 
+        get_strokes_deployment_between('top', g_gizmo_color_player_blue, angle))
+    table.insert(strokes, 
+        get_strokes_deployment('botright', g_gizmo_color_player_red, angle))
+    table.insert(strokes, 
+        get_strokes_deployment('botleft', g_gizmo_color_player_red, angle))
+    table.insert(strokes, 
+        get_strokes_deployment_between('bot', g_gizmo_color_player_red, angle))
 
     g_current_table.setVectorLines(strokes)
 end

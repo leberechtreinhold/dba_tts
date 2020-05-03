@@ -232,8 +232,8 @@ function on_toggle_deployment_lines(player, value, id)
     g_deployment_lines_enabled = value == "True"
 
     if g_deployment_lines_enabled then
-        UI.setValue('toggle_deployment_lines', 'Show deployment rules')
-        UI.setAttribute('toggle_deployment_lines', 'text', 'Show deployment rules')
+        UI.setValue('toggle_deployment_lines', 'Show deployment rulers')
+        UI.setAttribute('toggle_deployment_lines', 'text', 'Show deployment rulers')
 
         if g_current_table == nil then
             print_error('There\'s no table so deployment lines will have no effect. Please reenable when you spawned the table.')
@@ -241,8 +241,8 @@ function on_toggle_deployment_lines(player, value, id)
             draw_deployment_lines()
         end
     else
-        UI.setValue('toggle_deployment_lines', 'Do not show deployment rules')
-        UI.setAttribute('toggle_deployment_lines', 'text', 'Do not show deployment rules')
+        UI.setValue('toggle_deployment_lines', 'Do not show rulers')
+        UI.setAttribute('toggle_deployment_lines', 'text', 'Do not show rulers')
         
         if g_current_table ~= nil then
             remove_deployment_lines()

@@ -12,7 +12,7 @@
         <Button id="button_spawn_table" onClick="on_create_table_menu">Spawn table</Button>
         <Button id="button_create_army" onClick="create_army_options_menu">Deploy an army</Button>
         <Toggle id="toggle_zoc" isOn="false" onValueChanged="on_toggle_zoc">Do not show ZOC</Toggle>
-        <Toggle id="toggle_deployment_lines" isOn="false" onValueChanged="on_toggle_deployment_lines">Do not show deployment rules</Toggle>
+        <Toggle id="toggle_deployment_lines" isOn="false" onValueChanged="on_toggle_deployment_lines">Do not show rulers</Toggle>
         <Toggle id="toggle_snapping" isOn="true" onValueChanged="on_toggle_snapping">Snap bases</Toggle>
     </VerticalLayout>
 </Panel>
