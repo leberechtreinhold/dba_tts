@@ -1,1076 +1,1026 @@
 
 armies = {
-    Book_I = {
-        Hoplite_Greek_Example = {
-            data = {
-                aggresiveness = 1,
-                terrain = 'Mountain',
-                list = 'Ignore, it\'s ficticious, for testing'
-            },
-            base1 = {
-                name = '4Bd Gen',
-                base = 'tile_grass_40x60',
-                ignore_terrain = true,
-                n_models = 12,
-                model_data = 'troop_swordsman_latemedieval'
-            },
-            base2 = {
-                name = '4Bd',
-                base = 'tile_reference_40x15',
-                ignore_terrain = true,
-                n_models = 4,
-                fixed_models = {
-                    [1] = 'troop_swordsman_latemedieval',
-                    [2] = 'troop_swordsman_latemedieval',
-                    [3] = 'troop_swordsman_latemedieval',
-                    [4] = 'troop_swordsman_latemedieval',
-                }
-            },
-            base3 = {
-                name = '4Bw',
-                base = 'tile_reference_40x15',
-                ignore_terrain = true,
-                n_models = 4,
-                model_data = 'troop_swordsman_latemedieval'
-            },
-            base4 = {
-                name = 'Art',
-                base = 'tile_reference_40x15',
-                ignore_terrain = true,
-                n_models = 6,
-                model_data = 'troop_swordsman_latemedieval'
-            },
-            base5 = {
-                name = '3Wb',
-                base = 'tile_reference_40x15',
-                ignore_terrain = true,
-                loose = true,
-                n_models = 3,
-                model_data = 'troop_swordsman_latemedieval'
+    Book_IV = {
+    IV_13c_Medieval_German_1450AD_to_1478AD = {
+        data = {
+            aggresiveness = 1,
+            terrain = 'Arable',
+            list = '1x6Kn (Gen), 2x6Kn, 1x3Cv, 2x4Pk, 2x3/4Sp, 1x4Cb or 2Ps, 2xWWg, 1xArt.'
+        },
+        base1 = {
+            name = '6Kn_Gen',
+            base = 'tile_grass_40x60',
+            n_models = 6,
+            fixed_models = {
+                [1] = 'troop_knight_late_medieval_bannerman',
+                [2] = 'troop_knight_late_medieval',
+                [3] = 'troop_knight_late_medieval',
+                [4] = 'troop_knight_late_medieval',
+                [5] = 'troop_knight_late_medieval_captain',
+                [6] = 'troop_knight_late_medieval_bannerman'
             }
+        },
+        base2 = {
+            name = '6Kn',
+            base = 'tile_grass_40x60',
+            n_models = 6,
+            model_data = 'troop_knight_late_medieval'
+        },
+        base3 = {
+            name = '6Kn',
+            base = 'tile_grass_40x60',
+            n_models = 6,
+            model_data = 'troop_knight_late_medieval'
+        },
+        base4 = {
+            name = '3Cv',
+            base = 'tile_grass_40x30',
+            n_models = 3,
+            model_data = 'troop_horse_rider_late_medieval'
+        },
+        base5 = {
+            name = '4Pk',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_pikeman_swiss_straight'
+        },
+        base6 = {
+            name = '4Pk',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_pikeman_swiss_inclined'
+        },
+        base7 = {
+            name = '4Sp',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_spearman_late_medieval'
+        },
+        base8 = {
+            name = '4Sp',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_spearman_late_medieval'
+        },
+        base9 = {
+            name = '3Sp',
+            base = 'tile_grass_40x20',
+            n_models = 3,
+            model_data = 'troop_spearman_no_shield_late_medieval'
+        },
+        base10 = {
+            name = '3Sp',
+            base = 'tile_grass_40x20',
+            n_models = 3,
+            model_data = 'troop_spearman_no_shield_late_medieval'
+        },
+        base11 = {
+            name = '4Cb',
+            base = 'tile_grass_40x20',
+            n_models = 4,
+            model_data = 'troop_crossbowman_late_medieval'
+        },
+        base12 = {
+            name = '2Ps',
+            base = 'tile_grass_40x20',
+            n_models = 2,
+            model_data = 'troop_bowman_late_medieval'
+        },
+        base13 = {
+            name = 'WWg',
+            base = 'tile_grass_40x80',
+            n_models = 1,
+            model_data = 'troop_war_wagon_late_medieval'
+        },
+        base14 = {
+            name = 'WWg',
+            base = 'tile_grass_40x80',
+            n_models = 1,
+            model_data = 'troop_war_wagon_late_medieval'
+        },
+        base15 = {
+            name = '4Cb',
+            base = 'tile_grass_40x20',
+            n_models = 4,
+            model_data = 'troop_crossbowman_late_medieval'
+        },
+        base16 = {
+            name = '4Cb',
+            base = 'tile_grass_40x20',
+            n_models = 4,
+            model_data = 'troop_crossbowman_late_medieval'
+        },
+        base17 = {
+            name = 'Art',
+            base = 'tile_grass_40x40',
+            n_models = 3,
+            fixed_models = {
+                [1] = 'troop_artillery_crew_late_medieval',
+                [2] = 'troop_artillery_pieces_late_medieval',
+                [3] = 'troop_artillery_crew_late_medieval'
+            }
+        },
+        base18 = {
+            name = 'Camp',
+            base = 'tile_grass_40x40',
+            n_models = 1,
+            model_data = 'troop_camp_late_german'
         }
     },
-      Book_IV = {
-        IV_13c_Medieval_German_1450AD_to_1478AD = {
-            data = {
-                aggresiveness = 1,
-                terrain = 'Arable',
-                list = '1x6Kn (Gen), 2x6Kn, 1x3Cv, 2x4Pk, 2x3/4Sp, 1x4Cb or 2Ps, 2xWWg, 1xArt.'
-            },
-            base1 = {
-                name = '6Kn_Gen',
-                base = 'tile_grass_40x60',
-                n_models = 6,
-                fixed_models = {
-                    [1] = 'troop_knight_late_medieval_bannerman',
-                    [2] = 'troop_knight_late_medieval',
-                    [3] = 'troop_knight_late_medieval',
-                    [4] = 'troop_knight_late_medieval',
-                    [5] = 'troop_knight_late_medieval_captain',
-                    [6] = 'troop_knight_late_medieval_bannerman'
-                }
-            },
-            base2 = {
-                name = '6Kn',
-                base = 'tile_grass_40x60',
-                n_models = 6,
-                model_data = 'troop_knight_late_medieval'
-            },
-            base3 = {
-                name = '6Kn',
-                base = 'tile_grass_40x60',
-                n_models = 6,
-                model_data = 'troop_knight_late_medieval'
-            },
-            base4 = {
-                name = '3Cv',
-                base = 'tile_grass_40x30',
-                n_models = 3,
-                model_data = 'troop_horse_rider_late_medieval'
-            },
-            base5 = {
-                name = '4Pk',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_pikeman_swiss_straight'
-            },
-            base6 = {
-                name = '4Pk',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_pikeman_swiss_inclined'
-            },
-            base7 = {
-                name = '4Sp',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_spearman_late_medieval'
-            },
-            base8 = {
-                name = '4Sp',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_spearman_late_medieval'
-            },
-            base9 = {
-                name = '3Sp',
-                base = 'tile_grass_40x20',
-                n_models = 3,
-                model_data = 'troop_spearman_no_shield_late_medieval'
-            },
-            base10 = {
-                name = '3Sp',
-                base = 'tile_grass_40x20',
-                n_models = 3,
-                model_data = 'troop_spearman_no_shield_late_medieval'
-            },
-            base11 = {
-                name = '4Cb',
-                base = 'tile_grass_40x20',
-                n_models = 4,
-                model_data = 'troop_crossbowman_late_medieval'
-            },
-            base12 = {
-                name = '2Ps',
-                base = 'tile_grass_40x20',
-                n_models = 2,
-                model_data = 'troop_bowman_late_medieval'
-            },
-            base13 = {
-                name = 'WWg',
-                base = 'tile_grass_40x80',
-                n_models = 1,
-                model_data = 'troop_war_wagon_late_medieval'
-            },
-            base14 = {
-                name = 'WWg',
-                base = 'tile_grass_40x80',
-                n_models = 1,
-                model_data = 'troop_war_wagon_late_medieval'
-            },
-            base15 = {
-                name = '4Cb',
-                base = 'tile_grass_40x20',
-                n_models = 4,
-                model_data = 'troop_crossbowman_late_medieval'
-            },
-            base16 = {
-                name = '4Cb',
-                base = 'tile_grass_40x20',
-                n_models = 4,
-                model_data = 'troop_crossbowman_late_medieval'
-            },
-            base17 = {
-                name = 'Art',
-                base = 'tile_grass_40x40',
-                n_models = 3,
-                fixed_models = {
-                    [1] = 'troop_artillery_crew_late_medieval',
-                    [2] = 'troop_artillery_pieces_late_medieval',
-                    [3] = 'troop_artillery_crew_late_medieval'
-                }
-            },
-            base18 = {
-                name = 'Camp',
-                base = 'tile_grass_40x40',
-                n_models = 1,
-                model_data = 'troop_camp_late_german'
+    IV_13d_Medieval_German_1450AD_to_1478AD = {
+        data = {
+            aggresiveness = 1,
+            terrain = 'Arable',
+            list = '1x6Kn (Gen), 2x6Kn, 1x3Cv, 2x4Pk, 2x3/4Sp, 1x4Cb or 2Ps, 2xWWg, 1xArt.'
+        },
+        base1 = {
+            name = '3Kn_Gen',
+            base = 'tile_grass_40x30',
+            n_models = 3,
+            fixed_models = {
+                [1] = 'troop_knight_late_medieval_bannerman',
+                [2] = 'troop_knight_late_medieval_captain',
+                [3] = 'troop_knight_late_medieval'
             }
         },
-        IV_13d_Medieval_German_1450AD_to_1478AD = {
-            data = {
-                aggresiveness = 1,
-                terrain = 'Arable',
-                list = '1x6Kn (Gen), 2x6Kn, 1x3Cv, 2x4Pk, 2x3/4Sp, 1x4Cb or 2Ps, 2xWWg, 1xArt.'
-            },
-            base1 = {
-                name = '3Kn_Gen',
-                base = 'tile_grass_40x30',
-                n_models = 3,
-                fixed_models = {
-                    [1] = 'troop_knight_late_medieval_bannerman',
-                    [2] = 'troop_knight_late_medieval_captain',
-                    [3] = 'troop_knight_late_medieval'
-                }
-            },
-            base2 = {
-                name = '4Pk_Gen',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                fixed_models = {
-                    [1] = 'troop_pikeman_late_medieval_straight',
-                    [2] = 'troop_pikeman_late_medieval_captain',
-                    [3] = 'troop_pikeman_late_medieval_bannerman',
-                    [4] = 'troop_pikeman_late_medieval_straight',
-                }
-            },
-            base3 = {
-                name = '3Kn',
-                base = 'tile_grass_40x30',
-                n_models = 3,
-                model_data = 'troop_knight_late_medieval'
-            },
-            base4 = {
-                name = '6Kn',
-                base = 'tile_grass_40x60',
-                n_models = 6,
-                model_data = 'troop_knight_late_medieval'
-            },
-            base5 = {
-                name = '6Kn',
-                base = 'tile_grass_40x60',
-                n_models = 6,
-                model_data = 'troop_knight_late_medieval'
-            },
-            base6 = {
-                name = '3Cv',
-                base = 'tile_grass_40x30',
-                n_models = 3,
-                model_data = 'troop_horse_rider_late_medieval'
-            },
-            base7 = {
-                name = '4Pk',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_pikeman_late_medieval_straight'
-            },
-            base8 = {
-                name = '4Pk',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_pikeman_late_medieval_inclined'
-            },
-            base9 = {
-                name = '4Pk',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_pikeman_late_medieval_inclined'
-            },
-            base10 = {
-                name = '2Ps',
-                base = 'tile_grass_40x20',
-                n_models = 2,
-                model_data = 'troop_bowman_late_medieval'
-            },
-            base11 = {
-                name = 'WWg',
-                base = 'tile_grass_40x80',
-                n_models = 1,
-                model_data = 'troop_war_wagon_late_medieval'
-            },
-            base12 = {
-                name = 'WWg',
-                base = 'tile_grass_40x80',
-                n_models = 1,
-                model_data = 'troop_war_wagon_late_medieval'
-            },
-            base13 = {
-                name = 'Art',
-                base = 'tile_grass_40x40',
-                n_models = 3,
-                fixed_models = {
-                    [1] = 'troop_artillery_crew_late_medieval',
-                    [2] = 'troop_artillery_pieces_late_medieval',
-                    [3] = 'troop_artillery_crew_late_medieval'
-                }
-            },
-            base14 = {
-                name = 'Camp',
-                base = 'tile_grass_40x40',
-                n_models = 1,
-                model_data = 'troop_camp_late_german'
+        base2 = {
+            name = '4Pk_Gen',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            fixed_models = {
+                [1] = 'troop_pikeman_late_medieval_straight',
+                [2] = 'troop_pikeman_late_medieval_captain',
+                [3] = 'troop_pikeman_late_medieval_bannerman',
+                [4] = 'troop_pikeman_late_medieval_straight',
             }
         },
-        IV_79_Late_Swiss_1400AD_to_1522AD = {
-            data = {
-                aggresiveness = 3,
-                terrain = 'Mountain',
-                list = '1x4Pk (Gen), 1x6Kn o 6Bd, 7x4Pk, 2x2Ps, 1x2LH or Art.'
-            },
-            base1 = {
-                name = '4Pk_Gen',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                fixed_models = {
-                    [1] = 'troop_pikeman_swiss_inclined',
-                    [2] = 'troop_pikeman_swiss_bannerman',
-                    [3] = 'troop_pikeman_swiss_captain',
-                    [4] = 'troop_pikeman_swiss_inclined'
-                }
-            },
-            base2 = {
-                name = '4Pk',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_pikeman_swiss_inclined'
-            },
-            base3 = {
-                name = '4Pk',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_pikeman_swiss_inclined'
-            },
-            base4 = {
-                name = '4Pk',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_pikeman_swiss_inclined'
-            },
-            base5 = {
-                name = '4Pk',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_pikeman_swiss_straight'
-            },
-            base6 = {
-                name = '4Pk',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_pikeman_swiss_straight'
-            },
-            base7 = {
-                name = '4Pk',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_pikeman_swiss_straight'
-            },
-            base8 = {
-                name = '4Pk',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_pikeman_swiss_straight'
-            },
-            base9 = {
-                name = '6Kn',
-                base = 'tile_grass_40x60',
-                n_models = 6,
-                model_data = 'troop_knight_swiss'
-            },
-            base10 = {
-                name = '6Bd',
-                base = 'tile_grass_40x30',
-                n_models = 6,
-                model_data = 'troop_halberdier_swiss'
-            },
-            base11 = {
-                name = '2Ps',
-                base = 'tile_grass_40x20',
-                n_models = 2,
-                model_data = 'troop_handgunner_swiss'
-            },
-            base12 = {
-                name = '2Ps',
-                base = 'tile_grass_40x20',
-                n_models = 2,
-                model_data = 'troop_handgunner_swiss'
-            },
-            base13 = {
-                name = '2LH',
-                base = 'tile_grass_40x30',
-                n_models = 2,
-                model_data = 'troop_horse_rider_swiss'
-            },
-            base14 = {
-                name = 'Art',
-                base = 'tile_grass_40x40',
-                n_models = 3,
-                fixed_models = {
-                    [1] = 'troop_artillery_crew_swiss',
-                    [2] = 'troop_artillery_pieces_swiss',
-                    [3] = 'troop_artillery_crew_swiss'
-                }
-            },
-            base15 = {
-                name = 'Camp',
-                base = 'tile_grass_40x40',
-                n_models = 1,
-                model_data = 'troop_camp_swiss'
+        base3 = {
+            name = '3Kn',
+            base = 'tile_grass_40x30',
+            n_models = 3,
+            model_data = 'troop_knight_late_medieval'
+        },
+        base4 = {
+            name = '6Kn',
+            base = 'tile_grass_40x60',
+            n_models = 6,
+            model_data = 'troop_knight_late_medieval'
+        },
+        base5 = {
+            name = '6Kn',
+            base = 'tile_grass_40x60',
+            n_models = 6,
+            model_data = 'troop_knight_late_medieval'
+        },
+        base6 = {
+            name = '3Cv',
+            base = 'tile_grass_40x30',
+            n_models = 3,
+            model_data = 'troop_horse_rider_late_medieval'
+        },
+        base7 = {
+            name = '4Pk',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_pikeman_late_medieval_straight'
+        },
+        base8 = {
+            name = '4Pk',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_pikeman_late_medieval_inclined'
+        },
+        base9 = {
+            name = '4Pk',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_pikeman_late_medieval_inclined'
+        },
+        base10 = {
+            name = '2Ps',
+            base = 'tile_grass_40x20',
+            n_models = 2,
+            model_data = 'troop_bowman_late_medieval'
+        },
+        base11 = {
+            name = 'WWg',
+            base = 'tile_grass_40x80',
+            n_models = 1,
+            model_data = 'troop_war_wagon_late_medieval'
+        },
+        base12 = {
+            name = 'WWg',
+            base = 'tile_grass_40x80',
+            n_models = 1,
+            model_data = 'troop_war_wagon_late_medieval'
+        },
+        base13 = {
+            name = 'Art',
+            base = 'tile_grass_40x40',
+            n_models = 3,
+            fixed_models = {
+                [1] = 'troop_artillery_crew_late_medieval',
+                [2] = 'troop_artillery_pieces_late_medieval',
+                [3] = 'troop_artillery_crew_late_medieval'
             }
         },
-        IV_82a_French_Ordonnances_1445AD_to_1464AD = {
-            data = {
-                aggresiveness = 2,
-                terrain = 'Arable',
-                list = '1x3Kn//4Bw (Gen), 4x3Kn//4Bd, 1x4Cb, 1x4Bw, 2x3Bw, 1x4Bd or Art, 1x2Ps, 1xArt.'
-            },
-            base1 = {
-                name = '3Kn_Gen',
-                base = 'tile_grass_40x30',
-                n_models = 3,
-                fixed_models = {
-                    [1] = 'troop_knight_late_medieval_bannerman',
-                    [2] = 'troop_knight_late_medieval_captain',
-                    [3] = 'troop_knight_late_medieval'
-                }
-            },
-            base2 = {
-                name = '4Bw_Gen',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                fixed_models = {
-                    [1] = 'troop_bowman_late_medieval',
-                    [2] = 'troop_pikeman_late_medieval_captain',
-                    [3] = 'troop_pikeman_late_medieval_bannerman',
-                    [4] = 'troop_bowman_late_medieval'
-                }
-            },
-            base3 = {
-                name = '3Kn',
-                base = 'tile_grass_40x30',
-                n_models = 3,
-                model_data = 'troop_knight_late_medieval'
-            },
-            base4 = {
-                name = '4Bd',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_swordman_two_handed_late_medieval'
-            },
-            base5 = {
-                name = '3Kn',
-                base = 'tile_grass_40x30',
-                n_models = 3,
-                model_data = 'troop_knight_late_medieval'
-            },
-            base6 = {
-                name = '4Bd',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_swordman_two_handed_late_medieval'
-            },
-            base7 = {
-                name = '3Kn',
-                base = 'tile_grass_40x30',
-                n_models = 3,
-                model_data = 'troop_knight_late_medieval'
-            },
-            base8 = {
-                name = '4Bd',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_swordman_two_handed_late_medieval'
-            },
-            base9 = {
-                name = '3Kn',
-                base = 'tile_grass_40x30',
-                n_models = 3,
-                model_data = 'troop_knight_late_medieval'
-            },
-            base10 = {
-                name = '4Bd',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_swordman_two_handed_late_medieval'
-            },
-            base11 = {
-                name = '4Cb',
-                base = 'tile_grass_40x20',
-                n_models = 4,
-                model_data = 'troop_crossbowman_late_medieval'
-            },
-            base12 = {
-                name = '4Bw',
-                base = 'tile_grass_40x20',
-                n_models = 4,
-                model_data = 'troop_bowman_late_medieval'
-            },
-            base13 = {
-                name = '3Bw',
-                base = 'tile_grass_40x20',
-                loose = true,
-                n_models = 3,
-                model_data = 'troop_bowman_late_medieval'
-            },
-            base14 = {
-                name = '3Bw',
-                base = 'tile_grass_40x20',
-                loose = true,
-                n_models = 3,
-                model_data = 'troop_bowman_late_medieval'
-            },
-            base15 = {
-                name = '4Bd',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_halberdier_late_medieval'
-            },
-            base16 = {
-                name = 'Art',
-                loose = true,
-                base = 'tile_grass_40x40',
-                n_models = 3,
-                fixed_models = {
-                    [1] = 'troop_artillery_crew_late_medieval',
-                    [2] = 'troop_artillery_pieces_late_medieval',
-                    [3] = 'troop_artillery_crew_late_medieval'
-                }
-            },
-            base17 = {
-                name = '2Ps',
-                base = 'tile_grass_40x20',
-                loose = true,
-                n_models = 2,
-                model_data = 'troop_handgunner_late_medieval'
-            },
-            base18 = {
-                name = 'Art',
-                loose = true,
-                base = 'tile_grass_40x40',
-                n_models = 3,
-                fixed_models = {
-                    [1] = 'troop_artillery_crew_late_medieval',
-                    [2] = 'troop_artillery_pieces_late_medieval',
-                    [3] = 'troop_artillery_crew_late_medieval'
-                }
-            },
-            base19 = {
-                name = 'Camp',
-                base = 'tile_grass_40x40',
-                n_models = 1,
-                model_data = 'troop_camp_late_medieval'
-            },
-        },
-        IV_82b_French_Ordonnances_1465AD_to_1503AD = {
-            data = {
-                aggresiveness = 2,
-                terrain = 'Arable',
-                list = '1x3Kn (Gen), 4x3Kn, 1x3Cv//4Bw, 1x4Cb, 2x4Pk (Swiss if not allies) or 3Bw, 2x2Ps, 1xArt.'
-            },
-            base1 = {
-                name = '3Kn_Gen',
-                base = 'tile_grass_40x30',
-                n_models = 3,
-                fixed_models = {
-                    [1] = 'troop_knight_late_medieval',
-                    [2] = 'troop_knight_late_medieval_captain',
-                    [3] = 'troop_knight_late_medieval_bannerman'
-                }
-            },
-            base2 = {
-                name = '3Kn',
-                base = 'tile_grass_40x30',
-                n_models = 3,
-                model_data = 'troop_knight_late_medieval'
-            },
-            base3 = {
-                name = '3Kn',
-                base = 'tile_grass_40x30',
-                n_models = 3,
-                model_data = 'troop_knight_late_medieval'
-            },
-            base4 = {
-                name = '3Kn',
-                base = 'tile_grass_40x30',
-                n_models = 3,
-                model_data = 'troop_knight_late_medieval'
-            },
-            base5 = {
-                name = '3Kn',
-                base = 'tile_grass_40x30',
-                n_models = 3,
-                model_data = 'troop_knight_late_medieval'
-            },
-            base6 = {
-                name = '3Cv',
-                base = 'tile_grass_40x30',
-                n_models = 3,
-                model_data = 'troop_horse_rider_late_medieval'
-            },
-            base7 = {
-                name = '4Bw',
-                base = 'tile_grass_40x20',
-                n_models = 4,
-                model_data = 'troop_bowman_late_medieval'
-            },
-            base8 = {
-                name = '4Cb',
-                base = 'tile_grass_40x20',
-                n_models = 3,
-                model_data = 'troop_crossbowman_late_medieval'
-            },
-            base9 = {
-                name = '4Pk',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_pikeman_swiss_straight'
-            },
-            base10 = {
-                name = '4Pk',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_pikeman_swiss_inclined'
-            },
-            base11 = {
-                name = '3Bw',
-                base = 'tile_grass_40x20',
-                loose = true,
-                n_models = 3,
-                model_data = 'troop_bowman_late_medieval'
-            },
-            base12 = {
-                name = '3Bw',
-                base = 'tile_grass_40x20',
-                loose = true,
-                n_models = 3,
-                model_data = 'troop_bowman_late_medieval'
-            },
-            base13 = {
-                name = '2Ps',
-                base = 'tile_grass_40x20',
-                loose = true,
-                n_models = 2,
-                model_data = 'troop_crossbowman_late_medieval'
-            },
-            base14 = {
-                name = '2Ps',
-                base = 'tile_grass_40x20',
-                loose = true,
-                n_models = 2,
-                model_data = 'troop_crossbowman_late_medieval'
-            },
-            base15 = {
-                name = 'Art',
-                loose = true,
-                base = 'tile_grass_40x40',
-                n_models = 3,
-                fixed_models = {
-                    [1] = 'troop_artillery_crew_late_medieval',
-                    [2] = 'troop_artillery_pieces_late_medieval',
-                    [3] = 'troop_artillery_crew_late_medieval'
-                }
-            },
-            base16 = {
-                name = 'Camp',
-                base = 'tile_grass_40x40',
-                n_models = 1,
-                model_data = 'troop_camp_late_medieval'
-            },
-        },
-        IV_83a_Wars_of_the_Roses_English_1455AD_to_1485AD = {
-            data = {
-                aggresiveness = 1,
-                terrain = 'Arable',
-                list = '1x3Kn o 4Bd (Gen), 1x3Kn o 3Cv or 4Bd, 3x4Bd, 6x3/4Lb, 1xArt or 3Sp.'
-            },
-            base1 = {
-                name = '3Kn_Gen',
-                base = 'tile_grass_40x30',
-                n_models = 3,
-                fixed_models = {
-                    [1] = 'troop_knight_late_medieval',
-                    [2] = 'troop_knight_late_medieval_captain',
-                    [3] = 'troop_knight_late_medieval_bannerman'
-                }
-            },
-            base2 = {
-                name = '4Bd_Gen',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                fixed_models = {
-                    [1] = 'troop_swordman_two_handed_late_medieval',
-                    [2] = 'troop_pikeman_late_medieval_captain',
-                    [3] = 'troop_pikeman_late_medieval_bannerman',
-                    [4] = 'troop_halberdier_late_medieval'
-                }
-            },
-            base3 = {
-                name = '3Kn',
-                base = 'tile_grass_40x30',
-                n_models = 3,
-                model_data = 'troop_knight_late_medieval'
-            },
-            base4 = {
-                name = '3Cv',
-                base = 'tile_grass_40x30',
-                n_models = 3,
-                model_data = 'troop_horse_rider_late_medieval'
-            },
-            base5 = {
-                name = '4Bd',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_halberdier_late_medieval'
-            },
-            base6 = {
-                name = '4Bd',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_halberdier_late_medieval'
-            },
-            base7 = {
-                name = '4Bd',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_halberdier_late_medieval'
-            },
-            base8 = {
-                name = '4Bd',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_halberdier_late_medieval'
-            },
-            base9 = {
-                name = '3Lb',
-                base = 'tile_grass_40x20',
-                loose = true,
-                n_models = 3,
-                model_data = 'troop_longbowman_late_medieval'
-            },
-            base10 = {
-                name = '4Lb',
-                base = 'tile_grass_40x20',
-                n_models = 4,
-                model_data = 'troop_longbowman_late_medieval'
-            },
-            base11 = {
-                name = '3Lb',
-                base = 'tile_grass_40x20',
-                loose = true,
-                n_models = 3,
-                model_data = 'troop_longbowman_late_medieval'
-            },
-            base12 = {
-                name = '4Lb',
-                base = 'tile_grass_40x20',
-                n_models = 4,
-                model_data = 'troop_longbowman_late_medieval'
-            },
-            base13 = {
-                name = '3Lb',
-                base = 'tile_grass_40x20',
-                loose = true,
-                n_models = 3,
-                model_data = 'troop_longbowman_late_medieval'
-            },
-            base14 = {
-                name = '4Lb',
-                base = 'tile_grass_40x20',
-                n_models = 4,
-                model_data = 'troop_longbowman_late_medieval'
-            },
-            base15 = {
-                name = 'Art',
-                loose = true,
-                base = 'tile_grass_40x40',
-                n_models = 3,
-                fixed_models = {
-                    [1] = 'troop_artillery_crew_late_medieval',
-                    [2] = 'troop_artillery_pieces_late_medieval',
-                    [3] = 'troop_artillery_crew_late_medieval'
-                }
-            },
-            base16 = {
-                name = '3Sp',
-                base = 'tile_grass_40x20',
-                loose = true,
-                n_models = 3,
-                model_data = 'troop_spearman_no_shield_late_medieval'
-            },
-            base17 = {
-                name = 'Camp',
-                base = 'tile_grass_40x40',
-                n_models = 1,
-                model_data = 'troop_camp_late_medieval'
-            },
-        },
-        IV_83b_Wars_of_the_Roses_English_1487AD = {
-            data = {
-                aggresiveness = 1,
-                terrain = 'Arable',
-                list = '1x3Kn or 4Bd (Gen), 1x3Kn or 3Cv or 4Bd, 2x4Bd, 1x4Bd or 3Lb, 1xArt or 2Ps, 6x3/4Lb or (2x4Pk+2x3Ax+2x2Ps).'
-            },
-            base1 = {
-                name = '3Kn_Gen',
-                base = 'tile_grass_40x30',
-                n_models = 3,
-                fixed_models = {
-                    [1] = 'troop_knight_late_medieval_bannerman',
-                    [2] = 'troop_knight_late_medieval_captain',
-                    [3] = 'troop_knight_late_medieval'
-                }
-            },
-            base2 = {
-                name = '4Bd_Gen',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                fixed_models = {
-                    [1] = 'troop_swordman_two_handed_late_medieval',
-                    [2] = 'troop_pikeman_late_medieval_captain',
-                    [3] = 'troop_pikeman_late_medieval_bannerman',
-                    [4] = 'troop_halberdier_late_medieval'
-                }
-            },
-            base3 = {
-                name = '3Kn',
-                base = 'tile_grass_40x30',
-                n_models = 3,
-                model_data = 'troop_knight_late_medieval'
-            },
-            base4 = {
-                name = '3Cv',
-                base = 'tile_grass_40x30',
-                n_models = 3,
-                model_data = 'troop_horse_rider_late_medieval'
-            },
-            base5 = {
-                name = '4Bd',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_halberdier_late_medieval'
-            },
-            base6 = {
-                name = '4Bd',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_halberdier_late_medieval'
-            },
-            base7 = {
-                name = '4Bd',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_halberdier_late_medieval'
-            },
-            base8 = {
-                name = '4Bd',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_halberdier_late_medieval'
-            },
-            base9 = {
-                name = '3Lb',
-                base = 'tile_grass_40x20',
-                loose = true,
-                n_models = 3,
-                model_data = 'troop_longbowman_late_medieval'
-            },
-            base10 = {
-                name = 'Art',
-                loose = true,
-                base = 'tile_grass_40x40',
-                n_models = 3,
-                fixed_models = {
-                  [1] = 'troop_artillery_crew_late_medieval',
-                  [2] = 'troop_artillery_pieces_late_medieval',
-                  [3] = 'troop_artillery_crew_late_medieval'
-                }
-            },
-            base11 = {
-                name = '2Ps',
-                base = 'tile_grass_40x20',
-                loose = true,
-                n_models = 2,
-                model_data = 'troop_handgunner_late_medieval'
-            },
-            base12 = {
-                name = '4Lb',
-                base = 'tile_grass_40x20',
-                n_models = 4,
-                model_data = 'troop_longbowman_late_medieval'
-            },
-            base13 = {
-                name = '3Lb',
-                base = 'tile_grass_40x20',
-                loose = true,
-                n_models = 3,
-                model_data = 'troop_longbowman_late_medieval'
-            },
-            base14 = {
-                name = '4Lb',
-                base = 'tile_grass_40x20',
-                n_models = 4,
-                model_data = 'troop_longbowman_late_medieval'
-            },
-            base15 = {
-                name = '3Lb',
-                base = 'tile_grass_40x20',
-                loose = true,
-                n_models = 3,
-                model_data = 'troop_longbowman_late_medieval'
-            },
-            base16 = {
-                name = '4Lb',
-                base = 'tile_grass_40x20',
-                n_models = 4,
-                model_data = 'troop_longbowman_late_medieval'
-            },
-            base17 = {
-                name = '3Lb',
-                base = 'tile_grass_40x20',
-                loose = true,
-                n_models = 3,
-                model_data = 'troop_longbowman_late_medieval'
-            },
-            base18 = {
-                name = '4Pk',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_pikeman_swiss_straight'
-            },
-            base19 = {
-                name = '4Pk',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_pikeman_swiss_inclined'
-            },
-            base20 = {
-                name = '3Sp',
-                base = 'tile_grass_40x20',
-                loose = true,
-                n_models = 3,
-                model_data = 'troop_spearman_no_shield_late_medieval'
-            },
-            base21 = {
-                name = '3Sp',
-                base = 'tile_grass_40x20',
-                loose = true,
-                n_models = 3,
-                model_data = 'troop_spearman_no_shield_late_medieval'
-            },
-            base22 = {
-              name = '2Ps',
-              base = 'tile_grass_40x20',
-              loose = true,
-              n_models = 2,
-              model_data = 'troop_bowman_late_medieval'
-            },
-            base23 = {
-              name = '2Ps',
-              base = 'tile_grass_40x20',
-              loose = true,
-              n_models = 2,
-              model_data = 'troop_crossbowman_late_medieval'
-            },
-            base24 = {
-                name = 'Camp',
-                base = 'tile_grass_40x40',
-                n_models = 1,
-                model_data = 'troop_camp_late_medieval'
-            },
-        },
-        IV_84_Burgundian_Ordonnance_1471AD_to_1477AD = {
-            data = {
-                aggresiveness = 4,
-                terrain = 'Arable',
-                list = '1x3Kn (Gen), 1x3Kn, 3x3Kn//4Bd, 2x4Lb, 1x4Cb, 2x4Pk or 8Bw, 1x2Ps, 1xArt.'
-            },
-            base1 = {
-                name = '3Kn_Gen',
-                base = 'tile_grass_40x30',
-                n_models = 3,
-                fixed_models = {
-                    [1] = 'troop_knight_late_medieval',
-                    [2] = 'troop_knight_late_medieval_captain',
-                    [3] = 'troop_knight_late_medieval_bannerman'
-                }
-            },
-            base2 = {
-                name = '3Kn',
-                base = 'tile_grass_40x30',
-                n_models = 3,
-                model_data = 'troop_knight_late_medieval'
-            },
-            base3 = {
-                name = '3Kn',
-                base = 'tile_grass_40x30',
-                n_models = 3,
-                model_data = 'troop_knight_late_medieval'
-            },
-            base4 = {
-                name = '4Bd',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_swordman_two_handed_late_medieval'
-            },
-            base5 = {
-                name = '3Kn',
-                base = 'tile_grass_40x30',
-                n_models = 3,
-                model_data = 'troop_knight_late_medieval'
-            },
-            base6 = {
-                name = '4Bd',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_swordman_two_handed_late_medieval'
-            },
-            base7 = {
-                name = '3Kn',
-                base = 'tile_grass_40x30',
-                n_models = 3,
-                model_data = 'troop_knight_late_medieval'
-            },
-            base8 = {
-                name = '4Bd',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_swordman_two_handed_late_medieval'
-            },
-            base9 = {
-                name = '4Lb',
-                base = 'tile_grass_40x20',
-                n_models = 4,
-                model_data = 'troop_longbowman_late_medieval'
-            },
-            base10 = {
-                name = '4Lb',
-                base = 'tile_grass_40x20',
-                n_models = 4,
-                model_data = 'troop_longbowman_late_medieval'
-            },
-            base11 = {
-                name = '4Cb',
-                base = 'tile_grass_40x20',
-                n_models = 4,
-                model_data = 'troop_crossbowman_late_medieval'
-            },
-            base12 = {
-                name = '4Pk',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_pikeman_late_medieval_inclined'
-            },
-            base13 = {
-                name = '4Pk',
-                base = 'tile_grass_40x15',
-                n_models = 4,
-                model_data = 'troop_pikeman_late_medieval_straight'
-            },
-            base14 = {
-                name = '8Bw',
-                base = 'tile_grass_40x30',
-                n_models = 8,
-                model_data = 'troop_bowman_late_medieval'
-            },
-            base15 = {
-                name = '8Bw',
-                base = 'tile_grass_40x30',
-                n_models = 8,
-                model_data = 'troop_bowman_late_medieval'
-            },
-            base16 = {
-                name = '2ps',
-                loose = true,
-                base = 'tile_grass_40x20',
-                n_models = 2,
-                model_data = 'troop_handgunner_late_medieval'
-            },
-            base17 = {
-                name = 'Art',
-                loose = true,
-                base = 'tile_grass_40x40',
-                n_models = 3,
-                fixed_models = {
-                    [1] = 'troop_artillery_crew_late_medieval',
-                    [2] = 'troop_artillery_pieces_late_medieval',
-                    [3] = 'troop_artillery_crew_late_medieval'
-                }
-            },
-            base18 = {
-                name = 'Camp',
-                base = 'tile_grass_40x40',
-                n_models = 1,
-                model_data = 'troop_camp_late_medieval'
-            },
+        base14 = {
+            name = 'Camp',
+            base = 'tile_grass_40x40',
+            n_models = 1,
+            model_data = 'troop_camp_late_german'
         }
+    },
+    IV_79_Late_Swiss_1400AD_to_1522AD = {
+        data = {
+            aggresiveness = 3,
+            terrain = 'Mountain',
+            list = '1x4Pk (Gen), 1x6Kn o 6Bd, 7x4Pk, 2x2Ps, 1x2LH or Art.'
+        },
+        base1 = {
+            name = '4Pk_Gen',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            fixed_models = {
+                [1] = 'troop_pikeman_swiss_inclined',
+                [2] = 'troop_pikeman_swiss_bannerman',
+                [3] = 'troop_pikeman_swiss_captain',
+                [4] = 'troop_pikeman_swiss_inclined'
+            }
+        },
+        base2 = {
+            name = '4Pk',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_pikeman_swiss_inclined'
+        },
+        base3 = {
+            name = '4Pk',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_pikeman_swiss_inclined'
+        },
+        base4 = {
+            name = '4Pk',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_pikeman_swiss_inclined'
+        },
+        base5 = {
+            name = '4Pk',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_pikeman_swiss_straight'
+        },
+        base6 = {
+            name = '4Pk',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_pikeman_swiss_straight'
+        },
+        base7 = {
+            name = '4Pk',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_pikeman_swiss_straight'
+        },
+        base8 = {
+            name = '4Pk',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_pikeman_swiss_straight'
+        },
+        base9 = {
+            name = '6Kn',
+            base = 'tile_grass_40x60',
+            n_models = 6,
+            model_data = 'troop_knight_swiss'
+        },
+        base10 = {
+            name = '6Bd',
+            base = 'tile_grass_40x30',
+            n_models = 6,
+            model_data = 'troop_halberdier_swiss'
+        },
+        base11 = {
+            name = '2Ps',
+            base = 'tile_grass_40x20',
+            n_models = 2,
+            model_data = 'troop_handgunner_swiss'
+        },
+        base12 = {
+            name = '2Ps',
+            base = 'tile_grass_40x20',
+            n_models = 2,
+            model_data = 'troop_handgunner_swiss'
+        },
+        base13 = {
+            name = '2LH',
+            base = 'tile_grass_40x30',
+            n_models = 2,
+            model_data = 'troop_horse_rider_swiss'
+        },
+        base14 = {
+            name = 'Art',
+            base = 'tile_grass_40x40',
+            n_models = 3,
+            fixed_models = {
+                [1] = 'troop_artillery_crew_swiss',
+                [2] = 'troop_artillery_pieces_swiss',
+                [3] = 'troop_artillery_crew_swiss'
+            }
+        },
+        base15 = {
+            name = 'Camp',
+            base = 'tile_grass_40x40',
+            n_models = 1,
+            model_data = 'troop_camp_swiss'
+        }
+    },
+    IV_82a_French_Ordonnances_1445AD_to_1464AD = {
+        data = {
+            aggresiveness = 2,
+            terrain = 'Arable',
+            list = '1x3Kn//4Bw (Gen), 4x3Kn//4Bd, 1x4Cb, 1x4Bw, 2x3Bw, 1x4Bd or Art, 1x2Ps, 1xArt.'
+        },
+        base1 = {
+            name = '3Kn_Gen',
+            base = 'tile_grass_40x30',
+            n_models = 3,
+            fixed_models = {
+                [1] = 'troop_knight_late_medieval_bannerman',
+                [2] = 'troop_knight_late_medieval_captain',
+                [3] = 'troop_knight_late_medieval'
+            }
+        },
+        base2 = {
+            name = '4Bw_Gen',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            fixed_models = {
+                [1] = 'troop_bowman_late_medieval',
+                [2] = 'troop_pikeman_late_medieval_captain',
+                [3] = 'troop_pikeman_late_medieval_bannerman',
+                [4] = 'troop_bowman_late_medieval'
+            }
+        },
+        base3 = {
+            name = '3Kn',
+            base = 'tile_grass_40x30',
+            n_models = 3,
+            model_data = 'troop_knight_late_medieval'
+        },
+        base4 = {
+            name = '4Bd',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_swordman_two_handed_late_medieval'
+        },
+        base5 = {
+            name = '3Kn',
+            base = 'tile_grass_40x30',
+            n_models = 3,
+            model_data = 'troop_knight_late_medieval'
+        },
+        base6 = {
+            name = '4Bd',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_swordman_two_handed_late_medieval'
+        },
+        base7 = {
+            name = '3Kn',
+            base = 'tile_grass_40x30',
+            n_models = 3,
+            model_data = 'troop_knight_late_medieval'
+        },
+        base8 = {
+            name = '4Bd',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_swordman_two_handed_late_medieval'
+        },
+        base9 = {
+            name = '3Kn',
+            base = 'tile_grass_40x30',
+            n_models = 3,
+            model_data = 'troop_knight_late_medieval'
+        },
+        base10 = {
+            name = '4Bd',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_swordman_two_handed_late_medieval'
+        },
+        base11 = {
+            name = '4Cb',
+            base = 'tile_grass_40x20',
+            n_models = 4,
+            model_data = 'troop_crossbowman_late_medieval'
+        },
+        base12 = {
+            name = '4Bw',
+            base = 'tile_grass_40x20',
+            n_models = 4,
+            model_data = 'troop_bowman_late_medieval'
+        },
+        base13 = {
+            name = '3Bw',
+            base = 'tile_grass_40x20',
+            loose = true,
+            n_models = 3,
+            model_data = 'troop_bowman_late_medieval'
+        },
+        base14 = {
+            name = '3Bw',
+            base = 'tile_grass_40x20',
+            loose = true,
+            n_models = 3,
+            model_data = 'troop_bowman_late_medieval'
+        },
+        base15 = {
+            name = '4Bd',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_halberdier_late_medieval'
+        },
+        base16 = {
+            name = 'Art',
+            loose = true,
+            base = 'tile_grass_40x40',
+            n_models = 3,
+            fixed_models = {
+                [1] = 'troop_artillery_crew_late_medieval',
+                [2] = 'troop_artillery_pieces_late_medieval',
+                [3] = 'troop_artillery_crew_late_medieval'
+            }
+        },
+        base17 = {
+            name = '2Ps',
+            base = 'tile_grass_40x20',
+            loose = true,
+            n_models = 2,
+            model_data = 'troop_handgunner_late_medieval'
+        },
+        base18 = {
+            name = 'Art',
+            loose = true,
+            base = 'tile_grass_40x40',
+            n_models = 3,
+            fixed_models = {
+                [1] = 'troop_artillery_crew_late_medieval',
+                [2] = 'troop_artillery_pieces_late_medieval',
+                [3] = 'troop_artillery_crew_late_medieval'
+            }
+        },
+        base19 = {
+            name = 'Camp',
+            base = 'tile_grass_40x40',
+            n_models = 1,
+            model_data = 'troop_camp_late_medieval'
+        },
+    },
+    IV_82b_French_Ordonnances_1465AD_to_1503AD = {
+        data = {
+            aggresiveness = 2,
+            terrain = 'Arable',
+            list = '1x3Kn (Gen), 4x3Kn, 1x3Cv//4Bw, 1x4Cb, 2x4Pk (Swiss if not allies) or 3Bw, 2x2Ps, 1xArt.'
+        },
+        base1 = {
+            name = '3Kn_Gen',
+            base = 'tile_grass_40x30',
+            n_models = 3,
+            fixed_models = {
+                [1] = 'troop_knight_late_medieval',
+                [2] = 'troop_knight_late_medieval_captain',
+                [3] = 'troop_knight_late_medieval_bannerman'
+            }
+        },
+        base2 = {
+            name = '3Kn',
+            base = 'tile_grass_40x30',
+            n_models = 3,
+            model_data = 'troop_knight_late_medieval'
+        },
+        base3 = {
+            name = '3Kn',
+            base = 'tile_grass_40x30',
+            n_models = 3,
+            model_data = 'troop_knight_late_medieval'
+        },
+        base4 = {
+            name = '3Kn',
+            base = 'tile_grass_40x30',
+            n_models = 3,
+            model_data = 'troop_knight_late_medieval'
+        },
+        base5 = {
+            name = '3Kn',
+            base = 'tile_grass_40x30',
+            n_models = 3,
+            model_data = 'troop_knight_late_medieval'
+        },
+        base6 = {
+            name = '3Cv',
+            base = 'tile_grass_40x30',
+            n_models = 3,
+            model_data = 'troop_horse_rider_late_medieval'
+        },
+        base7 = {
+            name = '4Bw',
+            base = 'tile_grass_40x20',
+            n_models = 4,
+            model_data = 'troop_bowman_late_medieval'
+        },
+        base8 = {
+            name = '4Cb',
+            base = 'tile_grass_40x20',
+            n_models = 3,
+            model_data = 'troop_crossbowman_late_medieval'
+        },
+        base9 = {
+            name = '4Pk',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_pikeman_swiss_straight'
+        },
+        base10 = {
+            name = '4Pk',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_pikeman_swiss_inclined'
+        },
+        base11 = {
+            name = '3Bw',
+            base = 'tile_grass_40x20',
+            loose = true,
+            n_models = 3,
+            model_data = 'troop_bowman_late_medieval'
+        },
+        base12 = {
+            name = '3Bw',
+            base = 'tile_grass_40x20',
+            loose = true,
+            n_models = 3,
+            model_data = 'troop_bowman_late_medieval'
+        },
+        base13 = {
+            name = '2Ps',
+            base = 'tile_grass_40x20',
+            loose = true,
+            n_models = 2,
+            model_data = 'troop_crossbowman_late_medieval'
+        },
+        base14 = {
+            name = '2Ps',
+            base = 'tile_grass_40x20',
+            loose = true,
+            n_models = 2,
+            model_data = 'troop_crossbowman_late_medieval'
+        },
+        base15 = {
+            name = 'Art',
+            loose = true,
+            base = 'tile_grass_40x40',
+            n_models = 3,
+            fixed_models = {
+                [1] = 'troop_artillery_crew_late_medieval',
+                [2] = 'troop_artillery_pieces_late_medieval',
+                [3] = 'troop_artillery_crew_late_medieval'
+            }
+        },
+        base16 = {
+            name = 'Camp',
+            base = 'tile_grass_40x40',
+            n_models = 1,
+            model_data = 'troop_camp_late_medieval'
+        },
+    },
+    IV_83a_Wars_of_the_Roses_English_1455AD_to_1485AD = {
+        data = {
+            aggresiveness = 1,
+            terrain = 'Arable',
+            list = '1x3Kn o 4Bd (Gen), 1x3Kn o 3Cv or 4Bd, 3x4Bd, 6x3/4Lb, 1xArt or 3Sp.'
+        },
+        base1 = {
+            name = '3Kn_Gen',
+            base = 'tile_grass_40x30',
+            n_models = 3,
+            fixed_models = {
+                [1] = 'troop_knight_late_medieval',
+                [2] = 'troop_knight_late_medieval_captain',
+                [3] = 'troop_knight_late_medieval_bannerman'
+            }
+        },
+        base2 = {
+            name = '4Bd_Gen',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            fixed_models = {
+                [1] = 'troop_swordman_two_handed_late_medieval',
+                [2] = 'troop_pikeman_late_medieval_captain',
+                [3] = 'troop_pikeman_late_medieval_bannerman',
+                [4] = 'troop_halberdier_late_medieval'
+            }
+        },
+        base3 = {
+            name = '3Kn',
+            base = 'tile_grass_40x30',
+            n_models = 3,
+            model_data = 'troop_knight_late_medieval'
+        },
+        base4 = {
+            name = '3Cv',
+            base = 'tile_grass_40x30',
+            n_models = 3,
+            model_data = 'troop_horse_rider_late_medieval'
+        },
+        base5 = {
+            name = '4Bd',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_halberdier_late_medieval'
+        },
+        base6 = {
+            name = '4Bd',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_halberdier_late_medieval'
+        },
+        base7 = {
+            name = '4Bd',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_halberdier_late_medieval'
+        },
+        base8 = {
+            name = '4Bd',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_halberdier_late_medieval'
+        },
+        base9 = {
+            name = '3Lb',
+            base = 'tile_grass_40x20',
+            loose = true,
+            n_models = 3,
+            model_data = 'troop_longbowman_late_medieval'
+        },
+        base10 = {
+            name = '4Lb',
+            base = 'tile_grass_40x20',
+            n_models = 4,
+            model_data = 'troop_longbowman_late_medieval'
+        },
+        base11 = {
+            name = '3Lb',
+            base = 'tile_grass_40x20',
+            loose = true,
+            n_models = 3,
+            model_data = 'troop_longbowman_late_medieval'
+        },
+        base12 = {
+            name = '4Lb',
+            base = 'tile_grass_40x20',
+            n_models = 4,
+            model_data = 'troop_longbowman_late_medieval'
+        },
+        base13 = {
+            name = '3Lb',
+            base = 'tile_grass_40x20',
+            loose = true,
+            n_models = 3,
+            model_data = 'troop_longbowman_late_medieval'
+        },
+        base14 = {
+            name = '4Lb',
+            base = 'tile_grass_40x20',
+            n_models = 4,
+            model_data = 'troop_longbowman_late_medieval'
+        },
+        base15 = {
+            name = 'Art',
+            loose = true,
+            base = 'tile_grass_40x40',
+            n_models = 3,
+            fixed_models = {
+                [1] = 'troop_artillery_crew_late_medieval',
+                [2] = 'troop_artillery_pieces_late_medieval',
+                [3] = 'troop_artillery_crew_late_medieval'
+            }
+        },
+        base16 = {
+            name = '3Sp',
+            base = 'tile_grass_40x20',
+            loose = true,
+            n_models = 3,
+            model_data = 'troop_spearman_no_shield_late_medieval'
+        },
+        base17 = {
+            name = 'Camp',
+            base = 'tile_grass_40x40',
+            n_models = 1,
+            model_data = 'troop_camp_late_medieval'
+        },
+    },
+    IV_83b_Wars_of_the_Roses_English_1487AD = {
+        data = {
+            aggresiveness = 1,
+            terrain = 'Arable',
+            list = '1x3Kn or 4Bd (Gen), 1x3Kn or 3Cv or 4Bd, 2x4Bd, 1x4Bd or 3Lb, 1xArt or 2Ps, 6x3/4Lb or (2x4Pk+2x3Ax+2x2Ps).'
+        },
+        base1 = {
+            name = '3Kn_Gen',
+            base = 'tile_grass_40x30',
+            n_models = 3,
+            fixed_models = {
+                [1] = 'troop_knight_late_medieval_bannerman',
+                [2] = 'troop_knight_late_medieval_captain',
+                [3] = 'troop_knight_late_medieval'
+            }
+        },
+        base2 = {
+            name = '4Bd_Gen',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            fixed_models = {
+                [1] = 'troop_swordman_two_handed_late_medieval',
+                [2] = 'troop_pikeman_late_medieval_captain',
+                [3] = 'troop_pikeman_late_medieval_bannerman',
+                [4] = 'troop_halberdier_late_medieval'
+            }
+        },
+        base3 = {
+            name = '3Kn',
+            base = 'tile_grass_40x30',
+            n_models = 3,
+            model_data = 'troop_knight_late_medieval'
+        },
+        base4 = {
+            name = '3Cv',
+            base = 'tile_grass_40x30',
+            n_models = 3,
+            model_data = 'troop_horse_rider_late_medieval'
+        },
+        base5 = {
+            name = '4Bd',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_halberdier_late_medieval'
+        },
+        base6 = {
+            name = '4Bd',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_halberdier_late_medieval'
+        },
+        base7 = {
+            name = '4Bd',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_halberdier_late_medieval'
+        },
+        base8 = {
+            name = '4Bd',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_halberdier_late_medieval'
+        },
+        base9 = {
+            name = '3Lb',
+            base = 'tile_grass_40x20',
+            loose = true,
+            n_models = 3,
+            model_data = 'troop_longbowman_late_medieval'
+        },
+        base10 = {
+            name = 'Art',
+            loose = true,
+            base = 'tile_grass_40x40',
+            n_models = 3,
+            fixed_models = {
+                [1] = 'troop_artillery_crew_late_medieval',
+                [2] = 'troop_artillery_pieces_late_medieval',
+                [3] = 'troop_artillery_crew_late_medieval'
+            }
+        },
+        base11 = {
+            name = '2Ps',
+            base = 'tile_grass_40x20',
+            loose = true,
+            n_models = 2,
+            model_data = 'troop_handgunner_late_medieval'
+        },
+        base12 = {
+            name = '4Lb',
+            base = 'tile_grass_40x20',
+            n_models = 4,
+            model_data = 'troop_longbowman_late_medieval'
+        },
+        base13 = {
+            name = '3Lb',
+            base = 'tile_grass_40x20',
+            loose = true,
+            n_models = 3,
+            model_data = 'troop_longbowman_late_medieval'
+        },
+        base14 = {
+            name = '4Lb',
+            base = 'tile_grass_40x20',
+            n_models = 4,
+            model_data = 'troop_longbowman_late_medieval'
+        },
+        base15 = {
+            name = '3Lb',
+            base = 'tile_grass_40x20',
+            loose = true,
+            n_models = 3,
+            model_data = 'troop_longbowman_late_medieval'
+        },
+        base16 = {
+            name = '4Lb',
+            base = 'tile_grass_40x20',
+            n_models = 4,
+            model_data = 'troop_longbowman_late_medieval'
+        },
+        base17 = {
+            name = '3Lb',
+            base = 'tile_grass_40x20',
+            loose = true,
+            n_models = 3,
+            model_data = 'troop_longbowman_late_medieval'
+        },
+        base18 = {
+            name = '4Pk',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_pikeman_swiss_straight'
+        },
+        base19 = {
+            name = '4Pk',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_pikeman_swiss_inclined'
+        },
+        base20 = {
+            name = '3Sp',
+            base = 'tile_grass_40x20',
+            loose = true,
+            n_models = 3,
+            model_data = 'troop_spearman_no_shield_late_medieval'
+        },
+        base21 = {
+            name = '3Sp',
+            base = 'tile_grass_40x20',
+            loose = true,
+            n_models = 3,
+            model_data = 'troop_spearman_no_shield_late_medieval'
+        },
+        base22 = {
+            name = '2Ps',
+            base = 'tile_grass_40x20',
+            loose = true,
+            n_models = 2,
+            model_data = 'troop_bowman_late_medieval'
+        },
+        base23 = {
+            name = '2Ps',
+            base = 'tile_grass_40x20',
+            loose = true,
+            n_models = 2,
+            model_data = 'troop_crossbowman_late_medieval'
+        },
+        base24 = {
+            name = 'Camp',
+            base = 'tile_grass_40x40',
+            n_models = 1,
+            model_data = 'troop_camp_late_medieval'
+        },
+    },
+    IV_84_Burgundian_Ordonnance_1471AD_to_1477AD = {
+        data = {
+            aggresiveness = 4,
+            terrain = 'Arable',
+            list = '1x3Kn (Gen), 1x3Kn, 3x3Kn//4Bd, 2x4Lb, 1x4Cb, 2x4Pk or 8Bw, 1x2Ps, 1xArt.'
+        },
+        base1 = {
+            name = '3Kn_Gen',
+            base = 'tile_grass_40x30',
+            n_models = 3,
+            fixed_models = {
+                [1] = 'troop_knight_late_medieval',
+                [2] = 'troop_knight_late_medieval_captain',
+                [3] = 'troop_knight_late_medieval_bannerman'
+            }
+        },
+        base2 = {
+            name = '3Kn',
+            base = 'tile_grass_40x30',
+            n_models = 3,
+            model_data = 'troop_knight_late_medieval'
+        },
+        base3 = {
+            name = '3Kn',
+            base = 'tile_grass_40x30',
+            n_models = 3,
+            model_data = 'troop_knight_late_medieval'
+        },
+        base4 = {
+            name = '4Bd',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_swordman_two_handed_late_medieval'
+        },
+        base5 = {
+            name = '3Kn',
+            base = 'tile_grass_40x30',
+            n_models = 3,
+            model_data = 'troop_knight_late_medieval'
+        },
+        base6 = {
+            name = '4Bd',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_swordman_two_handed_late_medieval'
+        },
+        base7 = {
+            name = '3Kn',
+            base = 'tile_grass_40x30',
+            n_models = 3,
+            model_data = 'troop_knight_late_medieval'
+        },
+        base8 = {
+            name = '4Bd',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_swordman_two_handed_late_medieval'
+        },
+        base9 = {
+            name = '4Lb',
+            base = 'tile_grass_40x20',
+            n_models = 4,
+            model_data = 'troop_longbowman_late_medieval'
+        },
+        base10 = {
+            name = '4Lb',
+            base = 'tile_grass_40x20',
+            n_models = 4,
+            model_data = 'troop_longbowman_late_medieval'
+        },
+        base11 = {
+            name = '4Cb',
+            base = 'tile_grass_40x20',
+            n_models = 4,
+            model_data = 'troop_crossbowman_late_medieval'
+        },
+        base12 = {
+            name = '4Pk',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_pikeman_late_medieval_inclined'
+        },
+        base13 = {
+            name = '4Pk',
+            base = 'tile_grass_40x15',
+            n_models = 4,
+            model_data = 'troop_pikeman_late_medieval_straight'
+        },
+        base14 = {
+            name = '8Bw',
+            base = 'tile_grass_40x30',
+            n_models = 8,
+            model_data = 'troop_bowman_late_medieval'
+        },
+        base15 = {
+            name = '8Bw',
+            base = 'tile_grass_40x30',
+            n_models = 8,
+            model_data = 'troop_bowman_late_medieval'
+        },
+        base16 = {
+            name = '2ps',
+            loose = true,
+            base = 'tile_grass_40x20',
+            n_models = 2,
+            model_data = 'troop_handgunner_late_medieval'
+        },
+        base17 = {
+            name = 'Art',
+            loose = true,
+            base = 'tile_grass_40x40',
+            n_models = 3,
+            fixed_models = {
+                [1] = 'troop_artillery_crew_late_medieval',
+                [2] = 'troop_artillery_pieces_late_medieval',
+                [3] = 'troop_artillery_crew_late_medieval'
+            }
+        },
+        base18 = {
+            name = 'Camp',
+            base = 'tile_grass_40x40',
+            n_models = 1,
+            model_data = 'troop_camp_late_medieval'
+        },
+    }
     }
 }
