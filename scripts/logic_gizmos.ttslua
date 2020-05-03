@@ -185,7 +185,15 @@ function get_strokes_art(base_obj, transform)
     return get_strokes_fire_arc(base_obj, transform, g_art_range, g_base_width_inches)
 end
 
-function get_strokes_command(base_obj, transform, range)
+function get_strokes_wwg(base_obj, transform)
+    local color = g_gizmo_fire_color_player_red
+    if is_base_blue_player(base_obj.getName()) then
+        color = g_gizmo_fire_color_player_blue
+    end
+    return get_strokes_around(base_obj, transform, g_bow_range, color)
+end
+
+function get_strokes_around(base_obj, transform, range, color)
     local stroke_points = {}
     local p = transform['corners']['topright']
     local depth = get_size(base_obj.getName())['z']
@@ -295,10 +303,14 @@ function get_strokes_command(base_obj, transform, range)
     return
     {
         points    = stroke_points,
-        color     = g_gizmo_color_command,
+        color     = color,
         thickness = g_line_thickness,
         rotation  = {0,0,0}
     }
+end
+
+function get_strokes_command(base_obj, transform, range)
+    return get_strokes_around(base_obj, transform, range, g_gizmo_color_command)
 end
 
 function draw_gizmo_future_movements(new_selected_items)
@@ -321,6 +333,8 @@ function draw_gizmo_future_movements(new_selected_items)
                 table.insert(strokes, get_strokes_bow(obj, transform))
             elseif str_has_substr(obj.getName(), 'Art') then
                 table.insert(strokes, get_strokes_art(obj, transform))
+            elseif str_has_substr(obj.getName(), 'WWg') then
+                table.insert(strokes, get_strokes_wwg(obj, transform))
             end
 
             if str_has_substr(obj.getName(), 'Gen') then
