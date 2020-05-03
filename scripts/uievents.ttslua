@@ -1,5 +1,5 @@
 -- Global number of paces moved
-g_paces_movement = 100
+g_paces_movement = 200
 
 -- Updates the global that manages the number of paces moved by the other functions, and updates the UI
 function slider_paces_changed(player, value, id)
