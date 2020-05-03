@@ -194,6 +194,11 @@ function spawn_table_obj(model_url, height_correction, texture_array_urls)
     print_important('The table will lock itself in 5s')
     Wait.time(function()
         obj.setLock(true)
+        obj.addContextMenuItem('Rotate', function()
+            local newrotation = obj.getRotation()
+            newrotation['y'] = newrotation['y'] + 90
+            obj.setRotation(newrotation)
+        end)
         print_important('Table is locked')
     end, g_seconds_until_table_lock)
 end
