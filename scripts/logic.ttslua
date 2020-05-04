@@ -409,22 +409,8 @@ function onObjectPickUp(player_color,  picked_up_object)
 
     g_picked_base_obj = picked_up_object
     g_picked_base_initial_transform = calculate_transform(picked_up_object)
-    local pos = g_picked_base_initial_transform['position']
-    local radius = g_paces_movement / 100
 
-    local color = g_gizmo_color_player_red
-    if is_base_blue_player(picked_up_object.getName()) then
-        color = g_gizmo_color_player_blue
-    end
-
-    Global.setVectorLines( {
-        {
-            points    = get_coordinates_circle(pos, radius, g_precision_circle),
-            color     = color,
-            thickness = g_line_thickness,
-            rotation  = {0,0,0}
-        }
-    })
+    draw_pickup_strokes(picked_up_object)
 end
 
 function snap_to_base(obj, transformObj, base, transformBase, direction)

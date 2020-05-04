@@ -450,3 +450,75 @@ end
 function remove_deployment_lines()
     g_current_table.setVectorLines({})
 end
+
+function get_strokes_arrow_position(base_obj, transform)
+    local stroke_points = {}
+    local p = transform['position']
+    table.insert(stroke_points, p)
+    table.insert(stroke_points, {
+        x = p['x'],
+        y = p['y'],
+        z = p['z'] + 2
+    })
+    table.insert(stroke_points, {
+        x = p['x'] - 1,
+        y = p['y'],
+        z = p['z'] + 1.5
+    })
+    table.insert(stroke_points, {
+        x = p['x'],
+        y = p['y'],
+        z = p['z'] + 2
+    })
+    table.insert(stroke_points, {
+        x = p['x'] + 1,
+        y = p['y'],
+        z = p['z'] + 1.5
+    })
+    table.insert(stroke_points, {
+        x = p['x'],
+        y = p['y'],
+        z = p['z'] + 2
+    })
+
+    local rotation = transform['rotation']
+    for _, paux in ipairs(stroke_points) do
+        local paux_rotated = rotate_point(paux, p, rotation)
+        paux['x'] = paux_rotated['x']
+        -- We can ignore the y because we assume XZ plane
+        paux['z'] = paux_rotated['z']
+    end
+
+    local color = g_gizmo_color_player_red
+    if is_base_blue_player(base_obj.getName()) then
+        color = g_gizmo_color_player_blue
+    end
+
+    return
+    {
+        points    = stroke_points,
+        color     = color,
+        thickness = g_line_thickness,
+        rotation  = {0,0,0}
+    }
+end
+
+function draw_pickup_strokes(picked_up_object)
+    local pos = g_picked_base_initial_transform['position']
+    local radius = g_paces_movement / 100
+
+    local color = g_gizmo_color_player_red
+    if is_base_blue_player(picked_up_object.getName()) then
+        color = g_gizmo_color_player_blue
+    end
+
+    local strokes = {}
+    table.insert(strokes, get_strokes_arrow_position(picked_up_object, g_picked_base_initial_transform))
+    table.insert(strokes, {
+        points    = get_coordinates_circle(pos, radius, g_precision_circle),
+        color     = color,
+        thickness = g_line_thickness,
+        rotation  = {0,0,0}
+    })
+    Global.setVectorLines(strokes)
+end
