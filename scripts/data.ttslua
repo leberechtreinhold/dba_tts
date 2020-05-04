@@ -42,8 +42,8 @@ g_alignment_angle_side = math.rad(30)
 -- Max angle between elements for pushing back a column
 g_max_angle_pushback_rad = math.rad(15)
 
--- Max distance in inches between corenrs for aligment in pushback, squared
-g_max_corner_distance_pushback = 0.1*0.1
+-- Max distance in inches between corenrs for aligment when snapping, squared
+g_max_corner_distance_snap = 0.2*0.2
 
 -- Command distances from the general
 g_command_distance_short = 600/100
@@ -60,7 +60,7 @@ g_line_thickness = 0.04
 
 -- When moving, if you move less than this inches, the base will snap
 -- to this original position, making it easier to undo a move.
-g_max_inches_snap = 10/100
+g_max_inches_snap_reset = 20/100
 
 -- Troops spawn with a random facing angle, this control how much they can vary
 -- Note that this goes from -g_max_angle_spawn to g_max_angle_spawn

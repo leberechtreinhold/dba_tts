@@ -246,9 +246,9 @@ function is_behind(transformA, transformB)
     local cornersB = transformB['corners']
 
     local distance = distance_points_flat_sq(cornersA['topright'], cornersB['botright'])
-    if distance < g_max_corner_distance_pushback then
+    if distance < g_max_corner_distance_snap then
         distance = distance_points_flat_sq(cornersA['topleft'], cornersB['botleft'])
-        if distance < g_max_corner_distance_pushback then
+        if distance < g_max_corner_distance_snap then
             return true
         end
     end
@@ -271,7 +271,7 @@ function is_left_side(transformA, transformB)
     local cornersB = transformB['corners']
 
     local distance = distance_points_flat_sq(cornersA['topright'], cornersB['topleft'])
-    if distance < g_max_corner_distance_pushback then
+    if distance < g_max_corner_distance_snap then
         -- Note: We do not check the bottom because bases may be of different
         -- sizes and we already check the angle
         return true
@@ -305,9 +305,9 @@ function is_opposite_front(transformA, transformB)
     local cornersB = transformB['corners']
 
     local distance = distance_points_flat_sq(cornersA['topright'], cornersB['topleft'])
-    if distance < g_max_corner_distance_pushback then
+    if distance < g_max_corner_distance_snap then
         distance = distance_points_flat_sq(cornersA['topleft'], cornersB['topright'])
-        if distance < g_max_corner_distance_pushback then
+        if distance < g_max_corner_distance_snap then
             return true
         end
     end
@@ -334,7 +334,7 @@ function is_closing_door_to_left(transformA, transformB)
     local cornersB = transformB['corners']
 
     local distance = distance_points_flat_sq(cornersA['topleft'], cornersB['topleft'])
-    if distance < g_max_corner_distance_pushback then
+    if distance < g_max_corner_distance_snap then
         return true
     end
     return false
@@ -357,7 +357,7 @@ function is_closing_door_to_right(transformA, transformB)
     local cornersB = transformB['corners']
 
     local distance = distance_points_flat_sq(cornersA['topright'], cornersB['topright'])
-    if distance < g_max_corner_distance_pushback then
+    if distance < g_max_corner_distance_snap then
         return true
     end
     return false
@@ -525,7 +525,7 @@ function snap_picked_base(obj)
     -- position if I moved too little
     local new_corners = compute_corners_base(obj)
     local distance = max_distance_between_bases(new_corners, initial_corners)
-    if distance < g_max_inches_snap then
+    if distance < g_max_inches_snap_reset then
         -- Snap back!
         obj.setPosition(g_picked_base_initial_transform['position'])
         obj.setRotation(transform_to_rotation_vector(g_picked_base_initial_transform))
