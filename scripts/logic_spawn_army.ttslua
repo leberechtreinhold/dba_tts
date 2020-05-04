@@ -135,7 +135,10 @@ function spawn_army(army_name, army, is_red_player)
     end
 
     print_important('Army deployed: ' .. army_name .. ', see chat for options')
-    print_info('List: '.. army['data']['list'])
+    print_info('List: ' .. army['data']['list'])
+    print_info('Agressiveness: ' .. army['data']['aggresiveness'] 
+        .. ' Terrain: ' .. army['data']['terrain'])
+
 end
 
 function update_authors_text(army)
