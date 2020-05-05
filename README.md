@@ -7,6 +7,7 @@ Features: Setup
 ---------------
 
 - Create tables with different environments, like grass fields, steppe or deserts.
+- Automatically fix terrain to the table so it doesn't move.
 - Automatic army creation based on the DBA lists. The models have been adapted and lists are easy to create using a scripting system.
 - Spawned bases have a base ground theme depending on the table created. Furtheremore, lighter troops spawn in a loose formation, and there are variations between models and textures.
 - The game will tell the options of the army so you don't have to doublecheck everything.

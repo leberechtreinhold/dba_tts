@@ -207,16 +207,48 @@ function spawn_table_obj(model_url, height_correction, texture_array_urls)
         freshnel_strength = 0
     })
     g_current_table = obj
-    print_important('The table will lock itself in 5s')
-    Wait.time(function()
-        obj.setLock(true)
-        obj.addContextMenuItem('Rotate', function()
-            local newrotation = obj.getRotation()
-            newrotation['y'] = newrotation['y'] + 90
-            obj.setRotation(newrotation)
-        end)
-        print_important('Table is locked')
-    end, g_seconds_until_table_lock)
+    print_important('Table spawned, you can now put terrain on top, then use Right Click > Fix terrain.')
+
+    obj.addContextMenuItem('Rotate', function()
+        local newrotation = obj.getRotation()
+        newrotation['y'] = newrotation['y'] + 90
+        obj.setRotation(newrotation)
+    end)
+    obj.addContextMenuItem('Fix terrain and lock', function()
+        fix_terrain_and_lock()
+    end)
+end
+
+function fix_terrain_and_lock()
+    local all_objs = getAllObjects()
+    local terrains = {}
+    for _,obj in ipairs(all_objs) do
+        local name = obj.getName()
+        if str_starts_with(name, 'terrain') then
+            table.insert(terrains, obj)
+        end
+    end
+    
+    local max_distance_from_table_sq = (g_width_table_in/2)^2 + (g_depth_table_in / 2)^2
+    local pos_table = g_current_table.getPosition()
+
+    for _,terrain in ipairs(terrains) do
+        local terrain_pos = terrain.getPosition()
+        local distance = distance_points_flat_sq(pos_table, terrain_pos)
+        print(distance)
+        if distance <= max_distance_from_table_sq
+            and pos_table['y'] < terrain_pos['y'] then
+
+            g_current_table.addAttachment(terrain)
+            print_info('Attaching ' .. terrain.getName())
+        end
+    end
+    Wait.frames(function()
+        g_current_table.setRotation({ x = 0, y = 0, z = 0})
+        g_current_table.setPosition({ x = 0, y = g_base_height_tabletop, z = 0})
+        g_current_table.setLock(true)
+        print_important('Table is now locked')
+    end, 1)
 end
 
 function spawn_model(troop_name, pos, added_y_axis_rotation, collider, is_player_red, overridden_tex)
