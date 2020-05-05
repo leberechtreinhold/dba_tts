@@ -18,4 +18,6 @@
 
 function onload()
     print('----------------------------------------------')
+
+    spawn_proxy_bases()
 end

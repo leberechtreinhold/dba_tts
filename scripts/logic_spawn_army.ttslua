@@ -275,3 +275,31 @@ function onObjectDestroy(dying_object)
         g_bases[name] = nil
     end
 end
+
+
+function spawn_proxy_bases()
+    spawn_base({
+        name = 'Proxy 40x15',
+        base = 'tile_grass_40x15',
+        ignore_terrain = 'true',
+        n_models = 0
+    }, {x=38, y=2, z=3}, 0, true)
+    spawn_base({
+        name = 'Proxy 40x20',
+        base = 'tile_grass_40x20',
+        ignore_terrain = 'true',
+        n_models = 0
+    }, {x=38, y=2, z=1}, 0, true)
+    spawn_base({
+        name = 'Proxy 40x30',
+        base = 'tile_grass_40x30',
+        ignore_terrain = 'true',
+        n_models = 0
+    }, {x=38, y=2, z=-1}, 0, true)
+    spawn_base({
+        name = 'Proxy 40x40',
+        base = 'tile_grass_40x40',
+        ignore_terrain = 'true',
+        n_models = 0
+    }, {x=38, y=2, z=-3}, 0, true)
+end
