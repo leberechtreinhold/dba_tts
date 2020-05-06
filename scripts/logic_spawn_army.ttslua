@@ -293,7 +293,7 @@ function get_spawn_model(pos, rotation_correction, height_correction, model_scal
         custom_obj_attrs = {
             mesh = model_mesh,
             diffuse = model_diffuse,
-            material = 1,
+            material = 3,
             collider = collider_if_exists
         }
     }
