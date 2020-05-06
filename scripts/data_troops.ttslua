@@ -1156,7 +1156,7 @@ troop_pikeman_burgundian_ordonnances_straight = {
         'http://cloud-3.steamusercontent.com/ugc/1011564198059106409/4C2922D44C8723F3896C9490E5E3C9CDCC5483FD/'
     },
     player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691509328286193/499DAEB6A3B4B22765F6A8DD27504209E7ABD158/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691509327542825/6A34D09147A98EB94871ACEEA15491FB397FF4E2/'
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691509333663668/204186CBDC8E780D6807537F3C8003DCB1071175/'
 }
 troop_handgunner_burgundian_ordonnances = {
     height_correction = 0.36,
@@ -1195,7 +1195,7 @@ troop_handgunner_burgundian_ordonnances = {
         'http://cloud-3.steamusercontent.com/ugc/1011564617603379331/A211DAA7DFEAD2213ACD2190D95D10937C205C21/'
     },
     player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691509328286193/499DAEB6A3B4B22765F6A8DD27504209E7ABD158/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691509327542825/6A34D09147A98EB94871ACEEA15491FB397FF4E2/'
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691509333663668/204186CBDC8E780D6807537F3C8003DCB1071175/'
 }
 
 troop_halberdier_burgundian_ordonnances = {
@@ -1215,7 +1215,7 @@ troop_halberdier_burgundian_ordonnances = {
         'http://cloud-3.steamusercontent.com/ugc/1012691054073740363/8D2F90EAAAB0FA300D055DA335E392F4AA7F6852/'
     },
     player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691509328286193/499DAEB6A3B4B22765F6A8DD27504209E7ABD158/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691509327542825/6A34D09147A98EB94871ACEEA15491FB397FF4E2/'
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691509333663668/204186CBDC8E780D6807537F3C8003DCB1071175/'
 }
 
 troop_crossbowman_burgundian_ordonnances = {
@@ -1231,7 +1231,7 @@ troop_crossbowman_burgundian_ordonnances = {
         'http://cloud-3.steamusercontent.com/ugc/1011564883556587879/A8095395095E289CB397F95FAF9F392C841580AF/'
     },
     player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691509328286193/499DAEB6A3B4B22765F6A8DD27504209E7ABD158/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691509327542825/6A34D09147A98EB94871ACEEA15491FB397FF4E2/'
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691509333663668/204186CBDC8E780D6807537F3C8003DCB1071175/'
 }
 
 troop_swordman_two_handed_burgundian_ordonnances = {
@@ -1252,7 +1252,7 @@ troop_swordman_two_handed_burgundian_ordonnances = {
         'http://cloud-3.steamusercontent.com/ugc/1011564883555799315/124423D498E29D29B87C81EA090A0A9ED6FA9F49/'
     },
     player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691509328286193/499DAEB6A3B4B22765F6A8DD27504209E7ABD158/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691509327542825/6A34D09147A98EB94871ACEEA15491FB397FF4E2/'
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691509333663668/204186CBDC8E780D6807537F3C8003DCB1071175/'
 }
 
 troop_bowman_burgundian_ordonnances = {
