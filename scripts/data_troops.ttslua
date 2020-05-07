@@ -32,8 +32,8 @@ tile_grass_40x15 = {
              'http://cloud-3.steamusercontent.com/ugc/1011563971410184112/5A03353BBF0DD129287D164A1209311530446DA3/',
              'http://cloud-3.steamusercontent.com/ugc/1011563971410184580/0366219C4F572C128F209E551FC16FA312DF5883/'
     },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672153/2ED568A7248F589F91D34CD523367300400F2342/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672930/C6A36660C85DA7B2B038F37D4EA638790A94FB12/'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1023950208130993477/140638216078134711C31175B985DD87613B45BA/',
+    player_blue_tex= 'http://cloud-3.steamusercontent.com/ugc/1023950208130994569/CAF4640F5AB936973B6CAA23705E25A5558525C2/'
 }
 
 tile_grass_40x20 = {
@@ -54,8 +54,8 @@ tile_grass_40x20 = {
              'http://cloud-3.steamusercontent.com/ugc/1011563971410173818/529965B25F63DA04580F4C41DF6C12ACD93AA229/',
              'http://cloud-3.steamusercontent.com/ugc/1011563971410174399/00372239DF31450D2917AC640F8798B8F301069F/'
     },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672153/2ED568A7248F589F91D34CD523367300400F2342/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672930/C6A36660C85DA7B2B038F37D4EA638790A94FB12/'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1023950208130993477/140638216078134711C31175B985DD87613B45BA/',
+    player_blue_tex= 'http://cloud-3.steamusercontent.com/ugc/1023950208130994569/CAF4640F5AB936973B6CAA23705E25A5558525C2/'
 }
 
 tile_grass_40x30 = {
@@ -74,8 +74,8 @@ tile_grass_40x30 = {
              'http://cloud-3.steamusercontent.com/ugc/1011563971410161219/DA3888DDA450F45A145CF746AF9C812D8C2A74FD/',
              'http://cloud-3.steamusercontent.com/ugc/1011563971410162142/AFF4C60A6FC8153E6348D6716838862B2DEFCFE3/'
     },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672153/2ED568A7248F589F91D34CD523367300400F2342/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672930/C6A36660C85DA7B2B038F37D4EA638790A94FB12/'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1023950208130993477/140638216078134711C31175B985DD87613B45BA/',
+    player_blue_tex= 'http://cloud-3.steamusercontent.com/ugc/1023950208130994569/CAF4640F5AB936973B6CAA23705E25A5558525C2/'
 }
 
 tile_grass_40x40 = {
@@ -94,8 +94,8 @@ tile_grass_40x40 = {
              'http://cloud-3.steamusercontent.com/ugc/1011563971410154301/D3069A5D6D1FE133043A4049E77AD5F7EF8F0757/',
              'http://cloud-3.steamusercontent.com/ugc/1011563971410155046/40D6185017B382A90C7098BADA2A4A860F9DEEAD/'
     },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672153/2ED568A7248F589F91D34CD523367300400F2342/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672930/C6A36660C85DA7B2B038F37D4EA638790A94FB12/'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1023950208130993477/140638216078134711C31175B985DD87613B45BA/',
+    player_blue_tex= 'http://cloud-3.steamusercontent.com/ugc/1023950208130994569/CAF4640F5AB936973B6CAA23705E25A5558525C2/'
 }
 
 tile_grass_40x60 = {
@@ -110,8 +110,8 @@ tile_grass_40x60 = {
              'http://cloud-3.steamusercontent.com/ugc/1011563971410143651/CA6A503302339B9FF9A0C3B0543C62A8D6FD0329/',
              'http://cloud-3.steamusercontent.com/ugc/1011563971410144194/3EAB316D345B39EE70E639F7F34D1B0A2FEC560B/'
     },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672153/2ED568A7248F589F91D34CD523367300400F2342/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672930/C6A36660C85DA7B2B038F37D4EA638790A94FB12/'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1023950208130993477/140638216078134711C31175B985DD87613B45BA/',
+    player_blue_tex= 'http://cloud-3.steamusercontent.com/ugc/1023950208130994569/CAF4640F5AB936973B6CAA23705E25A5558525C2/'
 }
 
 tile_grass_40x80 = {
@@ -126,8 +126,8 @@ tile_grass_40x80 = {
              'http://cloud-3.steamusercontent.com/ugc/1011563971410138457/74120A425C013CAB100669F3F418DAECC72439FB/',
              'http://cloud-3.steamusercontent.com/ugc/1011563971410139042/9D67FE7EFF13062B1C1A260804AB0EC1399C5A70/'
     },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672153/2ED568A7248F589F91D34CD523367300400F2342/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1011564306430672930/C6A36660C85DA7B2B038F37D4EA638790A94FB12/'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1023950208130993477/140638216078134711C31175B985DD87613B45BA/',
+    player_blue_tex= 'http://cloud-3.steamusercontent.com/ugc/1023950208130994569/CAF4640F5AB936973B6CAA23705E25A5558525C2/'
 }
 
 -------------------------------------------------------------------------------
