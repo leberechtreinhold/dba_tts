@@ -375,17 +375,17 @@ function get_strokes_deployment(pos, color, angle)
     local center = { x=0, y=0, z=0 }
     local pos1 = rotate_point_relative({
         x = xpos * half_width,
-        y = g_table_thickness,
+        y = g_table_thickness + g_base_height_inches / 2,
         z = zpos * half_depth - zpos * g_deploy_home_in
     }, center, -angle)
     local pos2 = rotate_point_relative({
         x = xpos * half_width - xpos * g_deploy_side_in,
-        y = g_table_thickness,
+        y = g_table_thickness + g_base_height_inches / 2,
         z = zpos * half_depth - zpos * g_deploy_home_in
     }, center, -angle)
     local pos3 = rotate_point_relative({
         x = xpos * half_width - xpos * g_deploy_side_in,
-        y = g_table_thickness,
+        y = g_table_thickness + g_base_height_inches / 2,
         z = zpos * half_depth
     }, center, -angle)
 
@@ -411,12 +411,12 @@ function get_strokes_deployment_between(pos, color, angle)
     local center = { x=0, y=0, z=0 }
     local pos1 = rotate_point_relative({
         x = -half_width,
-        y = g_table_thickness,
+        y = g_table_thickness + g_base_height_inches / 2,
         z = zpos * half_depth - zpos * g_deploy_home_in
     }, center, -angle)
     local pos2 = rotate_point_relative({
         x = half_width,
-        y = g_table_thickness,
+        y = g_table_thickness + g_base_height_inches / 2,
         z = zpos * half_depth - zpos * g_deploy_home_in
     }, center, -angle)
     return {
