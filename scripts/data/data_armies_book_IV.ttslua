@@ -1,0 +1,224 @@
+armies["Book IV"] = {}
+
+armies["Book IV"]["IV/1a Komnenan Byzantine 1071-1149AD (Plain)"] = {
+    data = {
+        aggresiveness = 1,
+        terrain = 'Arable',
+        list = '1x3Cv or 3Kn (Gen), 1x4Bd, 3x3Cv, 3x2LH, 1x3Kn or 2LH, 2x2Ps or 4Bw, 1x4Sp or 4Bw or 3Ax.'
+    },
+    base1 = {
+        name = '3Cv_Gen',
+        base = 'tile_plain_3Cv_40x30',
+        n_models = 1,
+        model_data = 'troop_general_plain',
+        ignore_terrain = true
+    },
+    base2 = {
+        name = '3Kn_Gen',
+        base = 'tile_plain_3Kn_40x30',
+        n_models = 1,
+        model_data = 'troop_general_plain',
+        ignore_terrain = true
+    },
+    base3 = {
+        name = '4Bd',
+        base = 'tile_plain_4Bd_40x15',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base4 = {
+        name = '3Cv',
+        base = 'tile_plain_3Cv_40x30',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base5 = {
+        name = '3Cv',
+        base = 'tile_plain_3Cv_40x30',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base6 = {
+        name = '3Cv',
+        base = 'tile_plain_3Cv_40x30',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base7 = {
+        name = '2LH',
+        base = 'tile_plain_2LH_40x30',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base8 = {
+        name = '2LH',
+        base = 'tile_plain_2LH_40x30',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base9 = {
+        name = '2LH',
+        base = 'tile_plain_2LH_40x30',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base10 = {
+        name = '3Kn',
+        base = 'tile_plain_3Kn_40x30',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base11 = {
+        name = '2LH',
+        base = 'tile_plain_2LH_40x30',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base12 = {
+        name = '2Ps',
+        base = 'tile_plain_2Ps_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base13 = {
+        name = '2Ps',
+        base = 'tile_plain_2Ps_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base14 = {
+        name = '4Bw',
+        base = 'tile_plain_4Bw_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base15 = {
+        name = '4Bw',
+        base = 'tile_plain_4Bw_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base16 = {
+        name = '4Sp',
+        base = 'tile_plain_4Sp_40x15',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base17 = {
+        name = '4Bw',
+        base = 'tile_plain_4Bw_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base18 = {
+        name = '3Ax',
+        base = 'tile_plain_3Ax_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    }
+}
+
+armies["Book IV"]["IV/1b Komnenan Byzantine 1150-1204AD (Plain)"] = {
+    data = {
+        aggresiveness = 1,
+        terrain = 'Arable',
+        list = '1x3Kn (Gen), 3x3Kn, 4x2LH, 3x2Ps or 4Bw, 1x4Sp or 4Bd.'
+    },
+    base1 = {
+        name = '3Kn_Gen',
+        base = 'tile_plain_3Kn_40x30',
+        n_models = 1,
+        model_data = 'troop_general_plain',
+        ignore_terrain = true
+    },
+    base2 = {
+        name = '3Kn',
+        base = 'tile_plain_3Kn_40x30',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base3 = {
+        name = '3Kn',
+        base = 'tile_plain_3Kn_40x30',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base4 = {
+        name = '3Kn',
+        base = 'tile_plain_3Kn_40x30',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base5 = {
+        name = '2LH',
+        base = 'tile_plain_2LH_40x30',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base6 = {
+        name = '2LH',
+        base = 'tile_plain_2LH_40x30',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base7 = {
+        name = '2LH',
+        base = 'tile_plain_2LH_40x30',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base8 = {
+        name = '2LH',
+        base = 'tile_plain_2LH_40x30',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base9 = {
+        name = '2Ps',
+        base = 'tile_plain_2Ps_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base10 = {
+        name = '2Ps',
+        base = 'tile_plain_2Ps_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base11 = {
+        name = '2Ps',
+        base = 'tile_plain_2Ps_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base12 = {
+        name = '4Bw',
+        base = 'tile_plain_4Bw_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base13 = {
+        name = '4Bw',
+        base = 'tile_plain_4Bw_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base14 = {
+        name = '4Bw',
+        base = 'tile_plain_4Bw_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base15 = {
+        name = '4Sp',
+        base = 'tile_plain_4Sp_40x15',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base16 = {
+        name = '4Bd',
+        base = 'tile_plain_4Bd_40x15',
+        n_models = 0,
+        ignore_terrain = true
+    }
+}

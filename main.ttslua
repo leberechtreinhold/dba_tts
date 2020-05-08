@@ -5,9 +5,13 @@
 -- operation is required for scripts. The XML needs to be copied manually
 -- however.
 
-#include scripts/data_troops
-#include scripts/data_armies
-#include scripts/data
+#include scripts/data/data_settings
+#include scripts/data/data_tables
+#include scripts/data/data_troops
+#include scripts/data/data_armies_book_I
+#include scripts/data/data_armies_book_II
+#include scripts/data/data_armies_book_III
+#include scripts/data/data_armies_book_IV
 #include scripts/log
 #include scripts/utilities_lua
 #include scripts/utilities

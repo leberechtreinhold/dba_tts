@@ -1,0 +1,188 @@
+armies["Book II"] = {}
+
+armies["Book II"]["II/1 Republican Indian 500-321BC (Plain)"] = {
+    data = {
+        aggresiveness = 0,
+        terrain = 'Tropical',
+        list = '1xHCh (Gen), 2x3Cv, 1x3/4Bd or 3Lb, 8x3Lb.'
+    },
+    base1 = {
+        name = 'HCh_Gen',
+        base = 'tile_plain_HCh_40x40',
+        n_models = 1,
+        model_data = 'troop_general_plain',
+        ignore_terrain = true
+    },
+    base2 = {
+        name = '3Cv',
+        base = 'tile_plain_3Cv_40x30',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base3 = {
+        name = '3Cv',
+        base = 'tile_plain_3Cv_40x30',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base4 = {
+        name = '3Bd',
+        base = 'tile_plain_3Bd_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base5 = {
+        name = '4Bd',
+        base = 'tile_plain_4Bd_40x15',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base6 = {
+        name = '3Lb',
+        base = 'tile_plain_3Lb_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base7 = {
+        name = '3Lb',
+        base = 'tile_plain_3Lb_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base8 = {
+        name = '3Lb',
+        base = 'tile_plain_3Lb_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base9 = {
+        name = '3Lb',
+        base = 'tile_plain_3Lb_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base10 = {
+        name = '3Lb',
+        base = 'tile_plain_3Lb_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base11 = {
+        name = '3Lb',
+        base = 'tile_plain_3Lb_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base12 = {
+        name = '3Lb',
+        base = 'tile_plain_3Lb_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base13 = {
+        name = '3Lb',
+        base = 'tile_plain_3Lb_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base14 = {
+        name = '3Lb',
+        base = 'tile_plain_3Lb_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    }
+}
+
+armies["Book II"]["II/2 Mountain Indian 500-170BC (Plain)"] = {
+    data = {
+        aggresiveness = 1,
+        terrain = 'Hilly',
+        list = '1x2LH or El (Gen), 2x2LH, 1x4Bd or 3Ax, 4x3Ax, 4x2Ps.'
+    },
+    base1 = {
+        name = 'El_Gen',
+        base = 'tile_plain_El_40x40',
+        n_models = 1,
+        model_data = 'troop_general_plain',
+        ignore_terrain = true
+    },
+    base2 = {
+        name = '2LH_Gen',
+        base = 'tile_plain_2LH_40x30',
+        n_models = 1,
+        model_data = 'troop_general_plain',
+        ignore_terrain = true
+    },
+    base3 = {
+        name = '2LH',
+        base = 'tile_plain_2LH_40x30',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base4 = {
+        name = '2LH',
+        base = 'tile_plain_2LH_40x30',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base5 = {
+        name = '4Bd',
+        base = 'tile_plain_4Bd_40x15',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base6 = {
+        name = '3Ax',
+        base = 'tile_plain_3Ax_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base7 = {
+        name = '3Ax',
+        base = 'tile_plain_3Ax_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base8 = {
+        name = '3Ax',
+        base = 'tile_plain_3Ax_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base9 = {
+        name = '3Ax',
+        base = 'tile_plain_3Ax_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base10 = {
+        name = '3Ax',
+        base = 'tile_plain_3Ax_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base11 = {
+        name = '2Ps',
+        base = 'tile_plain_2Ps_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base12 = {
+        name = '2Ps',
+        base = 'tile_plain_2Ps_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base13 = {
+        name = '2Ps',
+        base = 'tile_plain_2Ps_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base14 = {
+        name = '2Ps',
+        base = 'tile_plain_2Ps_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    }
+}

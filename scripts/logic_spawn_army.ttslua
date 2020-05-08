@@ -141,17 +141,33 @@ function spawn_army(army_name, army, is_red_player)
 
 end
 
+function get_author_tile(tilename)
+    local tile = _G[tilename]
+    return tile['author']
+end
+
+function get_author_model(modelname)
+    local model = _G[modelname]
+    return model['author']
+end
+
+function get_author_base(base)
+    if base['n_models'] == 0 then
+        return get_author_tile(base['base'])
+    end
+    local model = base['model_data']
+    if model == nil then
+        model = base['fixed_models'][1]
+    end
+    return get_author_model(model)
+end
+
 function update_authors_text(army)
     local authorship_models = 'The authors of the models are:\n\n'
     local authors_set = {}
     for base_id, base in pairs(army) do
         if base_id ~= 'data' then
-            local model = base['model_data']
-            if model == nil then
-                model = base['fixed_models'][1]
-            end
-            local model_data = _G[model]
-            local author = model_data['author']
+            local author = get_author_base(base)
 
             if authors_set[author] == nil then
                 authorship_models = authorship_models .. ' - ' .. author .. '\n\n'
@@ -235,7 +251,6 @@ function fix_terrain_and_lock()
     for _,terrain in ipairs(terrains) do
         local terrain_pos = terrain.getPosition()
         local distance = distance_points_flat_sq(pos_table, terrain_pos)
-        print(distance)
         if distance <= max_distance_from_table_sq
             and pos_table['y'] < terrain_pos['y'] then
 

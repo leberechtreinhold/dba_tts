@@ -1,0 +1,39 @@
+tables = {
+    model = 'http://cloud-3.steamusercontent.com/ugc/1022823759371064859/C870FF6BCD014D8EC33CDFADBFC11EE555E44A6F/',
+    grass = {
+        table_tex = {
+            'http://cloud-3.steamusercontent.com/ugc/1022823759371066811/25B099510D6E351C7D82A5FBA8184397E4E7A005/'
+        },
+        red_player_base_tex = 'http://cloud-3.steamusercontent.com/ugc/1023950208130993477/140638216078134711C31175B985DD87613B45BA/',
+        blue_player_base_tex = 'http://cloud-3.steamusercontent.com/ugc/1023950208130994569/CAF4640F5AB936973B6CAA23705E25A5558525C2/'
+    },
+    mountain = {
+        table_tex = {
+            'http://cloud-3.steamusercontent.com/ugc/1022823759371068670/93B215277016C89BB490DCFCB65E313D63B1A9D7/'
+        },
+        red_player_base_tex = 'http://cloud-3.steamusercontent.com/ugc/1023950208130990184/AD42C31C88F8FA7FBC83501CF519AACA80824E0B/',
+        blue_player_base_tex = 'http://cloud-3.steamusercontent.com/ugc/1023950208130992843/870759902FA2A796DFEA2154EABF004739FCB24E/'
+    },
+    desert = {
+        table_tex = {
+            'http://cloud-3.steamusercontent.com/ugc/1022823759371071004/DC4F81C7F92B971C1D1F83F2B12C0DE1E896ABEE/',
+            'http://cloud-3.steamusercontent.com/ugc/1023950053147001338/5611385A6230432B6095F3065D321E456692FFC7/'
+        },
+        red_player_base_tex = 'http://cloud-3.steamusercontent.com/ugc/1023950208130996593/CC85EA87EF46E7DCB39D9B2957D05C562D5B6951/',
+        blue_player_base_tex = 'http://cloud-3.steamusercontent.com/ugc/1023950208130997229/A1E0C30EB531BA8D3857564E25A56CCE9F380B27/'
+    },
+    forest = {
+        table_tex = {
+            'http://cloud-3.steamusercontent.com/ugc/1023950208130980971/83C0A6E5909D7085451484B485BDDDE4D66C919D/'
+        },
+        red_player_base_tex = 'http://cloud-3.steamusercontent.com/ugc/1023950208130995174/5268DB6142AF6C4F22F5EA71927D25F0399CCFB5/',
+        blue_player_base_tex = 'http://cloud-3.steamusercontent.com/ugc/1023950208130995661/FA0883C15A8242DEF4A6DAE22DA78488DD1AC9A0/'
+    },
+    steppe = {
+        table_tex = {
+            'http://cloud-3.steamusercontent.com/ugc/1023950208131004614/993016ECF0E331FD88B110CAF7A7A2CF86EF235E/'
+        },
+        red_player_base_tex = 'http://cloud-3.steamusercontent.com/ugc/1023950208130988367/50A4CE146B9B22DAAEE7D3C34B790E3C9F33CCE2/',
+        blue_player_base_tex = 'http://cloud-3.steamusercontent.com/ugc/1023950208130989559/E49949E1BDEA59856A823D38B4379E83412263C3/'
+    }
+}
