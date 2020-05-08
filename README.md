@@ -45,7 +45,20 @@ The project is structured in the following way:
 - ui/main.xml: The XML for the UI, which, AFAIK, cannot be #included into TTS through ATOM and needs to be copy/pasted. Can be used directly using include src tag.
 - ui/ui_elements.txt: Since the UI is referenced by the Scripting window and must be imported in each game, this is a list to the elements with the corresponding url.
 
-This is still a WIP.
+It's not required, but it's encouraged to put this repo with the name "dba22_tts" with main.ttslua inside and everything following the structure of the repo. That's only if you want to match the one uploaded in the repo. Otherwise, the only thing required is:
+
+* In Global.-1.ttslua, put:
+
+    #include dba22_tts/main
+
+* In Global.-1.ttslua, put:
+
+    <Include src="dba22_tts\ui\main.xml"/>
+
+* Create two dice object, red and blue, and put this in each:
+
+    #include dba22_tts/scripts/dice/pip_blue
+    #include dba22_tts/scripts/dice/pip_red
 
 TODO
 ----
