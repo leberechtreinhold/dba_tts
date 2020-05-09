@@ -633,23 +633,16 @@ tile_plain_Camp_40x40 = {
 -------------------------------------------------------------------------------
 
 troop_general_plain = {
-    height_correction = 1,
+    height_correction = 0.2,
     scale = 1,
     rotation = 0,
     description = 'General Token',
     author = 'General Token, original work by Arkein (model) and Eric Delemer (texture), using troop icon from Lorenzo Moro.',
     mesh = {
-        'http://cloud-3.steamusercontent.com/ugc/1022822649627337225/1437C085D4FFF74C2FBF2286FAFA4C555FA9AAAA/',
-        'http://cloud-3.steamusercontent.com/ugc/1022822649628563080/2F543EB07AA1B046FA49FCA7C9EF67194D266DD2/',
-        'http://cloud-3.steamusercontent.com/ugc/1022822649628565149/C08A32327A4329E24B03884EC8E9B00EDE08E102/',
-        'http://cloud-3.steamusercontent.com/ugc/1022822649628566503/035642E0FAE5DF4B5CEBC6434BAB41FC18EEF8E0/',
-        'http://cloud-3.steamusercontent.com/ugc/1022822649628567927/AE5F2D0422FDF434229A78A9E50438FF8B1E6349/',
-        'http://cloud-3.steamusercontent.com/ugc/1022822649628569273/FA02A88651EB70329816666DB1834AA119A943DB/',
-        'http://cloud-3.steamusercontent.com/ugc/1022822649628570664/C8F15D793175D0A6597B4A60BE790FDD5B503A1A/',
-        'http://cloud-3.steamusercontent.com/ugc/1022822649628571770/5F92C6D0BD1870F75B7E8219310EF8F67F984C30/'
+        'http://cloud-3.steamusercontent.com/ugc/1018321288887138575/ECD6CC019758362CE2E7D47E845E671F6B974EA7/'
     },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1022822649627341435/6849CB89095D43654125ED506222AF73172C09C1/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1022822649627338507/BBA5455E7C52A92432746B828602DFAEB68142D2/'
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1018321288887139503/BAA942D3D370D2701468BAEC3648B70FD8A29466/',
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1018321288887139854/5DCA6064A3770336BD79FCDDAFBA47EF24BB285B/'
 }
 
 -------------------------------------------------------------------------------
