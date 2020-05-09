@@ -622,7 +622,7 @@ tile_plain_Camp_40x40 = {
     depth = 80,
     description = '40x80 WWg Tile  ',
     author = 'Plain tile, original work by Arkein using clipart.email camp drawing.',
-    mesh = { 'http://cloud-3.steamusercontent.com/ugc/1018321288887137362/EE2562A2132A766097885663E7BB7535148EDF13/'
+    mesh = { 'http://cloud-3.steamusercontent.com/ugc/1018321288887138157/2788581888709C3F0694EDA69E38B24B8D317B44/'
     },
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1018321288887139503/BAA942D3D370D2701468BAEC3648B70FD8A29466/',
     player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1018321288887139854/5DCA6064A3770336BD79FCDDAFBA47EF24BB285B/'
