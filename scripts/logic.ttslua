@@ -648,6 +648,7 @@ end
 -- TODO: Move to a spawned coroutine that does something everyhalf a second
 -- or similar to improve perf, and only starts on pickup
 g_selected_objects = {}
+g_last_zoc_value = nil
 function onUpdate()
     if g_picked_base_obj then
         local new_corners = compute_corners_base(g_picked_base_obj)
@@ -663,9 +664,11 @@ function onUpdate()
     local players = Player.getPlayers()
     for _, player in ipairs(players) do
         local selected_objs = player.getSelectedObjects()
-        if has_changed_selection_for_player(player.color, selected_objs) then
+        if has_changed_selection_for_player(player.color, selected_objs) 
+           or g_last_zoc_value ~= g_zoc_enabled then
             on_selection_changed(player.color, selected_objs)
             g_selected_objects[player.color] = selected_objs
+            g_last_zoc_value = g_zoc_enabled
         end
     end
 end
