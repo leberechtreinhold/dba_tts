@@ -78,6 +78,12 @@ armies["Book I"]["I/1a Early Sumerian 3000-2800BC (Plain)"] = {
         base = 'tile_plain_2Ps_40x20',
         n_models = 0,
         ignore_terrain = true
+    },
+    base13 = {
+        name = 'Camp',
+        base = 'tile_plain_Camp_40x40',
+        n_models = 0,
+        ignore_terrain = true
     }
 }
 
@@ -177,6 +183,12 @@ armies["Book I"]["I/1b Early Sumerian 2799-2500BC (Plain)"] = {
         base = 'tile_plain_2Ps_40x20',
         n_models = 0,
         ignore_terrain = true
+    },
+    base16 = {
+        name = 'Camp',
+        base = 'tile_plain_Camp_40x40',
+        n_models = 0,
+        ignore_terrain = true
     }
 }
 
@@ -186,7 +198,7 @@ armies["Book I"]["I/1c Early Sumerian 2500-2334BC (Plain)"] = {
         terrain = 'Arable',
         list = '1xPk or HCh (Gen), 6x4Pk, 1x4Pk or 3Bd, 1x3Ax or 2Ps, 2x2Ps.'
     },
-    base2 = {
+    base1 = {
         name = '4Pk_Gen',
         base = 'tile_plain_4Pk_40x15',
         n_models = 1,
@@ -262,7 +274,7 @@ armies["Book I"]["I/1c Early Sumerian 2500-2334BC (Plain)"] = {
     },
     base13 = {
         name = '2Ps',
-        base = 'tile_plain_3Bd_40x20',
+        base = 'tile_plain_2Ps_40x20',
         n_models = 0,
         ignore_terrain = true
     },
@@ -292,7 +304,7 @@ armies["Book I"]["I/1d Early Sumerian 2500-2334BC (Plain)"] = {
         terrain = 'Arable',
         list = '1xPk or HCh (Gen), 4x4Pk, 1x4Pk or 3Bd, 2x7Hd, 1x3Ax or 2Ps, 2x2Ps.'
     },
-    base2 = {
+    base1 = {
         name = '4Pk_Gen',
         base = 'tile_plain_4Pk_40x15',
         n_models = 1,
@@ -368,7 +380,7 @@ armies["Book I"]["I/1d Early Sumerian 2500-2334BC (Plain)"] = {
     },
     base13 = {
         name = '2Ps',
-        base = 'tile_plain_3Bd_40x20',
+        base = 'tile_plain_2Ps_40x20',
         n_models = 0,
         ignore_terrain = true
     },
@@ -1292,13 +1304,13 @@ armies["Book I"]["I/5b Early Susiana & Elam Empire 2600-2101 BC (Plain)"] = {
     },
     base5 = {
         name = '4Pk',
-        base = 'tile_plain_3Bw_40x20',
+        base = 'tile_plain_4Pk_40x15',
         n_models = 0,
         ignore_terrain = true
     },
     base6 = {
         name = '4Pk',
-        base = 'tile_plain_3Bw_40x20',
+        base = 'tile_plain_4Pk_40x15',
         n_models = 0,
         ignore_terrain = true
     },
@@ -1733,12 +1745,6 @@ armies["Book I"]["I/6a Early Bedouin 3000-1500 BC (Plain)"] = {
         model_data = 'troop_general_plain',
         ignore_terrain = true
     },
-    base2 = {
-        name = '3Ax',
-        base = 'tile_plain_3Ax_40x20',
-        n_models = 0,
-        ignore_terrain = true
-    },
     base3 = {
         name = '3Ax',
         base = 'tile_plain_3Ax_40x20',
@@ -1770,8 +1776,8 @@ armies["Book I"]["I/6a Early Bedouin 3000-1500 BC (Plain)"] = {
         ignore_terrain = true
     },
     base8 = {
-        name = '2Ps',
-        base = 'tile_plain_2Ps_40x20',
+        name = '3Ax',
+        base = 'tile_plain_3Ax_40x20',
         n_models = 0,
         ignore_terrain = true
     },
@@ -1819,7 +1825,7 @@ armies["Book I"]["I/6b Early Bedouin 1499-1000 BC (Plain)"] = {
         terrain = 'Dry',
         list = '1x3Ax or LCh or 3Cm (Gen), 6x3Ax, 5x2Ps.'
     },
-    base2 = {
+    base1 = {
         name = '3Ax_Gen',
         base = 'tile_plain_3Ax_40x20',
         n_models = 1,
@@ -1908,12 +1914,6 @@ armies["Book I"]["I/6b Early Bedouin 1499-1000 BC (Plain)"] = {
         ignore_terrain = true
     },
     base15 = {
-        name = '2Ps',
-        base = 'tile_plain_2Ps_40x20',
-        n_models = 0,
-        ignore_terrain = true
-    },
-    base16 = {
         name = 'Camp',
         base = 'tile_plain_Camp_40x40',
         n_models = 0,
@@ -1927,7 +1927,7 @@ armies["Book I"]["I/6c Early Bedouin 999-312 BC (Plain)"] = {
         terrain = 'Dry',
         list = '1x3Cm (Gen), 2x3Cm, 1x2Cm, 4x3Ax, 4x2Ps.'
     },
-    base2 = {
+    base1 = {
         name = '3Cm',
         base = 'tile_plain_3Cm_40x30',
         n_models = 1,
@@ -1940,15 +1940,27 @@ armies["Book I"]["I/6c Early Bedouin 999-312 BC (Plain)"] = {
         n_models = 0,
         ignore_terrain = true
     },
-    base5 = {
+    base3 = {
         name = '3Cm',
         base = 'tile_plain_3Cm_40x30',
         n_models = 0,
         ignore_terrain = true
     },
-    base6 = {
+    base4 = {
         name = '2Cm',
         base = 'tile_plain_2Cm_40x30',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base5 = {
+        name = '3Ax',
+        base = 'tile_plain_3Ax_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base6 = {
+        name = '3Ax',
+        base = 'tile_plain_3Ax_40x20',
         n_models = 0,
         ignore_terrain = true
     },
@@ -1965,8 +1977,8 @@ armies["Book I"]["I/6c Early Bedouin 999-312 BC (Plain)"] = {
         ignore_terrain = true
     },
     base9 = {
-        name = '3Ax',
-        base = 'tile_plain_3Ax_40x20',
+        name = '2Ps',
+        base = 'tile_plain_2Ps_40x20',
         n_models = 0,
         ignore_terrain = true
     },
@@ -1989,12 +2001,6 @@ armies["Book I"]["I/6c Early Bedouin 999-312 BC (Plain)"] = {
         ignore_terrain = true
     },
     base13 = {
-        name = '2Ps',
-        base = 'tile_plain_2Ps_40x20',
-        n_models = 0,
-        ignore_terrain = true
-    },
-    base14 = {
         name = 'Camp',
         base = 'tile_plain_Camp_40x40',
         n_models = 0,
