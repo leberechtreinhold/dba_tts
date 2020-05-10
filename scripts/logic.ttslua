@@ -126,15 +126,91 @@ function push_forward(obj)
     -- TODO: COLISION
 end
 
--- Pushes back a whole column, that may not be exactly aligned
-function push_back_column(objs)
-    -- We use many comparisons for the column so we precalculate all the
-    -- transforms
-    local transforms = {}
-    for _, obj in ipairs(objs) do
-        transforms[obj] = calculate_transform(obj)
+-- Given a bunch of objects returns them in a column, which is 
+-- {"front_of"=x, "behind_of" = x, "front_element"=x}, each a mapping 
+-- of where they are relative to each other.
+-- Returns nil if it's not a column.
+function calculate_column(objs, transforms)    
+    local front_of = {}
+    local behind_of = {}
+    local not_connected = {}
+    for _, objA in ipairs(objs) do
+        local in_front = nil
+        local in_back = nil
+
+        for _, objB in ipairs(objs) do
+            local skip = false
+            if not_connected[objA] ~= nil and not_connected[objA][objB] == true then
+                skip = true
+            end
+
+            if objA == objB  then
+                skip = true
+            end
+
+            if transforms[objA]['rotation'] ~= transforms[objB]['rotation'] then
+                skip = true
+            end
+
+            if not skip then
+                if front_of[objA] == objB
+                   or is_behind(transforms[objA], transforms[objB]) then
+                    in_front = objB
+                elseif behind_of[objA] == objB
+                       or is_behind(transforms[objB], transforms[objA]) then
+                    in_back = objB
+                else
+                    if not_connected[objA] == nil then
+                        not_connected[objA] = {}
+                    end
+                    not_connected[objA][objB] = true
+                end
+            end
+        end
+
+        if in_front == nil and in_back == nil then
+            return nil
+        end
+
+        if in_front ~= nil then
+            front_of[objA] = in_front
+            behind_of[in_front] = objA
+        end
+        if in_back ~= nil then
+            front_of[in_back] = objA
+            behind_of[objA] = in_back
+        end
     end
 
+    local front_element = nil
+    for _, obj in ipairs(objs) do
+        if front_of[obj] == nil then
+            front_element = obj
+            break
+        end
+    end
+
+    if front_element == nil then
+        return nil
+    end
+
+    return {
+        front_of = front_of,
+        behind_of = behind_of,
+        front_element = front_element
+    }
+end
+
+-- Like calculate column, but for a group. Returns
+-- {"front_of" = {x=y, y=z...},
+--  "behind_of" = {x=y, y=z...},
+--  "front_elements"={x,y,z..},
+--  "leftmost" = x,
+--  "rightmost" = x
+--  "depth" = x}
+-- Each front_element correspond with the front of a column.
+-- All front elements are left_of or right of someone else
+function calculate_group(objs, transforms)
     local front_of = {}
     local behind_of = {}
     local not_connected = {}
@@ -168,11 +244,6 @@ function push_back_column(objs)
             end
         end
 
-        if in_front == nil and in_back == nil then
-            print_error('Trying to pushback ' .. objA.getName() .. ' which is not in column')
-            return
-        end
-
         if in_front ~= nil then
             front_of[objA] = in_front
             behind_of[in_front] = objA
@@ -183,17 +254,152 @@ function push_back_column(objs)
         end
     end
 
-    local front_element = nil
+    local col_index = 0
+    local cols = {}
     for _, obj in ipairs(objs) do
-        if front_of[obj] == nil then
-            front_element = obj
-            break
+        if front_of[obj] ~= nil then
+            if cols[front_of[obj]] ~= nil then
+                -- This belongs to the same column
+                cols[obj] = cols[front_of[obj]]
+            else
+                -- Neither belong to a column yet, add it
+                cols[obj] = col_index
+                col_index = col_index + 1
+            end
+        elseif behind_of[obj] ~= nil then
+            if cols[behind_of[obj]] ~= nil then
+                -- This belongs to the same column
+                cols[obj] = cols[behind_of[obj]]
+            else
+                -- Neither belong to a column yet, add it
+                cols[obj] = col_index
+                col_index = col_index + 1
+            end
+        else
+            -- Column of one element
+            cols[obj] = col_index
+            col_index = col_index + 1
         end
     end
 
-    if front_element == nil then
-        print_error('Trying to push back but there\'s no front element')
+    print('Number of cols ' .. tlen(cols))
+
+    local front_elements = {}
+    local max_col_depth = 0
+    for i = 0, col_index-1 do
+        local col_depth = 0
+        print('Looking for front element of col ' .. i)
+        for obj, col in pairs(cols) do
+            print('Checking if ' .. obj.getName() .. ' is in col')
+            if col == i then
+                if front_of[obj] == nil then
+                    print('It is!')
+                    front_elements[col] = obj
+                end
+                col_depth = col_depth + get_size(obj.getName())['z'];
+                print('Added depth to column ' .. get_size(obj.getName())['z'])
+            end
+        end
+        print('this column has depth of ' .. col_depth)
+        if col_depth > max_col_depth then
+            max_col_depth = col_depth
+        end
     end
+
+    local not_connected = {}
+    local left_of = {}
+    local right_of = {}
+    for _, objA in pairs(front_elements) do
+        local in_left = nil
+        local in_right = nil
+
+        for _, objB in pairs(front_elements) do
+            local skip = false
+            if not_connected[objA] ~= nil and not_connected[objA][objB] == true then
+                skip = true
+            end
+
+            if objA == objB  then
+                skip = true
+            end
+
+            if not skip then
+                if right_of[objA] == objB
+                   or is_left_side(transforms[objA], transforms[objB]) then
+                    in_right = objB
+                elseif left_of[objA] == objB
+                       or is_right_side(transforms[objA], transforms[objB]) then
+                    in_left = objB
+                else
+                    print(objA.getName() .. ' is not connected to ' .. objB.getName())
+                    if not_connected[objA] == nil then
+                        not_connected[objA] = {}
+                    end
+                    not_connected[objA][objB] = true
+                end
+            end
+        end
+        
+        if in_left == nil and in_right == nil then
+            -- This shouild only happen if there's only one column
+            if col_index > 1 then
+                print('Obj ' .. objA.getName() .. ' does not have anyone left or right ')
+                return nil
+            end
+        end
+
+        if in_left ~= nil then
+            left_of[objA] = in_left
+            right_of[in_left] = objA
+        end
+        if in_right ~= nil then
+            left_of[in_right] = objA
+            right_of[objA] = in_right
+        end
+    end
+
+    print('Number of front elements ' .. tlen(front_elements))
+    local leftmost = nil
+    local rightmost = nil
+    for _, obj in pairs(front_elements) do
+        if left_of[obj] == nil then
+            leftmost = obj
+        end
+        if right_of[obj] == nil then
+            rightmost = obj
+        end
+    end
+
+    print('Leftmost ' .. leftmost.getName())
+    print('Rightmost ' .. leftmost.getName())
+    print('Group depth ' .. max_col_depth)
+    return {
+        front_of = front_of,
+        behind_of = behind_of,
+        front_elements = front_elements,
+        leftmost = leftmost,
+        rightmost = rightmost,
+        depth = max_col_depth
+    }
+end
+
+-- Pushes back a whole column, that may not be exactly aligned
+function push_back_column(objs)
+    -- We use many comparisons for the column so we precalculate all the
+    -- transforms
+    local transforms = {}
+    for _, obj in ipairs(objs) do
+        transforms[obj] = calculate_transform(obj)
+    end
+
+    local column = calculate_column(objs, transforms)
+    if column == nil then
+        print_error('Trying to push back but it\'s not a proper column')
+        return
+    end
+
+    local behind_of = column['behind_of']
+    local front_element = column['front_element']
 
     local base_depth = get_size(front_element.getName())['z']
     local distance = base_depth
@@ -229,6 +435,106 @@ function push_back_column(objs)
     end
 end
 
+-- Calculates the future position of the given group of objs, assuming a wheel
+-- from the position with the given angle and from the relative position
+-- (a string which is left or right).
+-- The future position will be drawn!
+-- Returns the movement cost if possible (>=0), -1 if its impossible (invalid group)
+g_current_wheel_group = nil
+g_current_wheel_transforms = nil
+function wheel_group(objs, angle, direction)
+    -- HC SVNT DRACONES 
+    local transforms = g_current_wheel_transforms
+
+    if g_current_wheel_group == nil then 
+        -- We use many comparisons for the column so we precalculate all the
+        -- transforms
+        transforms = {}
+        for _, obj in ipairs(objs) do
+            transforms[obj] = calculate_transform(obj)
+        end
+
+        g_current_wheel_group = calculate_group(objs, transforms)
+        if g_current_wheel_group == nil then
+            print_error('Trying to wheel but it\'s not a proper group')
+            return -1
+        end
+        
+        g_current_wheel_transforms = transforms
+    end
+
+    print('Got a group')
+    local transform_pivot = g_current_wheel_transforms[g_current_wheel_group['leftmost']]
+    if direction == 'right' then
+        transform_pivot = g_current_wheel_transforms[g_current_wheel_group['rightmost']]
+    end
+    local pivot_point = transform_pivot['corners']['topleft']
+
+    local front_elements = g_current_wheel_group['front_elements']
+    local behind_of = g_current_wheel_group['behind_of']
+    local depth = g_current_wheel_group['depth']
+
+    local new_transforms = {}
+    for col, front_element in pairs(front_elements) do
+        new_transforms[front_element] = calculate_future_position_wheel(
+            front_element,
+            g_current_wheel_transforms[front_element], 
+            pivot_point, 
+            angle, 
+            direction == 'left',
+            depth)
+        local current_element = front_element
+        while behind_of[current_element] ~= nil do
+            current_element = behind_of[current_element]
+            
+            new_transforms[current_element] = calculate_future_position_wheel(
+                current_element,
+                g_current_wheel_transforms[current_element], 
+                pivot_point, 
+                angle, 
+                direction == 'left',
+                depth)
+        end
+        print('New transform calculated')
+    end
+    draw_gizmo_wheeling(new_transforms)
+    return 90
+end
+
+function calculate_future_position_wheel(obj, transform, pivot_point, angle, is_left, depth)
+    print('Obj is ' .. obj.getName())
+
+    local effective_angle = positive_angle(angle + math.pi / 2)
+    local new_angle = positive_angle(transform['rotation'] + angle)
+    if not is_left then
+        effective_angle = positive_angle(math.pi/2 - angle)
+        new_angle = positive_angle(transform['rotation'] - angle)
+    end
+
+    print('NewAngle: ' .. math.deg(new_angle) .. ' Effective angle: ' .. math.deg(effective_angle))
+    print('Pivot ' .. vec_to_str(pivot_point))
+
+    local vec = vec_sub(transform['position'], pivot_point)
+    print('vec ' .. vec_to_str(vec))
+    local relative_pos = rotate_point_relative(vec, {x=0,y=0,z=0}, -transform['rotation'])
+    print('Relative pos ' .. vec_to_str(relative_pos))
+    local border_pos = {x=relative_pos['x'], y=0, z=0}
+    print('border_pos ' .. vec_to_str(border_pos))
+    border_pos = rotate_point_relative(border_pos, {x=0,y=0,z=0}, angle)
+    print('border_pos (rotate)' .. vec_to_str(border_pos))
+
+    local displacement_vec = rad_to_vector_xz(effective_angle)
+    print('displacement_vec ' .. vec_to_str(displacement_vec))
+    local displacement = vec_mul_escalar(displacement_vec, depth+relative_pos['z'])
+    print('displacement ' .. vec_to_str(displacement))
+    local final_relative_pos = vec_add(border_pos, displacement)
+    print('final_relative_pos ' .. vec_to_str(final_relative_pos))
+    local new_pos = vec_add(final_relative_pos, pivot_point)
+    print('new_pos ' .. vec_to_str(new_pos))
+    local size = get_size(obj.getName())
+    local new_corners = compute_corners_coords(size, new_angle, new_pos)
+    return get_transform(new_pos, new_corners, new_angle)
+end
 -- Checks if the object A defined by its transform is inmediately behind
 -- object B, which is also represented by its transform
 function is_behind(transformA, transformB)
@@ -257,6 +563,7 @@ end
 
 -- Determines if A is to the left of B
 function is_left_side(transformA, transformB)
+    print('checking if it is leftside')
     local angleA = transformA['rotation']
     local angleB = transformB['rotation']
     local diff_angle = math.abs(angleB - angleA)
@@ -264,23 +571,28 @@ function is_left_side(transformA, transformB)
     if diff_angle > g_max_angle_pushback_rad
        and diff_angle < (2*math.pi - g_max_angle_pushback_rad) then
        -- Angle is too different, skip
+        print('angle does not match to be algined')
        return false
     end
 
     local cornersA = transformA['corners']
     local cornersB = transformB['corners']
 
+    print('A topright' .. vec_to_str(cornersA['topright']))
+    print('B topleft' .. vec_to_str(cornersB['topleft']))
     local distance = distance_points_flat_sq(cornersA['topright'], cornersB['topleft'])
     if distance < g_max_corner_distance_snap then
         -- Note: We do not check the bottom because bases may be of different
         -- sizes and we already check the angle
         return true
     end
+    print('The distance between topright adn topleft is too big')
     return false
 end
 
 -- Determines if A is to the right of B
 function is_right_side(transformA, transformB)
+    print('checking if is right side')
     return is_left_side(transformB, transformA)
 end
 

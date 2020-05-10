@@ -85,6 +85,11 @@ function rad_to_vector(radians)
     return { x = math.sin(radians), y = 0, z = math.cos(radians) }
 end
 
+-- Like the other rad_to_vector, with z up/down and x leftright
+function rad_to_vector_xz(radians)
+    return { x = math.cos(radians), y = 0, z = math.sin(radians) }
+end
+
 -- Angles in TTS can be pretty funny: the y axis defines the rotation from +x to
 -- -y to -x to +y, which is pretty unintuitive, but I guess they wanted the
 -- degrees to be clockwise instead of counterclockwise...
@@ -93,13 +98,26 @@ function normalize_angle(angle)
     return 2*math.pi - angle
 end
 
+-- Given an angle in radians, returns a new angle in radians which is the same,
+-- but between [0, 2*pi]. Only supports up to one rotation.
+function positive_angle(angle)
+    if angle < 0 then
+        return angle + math.pi*2
+    end
+    if angle >= math.pi*2 then
+        return angle - math.pi*2
+    end
+    return angle
+end
+
 -- Given a point with xyz coordinates, relative to the center, rotates along
 -- theta
 function rotate_point_relative(point, center_coordinates, theta)
     return { 
         x = point['x'] * math.cos(theta) - point['z'] * math.sin(theta) + center_coordinates['x'],
         y = point['y'] + center_coordinates['y'],
-        z = point['x'] * math.sin(theta) + point['z'] * math.cos(theta) + center_coordinates['z']}
+        z = point['x'] * math.sin(theta) + point['z'] * math.cos(theta) + center_coordinates['z']
+    }
 end
 
 -- Given a point with xyz coordinates, where xz form a plane, rotates using

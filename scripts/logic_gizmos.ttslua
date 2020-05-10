@@ -351,6 +351,15 @@ function draw_gizmo_future_movements(new_selected_items)
     Global.setVectorLines(strokes)
 end
 
+function draw_gizmo_wheeling(transforms)
+    local strokes = {}
+    for obj,transform in pairs(transforms) do
+        print('Calculating gizmo for obj ' .. obj.getName())
+        table.insert(strokes, get_strokes_future_position(obj, transform))
+    end
+    Global.setVectorLines(strokes)
+end
+
 function get_strokes_deployment(pos, color, angle)
     local half_width = g_width_table_in / 2
     local half_depth = g_depth_table_in / 2
@@ -520,4 +529,8 @@ function draw_pickup_strokes(picked_up_object)
         rotation  = {0,0,0}
     })
     Global.setVectorLines(strokes)
+end
+
+function draw_transforms()
+    
 end
