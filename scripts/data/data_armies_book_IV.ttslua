@@ -115,6 +115,12 @@ armies["Book IV"]["IV/1a Komnenan Byzantine 1071-1149AD (Plain)"] = {
         base = 'tile_plain_3Ax_40x20',
         n_models = 0,
         ignore_terrain = true
+    },
+    base19 = {
+        name = 'Camp',
+        base = 'tile_plain_Camp_40x40',
+        n_models = 0,
+        ignore_terrain = true
     }
 }
 
@@ -218,6 +224,12 @@ armies["Book IV"]["IV/1b Komnenan Byzantine 1150-1204AD (Plain)"] = {
     base16 = {
         name = '4Bd',
         base = 'tile_plain_4Bd_40x15',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base15 = {
+        name = 'Camp',
+        base = 'tile_plain_Camp_40x40',
         n_models = 0,
         ignore_terrain = true
     }

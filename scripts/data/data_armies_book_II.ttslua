@@ -90,6 +90,12 @@ armies["Book II"]["II/1 Republican Indian 500-321BC (Plain)"] = {
         base = 'tile_plain_3Lb_40x20',
         n_models = 0,
         ignore_terrain = true
+    },
+    base15 = {
+        name = 'Camp',
+        base = 'tile_plain_Camp_40x40',
+        n_models = 0,
+        ignore_terrain = true
     }
 }
 
@@ -182,6 +188,12 @@ armies["Book II"]["II/2 Mountain Indian 500-170BC (Plain)"] = {
     base14 = {
         name = '2Ps',
         base = 'tile_plain_2Ps_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base15 = {
+        name = 'Camp',
+        base = 'tile_plain_Camp_40x40',
         n_models = 0,
         ignore_terrain = true
     }

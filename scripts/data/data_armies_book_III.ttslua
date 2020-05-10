@@ -102,6 +102,12 @@ armies["Book III"]["III/1a Early Slavs Wendos 580-1218AD (Plain)"] = {
         base = 'tile_plain_3Bw_40x20',
         n_models = 0,
         ignore_terrain = true
+    },
+    base17 = {
+        name = 'Camp',
+        base = 'tile_plain_Camp_40x40',
+        n_models = 0,
+        ignore_terrain = true
     }
 }
 
@@ -199,6 +205,12 @@ armies["Book III"]["III/1b Early Slavs Bohemians 830-1003AD (Plain)"] = {
     base15 = {
         name = '3Bw',
         base = 'tile_plain_3Bw_40x20',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base16 = {
+        name = 'Camp',
+        base = 'tile_plain_Camp_40x40',
         n_models = 0,
         ignore_terrain = true
     }
