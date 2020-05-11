@@ -196,7 +196,7 @@
         </Row>
         <Row>
             <Cell columnSpan="6" dontUseTableCellBackground="true">
-                <Text fontSize="16">This will cost 0 paces</Text>
+                <Text id="text_wheeling" fontSize="16">This will cost 0 paces</Text>
             </Cell>
         </Row>
         <Row>

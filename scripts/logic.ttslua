@@ -449,12 +449,10 @@ function wheel_group(objs, angle, direction)
     print('------------------------------------------------------------------')
     print('Wheeling ' .. math.deg(angle) .. ' to ' .. direction)
     print('------------------------------------------------------------------')
-    local transforms = g_current_wheel_transforms
-
     if g_current_wheel_group == nil then 
         -- We use many comparisons for the column so we precalculate all the
         -- transforms
-        transforms = {}
+        local transforms = {}
         for _, obj in ipairs(objs) do
             transforms[obj] = calculate_transform(obj)
         end
@@ -475,6 +473,20 @@ function wheel_group(objs, angle, direction)
         transform_pivot = g_current_wheel_transforms[g_current_wheel_group['rightmost']]
         pivot_point = transform_pivot['corners']['topright']
     end
+
+    print('Calculating Furthest element')
+    local furthest_element = nil
+    local furthest_element_distance = 0
+    for obj, transform in pairs(g_current_wheel_transforms) do
+        local distance = distance_points_flat_sq(pivot_point, transform['position'])
+        print('Distance in ' .. obj.getName() .. ' is ' .. distance)
+        if distance > furthest_element_distance then
+            furthest_element_distance = distance
+            furthest_element = obj
+            print('Furthest element is ' .. furthest_element.getName())
+        end
+    end
+    print('Furthest element done')
 
     local front_elements = g_current_wheel_group['front_elements']
     local behind_of = g_current_wheel_group['behind_of']
@@ -504,7 +516,20 @@ function wheel_group(objs, angle, direction)
         print('New transform calculated')
     end
     draw_gizmo_wheeling(new_transforms)
-    return 90
+
+    local max_movement_distance = 0
+    if direction == 'right' then
+        max_movement_distance = distance_points_flat(
+            g_current_wheel_transforms[furthest_element]['corners']['botleft'],
+            new_transforms[furthest_element]['corners']['botleft'])
+    else
+        print(g_current_wheel_transforms[furthest_element])
+        max_movement_distance = distance_points_flat(
+            g_current_wheel_transforms[furthest_element]['corners']['botright'],
+            new_transforms[furthest_element]['corners']['botright'])
+    end 
+    print('This wheeling will cost ' .. max_movement_distance .. ' in')
+    return max_movement_distance
 end
 
 function calculate_future_position_wheel(obj, transform, pivot_point, angle, is_left, depth)

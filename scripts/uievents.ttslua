@@ -5,7 +5,7 @@ g_paces_movement = 200
 function slider_paces_changed(player, value, id)
     g_paces_movement = round_to_power(value, 1)
 
-    -- It's undocumented, but changing the value of the button does not update 
+    -- It's undocumented, but changing the value of the button does not update
     -- the button_move_forward
     -- Instead we have to change the undocumented text attribute, but we still
     -- change the value because it's the proper thing
@@ -32,7 +32,7 @@ function move_bases(player, value, id)
         local moved_paces = move_base(obj, g_paces_movement)
         print_info(player.steam_name .. ' is moving ' .. obj.getName() .. ' ' .. moved_paces .. ' paces forward')
     end
-    
+
     -- Moving the bases shpuld imply update the gizmos
     draw_gizmo_future_movements(player.getSelectedObjects())
 end
@@ -53,7 +53,7 @@ function align_bases(player, value, id)
     -- take into account here to aligning all the pieces together
     local future_transform = {}
     future_transform[objs[1].getName()] = calculate_transform(objs[1])
-    
+
     for i=2,n_objs do
         local pos = objs[i].getPosition()
         local corners = compute_corners_base(objs[i])
@@ -66,12 +66,12 @@ function align_bases(player, value, id)
         end
 
         future_transform[objs[i].getName()] = align_two_bases(
-            objs[i], 
-            transform['position'], 
-            transform['corners'], 
+            objs[i],
+            transform['position'],
+            transform['corners'],
             transform['rotation'])
     end
-    
+
     -- Moving the bases shpuld imply update the gizmos
     draw_gizmo_future_movements(player.getSelectedObjects())
 end
@@ -117,7 +117,7 @@ function create_army_options_menu(player, value, id)
             update_armies_menu(book, 1)
             on_next_frame(function()
                 update_authors_text(army)
-                on_next_frame(function()    
+                on_next_frame(function()
                     update_player_color_menu(g_color_spawn_army_selected == 'Red')
                 end)
             end)
@@ -211,7 +211,7 @@ function on_toggle_zoc(player, value, id)
         UI.setValue('toggle_zoc', 'Do not show ZOC')
         UI.setAttribute('toggle_zoc', 'text', 'Do not show ZOC')
     end
-    
+
     -- Make it consistent for all players
     on_next_frame(function()
         UI.setAttribute('toggle_zoc', 'isOn', g_zoc_enabled)
@@ -235,12 +235,12 @@ function on_toggle_deployment_lines(player, value, id)
     else
         UI.setValue('toggle_deployment_lines', 'Do not show rulers')
         UI.setAttribute('toggle_deployment_lines', 'text', 'Do not show rulers')
-        
+
         if g_current_table ~= nil then
             remove_deployment_lines()
         end
     end
-    
+
     -- Make it consistent for all players
     on_next_frame(function()
         UI.setAttribute('toggle_deployment_lines', 'isOn', g_deployment_lines_enabled)
@@ -282,19 +282,19 @@ end
 
 function on_load_table(player, value, id)
     local type = from_toggle_number_to_table_type(g_current_table_type)
-    
+
     if tables[type] == nil then
         type = 'grass'
     end
     local tex = tables[type]['table_tex']
-    
+
     if g_current_table == nil then
         spawn_table_obj(tables['model'], tables['height_correction'], tex)
     else
         print_error('There\'s already a table spawned')
     end
 
-    
+
     UI.setAttribute('panel_dba_table_selection_bg', 'active', false)
     UI.setAttribute('panel_dba_table_selection_bg', 'visibility', '')
     UI.setAttribute('panel_dba_table_selection', 'active', false)
@@ -339,12 +339,9 @@ function on_wheel(player, value, id)
         return
     end
 
-    g_degrees_wheeling = 30
-    g_current_orientation = 'left'
-
-    -- Make it consistent for all players
-    local distance = wheel_group(objs, math.rad(g_degrees_wheeling), g_current_orientation)
-
+    on_rotation_wheel_ui(0)
+    on_change_orientation_wheel_ui(0)
+    local distance = preview_wheel(objs)
     if distance < 0 then
         print_error(player.steam_name .. ' is wheeling troops but doesn\'t have a valid group selected')
         return
@@ -356,50 +353,75 @@ function on_wheel(player, value, id)
     UI.setAttribute('button_push_back', 'interactable', false)
 end
 
+function preview_wheel(objs_if_first_time)    
+    local distance = wheel_group(objs_if_first_time, 
+        math.rad(g_degrees_wheeling), g_current_orientation)
+
+    if distance < 0 then
+        return distance
+    end
+
+    UI.setValue('text_wheeling',
+        string.format('Wheeling %2.1f degrees will cost %d paces',
+            g_degrees_wheeling,
+            distance * 100))
+    return distance
+end
+
 function on_make_wheeling(player, value, id)
     g_current_wheel_group = nil
     g_current_wheel_transforms = nil
     print('on_make_wheeling')
-    
+
     UI.setAttribute('panel_wheel', 'active', false)
     UI.setAttribute('button_move_forward', 'interactable', true)
     UI.setAttribute('button_wheel', 'interactable', true)
     UI.setAttribute('button_push_back', 'interactable', true)
+    
+    Global.setVectorLines({})
 end
 
 function on_cancel_wheeling(player, value, id)
     g_current_wheel_group = nil
     g_current_wheel_transforms = nil
-    
+
     UI.setAttribute('panel_wheel', 'active', false)
     UI.setAttribute('button_move_forward', 'interactable', true)
     UI.setAttribute('button_wheel', 'interactable', true)
     UI.setAttribute('button_push_back', 'interactable', true)
+
+    Global.setVectorLines({})
 end
 
 g_degrees_wheeling = 0
 function on_rotation_wheel(player, value, id)
     print('on_rotation_wheel')
+    on_rotation_wheel_ui(value)
+    preview_wheel(nil)
+end
+
+function on_rotation_wheel_ui(value)
     g_degrees_wheeling = value
-    
-    wheel_group(nil, math.rad(g_degrees_wheeling), g_current_orientation)
-    
     Wait.frames(function()
         UI.setAttribute('slider_wheel_rotation', 'value', value)
     end, 1)
 end
 
 g_current_orientation = 'left'
-function on_change_orientation_wheel(player, value, id)
+function on_change_orientation_wheel(player, value, id, ignore_preview)
     print('on_change_orientation_wheel')
+    on_change_orientation_wheel_ui(value)
+    preview_wheel(nil)
+
+end
+
+function on_change_orientation_wheel_ui(value)
     g_current_orientation = from_toggle_number_to_orientation(tonumber(value))
-
-    wheel_group(nil, math.rad(g_degrees_wheeling), g_current_orientation)
-
     Wait.frames(function()
         UI.setAttribute('togglegroup_orientation', 'value', value)
     end, 1)
 end
+
 
 function from_toggle_number_to_orientation(value)
     -- Must follow the order of the toggles on main.xml
@@ -424,7 +446,7 @@ function on_toggle_snapping(player, value, id)
         UI.setValue('toggle_snapping', 'Do not snap bases')
         UI.setAttribute('toggle_snapping', 'text', 'Do not snap bases')
     end
-    
+
     -- Make it consistent for all players
     on_next_frame(function()
         UI.setAttribute('toggle_snapping', 'isOn', g_snap_mode_enabled)
