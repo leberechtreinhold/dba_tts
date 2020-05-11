@@ -282,25 +282,18 @@ function calculate_group(objs, transforms)
         end
     end
 
-    print('Number of cols ' .. tlen(cols))
-
     local front_elements = {}
     local max_col_depth = 0
     for i = 0, col_index-1 do
         local col_depth = 0
-        print('Looking for front element of col ' .. i)
         for obj, col in pairs(cols) do
-            print('Checking if ' .. obj.getName() .. ' is in col')
             if col == i then
                 if front_of[obj] == nil then
-                    print('It is!')
                     front_elements[col] = obj
                 end
                 col_depth = col_depth + get_size(obj.getName())['z'];
-                print('Added depth to column ' .. get_size(obj.getName())['z'])
             end
         end
-        print('this column has depth of ' .. col_depth)
         if col_depth > max_col_depth then
             max_col_depth = col_depth
         end
@@ -345,7 +338,6 @@ function calculate_group(objs, transforms)
         if in_left == nil and in_right == nil then
             -- This shouild only happen if there's only one column
             if col_index > 1 then
-                print('Obj ' .. objA.getName() .. ' does not have anyone left or right ')
                 return nil
             end
         end
@@ -360,7 +352,6 @@ function calculate_group(objs, transforms)
         end
     end
 
-    print('Number of front elements ' .. tlen(front_elements))
     local leftmost = nil
     local rightmost = nil
     for _, obj in pairs(front_elements) do
@@ -372,9 +363,6 @@ function calculate_group(objs, transforms)
         end
     end
 
-    print('Leftmost ' .. leftmost.getName())
-    print('Rightmost ' .. leftmost.getName())
-    print('Group depth ' .. max_col_depth)
     return {
         front_of = front_of,
         behind_of = behind_of,
@@ -446,9 +434,6 @@ g_current_wheel_group = nil
 g_current_wheel_transforms = nil
 function wheel_group(objs, angle, direction)
     -- HC SVNT DRACONES 
-    print('------------------------------------------------------------------')
-    print('Wheeling ' .. math.deg(angle) .. ' to ' .. direction)
-    print('------------------------------------------------------------------')
     if g_current_wheel_group == nil then 
         -- We use many comparisons for the column so we precalculate all the
         -- transforms
@@ -466,7 +451,6 @@ function wheel_group(objs, angle, direction)
         g_current_wheel_transforms = transforms
     end
 
-    print('Got a group')
     local transform_pivot = g_current_wheel_transforms[g_current_wheel_group['leftmost']]
     local pivot_point = transform_pivot['corners']['topleft']
     if direction == 'right' then
@@ -474,19 +458,15 @@ function wheel_group(objs, angle, direction)
         pivot_point = transform_pivot['corners']['topright']
     end
 
-    print('Calculating Furthest element')
     local furthest_element = nil
     local furthest_element_distance = 0
     for obj, transform in pairs(g_current_wheel_transforms) do
         local distance = distance_points_flat_sq(pivot_point, transform['position'])
-        print('Distance in ' .. obj.getName() .. ' is ' .. distance)
         if distance > furthest_element_distance then
             furthest_element_distance = distance
             furthest_element = obj
-            print('Furthest element is ' .. furthest_element.getName())
         end
     end
-    print('Furthest element done')
 
     local front_elements = g_current_wheel_group['front_elements']
     local behind_of = g_current_wheel_group['behind_of']
@@ -513,7 +493,6 @@ function wheel_group(objs, angle, direction)
                 direction == 'left',
                 depth)
         end
-        print('New transform calculated')
     end
     draw_gizmo_wheeling(new_transforms)
 
@@ -523,55 +502,38 @@ function wheel_group(objs, angle, direction)
             g_current_wheel_transforms[furthest_element]['corners']['botleft'],
             new_transforms[furthest_element]['corners']['botleft'])
     else
-        print(g_current_wheel_transforms[furthest_element])
         max_movement_distance = distance_points_flat(
             g_current_wheel_transforms[furthest_element]['corners']['botright'],
             new_transforms[furthest_element]['corners']['botright'])
     end 
-    print('This wheeling will cost ' .. max_movement_distance .. ' in')
     return max_movement_distance
 end
 
 function calculate_future_position_wheel(obj, transform, pivot_point, angle, is_left, depth)
-    print('Obj is ' .. obj.getName())
-    print('Current coners ' .. corners_to_str(transform['corners']))
-
     local effective_angle = positive_angle(angle + math.pi / 2)
     local new_angle = positive_angle(transform['rotation'] + angle)
     if not is_left then
         effective_angle = positive_angle(math.pi/2 - angle)
         new_angle = positive_angle(transform['rotation'] - angle)
     end
-
-    print('NewAngle: ' .. math.deg(new_angle) .. ' Effective angle: ' .. math.deg(effective_angle))
-    print('Pivot ' .. vec_to_str(pivot_point))
-
+    
     local vec = vec_sub(transform['position'], pivot_point)
-    print('vec ' .. vec_to_str(vec))
     local relative_pos = rotate_point_relative(vec, {x=0,y=0,z=0}, -transform['rotation'])
-    print('Relative pos ' .. vec_to_str(relative_pos))
     local border_pos = {x=relative_pos['x'], y=0, z=0}
-    print('border_pos ' .. vec_to_str(border_pos))
     if is_left then
         border_pos = rotate_point_relative(border_pos, {x=0,y=0,z=0}, angle)
     else
         border_pos = rotate_point_relative(border_pos, {x=0,y=0,z=0}, -angle)
     end
-    print('border_pos (rotate)' .. vec_to_str(border_pos))
 
     local displacement_vec = rad_to_vector_xz(effective_angle)
-    print('displacement_vec ' .. vec_to_str(displacement_vec))
     local displacement = vec_mul_escalar(displacement_vec, depth+relative_pos['z'])
-    print('displacement ' .. vec_to_str(displacement))
     local final_relative_pos = vec_add(border_pos, displacement)
-    print('final_relative_pos ' .. vec_to_str(final_relative_pos))
     local new_pos = vec_add(final_relative_pos, pivot_point)
     new_pos = rotate_point(new_pos, pivot_point, transform['rotation'])
-    print('new_pos ' .. vec_to_str(new_pos))
     local size = get_size(obj.getName())
     local new_corners = compute_corners_coords(size, new_angle, new_pos)
     
-    print('New coners ' .. corners_to_str(new_corners))
     return get_transform(new_pos, new_corners, new_angle)
 end
 -- Checks if the object A defined by its transform is inmediately behind

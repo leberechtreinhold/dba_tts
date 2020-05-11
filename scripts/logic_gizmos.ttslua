@@ -354,7 +354,6 @@ end
 function draw_gizmo_wheeling(transforms)
     local strokes = {}
     for obj,transform in pairs(transforms) do
-        print('Calculating gizmo for obj ' .. obj.getName())
         table.insert(strokes, get_strokes_future_position(obj, transform))
     end
     Global.setVectorLines(strokes)

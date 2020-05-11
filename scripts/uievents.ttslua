@@ -371,7 +371,6 @@ end
 function on_make_wheeling(player, value, id)
     g_current_wheel_group = nil
     g_current_wheel_transforms = nil
-    print('on_make_wheeling')
 
     UI.setAttribute('panel_wheel', 'active', false)
     UI.setAttribute('button_move_forward', 'interactable', true)
@@ -395,7 +394,6 @@ end
 
 g_degrees_wheeling = 0
 function on_rotation_wheel(player, value, id)
-    print('on_rotation_wheel')
     on_rotation_wheel_ui(value)
     preview_wheel(nil)
 end
@@ -409,7 +407,6 @@ end
 
 g_current_orientation = 'left'
 function on_change_orientation_wheel(player, value, id, ignore_preview)
-    print('on_change_orientation_wheel')
     on_change_orientation_wheel_ui(value)
     preview_wheel(nil)
 
