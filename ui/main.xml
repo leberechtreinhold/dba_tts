@@ -1,9 +1,9 @@
 <!-- TODO Add more buttons and prettify -->
 
-<Panel id="panel_dba_orders_bg" width="230" height="400" rectAlignment="MiddleRight" color="#00000000" >
+<Panel id="panel_dba_orders_bg" width="230" height="400" rectAlignment="MiddleRight" color="#00000000" raycastTarget="true">
     <Image image="rightside_menu_bg"></Image>
 </Panel>
-<Panel id="panel_dba_orders" width="230" height="400" color="#00000000" rectAlignment="MiddleRight" padding="20 0 20 20">
+<Panel id="panel_dba_orders" width="230" height="400" color="#00000000" rectAlignment="MiddleRight" padding="20 0 20 20" raycastTarget="true">
     <VerticalLayout>
         <Slider id="slider_paces" minValue="0" maxValue="500" wholeNumbers="true" value="200" colors="#00000000|#00000000|#00000000|#00000000" backgroundcolor="#FFFFFFF" onValueChanged="slider_paces_changed"></Slider>
         <Button id="button_move_forward" onClick="move_bases">Move 200 paces</Button>
@@ -18,14 +18,14 @@
 </Panel>
 
 <!-- TODO Prettify -->
-<Panel id="panel_current_movement" color="#dddddd" width="400" height="70" rectAlignment="LowerCenter" offsetXY="0 200" active="false">
+<Panel id="panel_current_movement" color="#dddddd" width="400" height="70" rectAlignment="LowerCenter" offsetXY="0 200" active="false" raycastTarget="true">
     <Text id="text_current_movement_paces" fontSize="24">Current movement: 0 paces</Text>
 </Panel>
 
-<Panel id="panel_dba_pip" width="400" height="150" color="#00000000" outline="#00000000" outlineSize="2" rectAlignment="LowerCenter">
+<Panel id="panel_dba_pip" width="400" height="150" color="#00000000" outline="#00000000" outlineSize="2" rectAlignment="LowerCenter" raycastTarget="true">
     <Image image="pip_counter_bg"></Image>
 </Panel>
-<Panel id="panel_dba_pip_btns" width="400" height="150" color="#00000000" outline="#00000000" rectAlignment="LowerCenter">
+<Panel id="panel_dba_pip_btns" width="400" height="150" color="#00000000" outline="#00000000" rectAlignment="LowerCenter" raycastTarget="true">
     <HorizontalLayout>
         <Text id="text_pips_player_blue" ignoreLayout="true" fontSize="64" position="-135 20" color="#2e82ec">0</Text>
         <Text id="text_pips_player_red" ignoreLayout="true" fontSize="64" position="140 20" color="#ec482e">0</Text>
@@ -38,10 +38,10 @@
     </HorizontalLayout>
 </Panel>
 
-<Panel id="panel_dba_table_selection_bg" width="600" height="500" rectAlignment="MiddleCenter" color="#00000000" active="false">
+<Panel id="panel_dba_table_selection_bg" width="600" height="500" rectAlignment="MiddleCenter" color="#00000000" active="false" raycastTarget="true">
     <Image image="select_table_bg"></Image>
 </Panel>
-<Panel id="panel_dba_table_selection" width="600" height="500" rectAlignment="MiddleCenter" active="false">
+<Panel id="panel_dba_table_selection" width="600" height="500" rectAlignment="MiddleCenter" active="false" raycastTarget="true">
     <TableLayout padding="100 100 80 80" cellSpacing="20">
         <Row preferredHeight="40">
             <Cell columnSpan="6" dontUseTableCellBackground="true">
@@ -93,10 +93,10 @@
     </TableLayout>
 </Panel>
 
-<Panel id="panel_dba_troop_selection_bg" width="600" height="500" rectAlignment="MiddleCenter" active="false">
+<Panel id="panel_dba_troop_selection_bg" width="600" height="500" rectAlignment="MiddleCenter" active="false" raycastTarget="true">
     <Image image="select_army_bg"></Image>
 </Panel>
-<Panel id="panel_dba_troop_selection" width="600" height="500" rectAlignment="MiddleCenter" color="#00000000" active="false">
+<Panel id="panel_dba_troop_selection" width="600" height="500" rectAlignment="MiddleCenter" color="#00000000" active="false" raycastTarget="true">
     <TableLayout padding="60" cellSpacing="20">
         <Row preferredHeight="40">
             <Cell columnSpan="1" dontUseTableCellBackground="true">
@@ -170,7 +170,7 @@
     </TableLayout>
 </Panel>
 
-<Panel id="panel_wheel" color="#dddddd" width="450" height="250" rectAlignment="LowerCenter" active="false">
+<Panel id="panel_wheel" color="#dddddd" width="450" height="250" rectAlignment="LowerCenter" active="false" raycastTarget="true">
     <TableLayout padding="30 30 20 20" cellSpacing="20">
         <Row>
             <Cell columnSpan="2" dontUseTableCellBackground="true">

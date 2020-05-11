@@ -339,6 +339,9 @@ function on_wheel(player, value, id)
         return
     end
 
+    g_degrees_wheeling = 30
+    g_current_orientation = 'left'
+
     -- Make it consistent for all players
     local distance = wheel_group(objs, math.rad(g_degrees_wheeling), g_current_orientation)
 

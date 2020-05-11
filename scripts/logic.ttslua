@@ -326,9 +326,11 @@ function calculate_group(objs, transforms)
             if not skip then
                 if right_of[objA] == objB
                    or is_left_side(transforms[objA], transforms[objB]) then
+                    print(objA.getName() .. ' is to the left of ' .. objB.getName())
                     in_right = objB
                 elseif left_of[objA] == objB
                        or is_right_side(transforms[objA], transforms[objB]) then
+                    print(objA.getName() .. ' is to the right of ' .. objB.getName())
                     in_left = objB
                 else
                     print(objA.getName() .. ' is not connected to ' .. objB.getName())
@@ -444,6 +446,9 @@ g_current_wheel_group = nil
 g_current_wheel_transforms = nil
 function wheel_group(objs, angle, direction)
     -- HC SVNT DRACONES 
+    print('------------------------------------------------------------------')
+    print('Wheeling ' .. math.deg(angle) .. ' to ' .. direction)
+    print('------------------------------------------------------------------')
     local transforms = g_current_wheel_transforms
 
     if g_current_wheel_group == nil then 
@@ -465,10 +470,11 @@ function wheel_group(objs, angle, direction)
 
     print('Got a group')
     local transform_pivot = g_current_wheel_transforms[g_current_wheel_group['leftmost']]
+    local pivot_point = transform_pivot['corners']['topleft']
     if direction == 'right' then
         transform_pivot = g_current_wheel_transforms[g_current_wheel_group['rightmost']]
+        pivot_point = transform_pivot['corners']['topright']
     end
-    local pivot_point = transform_pivot['corners']['topleft']
 
     local front_elements = g_current_wheel_group['front_elements']
     local behind_of = g_current_wheel_group['behind_of']
@@ -503,6 +509,7 @@ end
 
 function calculate_future_position_wheel(obj, transform, pivot_point, angle, is_left, depth)
     print('Obj is ' .. obj.getName())
+    print('Current coners ' .. corners_to_str(transform['corners']))
 
     local effective_angle = positive_angle(angle + math.pi / 2)
     local new_angle = positive_angle(transform['rotation'] + angle)
@@ -520,7 +527,11 @@ function calculate_future_position_wheel(obj, transform, pivot_point, angle, is_
     print('Relative pos ' .. vec_to_str(relative_pos))
     local border_pos = {x=relative_pos['x'], y=0, z=0}
     print('border_pos ' .. vec_to_str(border_pos))
-    border_pos = rotate_point_relative(border_pos, {x=0,y=0,z=0}, angle)
+    if is_left then
+        border_pos = rotate_point_relative(border_pos, {x=0,y=0,z=0}, angle)
+    else
+        border_pos = rotate_point_relative(border_pos, {x=0,y=0,z=0}, -angle)
+    end
     print('border_pos (rotate)' .. vec_to_str(border_pos))
 
     local displacement_vec = rad_to_vector_xz(effective_angle)
@@ -530,9 +541,12 @@ function calculate_future_position_wheel(obj, transform, pivot_point, angle, is_
     local final_relative_pos = vec_add(border_pos, displacement)
     print('final_relative_pos ' .. vec_to_str(final_relative_pos))
     local new_pos = vec_add(final_relative_pos, pivot_point)
+    new_pos = rotate_point(new_pos, pivot_point, transform['rotation'])
     print('new_pos ' .. vec_to_str(new_pos))
     local size = get_size(obj.getName())
     local new_corners = compute_corners_coords(size, new_angle, new_pos)
+    
+    print('New coners ' .. corners_to_str(new_corners))
     return get_transform(new_pos, new_corners, new_angle)
 end
 -- Checks if the object A defined by its transform is inmediately behind
@@ -563,7 +577,6 @@ end
 
 -- Determines if A is to the left of B
 function is_left_side(transformA, transformB)
-    print('checking if it is leftside')
     local angleA = transformA['rotation']
     local angleB = transformB['rotation']
     local diff_angle = math.abs(angleB - angleA)
@@ -571,28 +584,23 @@ function is_left_side(transformA, transformB)
     if diff_angle > g_max_angle_pushback_rad
        and diff_angle < (2*math.pi - g_max_angle_pushback_rad) then
        -- Angle is too different, skip
-        print('angle does not match to be algined')
        return false
     end
 
     local cornersA = transformA['corners']
     local cornersB = transformB['corners']
 
-    print('A topright' .. vec_to_str(cornersA['topright']))
-    print('B topleft' .. vec_to_str(cornersB['topleft']))
     local distance = distance_points_flat_sq(cornersA['topright'], cornersB['topleft'])
     if distance < g_max_corner_distance_snap then
         -- Note: We do not check the bottom because bases may be of different
         -- sizes and we already check the angle
         return true
     end
-    print('The distance between topright adn topleft is too big')
     return false
 end
 
 -- Determines if A is to the right of B
 function is_right_side(transformA, transformB)
-    print('checking if is right side')
     return is_left_side(transformB, transformA)
 end
 
