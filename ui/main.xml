@@ -180,8 +180,8 @@
                 <ToggleGroup id="togglegroup_orientation" 
                     onValueChanged="on_change_orientation_wheel">
                     <HorizontalLayout>
-                        <Toggle>Left</Toggle>
-                        <Toggle>Right</Toggle>
+                        <Toggle id="toggle_wheel_left">Left</Toggle>
+                        <Toggle id="toggle_wheel_right">Right</Toggle>
                     </HorizontalLayout>
                 </ToggleGroup>
             </Cell>

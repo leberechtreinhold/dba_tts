@@ -339,8 +339,8 @@ function on_wheel(player, value, id)
         return
     end
 
-    on_rotation_wheel_ui(0)
-    on_change_orientation_wheel_ui(0)
+    on_rotation_wheel_ui(15)
+    on_change_orientation_wheel_ui('left')
     local distance = preview_wheel(objs)
     if distance < 0 then
         print_error(player.steam_name .. ' is wheeling troops but doesn\'t have a valid group selected')
@@ -407,16 +407,22 @@ end
 
 g_current_orientation = 'left'
 function on_change_orientation_wheel(player, value, id, ignore_preview)
-    on_change_orientation_wheel_ui(value)
+    on_change_orientation_wheel_ui(from_toggle_number_to_orientation(tonumber(value)))
     preview_wheel(nil)
 
 end
 
 function on_change_orientation_wheel_ui(value)
-    g_current_orientation = from_toggle_number_to_orientation(tonumber(value))
-    Wait.frames(function()
-        UI.setAttribute('togglegroup_orientation', 'value', value)
-    end, 1)
+    g_current_orientation = value
+    if value == 'left' then
+        Wait.frames(function()
+            UI.setAttribute('toggle_wheel_left', 'isOn', true)
+        end, 1)
+    else
+        Wait.frames(function()
+            UI.setAttribute('toggle_wheel_right', 'isOn', true)
+        end, 1)
+    end
 end
 
 
