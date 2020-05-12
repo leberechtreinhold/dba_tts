@@ -83,6 +83,10 @@ g_gizmo_zoc_color_player_red = { 0.6, 0.25, 0.15 }
 g_gizmo_zoc_color_player_blue = { 0.15, 0.25, 0.4 }
 g_gizmo_color_command = { 0.5, 0.5, 0.5 }
 
+-- How frequently the main loop runs, in seconds
+-- The main loop redraws selections, movement, etc
+g_seconds_main_loop = 0.5
+
 -- Models use this collider so they are easier to move
 minimal_collider = 'http://cloud-3.steamusercontent.com/ugc/1022823184773057328/6E2E42ECBBD40D7501018921FC5898568FF9D748/'
 

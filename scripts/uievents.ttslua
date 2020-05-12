@@ -294,7 +294,6 @@ function on_load_table(player, value, id)
         print_error('There\'s already a table spawned')
     end
 
-
     UI.setAttribute('panel_dba_table_selection_bg', 'active', false)
     UI.setAttribute('panel_dba_table_selection_bg', 'visibility', '')
     UI.setAttribute('panel_dba_table_selection', 'active', false)
@@ -331,6 +330,7 @@ function on_push_back(player, value, id)
     draw_gizmo_future_movements(player.getSelectedObjects())
 end
 
+g_player_wheeling = nil
 function on_wheel(player, value, id)
     local objs = filter_bases(player.getSelectedObjects())
     local len = tlen(objs)
@@ -346,7 +346,8 @@ function on_wheel(player, value, id)
         print_error(player.steam_name .. ' is wheeling troops but doesn\'t have a valid group selected')
         return
     end
-
+    g_player_wheeling = player.color
+    
     UI.setAttribute('panel_wheel', 'active', true)
     UI.setAttribute('button_move_forward', 'interactable', false)
     UI.setAttribute('button_wheel', 'interactable', false)
@@ -371,6 +372,7 @@ end
 function on_make_wheeling(player, value, id)
     g_current_wheel_group = nil
     g_current_wheel_transforms = nil
+    g_player_wheeling = nil
 
     UI.setAttribute('panel_wheel', 'active', false)
     UI.setAttribute('button_move_forward', 'interactable', true)
@@ -383,6 +385,7 @@ end
 function on_cancel_wheeling(player, value, id)
     g_current_wheel_group = nil
     g_current_wheel_transforms = nil
+    g_player_wheeling = nil
 
     UI.setAttribute('panel_wheel', 'active', false)
     UI.setAttribute('button_move_forward', 'interactable', true)

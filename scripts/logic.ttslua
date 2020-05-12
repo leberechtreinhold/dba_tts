@@ -949,7 +949,27 @@ function get_closest_transform(pos, transforms)
 end
 
 function on_selection_changed(player_color, new_selected_items)
+    if player_color == g_player_wheeling then
+        -- If someone is wheeling then changes its selected, deselect and move on
+        print_info(Player[player_color].steam_name .. ' has canceled the wheeling by deselecting.')
+        on_cancel_wheeling(nil, nil, nil)
+        return
+    end
+    if g_current_wheel_group ~= nil then
+        -- Do not draw anything while someone is wheeling
+        return
+    end
     draw_gizmo_future_movements(new_selected_items)
+end
+
+function on_zoc_changed()
+    if g_current_wheel_group ~= nil then
+        -- While someone is wheeling we are not going to update the UI
+        return
+    end
+    for playercolor, selectedobjs in pairs(g_selected_objects) do
+        draw_gizmo_future_movements(selectedobjs)
+    end
 end
 
 function has_changed_selection_for_player(player_color, selected_objs)
@@ -961,11 +981,10 @@ function has_changed_selection_for_player(player_color, selected_objs)
                 end)
 end
 
--- TODO: Move to a spawned coroutine that does something everyhalf a second
--- or similar to improve perf, and only starts on pickup
 g_selected_objects = {}
 g_last_zoc_value = nil
-function onUpdate()
+
+function check_picked_base()
     if g_picked_base_obj then
         local new_corners = compute_corners_base(g_picked_base_obj)
         local distance = max_distance_between_bases(new_corners, g_picked_base_initial_transform['corners']) * 100
@@ -976,15 +995,29 @@ function onUpdate()
     else
         UI.setAttribute('panel_current_movement', 'active', false)
     end
+end
 
+function check_selection_change()
     local players = Player.getPlayers()
     for _, player in ipairs(players) do
         local selected_objs = player.getSelectedObjects()
-        if has_changed_selection_for_player(player.color, selected_objs) 
-           or g_last_zoc_value ~= g_zoc_enabled then
+        if has_changed_selection_for_player(player.color, selected_objs) then
             on_selection_changed(player.color, selected_objs)
             g_selected_objects[player.color] = selected_objs
-            g_last_zoc_value = g_zoc_enabled
         end
     end
+end
+
+function check_change_zoc()
+    if g_last_zoc_value ~= g_zoc_enabled then
+        -- This affect all players!
+        on_zoc_changed()
+        g_last_zoc_value = g_zoc_enabled
+    end
+end
+
+-- Each second execute this
+function main_loop()
+    check_selection_change()
+    check_change_zoc()
 end
