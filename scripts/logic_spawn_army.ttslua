@@ -45,6 +45,8 @@ function spawn_base(base, pos, y_rotation, is_red_player)
 
     local n = base['n_models']
     if n == 0 then
+        base_obj.setRotation({0, y_rotation, 0})
+        base_obj.auto_raise = false
         return
     end
 
@@ -86,6 +88,7 @@ function spawn_base(base, pos, y_rotation, is_red_player)
         local soldier_obj = spawn_model(model_name, relative_pos, random_rotation, minimal_collider, is_red_player, nil)
         base_obj.addAttachment(soldier_obj)
     end
+
     base_obj.setRotation({0, y_rotation, 0})
     base_obj.auto_raise = false
 end
