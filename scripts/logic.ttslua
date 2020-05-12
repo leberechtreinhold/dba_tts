@@ -432,6 +432,7 @@ end
 -- Returns the movement cost if possible (>=0), -1 if its impossible (invalid group)
 g_current_wheel_group = nil
 g_current_wheel_transforms = nil
+g_current_wheel_newtransforms = nil
 function wheel_group(objs, angle, direction)
     -- HC SVNT DRACONES 
     if g_current_wheel_group == nil then 
@@ -506,7 +507,28 @@ function wheel_group(objs, angle, direction)
             g_current_wheel_transforms[furthest_element]['corners']['botright'],
             new_transforms[furthest_element]['corners']['botright'])
     end 
+    g_current_wheel_newtransforms = new_transforms
     return max_movement_distance
+end
+
+function apply_transform_obj(base_obj, new_transform)
+    base_obj.setPosition(new_transform['position'])
+    base_obj.setRotation(transform_to_rotation_vector(new_transform))
+end
+
+function perform_wheels()
+    local new_transforms = g_current_wheel_newtransforms
+    local front_elements = g_current_wheel_group['front_elements']
+    local behind_of = g_current_wheel_group['behind_of']
+
+    for col, front_element in pairs(front_elements) do
+        local current_element = front_element
+        apply_transform_obj(current_element, new_transforms[current_element])
+        while behind_of[current_element] ~= nil do
+            current_element = behind_of[current_element]
+            apply_transform_obj(current_element, new_transforms[current_element])
+        end
+    end
 end
 
 function calculate_future_position_wheel(obj, transform, pivot_point, angle, is_left, depth)
@@ -536,6 +558,7 @@ function calculate_future_position_wheel(obj, transform, pivot_point, angle, is_
     
     return get_transform(new_pos, new_corners, new_angle)
 end
+
 -- Checks if the object A defined by its transform is inmediately behind
 -- object B, which is also represented by its transform
 function is_behind(transformA, transformB)
