@@ -349,24 +349,4 @@ function spawn_proxy_bases()
         ignore_terrain = 'true',
         n_models = 0
     }, {x=38, y=2, z=-3}, 0, true)
-
-    
-    spawn_base({
-        name = 'A 40x20',
-        base = 'tile_grass_40x20',
-        ignore_terrain = 'true',
-        n_models = 0
-    }, {x=0, y=2, z=0}, 0, true)    
-    spawn_base({
-        name = 'B 40x20',
-        base = 'tile_grass_40x20',
-        ignore_terrain = 'true',
-        n_models = 0
-    }, {x=2, y=2, z=0}, 0, true)
-    spawn_base({
-        name = 'C 40x20',
-        base = 'tile_grass_40x20',
-        ignore_terrain = 'true',
-        n_models = 0
-    }, {x=0, y=2, z=-2}, 0, true)
 end
