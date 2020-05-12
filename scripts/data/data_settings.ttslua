@@ -17,11 +17,11 @@ g_bow_range = 2
 g_art_range = 5
 
 -- Initial distance spawns from the center
-g_spawn_from_center_in = 3
+g_spawn_from_center_in = 4
 
 -- How many bases needed to create another row of bases
 -- on deployment
-g_max_bases_row = 8
+g_max_bases_row = 12
 
 -- Width and Depth (width in the Z azis) of the playing DBA table, in inches
 g_width_table_in = 23.62204724409448818898
