@@ -150,7 +150,7 @@
         </Row>
         <Row preferredHeight="40">
             <Cell columnSpan="6" dontUseTableCellBackground="true">
-                <Text fontSize="20">Aggresiveness: 1, Terrain: Arable</Text>
+                <Text id="text_ag_terr" fontSize="20">Aggresiveness: 2, Terrain: Arable</Text>
             </Cell>
         </Row>
         <Row>
