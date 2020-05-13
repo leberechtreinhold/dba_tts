@@ -1,9 +1,9 @@
 <!-- TODO Add more buttons and prettify -->
 
 <Panel id="panel_dba_orders_bg" width="230" height="400" rectAlignment="MiddleRight" color="#00000000" raycastTarget="true">
-    <Image image="rightside_menu_bg"></Image>
+    <Image image="rightside_menu_bg_v2"></Image>
 </Panel>
-<Panel id="panel_dba_orders" width="230" height="400" color="#00000000" rectAlignment="MiddleRight" padding="20 0 20 20" raycastTarget="true">
+<Panel id="panel_dba_orders" width="230" height="400" color="#00000000" rectAlignment="MiddleRight" padding="30 0 30 30" raycastTarget="true">
     <VerticalLayout>
         <Slider id="slider_paces" minValue="0" maxValue="500" wholeNumbers="true" value="200" colors="#00000000|#00000000|#00000000|#00000000" backgroundcolor="#FFFFFFF" onValueChanged="slider_paces_changed"></Slider>
         <Button id="button_move_forward" onClick="move_bases">Move 200 paces</Button>
@@ -23,7 +23,7 @@
 </Panel>
 
 <Panel id="panel_dba_pip" width="400" height="150" color="#00000000" outline="#00000000" outlineSize="2" rectAlignment="LowerCenter" raycastTarget="true">
-    <Image image="pip_counter_bg"></Image>
+    <Image image="pip_counter_bg_v2"></Image>
 </Panel>
 <Panel id="panel_dba_pip_btns" width="400" height="150" color="#00000000" outline="#00000000" rectAlignment="LowerCenter" raycastTarget="true">
     <HorizontalLayout>
@@ -38,11 +38,11 @@
     </HorizontalLayout>
 </Panel>
 
-<Panel id="panel_dba_table_selection_bg" width="600" height="500" rectAlignment="MiddleCenter" color="#00000000" active="false" raycastTarget="true">
-    <Image image="select_table_bg"></Image>
+<Panel id="panel_dba_table_selection_bg" width="600" height="500" rectAlignment="MiddleCenter" active="false" raycastTarget="true">
+    <Image image="select_table_bg_v2"></Image>
 </Panel>
 <Panel id="panel_dba_table_selection" width="600" height="500" rectAlignment="MiddleCenter" active="false" raycastTarget="true">
-    <TableLayout padding="100 100 80 80" cellSpacing="20">
+    <TableLayout padding="100 100 120 80" cellSpacing="20">
         <Row preferredHeight="40">
             <Cell columnSpan="6" dontUseTableCellBackground="true">
                 <Text fontSize="20">Select the background for the table:</Text>
@@ -79,6 +79,19 @@
                 </ToggleGroup>
             </Cell>
         </Row>
+        <!--<Row>
+            <Cell columnSpan="2" dontUseTableCellBackground="true">
+                <Text fontSize="20">Table size:</Text>
+            </Cell>
+            <Cell columnSpan="4" dontUseTableCellBackground="true">
+                <ToggleGroup id="togglegroup_table_type" onValueChanged="on_toggle_table_type">
+                    <HorizontalLayout>
+                        <Toggle fontSize="16">Small, 60x60</Toggle>
+                        <Toggle fontSize="16">Large, 80x80</Toggle>
+                    </HorizontalLayout>
+                </ToggleGroup>
+            </Cell>
+        </Row>-->
         <Row preferredHeight="40">
             <Cell columnSpan="2" dontUseTableCellBackground="true">
                 <Button columnSpan="2" fontSize="20" onClick="on_cancel_load_table">Cancel</Button>
@@ -93,11 +106,11 @@
     </TableLayout>
 </Panel>
 
-<Panel id="panel_dba_troop_selection_bg" width="600" height="500" rectAlignment="MiddleCenter" active="false" raycastTarget="true">
-    <Image image="select_army_bg"></Image>
+<Panel id="panel_dba_troop_selection_bg" width="800" height="660" rectAlignment="MiddleCenter" active="false" raycastTarget="true">
+    <Image image="select_army_bg_v2"></Image>
 </Panel>
-<Panel id="panel_dba_troop_selection" width="600" height="500" rectAlignment="MiddleCenter" color="#00000000" active="false" raycastTarget="true">
-    <TableLayout padding="60" cellSpacing="20">
+<Panel id="panel_dba_troop_selection" width="800" height="650" rectAlignment="MiddleCenter" color="#00000000" active="false" raycastTarget="true">
+    <TableLayout padding="70 70 110 70 " cellSpacing="20">
         <Row preferredHeight="40">
             <Cell columnSpan="1" dontUseTableCellBackground="true">
                 <Text fontSize="20">Book:</Text>
@@ -116,7 +129,7 @@
                 <Text fontSize="20">Army:</Text>
             </Cell>
             <Cell columnSpan="5" dontUseTableCellBackground="true">
-                <Dropdown id="dropdown_army" onValueChanged="on_army_selected" fontSize="20">
+                <Dropdown id="dropdown_army" onValueChanged="on_army_selected" fontSize="16" scrollSensitivity="20">
                     <Option selected="true">Army 1</Option>
                     <Option>Army 2</Option>
                     <Option>Army 3</Option>
@@ -135,10 +148,15 @@
                 </Dropdown>
             </Cell>
         </Row>
+        <Row preferredHeight="40">
+            <Cell columnSpan="6" dontUseTableCellBackground="true">
+                <Text fontSize="20">Aggresiveness: 1, Terrain: Arable</Text>
+            </Cell>
+        </Row>
         <Row>
             <Cell columnSpan="6" dontUseTableCellBackground="true">
                 <VerticalScrollView color="#00000000" verticalScrollbarVisibility="AutoHide">
-                    <Text id="text_authors" alignment="UpperLeft" fontSize="18" contentSizeFitter="vertical">
+                    <Text id="text_authors" alignment="UpperLeft" fontSize="16" contentSizeFitter="vertical">
                       The authors of the models are:
                       - Empire Swordsmen by Veer
                       - Whatever by Example
@@ -170,8 +188,11 @@
     </TableLayout>
 </Panel>
 
-<Panel id="panel_wheel" color="#dddddd" width="450" height="250" rectAlignment="LowerCenter" active="false" raycastTarget="true">
-    <TableLayout padding="30 30 20 20" cellSpacing="20">
+<Panel id="panel_wheel_bg" width="450" height="250" rectAlignment="LowerCenter" active="false" raycastTarget="true" >
+    <Image image="wheel_panel_bg"></Image>
+</Panel>
+<Panel id="panel_wheel" width="450" height="250" color="#00000000" rectAlignment="LowerCenter" active="false" raycastTarget="true" >
+    <TableLayout padding="30 30 30 30" cellSpacing="20">
         <Row>
             <Cell columnSpan="2" dontUseTableCellBackground="true">
                 <Text fontSize="16">Orientation:</Text>

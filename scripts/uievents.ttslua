@@ -348,6 +348,7 @@ function on_wheel(player, value, id)
     end
     g_player_wheeling = player.color
 
+    UI.setAttribute('panel_wheel_bg', 'active', true)
     UI.setAttribute('panel_wheel', 'active', true)
     UI.setAttribute('button_move_forward', 'interactable', false)
     UI.setAttribute('button_wheel', 'interactable', false)
@@ -376,6 +377,7 @@ function on_make_wheeling(player, value, id)
     g_current_wheel_newtransforms = nil
     g_player_wheeling = nil
 
+    UI.setAttribute('panel_wheel_bg', 'active', false)
     UI.setAttribute('panel_wheel', 'active', false)
     UI.setAttribute('button_move_forward', 'interactable', true)
     UI.setAttribute('button_wheel', 'interactable', true)
@@ -390,6 +392,7 @@ function on_cancel_wheeling(player, value, id)
     g_current_wheel_newtransforms = nil
     g_player_wheeling = nil
 
+    UI.setAttribute('panel_wheel_bg', 'active', false)
     UI.setAttribute('panel_wheel', 'active', false)
     UI.setAttribute('button_move_forward', 'interactable', true)
     UI.setAttribute('button_wheel', 'interactable', true)
