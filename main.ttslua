@@ -26,9 +26,21 @@ function onload()
     print_info('----------------------------------------------')
     
     Wait.time(main_loop, g_seconds_main_loop, -1)
+    reset_state()
     spawn_proxy_bases()
 end
 
-function update()    
+function update()
     check_picked_base()
+end
+
+function onChat(message, player)
+    if message == '!dba_reset' then
+        print_important('Resetting the state of the board, check the chat')
+        reset_state()
+    end
+
+    if message == '!dba_print_state' then
+        print_state()
+    end
 end

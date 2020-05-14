@@ -437,7 +437,8 @@ end
 
 function draw_deployment_lines()
     local strokes = {}
-    local angle = normalize_angle(math.rad(g_current_table.getRotation()['y']))
+    local table = getObjectFromGUID(g_current_table)
+    local angle = normalize_angle(math.rad(table.getRotation()['y']))
     table.insert(strokes, 
         get_strokes_deployment('topright', g_gizmo_color_player_blue, angle))
     table.insert(strokes, 
@@ -451,11 +452,14 @@ function draw_deployment_lines()
     table.insert(strokes, 
         get_strokes_deployment_between('bot', g_gizmo_color_player_red, angle))
 
-    g_current_table.setVectorLines(strokes)
+        table.setVectorLines(strokes)
 end
 
 function remove_deployment_lines()
-    g_current_table.setVectorLines({})
+    local table = getObjectFromGUID(g_current_table)
+    if table ~= nil then
+        table.setVectorLines({})
+    end
 end
 
 function get_strokes_arrow_position(base_obj, transform)

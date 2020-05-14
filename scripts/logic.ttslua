@@ -1044,3 +1044,130 @@ function main_loop()
     check_selection_change()
     check_change_zoc()
 end
+
+
+-- This function ensures that the internal state of the global vars is
+-- consistent with the table.
+-- Sadly all bases get assigned red_player because we don't have that info.
+-- The tile is also given as an aproximation given the current size.
+function reset_state()
+    g_selected_objects = {}
+    g_picked_base_obj = nil
+    g_picked_base_initial_transform = nil
+    g_last_zoc_value = nil
+    g_current_wheel_group = nil
+    g_current_wheel_transforms = nil
+    g_current_wheel_newtransforms = nil
+
+    local all_objs = getAllObjects()
+
+    g_bases = {}
+    local bases = filter_bases(all_objs)
+    for _,base in ipairs(bases) do
+        local new_tile = get_closest_tile(base)
+        if new_tile == nil then
+            print_info('There\'s no appropiate base for ' .. base.getName())
+        else
+            print_info('Setting ' .. base.getName() .. ' as base')
+            g_bases[base.getName()] = {
+                tile = new_tile,
+                is_red_player = true
+            }
+        end
+    end
+
+    g_current_table = nil
+    for _,obj in ipairs(all_objs) do
+        if is_table(obj) then
+            g_current_table = obj.getGUID()
+            print_info('Setting as current table = ' .. g_current_table)
+        end
+    end
+end
+
+function get_closest_tile(base_obj)
+    local bounds = base_obj.getBoundsNormalized()
+    if bounds == nil or bounds['size'] == nil then
+        -- If it has no size its not a proper base and we ignore it
+        return false
+    end
+
+    local size = bounds['size']
+    if math.abs(size['x'] - g_base_width_inches) > 0.01 then
+        -- Too wide or too small, ignore
+        return true
+    end
+    
+    if math.abs(size['z'] - from_mm_to_in(15)) < 0.01 then
+        return 'tile_grass_40x15'
+    end
+    
+    if math.abs(size['z'] - from_mm_to_in(20)) < 0.01 then
+        return 'tile_grass_40x20'
+    end
+    
+    if math.abs(size['z'] - from_mm_to_in(30)) < 0.01 then
+        return 'tile_grass_40x30'
+    end
+    
+    if math.abs(size['z'] - from_mm_to_in(40)) < 0.01 then
+        return 'tile_grass_40x40'
+    end
+
+    if math.abs(size['z'] - from_mm_to_in(60)) < 0.01 then
+        return 'tile_grass_40x60'
+    end
+    
+    if math.abs(size['z'] - from_mm_to_in(80)) < 0.01 then
+        return 'tile_grass_40x80'
+    end
+
+    return nil
+end
+
+function is_table(obj)
+    -- There's nothing identifying the table itself, so we use heuristics
+    local pos = obj.getPosition()
+    if math.abs(pos['x']) > 5 or math.abs(pos['z']) > 5 then
+        -- Too far to be a table unless they messed up royally
+        return false
+    end
+    local bounds = obj.getBoundsNormalized()
+    if bounds == nil or bounds['size'] == nil then
+        -- If it has no size its not a table for sure
+        return false
+    end
+
+    local size = bounds['size']
+    if math.abs(size['x'] - g_width_table_in) < 1 or math.abs(size['z'] - g_depth_table_in) < 1 then
+        -- If it's essnetially the same size, it is the table unless they have summoned something weird
+        return true
+    end
+
+    return false
+end
+
+function print_state()
+    if g_current_table == nil then
+        print_info('There\'s no current table.')
+    else
+        local obj = getObjectFromGUID(g_current_table)
+        if obj == nil then
+            print_error('There\'s a table stored with GUID ' .. g_current_table 
+                .. ' but there\'s no object. Please do a !dba_reset.')
+        else
+            print_info('Current table GUID: ' .. g_current_table)
+        end
+    end
+
+    if g_bases == nil then
+        print_error('There are no bases registered. Please do a !dba_reset.')
+    else
+        local str = 'The current registered bases are: '
+        for base_name,_ in pairs(g_bases) do 
+            str = str .. base_name .. ', '
+        end
+        print_info(str)
+    end
+
+end

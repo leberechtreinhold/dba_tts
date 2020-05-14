@@ -213,7 +213,10 @@ function spawn_table_obj(model_url, height_correction, texture_array_urls)
         rotation = { x = 0, y = 0, z = 0},
         scale = { x = 1, y = 1, z = 1},
         sound = false,
-        snap_to_grid = false
+        snap_to_grid = false,
+        callback_function = function(obj)
+            g_current_table = obj.getGUID()
+        end
     })
     local tex_index = math.random(1, #texture_array_urls)
     obj.setCustomObject({
@@ -225,17 +228,20 @@ function spawn_table_obj(model_url, height_correction, texture_array_urls)
         specular_intensity = 0,
         freshnel_strength = 0
     })
-    g_current_table = obj
     print_important('Table spawned, you can now put terrain on top, then use Right Click > Fix terrain.')
 
-    obj.addContextMenuItem('Rotate', function()
-        local newrotation = obj.getRotation()
-        newrotation['y'] = newrotation['y'] + 90
-        obj.setRotation(newrotation)
+    obj.addContextMenuItem('Rotate 90º', function()
+        rotate_table()
     end)
     obj.addContextMenuItem('Fix terrain and lock', function()
         fix_terrain_and_lock()
     end)
+end
+
+function rotate_table()
+    local newrotation = g_current_table.getRotation()
+    newrotation['y'] = newrotation['y'] + 90
+    g_current_table.setRotation(newrotation)
 end
 
 function fix_terrain_and_lock()
@@ -248,8 +254,9 @@ function fix_terrain_and_lock()
         end
     end
     
+    local table = getObjectFromGUID(g_current_table)
     local max_distance_from_table_sq = (g_width_table_in/2)^2 + (g_depth_table_in / 2)^2
-    local pos_table = g_current_table.getPosition()
+    local pos_table = table.getPosition()
 
     for _,terrain in ipairs(terrains) do
         local terrain_pos = terrain.getPosition()
@@ -257,14 +264,14 @@ function fix_terrain_and_lock()
         if distance <= max_distance_from_table_sq
             and pos_table['y'] < terrain_pos['y'] then
 
-            g_current_table.addAttachment(terrain)
+                table.addAttachment(terrain)
             print_info('Attaching ' .. terrain.getName())
         end
     end
     Wait.frames(function()
-        g_current_table.setRotation({ x = 0, y = 0, z = 0})
-        g_current_table.setPosition({ x = 0, y = g_base_height_tabletop, z = 0})
-        g_current_table.setLock(true)
+        table.setRotation({ x = 0, y = 0, z = 0})
+        table.setPosition({ x = 0, y = g_base_height_tabletop, z = 0})
+        table.setLock(true)
         print_important('Table is now locked')
     end, 1)
 end
@@ -319,9 +326,11 @@ end
 
 function onObjectDestroy(dying_object)
     local name = dying_object.getName()
-    if str_starts_with(name, 'table_dba') then
+    if is_table(dying_object) then
+        print_info('Table removed from play')
         g_current_table = nil
     elseif g_bases[name] ~= nil then
+        print_info('Base ' .. name .. ' removed from play')
         g_bases[name] = nil
     end
 end
