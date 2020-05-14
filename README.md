@@ -1,7 +1,5 @@
-DBA TTS
-=======
-
-An adaptation of De Bellis Antiquitatis 2 for Tabletop Simulator. 
+De Bellis Antiquitatis 2.2 for Tabletop Simulator
+=================================================
 
 Features: Setup
 ---------------
