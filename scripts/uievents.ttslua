@@ -160,10 +160,18 @@ function on_army_selected(player, value, id)
     local army = armies[g_book_selected][g_army_selected]
 
     update_authors_text(army)
-    
-    UI.setValue('text_ag_terr', 
-        'Aggresiveness: ' .. army['data']['aggresiveness']
-        .. ', Terrain: ' .. army['data']['terrain'])
+
+    if str_has_substr(g_army_selected, "(Plain)") then
+        UI.setValue('text_ag_terr', 
+            'Aggresiveness: ' .. army['data']['aggresiveness']
+            .. ', Terrain: ' .. army['data']['terrain']
+            .. ', Flat bases')
+    else
+        UI.setValue('text_ag_terr', 
+            'Aggresiveness: ' .. army['data']['aggresiveness']
+            .. ', Terrain: ' .. army['data']['terrain']
+            .. ', Bases with models')
+    end
 end
 
 g_color_spawn_army_selected = 'Red'
