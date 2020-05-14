@@ -128,7 +128,7 @@ function spawn_army(army_name, army, is_red_player)
             local row_z_pos = z_pos * (1 + row)
 
             local location = {
-                x = 0 + column * g_base_width_inches - width_army / 2,
+                x = g_offset_deployment_x + column * g_base_width_inches - width_army / 2,
                 y = g_base_height_tabletop + g_table_thickness + g_base_height_inches / 2,
                 z = row_z_pos - z_pos_modifier
             }
@@ -333,23 +333,49 @@ function spawn_proxy_bases()
         base = 'tile_grass_40x15',
         ignore_terrain = 'true',
         n_models = 0
-    }, {x=38, y=2, z=3}, 0, true)
+    }, {x=-42, y=2, z=-11}, 0, true)
     spawn_base({
         name = 'Proxy 40x20',
         base = 'tile_grass_40x20',
         ignore_terrain = 'true',
         n_models = 0
-    }, {x=38, y=2, z=1}, 0, true)
+    }, {x=-42, y=2, z=-12}, 0, true)
     spawn_base({
         name = 'Proxy 40x30',
         base = 'tile_grass_40x30',
         ignore_terrain = 'true',
         n_models = 0
-    }, {x=38, y=2, z=-1}, 0, true)
+    }, {x=-42, y=2, z=-13.5}, 0, true)
     spawn_base({
         name = 'Proxy 40x40',
         base = 'tile_grass_40x40',
         ignore_terrain = 'true',
         n_models = 0
-    }, {x=38, y=2, z=-3}, 0, true)
+    }, {x=-42, y=2, z=-15.5}, 0, true)
+
+    
+    spawn_base({
+        name = 'Proxy 40x15',
+        base = 'tile_grass_40x15',
+        ignore_terrain = 'true',
+        n_models = 0
+    }, {x=-42, y=2, z=11}, 180, false)
+    spawn_base({
+        name = 'Proxy 40x20',
+        base = 'tile_grass_40x20',
+        ignore_terrain = 'true',
+        n_models = 0
+    }, {x=-42, y=2, z=12}, 180, false)
+    spawn_base({
+        name = 'Proxy 40x30',
+        base = 'tile_grass_40x30',
+        ignore_terrain = 'true',
+        n_models = 0
+    }, {x=-42, y=2, z=13.5}, 180, false)
+    spawn_base({
+        name = 'Proxy 40x40',
+        base = 'tile_grass_40x40',
+        ignore_terrain = 'true',
+        n_models = 0
+    }, {x=-42, y=2, z=15.5}, 180, false)
 end

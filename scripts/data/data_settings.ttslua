@@ -19,6 +19,10 @@ g_art_range = 5
 -- Initial distance spawns from the center
 g_spawn_from_center_in = 4
 
+-- Distance from the center on the x axis, a general offset to deploy on the
+-- side of the table
+g_offset_deployment_x = 26
+
 -- How many bases needed to create another row of bases
 -- on deployment
 g_max_bases_row = 12
