@@ -22,7 +22,7 @@
 
 function onload()
     print_info('----------------------------------------------')
-    print_info('--------------- DBA 2.2 v1.1.0 ---------------')
+    print_info('                       DBA 2.2 v1.1.0 ')
     print_info('----------------------------------------------')
     
     Wait.time(main_loop, g_seconds_main_loop, -1)
