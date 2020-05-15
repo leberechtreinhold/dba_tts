@@ -10,7 +10,8 @@
         "Wait",
         "printToAll",
         "broadcastToAll",
-        "getAllObjects"
+        "getAllObjects",
+        "getObjectFromGUID"
     ],
     "Lua.diagnostics.disable": [
         "lowercase-global"

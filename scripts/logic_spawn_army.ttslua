@@ -216,6 +216,7 @@ function spawn_table_obj(model_url, height_correction, texture_array_urls)
         snap_to_grid = false,
         callback_function = function(obj)
             g_current_table = obj.getGUID()
+            print_info('Table is set to ' .. g_current_table)
         end
     })
     local tex_index = math.random(1, #texture_array_urls)
@@ -239,10 +240,10 @@ function spawn_table_obj(model_url, height_correction, texture_array_urls)
 end
 
 function rotate_table()
-    local table = getObjectFromGUID(g_current_table)
-    local newrotation = table.getRotation()
+    local gametable = getObjectFromGUID(g_current_table)
+    local newrotation = gametable.getRotation()
     newrotation['y'] = newrotation['y'] + 90
-    table.setRotation(newrotation)
+    gametable.setRotation(newrotation)
 end
 
 function fix_terrain_and_lock()
@@ -255,24 +256,26 @@ function fix_terrain_and_lock()
         end
     end
 
-    local table = getObjectFromGUID(g_current_table)
+    local gametable = getObjectFromGUID(g_current_table)
     local max_distance_from_table_sq = (g_width_table_in/2)^2 + (g_depth_table_in / 2)^2
-    local pos_table = table.getPosition()
+    local pos_table = gametable.getPosition()
 
+    gametable.setLock(false)
     for _,terrain in ipairs(terrains) do
         local terrain_pos = terrain.getPosition()
         local distance = distance_points_flat_sq(pos_table, terrain_pos)
         if distance <= max_distance_from_table_sq
             and pos_table['y'] < terrain_pos['y'] then
 
-                table.addAttachment(terrain)
+            gametable.addAttachment(terrain)
             print_info('Attaching ' .. terrain.getName())
         end
     end
     Wait.frames(function()
-        table.setRotation({ x = 0, y = 0, z = 0})
-        table.setPosition({ x = 0, y = g_base_height_tabletop, z = 0})
-        table.setLock(true)
+        g_current_table = gametable.getGUID()
+        gametable.setRotation({ x = 0, y = 0, z = 0})
+        gametable.setPosition({ x = 0, y = g_base_height_tabletop, z = 0})
+        gametable.setLock(true)
         print_important('Table is now locked')
     end, 1)
 end
