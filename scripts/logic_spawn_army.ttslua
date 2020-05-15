@@ -139,7 +139,7 @@ function spawn_army(army_name, army, is_red_player)
 
     print_important('Army deployed: ' .. army_name .. ', see chat for options')
     print_info('List: ' .. army['data']['list'])
-    print_info('Agressiveness: ' .. army['data']['aggresiveness'] 
+    print_info('Agressiveness: ' .. army['data']['aggresiveness']
         .. ' Terrain: ' .. army['data']['terrain'])
 
 end
@@ -239,9 +239,10 @@ function spawn_table_obj(model_url, height_correction, texture_array_urls)
 end
 
 function rotate_table()
-    local newrotation = g_current_table.getRotation()
+    local table = getObjectFromGUID(g_current_table)
+    local newrotation = table.getRotation()
     newrotation['y'] = newrotation['y'] + 90
-    g_current_table.setRotation(newrotation)
+    table.setRotation(newrotation)
 end
 
 function fix_terrain_and_lock()
@@ -253,7 +254,7 @@ function fix_terrain_and_lock()
             table.insert(terrains, obj)
         end
     end
-    
+
     local table = getObjectFromGUID(g_current_table)
     local max_distance_from_table_sq = (g_width_table_in/2)^2 + (g_depth_table_in / 2)^2
     local pos_table = table.getPosition()
@@ -362,7 +363,7 @@ function spawn_proxy_bases()
         n_models = 0
     }, {x=-42, y=2, z=-15.5}, 0, true)
 
-    
+
     spawn_base({
         name = 'Proxy 40x15',
         base = 'tile_grass_40x15',
