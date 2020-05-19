@@ -10930,7 +10930,7 @@ armies["Book I"]["I/51 Neo-Assyrian & Later Sargonid 687-546BC (Plain)"] = {
     }
 }
 
-armies["Book I"]["I/52a Early Hoplite Greek Argive 680-450BC"] = {
+armies["Book I"]["I/52a Early Hoplite Greek Argive 680-450BC (Plain)"] = {
     data = {
         aggresiveness = 2,
         terrain = 'Arable',
@@ -11018,7 +11018,7 @@ armies["Book I"]["I/52a Early Hoplite Greek Argive 680-450BC"] = {
     }
 }
 
-armies["Book I"]["I/52b Early Hoplite Greek Spartan 668-450BC"] = {
+armies["Book I"]["I/52b Early Hoplite Greek Spartan 668-450BC (Plain)"] = {
     data = {
         aggresiveness = 2,
         terrain = 'Arable',
@@ -11112,7 +11112,7 @@ armies["Book I"]["I/52b Early Hoplite Greek Spartan 668-450BC"] = {
     }
 }
 
-armies["Book I"]["I/52c Early Hoplite Greek Thessalian 668-450BC"] = {
+armies["Book I"]["I/52c Early Hoplite Greek Thessalian 668-450BC (Plain)"] = {
     data = {
         aggresiveness = 2,
         terrain = 'Arable',
@@ -11207,7 +11207,7 @@ armies["Book I"]["I/52c Early Hoplite Greek Thessalian 668-450BC"] = {
     }
 }
 
-armies["Book I"]["I/52d Early Hoplite Greek Theban 668-450BC"] = {
+armies["Book I"]["I/52d Early Hoplite Greek Theban 668-450BC (Plain)"] = {
     data = {
         aggresiveness = 2,
         terrain = 'Arable',
@@ -11295,7 +11295,7 @@ armies["Book I"]["I/52d Early Hoplite Greek Theban 668-450BC"] = {
     }
 }
 
-armies["Book I"]["I/52e Early Hoplite Greek Early Athenian 668-541BC"] = {
+armies["Book I"]["I/52e Early Hoplite Greek Early Athenian 668-541BC (Plain)"] = {
     data = {
         aggresiveness = 2,
         terrain = 'Arable',
@@ -11383,7 +11383,7 @@ armies["Book I"]["I/52e Early Hoplite Greek Early Athenian 668-541BC"] = {
     }
 }
 
-armies["Book I"]["I/52f Early Hoplite Greek Later Athenian 540-450BC"] = {
+armies["Book I"]["I/52f Early Hoplite Greek Later Athenian 540-450BC (Plain)"] = {
     data = {
         aggresiveness = 2,
         terrain = 'Arable',
@@ -11495,7 +11495,7 @@ armies["Book I"]["I/52f Early Hoplite Greek Later Athenian 540-450BC"] = {
     }
 }
 
-armies["Book I"]["I/52g Early Hoplite Greek Asiatic 668-450BC"] = {
+armies["Book I"]["I/52g Early Hoplite Greek Asiatic 668-450BC (Plain)"] = {
     data = {
         aggresiveness = 2,
         terrain = 'Litoral',
@@ -11583,7 +11583,7 @@ armies["Book I"]["I/52g Early Hoplite Greek Asiatic 668-450BC"] = {
     }
 }
 
-armies["Book I"]["I/52h Early Hoplite Greek Phocian & Aitolian 668-450BC"] = {
+armies["Book I"]["I/52h Early Hoplite Greek Phocian & Aitolian 668-450BC (Plain)"] = {
     data = {
         aggresiveness = 2,
         terrain = 'Hilly',
@@ -11671,7 +11671,7 @@ armies["Book I"]["I/52h Early Hoplite Greek Phocian & Aitolian 668-450BC"] = {
     }
 }
 
-armies["Book I"]["I/52i Early Hoplite Greek Italiot & Sicilian 668-450BC"] = {
+armies["Book I"]["I/52i Early Hoplite Greek Italiot & Sicilian 668-450BC (Plain)"] = {
     data = {
         aggresiveness = 2,
         terrain = 'Litoral',
@@ -11765,7 +11765,7 @@ armies["Book I"]["I/52i Early Hoplite Greek Italiot & Sicilian 668-450BC"] = {
     }
 }
 
-armies["Book I"]["I/53 Saitic Egyptian 664-335BC"] = {
+armies["Book I"]["I/53 Saitic Egyptian 664-335BC (Plain)"] = {
     data = {
         aggresiveness = 1,
         terrain = 'Litoral',
@@ -11860,7 +11860,7 @@ armies["Book I"]["I/53 Saitic Egyptian 664-335BC"] = {
     }
 }
 
-armies["Book I"]["I/54 Early Macedonian 650-355BC"] = {
+armies["Book I"]["I/54 Early Macedonian 650-355BC (Plain)"] = {
     data = {
         aggresiveness = 0,
         terrain = 'Arable',
@@ -11960,7 +11960,7 @@ armies["Book I"]["I/54 Early Macedonian 650-355BC"] = {
     }
 }
 
-armies["Book I"]["I/55a Early Etruscan 650-600BC"] = {
+armies["Book I"]["I/55a Early Etruscan 650-600BC (Plain)"] = {
     data = {
         aggresiveness = 2,
         terrain = 'Arable',
@@ -12054,7 +12054,7 @@ armies["Book I"]["I/55a Early Etruscan 650-600BC"] = {
     }
 }
 
-armies["Book I"]["I/55b Roman 650-578BC"] = {
+armies["Book I"]["I/55b Roman 650-578BC (Plain)"] = {
     data = {
         aggresiveness = 2,
         terrain = 'Arable',
@@ -12142,7 +12142,7 @@ armies["Book I"]["I/55b Roman 650-578BC"] = {
     }
 }
 
-armies["Book I"]["I/55c Latin 650-401BC"] = {
+armies["Book I"]["I/55c Latin 650-401BC (Plain)"] = {
     data = {
         aggresiveness = 2,
         terrain = 'Arable',
@@ -12230,7 +12230,7 @@ armies["Book I"]["I/55c Latin 650-401BC"] = {
     }
 }
 
-armies["Book I"]["I/55d Latin 400-338BC"] = {
+armies["Book I"]["I/55d Latin 400-338BC (Plain)"] = {
     data = {
         aggresiveness = 2,
         terrain = 'Arable',
@@ -12318,7 +12318,7 @@ armies["Book I"]["I/55d Latin 400-338BC"] = {
     }
 }
 
-armies["Book I"]["I/55e Umbrian 650-290BC"] = {
+armies["Book I"]["I/55e Umbrian 650-290BC (Plain)"] = {
     data = {
         aggresiveness = 2,
         terrain = 'Arable',
@@ -12406,7 +12406,7 @@ armies["Book I"]["I/55e Umbrian 650-290BC"] = {
     }
 }
 
-armies["Book I"]["I/56a Kyrenean Greek 630-314BC"] = {
+armies["Book I"]["I/56a Kyrenean Greek 630-314BC (Plain)"] = {
     data = {
         aggresiveness = 0,
         terrain = 'Litoral',
@@ -12520,7 +12520,7 @@ armies["Book I"]["I/56a Kyrenean Greek 630-314BC"] = {
     }
 }
 
-armies["Book I"]["I/56b Kyrenean Greek 313-74BC"] = {
+armies["Book I"]["I/56b Kyrenean Greek 313-74BC (Plain)"] = {
     data = {
         aggresiveness = 0,
         terrain = 'Litoral',
@@ -12620,7 +12620,7 @@ armies["Book I"]["I/56b Kyrenean Greek 313-74BC"] = {
     }
 }
 
-armies["Book I"]["I/57a Etruscan League 600-400BC"] = {
+armies["Book I"]["I/57a Etruscan League 600-400BC (Plain)"] = {
     data = {
         aggresiveness = 3,
         terrain = 'Arable',
@@ -12720,7 +12720,7 @@ armies["Book I"]["I/57a Etruscan League 600-400BC"] = {
     }
 }
 
-armies["Book I"]["I/57b Etruscan League 399-280BC"] = {
+armies["Book I"]["I/57b Etruscan League 399-280BC (Plain)"] = {
     data = {
         aggresiveness = 3,
         terrain = 'Arable',
@@ -12814,7 +12814,7 @@ armies["Book I"]["I/57b Etruscan League 399-280BC"] = {
     }
 }
 
-armies["Book I"]["I/58 Meroitic Kushite 592-350BC"] = {
+armies["Book I"]["I/58 Meroitic Kushite 592-350BC (Plain)"] = {
     data = {
         aggresiveness = 1,
         terrain = 'Dry',
@@ -12916,7 +12916,7 @@ armies["Book I"]["I/58 Meroitic Kushite 592-350BC"] = {
     }
 }
 
-armies["Book I"]["I/59 Tullian Roman 578-400BC"] = {
+armies["Book I"]["I/59 Tullian Roman 578-400BC (Plain)"] = {
     data = {
         aggresiveness = 3,
         terrain = 'Arable',
@@ -13017,7 +13017,7 @@ armies["Book I"]["I/59 Tullian Roman 578-400BC"] = {
     }
 }
 
-armies["Book I"]["I/60a Early Achaemenid Persian 550-466BC"] = {
+armies["Book I"]["I/60a Early Achaemenid Persian 550-466BC (Plain)"] = {
     data = {
         aggresiveness = 3,
         terrain = 'Arable',
@@ -13118,7 +13118,7 @@ armies["Book I"]["I/60a Early Achaemenid Persian 550-466BC"] = {
     }
 }
 
-armies["Book I"]["I/60b Early Achaemenid Persian 546BC"] = {
+armies["Book I"]["I/60b Early Achaemenid Persian 546BC (Plain)"] = {
     data = {
         aggresiveness = 3,
         terrain = 'Arable',
@@ -13206,7 +13206,7 @@ armies["Book I"]["I/60b Early Achaemenid Persian 546BC"] = {
     }
 }
 
-armies["Book I"]["I/60c Early Achaemenid Persian 465-420BC"] = {
+armies["Book I"]["I/60c Early Achaemenid Persian 465-420BC (Plain)"] = {
     data = {
         aggresiveness = 3,
         terrain = 'Arable',
@@ -13325,7 +13325,7 @@ armies["Book I"]["I/60c Early Achaemenid Persian 465-420BC"] = {
     }
 }
 
-armies["Book I"]["I/61a Early Carthaginian 575-410BC"] = {
+armies["Book I"]["I/61a Early Carthaginian 575-410BC (Plain)"] = {
     data = {
         aggresiveness = 3,
         terrain = 'Litoral',
@@ -13420,7 +13420,7 @@ armies["Book I"]["I/61a Early Carthaginian 575-410BC"] = {
     }
 }
 
-armies["Book I"]["I/61b Early Carthaginian 409-275BC"] = {
+armies["Book I"]["I/61b Early Carthaginian 409-275BC (Plain)"] = {
     data = {
         aggresiveness = 3,
         terrain = 'Litoral',
@@ -13521,7 +13521,115 @@ armies["Book I"]["I/61b Early Carthaginian 409-275BC"] = {
     }
 }
 
-armies["Book I"]["I/62 Lykian 546-300BC"] = {
+armies["Book I"]["I/61b Early Carthaginian 409-275BC"] = {
+    data = {
+        aggresiveness = 3,
+        terrain = 'Litoral',
+        list = '1xHCh or 3Cv (Gen), 1xHCh, 1x3Cv, 1x2LH or 3Ax, 4x4Sp, 1x3Ax, 1x4Wb, 2x2Ps.'
+    },
+
+    base1 = {
+        name = 'HCh_Gen',
+        base = 'tile_grass_40x40',
+        n_models = 1,
+        model_data = 'troop_carthaginian_chariot_gen'
+    },
+    base2 = {
+        name = '3Cv_Gen',
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        fixed_models = {
+            [1] = 'troop_carthaginian_cavalry',
+            [2] = 'troop_carthaginian_cavalry_gen',
+            [3] = 'troop_carthaginian_cavalry'
+        }
+    },    
+    base3 = {
+        name = 'HCh',
+        base = 'tile_grass_40x40',
+        n_models = 1,
+        model_data = 'troop_carthaginian_chariot'
+    },
+    base4 = {
+        name = '3Cv',
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        model_data = 'troop_carthaginian_cavalry'
+    },
+    base5 = {
+        name = '2LH',
+        base = 'tile_grass_40x30',
+        n_models = 2,
+        model_data = 'troop_carthaginian_lightcav',
+        loose = true
+    },
+    base6 = {
+        name = '3Ax',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_carthaginian_soldier',
+        loose = true
+    },
+    base7 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_carthaginian_soldier'
+    },
+    base8 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_carthaginian_soldier'
+    },
+    base9 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_carthaginian_soldier'
+    },
+    base10 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_carthaginian_soldier'
+    },
+    base11 = {
+        name = '3Ax',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_carthaginian_soldier',
+        loose = true
+    },
+    base12 = {
+        name = '4Wb',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_carthaginian_warband'
+    },
+    base13 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        model_data = 'troop_carthaginian_psiloi',
+        loose = true
+    },
+    base14 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        model_data = 'troop_carthaginian_psiloi',
+        loose = true
+    },
+    base15 = {
+        name = 'Camp',
+        base = 'tile_grass_40x40',
+        n_models = 1,
+        model_data = 'troop_carthaginian_camp'
+    }
+}
+
+armies["Book I"]["I/62 Lykian 546-300BC (Plain)"] = {
     data = {
         aggresiveness = 1,
         terrain = 'Hilly',
@@ -13609,7 +13717,7 @@ armies["Book I"]["I/62 Lykian 546-300BC"] = {
     }
 }
 
-armies["Book I"]["I/63 Paionian 546-300BC"] = {
+armies["Book I"]["I/63 Paionian 546-300BC (Plain)"] = {
     data = {
         aggresiveness = 3,
         terrain = 'Hilly',
