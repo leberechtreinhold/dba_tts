@@ -61,14 +61,9 @@ It's not required, but it's encouraged to put this repo with the name "dba22_tts
 TODO
 ----
 
-This TODO only refers to the scripting, not the data content or UI graphics which are continuosly being worked on.
+The project is managed by a trello board:
 
-- Better WWg snapping, since it's so big that not all angles snap.
-- The UI for creating an army should be bigger, since so many list have a long name, and also to add the aggresiveness and terrain.
-- Wheeling, very complex but would be nice, especially if it autocalculates angle or breaking points.
-- Mega aligment button: Select many troops, click align, then select one troop and they all relative to that one. Not that useful because with snapping, this is already fast, but could be nice for deployment.
-- Collision detection for movements. This can be confusing for the user and it's hard to without it being perf intesive, but still, it would be very nice.
-- Fork for DBA3.
+https://trello.com/b/4XQ8tFlB/dba-tts
 
 License
 -------
