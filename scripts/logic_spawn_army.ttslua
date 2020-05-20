@@ -69,6 +69,11 @@ function spawn_base(base, pos, y_rotation, is_red_player)
         local row = math.floor((i - 1) / columns) + 1
 
         local random_rotation = math.random(-20, 20)
+        local random_rotation = math.random(0, 40) - 20
+        if str_has_substr(base_name, 'Camp') then
+            random_rotation = 0
+        end
+        
         local random_x = 0
         local random_z = 0
         if base['loose'] == true then
