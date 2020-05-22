@@ -2001,7 +2001,8 @@ troop_carthaginian_soldier = {
       description = 'Carthaginian Psiloi',
       author = 'Carthaginian Psiloi by Vokuhila, edited by LeberechtReinhold.',
       mesh = {
-          'http://cloud-3.steamusercontent.com/ugc/1029581270242209240/46C3539AA895A0326FA6A66D4B3DB3CF89945755/'
+          'http://cloud-3.steamusercontent.com/ugc/1029581270242209240/46C3539AA895A0326FA6A66D4B3DB3CF89945755/',
+          'http://cloud-3.steamusercontent.com/ugc/1029581692142551682/CB5753AF2132A03A5F051D7E8CFA9A063F75982B/'
       },
       player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1029581270242208574/8DBF81C6AEEA21AA5F6FC52C56DE77FA41D174C5/',
       player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1029581270242208574/8DBF81C6AEEA21AA5F6FC52C56DE77FA41D174C5/'
