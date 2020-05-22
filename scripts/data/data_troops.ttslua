@@ -1914,15 +1914,16 @@ troop_camp_burgundian_ordonnances = {
 --                      CARTHAGINIAN PHOTOGAMMETRY
 ------------------------------------------------------------------------------
 
+
 troop_carthaginian_soldier = {
     height_correction = 0,
-    scale = 0.6,
+    scale = 0.52,
       rotation = 0,
       description = 'Carthaginian Soldier',
       author = 'Carthaginian Soldier by Vokuhila, edited by LeberechtReinhold.',
       mesh = {
           'http://cloud-3.steamusercontent.com/ugc/1029581270242167547/5E21B28F3914FE35E92ADAB26C172B6CC66BAD8E/',
-          'http://cloud-3.steamusercontent.com/ugc/1029581270242168241/14DFC084AB1322ED49026A6312268AFBBEFE24D7/'  
+          'http://cloud-3.steamusercontent.com/ugc/1029581270242168241/14DFC084AB1322ED49026A6312268AFBBEFE24D7/'
       },
       player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1029581270242169443/A17104C8CBBBD73469132B595A78577207EBA67C/',
       player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1029581270242169443/A17104C8CBBBD73469132B595A78577207EBA67C/'
@@ -1930,12 +1931,12 @@ troop_carthaginian_soldier = {
 
   troop_carthaginian_cavalry = {
     height_correction = 0,
-    scale = 0.5,
+    scale = 0.46,
       rotation = 0,
       description = 'Carthaginian Cavalry',
       author = 'Carthaginian Cavalry by Vokuhila, edited by LeberechtReinhold.',
       mesh = {
-          'http://cloud-3.steamusercontent.com/ugc/1029581270242172331/49BB06E1B3099E05D3FFE3E0156B64B741E983F5/'  
+          'http://cloud-3.steamusercontent.com/ugc/1029581270242172331/49BB06E1B3099E05D3FFE3E0156B64B741E983F5/'
       },
       player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1029581270242170545/CF0C5339D7F4C7A9EAC27F240AA0A00107AB8E41/',
       player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1029581270242170545/CF0C5339D7F4C7A9EAC27F240AA0A00107AB8E41/'
@@ -1943,12 +1944,12 @@ troop_carthaginian_soldier = {
 
   troop_carthaginian_cavalry_gen = {
     height_correction = 0,
-    scale = 0.6,
+    scale = 0.52,
       rotation = 0,
       description = 'Carthaginian Cavalry General',
       author = 'Carthaginian Cavalry General by Vokuhila, edited by LeberechtReinhold.',
       mesh = {
-          'http://cloud-3.steamusercontent.com/ugc/1029581270242172979/0FEEB3F33C2442C72C4957B48EB29C3E5F722F8D/'  
+          'http://cloud-3.steamusercontent.com/ugc/1029581270242172979/0FEEB3F33C2442C72C4957B48EB29C3E5F722F8D/'
       },
       player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1029581270242213204/0E898B9AE0D2BA99778F3B378E73C01529D541E1/',
       player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1029581270242213204/0E898B9AE0D2BA99778F3B378E73C01529D541E1/'
@@ -1956,12 +1957,12 @@ troop_carthaginian_soldier = {
 
   troop_carthaginian_chariot = {
     height_correction = 0,
-    scale = 0.6,
+    scale = 0.52,
       rotation = 0,
       description = 'Carthaginian Chariot',
       author = 'Carthaginian Chariot by Vokuhila, edited by LeberechtReinhold.',
       mesh = {
-          'http://cloud-3.steamusercontent.com/ugc/1029581270242207076/1C6CB5F8A19199AC12D306A3A689C2AEDF93FDFA/'  
+          'http://cloud-3.steamusercontent.com/ugc/1029581270242207076/1C6CB5F8A19199AC12D306A3A689C2AEDF93FDFA/'
       },
       player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1029581270242206350/AFA0FA7B04F4609D9F4606016E51A60F4379BA45/',
       player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1029581270242206350/AFA0FA7B04F4609D9F4606016E51A60F4379BA45/'
@@ -1969,12 +1970,12 @@ troop_carthaginian_soldier = {
 
   troop_carthaginian_chariot_gen = {
     height_correction = 0,
-    scale = 0.33,
+    scale = 0.30,
       rotation = 0,
       description = 'Carthaginian Chariot General',
       author = 'Carthaginian Chariot General by Vokuhila, edited by LeberechtReinhold.',
       mesh = {
-          'http://cloud-3.steamusercontent.com/ugc/1029581270242385722/29C910BD9D2C011EC83F865CC12261471DCDE81E/'  
+          'http://cloud-3.steamusercontent.com/ugc/1029581270242385722/29C910BD9D2C011EC83F865CC12261471DCDE81E/'
       },
       player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1029581270242263906/0B23676E04BBBEC956CC1BFEBD483C4A46CEF8A6/',
       player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1029581270242263906/0B23676E04BBBEC956CC1BFEBD483C4A46CEF8A6/'
@@ -1982,12 +1983,12 @@ troop_carthaginian_soldier = {
 
   troop_carthaginian_lightcav = {
     height_correction = 0,
-    scale = 0.6,
+    scale = 0.52,
       rotation = 0,
       description = 'Carthaginian Light Cavalry',
       author = 'Carthaginian Light Cavalry by Vokuhila, edited by LeberechtReinhold.',
       mesh = {
-          'http://cloud-3.steamusercontent.com/ugc/1029581270242212517/4F65D3A6DCF9148CABB63F7250BE1566E7DE092A/'  
+          'http://cloud-3.steamusercontent.com/ugc/1029581270242212517/4F65D3A6DCF9148CABB63F7250BE1566E7DE092A/'
       },
       player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1029581270242207808/E5C75E23F602682D4BF72BC726DDC94A10D1DB61/',
       player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1029581270242207808/E5C75E23F602682D4BF72BC726DDC94A10D1DB61/'
@@ -1995,12 +1996,12 @@ troop_carthaginian_soldier = {
 
   troop_carthaginian_psiloi = {
     height_correction = 0,
-    scale = 0.6,
+    scale = 0.52,
       rotation = 0,
       description = 'Carthaginian Psiloi',
       author = 'Carthaginian Psiloi by Vokuhila, edited by LeberechtReinhold.',
       mesh = {
-          'http://cloud-3.steamusercontent.com/ugc/1029581270242209240/46C3539AA895A0326FA6A66D4B3DB3CF89945755/'  
+          'http://cloud-3.steamusercontent.com/ugc/1029581270242209240/46C3539AA895A0326FA6A66D4B3DB3CF89945755/'
       },
       player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1029581270242208574/8DBF81C6AEEA21AA5F6FC52C56DE77FA41D174C5/',
       player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1029581270242208574/8DBF81C6AEEA21AA5F6FC52C56DE77FA41D174C5/'
@@ -2008,12 +2009,12 @@ troop_carthaginian_soldier = {
 
   troop_carthaginian_warband = {
     height_correction = 0,
-    scale = 0.6,
+    scale = 0.52,
       rotation = 0,
       description = 'Carthaginian Warband',
       author = 'Carthaginian Warband by Vokuhila, edited by LeberechtReinhold.',
       mesh = {
-          'http://cloud-3.steamusercontent.com/ugc/1029581270242211427/C7BE23775BC42E46C21BE88FE3C6E7A5715F80F5/'  
+          'http://cloud-3.steamusercontent.com/ugc/1029581270242211427/C7BE23775BC42E46C21BE88FE3C6E7A5715F80F5/'
       },
       player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1029581270242210092/EAA72A4A9EB089E3828EE86D6E831ABDF556B85A/',
       player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1029581270242210092/EAA72A4A9EB089E3828EE86D6E831ABDF556B85A/'
@@ -2026,7 +2027,7 @@ troop_carthaginian_soldier = {
       description = 'Carthaginian Camp',
       author = 'Carthaginian Camp by 0AD, edited by LeberechtReinhold.',
       mesh = {
-          'http://cloud-3.steamusercontent.com/ugc/1029581270244177959/913D444AD166E2ABACD8E255F648615BEA481190/'  
+          'http://cloud-3.steamusercontent.com/ugc/1029581270244177959/913D444AD166E2ABACD8E255F648615BEA481190/'
       },
       player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1029581270244178515/5A238BD04C4CA8491246C8EBF712D8B452A6EF35/',
       player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1029581270244178515/5A238BD04C4CA8491246C8EBF712D8B452A6EF35/'
