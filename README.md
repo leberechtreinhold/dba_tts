@@ -68,4 +68,4 @@ https://trello.com/b/4XQ8tFlB/dba-tts
 License
 -------
 
-It's still not released, but it will be released under MIT license.
+See the LICENSE.md at the top directory.
