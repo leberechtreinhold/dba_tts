@@ -63,6 +63,20 @@ function onChat(message, player)
         return false
     end
 
+    if message == '!dba_debug' then
+        print_info(player.get_steam_name() .. ': ' .. message)
+        if g_debug_mode then
+            print_info('Disabling debug mode')
+            g_debug_mode = false
+        else
+            print_info('Enabling debug mode, will take effect in three seconds. Note, this will cause decreased performance.')
+            Wait.time(function() 
+                g_debug_mode = true
+            end, 3)
+        end
+        return false
+    end
+
     if str_starts_with(message, '!dba') then
         print_info(player.get_steam_name() .. ': ' .. message)
         print_error('Command not recognized. Please, use !dba_help')

@@ -3,10 +3,14 @@ white = { r =   1, g =   1, b =   1}
 grey  = { r = 0.8, g = 0.8, b = 0.8}
 red   = { r =   1, g = 0.2, b = 0.1}
 
--- Prints ONLY to the host, should never be in release builds
+-- Prints to all, only if the DEBUG mode is enabled, by the chat command
+g_debug_mode = false
 function print_debug(msg)
-    print('[DEBUG] ' .. msg)
+    if g_debug_mode then
+        printToAll('[DEBUG] ' .. msg)
+    end
 end
+
 
 -- Messages that can be seen by everyone on the textbox
 function print_info(msg)
