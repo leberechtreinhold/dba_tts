@@ -819,12 +819,27 @@ function snap_picked_base(obj)
 
     local pos = obj.getPosition()
     local bases = get_all_bases()
+    local is_large_base = str_has_substr(obj.getName(), 'WWg') or str_has_substr(obj.getName(), '6Kn')
+
     for _, base in ipairs(bases) do
         local pos_base = base.getPosition()
 
         -- Discard fast bases that are too far
         local distance = distance_points_flat_sq(pos, pos_base)
-        if distance < g_max_distance_alignment and distance ~= 0 then
+        local max_distance = g_max_distance_alignment
+
+        local is_large_base_other = str_has_substr(base.getName(), 'WWg') or str_has_substr(base.getName(), '6Kn')
+        if is_large_base or is_large_base_other then
+            if is_large_base and is_large_base_other then
+                max_distance = (math.sqrt(max_distance) * 4)^2
+            else
+                max_distance = (math.sqrt(max_distance) * 2)^2
+            end
+        end
+
+        if distance < max_distance and distance > 0.0001 then
+            print_debug('Checking snap of ' .. obj.getName() 
+                        .. ' with ' .. base.getName())
             local transformObj = calculate_transform(obj)
             local transformBase = calculate_transform(base)
 
