@@ -331,14 +331,14 @@ function calculate_group(objs, transforms)
             if not skip then
                 if right_of[objA] == objB
                    or is_left_side(transforms[objA], transforms[objB]) then
-                    print(objA.getName() .. ' is to the left of ' .. objB.getName())
+                    print_debug(objA.getName() .. ' is to the left of ' .. objB.getName())
                     in_right = objB
                 elseif left_of[objA] == objB
                        or is_right_side(transforms[objA], transforms[objB]) then
-                    print(objA.getName() .. ' is to the right of ' .. objB.getName())
+                    print_debug(objA.getName() .. ' is to the right of ' .. objB.getName())
                     in_left = objB
                 else
-                    print(objA.getName() .. ' is not connected to ' .. objB.getName())
+                    print_debug(objA.getName() .. ' is not connected to ' .. objB.getName())
                     if not_connected[objA] == nil then
                         not_connected[objA] = {}
                     end
@@ -631,6 +631,110 @@ function is_infront(transformA, transformB)
     return is_behind(transformB, transformA)
 end
 
+-- Returns if A, a WWg, is aligned to the right of B, with the back of A 
+-- against B, which happens if the WWg is on his side but still in a battle line
+function is_wwg_aligned_right_back(transformWWgA, transformB)
+    local angleA = transformWWgA['rotation']
+    local angleB = transformB['rotation']
+    local diff_angle = math.abs(angleB - angleA)
+
+    -- Around 90 or 270 degrees
+    if math.abs(math.pi/2 - diff_angle) > g_max_angle_pushback_rad and
+       math.abs(3*math.pi/2 - diff_angle) > g_max_angle_pushback_rad then
+       -- Angle is too different, skip
+       return false
+    end
+
+    local cornersA = transformWWgA['corners']
+    local cornersB = transformB['corners']
+
+    local distance = distance_points_flat_sq(cornersA['botleft'], cornersB['topright'])
+    if distance < g_max_corner_distance_snap then
+        -- Note: We do not check the bottom because bases may be of different
+        -- sizes and we already check the angle
+        return true
+    end
+    return false
+end
+
+-- Returns if A, a WWg, is aligned to the right of B, with the front of A 
+-- against B, which happens if the WWg is on his side but still in a battle line
+function is_wwg_aligned_right_front(transformWWgA, transformB)
+    local angleA = transformWWgA['rotation']
+    local angleB = transformB['rotation']
+    local diff_angle = math.abs(angleB - angleA)
+
+    -- Around 90 or 270 degrees
+    if math.abs(math.pi/2 - diff_angle) > g_max_angle_pushback_rad and
+       math.abs(3*math.pi/2 - diff_angle) > g_max_angle_pushback_rad then
+       -- Angle is too different, skip
+       return false
+    end
+
+    local cornersA = transformWWgA['corners']
+    local cornersB = transformB['corners']
+
+    local distance = distance_points_flat_sq(cornersA['topright'], cornersB['topright'])
+    if distance < g_max_corner_distance_snap then
+        -- Note: We do not check the bottom because bases may be of different
+        -- sizes and we already check the angle
+        return true
+    end
+    return false
+end
+
+-- Returns if A, a WWg, is aligned to the left of B, with the back of A 
+-- against B, which happens if the WWg is on his side but still in a battle line
+function is_wwg_aligned_left_back(transformWWgA, transformB)
+    local angleA = transformWWgA['rotation']
+    local angleB = transformB['rotation']
+    local diff_angle = math.abs(angleB - angleA)
+
+    -- Around 90 or 270 degrees
+    if math.abs(math.pi/2 - diff_angle) > g_max_angle_pushback_rad and
+       math.abs(3*math.pi/2 - diff_angle) > g_max_angle_pushback_rad then
+       -- Angle is too different, skip
+       return false
+    end
+
+    local cornersA = transformWWgA['corners']
+    local cornersB = transformB['corners']
+
+    local distance = distance_points_flat_sq(cornersA['botright'], cornersB['topleft'])
+    if distance < g_max_corner_distance_snap then
+        -- Note: We do not check the bottom because bases may be of different
+        -- sizes and we already check the angle
+        return true
+    end
+    return false
+end
+
+-- Returns if A, a WWg, is aligned to the left of B, with the front of A 
+-- against B, which happens if the WWg is on his side but still in a battle line
+function is_wwg_aligned_left_front(transformWWgA, transformB)
+    local angleA = transformWWgA['rotation']
+    local angleB = transformB['rotation']
+    local diff_angle = math.abs(angleB - angleA)
+
+    -- Around 90 or 270 degrees
+    if math.abs(math.pi/2 - diff_angle) > g_max_angle_pushback_rad and
+       math.abs(3*math.pi/2 - diff_angle) > g_max_angle_pushback_rad then
+       -- Angle is too different, skip
+       return false
+    end
+
+    local cornersA = transformWWgA['corners']
+    local cornersB = transformB['corners']
+
+    local distance = distance_points_flat_sq(cornersA['topleft'], cornersB['topleft'])
+    if distance < g_max_corner_distance_snap then
+        -- Note: We do not check the bottom because bases may be of different
+        -- sizes and we already check the angle
+        return true
+    end
+    return false
+end
+
 -- Determines if A is in front B, looking at B, while B looks at A
 function is_opposite_front(transformA, transformB)
     local angleA = transformA['rotation']
@@ -762,13 +866,31 @@ end
 function snap_to_base(obj, transformObj, base, transformBase, direction)
     print_info(obj.getName() .. ' is snapping to ' .. base.getName() .. ', ' .. direction)
     local new_rotation = base.getRotation()
-    if direction == 'opposite' or direction == 'door_left' or direction == 'door_right' then
+    if direction == 'opposite' 
+       or direction == 'door_left' 
+       or direction == 'door_right' 
+       or direction == 'wwg_left_front'
+       or direction == 'wwg_left_back'
+       or direction == 'wwg_right_front'
+       or direction == 'wwg_right_back'
+       or direction == 'wwg_to_left_front'
+       or direction == 'wwg_to_left_back'
+       or direction == 'wwg_to_right_front'
+       or direction == 'wwg_to_right_back' then
         local new_y = 0
         if direction == 'opposite' then
             new_y = new_rotation['y'] + 180
-        elseif direction == 'door_left' then
+        elseif direction == 'door_left' 
+               or direction == 'wwg_left_front' 
+               or direction == 'wwg_right_back' 
+               or direction == 'wwg_to_left_back' 
+               or direction == 'wwg_to_right_front'then
             new_y = new_rotation['y'] + 90
-        elseif direction == 'door_right' then
+        elseif direction == 'door_right'
+                or direction == 'wwg_left_back' 
+                or direction == 'wwg_right_front'
+                or direction == 'wwg_to_left_front' 
+                or direction == 'wwg_to_right_back'  then
             new_y = new_rotation['y'] - 90
         end
         if new_y >= 360 then
@@ -796,12 +918,28 @@ function snap_to_base(obj, transformObj, base, transformBase, direction)
     elseif direction == 'left' then
         relative_pos['x'] = -1*(sizeObj['x'] / 2 + sizeBase['x'] / 2)
         relative_pos['z'] = -1*(sizeObj['z'] - sizeBase['z']) / 2
-    elseif direction == 'door_left' then
+    elseif direction == 'door_left'
+           or direction == 'wwg_left_back'
+           or direction == 'wwg_left_front' then
         relative_pos['x'] = -1*(sizeObj['z'] / 2 + sizeBase['x'] / 2)
         relative_pos['z'] = -1*(sizeObj['x'] / 2) + (sizeBase['z'] / 2)
-    elseif direction == 'door_right' then
+    elseif direction == 'door_right'
+           or direction == 'wwg_right_back'
+           or direction == 'wwg_right_front' then
         relative_pos['x'] = sizeObj['z'] / 2 + sizeBase['x'] / 2
         relative_pos['z'] = -1*(sizeObj['x'] / 2) + (sizeBase['z'] / 2)
+    elseif direction == 'wwg_to_right_front' then
+        relative_pos['x'] = -1*(sizeObj['z'] / 2) + sizeBase['x'] / 2
+        relative_pos['z'] = sizeObj['x'] / 2 + sizeBase['z'] / 2
+    elseif direction == 'wwg_to_right_back' then
+        relative_pos['x'] = sizeObj['z'] / 2 - sizeBase['x'] / 2
+        relative_pos['z'] = -1*(sizeObj['x'] / 2 + (sizeBase['z'] / 2))
+    elseif direction == 'wwg_to_left_front' then
+        relative_pos['x'] = sizeObj['z'] / 2 - sizeBase['x'] / 2
+        relative_pos['z'] = sizeObj['x'] / 2 + sizeBase['z'] / 2
+    elseif direction == 'wwg_to_left_back' then
+        relative_pos['x'] = -1*(sizeObj['z'] / 2) + sizeBase['x'] / 2
+        relative_pos['z'] = -1*(sizeObj['x'] / 2 + sizeBase['z'] / 2)
     else
         print_error('Tried to snap ' .. obj.getName() .. ' in unknown direction ' .. direction)
         return
@@ -819,7 +957,8 @@ function snap_picked_base(obj)
 
     local pos = obj.getPosition()
     local bases = get_all_bases()
-    local is_large_base = str_has_substr(obj.getName(), 'WWg') or str_has_substr(obj.getName(), '6Kn')
+    local is_wwg = str_has_substr(obj.getName(), 'WWg')
+    local is_large_base = is_wwg or str_has_substr(obj.getName(), '6Kn')
 
     for _, base in ipairs(bases) do
         local pos_base = base.getPosition()
@@ -828,7 +967,9 @@ function snap_picked_base(obj)
         local distance = distance_points_flat_sq(pos, pos_base)
         local max_distance = g_max_distance_alignment
 
-        local is_large_base_other = str_has_substr(base.getName(), 'WWg') or str_has_substr(base.getName(), '6Kn')
+        local is_other_wwg = str_has_substr(base.getName(), 'WWg')
+        local is_large_base_other = is_other_wwg or str_has_substr(base.getName(), '6Kn')
+
         if is_large_base or is_large_base_other then
             if is_large_base and is_large_base_other then
                 max_distance = (math.sqrt(max_distance) * 4)^2
@@ -878,6 +1019,54 @@ function snap_picked_base(obj)
                 snap_to_base(obj, transformObj, base, transformBase, 'door_right')
                 local new_corners = compute_corners_base(obj)
                 return max_distance_between_bases(new_corners, initial_corners)
+            end
+            
+            if is_wwg then
+                print_debug('The base is a WWg, checking special snapping')
+                if is_wwg_aligned_left_back(transformObj, transformBase) then
+                    snap_to_base(obj, transformObj, base, transformBase, 'wwg_left_back')
+                    local new_corners = compute_corners_base(obj)
+                    return max_distance_between_bases(new_corners, initial_corners)
+
+                elseif is_wwg_aligned_left_front(transformObj, transformBase) then
+                    snap_to_base(obj, transformObj, base, transformBase, 'wwg_left_front')
+                    local new_corners = compute_corners_base(obj)
+                    return max_distance_between_bases(new_corners, initial_corners)
+    
+                elseif is_wwg_aligned_right_back(transformObj, transformBase) then
+                    snap_to_base(obj, transformObj, base, transformBase, 'wwg_right_back')
+                    local new_corners = compute_corners_base(obj)
+                    return max_distance_between_bases(new_corners, initial_corners)
+
+                elseif is_wwg_aligned_right_front(transformObj, transformBase) then
+                    snap_to_base(obj, transformObj, base, transformBase, 'wwg_right_front')
+                    local new_corners = compute_corners_base(obj)
+                    return max_distance_between_bases(new_corners, initial_corners)
+                end
+            end
+            
+            if is_other_wwg then
+                print_debug('Trying to snap against a WWg, checking special positions')
+                if is_wwg_aligned_left_back(transformBase, transformObj) then
+                    snap_to_base(obj, transformObj, base, transformBase, 'wwg_to_left_back')
+                    local new_corners = compute_corners_base(obj)
+                    return max_distance_between_bases(new_corners, initial_corners)
+
+                elseif is_wwg_aligned_left_front(transformBase, transformObj) then
+                    snap_to_base(obj, transformObj, base, transformBase, 'wwg_to_left_front')
+                    local new_corners = compute_corners_base(obj)
+                    return max_distance_between_bases(new_corners, initial_corners)
+    
+                elseif is_wwg_aligned_right_back(transformBase, transformObj) then
+                    snap_to_base(obj, transformObj, base, transformBase, 'wwg_to_right_back')
+                    local new_corners = compute_corners_base(obj)
+                    return max_distance_between_bases(new_corners, initial_corners)
+
+                elseif is_wwg_aligned_right_front(transformBase, transformObj) then
+                    snap_to_base(obj, transformObj, base, transformBase, 'wwg_to_right_front')
+                    local new_corners = compute_corners_base(obj)
+                    return max_distance_between_bases(new_corners, initial_corners)
+                end
             end
         end
     end
