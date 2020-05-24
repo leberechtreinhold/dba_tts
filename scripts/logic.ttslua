@@ -130,7 +130,8 @@ end
 -- {"front_of"=x, "behind_of" = x, "front_element"=x}, each a mapping 
 -- of where they are relative to each other.
 -- Returns nil if it's not a column.
-function calculate_column(objs, transforms)    
+function calculate_column(objs, transforms)
+    print_debug('Trying to detect if the given objects are a proper column')
     local front_of = {}
     local behind_of = {}
     local not_connected = {}
@@ -148,8 +149,15 @@ function calculate_column(objs, transforms)
                 skip = true
             end
 
-            if transforms[objA]['rotation'] ~= transforms[objB]['rotation'] then
-                skip = true
+            if not equals_float(transforms[objA]['rotation'], 
+                                transforms[objB]['rotation']) then
+                print_debug(objA.getName() 
+                    .. ' doesn\'t have the same rotation (' 
+                    .. transforms[objA]['rotation'] .. ') '
+                    .. 'as ' .. objB.getName() .. ' (' 
+                    .. transforms[objB]['rotation'] .. ') '
+                    .. 'which means this column will not be valid.')
+                    skip = true
             end
 
             if not skip then
@@ -169,16 +177,19 @@ function calculate_column(objs, transforms)
         end
 
         if in_front == nil and in_back == nil then
+            print_debug(objA.getName() .. ' is isolated and not part of a column')
             return nil
         end
 
         if in_front ~= nil then
             front_of[objA] = in_front
             behind_of[in_front] = objA
+            print_debug(objA.getName() .. ' has ' .. in_front.getName() .. ' in front')
         end
         if in_back ~= nil then
             front_of[in_back] = objA
             behind_of[objA] = in_back
+            print_debug(objA.getName() .. ' has ' .. in_back.getName() .. ' behind')
         end
     end
 
@@ -191,6 +202,7 @@ function calculate_column(objs, transforms)
     end
 
     if front_element == nil then
+        print_debug('There\'s no front element in this column')
         return nil
     end
 
