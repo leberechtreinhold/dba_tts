@@ -2041,8 +2041,8 @@ troop_carthaginian_elephant = {
     height_correction = 0,
     scale = 2.5,
     rotation = 0,
-    description = 'Carthaginian Camp',
-    author = 'Carthaginian Camp by 0AD, edited by LeberechtReinhold.',
+    description = 'Carthaginian Elephant',
+    author = 'Carthaginian Elephant by LeberechtReinhold, with Spear by gamekorp under CC0.',
     mesh = {
         'http://cloud-3.steamusercontent.com/ugc/1029581967099795314/900A3C519A06303574B99F873BA9C454F297FFB7/'
     },
