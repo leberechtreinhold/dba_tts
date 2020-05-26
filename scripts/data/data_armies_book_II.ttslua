@@ -8683,6 +8683,133 @@ armies["Book II"]["II/32 Later Carthaginian 275-146BC (Plain)"] = {
     }
 }
 
+armies["Book II"]["II/32 Later Carthaginian 275-146BC"] = {
+    data = {
+        aggresiveness = 3,
+        terrain = 'Litoral',
+        list = '1x3Cv (Gen), 1x2LH, 3x4Sp, 1x3/4Ax, 3x3Wb or 2Ps, 1xEl or 3Cv, 1xEl or 2LH, 1x2Ps.'
+    },
+
+    base1 = {
+        name = '3Cv_Gen',
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        fixed_models = {
+            [1] = 'troop_carthaginian_cavalry',
+            [2] = 'troop_carthaginian_cavalry_gen',
+            [3] = 'troop_carthaginian_cavalry'
+        }
+    },
+    base2 = {
+        name = '2LH',
+        base = 'tile_grass_40x30',
+        n_models = 2,
+        model_data = 'troop_carthaginian_lightcav'
+    },
+    base3 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_carthaginian_soldier'
+    },
+    base4 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_carthaginian_soldier'
+    },
+    base5 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_carthaginian_soldier'
+    },
+    base6 = {
+        name = '3Ax',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_carthaginian_psiloi'
+    },
+    base7 = {
+        name = '3Ax',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_carthaginian_psiloi'
+    },
+    base8 = {
+        name = '3Wb',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_carthaginian_warband'
+    },
+    base9 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        model_data = 'troop_carthaginian_psiloi'
+    },
+    base10 = {
+        name = '3Wb',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_carthaginian_warband'
+    },
+    base11 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        model_data = 'troop_carthaginian_psiloi'
+    },
+    base12 = {
+        name = '3Wb',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_carthaginian_warband'
+    },
+    base13 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        model_data = 'troop_carthaginian_psiloi'
+    },
+    base14 = {
+        name = 'El',
+        base = 'tile_grass_40x40',
+        n_models = 1,
+        model_data = 'troop_carthaginian_elephant'
+    },
+    base15 = {
+        name = '3Cv',
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        model_data = 'troop_carthaginian_cavalry'
+    },
+    base16 = {
+        name = 'El',
+        base = 'tile_grass_40x40',
+        n_models = 1,
+        model_data = 'troop_carthaginian_elephant'
+    },
+    base17 = {
+        name = '2LH',
+        base = 'tile_grass_40x30',
+        n_models = 2,
+        model_data = 'troop_carthaginian_lightcav'
+    },
+    base18 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        model_data = 'troop_carthaginian_psiloi'
+    },
+    base19 = {
+        name = 'Camp',
+        base = 'tile_grass_40x40',
+        n_models = 1,
+        model_data = 'troop_carthaginian_camp'
+    }
+}
+
 armies["Book II"]["II/33 Polybian Roman 275-105BC (Plain)"] = {
     data = {
         aggresiveness = 1,

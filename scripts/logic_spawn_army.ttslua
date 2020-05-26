@@ -3,6 +3,7 @@ g_base_index = 1
 g_bases = {}
 
 function spawn_base(base, pos, y_rotation, is_red_player)
+    print_debug('Spawning base #' .. g_base_index)
     local overriden_tex = nil
     if base['ignore_terrain'] == nil then
         local type = from_toggle_number_to_table_type(g_current_table_type)
@@ -18,6 +19,10 @@ function spawn_base(base, pos, y_rotation, is_red_player)
         end
     end
 
+    if base['name'] == nil then
+        print_error('One of the bases of this army has no name! Please report to us so we can fix it asap')
+        return
+    end
     local base_obj = spawn_model(base['base'], pos, 0, nil, is_red_player, overriden_tex)
 
     local base_name = 'base ' .. base['name'] .. ' #' .. g_base_index
@@ -73,7 +78,7 @@ function spawn_base(base, pos, y_rotation, is_red_player)
         if str_has_substr(base_name, 'Camp') then
             random_rotation = 0
         end
-        
+
         local random_x = 0
         local random_z = 0
         if base['loose'] == true then
