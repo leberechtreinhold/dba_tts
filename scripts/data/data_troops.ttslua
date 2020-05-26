@@ -1865,7 +1865,7 @@ troop_knight_burgundian_ordonnances = {
         'http://cloud-3.steamusercontent.com/ugc/1011564617603277965/F09D7ACC7495FF75F6FBFE6F3C40E72A38796422/'
     },
     player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691509327531288/D514C7A7153B3F056EB475CB4A12280D8BD5B143/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691509327557335/16AB88FA9D3947C8A294E38793C91D416872B1C6/'
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1018323012512481328/72305A929FA84C40BC200B6659D03F9C43EE7C60/'
 }
 troop_knight_burgundian_ordonnances_captain = {
     height_correction = 0.71,
@@ -1877,7 +1877,7 @@ troop_knight_burgundian_ordonnances_captain = {
         'http://cloud-3.steamusercontent.com/ugc/1012691328068160719/5BDC02DDF0EC04136303C9496A7F4D44CAB6C534/'
     },
     player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691509327531288/D514C7A7153B3F056EB475CB4A12280D8BD5B143/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691509327557335/16AB88FA9D3947C8A294E38793C91D416872B1C6/'
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1018323012512481328/72305A929FA84C40BC200B6659D03F9C43EE7C60/'
 }
 
 troop_knight_burgundian_ordonnances_bannerman = {
