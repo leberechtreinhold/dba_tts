@@ -1165,7 +1165,7 @@ troop_pikeman_saint_john_bannerman = {
         'http://cloud-3.steamusercontent.com/ugc/1018321187642009565/2F05C3ED80744E8C6128DFA4E5CEBADC6F03DF0B/'
     },
     player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691509333195485/F97C9D7A7E9C7D72D77412611DE85FCA0BE2F001/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691509333194691/6653EB351F6B2DDE0F413CA235E545882B2DA41A/'
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1018323012512485583/BB902247A1C510934E49159063B2D41AB8A57C41/'
 }
 
 troop_knight_saint_john_bannerman = {
@@ -1179,7 +1179,7 @@ troop_knight_saint_john_bannerman = {
         'http://cloud-3.steamusercontent.com/ugc/1018321187642010682/5120039C91835A101B686C533A797940C013FC76/'
     },
     player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691651890274517/B45C03CC913A972AF0E19EF2C9EEF11353A80728/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691651890275259/F90418AEB35AB2D705724C8B8B6D01AE31246575/'
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1018323012512482553/BBF9ACE80A062490692BE63BB47F760550CBA4BD/'
 }
 
 ------------------------------------------------------------------------------
@@ -1229,7 +1229,7 @@ troop_knight_italian_condotta_bannerman = {
         'http://cloud-3.steamusercontent.com/ugc/1018321187642010448/70CE3E945A9C62E7187B299A8BFD3FA89906BB75/',
         'http://cloud-3.steamusercontent.com/ugc/1018321187642010682/5120039C91835A101B686C533A797940C013FC76/'
     },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691651890268759/008EDEEBE74615DB80A5A93019E99886102ED467/',
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1018323012512483135/1944F7589C71B9A14282004AA007E00B70938032/',
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691651890270050/D9FA0960E00E756B7D97C62A2487F07D161C9598/'
 }
 
@@ -1891,7 +1891,7 @@ troop_knight_burgundian_ordonnances_bannerman = {
         'http://cloud-3.steamusercontent.com/ugc/1018321187642010682/5120039C91835A101B686C533A797940C013FC76/'
     },
     player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691509327531288/D514C7A7153B3F056EB475CB4A12280D8BD5B143/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691509327557335/16AB88FA9D3947C8A294E38793C91D416872B1C6/'
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1018323012512481328/72305A929FA84C40BC200B6659D03F9C43EE7C60/'
 }
 
 troop_camp_burgundian_ordonnances = {
