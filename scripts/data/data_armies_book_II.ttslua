@@ -2537,6 +2537,99 @@ armies["Book II"]["II/10 Camillan Roman 400-275BC (Plain)"] = {
     }
 }
 
+armies["Book II"]["II/10 Camillan Roman 400-275BC"] = {
+    data = {
+        aggresiveness = 1,
+        terrain = 'Arable',
+        list = '1x3Cv (Gen), 1x3Cv, 3x4Bd, 5x4Sp, 2x2Ps.'
+    },
+
+    base1 = {
+        name = '3Cv_Gen',
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        fixed_models = {
+            [1] = 'troop_camilan_roman_bodyguard',
+            [2] = 'troop_camilan_roman_general',
+            [3] = 'troop_camilan_roman_bodyguard',
+        }
+    },
+    base2 = {
+        name = '3Cv',
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        model_data = 'troop_camilan_roman_cavalry'
+    },
+    base3 = {
+        name = '4Bd',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_camilan_roman_blade'
+    },
+    base4 = {
+        name = '4Bd',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_camilan_roman_blade'
+    },
+    base5 = {
+        name = '4Bd',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_camilan_roman_blade'
+    },
+    base6 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_camilan_roman_spear'
+    },
+    base7 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_camilan_roman_spear'
+    },
+    base8 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_camilan_roman_spear'
+    },
+    base9 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_camilan_roman_spear'
+    },
+    base10 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_camilan_roman_spear'
+    },
+    base11 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        model_data = 'troop_camilan_roman_psiloi',
+        loose = true
+    },
+    base12 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        model_data = 'troop_camilan_roman_psiloi',
+        loose = true
+    },
+    base13 = {
+        name = 'Camp',
+        base = 'tile_grass_40x40',
+        n_models = 1,
+        model_data = 'troop_camilan_roman_camp',
+    }
+}
+
 armies["Book II"]["II/11 Gallic 400-225BC (Plain)"] = {
     data = {
         aggresiveness = 3,
