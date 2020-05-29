@@ -2136,13 +2136,13 @@ troop_camilan_roman_general = {
 
 troop_camilan_roman_camp = {
     height_correction = 0,
-    scale = 1.55,
+    scale = 0.05,
     rotation = 0,
-    description = 'Carthaginian Camp',
-    author = 'Carthaginian Camp by 0AD, edited by LeberechtReinhold.',
+    description = 'Roman Camp',
+    author = 'Roman Camp by 0AD, edited by LeberechtReinhold.',
     mesh = {
-        'http://cloud-3.steamusercontent.com/ugc/1029581270244177959/913D444AD166E2ABACD8E255F648615BEA481190/'
+        'http://cloud-3.steamusercontent.com/ugc/1056603883713299773/D647127C7D1A41378DD4E8288738F595FCD7C126/'
     },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1029581270244178515/5A238BD04C4CA8491246C8EBF712D8B452A6EF35/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1029581270244178515/5A238BD04C4CA8491246C8EBF712D8B452A6EF35/'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1056603883713300439/305F7371766D99ECBBCEE8ACA6A6CB3C06891A76/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1056603883713300439/305F7371766D99ECBBCEE8ACA6A6CB3C06891A76/'
 }
