@@ -2110,7 +2110,7 @@ troop_camilan_roman_cavalry = {
 
 troop_camilan_roman_bodyguard = {
     height_correction = 0,
-    scale = 0.52,
+    scale = 0.47,
     rotation = 0,
     description = 'Camilan Roman General Bodyguard',
     author = 'Camilan Roman General Bodyguard by Vokuhila, edited by LeberechtReinhold.',
