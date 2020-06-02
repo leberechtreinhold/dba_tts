@@ -755,7 +755,7 @@ armies["Book IV"]["IV/4b Feudal French 1151-1330AD (Plain)"] = {
 armies["Book IV"]["IV/5a Scilian 1072-1194AD (Plain)"] = {
     data = {
         aggresiveness = 3,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Kn (Gen), 3x3Kn, 6x2Ps, 1x3Ax or 4Sp, 1x4Cb or 2LH.'
     },
 
@@ -855,7 +855,7 @@ armies["Book IV"]["IV/5a Scilian 1072-1194AD (Plain)"] = {
 armies["Book IV"]["IV/5b Scilian 1195-1235AD (Plain)"] = {
     data = {
         aggresiveness = 3,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Kn (Gen), 3x3Kn, 1x2LH, 5x2Ps, 1x8Cb, 1x7Hd.'
     },
 
@@ -943,7 +943,7 @@ armies["Book IV"]["IV/5b Scilian 1195-1235AD (Plain)"] = {
 armies["Book IV"]["IV/5c Scilian 1236-1442AD (Plain)"] = {
     data = {
         aggresiveness = 3,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Kn (Gen), 1x3Kn, 2x6Kn, 1x2LH, 1x8Cb, 6x3Ax or 2Ps.'
     },
 
@@ -1745,7 +1745,7 @@ armies["Book IV"]["IV/10 Mound Boulder American 1100-1701AD (Plain)"] = {
 armies["Book IV"]["IV/11 North-Western American 1100-1770AD (Plain)"] = {
     data = {
         aggresiveness = 2,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Bw (Gen), 9x3Bw, 2x2Ps. '
     },
 
@@ -1833,7 +1833,7 @@ armies["Book IV"]["IV/11 North-Western American 1100-1770AD (Plain)"] = {
 armies["Book IV"]["IV/12a Polynesian 1100-1785AD (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Bd (Gen), 9x3Bd, 2x2Ps.'
     },
 
@@ -1921,7 +1921,7 @@ armies["Book IV"]["IV/12a Polynesian 1100-1785AD (Plain)"] = {
 armies["Book IV"]["IV/12b Melanesian 1100-1785AD (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Sp (Gen), 9x3Sp, 2x2Ps.'
     },
 
@@ -2009,7 +2009,7 @@ armies["Book IV"]["IV/12b Melanesian 1100-1785AD (Plain)"] = {
 armies["Book IV"]["IV/12c Hawaian1100-1785AD (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Bd (Gen), 2x4Pk, 6x3Bd, 3x2Ps.'
     },
 
@@ -2097,7 +2097,7 @@ armies["Book IV"]["IV/12c Hawaian1100-1785AD (Plain)"] = {
 armies["Book IV"]["IV/12d Maori 1100-1785AD (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Bd (Gen), 11x3Bd.'
     },
 
@@ -3278,7 +3278,7 @@ armies["Book IV"]["IV/16 Scots Common Army 1124-1512AD (Plain)"] = {
 armies["Book IV"]["IV/17 Late Crusaders 1128-1303AD (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Kn (Gen), 2x3Kn, 1x3Cv or 3Kn, 5x4Sp, 2x3Cb or 4Cb, 1x3Bw.'
     },
 
@@ -4441,7 +4441,7 @@ armies["Book IV"]["IV/25 Late Bulgar 1186-1395AD (Plain)"] = {
 armies["Book IV"]["IV/26 Lusignan Cypriot 1192-1489AD (Plain)"] = {
     data = {
         aggresiveness = 2,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Kn (Gen), 1x3Kn, 1x3Cv or 3Kn or 2LH, 4x4Cb, 2x4Sp, 2x2Ps, 1x7Hd or 2LH.'
     },
 
@@ -5253,7 +5253,7 @@ armies["Book IV"]["IV/33 Epirot Byzantine 1204-1340AD (Plain)"] = {
 armies["Book IV"]["IV/34 Trapezuntine Byzantine 1204-1461AD (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Cv (Gen), 1x3Cv, 2x2LH, 1x4Sp, 3x2Ps, 2x3Ax, 2x3Bw.'
     },
 
@@ -5623,7 +5623,7 @@ armies["Book IV"]["IV/36b Late Muslim Indian 1316-1526AD (Plain)"] = {
 armies["Book IV"]["IV/37a Malay or Sumatran 1222-1511AD (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1xEl (Gen), 1xEl, 6x4Wb, 2x3Bw, 1x2Ps, 1x2LH.'
     },
 
@@ -5711,7 +5711,7 @@ armies["Book IV"]["IV/37a Malay or Sumatran 1222-1511AD (Plain)"] = {
 armies["Book IV"]["IV/37b Moluccan 1222-1511AD (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Wb (Gen), 8x3Wb, 2x3Bw, 1x2Ps.'
     },
 
@@ -5799,7 +5799,7 @@ armies["Book IV"]["IV/37b Moluccan 1222-1511AD (Plain)"] = {
 armies["Book IV"]["IV/37c Javanese 1222-1511AD (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1xLCh or El (Gen), 7x4Wb, 2x3Bw, 1x2Ps, 1x2LH.'
     },
 
@@ -5894,7 +5894,7 @@ armies["Book IV"]["IV/37c Javanese 1222-1511AD (Plain)"] = {
 armies["Book IV"]["IV/37d Other indonesian 1222-1511AD (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Wb (Gen), 7x3Wb, 2x3Bw, 1x2Ps, 1x2LH.'
     },
 
@@ -8244,7 +8244,7 @@ armies["Book IV"]["IV/53 Mixtec & Zapotec 1280-1523AD (Plain)"] = {
 armies["Book IV"]["IV/54a Medieval Danish 1350-1390AD (Plain)"] = {
     data = {
         aggresiveness = 3,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Kn (Gen), 1x3Kn, 2x3Bd, 1x4Cb, 4x4Sp, 2x2Ps, 1xArt.'
     },
 
@@ -8332,7 +8332,7 @@ armies["Book IV"]["IV/54a Medieval Danish 1350-1390AD (Plain)"] = {
 armies["Book IV"]["IV/54b Medieval Scandinavian Union 1391-1523AD (Plain)"] = {
     data = {
         aggresiveness = 3,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Kn (Gen), 1x3Kn, 1x6Kn, 1x3Bd, 1x3Cb, 2x4Pk, 2x3Bd, 1x4Cb, 2x4Sp, 1x2Ps, 1xArt.'
     },
 
@@ -8432,7 +8432,7 @@ armies["Book IV"]["IV/54b Medieval Scandinavian Union 1391-1523AD (Plain)"] = {
 armies["Book IV"]["IV/54c Medieval Swedish 1391-1523AD (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Kn (Gen), 5x4Bd, 5x3Cb, 1xArt or 2Ps.'
     },
 
@@ -8526,7 +8526,7 @@ armies["Book IV"]["IV/54c Medieval Swedish 1391-1523AD (Plain)"] = {
 armies["Book IV"]["IV/54d Medieval Scandinavian Other 1391-1523AD (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Kn (Gen), 1x3Kn, 1x3Cv, 6x4Bd, 3x3Bw or 2Ps.'
     },
 
@@ -8826,7 +8826,7 @@ armies["Book IV"]["IV/55b Ottoman 1362-1512AD (Plain)"] = {
 armies["Book IV"]["IV/56a Order of Saint John 1291-1450AD (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Kn or 4Bd (Gen), 1x3Kn or 4Bd, 2x4Cb, 2x4Sp, 2x3Cb, 4x2Ps.'
     },
 
@@ -8927,7 +8927,7 @@ armies["Book IV"]["IV/56a Order of Saint John 1291-1450AD (Plain)"] = {
 armies["Book IV"]["IV/56b Order of Saint John 1451-1522AD (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Kn or 4Bd (Gen), 1x3Kn or 4Bd, 2x4Cb, 1x4Bd, 1x4Sp, 1x3Cb, 5x2Ps.'
     },
 
@@ -9028,7 +9028,7 @@ armies["Book IV"]["IV/56b Order of Saint John 1451-1522AD (Plain)"] = {
 armies["Book IV"]["IV/56b Order of Saint John 1451-1522AD"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Kn or 4Bd (Gen), 1x3Kn or 4Bd, 2x4Cb, 1x4Bd, 1x4Sp, 1x3Cb, 5x2Ps.'
     },
     base1 = {
@@ -10036,7 +10036,7 @@ armies["Book IV"]["IV/60 Catalan Company 1302-1388AD (Plain)"] = {
 armies["Book IV"]["IV/61 Italian Condota 1320-1495AD (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral (if Venice or Genoa), otherwise Arable',
+        terrain = 'Littoral (if Venice or Genoa), otherwise Arable',
         list = '1x3Kn (Gen), 4x3Kn, 1x2LH, 2x8Cb or 2Ps, 2x4Sp or 4Pk, 1x4Cb or 4Ax or 3Bd or 2LH, 1x2Ps or Art.'
     },
 
@@ -10172,7 +10172,7 @@ armies["Book IV"]["IV/61 Italian Condota 1320-1495AD (Plain)"] = {
 armies["Book IV"]["IV/61 Italian Condotta 1320-1515AD"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral (if Venice or Genoa), otherwise Arable',
+        terrain = 'Littoral (if Venice or Genoa), otherwise Arable',
         list = '1x3Kn (Gen), 4x3Kn, 1x2LH, 2x8Cb or 2Ps, 2x4Sp or 4Pk, 1x4Cb or 4Ax or 3Bd or 2LH, 1x2Ps or Art.'
     },
 
