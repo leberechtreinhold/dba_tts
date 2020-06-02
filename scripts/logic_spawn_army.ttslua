@@ -18,6 +18,42 @@ function add_context_menu_base(base_obj)
         push_back(base_obj)
     end)
 end
+
+function on_clone(source_obj, new_obj)
+    local name = source_obj.getName()
+    print_info(name .. " has been duplicated.")
+    local new_name = name .. " clone " .. new_obj.getGUID()
+    new_obj.setName(new_name)
+    g_bases[new_name] = {
+        tile = g_bases[name]['tile'],
+        is_red_player = g_bases[name]['is_red_player']
+    }
+    new_obj.clearContextMenu()
+    add_context_menu_base(new_obj)
+
+end
+
+function onObjectSpawn(new_obj)
+    local name = new_obj.getName()
+    local my_guid = new_obj.getGUID()
+    if name ~= nil and str_starts_with(name, "base") then
+        -- Check if the name as an old one
+        local all_objs = getAllObjects()
+        local bases = filter_bases(all_objs)
+        local found_base = nil
+        for _,base in ipairs(bases) do
+            if base.getName() == name and base.getGUID() ~= my_guid then
+                found_base = base
+                break
+            end
+        end
+
+        if found_base ~= nil then
+            on_clone(found_base, new_obj)
+        end    
+    end
+end
+
 function spawn_base(base, pos, y_rotation, is_red_player)
     print_debug('Spawning base #' .. g_base_index)
     local overriden_tex = nil
