@@ -1289,6 +1289,8 @@ function reset_state()
                 tile = new_tile,
                 is_red_player = true
             }
+            base.clearContextMenu()
+            add_context_menu_base(base)
         end
     end
 
