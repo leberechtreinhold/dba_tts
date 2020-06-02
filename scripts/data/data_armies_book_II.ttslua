@@ -962,7 +962,7 @@ armies["Book II"]["II/5a Later Hoplite Greek Spartan Army 450-275 BC (Plain)"] =
 armies["Book II"]["II/5b Later Hoplite Greek Athenian Army 450-275BC (Plain)"] = {
     data = {
         aggresiveness = 2,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x4Sp (Gen), 1x3Cv, 1x2LH, 7x4Sp, 1x4Sp or 3/4Ax, 1x2Ps.'
     },
 
@@ -1462,7 +1462,7 @@ armies["Book II"]["II/5f Later Hoplite Greek Phokian Army 450-275BC (Plain)"] = 
 armies["Book II"]["II/5g Later Hoplite Greek Italiot Army 450-235BC (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x4Sp (Gen), 1x3Cv or 2LH, 2x2LH, 7x4Sp, 1x2Ps.'
     },
 
@@ -1556,7 +1556,7 @@ armies["Book II"]["II/5g Later Hoplite Greek Italiot Army 450-235BC (Plain)"] = 
 armies["Book II"]["II/5h Later Hoplite Greek Siciliot Army 450-235BC (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x4Sp (Gen), 1x3Cv, 7x4Sp, 3x2Ps.'
     },
 
@@ -2333,7 +2333,7 @@ armies["Book II"]["II/8c Apulian Army 420-203BC (Plain)"] = {
 armies["Book II"]["II/9 Syracusan 410-210BC (Plain)"] = {
     data = {
         aggresiveness = 4,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Cv or 4Sp (Gen), 6x4Sp, 1x4Sp or 3Wb, 1x4Ax or 3Cv, 1x3/4Ax or Art, 1x2LH, 1x2Ps.'
     },
 
@@ -2534,99 +2534,6 @@ armies["Book II"]["II/10 Camillan Roman 400-275BC (Plain)"] = {
         base = 'tile_plain_Camp_40x40',
         n_models = 0,
         ignore_terrain = true
-    }
-}
-
-armies["Book II"]["II/10 Camillan Roman 400-275BC"] = {
-    data = {
-        aggresiveness = 1,
-        terrain = 'Arable',
-        list = '1x3Cv (Gen), 1x3Cv, 3x4Bd, 5x4Sp, 2x2Ps.'
-    },
-
-    base1 = {
-        name = '3Cv_Gen',
-        base = 'tile_grass_40x30',
-        n_models = 3,
-        fixed_models = {
-            [1] = 'troop_camilan_roman_bodyguard',
-            [2] = 'troop_camilan_roman_general',
-            [3] = 'troop_camilan_roman_bodyguard',
-        }
-    },
-    base2 = {
-        name = '3Cv',
-        base = 'tile_grass_40x30',
-        n_models = 3,
-        model_data = 'troop_camilan_roman_cavalry'
-    },
-    base3 = {
-        name = '4Bd',
-        base = 'tile_grass_40x15',
-        n_models = 4,
-        model_data = 'troop_camilan_roman_blade'
-    },
-    base4 = {
-        name = '4Bd',
-        base = 'tile_grass_40x15',
-        n_models = 4,
-        model_data = 'troop_camilan_roman_blade'
-    },
-    base5 = {
-        name = '4Bd',
-        base = 'tile_grass_40x15',
-        n_models = 4,
-        model_data = 'troop_camilan_roman_blade'
-    },
-    base6 = {
-        name = '4Sp',
-        base = 'tile_grass_40x15',
-        n_models = 4,
-        model_data = 'troop_camilan_roman_spear'
-    },
-    base7 = {
-        name = '4Sp',
-        base = 'tile_grass_40x15',
-        n_models = 4,
-        model_data = 'troop_camilan_roman_spear'
-    },
-    base8 = {
-        name = '4Sp',
-        base = 'tile_grass_40x15',
-        n_models = 4,
-        model_data = 'troop_camilan_roman_spear'
-    },
-    base9 = {
-        name = '4Sp',
-        base = 'tile_grass_40x15',
-        n_models = 4,
-        model_data = 'troop_camilan_roman_spear'
-    },
-    base10 = {
-        name = '4Sp',
-        base = 'tile_grass_40x15',
-        n_models = 4,
-        model_data = 'troop_camilan_roman_spear'
-    },
-    base11 = {
-        name = '2Ps',
-        base = 'tile_grass_40x20',
-        n_models = 2,
-        model_data = 'troop_camilan_roman_psiloi',
-        loose = true
-    },
-    base12 = {
-        name = '2Ps',
-        base = 'tile_grass_40x20',
-        n_models = 2,
-        model_data = 'troop_camilan_roman_psiloi',
-        loose = true
-    },
-    base13 = {
-        name = 'Camp',
-        base = 'tile_grass_40x40',
-        n_models = 1,
-        model_data = 'troop_camilan_roman_camp',
     }
 }
 
@@ -3337,7 +3244,7 @@ armies["Book II"]["II/16a Antigonos 320-301BC (Plain)"] = {
 armies["Book II"]["II/16b Demetrios 315-285BC (Plain)"] = {
     data = {
         aggresiveness = 3,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Kn (Gen), 1x2LH, 6x4Pk, 1x4Ax, 2x4Sp or (1x3Cv + 1xEl), 1x4Sp or WWg (tower) or Art.'
     },
 
@@ -3449,7 +3356,7 @@ armies["Book II"]["II/16b Demetrios 315-285BC (Plain)"] = {
 armies["Book II"]["II/16c Alketas 320BC (Plain)"] = {
     data = {
         aggresiveness = 3,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Kn (Gen), 4x4Pk, 3x3Ax, 4x2Ps.'
     },
 
@@ -3537,7 +3444,7 @@ armies["Book II"]["II/16c Alketas 320BC (Plain)"] = {
 armies["Book II"]["II/16d Eumenes 320-316BC (Plain)"] = {
     data = {
         aggresiveness = 3,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Kn (Gen), 1x3Cv, 6x4Pk, 2xEl, 2x2Ps.'
     },
 
@@ -4596,7 +4503,7 @@ armies["Book II"]["II/19d Seleucid 166-83BC (Plain)"] = {
 armies["Book II"]["II/20a Ptolemaic 320-275BC (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Kn (Gen), 1x3Kn, 1x2LH, 6x4Pk, 1x3/4Ax, 1xEl or 2Ps, 1x2Ps.'
     },
 
@@ -4696,7 +4603,7 @@ armies["Book II"]["II/20a Ptolemaic 320-275BC (Plain)"] = {
 armies["Book II"]["II/20b Ptolemaic 274-167BC (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Kn (Gen), 1x3Kn, 1x2LH, 6x4Pk, 1x4Ax, 1xEl, 1x2Ps.'
     },
 
@@ -4784,7 +4691,7 @@ armies["Book II"]["II/20b Ptolemaic 274-167BC (Plain)"] = {
 armies["Book II"]["II/20c Ptolemaic 166-54BC (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Kn (Gen), 1x3Kn, 1x2LH, 4x4Pk, 2x4Bd or 4Ax, 1xEl, 1x4Ax, 1x2Ps.'
     },
 
@@ -4884,7 +4791,7 @@ armies["Book II"]["II/20c Ptolemaic 166-54BC (Plain)"] = {
 armies["Book II"]["II/20d Ptolemaic 53-30BC (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Kn (Gen), 1x2LH, 2x4Pk, 2x4Ax, 2x4Bd or 4Ax, 1x3Cv or 4Wb, 2x5Wb or 4Bd, 1x2Ps.'
     },
 
@@ -8655,7 +8562,7 @@ armies["Book II"]["II/31j Hellenistic Greek Aitolian Army 275-146BC (Plain)"] = 
 armies["Book II"]["II/32 Later Carthaginian 275-146BC (Plain)"] = {
     data = {
         aggresiveness = 3,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Cv (Gen), 1x2LH, 3x4Sp, 1x3/4Ax, 3x3Wb or 2Ps, 1xEl or 3Cv, 1xEl or 2LH, 1x2Ps.'
     },
 
@@ -8779,7 +8686,7 @@ armies["Book II"]["II/32 Later Carthaginian 275-146BC (Plain)"] = {
 armies["Book II"]["II/32 Later Carthaginian 275-146BC"] = {
     data = {
         aggresiveness = 3,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Cv (Gen), 1x2LH, 3x4Sp, 1x3/4Ax, 3x3Wb or 2Ps, 1xEl or 3Cv, 1xEl or 2LH, 1x2Ps.'
     },
 
@@ -12076,7 +11983,7 @@ armies["Book II"]["II/47b Early German Ariovistus 58BC (Plain)"] = {
 armies["Book II"]["II/47c Early German Civilis' Batavian 69AD (Plain)"] = {
     data = {
         aggresiveness = 4,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Cv (Gen), 2x4Ax, 8x3Wb, 1x2Ps.'
     },
 
@@ -12164,7 +12071,7 @@ armies["Book II"]["II/47c Early German Civilis' Batavian 69AD (Plain)"] = {
 armies["Book II"]["II/47d Early German Other Batavian 115BC-205AD Plain)"] = {
     data = {
         aggresiveness = 4,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Cv (Gen), 9x3Wb, 2x2Ps.'
     },
 
@@ -13299,7 +13206,7 @@ armies["Book II"]["II/53 Ancient British 55BC-75AD (Plain)"] = {
 armies["Book II"]["II/54a Scots-Irish 55BC-432AD (Plain)"] = {
     data = {
         aggresiveness = 3,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1xLCh (Gen), 2xLCh, 1xLCh or 4Wb or 3Ax, 6x3Ax, 2x2Ps.'
     },
 
@@ -13399,7 +13306,7 @@ armies["Book II"]["II/54a Scots-Irish 55BC-432AD (Plain)"] = {
 armies["Book II"]["II/54b Scots-Irish 433-846AD (Plain)"] = {
     data = {
         aggresiveness = 3,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1xLCh or 3Ax or 3Wb (Gen), 9x3Ax, 2x2Ps.'
     },
 
@@ -15832,7 +15739,7 @@ armies["Book II"]["II/67b Early Ostrogothic, Herul, Sciri & Taifali Other 200-49
 armies["Book II"]["II/68a Pictish 211-499AD (Plain)"] = {
     data = {
         aggresiveness = 3,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1xLCh (Gen), 2x2LH, 5x3Sp, 1x3Sp or 3/4Wb, 3x2Ps.'
     },
 
@@ -17217,7 +17124,7 @@ armies["Book II"]["II/73 Old Saxon 250-804AD & Early Anglo-Saxon 428-617AD (Plai
 armies["Book II"]["II/73 Frisian 250-690AD (Plain)"] = {
     data = {
         aggresiveness = 2,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x4Wb (Gen), 10x4Wb, 1x2Ps.'
     },
 
@@ -19851,7 +19758,7 @@ armies["Book II"]["II/83b Patrician Roman Eastern Army 425-493AD (Plain)"] = {
 armies["Book II"]["II/84 African Vandal 442-535AD (Plain)"] = {
     data = {
         aggresiveness = 3,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Kn (Gen), 10x3Kn, 1x2LH or 3Kn.'
     },
 
