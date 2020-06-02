@@ -407,7 +407,7 @@ armies["Book I"]["I/1d Early Sumerian 2500-2334BC (Plain)"] = {
 armies["Book I"]["I/2a Early Egyptians 3000-1640BC (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x4Bd or Lit (Gen), 5x4Bw, 2x3Bd, 1x3Bd or 3Bw, 1x7Hd, 2x2Ps.'
     },
     base1 = {
@@ -507,7 +507,7 @@ armies["Book I"]["I/2a Early Egyptians 3000-1640BC (Plain)"] = {
 armies["Book I"]["I/2b Early Egyptians 1640-1543BC (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1xLCh (Gen), 4x4Bw, 3x3Bd, 1x3Bd or 3Bw, 1x7Hd, 2x2Ps.'
     },
     base1 = {
@@ -2424,7 +2424,7 @@ armies["Book I"]["I/7d Early Libyan 200BC-70AD (Plain)"] = {
 armies["Book I"]["I/8a Makkan, Dilmun, Saba, Ma’in & Qataban. 2800-1301BC (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Bd (Gen), 1x3Bd or 3Ax, 6x3Ax, 4x2Ps.'
     },
 
@@ -2518,7 +2518,7 @@ armies["Book I"]["I/8a Makkan, Dilmun, Saba, Ma’in & Qataban. 2800-1301BC (Pla
 armies["Book I"]["I/8b Makkan 1300-312BC (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Wb or 3Cv (Gen), 5x3Wb, 2x3Wb or 3Cv, 2x3Bw, 2x2Ps.'
     },
 
@@ -2625,7 +2625,7 @@ armies["Book I"]["I/8b Makkan 1300-312BC (Plain)"] = {
 armies["Book I"]["I/8c Makkan, Dilmun, Saba, Ma’in & Qataban 1300-312BC (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Bd or 3Cv (Gen), 2x3Cv, 2x3Bd, 4x3Ax, 3x2Ps.'
     },
 
@@ -4322,7 +4322,7 @@ armies["Book I"]["I/16 Hittite Old and Middle Empire 1680-1380BC (Plain)"] = {
 armies["Book I"]["I/17a Hyksos 1645-1591BC (Plain)"] = {
     data = {
         aggresiveness = 2,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1xLCh (Gen), 4x3Bd, 1x4Ax, 4x3Ax, 2x2Ps.'
     },
 
@@ -4410,7 +4410,7 @@ armies["Book I"]["I/17a Hyksos 1645-1591BC (Plain)"] = {
 armies["Book I"]["I/17b Hyksos 1590-1537BC (Plain)"] = {
     data = {
         aggresiveness = 2,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1xLCh (Gen), 3xLCh, 4x3Bd, 1x4Ax, 2x2Ps, 1x7Hd or 2Ps.'
     },
 
@@ -4504,7 +4504,7 @@ armies["Book I"]["I/17b Hyksos 1590-1537BC (Plain)"] = {
 armies["Book I"]["I/18 Minoan and Early Mycenian 1600-1250BC (Plain)"] = {
     data = {
         aggresiveness = 2,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1xHCh (Gen), 3xHCh or LCh, 4x4Pk, 1x3Ax or 2Ps, 3x2Ps.'
     },
 
@@ -4704,7 +4704,7 @@ armies["Book I"]["I/19 Mitanni 1595-1274BC (Plain)"] = {
 armies["Book I"]["I/20a Ugaritic 1274-1176BC (Plain)"] = {
     data = {
         aggresiveness = 2,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1xHCh (Gen), 3xHCh or LCh, 1x3Bd, 1x3Ax or 4Bd, 3x3Ax, 3x2Ps.'
     },
 
@@ -5104,7 +5104,7 @@ armies["Book I"]["I/21b Later Babylonian 889-747BC (Plain)"] = {
 armies["Book I"]["I/22a New-Kingdom Egyptian 1543-1200BC (Plain)"] = {
     data = {
         aggresiveness = 2,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = ' 1xLCh (Gen), 3xLCh, 3x3/4Bd, 4x4Bw, 1x2Ps.'
     },
 
@@ -5210,7 +5210,7 @@ armies["Book I"]["I/22a New-Kingdom Egyptian 1543-1200BC (Plain)"] = {
 armies["Book I"]["I/22b New-Kingdom Egyptian 1199-1069BC (Plain)"] = {
     data = {
         aggresiveness = 2,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = ' 1xLCh (Gen), 3xLCh, 3x3/4Bd, 3x4Bw, 1x3Wb, 1x2Ps.'
     },
 
@@ -5869,7 +5869,7 @@ armies["Book I"]["I/25b Early Neo-Assyrian 882-745BC (Plain)"] = {
 armies["Book I"]["I/26a Later Micenian Acaian 1250-1190BC (Plain)"] = {
     data = {
         aggresiveness = 3,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1xLCh//4Bd (Gen), 3xLCh//4Bd, 4x4Sp, 2x4Sp or 4Wb or 4Pk, 2x2Ps.'
     },
 
@@ -6006,7 +6006,7 @@ armies["Book I"]["I/26a Later Micenian Acaian 1250-1190BC (Plain)"] = {
 armies["Book I"]["I/26b Later Micenian Trojan 1250-1190BC (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1xLCh//4Bd (Gen), 3xLCh//4Bd, 4x4Sp, 1x3Ax, 1x4Sp or 3Bd, 2x2Ps.'
     },
 
@@ -6213,7 +6213,7 @@ armies["Book I"]["I/27 Early Hebrew 1250-1100BC (Plain)"] = {
 armies["Book I"]["I/28 Sea Peoples 1208-1176BC (Plain)"] = {
     data = {
         aggresiveness = 4,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1xLCh or 4Bd (Gen), 2x4Bd, 6x3Bd, 3x3Ax or 2Ps.'
     },
 
@@ -7865,7 +7865,7 @@ armies["Book I"]["I/34c Later Hebrew 799-587BC (Plain)"] = {
 armies["Book I"]["I/35a Cypriot & Phoenician 1000-901BC (Plain)"] = {
     data = {
         aggresiveness = 0,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1xLCh (Gen), 1xLCh, 6x4Ax, 4x2Ps.'
     },
 
@@ -7953,7 +7953,7 @@ armies["Book I"]["I/35a Cypriot & Phoenician 1000-901BC (Plain)"] = {
 armies["Book I"]["I/35b Cypriot & Phoenician 900-680BC (Plain)"] = {
     data = {
         aggresiveness = 0,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1xHCh (Gen), 1xHCh, 1x3Cv, 6x4Ax, 3x2Ps.'
     },
 
@@ -8041,7 +8041,7 @@ armies["Book I"]["I/35b Cypriot & Phoenician 900-680BC (Plain)"] = {
 armies["Book I"]["I/35c Cypriot & Phoenician 679-490BC (Plain)"] = {
     data = {
         aggresiveness = 0,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1xHCh or 4Sp (Gen), 1xHCh, 1x3Cv, 6x4Sp, 3x2Ps.'
     },
 
@@ -8136,7 +8136,7 @@ armies["Book I"]["I/35c Cypriot & Phoenician 679-490BC (Plain)"] = {
 armies["Book I"]["I/35d Cypriot & Phoenician 489-332BC (Plain)"] = {
     data = {
         aggresiveness = 0,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x4Sp (Gen), 1x3Cv, 6x4Sp or 4Ax, 3x2Ps, 1xArt or 4Sp.'
     },
 
@@ -8638,7 +8638,7 @@ armies["Book I"]["I/37b Mannaian & Other Taurus & Zagros Highlanders 749-610BC (
 armies["Book I"]["I/38 Lybian Egyptian 946-712BC (Plain)"] = {
     data = {
         aggresiveness = 2,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1xLCh (Gen), 2xLCh, 1x3Cv, 2x4Wb, 1x3Wb, 3x2Ps, 1x4Bd, 1x4Bw.'
     },
 
@@ -9896,7 +9896,7 @@ armies["Book I"]["I/45 Neo-Assyrian Empire 745-618BC (Plain)"] = {
 armies["Book I"]["I/46a Kushite Egyptian 745-728BC (Plain)"] = {
     data = {
         aggresiveness = 3,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1xLCh (Gen), 1xLCh, 2x3Cv, 2x3Ax, 4x2Ps or 3Bw, 2x2Ps.'
     },
 
@@ -10008,7 +10008,7 @@ armies["Book I"]["I/46a Kushite Egyptian 745-728BC (Plain)"] = {
 armies["Book I"]["I/46b Kushite Egyptian 727-593BC (Plain)"] = {
     data = {
         aggresiveness = 3,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1xHCh (Gen), 1xHCh or LCh, 2x3Cv, 1x3Ax, 2x2Ps or 3Bw, 2x4Sp, 1x3Ax or 2Ps, 1x4Bd, 1x4Bw.'
     },
 
@@ -11498,7 +11498,7 @@ armies["Book I"]["I/52f Early Hoplite Greek Later Athenian 540-450BC (Plain)"] =
 armies["Book I"]["I/52g Early Hoplite Greek Asiatic 668-450BC (Plain)"] = {
     data = {
         aggresiveness = 2,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Cv (Gen), 1x3Cv, 9x4Sp, 1x2Ps.'
     },
 
@@ -11674,7 +11674,7 @@ armies["Book I"]["I/52h Early Hoplite Greek Phocian & Aitolian 668-450BC (Plain)
 armies["Book I"]["I/52i Early Hoplite Greek Italiot & Sicilian 668-450BC (Plain)"] = {
     data = {
         aggresiveness = 2,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Cv (Gen), 1x3Cv or 2LH, 8x4Sp, 2x2Ps.'
     },
 
@@ -11768,7 +11768,7 @@ armies["Book I"]["I/52i Early Hoplite Greek Italiot & Sicilian 668-450BC (Plain)
 armies["Book I"]["I/53 Saitic Egyptian 664-335BC (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1xHCh or 3Cv (Gen), 1x2LH, 6x4Sp, 2x4Bw, 2x2Ps.'
     },
 
@@ -12409,7 +12409,7 @@ armies["Book I"]["I/55e Umbrian 650-290BC (Plain)"] = {
 armies["Book I"]["I/56a Kyrenean Greek 630-314BC (Plain)"] = {
     data = {
         aggresiveness = 0,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1xLCh or 3Cv or 4Sp (Gen), 2xLCh, 2xLCh//4Sp, 4x4Sp, 3x2Ps.'
     },
 
@@ -12523,7 +12523,7 @@ armies["Book I"]["I/56a Kyrenean Greek 630-314BC (Plain)"] = {
 armies["Book I"]["I/56b Kyrenean Greek 313-74BC (Plain)"] = {
     data = {
         aggresiveness = 0,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Kn (Gen), 2x4Pk or 4Ax, 6x4Sp, 3x2Ps.'
     },
 
@@ -13328,7 +13328,7 @@ armies["Book I"]["I/60c Early Achaemenid Persian 465-420BC (Plain)"] = {
 armies["Book I"]["I/61a Early Carthaginian 575-410BC (Plain)"] = {
     data = {
         aggresiveness = 3,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1xHCh or 3Cv (Gen), 1xHCh, 1x3Cv, 6x4Sp, 1x3Ax, 2x2Ps.'
     },
 
@@ -13423,7 +13423,7 @@ armies["Book I"]["I/61a Early Carthaginian 575-410BC (Plain)"] = {
 armies["Book I"]["I/61a Early Carthaginian 575-410BC"] = {
     data = {
         aggresiveness = 3,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1xHCh or 3Cv (Gen), 1xHCh, 1x3Cv, 6x4Sp, 1x3Ax, 2x2Ps.'
     },
 
@@ -13523,7 +13523,7 @@ armies["Book I"]["I/61a Early Carthaginian 575-410BC"] = {
 armies["Book I"]["I/61b Early Carthaginian 409-275BC (Plain)"] = {
     data = {
         aggresiveness = 3,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1xHCh or 3Cv (Gen), 1xHCh, 1x3Cv, 1x2LH or 3Ax, 4x4Sp, 1x3Ax, 1x4Wb, 2x2Ps.'
     },
 
@@ -13624,7 +13624,7 @@ armies["Book I"]["I/61b Early Carthaginian 409-275BC (Plain)"] = {
 armies["Book I"]["I/61b Early Carthaginian 409-275BC"] = {
     data = {
         aggresiveness = 3,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1xHCh or 3Cv (Gen), 1xHCh, 1x3Cv, 1x2LH or 3Ax, 4x4Sp, 1x3Ax, 1x4Wb, 2x2Ps.'
     },
 
