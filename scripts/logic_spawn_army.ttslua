@@ -17,6 +17,11 @@ function add_context_menu_base(base_obj)
     base_obj.addContextMenuItem("Push back single", function()
         push_back(base_obj)
     end)
+    base_obj.addContextMenuItem("Turn around", function()
+        local rotation = base_obj.getRotation()
+        rotation['y'] = rotation['y'] + 180
+        base_obj.setRotation(rotation)
+    end)
 end
 
 function add_context_menu_table(table_obj)
