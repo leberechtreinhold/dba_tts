@@ -85,7 +85,7 @@ g_gizmo_fire_color_player_red = { 1, 0.6, 0.1 }
 g_gizmo_fire_color_player_blue = { 0.15, 0.6, 0.2 }
 g_gizmo_zoc_color_player_red = { 0.6, 0.25, 0.15 }
 g_gizmo_zoc_color_player_blue = { 0.15, 0.25, 0.4 }
-g_gizmo_color_command = { 0.5, 0.5, 0.5 }
+g_gizmo_color_command = { 0.8, 0.8, 0.8 }
 
 -- How frequently the main loop runs, in seconds
 -- The main loop redraws selections, movement, etc
