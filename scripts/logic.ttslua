@@ -1298,9 +1298,12 @@ function reset_state()
     for _,obj in ipairs(all_objs) do
         if is_table(obj) then
             g_current_table = obj.getGUID()
+            g_current_table.clearContextMenu()
+            add_context_menu_table(g_current_table)
             print_info('Setting as current table = ' .. g_current_table)
         end
     end
+    print_info('If there\'s terrain on top of the table, please, do a Fix and Lock')
 end
 
 function get_closest_tile(base_obj)
