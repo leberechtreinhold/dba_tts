@@ -8991,7 +8991,7 @@ armies["Book II"]["II/33 Polybian Roman 275-105BC (Plain)"] = {
     }
 }
 
-armies["Book II"]["II/33 Polybian Roman 275-105BC (Plain)"] = {
+armies["Book II"]["II/33 Polybian Roman 275-105BC"] = {
     data = {
         aggresiveness = 1,
         terrain = 'Arable',
