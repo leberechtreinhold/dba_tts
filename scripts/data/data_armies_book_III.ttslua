@@ -5135,7 +5135,7 @@ armies["Book III"]["III/26a Early Serbs 627-1089AD (Plain)"] = {
 armies["Book III"]["III/26b Early Croatian 627-1180AD (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Cv (Gen), 2x3Cv, 8x3Ax, 1x2Ps.'
     },
 
@@ -6000,7 +6000,7 @@ armies["Book III"]["III/32 Volga Bulgar 675-1237AD (Plain)"] = {
 armies["Book III"]["III/33 Early Muslim Nort Africa & Sicily 696-1160AD (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Cv (Gen), 1x3Cv, 3x2LH, 3x2Ps, 3x2Ps or 3Ax or 4Sp, 1x2Ps or 4Sp.'
     },
 
@@ -7144,7 +7144,7 @@ armies["Book III"]["III/39 Late T'ang & Five Dynasties 755-979AD (Plain)"] = {
 armies["Book III"]["III/40a Viking 790-849AD (Plain)"] = {
     data = {
         aggresiveness = 4,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x4Bd (Gen), 2x4Bd, 8x3Bd, 1x3Bd or 3Wb or 2Ps.'
     },
 
@@ -7244,7 +7244,7 @@ armies["Book III"]["III/40a Viking 790-849AD (Plain)"] = {
 armies["Book III"]["III/40b Viking 850-1280AD (Plain)"] = {
     data = {
         aggresiveness = 4,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x4Bd (Gen), 10x4Bd, 1x3Bd or 3Wb or 2Ps or 3Bw.'
     },
 
@@ -7350,7 +7350,7 @@ armies["Book III"]["III/40b Viking 850-1280AD (Plain)"] = {
 armies["Book III"]["III/40c Leidang 790-1070AD (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x4Bd (Gen), 8x4Bd or 3Ax, 2x2Ps or 3Bw, 1x3Wb or 7Hd.'
     },
 
@@ -7504,7 +7504,7 @@ armies["Book III"]["III/40c Leidang 790-1070AD (Plain)"] = {
 armies["Book III"]["III/40d Leidang 1071-1280AD (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Kn (Gen), 8x4Bd or 3Ax, 2x2Ps or 3Bw, 1x4Sp or 7Hd.'
     },
 
@@ -8658,7 +8658,7 @@ armies["Book III"]["III/45b Pre-Feudal Scots 1052-1124AD (Plain)"] = {
 armies["Book III"]["III/46 Norse Irish 846-1300AD (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Ax (Gen), 5x3Ax, 4x2Ps, 2x3Ax or 4Bd.'
     },
 
@@ -9001,7 +9001,7 @@ armies["Book III"]["III/48 Rus 860-1054AD (Plain)"] = {
 armies["Book III"]["III/49 Tulunid or Iqshidid Egyptian 868-905AD & 935-9694AD (Plain)"] = {
     data = {
         aggresiveness = 1,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x3Cv (Gen), 3x3Cv, 1x2LH, 4x8Bw, 1x8Bw or 2LH, 2x2Ps.'
     },
 
@@ -13438,7 +13438,7 @@ armies["Book III"]["III/76 Papal Italian 1049-1320AD (Plain)"] = {
 armies["Book III"]["III/77 Scot Isles & Highlands 1050-1493AD (Plain)"] = {
     data = {
         aggresiveness = 3,
-        terrain = 'Litoral',
+        terrain = 'Littoral',
         list = '1x4Bd (Gen), 8x4Bd, 3x4Bd, 2x3Bw, 1x3Wb or 5Wb.'
     },
 
@@ -13758,5 +13758,3 @@ armies["Book III"]["III/79 Cuman Kipchak 1054-1394AD (Plain)"] = {
         ignore_terrain = true
     }
 }
-
-
