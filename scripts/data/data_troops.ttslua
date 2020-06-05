@@ -2051,15 +2051,15 @@ troop_carthaginian_elephant = {
 }
 
 ------------------------------------------------------------------------------
---                      CAMILAN ROMAN PHOTOGAMMETRY
+--                      CAMILLAN ROMAN PHOTOGAMMETRY
 ------------------------------------------------------------------------------
 
-troop_camilan_roman_blade = {
+troop_camillan_roman_blade = {
     height_correction = 0,
     scale = 0.52,
     rotation = 0,
-    description = 'Camilan Roman Blade',
-    author = 'Camilan Roman Blade by Vokuhila, edited by LeberechtReinhold.',
+    description = 'Camillan Roman Blade',
+    author = 'Camillan Roman Blade by Vokuhila, edited by LeberechtReinhold.',
     mesh = {
           'http://cloud-3.steamusercontent.com/ugc/1056603684722233520/ECFF674A3BA72EE2E90703BAFB3E250B62A07926/'
     },
@@ -2067,12 +2067,12 @@ troop_camilan_roman_blade = {
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1056603684722233307/DCA8A0BDD62B3D216D7D085A0493AD710A281D87/'
 }
 
-troop_camilan_roman_spear = {
+troop_camillan_roman_spear = {
     height_correction = 0,
     scale = 0.52,
     rotation = 0,
-    description = 'Camilan Roman Spear',
-    author = 'Camilan Roman Spear by Vokuhila, edited by LeberechtReinhold.',
+    description = 'Camillan Roman Spear',
+    author = 'Camillan Roman Spear by Vokuhila, edited by LeberechtReinhold.',
     mesh = {
           'http://cloud-3.steamusercontent.com/ugc/1056603684722235549/DFF5764193135A9981C3744E22354CFBB6892E2F/',
           'http://cloud-3.steamusercontent.com/ugc/1056603684722235673/E69683B2396EDAFF2B1447F32E9107022A757AE3/'
@@ -2081,12 +2081,12 @@ troop_camilan_roman_spear = {
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1056603684722235189/3EED911B756776A57C43C3D1A5BA53D388647E88/'
 }
 
-troop_camilan_roman_psiloi = {
+troop_camillan_roman_psiloi = {
     height_correction = 0,
     scale = 0.52,
     rotation = 0,
-    description = 'Camilan Roman Psiloi',
-    author = 'Camilan Roman Psiloi by Vokuhila, edited by LeberechtReinhold.',
+    description = 'Camillan Roman Psiloi',
+    author = 'Camillan Roman Psiloi by Vokuhila, edited by LeberechtReinhold.',
     mesh = {
           'http://cloud-3.steamusercontent.com/ugc/1056603684722234886/D7C3508577A6BAA4A9A31F7CCE8F0DD55699D744/',
           'http://cloud-3.steamusercontent.com/ugc/1056603684722235036/3FD81FF62E1573E98430CB8613FDF3BCA14AD478/'
@@ -2095,12 +2095,12 @@ troop_camilan_roman_psiloi = {
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1056603684722234439/89399F63CDF26D34903647A22D4008A7FB7BBD1D/'
 }
 
-troop_camilan_roman_cavalry = {
+troop_camillan_roman_cavalry = {
     height_correction = 0,
     scale = 0.52,
     rotation = 0,
-    description = 'Camilan Roman Cavalry',
-    author = 'Camilan Roman Cavalry by Vokuhila, edited by LeberechtReinhold.',
+    description = 'Camillan Roman Cavalry',
+    author = 'Camillan Roman Cavalry by Vokuhila, edited by LeberechtReinhold.',
     mesh = {
           'http://cloud-3.steamusercontent.com/ugc/1056603684722234104/2191387DB56EE311A650607CCF39E777A709A33D/'
     },
@@ -2108,12 +2108,12 @@ troop_camilan_roman_cavalry = {
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1056603684722233668/2910F63D19663198950CEB0A5213839899B9BECB/'
 }
 
-troop_camilan_roman_bodyguard = {
+troop_camillan_roman_bodyguard = {
     height_correction = 0,
     scale = 0.47,
     rotation = 0,
-    description = 'Camilan Roman General Bodyguard',
-    author = 'Camilan Roman General Bodyguard by Vokuhila, edited by LeberechtReinhold.',
+    description = 'Camillan Roman General Bodyguard',
+    author = 'Camillan Roman General Bodyguard by Vokuhila, edited by LeberechtReinhold.',
     mesh = {
           'http://cloud-3.steamusercontent.com/ugc/1056603684722230092/3F67635925EBC51A922AA3E5D01F5C5F595AF053/'
     },
@@ -2121,12 +2121,12 @@ troop_camilan_roman_bodyguard = {
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1056603684722233883/A70155B8FFEC7A173C119074D33D99A1C7DBB92A/'
 }
 
-troop_camilan_roman_general = {
+troop_camillan_roman_general = {
     height_correction = 0,
     scale = 0.52,
     rotation = 0,
-    description = 'Camilan Roman General ',
-    author = 'Camilan Roman General by Vokuhila, edited by LeberechtReinhold.',
+    description = 'Camillan Roman General ',
+    author = 'Camillan Roman General by Vokuhila, edited by LeberechtReinhold.',
     mesh = {
           'http://cloud-3.steamusercontent.com/ugc/1056603684722234291/5CDCA636A3FAF45736D7D8126957077B25307228/'
     },
@@ -2134,7 +2134,7 @@ troop_camilan_roman_general = {
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1056603684722233883/A70155B8FFEC7A173C119074D33D99A1C7DBB92A/'
 }
 
-troop_camilan_roman_camp = {
+troop_camillan_roman_camp = {
     height_correction = 0,
     scale = 0.05,
     rotation = 0,
