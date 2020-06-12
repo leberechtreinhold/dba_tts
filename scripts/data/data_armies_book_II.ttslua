@@ -9000,82 +9000,87 @@ armies["Book II"]["II/33 Polybian Roman 275-105BC"] = {
 
     base1 = {
         name = '3Cv_Gen',
-        base = 'tile_plain_3Cv_40x30',
-        n_models = 1,
-        model_data = 'troop_general_plain',
-        ignore_terrain = true
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        fixed_models = {
+            [1] = 'troop_camillan_roman_bodyguard',
+            [2] = 'troop_camillan_roman_general',
+            [3] = 'troop_camillan_roman_bodyguard',
+        }
     },
     base2 = {
         name = '3Cv',
-        base = 'tile_plain_3Cv_40x30',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        model_data = 'troop_camillan_roman_cavalry'
     },
     base3 = {
         name = '4Bd',
-        base = 'tile_plain_4Bd_40x15',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_camillan_roman_blade'
     },
     base4 = {
         name = '4Bd',
-        base = 'tile_plain_4Bd_40x15',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_camillan_roman_blade'
     },
     base5 = {
         name = '4Bd',
-        base = 'tile_plain_4Bd_40x15',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_camillan_roman_blade'
     },
     base6 = {
         name = '4Bd',
-        base = 'tile_plain_4Bd_40x15',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_camillan_roman_blade'
     },
     base7 = {
         name = '4Bd',
-        base = 'tile_plain_4Bd_40x15',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_camillan_roman_blade'
     },
     base8 = {
         name = '4Bd',
-        base = 'tile_plain_4Bd_40x15',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_camillan_roman_blade'
     },
     base9 = {
         name = '4Sp',
-        base = 'tile_plain_4Sp_40x15',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_camillan_roman_spear'
     },
     base10 = {
         name = '4Sp',
-        base = 'tile_plain_4Sp_40x15',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_camillan_roman_spear'
     },
     base11 = {
         name = '2Ps',
-        base = 'tile_plain_2Ps_40x20',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        model_data = 'troop_camillan_roman_psiloi',
+        loose = true
     },
     base12 = {
         name = '2Ps',
-        base = 'tile_plain_2Ps_40x20',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        model_data = 'troop_camillan_roman_psiloi',
+        loose = true
     },
     base13 = {
         name = 'Camp',
-        base = 'tile_plain_Camp_40x40',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x40',
+        n_models = 1,
+        model_data = 'troop_camillan_roman_camp',
     }
 }
 
