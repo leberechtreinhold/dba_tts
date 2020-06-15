@@ -2156,7 +2156,7 @@ troop_indian_el_general = {
     scale = 0.9,
     rotation = 180,
     description = 'Indian Elephant General',
-    author = 'Indian Elephant General by Eric Delamer, edited by LeberechtReinhold.',
+    author = 'Indian Elephant General by Eric Delemer, edited by LeberechtReinhold.',
     mesh = {
           'http://cloud-3.steamusercontent.com/ugc/1191713157496242430/E014909FA88BF9EB36EE88922750C7F76287A004/'
     },
@@ -2169,7 +2169,7 @@ troop_indian_el = {
     scale = 0.9,
     rotation = 180,
     description = 'Indian Elephant',
-    author = 'Indian Elephant by Eric Delamer, edited by LeberechtReinhold.',
+    author = 'Indian Elephant by Eric Delemer, edited by LeberechtReinhold.',
     mesh = {
           'http://cloud-3.steamusercontent.com/ugc/1191713157496244785/070C032CDCD45C7A599159E455B1604FF8D4C214/'
     },
@@ -2182,7 +2182,7 @@ troop_indian_hch_general = {
     scale = 0.9,
     rotation = 180,
     description = 'Indian Heavy Chariot General',
-    author = 'Indian Heavy Chariot General by Eric Delamer, edited by LeberechtReinhold.',
+    author = 'Indian Heavy Chariot General by Eric Delemer, edited by LeberechtReinhold.',
     mesh = {
           'http://cloud-3.steamusercontent.com/ugc/1191713157496207389/B1C5756B2072EB92929222AF3E620BAD58B16DC8/'
     },
@@ -2195,7 +2195,7 @@ troop_indian_hch = {
     scale = 0.9,
     rotation = 0,
     description = 'Indian Heavy Chariot',
-    author = 'Indian Heavy Chariot by Eric Delamer, edited by LeberechtReinhold.',
+    author = 'Indian Heavy Chariot by Eric Delemer, edited by LeberechtReinhold.',
     mesh = {
           'http://cloud-3.steamusercontent.com/ugc/1191713157501737672/6B907E6F07F32D3E0E60E010700C3A489C8DFF0E/'
     },
@@ -2208,7 +2208,7 @@ troop_indian_lch = {
     scale = 0.9,
     rotation = 180,
     description = 'Indian Light Chariot',
-    author = 'Indian Light Chariot by Eric Delamer, edited by LeberechtReinhold.',
+    author = 'Indian Light Chariot by Eric Delemer, edited by LeberechtReinhold.',
     mesh = {
           'http://cloud-3.steamusercontent.com/ugc/1191713157501738359/FD5C08F4EFF259F7836E8895EB68C3C49B2AB32D/'
     },
@@ -2221,7 +2221,7 @@ troop_indian_bow = {
     scale = 0.9,
     rotation = 0,
     description = 'Indian Bowmen',
-    author = 'Indian Bowmen by Eric Delamer, edited by LeberechtReinhold.',
+    author = 'Indian Bowmen by Eric Delemer, edited by LeberechtReinhold.',
     mesh = {
           'http://cloud-3.steamusercontent.com/ugc/1191713157501737972/AB32B855AE38B65417234DE679E10F9A67D94763/',
           'http://cloud-3.steamusercontent.com/ugc/1191713157501738114/FC5A0DF67F6D7D4FE6DF03EEF9E6C5FC3C6CF713/',
@@ -2236,7 +2236,7 @@ troop_indian_cavalry = {
     scale = 0.9,
     rotation = 0,
     description = 'Indian Cavalry',
-    author = 'Indian Cavalry by Eric Delamer, edited by LeberechtReinhold.',
+    author = 'Indian Cavalry by Eric Delemer, edited by LeberechtReinhold.',
     mesh = {
           'http://cloud-3.steamusercontent.com/ugc/1191713157496247666/E62AE25A4BAF32B13DA08C2B3E3D1DC421C7932B/',
           'http://cloud-3.steamusercontent.com/ugc/1191713157496247885/D849D99B68877FEE99528490BAC5DD8AB30897DC/',
@@ -2251,7 +2251,7 @@ troop_indian_auxilia = {
     scale = 0.9,
     rotation = 0,
     description = 'Indian Auxilia',
-    author = 'Indian Auxilia by Eric Delamer, edited by LeberechtReinhold.',
+    author = 'Indian Auxilia by Eric Delemer, edited by LeberechtReinhold.',
     mesh = {
           'http://cloud-3.steamusercontent.com/ugc/1191713157501736778/95F82C78EBA4B7129B597A590A268E76C04B729C/',
           'http://cloud-3.steamusercontent.com/ugc/1191713157501736912/7A8417CC2157FD2A7E0426447BF986DB3278C0E6/',
@@ -2266,7 +2266,7 @@ troop_indian_maiden_guard = {
     scale = 0.9,
     rotation = 0,
     description = 'Indian Maiden Guard',
-    author = 'Indian Maiden Guard by Eric Delamer, edited by LeberechtReinhold.',
+    author = 'Indian Maiden Guard by Eric Delemer, edited by LeberechtReinhold.',
     mesh = {
           'http://cloud-3.steamusercontent.com/ugc/1191713157501739142/5E91B9DA51695FEAE38E5FD52A08186737FEAF5F/'
     },
@@ -2279,7 +2279,7 @@ troop_indian_leader = {
     scale = 0.9,
     rotation = 0,
     description = 'Indian Leader',
-    author = 'Indian Leader by Eric Delamer, edited by LeberechtReinhold.',
+    author = 'Indian Leader by Eric Delemer, edited by LeberechtReinhold.',
     mesh = {
           'http://cloud-3.steamusercontent.com/ugc/1191713157501738585/65977610A567C9373BB13C157D514C7B433BA407/'
     },
@@ -2292,7 +2292,7 @@ troop_indian_pk = {
     scale = 0.9,
     rotation = 0,
     description = 'Indian Pikemen',
-    author = 'Indian Pikemen by Eric Delamer, edited by LeberechtReinhold.',
+    author = 'Indian Pikemen by Eric Delemer, edited by LeberechtReinhold.',
     mesh = {
           'http://cloud-3.steamusercontent.com/ugc/1191713327271584376/823D2B5372E0DF480274C5AB9943DE68814B1C0D/'
     },
@@ -2305,7 +2305,7 @@ troop_indian_sp = {
     scale = 0.9,
     rotation = 0,
     description = 'Indian Spearmen',
-    author = 'Indian Spearmen by Eric Delamer, edited by LeberechtReinhold.',
+    author = 'Indian Spearmen by Eric Delemer, edited by LeberechtReinhold.',
     mesh = {
           'http://cloud-3.steamusercontent.com/ugc/1191713327271584552/98AD6830ED0A0489AD76331EC864C743330B5876/'
     },
@@ -2318,7 +2318,7 @@ troop_indian_ps = {
     scale = 0.9,
     rotation = 0,
     description = 'Indian Psiloi',
-    author = 'Indian Psiloi by Eric Delamer, edited by LeberechtReinhold.',
+    author = 'Indian Psiloi by Eric Delemer, edited by LeberechtReinhold.',
     mesh = {
           'http://cloud-3.steamusercontent.com/ugc/1191713157501739642/3AD8090AF886F189B2336B25D3EE505FEAE6B04E/',
           'http://cloud-3.steamusercontent.com/ugc/1191713157501739816/9BB19355B4740EA94F4BDA23464AE648CC8FCDB0/'
@@ -2332,7 +2332,7 @@ troop_indian_light_cavalry = {
     scale = 0.9,
     rotation = 0,
     description = 'Indian Light Cavalry',
-    author = 'Indian Light Cavalry by Eric Delamer, edited by LeberechtReinhold.',
+    author = 'Indian Light Cavalry by Eric Delemer, edited by LeberechtReinhold.',
     mesh = {
           'http://cloud-3.steamusercontent.com/ugc/1191713157501738839/A148C98AC7C0935E6B90C0BE85677604B2840BB9/',
           'http://cloud-3.steamusercontent.com/ugc/1191713157501739031/03EAE8927203DEF47CC74ABB436B37D1D5E7727E/'
@@ -2346,7 +2346,7 @@ troop_indian_ganesh = {
     scale = 0.5,
     rotation = 0,
     description = 'Indian Ganesh',
-    author = 'Indian Ganesh by Eric Delamer, edited by LeberechtReinhold.',
+    author = 'Indian Ganesh by Eric Delemer, edited by LeberechtReinhold.',
     mesh = {
           'http://cloud-3.steamusercontent.com/ugc/1191713157501737377/DE9A69DF0A5022C8B3D0D73661E42B66F2905E30/'
     },
@@ -2363,7 +2363,7 @@ troop_successors_bactrian_sp = {
     scale = 0.9,
     rotation = 0,
     description = 'Bactrian Spearmen',
-    author = 'Bactrian Spearmen by Eric Delamer, edited by LeberechtReinhold.',
+    author = 'Bactrian Spearmen by Eric Delemer, edited by LeberechtReinhold.',
     mesh = {
           'http://cloud-3.steamusercontent.com/ugc/1191713327271756529/8BF5074227E5B3F775CB965F7B73E58883B408AE/'
     },
