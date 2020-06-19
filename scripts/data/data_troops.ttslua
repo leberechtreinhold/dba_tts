@@ -2039,7 +2039,7 @@ troop_carthaginian_camp = {
 
 troop_carthaginian_elephant = {
     height_correction = 0,
-    scale = 2.5,
+    scale = 2.8,
     rotation = 0,
     description = 'Carthaginian Elephant',
     author = 'Carthaginian Elephant by LeberechtReinhold, with Spear by gamekorp under CC0.',
@@ -2153,7 +2153,7 @@ troop_camillan_roman_camp = {
 
 troop_indian_el_general = {
     height_correction = 0,
-    scale = 0.9,
+    scale = 0.83,
     rotation = 180,
     description = 'Indian Elephant General',
     author = 'Indian Elephant General by Eric Delemer, edited by LeberechtReinhold.',
@@ -2166,7 +2166,7 @@ troop_indian_el_general = {
 
 troop_indian_el = {
     height_correction = 0,
-    scale = 0.9,
+    scale = 0.83,
     rotation = 180,
     description = 'Indian Elephant',
     author = 'Indian Elephant by Eric Delemer, edited by LeberechtReinhold.',
