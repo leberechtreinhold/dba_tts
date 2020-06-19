@@ -523,22 +523,32 @@ function wheel_group(objs, angle, direction)
     return max_movement_distance
 end
 
-function apply_transform_obj(base_obj, new_transform)
+function apply_transform_obj(base_obj, old_transform, new_transform)
+    local distance = max_distance_between_bases(
+        old_transform['corners'], new_transform['corners'])
+    print_info('Base ' .. base_obj.getName() .. ' is moving ' 
+        .. string.format('%.1f', distance * 100) .. ' paces')
+
     base_obj.setPosition(new_transform['position'])
     base_obj.setRotation(transform_to_rotation_vector(new_transform))
 end
 
 function perform_wheels()
     local new_transforms = g_current_wheel_newtransforms
+    local old_transforms = g_current_wheel_transforms
     local front_elements = g_current_wheel_group['front_elements']
     local behind_of = g_current_wheel_group['behind_of']
 
     for col, front_element in pairs(front_elements) do
         local current_element = front_element
-        apply_transform_obj(current_element, new_transforms[current_element])
+        apply_transform_obj(current_element, 
+            old_transforms[current_element],  
+            new_transforms[current_element])
         while behind_of[current_element] ~= nil do
             current_element = behind_of[current_element]
-            apply_transform_obj(current_element, new_transforms[current_element])
+            apply_transform_obj(current_element, 
+                old_transforms[current_element],  
+                new_transforms[current_element])
         end
     end
 end
