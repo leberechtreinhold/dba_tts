@@ -1,0 +1,242 @@
+g_terrain = {
+    desert = {
+        forest = {
+            objects = { 
+                'terrain_palm_tree' 
+            },
+            texture = { 
+                'http://cloud-3.steamusercontent.com/ugc/1022823759371071004/DC4F81C7F92B971C1D1F83F2B12C0DE1E896ABEE/'
+            }
+        },
+        rough = {
+            objects = { 
+                'terrain_palm_shrubs',
+                'terrain_rock_sand'
+            },
+            texture = { 
+                'http://cloud-3.steamusercontent.com/ugc/1022823759371071004/DC4F81C7F92B971C1D1F83F2B12C0DE1E896ABEE/'
+            }
+        },
+        oasis = {
+            objects = { 
+                'terrain_palm_tree' 
+            },
+            texture = { 
+                'http://cloud-3.steamusercontent.com/ugc/1056604919810095519/542A46C870B041B7DC4B885E338E2D93D0699A2C/'
+            }
+        },
+    },
+    grass = {
+        forest = {
+            objects = { 
+                'terrain_tree' 
+            },
+            texture = { 
+                'http://cloud-3.steamusercontent.com/ugc/1267149286201969420/6FF3C9E1F3FF49AE28673503D1C73FD7E881F2C0/'
+            }
+        },
+        rough = {
+            objects = { 
+                'terrain_rock_grey'
+            },
+            texture = { 
+                'http://cloud-3.steamusercontent.com/ugc/1267149286201969420/6FF3C9E1F3FF49AE28673503D1C73FD7E881F2C0/'
+            }
+        },
+        oasis = {
+            objects = { 
+                'terrain_palm_tree' 
+            },
+            texture = { 
+                'http://cloud-3.steamusercontent.com/ugc/1056604919810095519/542A46C870B041B7DC4B885E338E2D93D0699A2C/'
+            }
+        },
+    },
+    forest = {
+        forest = {
+            objects = { 
+                'terrain_fir' 
+            },
+            texture = { 
+                'http://cloud-3.steamusercontent.com/ugc/1267149286201969420/6FF3C9E1F3FF49AE28673503D1C73FD7E881F2C0/'
+            }
+        },
+        rough = {
+            objects = { 
+                'terrain_rock_grey'
+            },
+            texture = { 
+                'http://cloud-3.steamusercontent.com/ugc/1267149286201969420/6FF3C9E1F3FF49AE28673503D1C73FD7E881F2C0/'
+            }
+        },
+        oasis = {
+            objects = { 
+                'terrain_palm_tree' 
+            },
+            texture = { 
+                'http://cloud-3.steamusercontent.com/ugc/1056604919810095519/542A46C870B041B7DC4B885E338E2D93D0699A2C/'
+            }
+        },    
+    },
+    mountain = {
+        forest = {
+            objects = { 
+                'terrain_fir' 
+            },
+            texture = { 
+                'http://cloud-3.steamusercontent.com/ugc/1267149286201969420/6FF3C9E1F3FF49AE28673503D1C73FD7E881F2C0/'
+            }
+        },
+        rough = {
+            objects = { 
+                'terrain_rock_grey'
+            },
+            texture = { 
+                'http://cloud-3.steamusercontent.com/ugc/1267149286201969420/6FF3C9E1F3FF49AE28673503D1C73FD7E881F2C0/'
+            }
+        },
+        oasis = {
+            objects = { 
+                'terrain_palm_tree' 
+            },
+            texture = { 
+                'http://cloud-3.steamusercontent.com/ugc/1056604919810095519/542A46C870B041B7DC4B885E338E2D93D0699A2C/'
+            }
+        },
+    },
+    steppe = {
+        forest = {
+            objects = { 
+                'terrain_fir' 
+            },
+            texture = { 
+                'http://cloud-3.steamusercontent.com/ugc/1267149286201969420/6FF3C9E1F3FF49AE28673503D1C73FD7E881F2C0/'
+            }
+        },
+        rough = {
+            objects = { 
+                'terrain_rock_grey'
+            },
+            texture = { 
+                'http://cloud-3.steamusercontent.com/ugc/1267149286201969420/6FF3C9E1F3FF49AE28673503D1C73FD7E881F2C0/'
+            }
+        },
+        oasis = {
+            objects = { 
+                'terrain_palm_tree' 
+            },
+            texture = { 
+                'http://cloud-3.steamusercontent.com/ugc/1056604919810095519/542A46C870B041B7DC4B885E338E2D93D0699A2C/'
+            }
+        },
+    },
+    tropical = {
+        forest = {
+            objects = { 
+                'terrain_tree' 
+            },
+            texture = { 
+                'http://cloud-3.steamusercontent.com/ugc/1267149286201969420/6FF3C9E1F3FF49AE28673503D1C73FD7E881F2C0/'
+            }
+        },
+        rough = {
+            objects = { 
+                'terrain_palm_shrubs'
+            },
+            texture = { 
+                'http://cloud-3.steamusercontent.com/ugc/1267149286201969420/6FF3C9E1F3FF49AE28673503D1C73FD7E881F2C0/'
+            }
+        },
+        oasis = {
+            objects = { 
+                'terrain_palm_tree' 
+            },
+            texture = { 
+                'http://cloud-3.steamusercontent.com/ugc/1056604919810095519/542A46C870B041B7DC4B885E338E2D93D0699A2C/'
+            }
+        },
+    },
+}
+
+terrain_rock_sand = {
+    height_correction = 0,
+    scale = 0.1,
+    rotation = 0,
+    description = 'Terrain Rock',
+    author = 'Terrain Rock by ice kazim, edited by LeberechtReinhold.',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1267149286201875058/5D1FA1E14993F2BA31A3BFA4F77C135C913470BD/',
+        'http://cloud-3.steamusercontent.com/ugc/1267149286201875192/1775B2BCC2AC612B55859BC824730B78C0CEA139/',
+        'http://cloud-3.steamusercontent.com/ugc/1267149286201875374/AC7BED890802C7AEF589719C2DB5E3A33F1B61D5/',
+        'http://cloud-3.steamusercontent.com/ugc/1267149286201875483/1DF468E1C5F61A2A088EC87F38FE79E30E1DA005/'
+    },
+    texture = 'http://cloud-3.steamusercontent.com/ugc/1267149286201875742/50D71609D178D8D71088DD678B8A779FF9CD7621/'
+}
+
+terrain_rock_grey = {
+    height_correction = 0,
+    scale = 0.1,
+    rotation = 0,
+    description = 'Terrain Rock',
+    author = 'Terrain Rock by ice kazim, edited by LeberechtReinhold.',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1267149286201875058/5D1FA1E14993F2BA31A3BFA4F77C135C913470BD/',
+        'http://cloud-3.steamusercontent.com/ugc/1267149286201875192/1775B2BCC2AC612B55859BC824730B78C0CEA139/',
+        'http://cloud-3.steamusercontent.com/ugc/1267149286201875374/AC7BED890802C7AEF589719C2DB5E3A33F1B61D5/',
+        'http://cloud-3.steamusercontent.com/ugc/1267149286201875483/1DF468E1C5F61A2A088EC87F38FE79E30E1DA005/'
+    },
+    texture = 'http://cloud-3.steamusercontent.com/ugc/1267149286201875580/BC3284977387717F2AF106D9365914FE3BC1BFF1/'
+}
+
+terrain_palm_tree = {
+    height_correction = 0,
+    scale = 0.05,
+    rotation = 0,
+    description = 'Palm Tree',
+    author = 'Palm Tree by killst4r, edited by LeberechtReinhold.',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1056603883716667096/1EDFD14996FB4ECB1ABCB511BA1C1AA62187AD08/',
+        'http://cloud-3.steamusercontent.com/ugc/1056603883716686644/0E6589543EE1FAB6BE9C8DF837A492341B6FB7B4/',
+        'http://cloud-3.steamusercontent.com/ugc/1056603883716686746/B709A17C7AA24B1A8949397600E0E955E786455F/'
+    },
+    texture = 'http://cloud-3.steamusercontent.com/ugc/1056603883717140905/53E5838C3E98E32E8ADF3FFE3C4FFCC248A264CD/'
+}
+
+terrain_palm_shrubs = {
+    height_correction = 0,
+    scale = 0.05,
+    rotation = 0,
+    description = 'Palm Tree',
+    author = 'Palm Tree by killst4r, edited by LeberechtReinhold.',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1056603883716686387/318F4122D944ADF7F8D798FC516FC550E4792A7C/',
+        'http://cloud-3.steamusercontent.com/ugc/1056603883716686552/0456900004D531060587DA2317241680C8ED4A0D/'
+    },
+    texture = 'http://cloud-3.steamusercontent.com/ugc/1056603883717140905/53E5838C3E98E32E8ADF3FFE3C4FFCC248A264CD/'
+}
+
+terrain_tree = {
+    height_correction = 0,
+    scale = 0.1,
+    rotation = 0,
+    description = 'Tree',
+    author = 'Tree by killst4r, edited by LeberechtReinhold.',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1056603883717140380/003BF539C1FB0A44BAC71D51091AEDD64C63E113/',
+        'http://cloud-3.steamusercontent.com/ugc/1056603883717140558/FB9CA2E369AD49B9E20484D84530EAA7D3B35BF0/'
+    },
+    texture = 'http://cloud-3.steamusercontent.com/ugc/1056603883717140905/53E5838C3E98E32E8ADF3FFE3C4FFCC248A264CD/'
+}
+
+terrain_fir = {
+    height_correction = 0,
+    scale = 0.03,
+    rotation = 0,
+    description = 'Fir Tree',
+    author = 'Fir Tree by syol, edited by LeberechtReinhold.',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1056603883717140704/6D5A3A5B786D6B46A32BDDB53071CAB2498243CA/'
+    },
+    texture = 'http://cloud-3.steamusercontent.com/ugc/1056603883717140905/53E5838C3E98E32E8ADF3FFE3C4FFCC248A264CD/'
+
+}

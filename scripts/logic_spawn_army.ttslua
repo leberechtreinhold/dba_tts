@@ -321,6 +321,8 @@ function fix_terrain_and_lock()
     local max_distance_from_table_sq = (g_width_table_in/2)^2 + (g_depth_table_in / 2)^2
     local pos_table = gametable.getPosition()
 
+    local terrain_type = from_toggle_number_to_table_type(g_current_table_type)
+
     gametable.setLock(false)
     for _,terrain in ipairs(terrains) do
         local terrain_pos = terrain.getPosition()
@@ -328,6 +330,12 @@ function fix_terrain_and_lock()
         if distance <= max_distance_from_table_sq
             and pos_table['y'] < terrain_pos['y'] then
 
+            print_debug('Found terrain with name ' .. terrain.getName())
+
+            if g_use_3d_terrain then
+                process_vegetation(terrain, terrain_type)
+            end
+            
             gametable.addAttachment(terrain)
             print_info('Attaching ' .. terrain.getName())
         end
@@ -350,6 +358,11 @@ function spawn_model(troop_name, pos, added_y_axis_rotation, collider, is_player
         texture = model_data['player_blue_tex']
         if is_player_red then
             texture = model_data['player_red_tex']
+        end
+        -- Vegetation etc does not have that kind of player texture
+        -- they are global
+        if texture == nil then
+            texture = model_data['texture']
         end
     end
 
@@ -452,4 +465,64 @@ function spawn_proxy_bases()
         ignore_terrain = 'true',
         n_models = 0
     }, {x=-42, y=2, z=15.5}, 180, false)
+end
+
+function change_texture_terrain(terrain_obj, new_tex_url)
+    print('New url is ' .. new_tex_url)
+    local custom = terrain_obj.getCustomObject()
+    custom['diffuse'] = new_tex_url
+    terrain_obj.setCustomObject(custom)
+end
+
+function set_forest(terrain_obj, terrain_pos, terrain_rotation, terrain_size, table_type)
+    local options = g_terrain[table_type]['forest']
+    local ntrees = math.floor((terrain_size['x'] + terrain_size['z'])*1.3)
+    for i=1,ntrees do
+        local point = random_point_ellipse(terrain_size['x'] / 2.5, terrain_size['z'] / 2.5)
+        new_pos = rotate_point_relative(point, terrain_pos, terrain_rotation)
+        local obj = spawn_model(random_element(options['objects']), new_pos, math.random(1, 359), minimal_collider, true)
+        terrain_obj.addAttachment(obj)
+    end
+    change_texture_terrain(terrain_obj, random_element(options['texture']))
+end
+
+function set_arid(terrain_obj, terrain_pos, terrain_rotation, terrain_size, table_type)
+    local options = g_terrain[table_type]['rough']
+    local nobjs = math.floor((terrain_size['x'] + terrain_size['z'])*2)
+    for i=1,nobjs do
+        local point = random_point_ellipse(terrain_size['x'] / 2.5, terrain_size['z'] / 2.5)
+        new_pos = rotate_point_relative(point, terrain_pos, terrain_rotation)
+        local obj = spawn_model(random_element(options['objects']), new_pos, math.random(1, 359), minimal_collider, true)
+        terrain_obj.addAttachment(obj)
+    end
+    change_texture_terrain(terrain_obj, random_element(options['texture']))
+end
+
+function set_oasis(terrain_obj, terrain_pos, terrain_rotation, terrain_size, table_type)
+    local options = g_terrain[table_type]['oasis']
+    local nobjs = math.floor((terrain_size['x'] + terrain_size['z'])*1.2)
+    for i=1,nobjs do
+        local point = random_point_ellipse(terrain_size['x'] / 4, terrain_size['z'] / 4,
+            math.min(terrain_size['x'] / 4, terrain_size['z'] / 4) - 0.3)
+        
+        new_pos = rotate_point_relative(point, terrain_pos, terrain_rotation)
+        local obj = spawn_model(random_element(options['objects']), new_pos, math.random(1, 359), minimal_collider, true)
+        terrain_obj.addAttachment(obj)
+    end
+    change_texture_terrain(terrain_obj, random_element(options['texture']))
+end
+
+function process_vegetation(terrain_obj, type)
+    local terrain_pos = terrain_obj.getPosition()
+    local terrain_rotation = normalize_angle(math.rad(terrain_obj.getRotation()['y']))
+    local terrain_size = terrain_obj.getBoundsNormalized()['size']
+    if str_starts_with(terrain_obj.getName(), 'terrain Forest') then
+        set_forest(terrain_obj, terrain_pos, terrain_rotation, terrain_size, type)
+    end
+    if str_starts_with(terrain_obj.getName(), 'terrain Arid') then
+        set_arid(terrain_obj, terrain_pos, terrain_rotation, terrain_size, type)
+    end
+    if str_starts_with(terrain_obj.getName(), 'terrain Oasis') then
+        set_oasis(terrain_obj, terrain_pos, terrain_rotation, terrain_size, type)
+    end
 end

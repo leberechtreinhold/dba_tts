@@ -123,9 +123,16 @@ function random_float(start_range, end_range)
     return start_range + math.random() * (end_range - start_range)
 end
 
+-- Given a flat array, gets a random element
+function random_element(array)
+    local index = math.random(1, #array)
+    return array[index]
+end
+
 -- Returns true if they are roughly the same, as defined by epsilon.
 -- By default precision is 0.00001
 function equals_float(f1, f2, epsilon)
     epsilon = epsilon or 0.00001
     return math.abs(f1 - f2) < epsilon
 end
+

@@ -35,12 +35,12 @@ end
 
 
 -- Given two points represented by tables with x,z coords, determines the angle
--- in radains, of point B relative to A, taking into account the orientation 
+-- in radains, of point B relative to A, taking into account the orientation
 -- of A (in the Y axis) in radians
 function relative_angle_from_point(pointA, pointB, rotationA)
     local zdiff = pointB['z'] - pointA['z']
     local xdiff = pointB['x'] - pointA['x']
-    
+
     local relative_angle = math.atan2(zdiff, xdiff)
     if relative_angle < 0 then
         relative_angle = 2*math.pi + relative_angle
@@ -72,7 +72,7 @@ function distance_points_flat_sq(point1, point2)
     return (point1['x'] - point2['x'])^2 + (point1['z'] - point2['z'])^2
 end
 
--- Given two tables with x,y,z representing world coords, calculates the distance 
+-- Given two tables with x,y,z representing world coords, calculates the distance
 -- between them in x,z
 function distance_points_flat(point1, point2)
     return math.sqrt((point1['x'] - point2['x'])^2 + (point1['z'] - point2['z'])^2)
@@ -113,7 +113,7 @@ end
 -- Given a point with xyz coordinates, relative to the center, rotates along
 -- theta
 function rotate_point_relative(point, center_coordinates, theta)
-    return { 
+    return {
         x = point['x'] * math.cos(theta) - point['z'] * math.sin(theta) + center_coordinates['x'],
         y = point['y'] + center_coordinates['y'],
         z = point['x'] * math.sin(theta) + point['z'] * math.cos(theta) + center_coordinates['z']
@@ -277,7 +277,7 @@ function friendlyname_to_dataname(friendly_name)
     return dataname
 end
 
--- Given a position for a center,  gets the coordinates of circle on the XZ plane 
+-- Given a position for a center,  gets the coordinates of circle on the XZ plane
 function get_coordinates_circle(center, radius, steps)
     local point_array = {}
     local degrees_per_step = 360 / steps
@@ -307,4 +307,42 @@ function get_coordinates_arc(center, radius, steps, start_angle, finish_angle)
         table.insert(point_array, p)
     end
     return point_array
+end
+
+-- Gives a random angle between -pi/2-pi/2 for a ellipse
+function random_polar_angle_ellipse(w,h)
+    local u = math.random() / 4.0
+    local theta = math.atan(h/w * math.tan(2*math.pi*u))
+
+    local v = math.random()
+    if v < 0.25 then
+        return theta
+    end
+    if v < 0.5 then
+        return math.pi - theta
+    end
+    if v < 0.75 then
+        return math.pi + theta
+    end
+    return -theta
+end
+
+function get_radius_ellipse(w,h,theta)
+    return w * h / math.sqrt((h*math.cos(theta))^2 + (w*math.sin(theta))^2)
+end
+
+-- https://stackoverflow.com/questions/5529148/algorithm-calculate-pseudo-random-point-inside-an-ellipse
+function random_point_ellipse(w, h, added_from_center)
+    local random_theta = random_polar_angle_ellipse(w, h)
+    local max_radius = get_radius_ellipse(w, h, random_theta)
+    local random_radius = max_radius * math.sqrt(math.random())
+    if added_from_center ~= nil then
+        random_radius = random_radius + added_from_center
+    end
+
+    return {
+        x = random_radius * math.cos(random_theta),
+        y = 0,
+        z = random_radius * math.sin(random_theta)
+    }
 end

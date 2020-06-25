@@ -7,6 +7,7 @@
 
 #include scripts/data/data_settings
 #include scripts/data/data_tables
+#include scripts/data/data_terrain
 #include scripts/data/data_troops
 #include scripts/data/data_armies_book_I
 #include scripts/data/data_armies_book_II
@@ -75,6 +76,13 @@ function onChat(message, player)
                 print_info('Debug mode ON')
             end, 3)
         end
+        return false
+    end
+
+    if message == '!dba_3dterrain' then
+        print_info(player.get_steam_name() .. ': ' .. message)
+        g_use_3d_terrain = true
+        print_info('3D Terrain enabled, when doing a fix&lock on the table 3D objects will load.')
         return false
     end
 

@@ -91,6 +91,9 @@ g_gizmo_color_command = { 0.8, 0.8, 0.8 }
 -- The main loop redraws selections, movement, etc
 g_seconds_main_loop = 0.5
 
+-- Use the 3D terrain or not
+g_use_3d_terrain = false
+
 -- Models use this collider so they are easier to move
 minimal_collider = 'http://cloud-3.steamusercontent.com/ugc/1022823184773057328/6E2E42ECBBD40D7501018921FC5898568FF9D748/'
 
