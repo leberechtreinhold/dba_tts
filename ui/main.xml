@@ -42,7 +42,7 @@
     <Image image="select_table_bg_v2"></Image>
 </Panel>
 <Panel id="panel_dba_table_selection" width="600" height="500" rectAlignment="MiddleCenter" active="false" raycastTarget="true">
-    <TableLayout padding="100 100 120 80" cellSpacing="20">
+    <TableLayout padding="80 70 120 80" cellSpacing="20">
         <Row preferredHeight="40">
             <Cell columnSpan="6" dontUseTableCellBackground="true">
                 <Text fontSize="20">Select the background for the table:</Text>
