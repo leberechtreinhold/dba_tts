@@ -11,7 +11,8 @@
         "printToAll",
         "broadcastToAll",
         "getAllObjects",
-        "getObjectFromGUID"
+        "getObjectFromGUID",
+        "log"
     ],
     "Lua.diagnostics.disable": [
         "lowercase-global"
