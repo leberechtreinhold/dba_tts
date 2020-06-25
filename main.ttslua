@@ -72,6 +72,7 @@ function onChat(message, player)
             print_info('Enabling debug mode, will take effect in three seconds. Note, this will cause decreased performance.')
             Wait.time(function() 
                 g_debug_mode = true
+                print_info('Debug mode ON')
             end, 3)
         end
         return false
