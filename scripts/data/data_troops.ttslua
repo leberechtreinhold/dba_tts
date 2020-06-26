@@ -290,6 +290,19 @@ tile_plain_3Wb_40x20 = {
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1045345844814500693/5DA685B42E5EDC68FE30356ADC9DC662916F8E22/'
 }
 
+tile_plain_5Wb_40x30 = {
+    height_correction = 0,
+    scale = 1,
+    rotation = 0,
+    depth = 30,
+    description = '40x30 5Wb Tile',
+    author = 'Plain tile, original work by Arkein (model) and Eric Delemer (texture), using troop icon from Lorenzo Moro.',
+    mesh = { 'http://cloud-3.steamusercontent.com/ugc/1294171320774834414/C0A2145BCDC666C7299453EE3695FC54430B1217/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1045345844814501365/477FDBEBE9C6BE09FC2BD7B8D1E25ACDF0FED608/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1045345844814500693/5DA685B42E5EDC68FE30356ADC9DC662916F8E22/'
+}
+
 tile_plain_4Ax_40x20 = {
     height_correction = 0,
     scale = 1,
