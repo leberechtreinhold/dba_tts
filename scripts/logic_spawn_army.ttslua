@@ -34,6 +34,18 @@ function add_context_menu_table(table_obj)
     table_obj.addContextMenuItem('Fix terrain and lock', function()
         fix_terrain_and_lock()
     end)
+    table_obj.addContextMenuItem('Toggle rulers', function()
+        toggle_deployment_ruler()
+    end)
+end
+
+function toggle_deployment_ruler()
+    g_deployment_lines_enabled = not g_deployment_lines_enabled
+    if g_deployment_lines_enabled then
+        draw_deployment_lines()
+    else
+        remove_deployment_lines()
+    end
 end
 
 function on_clone(source_obj, new_obj)
