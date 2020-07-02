@@ -2383,3 +2383,108 @@ troop_successors_bactrian_sp = {
     player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1191713327271756244/09FEB5103B0F710C87F10D40FBC29A426368E1A6/',
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1191713327271756244/09FEB5103B0F710C87F10D40FBC29A426368E1A6/'
 }
+
+------------------------------------------------------------------------------
+--                        ANCIENT SPANISH PHOTOGAMMETRY
+------------------------------------------------------------------------------
+
+troop_ancient_spanish_caetrati = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Ancient Spanish Caetrati or Light Scutarii',
+    author = 'Ancient Spanish Caetrati or Light Scutarii by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1305430814618915286/51F003AA0DCD64555E06240A057F387CEA6AE46F/',
+          'http://cloud-3.steamusercontent.com/ugc/1305430814618915457/7467F7B0568F7834198E2158D5A13F1565222412/',
+          'http://cloud-3.steamusercontent.com/ugc/1305430814618915619/AD91D4EA974C0A6778FE394DDE2E71BFA86877B7/',
+          'http://cloud-3.steamusercontent.com/ugc/1305430814618915780/0EE351ACE6A651BBA6064C1BF4D2DDFC3DDFACBB/',
+          'http://cloud-3.steamusercontent.com/ugc/1305430814618915930/2712ACCC901DF891748B0B6025637DFF85A52A51/',
+          'http://cloud-3.steamusercontent.com/ugc/1305430814618916107/7F7863B71F17FE22111216CE2DD225ADEF77B280/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1305430814618913378/9032D09CE74E8AC45AEDBC65FDCA10CE5942C578/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1305430814618913378/9032D09CE74E8AC45AEDBC65FDCA10CE5942C578/'
+}
+
+-- TODO: Change for scutaari
+troop_ancient_spanish_ax = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Ancient Spanish Auxilia',
+    author = 'Ancient Spanish Auxilia by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1305430814618915619/AD91D4EA974C0A6778FE394DDE2E71BFA86877B7/',
+          'http://cloud-3.steamusercontent.com/ugc/1305430814618915780/0EE351ACE6A651BBA6064C1BF4D2DDFC3DDFACBB/',
+          'http://cloud-3.steamusercontent.com/ugc/1305430814618915930/2712ACCC901DF891748B0B6025637DFF85A52A51/',
+          'http://cloud-3.steamusercontent.com/ugc/1305430814618916107/7F7863B71F17FE22111216CE2DD225ADEF77B280/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1305430814618913378/9032D09CE74E8AC45AEDBC65FDCA10CE5942C578/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1305430814618913378/9032D09CE74E8AC45AEDBC65FDCA10CE5942C578/'
+}
+
+troop_ancient_spanish_lh = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Ancient Spanish Ligh Horse',
+    author = 'Ancient Spanish Ligh Horse by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1305430814618927014/0A5BF80F559FA5946DE0E9BCF9DC9467B7E3D2DE/',
+          'http://cloud-3.steamusercontent.com/ugc/1305430814618927202/F63B75EC4EAE367515CFC27DB4B0F48DF515B393/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1305430814618926804/5B229DA9CB1D0673627E5FFD368E3CD0FCC4D226/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1305430814618926804/5B229DA9CB1D0673627E5FFD368E3CD0FCC4D226/'
+}
+
+troop_ancient_spanish_bearer = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Ancient Spanish Cavalry General',
+    author = 'Ancient Spanish Cavalry General by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1305430814618931105/E439396BA25DC06877255B53D693ED6CE3752223/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1305430814618930595/89540033AF6444B9DC9E36AC2C933844B70A94BF/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1305430814618930595/89540033AF6444B9DC9E36AC2C933844B70A94BF/'
+}
+
+troop_ancient_spanish_general = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Ancient Spanish Cavalry General',
+    author = 'Ancient Spanish Cavalry General by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1305430814618930927/2D39200103F399406A8DCCF10460D5C557DB55A2/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1305430814618930595/89540033AF6444B9DC9E36AC2C933844B70A94BF/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1305430814618930595/89540033AF6444B9DC9E36AC2C933844B70A94BF/'
+}
+
+troop_ancient_spanish_cavalry = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Ancient Spanish Cavalry General',
+    author = 'Ancient Spanish Cavalry General by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1305430814618931282/96D1852395B46D2DBCBD619CF6C19DB5F0DE139A/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1305430814618930595/89540033AF6444B9DC9E36AC2C933844B70A94BF/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1305430814618930595/89540033AF6444B9DC9E36AC2C933844B70A94BF/'
+}
+
+troop_ancient_spanish_camp = {
+    height_correction = 0,
+    scale = 0.06,
+    rotation = 270,
+    description = 'Ancient Spanish Camp',
+    author = 'Ancient Spanish Camp by 0AD.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1305430814619372836/FCE797D74401AC30C68677AA8E890E7B2BE1A7B3/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1305430814619372618/653A0ACF0D968F4AE018446330337596E73922C8/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1305430814619372618/653A0ACF0D968F4AE018446330337596E73922C8/'
+}
