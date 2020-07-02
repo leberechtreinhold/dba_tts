@@ -22,19 +22,13 @@
     <Text id="text_current_movement_paces" fontSize="24">Current movement: 0 paces</Text>
 </Panel>
 
-<Panel id="panel_dba_pip" width="400" height="150" color="#00000000" outline="#00000000" outlineSize="2" rectAlignment="LowerCenter" raycastTarget="true">
-    <Image image="pip_counter_bg_v2"></Image>
+<Panel id="panel_dba_pip" width="400" height="100" color="#00000000" outline="#00000000" outlineSize="2" rectAlignment="LowerCenter" raycastTarget="true">
+    <Image image="pip_counter_bg_v3"></Image>
 </Panel>
-<Panel id="panel_dba_pip_btns" width="400" height="150" color="#00000000" outline="#00000000" rectAlignment="LowerCenter" raycastTarget="true">
+<Panel id="panel_dba_pip_btns" width="400" height="100" color="#00000000" outline="#00000000" rectAlignment="LowerCenter" raycastTarget="true">
     <HorizontalLayout>
-        <Text id="text_pips_player_blue" ignoreLayout="true" fontSize="64" position="-135 20" color="#2e82ec">0</Text>
-        <Text id="text_pips_player_red" ignoreLayout="true" fontSize="64" position="140 20" color="#ec482e">0</Text>
-
-        <!-- TODO The hightlighted thing is not working, investigate... -->
-        <Button icon="plus" highlightedSprite="minus" pressedSprite="minus" transition="SpriteSwap" iconWidth="31" color="#00000000" iconColor="#00000000" ignoreLayout="true" position="30 -30" interactable="true" onClick="add_pip(blue)"></Button>
-        <Button icon="minus" iconWidth="31" color="#00000000" ignoreLayout="true" position="60 -30" onClick="remove_pip(blue)"></Button>
-        <Button icon="plus" iconWidth="31" color="#00000000" ignoreLayout="true" position="305 -30" onClick="add_pip(red)"></Button>
-        <Button icon="minus" iconWidth="31" color="#00000000" ignoreLayout="true" position="335 -30" onClick="remove_pip(red)"></Button>
+        <Text id="text_pips_player_blue" ignoreLayout="true" fontSize="64" position="-100 -10" color="#2e82ec">0</Text>
+        <Text id="text_pips_player_red" ignoreLayout="true" fontSize="64" position="100 -10" color="#ec482e">0</Text>
     </HorizontalLayout>
 </Panel>
 
