@@ -334,7 +334,7 @@ armies["Book III"]["III/1c Early Slavs Other 476-985AD (Plain)"] = {
     }
 }
 
-armies["Book III"]["III/2 Early Lombards 489-584AD"] = {
+armies["Book III"]["III/2 Early Lombards 489-584AD (Plain)"] = {
     data = {
         aggresiveness = 2,
         terrain = 'Arable',
