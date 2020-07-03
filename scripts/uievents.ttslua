@@ -93,6 +93,30 @@ function on_load_army(player, value, id)
     UI.setAttribute('button_create_army', 'interactable', true)
 end
 
+g_filter_armies_models = false
+function on_filter_models(player, value, id)
+    g_filter_armies_models = value == "True"
+    
+    g_book_selected = first_key_table(armies)
+    local book = armies[g_book_selected]
+
+    g_army_selected = first_key_table(book)
+    local army = armies[g_book_selected][g_army_selected]
+
+    on_next_frame(function()
+        UI.setAttribute('toggle_filter_modes', 'isOn', g_filter_armies_models)
+        on_next_frame(function()
+            update_book_menu(1)
+            on_next_frame(function()
+                update_armies_menu(book, 1)
+                on_next_frame(function()
+                    update_authors_text(army)
+                end)
+            end)
+        end)
+    end)
+end
+
 function create_army_options_menu(player, value, id)
     local status = UI.getAttribute('panel_dba_troop_selection', 'active')
     if status == 'True' then
@@ -131,13 +155,36 @@ function on_book_selected(player, value, id)
     local i = 1
     local selected_book_index = 1
     for book_name, book_armies in pairs(armies) do
-        if book_name == g_book_selected then
-            selected_book_index = i
+        
+        if not g_filter_armies_models then
+            if book_name == g_book_selected then
+                selected_book_index = i
+            end
+            i = i + 1        
         end
-        i = i + 1
+
+        if g_filter_armies_models 
+            and book_has_an_army_with_models(book_name) then
+
+            if book_name == g_book_selected then
+                selected_book_index = i
+            end
+            i = i + 1
+        end
+        
     end
 
-    g_army_selected = first_key_table(armies[g_book_selected])
+    if not g_filter_armies_models then
+        g_army_selected = first_key_table(armies[g_book_selected])
+    else
+        local book = armies[g_book_selected]
+        for army_name,_ in pairs(book) do
+            if not str_has_substr(army_name, '(Plain)') then
+                g_army_selected = army_name
+                break
+            end
+        end
+    end
     local army = armies[g_book_selected][g_army_selected]
 
     on_next_frame(function()

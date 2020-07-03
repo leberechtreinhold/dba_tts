@@ -106,10 +106,21 @@
 <Panel id="panel_dba_troop_selection" width="800" height="650" rectAlignment="MiddleCenter" color="#00000000" active="false" raycastTarget="true">
     <TableLayout padding="70 70 110 70 " cellSpacing="20">
         <Row preferredHeight="40">
-            <Cell columnSpan="1" dontUseTableCellBackground="true">
-                <Text fontSize="20">Book:</Text>
+            <Cell columnSpan="7" dontUseTableCellBackground="true">
+                <Text fontSize="20" alignment="MiddleLeft">Filter armies with models:</Text>
             </Cell>
-            <Cell columnSpan="3" dontUseTableCellBackground="true">
+            <Cell columnSpan="1" dontUseTableCellBackground="true">
+                <Toggle id="toggle_filter_modes" onValueChanged="on_filter_models" alignment="MiddleLeft"></Toggle>
+            </Cell>
+            <Cell columnSpan="12" dontUseTableCellBackground="true">
+                <!-- Filler-->
+            </Cell>
+        </Row>
+        <Row preferredHeight="40">
+            <Cell columnSpan="2" dontUseTableCellBackground="true">
+                <Text fontSize="20" alignment="MiddleLeft">Book:</Text>
+            </Cell>
+            <Cell columnSpan="18" dontUseTableCellBackground="true">
                 <Dropdown id="dropdown_book" onValueChanged="on_book_selected" fontSize="20">
                     <Option selected="true">Book I</Option>
                     <Option>Book II</Option>
@@ -119,10 +130,10 @@
             </Cell>
         </Row>
         <Row preferredHeight="40">
-            <Cell columnSpan="1" dontUseTableCellBackground="true">
-                <Text fontSize="20">Army:</Text>
+            <Cell columnSpan="2" dontUseTableCellBackground="true">
+                <Text fontSize="20" alignment="MiddleLeft">Army:</Text>
             </Cell>
-            <Cell columnSpan="5" dontUseTableCellBackground="true">
+            <Cell columnSpan="18" dontUseTableCellBackground="true">
                 <Dropdown id="dropdown_army" onValueChanged="on_army_selected" fontSize="16" scrollSensitivity="20">
                     <Option selected="true">Army 1</Option>
                     <Option>Army 2</Option>
@@ -132,10 +143,10 @@
             </Cell>
         </Row>
         <Row preferredHeight="40">
-            <Cell columnSpan="1" dontUseTableCellBackground="true">
-                <Text fontSize="20">Player:</Text>
+            <Cell columnSpan="2" dontUseTableCellBackground="true">
+                <Text fontSize="20" alignment="MiddleLeft">Player:</Text>
             </Cell>
-            <Cell columnSpan="5" dontUseTableCellBackground="true">
+            <Cell columnSpan="18" dontUseTableCellBackground="true">
                 <Dropdown id="dropdown_color" onValueChanged="on_color_selected" fontSize="20">
                     <Option selected="true">Red</Option>
                     <Option>Blue</Option>
@@ -143,12 +154,12 @@
             </Cell>
         </Row>
         <Row preferredHeight="40">
-            <Cell columnSpan="6" dontUseTableCellBackground="true">
+            <Cell columnSpan="20" dontUseTableCellBackground="true">
                 <Text id="text_ag_terr" fontSize="20">Aggresiveness: 2, Terrain: Arable, Flat bases</Text>
             </Cell>
         </Row>
         <Row>
-            <Cell columnSpan="6" dontUseTableCellBackground="true">
+            <Cell columnSpan="20" dontUseTableCellBackground="true">
                 <VerticalScrollView color="#00000000" verticalScrollbarVisibility="AutoHide">
                     <Text id="text_authors" alignment="UpperLeft" fontSize="16" contentSizeFitter="vertical">
                       The authors of the models are:
@@ -169,13 +180,13 @@
             </Cell>
         </Row>
         <Row preferredHeight="40">
-            <Cell columnSpan="2" dontUseTableCellBackground="true">
+            <Cell columnSpan="5" dontUseTableCellBackground="true">
                 <Button columnSpan="2" fontSize="20" onClick="on_cancel_load_army">Cancel</Button>
             </Cell>
-            <Cell columnSpan="3" dontUseTableCellBackground="true">
+            <Cell columnSpan="11" dontUseTableCellBackground="true">
                 <!-- Filler -->
             </Cell>
-            <Cell columnSpan="1" dontUseTableCellBackground="true">
+            <Cell columnSpan="4" dontUseTableCellBackground="true">
                 <Button columnSpan="1" fontSize="20" onClick="on_load_army">Load</Button>
             </Cell>
         </Row>

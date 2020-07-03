@@ -260,10 +260,27 @@ function update_authors_text(army)
     UI.setValue('text_authors', authorship_models)
 end
 
+function book_has_an_army_with_models(book_dataname)
+    local book_armies = armies[book_dataname]
+    for army_name,_ in pairs(book_armies) do
+        if not str_has_substr(army_name, '(Plain)') then
+            return true
+        end
+    end
+    return false
+end
+
 function update_book_menu(book_selected)
     local options = {}
     for book_name, book_armies in pairs(armies) do
-        table.insert(options, dataname_to_friendlyname(book_name))
+        if not g_filter_armies_models then
+            table.insert(options, dataname_to_friendlyname(book_name))
+        end
+
+        if g_filter_armies_models 
+            and book_has_an_army_with_models(book_name) then
+            table.insert(options, dataname_to_friendlyname(book_name))
+        end
     end
     set_options_dropdown_by_id('dropdown_book', options, book_selected)
 end
@@ -279,7 +296,14 @@ end
 function update_armies_menu(book, army_selected)
     local options = {}
     for army_name,_ in pairs(book) do
-        table.insert(options, dataname_to_friendlyname(army_name))
+        if not g_filter_armies_models then
+            table.insert(options, dataname_to_friendlyname(army_name))
+        end
+
+        if g_filter_armies_models 
+           and not str_has_substr(army_name, '(Plain)') then
+            table.insert(options, dataname_to_friendlyname(army_name))
+        end
     end
     set_options_dropdown_by_id('dropdown_army', options, army_selected)
 end
