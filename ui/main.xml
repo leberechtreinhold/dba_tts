@@ -106,21 +106,15 @@
 <Panel id="panel_dba_troop_selection" width="800" height="650" rectAlignment="MiddleCenter" color="#00000000" active="false" raycastTarget="true">
     <TableLayout padding="70 70 110 70 " cellSpacing="20">
         <Row preferredHeight="40">
-            <Cell columnSpan="7" dontUseTableCellBackground="true">
-                <Text fontSize="20" alignment="MiddleLeft">Filter armies with models:</Text>
-            </Cell>
-            <Cell columnSpan="1" dontUseTableCellBackground="true">
-                <Toggle id="toggle_filter_modes" onValueChanged="on_filter_models" alignment="MiddleLeft"></Toggle>
-            </Cell>
-            <Cell columnSpan="12" dontUseTableCellBackground="true">
-                <!-- Filler-->
+            <Cell columnSpan="20" dontUseTableCellBackground="true">
+                <Toggle id="toggle_filter_modes" onValueChanged="on_filter_models" alignment="MiddleLeft" fontSize="16">Filter armies with models</Toggle>
             </Cell>
         </Row>
         <Row preferredHeight="40">
-            <Cell columnSpan="2" dontUseTableCellBackground="true">
+            <Cell columnSpan="3" dontUseTableCellBackground="true">
                 <Text fontSize="20" alignment="MiddleLeft">Book:</Text>
             </Cell>
-            <Cell columnSpan="18" dontUseTableCellBackground="true">
+            <Cell columnSpan="17" dontUseTableCellBackground="true">
                 <Dropdown id="dropdown_book" onValueChanged="on_book_selected" fontSize="20">
                     <Option selected="true">Book I</Option>
                     <Option>Book II</Option>
@@ -130,10 +124,10 @@
             </Cell>
         </Row>
         <Row preferredHeight="40">
-            <Cell columnSpan="2" dontUseTableCellBackground="true">
+            <Cell columnSpan="3" dontUseTableCellBackground="true">
                 <Text fontSize="20" alignment="MiddleLeft">Army:</Text>
             </Cell>
-            <Cell columnSpan="18" dontUseTableCellBackground="true">
+            <Cell columnSpan="17" dontUseTableCellBackground="true">
                 <Dropdown id="dropdown_army" onValueChanged="on_army_selected" fontSize="16" scrollSensitivity="20">
                     <Option selected="true">Army 1</Option>
                     <Option>Army 2</Option>
@@ -143,10 +137,10 @@
             </Cell>
         </Row>
         <Row preferredHeight="40">
-            <Cell columnSpan="2" dontUseTableCellBackground="true">
+            <Cell columnSpan="3" dontUseTableCellBackground="true">
                 <Text fontSize="20" alignment="MiddleLeft">Player:</Text>
             </Cell>
-            <Cell columnSpan="18" dontUseTableCellBackground="true">
+            <Cell columnSpan="17" dontUseTableCellBackground="true">
                 <Dropdown id="dropdown_color" onValueChanged="on_color_selected" fontSize="20">
                     <Option selected="true">Red</Option>
                     <Option>Blue</Option>
