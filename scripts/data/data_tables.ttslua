@@ -18,7 +18,7 @@ tables = {
     desert = {
         table_tex = {
             'http://cloud-3.steamusercontent.com/ugc/1023950053147001338/5611385A6230432B6095F3065D321E456692FFC7/',
-            'http://cloud-3.steamusercontent.com/ugc/1305430198245034102/9E564C789DF54298FD86D9F71394B52E621F3BA3/'
+            'http://cloud-3.steamusercontent.com/ugc/1305430981108549050/1A4F3654D852B78D0B73FC195342E3B6A4DA972F/'
         },
         red_player_base_tex = 'http://cloud-3.steamusercontent.com/ugc/1023950208130996593/CC85EA87EF46E7DCB39D9B2957D05C562D5B6951/',
         blue_player_base_tex = 'http://cloud-3.steamusercontent.com/ugc/1056603883713324865/A1E0C30EB531BA8D3857564E25A56CCE9F380B27/'
