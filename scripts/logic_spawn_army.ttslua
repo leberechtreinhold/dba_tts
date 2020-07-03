@@ -247,6 +247,7 @@ function update_authors_text(army)
     local authorship_models = 'The authors of the models are:\n\n'
     local authors_set = {}
     for base_id, base in pairs(army) do
+        print_debug('Getting data of base for author of ' .. base_id)
         if base_id ~= 'data' then
             local author = get_author_base(base)
 
