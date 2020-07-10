@@ -359,7 +359,8 @@ function fix_terrain_and_lock()
     end
 
     local gametable = getObjectFromGUID(g_current_table)
-    local max_distance_from_table_sq = (g_width_table_in/2)^2 + (g_depth_table_in / 2)^2
+    local size = gametable.getBoundsNormalized()['size']
+    local max_distance_from_table_sq = (size['x']/2)^2 + (size['z'] / 2)^2
     local pos_table = gametable.getPosition()
 
     local terrain_type = from_toggle_number_to_table_type(g_current_table_type)
