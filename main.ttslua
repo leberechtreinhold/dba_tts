@@ -27,8 +27,41 @@ function onload()
     print_info('----------------------------------------------\n\nCheck the Notebook for instructions.')
     
     Wait.time(main_loop, g_seconds_main_loop, -1)
+    make_scenery_non_interactable()
     reset_state()
     spawn_proxy_bases()
+end
+
+function make_scenery_non_interactable()
+    -- Main table
+    getObjectFromGUID('4adbe6').interactable = false
+
+    -- Chairs
+    getObjectFromGUID('1d5cd6').interactable = false
+    getObjectFromGUID('670e7b').interactable = false
+
+    -- Floor
+    getObjectFromGUID('7e8655').interactable = false
+
+    -- Walls
+    getObjectFromGUID('dda7c2').interactable = false
+    getObjectFromGUID('2e8f62').interactable = false
+    getObjectFromGUID('8f0e8b').interactable = false
+    getObjectFromGUID('ba4bf6').interactable = false
+
+    -- Main point light
+    getObjectFromGUID('06f591').interactable = false
+
+    -- Key light
+    getObjectFromGUID('607c46').interactable = false
+
+    -- Back lights
+    getObjectFromGUID('8b3843').interactable = false
+    getObjectFromGUID('78eb52').interactable = false
+    
+    -- Top light for shadows
+    getObjectFromGUID('037fab').interactable = false
+
 end
 
 function update()
