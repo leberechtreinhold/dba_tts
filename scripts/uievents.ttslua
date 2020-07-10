@@ -315,6 +315,15 @@ function on_create_table_menu(player, value, id)
     UI.setAttribute('button_create_army', 'interactable', false)
 end
 
+g_is_double_dba = false
+function on_toggle_table_double(player, value, id)
+    if value == "True" then
+        g_is_double_dba = true
+    else
+        g_is_double_dba = false
+    end
+end
+
 g_current_table_type = 0
 function on_toggle_table_type(player, value, id)
     g_current_table_type = tonumber(value)
@@ -348,7 +357,12 @@ function on_load_table(player, value, id)
     local tex = tables[type]['table_tex']
 
     if g_current_table == nil then
-        spawn_table_obj(tables['model'], tables['height_correction'], tex)
+        if g_is_double_dba then
+            spawn_table_obj(tables['model_double'], tables['height_correction'], tex)
+        else
+            spawn_table_obj(tables['model'], tables['height_correction'], tex)
+        end
+        
     else
         print_error('There\'s already a table spawned')
     end

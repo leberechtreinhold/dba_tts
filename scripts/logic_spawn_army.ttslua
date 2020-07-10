@@ -185,16 +185,20 @@ function spawn_army(army_name, army, is_red_player)
 
     local width_army = n_bases * g_base_width_inches
 
-    local z_pos = g_spawn_from_center_in
+    local z_pos_0 = g_spawn_from_center_in
     local y_rotation = 180
     if is_red_player then
-        z_pos = g_spawn_from_center_in * -1
+        z_pos_0 = g_spawn_from_center_in * -1
         y_rotation = 0
     end
 
     local i = 0
     for base_id, base_data in pairs(army) do
         if base_id ~= 'data' then
+            local z_pos = 5
+            if is_red_player then
+                z_pos = z_pos * -1
+            end
             local z_pos_modifier = -1 * get_depth_base(base_data['base']) / 2
             if is_red_player then
                 z_pos_modifier = -1 * z_pos_modifier
@@ -203,7 +207,7 @@ function spawn_army(army_name, army, is_red_player)
             local column = i % g_max_bases_row
             local row = math.floor(i / g_max_bases_row)
 
-            local row_z_pos = z_pos * (1 + row)
+            local row_z_pos = z_pos * (1 + row) + z_pos_0
 
             local location = {
                 x = g_offset_deployment_x + column * g_base_width_inches - width_army / 2,

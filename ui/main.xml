@@ -39,7 +39,7 @@
     <TableLayout padding="80 70 120 80" cellSpacing="20">
         <Row preferredHeight="40">
             <Cell columnSpan="6" dontUseTableCellBackground="true">
-                <Text fontSize="20">Select the background for the table:</Text>
+                <Text fontSize="20" alignment="MiddleLeft">Select the background for the table:</Text>
             </Cell>
         </Row>
         <Row>
@@ -71,6 +71,11 @@
                         </Row>
                     </TableLayout>
                 </ToggleGroup>
+            </Cell>
+        </Row>
+        <Row>
+            <Cell columnSpan="6" dontUseTableCellBackground="true">
+                <Toggle id="toggle_double_dba" isOn="false" onValueChanged="on_toggle_table_double" fontSize="16">Double DBA</Toggle>
             </Cell>
         </Row>
         <!--<Row>

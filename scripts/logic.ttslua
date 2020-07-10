@@ -1370,11 +1370,15 @@ function is_table(obj)
     end
 
     local size = bounds['size']
-    if math.abs(size['x'] - g_width_table_in) < 1 or math.abs(size['z'] - g_depth_table_in) < 1 then
+    if math.abs(size['x'] - g_width_table_in) < 1 and math.abs(size['z'] - g_depth_table_in) < 1 then
         -- If it's essnetially the same size, it is the table unless they have summoned something weird
         return true
     end
 
+    if math.abs(size['x'] - 2*g_width_table_in) < 1 and math.abs(size['z'] - g_depth_table_in) < 1 then
+        -- Big DBA table
+        return true
+    end
     return false
 end
 

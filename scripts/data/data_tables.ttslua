@@ -1,5 +1,6 @@
 tables = {
     model = 'http://cloud-3.steamusercontent.com/ugc/1022823759371064859/C870FF6BCD014D8EC33CDFADBFC11EE555E44A6F/',
+    model_double = 'http://cloud-3.steamusercontent.com/ugc/1305431405706422928/3B8EC0A721DC2B3FFE33E6AC889232AC1F6422C6/',
     grass = {
         table_tex = {
             'http://cloud-3.steamusercontent.com/ugc/1305430198245030897/E1DA1B215F01693133663F2B9280D1FAFCE69FEF/',

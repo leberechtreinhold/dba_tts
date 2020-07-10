@@ -359,9 +359,9 @@ function draw_gizmo_wheeling(transforms)
     Global.setVectorLines(strokes)
 end
 
-function get_strokes_deployment(pos, color, angle)
-    local half_width = g_width_table_in / 2
-    local half_depth = g_depth_table_in / 2
+function get_strokes_deployment(pos, color, angle, w, h)
+    local half_width = w / 2
+    local half_depth = h / 2
 
     local xpos = 1
     local zpos = 1
@@ -405,9 +405,9 @@ function get_strokes_deployment(pos, color, angle)
     }
 end
 
-function get_strokes_deployment_between(pos, color, angle)
-    local half_width = g_width_table_in / 2
-    local half_depth = g_depth_table_in / 2
+function get_strokes_deployment_between(pos, color, angle, w, h)
+    local half_width = w / 2
+    local half_depth = h / 2
 
     local zpos = 1
     if pos == 'top' then
@@ -438,19 +438,24 @@ end
 function draw_deployment_lines()
     local strokes = {}
     local gametable = getObjectFromGUID(g_current_table)
+    local size = gametable.getBoundsNormalized()['size']
+    local scale = gametable.getScale()
+    local w = size['x']  / scale['x']
+    local h = size['z'] / scale['z']
+
     local angle = normalize_angle(math.rad(gametable.getRotation()['y']))
     table.insert(strokes, 
-        get_strokes_deployment('topright', g_gizmo_color_player_blue, angle))
+        get_strokes_deployment('topright', g_gizmo_color_player_blue, angle, w, h))
     table.insert(strokes, 
-        get_strokes_deployment('topleft', g_gizmo_color_player_blue, angle))
+        get_strokes_deployment('topleft', g_gizmo_color_player_blue, angle, w, h))
     table.insert(strokes, 
-        get_strokes_deployment_between('top', g_gizmo_color_player_blue, angle))
+        get_strokes_deployment_between('top', g_gizmo_color_player_blue, angle, w, h))
     table.insert(strokes, 
-        get_strokes_deployment('botright', g_gizmo_color_player_red, angle))
+        get_strokes_deployment('botright', g_gizmo_color_player_red, angle, w, h))
     table.insert(strokes, 
-        get_strokes_deployment('botleft', g_gizmo_color_player_red, angle))
+        get_strokes_deployment('botleft', g_gizmo_color_player_red, angle, w, h))
     table.insert(strokes, 
-        get_strokes_deployment_between('bot', g_gizmo_color_player_red, angle))
+        get_strokes_deployment_between('bot', g_gizmo_color_player_red, angle, w, h))
 
         gametable.setVectorLines(strokes)
 end
