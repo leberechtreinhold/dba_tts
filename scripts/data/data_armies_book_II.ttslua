@@ -10807,39 +10807,39 @@ armies["Book II"]["II/39b Ancient Spanish Celtiberian Army 240-20BC"] = {
     },
     base3 = {
         name = '3Wb',
-        base = 'tile_plain_3Wb_40x20',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_ancient_spanish_scutarii'
     },
     base4 = {
         name = '3Wb',
-        base = 'tile_plain_3Wb_40x20',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_ancient_spanish_scutarii'
     },
     base5 = {
         name = '3Wb',
-        base = 'tile_plain_3Wb_40x20',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_ancient_spanish_scutarii'
     },
     base6 = {
         name = '3Wb',
-        base = 'tile_plain_3Wb_40x20',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_ancient_spanish_scutarii'
     },
     base7 = {
         name = '3Wb',
-        base = 'tile_plain_3Wb_40x20',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_ancient_spanish_scutarii'
     },
     base8 = {
         name = '3Wb',
-        base = 'tile_plain_3Wb_40x20',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_ancient_spanish_scutarii'
     },
     base9 = {
         name = '2Ps',
@@ -11063,15 +11063,20 @@ armies["Book II"]["II/39c Ancient Spanish Lusitanian Army 240-20BC"] = {
     },
     base12 = {
         name = '3Wb',
-        base = 'tile_plain_3Wb_40x20',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_ancient_spanish_scutarii'
     },
     base13 = {
         name = '4Bd',
-        base = 'tile_plain_4Bd_40x15',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        fixed_models = {
+            [1] = 'troop_ancient_spanish_scutarii_musician',
+            [2] = 'troop_ancient_spanish_scutarii_chief',
+            [3] = 'troop_ancient_spanish_scutarii_banner',
+            [4] = 'troop_ancient_spanish_scutarii_variant',
+        }
     },
     base14 = {
         name = '2Ps',

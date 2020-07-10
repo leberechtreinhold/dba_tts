@@ -2406,21 +2406,72 @@ troop_ancient_spanish_caetrati = {
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1305430814618913378/9032D09CE74E8AC45AEDBC65FDCA10CE5942C578/'
 }
 
--- TODO: Change for scutaari
-troop_ancient_spanish_ax = {
+troop_ancient_spanish_scutarii = {
     height_correction = 0,
     scale = 0.9,
     rotation = 180,
-    description = 'Ancient Spanish Auxilia',
-    author = 'Ancient Spanish Auxilia by Eric Delemer.',
+    description = 'Ancient Spanish Scutarii',
+    author = 'Ancient Spanish Scutarii by Eric Delemer.',
     mesh = {
-          'http://cloud-3.steamusercontent.com/ugc/1305430814618915619/AD91D4EA974C0A6778FE394DDE2E71BFA86877B7/',
-          'http://cloud-3.steamusercontent.com/ugc/1305430814618915780/0EE351ACE6A651BBA6064C1BF4D2DDFC3DDFACBB/',
-          'http://cloud-3.steamusercontent.com/ugc/1305430814618915930/2712ACCC901DF891748B0B6025637DFF85A52A51/',
-          'http://cloud-3.steamusercontent.com/ugc/1305430814618916107/7F7863B71F17FE22111216CE2DD225ADEF77B280/'
+          'http://cloud-3.steamusercontent.com/ugc/1343712149900965642/04B6421323C03EF252B4AF09B8482AC34DC0ED45/',
+          'http://cloud-3.steamusercontent.com/ugc/1343712149900965824/5E375A7480C9DDD7A0BF210C2E52DF66B9EACE55/',
+          'http://cloud-3.steamusercontent.com/ugc/1343712149900965995/C12882DFA955229D9611D7FB21920F198041AA6C/',
+          'http://cloud-3.steamusercontent.com/ugc/1343712149900966131/4E3E47440D4387BDAC949CE0C40C29FA603C7348/'
     },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1305430814618913378/9032D09CE74E8AC45AEDBC65FDCA10CE5942C578/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1305430814618913378/9032D09CE74E8AC45AEDBC65FDCA10CE5942C578/'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1343712149900965441/34D9405807C4B2E8E2274CEB96D8BB2369658463/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1343712149900965441/34D9405807C4B2E8E2274CEB96D8BB2369658463/'
+}
+
+troop_ancient_spanish_scutarii_variant = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Ancient Spanish Scutarii',
+    author = 'Ancient Spanish Scutarii by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1343712149900975987/06C0275D2AEDD08291CD6FA7B470A12F20D5B85E/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1343712149900975336/D10327B5552B4363942C7C0AD6EE3CD50AB828D3/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1343712149900975336/D10327B5552B4363942C7C0AD6EE3CD50AB828D3/'
+}
+
+troop_ancient_spanish_scutarii_musician = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Ancient Spanish Scutarii',
+    author = 'Ancient Spanish Scutarii by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1343712149900975516/950DB961541096B20A64AE5DC0B57E4545C3D6F5/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1343712149900975336/D10327B5552B4363942C7C0AD6EE3CD50AB828D3/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1343712149900975336/D10327B5552B4363942C7C0AD6EE3CD50AB828D3/'
+}
+
+troop_ancient_spanish_scutarii_banner = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Ancient Spanish Scutarii',
+    author = 'Ancient Spanish Scutarii by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1343712149900975659/95E7D92407079F13E96DFC2F1766EFF9D75B60A5/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1343712149900975336/D10327B5552B4363942C7C0AD6EE3CD50AB828D3/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1343712149900975336/D10327B5552B4363942C7C0AD6EE3CD50AB828D3/'
+}
+
+troop_ancient_spanish_scutarii_chief = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Ancient Spanish Scutarii',
+    author = 'Ancient Spanish Scutarii by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1343712149900975812/EC451AE4734FE8FEC2E45235F1D463C883A85977/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1343712149900975336/D10327B5552B4363942C7C0AD6EE3CD50AB828D3/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1343712149900975336/D10327B5552B4363942C7C0AD6EE3CD50AB828D3/'
 }
 
 troop_ancient_spanish_lh = {
