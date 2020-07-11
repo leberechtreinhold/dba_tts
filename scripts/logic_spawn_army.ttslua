@@ -274,6 +274,25 @@ function book_has_an_army_with_models(book_dataname)
     return false
 end
 
+function get_first_book_with_models()
+    for book_name, book_armies in pairs(armies) do
+        if book_has_an_army_with_models(book_name) then
+            return book_name
+        end
+    end
+    return nil
+end
+
+function get_first_army_with_models(book_dataname)
+    local book_armies = armies[book_dataname]
+    for army_name,_ in pairs(book_armies) do
+        if not str_has_substr(army_name, '(Plain)') then
+            return army_name
+        end
+    end
+    return nil
+end
+
 function update_book_menu(book_selected)
     local options = {}
     for book_name, book_armies in pairs(armies) do

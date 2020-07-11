@@ -93,15 +93,32 @@ function on_load_army(player, value, id)
     UI.setAttribute('button_create_army', 'interactable', true)
 end
 
+function get_initial_army()
+    local book = nil
+    local army = nil
+
+    if g_filter_armies_models then
+        g_book_selected = get_first_book_with_models()
+        book = armies[g_book_selected]
+
+        g_army_selected = get_first_army_with_models(g_book_selected)
+        army = armies[g_book_selected][g_army_selected]
+    else
+        g_book_selected = first_key_table(armies)
+        book = armies[g_book_selected]
+    
+        g_army_selected = first_key_table(book)
+        army = armies[g_book_selected][g_army_selected]
+    end
+    return book, army
+end
+
 g_filter_armies_models = false
 function on_filter_models(player, value, id)
     g_filter_armies_models = value == "True"
     
-    g_book_selected = first_key_table(armies)
-    local book = armies[g_book_selected]
-
-    g_army_selected = first_key_table(book)
-    local army = armies[g_book_selected][g_army_selected]
+    local book, army = get_initial_army()
+    print_debug('Selected army is ' .. g_army_selected)
 
     on_next_frame(function()
         UI.setAttribute('toggle_filter_modes', 'isOn', g_filter_armies_models)
@@ -124,10 +141,8 @@ function create_army_options_menu(player, value, id)
         return
     end
 
-    g_book_selected = first_key_table(armies)
-    local book = armies[g_book_selected]
-    g_army_selected = first_key_table(book)
-    local army = armies[g_book_selected][g_army_selected]
+    local book, army = get_initial_army()
+    print_debug('Selected army is ' .. g_army_selected)
 
     update_book_menu(1)
     on_next_frame(function()
@@ -186,6 +201,7 @@ function on_book_selected(player, value, id)
         end
     end
     local army = armies[g_book_selected][g_army_selected]
+    print_debug('Selected army is ' .. g_army_selected)
 
     on_next_frame(function()
         update_book_menu(selected_book_index)
@@ -205,6 +221,7 @@ g_army_selected = ''
 function on_army_selected(player, value, id)
     g_army_selected = value
     local army = armies[g_book_selected][g_army_selected]
+    print_debug('Selected army is ' .. g_army_selected)
 
     update_authors_text(army)
 
