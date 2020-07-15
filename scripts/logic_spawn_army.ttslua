@@ -83,7 +83,7 @@ function onObjectSpawn(new_obj)
     end
 end
 
-function spawn_base(base, pos, y_rotation, is_red_player)
+function spawn_base(base, pos, y_rotation, is_red_player, command_color)
     print_debug('Spawning base #' .. g_base_index)
     local overriden_tex = nil
     if base['ignore_terrain'] == nil then
@@ -167,6 +167,17 @@ function spawn_base(base, pos, y_rotation, is_red_player)
         base_obj.addAttachment(soldier_obj)
     end
 
+    if command_color ~= 'None' then
+        if command_color == 'Orange' then
+            base_obj.highlightOn({r=1,g=0.5,b=0}, 86400)
+        elseif command_color == 'Yellow' then
+            base_obj.highlightOn({r=1,g=1,b=0}, 86400)
+        elseif command_color == 'Green' then
+            base_obj.highlightOn({r=0.1,g=1,b=0.4}, 86400)
+        elseif command_color == 'Purple' then
+            base_obj.highlightOn({r=0.3,g=0,b=1}, 86400)
+        end
+    end
     base_obj.setRotation({0, y_rotation, 0})
     base_obj.auto_raise = false
 end
@@ -174,7 +185,7 @@ end
 -- Given an army object data, spawns it on the center of the table.
 -- Hope nothing is in there and that all data is correct because this doesn't
 -- validate
-function spawn_army(army_name, army, is_red_player)
+function spawn_army(army_name, army, is_red_player, command_color)
     math.randomseed(os.time())
     local n_bases = tlen(army) - 1
     local rows = 1
@@ -214,7 +225,7 @@ function spawn_army(army_name, army, is_red_player)
                 y = g_base_height_tabletop + g_table_thickness + g_base_height_inches / 2,
                 z = row_z_pos - z_pos_modifier
             }
-            spawn_base(base_data, location, y_rotation, is_red_player)
+            spawn_base(base_data, location, y_rotation, is_red_player, command_color)
             i = i + 1
         end
     end
@@ -313,7 +324,7 @@ function update_player_color_menu(is_player_red)
     if is_player_red then
         selected = 1
     end
-    set_options_dropdown_by_id('dropdown_color', { 'Red', 'Blue' },  selected)
+    set_options_dropdown_by_id('dropdown_playercolor', { 'Red', 'Blue' },  selected)
 end
 
 function update_armies_menu(book, army_selected)

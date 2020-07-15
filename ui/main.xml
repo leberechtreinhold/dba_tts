@@ -27,8 +27,12 @@
 </Panel>
 <Panel id="panel_dba_pip_btns" width="400" height="100" color="#00000000" outline="#00000000" rectAlignment="LowerCenter" raycastTarget="true">
     <HorizontalLayout>
-        <Text id="text_pips_player_blue" ignoreLayout="true" fontSize="64" position="-100 -10" color="#2e82ec">0</Text>
-        <Text id="text_pips_player_red" ignoreLayout="true" fontSize="64" position="100 -10" color="#ec482e">0</Text>
+        <Text id="text_pips_player_blue" ignoreLayout="true" fontSize="64" position="-110 -10" color="#2e82ec">0</Text>
+        <Text id="text_pips_player_green" ignoreLayout="true" fontSize="24" position="-70 5" color="#21C51B">0</Text>
+        <Text id="text_pips_player_purple" ignoreLayout="true" fontSize="24" position="-70 -25" color="#641EB3">0</Text>
+        <Text id="text_pips_player_orange" ignoreLayout="true" fontSize="24" position="70 5" color="#E9900C">0</Text>
+        <Text id="text_pips_player_yellow" ignoreLayout="true" fontSize="24" position="70 -25" color="#DDFF00">0</Text>
+        <Text id="text_pips_player_red" ignoreLayout="true" fontSize="64" position="110 -10" color="#A0081F">0</Text>
     </HorizontalLayout>
 </Panel>
 
@@ -109,7 +113,7 @@
     <Image image="select_army_bg_v2"></Image>
 </Panel>
 <Panel id="panel_dba_troop_selection" width="800" height="650" rectAlignment="MiddleCenter" color="#00000000" active="false" raycastTarget="true">
-    <TableLayout padding="70 70 110 70 " cellSpacing="20">
+    <TableLayout padding="50 50 80 50 " cellSpacing="20">
         <Row preferredHeight="40">
             <Cell columnSpan="20" dontUseTableCellBackground="true">
                 <Toggle id="toggle_filter_modes" onValueChanged="on_filter_models" alignment="MiddleLeft" fontSize="16">Filter armies with models</Toggle>
@@ -146,9 +150,23 @@
                 <Text fontSize="20" alignment="MiddleLeft">Player:</Text>
             </Cell>
             <Cell columnSpan="17" dontUseTableCellBackground="true">
-                <Dropdown id="dropdown_color" onValueChanged="on_color_selected" fontSize="20">
+                <Dropdown id="dropdown_playercolor" onValueChanged="on_color_selected" fontSize="20">
                     <Option selected="true">Red</Option>
                     <Option>Blue</Option>
+                </Dropdown>
+            </Cell>
+        </Row>
+        <Row preferredHeight="40">
+            <Cell columnSpan="3" dontUseTableCellBackground="true">
+                <Text fontSize="20" alignment="MiddleLeft">Color:</Text>
+            </Cell>
+            <Cell columnSpan="17" dontUseTableCellBackground="true">
+                <Dropdown id="dropdown_command" onValueChanged="on_command_selected" fontSize="20">
+                    <Option selected="true">None</Option>
+                    <Option>Orange</Option>
+                    <Option>Yellow</Option>
+                    <Option>Green</Option>
+                    <Option>Purple</Option>
                 </Dropdown>
             </Cell>
         </Row>

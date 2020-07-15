@@ -85,7 +85,7 @@ function on_cancel_load_army(player, value, id)
 end
 
 function on_load_army(player, value, id)
-    spawn_army(g_army_selected, armies[g_book_selected][g_army_selected], g_color_spawn_army_selected == 'Red')
+    spawn_army(g_army_selected, armies[g_book_selected][g_army_selected], g_color_spawn_army_selected == 'Red', g_command_spawn_army_selected)
     UI.setAttribute('panel_dba_troop_selection', 'active', false)
     UI.setAttribute('panel_dba_troop_selection_bg', 'active', false)
     UI.setAttribute('panel_dba_troop_selection', 'visibility', '')
@@ -241,6 +241,11 @@ end
 g_color_spawn_army_selected = 'Red'
 function on_color_selected(player, value, id)
     g_color_spawn_army_selected = value
+end
+
+g_command_spawn_army_selected = 'None'
+function on_command_selected(player, value, id)
+    g_command_spawn_army_selected = value
 end
 
 function add_pip(player, value, id)
