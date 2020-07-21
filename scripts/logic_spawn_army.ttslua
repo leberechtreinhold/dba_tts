@@ -79,7 +79,7 @@ function onObjectSpawn(new_obj)
 
         if found_base ~= nil then
             on_clone(found_base, new_obj)
-        end    
+        end
     end
 end
 
@@ -203,13 +203,13 @@ function spawn_army(army_name, army, is_red_player, command_color)
         y_rotation = 0
     end
 
+    local z_pos = 5
+    if is_red_player then
+        z_pos = z_pos * -1
+    end
     local i = 0
     for base_id, base_data in pairs(army) do
         if base_id ~= 'data' then
-            local z_pos = 5
-            if is_red_player then
-                z_pos = z_pos * -1
-            end
             local z_pos_modifier = -1 * get_depth_base(base_data['base']) / 2
             if is_red_player then
                 z_pos_modifier = -1 * z_pos_modifier
@@ -230,6 +230,18 @@ function spawn_army(army_name, army, is_red_player, command_color)
         end
     end
 
+    local note_row = math.floor(i / g_max_bases_row) + 1
+    local note_pos = {
+        x = g_offset_deployment_x,
+        y = g_base_height_tabletop + g_table_thickness + 1,
+        z = z_pos * (1 + note_row) + z_pos_0
+    }
+    
+    spawn_note(army_name,
+        'Agressiveness: ' .. army['data']['aggresiveness'] .. '\n'
+        .. 'Terrain: ' .. army['data']['terrain'] .. '\n'
+        .. army['data']['list'],
+        note_pos)
     print_important('Army deployed: ' .. army_name .. ', see chat for options')
     print_info('List: ' .. army['data']['list'])
     print_info('Agressiveness: ' .. army['data']['aggresiveness']
@@ -311,7 +323,7 @@ function update_book_menu(book_selected)
             table.insert(options, dataname_to_friendlyname(book_name))
         end
 
-        if g_filter_armies_models 
+        if g_filter_armies_models
             and book_has_an_army_with_models(book_name) then
             table.insert(options, dataname_to_friendlyname(book_name))
         end
@@ -334,7 +346,7 @@ function update_armies_menu(book, army_selected)
             table.insert(options, dataname_to_friendlyname(army_name))
         end
 
-        if g_filter_armies_models 
+        if g_filter_armies_models
            and not str_has_substr(army_name, '(Plain)') then
             table.insert(options, dataname_to_friendlyname(army_name))
         end
@@ -407,7 +419,7 @@ function fix_terrain_and_lock()
             if g_use_3d_terrain then
                 process_vegetation(terrain, terrain_type)
             end
-            
+
             gametable.addAttachment(terrain)
             print_info('Attaching ' .. terrain.getName())
         end
@@ -575,7 +587,7 @@ function set_oasis(terrain_obj, terrain_pos, terrain_rotation, terrain_size, tab
     for i=1,nobjs do
         local point = random_point_ellipse(terrain_size['x'] / 4, terrain_size['z'] / 4,
             math.min(terrain_size['x'] / 4, terrain_size['z'] / 4) - 0.3)
-        
+
         new_pos = rotate_point_relative(point, terrain_pos, terrain_rotation)
         local obj = spawn_model(random_element(options['objects']), new_pos, math.random(1, 359), minimal_collider, true)
         terrain_obj.addAttachment(obj)
@@ -596,4 +608,17 @@ function process_vegetation(terrain_obj, type)
     if str_starts_with(terrain_obj.getName(), 'terrain Oasis') then
         set_oasis(terrain_obj, terrain_pos, terrain_rotation, terrain_size, type)
     end
+end
+
+function spawn_note(title, desc, pos)
+    local obj = spawnObject({
+        type = "Notecard",
+        position          = pos,
+        rotation          = {x=0, y=0, z=0},
+        scale             = {x=1, y=1, z=1},
+        sound             = false,
+        snap_to_grid      = false,
+    })
+    obj.setName(title)
+    obj.setDescription(desc)
 end
