@@ -646,16 +646,16 @@ tile_plain_Camp_40x40 = {
 -------------------------------------------------------------------------------
 
 troop_general_plain = {
-    height_correction = 0.2,
-    scale = 1,
+    height_correction = 0,
+    scale = 1.2,
     rotation = 0,
     description = 'General Token',
     author = 'General Token, original work by Arkein (model) and Eric Delemer (texture), using troop icon from Lorenzo Moro.',
     mesh = {
-        'http://cloud-3.steamusercontent.com/ugc/1018321288887138575/ECD6CC019758362CE2E7D47E845E671F6B974EA7/'
+        'http://cloud-3.steamusercontent.com/ugc/1045344685651253433/CC6E2CD4A9C320E01BA4942CA15A6693AE27CC67/'
     },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1045345844814501365/477FDBEBE9C6BE09FC2BD7B8D1E25ACDF0FED608/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1045345844814500693/5DA685B42E5EDC68FE30356ADC9DC662916F8E22/'
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1180454178333061039/78F6637C907D2D209444FA9965AFB56BF0BE008E/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1180454178333061804/D3E9C5A567B74554A0E0F1C690EB7B500F4FA572/'
 }
 
 -------------------------------------------------------------------------------

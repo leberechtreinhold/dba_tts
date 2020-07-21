@@ -236,7 +236,7 @@ function spawn_army(army_name, army, is_red_player, command_color)
         y = g_base_height_tabletop + g_table_thickness + 1,
         z = z_pos * (1 + note_row) + z_pos_0
     }
-    
+
     spawn_note(army_name,
         'Agressiveness: ' .. army['data']['aggresiveness'] .. '\n'
         .. 'Terrain: ' .. army['data']['terrain'] .. '\n'
@@ -595,6 +595,20 @@ function set_oasis(terrain_obj, terrain_pos, terrain_rotation, terrain_size, tab
     change_texture_terrain(terrain_obj, random_element(options['texture']))
 end
 
+function set_marsh(terrain_obj, terrain_pos, terrain_rotation, terrain_size, table_type)
+    local options = g_terrain[table_type]['marsh']
+    local nobjs = math.floor((terrain_size['x'] + terrain_size['z'])*1.2)
+    for i=1,nobjs do
+        local point = random_point_ellipse(terrain_size['x'] / 4, terrain_size['z'] / 4,
+            math.min(terrain_size['x'] / 4, terrain_size['z'] / 4) - 0.3)
+
+        new_pos = rotate_point_relative(point, terrain_pos, terrain_rotation)
+        local obj = spawn_model(random_element(options['objects']), new_pos, math.random(1, 359), minimal_collider, true)
+        terrain_obj.addAttachment(obj)
+    end
+    change_texture_terrain(terrain_obj, random_element(options['texture']))
+end
+
 function process_vegetation(terrain_obj, type)
     local terrain_pos = terrain_obj.getPosition()
     local terrain_rotation = normalize_angle(math.rad(terrain_obj.getRotation()['y']))
@@ -607,6 +621,9 @@ function process_vegetation(terrain_obj, type)
     end
     if str_starts_with(terrain_obj.getName(), 'terrain Oasis') then
         set_oasis(terrain_obj, terrain_pos, terrain_rotation, terrain_size, type)
+    end
+    if str_starts_with(terrain_obj.getName(), 'terrain Marsh') then
+        set_marsh(terrain_obj, terrain_pos, terrain_rotation, terrain_size, type)
     end
 end
 

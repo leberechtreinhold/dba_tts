@@ -25,6 +25,14 @@ g_terrain = {
                 'http://cloud-3.steamusercontent.com/ugc/1056604919810095519/542A46C870B041B7DC4B885E338E2D93D0699A2C/'
             }
         },
+        marsh = {
+            objects = { 
+                'terrain_palm_shrubs' 
+            },
+            texture = { 
+                'http://cloud-3.steamusercontent.com/ugc/1056604919810095379/0D3285C74959280FC90BBF4B968884A74740ED32/'
+            }
+        }
     },
     grass = {
         forest = {
@@ -51,6 +59,14 @@ g_terrain = {
                 'http://cloud-3.steamusercontent.com/ugc/1056604919810095519/542A46C870B041B7DC4B885E338E2D93D0699A2C/'
             }
         },
+        marsh = {
+            objects = { 
+                'terrain_palm_shrubs' 
+            },
+            texture = { 
+                'http://cloud-3.steamusercontent.com/ugc/1056604919810095379/0D3285C74959280FC90BBF4B968884A74740ED32/'
+            }
+        }
     },
     forest = {
         forest = {
@@ -76,7 +92,15 @@ g_terrain = {
             texture = { 
                 'http://cloud-3.steamusercontent.com/ugc/1056604919810095519/542A46C870B041B7DC4B885E338E2D93D0699A2C/'
             }
-        },    
+        },
+        marsh = {
+            objects = { 
+                'terrain_palm_shrubs' 
+            },
+            texture = { 
+                'http://cloud-3.steamusercontent.com/ugc/1056604919810095379/0D3285C74959280FC90BBF4B968884A74740ED32/'
+            }
+        }
     },
     mountain = {
         forest = {
@@ -92,7 +116,7 @@ g_terrain = {
                 'terrain_rock_grey'
             },
             texture = { 
-                'http://cloud-3.steamusercontent.com/ugc/1267149286201969420/6FF3C9E1F3FF49AE28673503D1C73FD7E881F2C0/'
+                'http://cloud-3.steamusercontent.com/ugc/1056604919810095379/0D3285C74959280FC90BBF4B968884A74740ED32/'
             }
         },
         oasis = {
@@ -103,6 +127,14 @@ g_terrain = {
                 'http://cloud-3.steamusercontent.com/ugc/1056604919810095519/542A46C870B041B7DC4B885E338E2D93D0699A2C/'
             }
         },
+        marsh = {
+            objects = { 
+                'terrain_palm_shrubs' 
+            },
+            texture = { 
+                'http://cloud-3.steamusercontent.com/ugc/1056604919810095519/542A46C870B041B7DC4B885E338E2D93D0699A2C/'
+            }
+        }
     },
     steppe = {
         forest = {
@@ -129,6 +161,14 @@ g_terrain = {
                 'http://cloud-3.steamusercontent.com/ugc/1056604919810095519/542A46C870B041B7DC4B885E338E2D93D0699A2C/'
             }
         },
+        marsh = {
+            objects = { 
+                'terrain_palm_shrubs' 
+            },
+            texture = { 
+                'http://cloud-3.steamusercontent.com/ugc/1056604919810095379/0D3285C74959280FC90BBF4B968884A74740ED32/'
+            }
+        }
     },
     tropical = {
         forest = {
@@ -155,6 +195,14 @@ g_terrain = {
                 'http://cloud-3.steamusercontent.com/ugc/1056604919810095519/542A46C870B041B7DC4B885E338E2D93D0699A2C/'
             }
         },
+        marsh = {
+            objects = { 
+                'terrain_palm_shrubs' 
+            },
+            texture = { 
+                'http://cloud-3.steamusercontent.com/ugc/1056604919810095379/0D3285C74959280FC90BBF4B968884A74740ED32/'
+            }
+        }
     },
 }
 
