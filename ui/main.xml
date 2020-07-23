@@ -27,12 +27,14 @@
 </Panel>
 <Panel id="panel_dba_pip_btns" width="400" height="100" color="#00000000" outline="#00000000" rectAlignment="LowerCenter" raycastTarget="true">
     <HorizontalLayout>
+        <Button id="button_roll_blue" ignoreLayout="true" position="-150 -10" width="40" height="30" onClick="on_roll_pips_blue">Roll</Button>
         <Text id="text_pips_player_blue" ignoreLayout="true" fontSize="64" position="-110 -10" color="#2e82ec">0</Text>
         <Text id="text_pips_player_green" ignoreLayout="true" fontSize="24" position="-70 5" color="#21C51B">0</Text>
         <Text id="text_pips_player_purple" ignoreLayout="true" fontSize="24" position="-70 -25" color="#641EB3">0</Text>
         <Text id="text_pips_player_orange" ignoreLayout="true" fontSize="24" position="70 5" color="#E9900C">0</Text>
         <Text id="text_pips_player_yellow" ignoreLayout="true" fontSize="24" position="70 -25" color="#DDFF00">0</Text>
         <Text id="text_pips_player_red" ignoreLayout="true" fontSize="64" position="110 -10" color="#A0081F">0</Text>
+        <Button id="button_roll_red" ignoreLayout="true" position="150 -10" width="40" height="30" onClick="on_roll_pips_red">Roll</Button>
     </HorizontalLayout>
 </Panel>
 
