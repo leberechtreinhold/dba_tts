@@ -331,6 +331,8 @@ end
 function on_create_table_menu(player, value, id)
     g_use_3d_terrain = true
     g_is_double_dba = false
+    UI.setAttribute('toggle_double_dba', 'isOn', g_is_double_dba)
+    UI.setAttribute('toggle_3dterrain', 'isOn', g_use_3d_terrain)
     UI.setAttribute('panel_dba_table_selection_bg', 'active', true)
     UI.setAttribute('panel_dba_table_selection_bg', 'visibility', player.color)
     UI.setAttribute('panel_dba_table_selection', 'active', true)

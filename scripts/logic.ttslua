@@ -1269,6 +1269,8 @@ end
 function main_loop()
     check_selection_change()
     check_change_zoc()
+    
+    set_tint_again()
 end
 
 

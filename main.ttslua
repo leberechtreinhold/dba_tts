@@ -30,6 +30,17 @@ function onload()
     make_scenery_non_interactable()
     reset_state()
     spawn_proxy_bases()
+    set_tint_again()
+end
+
+function set_tint_again()
+    getObjectFromGUID('d1f221').setColorTint({r=1, g=0, b=0})
+    getObjectFromGUID('37c559').setColorTint({r=1, g=0.5, b=0})
+    getObjectFromGUID('85bfcc').setColorTint({r=0.8, g=0.8, b=0.05})
+    
+    getObjectFromGUID('0b9b84').setColorTint({r=0, g=0, b=1})
+    getObjectFromGUID('48f018').setColorTint({r=0.2, g=0.95, b=0.1})
+    getObjectFromGUID('0f9db0').setColorTint({r=0.6, g=0.1, b=1})
 end
 
 function make_scenery_non_interactable()
