@@ -80,8 +80,11 @@
             </Cell>
         </Row>
         <Row>
-            <Cell columnSpan="6" dontUseTableCellBackground="true">
+            <Cell columnSpan="3" dontUseTableCellBackground="true">
                 <Toggle id="toggle_double_dba" isOn="false" onValueChanged="on_toggle_table_double" fontSize="16">Double DBA</Toggle>
+            </Cell>
+            <Cell columnSpan="3" dontUseTableCellBackground="true">
+                <Toggle id="toggle_3dterrain" isOn="true" onValueChanged="on_toggle_3dterrain" fontSize="16">Use 3D terrain</Toggle>
             </Cell>
         </Row>
         <!--<Row>

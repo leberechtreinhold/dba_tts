@@ -329,6 +329,8 @@ function on_toggle_deployment_lines(player, value, id)
 end
 
 function on_create_table_menu(player, value, id)
+    g_use_3d_terrain = true
+    g_is_double_dba = false
     UI.setAttribute('panel_dba_table_selection_bg', 'active', true)
     UI.setAttribute('panel_dba_table_selection_bg', 'visibility', player.color)
     UI.setAttribute('panel_dba_table_selection', 'active', true)
@@ -343,6 +345,15 @@ function on_toggle_table_double(player, value, id)
         g_is_double_dba = true
     else
         g_is_double_dba = false
+    end
+end
+
+g_use_3d_terrain = true
+function on_toggle_3dterrain(player, value, id)
+    if value == "True" then
+        g_use_3d_terrain = true
+    else
+        g_use_3d_terrain = false
     end
 end
 
