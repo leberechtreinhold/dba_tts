@@ -582,17 +582,17 @@ function update_pip(dice_obj_guid, id_text)
 end
 
 function on_roll_pips_red(player, value, id)
-    local red = update_pip('d1f221', 'text_pips_player_red')
-    local orange = update_pip('37c559', 'text_pips_player_orange')
-    local yellow = update_pip('85bfcc', 'text_pips_player_yellow')
+    local red = roll_dice('red')
+    local orange = roll_dice('yellow')
+    local yellow = roll_dice('orange')
 
     print_important('Red: ' .. red .. ' (Or: ' .. orange .. ' Yw: ' .. yellow .. ')')
 end
 
 function on_roll_pips_blue(player, value, id)
-    local blue = update_pip('0b9b84', 'text_pips_player_blue')
-    local green = update_pip('48f018', 'text_pips_player_green')
-    local purple = update_pip('0f9db0', 'text_pips_player_purple')
+    local blue = roll_dice('blue')
+    local green = roll_dice('green')
+    local purple = roll_dice('purple')
 
     print_important('Blue: ' .. blue .. ' (Gr: ' .. green .. ' Pr: ' .. purple .. ')')
 end

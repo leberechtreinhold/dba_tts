@@ -1,6 +1,0 @@
-#include dice_base
-
-
-function on_dice_stopped(dice_obj)
-    UI.setValue('text_pips_player_purple', dice_obj.getRotationValue())
-end
