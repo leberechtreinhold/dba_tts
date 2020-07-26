@@ -1880,6 +1880,7 @@ troop_knight_burgundian_ordonnances = {
     player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1012691509327531288/D514C7A7153B3F056EB475CB4A12280D8BD5B143/',
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1018323012512481328/72305A929FA84C40BC200B6659D03F9C43EE7C60/'
 }
+
 troop_knight_burgundian_ordonnances_captain = {
     height_correction = 0.71,
     scale = 0.37,
@@ -1944,7 +1945,7 @@ troop_carthaginian_soldier = {
 
 troop_carthaginian_cavalry = {
     height_correction = 0,
-    scale = 0.46,
+    scale = 0.5,
       rotation = 0,
       description = 'Carthaginian Cavalry',
       author = 'Carthaginian Cavalry by Vokuhila, edited by LeberechtReinhold.',
@@ -1958,7 +1959,7 @@ troop_carthaginian_cavalry = {
 
 troop_carthaginian_cavalry_gen = {
     height_correction = 0,
-    scale = 0.52,
+    scale = 0.55,
     rotation = 0,
     description = 'Carthaginian Cavalry General',
     author = 'Carthaginian Cavalry General by Vokuhila, edited by LeberechtReinhold.',
@@ -1997,7 +1998,7 @@ troop_carthaginian_chariot_gen = {
 
 troop_carthaginian_lightcav = {
     height_correction = 0,
-    scale = 0.52,
+    scale = 0.55,
     rotation = 0,
     description = 'Carthaginian Light Cavalry',
     author = 'Carthaginian Light Cavalry by Vokuhila, edited by LeberechtReinhold.',
@@ -2069,7 +2070,7 @@ troop_carthaginian_elephant = {
 
 troop_camillan_roman_blade = {
     height_correction = 0,
-    scale = 0.52,
+    scale = 0.47,
     rotation = 0,
     description = 'Camillan Roman Blade',
     author = 'Camillan Roman Blade by Vokuhila, edited by LeberechtReinhold.',
@@ -2082,7 +2083,7 @@ troop_camillan_roman_blade = {
 
 troop_camillan_roman_spear = {
     height_correction = 0,
-    scale = 0.52,
+    scale = 0.47,
     rotation = 0,
     description = 'Camillan Roman Spear',
     author = 'Camillan Roman Spear by Vokuhila, edited by LeberechtReinhold.',
@@ -2096,7 +2097,7 @@ troop_camillan_roman_spear = {
 
 troop_camillan_roman_psiloi = {
     height_correction = 0,
-    scale = 0.52,
+    scale = 0.43,
     rotation = 0,
     description = 'Camillan Roman Psiloi',
     author = 'Camillan Roman Psiloi by Vokuhila, edited by LeberechtReinhold.',
@@ -2110,7 +2111,7 @@ troop_camillan_roman_psiloi = {
 
 troop_camillan_roman_cavalry = {
     height_correction = 0,
-    scale = 0.52,
+    scale = 0.45,
     rotation = 0,
     description = 'Camillan Roman Cavalry',
     author = 'Camillan Roman Cavalry by Vokuhila, edited by LeberechtReinhold.',
@@ -2123,7 +2124,7 @@ troop_camillan_roman_cavalry = {
 
 troop_camillan_roman_bodyguard = {
     height_correction = 0,
-    scale = 0.47,
+    scale = 0.42,
     rotation = 0,
     description = 'Camillan Roman General Bodyguard',
     author = 'Camillan Roman General Bodyguard by Vokuhila, edited by LeberechtReinhold.',
@@ -2136,7 +2137,7 @@ troop_camillan_roman_bodyguard = {
 
 troop_camillan_roman_general = {
     height_correction = 0,
-    scale = 0.52,
+    scale = 0.42,
     rotation = 0,
     description = 'Camillan Roman General ',
     author = 'Camillan Roman General by Vokuhila, edited by LeberechtReinhold.',
