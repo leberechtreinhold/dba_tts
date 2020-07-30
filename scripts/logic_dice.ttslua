@@ -2,12 +2,13 @@
 data_dice = {
     mesh = 'http://cloud-3.steamusercontent.com/ugc/1483325217454079653/599EFF401B1215D3FD34CA5D7A3B2EEDA47123E4/',
     textures = {
-        red = 'http://cloud-3.steamusercontent.com/ugc/1483325217454080321/1091CE221C705C9930D54530B0BF14AE5980F4D0/',
-        yellow = 'http://cloud-3.steamusercontent.com/ugc/1483325217454080528/C5C59BBDD3B02B0236DB77F660D32ECBB80D14F6/',
-        orange = 'http://cloud-3.steamusercontent.com/ugc/1483325217454079924/1CED8E96744535DFF879CA4240AEFB0EAB7C4DF8/',
-        blue = 'http://cloud-3.steamusercontent.com/ugc/1483325217454079449/62B7A0A4880F1600AF53BF8FC7EF7D9083867A4F/',
-        green = 'http://cloud-3.steamusercontent.com/ugc/1483325217454079759/FB29A093D56B39927864DF96F87670C0E9AF0B58/',
-        purple = 'http://cloud-3.steamusercontent.com/ugc/1483325217454080111/2FC45718974D2A1D749FBAD4431409F584E581D0/',
+        -- Dice textures by Eric Delemer
+        red = 'http://cloud-3.steamusercontent.com/ugc/1483325549676274833/BA2F1424E61D7B0069F760A5FB583007F598B09C/',
+        yellow = 'http://cloud-3.steamusercontent.com/ugc/1483325549676275033/601A951DC76EB4E50B47318DD7ACF2D27CD42F4A/',
+        orange = 'http://cloud-3.steamusercontent.com/ugc/1483325549676274480/808C5CD28B88A16216E1B839F8E14CA2BF471313/',
+        blue = 'http://cloud-3.steamusercontent.com/ugc/1483325549676274109/0F5FCBE607B4453933F9E8A53D872C3702C01BC4/',
+        green = 'http://cloud-3.steamusercontent.com/ugc/1483325549676274294/CA1F620A7D011294B45DC69300E3768BC7F44274/',
+        purple = 'http://cloud-3.steamusercontent.com/ugc/1483325549676274658/1AB60B1B387B6A036D74D62E05DE49854F1285BB/',
     }
 }
 
