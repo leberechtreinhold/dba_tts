@@ -47,7 +47,7 @@ function spawn_dice(color, pos)
         {value=6, rotation={x=0, y=0, z=180}}
     })
     obj.mass = 1.5
-    obj.setName('PIP ' .. color)
+    obj.setName('PIP dice ' .. color)
     local code = [[
         function onRandomize()
             startLuaCoroutine(self, 'check_if_at_rest')
@@ -82,7 +82,18 @@ function roll_dice(color)
     return val
 end
 
+function delete_all_dice()
+    local all_objs = getAllObjects()
+    for _,obj in ipairs(all_objs) do
+        local name = obj.getName()
+        if str_starts_with(name, 'PIP dice') then
+            obj.destroy()
+        end
+    end
+end
+
 function spawn_all_dice()
+    delete_all_dice()
     spawn_dice('red', {x=-7, y=2, z=-24})
     spawn_dice('yellow', {x=-5, y=2, z=-24})
     spawn_dice('orange', {x=-3, y=2, z=-24})

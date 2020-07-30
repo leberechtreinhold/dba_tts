@@ -498,8 +498,18 @@ function onObjectDestroy(dying_object)
     end
 end
 
+function delete_all_proxy()
+    local all_objs = getAllObjects()
+    for _,obj in ipairs(all_objs) do
+        local name = obj.getName()
+        if str_starts_with(name, 'base Proxy') then
+            obj.destroy()
+        end
+    end
+end
 
 function spawn_proxy_bases()
+    delete_all_proxy()
     spawn_base({
         name = 'Proxy 40x15',
         base = 'tile_plain_4Bd_40x15',
