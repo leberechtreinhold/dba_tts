@@ -2586,7 +2586,6 @@ troop_thracian_lh = {
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1483325549680496262/352AD507845CF4F92893A642D681D02867526884/'
 }
 
-
 trop_thracian_ps = {
     height_correction = 0,
     scale = 0.9,
@@ -2653,17 +2652,4 @@ trop_thracian_axgen = {
     },
     player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1483325549680486871/0A938B3E4C7DF597E1ED6C4FC5543C4A6A55FB2F/',
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1483325549680486871/0A938B3E4C7DF597E1ED6C4FC5543C4A6A55FB2F/'
-}
-
-troop_ancient_spanish_camp = {
-    height_correction = 0,
-    scale = 0.06,
-    rotation = 270,
-    description = 'Ancient Spanish Camp',
-    author = 'Ancient Spanish Camp by 0AD.',
-    mesh = {
-          'http://cloud-3.steamusercontent.com/ugc/1305430814619372836/FCE797D74401AC30C68677AA8E890E7B2BE1A7B3/'
-    },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1305430814619372618/653A0ACF0D968F4AE018446330337596E73922C8/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1305430814619372618/653A0ACF0D968F4AE018446330337596E73922C8/'
 }
