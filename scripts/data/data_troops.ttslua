@@ -2540,3 +2540,130 @@ troop_ancient_spanish_camp = {
     player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1305430814619372618/653A0ACF0D968F4AE018446330337596E73922C8/',
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1305430814619372618/653A0ACF0D968F4AE018446330337596E73922C8/'
 }
+
+------------------------------------------------------------------------------
+--                            THRACIAN PHOTOGAMMETRY
+------------------------------------------------------------------------------
+
+troop_thracian_cv_gen = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Thracian Cavalry General',
+    author = 'Thracian Cavalry General by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1483325549680494592/F469EBADB88967A6D4F08FEADA73DD7D988E80E1/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1483325549680494425/05525C9DD2686BD2793F07827C7DE5887E9BC21A/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1483325549680494425/05525C9DD2686BD2793F07827C7DE5887E9BC21A/'
+}
+
+troop_thracian_cv = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Thracian Cavalry',
+    author = 'Thracian Cavalry by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1483325549680494282/B666F117F68E0097A697420483DD33B2F9A347AA/',
+          'http://cloud-3.steamusercontent.com/ugc/1483325549680494743/0BED3EEEB153E1C5C83A4076B45EA1ABFFFCBA45/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1483325549680494425/05525C9DD2686BD2793F07827C7DE5887E9BC21A/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1483325549680494425/05525C9DD2686BD2793F07827C7DE5887E9BC21A/'
+}
+
+troop_thracian_lh = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Thracian Light Cavalry',
+    author = 'Thracian Light Cavalry by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1483325549680495956/074867DF8EF31054E46EAB27D3082C48A19B7903/',
+          'http://cloud-3.steamusercontent.com/ugc/1483325549680496109/3561305FE095A0AE72D6F5F0B487C5013B61FCDF/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1483325549680496262/352AD507845CF4F92893A642D681D02867526884/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1483325549680496262/352AD507845CF4F92893A642D681D02867526884/'
+}
+
+
+trop_thracian_ps = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Thracian Psiloi',
+    author = 'Thracian Psiloi by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1483325549680492595/B4FFC5378168963F775DE0259D12EC6AE7DF5F14/',
+          'http://cloud-3.steamusercontent.com/ugc/1483325549680492923/1BFF04860F70A5A0358C106FDB68A9A0D3BA7D1E/',
+          'http://cloud-3.steamusercontent.com/ugc/1483325549680493068/6D73F350649CD8F85BAECD25BB04C6D03592D666/'
+
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1483325549680492783/F4A80D438752E7111D3FDB356856FE90CF5CDD0A/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1483325549680492783/F4A80D438752E7111D3FDB356856FE90CF5CDD0A/'
+}
+
+trop_thracian_ax1 = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Thracian Auxilia',
+    author = 'Thracian Auxilia by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1483325549680484460/C0C04D0673811D9C0BE7AAD4AE3CE94ACEB6ED07/',
+          'http://cloud-3.steamusercontent.com/ugc/1483325549680484609/480D2C8A37E80A70CED52DEA89C1A198B99AC157/',
+          'http://cloud-3.steamusercontent.com/ugc/1483325549680484757/6D2B334E64EC2B2FDB5A55869DFAB8D1C9991F93/',
+          'http://cloud-3.steamusercontent.com/ugc/1483325549680484901/7A425CDCC1C7E7A8C3EB20A26F593C034232F3FA/',
+          'http://cloud-3.steamusercontent.com/ugc/1483325549680485045/E2D9E1A4B1151C1B367B0B3DCCBF9689BC832CF3/'
+
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1483325549680484315/D56255B5EA8C48294E29A762DA3995D2A6CD634B/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1483325549680484315/D56255B5EA8C48294E29A762DA3995D2A6CD634B/'
+}
+
+trop_thracian_ax2 = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Thracian Auxilia',
+    author = 'Thracian Auxilia by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1483325549680487038/5D10F7553D9032691015F0E995FF5BF08E9F8E20/',
+          'http://cloud-3.steamusercontent.com/ugc/1483325549680487187/B919784BA94EEF2115DC373FD80D1F953DFE0E08/',
+          'http://cloud-3.steamusercontent.com/ugc/1483325549680487332/2A8B7AB6A03F64BFCD3DF130E55A7F8C1180958B/',
+          'http://cloud-3.steamusercontent.com/ugc/1483325549680487515/8C330DA191E0EC35557FD36903CA4BA728DE41E8/'
+
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1483325549680486871/0A938B3E4C7DF597E1ED6C4FC5543C4A6A55FB2F/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1483325549680486871/0A938B3E4C7DF597E1ED6C4FC5543C4A6A55FB2F/'
+}
+
+trop_thracian_axgen = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Thracian Auxilia',
+    author = 'Thracian Auxilia by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1483325549680487038/5D10F7553D9032691015F0E995FF5BF08E9F8E20/',
+          'http://cloud-3.steamusercontent.com/ugc/1483325549680487187/B919784BA94EEF2115DC373FD80D1F953DFE0E08/',
+          'http://cloud-3.steamusercontent.com/ugc/1483325549680487332/2A8B7AB6A03F64BFCD3DF130E55A7F8C1180958B/',
+          'http://cloud-3.steamusercontent.com/ugc/1483325549680487515/8C330DA191E0EC35557FD36903CA4BA728DE41E8/'
+
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1483325549680486871/0A938B3E4C7DF597E1ED6C4FC5543C4A6A55FB2F/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1483325549680486871/0A938B3E4C7DF597E1ED6C4FC5543C4A6A55FB2F/'
+}
+
+troop_ancient_spanish_camp = {
+    height_correction = 0,
+    scale = 0.06,
+    rotation = 270,
+    description = 'Ancient Spanish Camp',
+    author = 'Ancient Spanish Camp by 0AD.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1305430814619372836/FCE797D74401AC30C68677AA8E890E7B2BE1A7B3/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1305430814619372618/653A0ACF0D968F4AE018446330337596E73922C8/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1305430814619372618/653A0ACF0D968F4AE018446330337596E73922C8/'
+}

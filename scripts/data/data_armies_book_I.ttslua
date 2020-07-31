@@ -10311,6 +10311,120 @@ armies["Book I"]["I/48 Thracian 700BC-46AD (Plain)"] = {
     }
 }
 
+armies["Book I"]["I/48 Thracian 700BC-46AD"] = {
+    data = {
+        aggresiveness = 1,
+        terrain = 'Hilly',
+        list = '1x3Cv (Gen), 3x2LH or 3Ax, 6x3Ax, 2x2Ps.'
+    },
+
+    base1 = {
+        name = '3Cv_Gen',
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        fixed_models = {
+            [1] = 'troop_thracian_cv',
+            [2] = 'troop_thracian_cv_gen',
+            [3] = 'troop_thracian_cv'
+        }
+    },
+    base2 = {
+        name = '2LH',
+        base = 'tile_grass_40x30',
+        n_models = 2,
+        loose = true,
+        model_data = 'troop_thracian_lh'
+    },
+    base3 = {
+        name = '3Ax',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'trop_thracian_ax1'
+    },
+    base4 = {
+        name = '2LH',
+        base = 'tile_grass_40x30',
+        n_models = 2,
+        loose = true,
+        model_data = 'troop_thracian_lh'
+    },
+    base5 = {
+        name = '3Ax',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'trop_thracian_ax1'
+    },
+    base6 = {
+        name = '2LH',
+        base = 'tile_grass_40x30',
+        n_models = 2,
+        loose = true,
+        model_data = 'troop_thracian_lh'
+    },
+    base7 = {
+        name = '3Ax',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'trop_thracian_ax1'
+    },
+    base8 = {
+        name = '3Ax',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'trop_thracian_ax2'
+    },
+    base9 = {
+        name = '3Ax',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'trop_thracian_ax2'
+    },
+    base10 = {
+        name = '3Ax',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'trop_thracian_ax2'
+    },
+    base11 = {
+        name = '3Ax',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'trop_thracian_ax2'
+    },
+    base12 = {
+        name = '3Ax',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'trop_thracian_ax2'
+    },
+    base13 = {
+        name = '3Ax',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'trop_thracian_ax2'
+    },
+    base14 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        loose = true,
+        model_data = 'trop_thracian_ps'
+    },
+    base15 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        loose = true,
+        model_data = 'trop_thracian_ps'
+    },
+    base16 = {
+        name = 'Camp',
+        base = 'tile_grass_40x40',
+        n_models = 1,
+        model_data = 'troop_ancient_spanish_camp'
+    }
+}
+
 armies["Book I"]["I/49a Early Vietnamese 700-207BC (Plain)"] = {
     data = {
         aggresiveness = 1,
