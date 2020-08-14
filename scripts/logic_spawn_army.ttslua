@@ -149,6 +149,13 @@ function spawn_base(base, pos, y_rotation, is_red_player, command_color)
     local column_width = g_base_width_inches / (columns + 1)
     local row_depth = depth / (rows + 1)
 
+    local model_name = base['model_data']
+    local meshes = {}
+
+    if model_name ~= nil then
+        meshes = calculate_random_meshes(n, _G[model_name]['mesh'])
+    end
+
     for i=1,n do
         local column = (i - 1) % columns + 1
         local row = math.floor((i - 1) / columns) + 1
@@ -171,11 +178,13 @@ function spawn_base(base, pos, y_rotation, is_red_player, command_color)
             y = pos['y'] + g_base_height_inches / 2,
             z = pos['z'] + row * row_depth - half_depth + random_x
         }
-        local model_name = base['model_data']
-        if model_name == nil then
-            model_name = base['fixed_models'][i]
+
+        local this_model_name = model_name
+        if this_model_name == nil then
+            this_model_name = base['fixed_models'][i]
+            meshes[i] = random_element(_G[this_model_name]['mesh'])
         end
-        local soldier_obj = spawn_model(model_name, relative_pos, random_rotation, minimal_collider, is_red_player, nil)
+        local soldier_obj = spawn_model(this_model_name, relative_pos, random_rotation, minimal_collider, is_red_player, nil, meshes[i])
         base_obj.addAttachment(soldier_obj)
     end
 
@@ -434,7 +443,7 @@ function fix_terrain_and_lock()
     end, 1)
 end
 
-function spawn_model(troop_name, pos, added_y_axis_rotation, collider, is_player_red, overridden_tex)
+function spawn_model(troop_name, pos, added_y_axis_rotation, collider, is_player_red, overridden_tex, overridden_mesh)
     -- Better pray that the input name actually exists! lol
     local model_data = _G[troop_name]
 
@@ -451,9 +460,13 @@ function spawn_model(troop_name, pos, added_y_axis_rotation, collider, is_player
         end
     end
 
-    local meshes = model_data['mesh']
-    local mesh_index = math.random(1, #model_data['mesh'])
-    local selected_mesh = meshes[mesh_index]
+    local selected_mesh = overridden_mesh
+    if selected_mesh == nil then
+        local meshes = model_data['mesh']
+        local mesh_index = math.random(1, #model_data['mesh'])
+        selected_mesh = meshes[mesh_index]
+    end
+
     local spawn_data = get_spawn_model(pos,
         model_data['rotation'],
         model_data['height_correction'],
@@ -466,6 +479,22 @@ function spawn_model(troop_name, pos, added_y_axis_rotation, collider, is_player
     obj.setCustomObject(spawn_data['custom_obj_attrs'])
 
     return obj
+end
+
+function calculate_random_meshes(how_many, meshes_available)
+    local aux = {}
+    local meshes = {}
+    for i = 1, how_many do
+        if #aux == 0 then
+            for k,v in pairs(meshes_available) do
+                aux[k] = v
+            end
+        end
+        local index = math.random(1, #aux)
+        meshes[i] = aux[index]
+        table.remove(aux, index)
+    end
+    return meshes
 end
 
 function get_spawn_model(pos, rotation_correction, height_correction, model_scale, model_mesh, model_diffuse, collider_if_exists)
