@@ -583,8 +583,8 @@ end
 
 function on_roll_pips_red(player, value, id)
     local red = roll_dice('red')
-    local orange = roll_dice('yellow')
-    local yellow = roll_dice('orange')
+    local orange = roll_dice('orange')
+    local yellow = roll_dice('yellow')
 
     print_important('Red: ' .. red .. ' (Or: ' .. orange .. ' Yw: ' .. yellow .. ')')
 end
