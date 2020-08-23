@@ -13807,7 +13807,7 @@ armies["Book IV"]["IV/82b French Ordonnances 1465-1503AD"] = {
     base8 = {
         name = '4Cb',
         base = 'tile_grass_40x20',
-        n_models = 3,
+        n_models = 4,
         model_data = 'troop_crossbowman_late_medieval'
     },
     base9 = {
