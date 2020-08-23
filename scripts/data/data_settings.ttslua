@@ -48,6 +48,7 @@ g_max_angle_pushback_rad = math.rad(15)
 
 -- Max distance in inches between corenrs for aligment when snapping, squared
 g_max_corner_distance_snap = 0.2*0.2
+g_max_camp_edge_snap = 1
 
 -- Command distances from the general
 g_command_distance_short = 600/100

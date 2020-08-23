@@ -966,6 +966,33 @@ function snap_picked_base(obj)
     local initial_corners = g_picked_base_initial_transform['corners']
 
     local pos = obj.getPosition()
+    
+    if str_has_substr(obj.getName(), 'Camp') then
+        -- Always assume that camps are 40mm depth! This may not always be the
+        -- case, in which case this code needs to be changed
+        local edge_camp_pos = (g_depth_table_in / 2) - (g_base_width_inches / 2)
+        local distance = math.abs(math.abs(pos['z']) - edge_camp_pos)
+        print_debug('Camp has pos ' .. pos['z'] .. ' which has distance ' .. distance ..' to the edge ' .. edge_camp_pos)
+        if  distance < g_max_camp_edge_snap then
+            if pos['z'] > 0 then
+                pos['z'] = edge_camp_pos
+                obj.setRotation({x=0, y=180, z=0})
+            else
+                pos['z'] = -edge_camp_pos
+                obj.setRotation({x=0, y=0, z=0})
+            end
+            obj.setPosition(pos)
+            print_info('Camp snapped to battle edge')
+
+            local new_corners = compute_corners_base(obj)
+            return max_distance_between_bases(new_corners, initial_corners)
+        end
+
+        print_debug('Moving a camp, which should not snap to anything')
+        local new_corners = compute_corners_base(obj)
+        return max_distance_between_bases(new_corners, initial_corners)
+    end
+
     local bases = get_all_bases()
     local is_wwg = str_has_substr(obj.getName(), 'WWg')
     local is_large_base = is_wwg or str_has_substr(obj.getName(), '6Kn')
