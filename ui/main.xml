@@ -9,6 +9,7 @@
         <Button id="button_move_forward" onClick="move_bases">Move 200 paces</Button>
         <Button id="button_wheel" onClick="on_wheel">Wheel Group</Button>
         <Button id="button_push_back" onClick="on_push_back">Push back Column</Button>
+        <Button id="button_undo_move" onClick="on_undo_move">Undo move</Button>
         <Button id="button_spawn_table" onClick="on_create_table_menu">Spawn table</Button>
         <Button id="button_create_army" onClick="create_army_options_menu">Deploy an army</Button>
         <Toggle id="toggle_zoc" isOn="false" onValueChanged="on_toggle_zoc">Do not show ZOC</Toggle>

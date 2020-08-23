@@ -1,0 +1,134 @@
+Stack = {}
+
+function Stack:Create()
+    local _stack = {}
+    _stack._entries = {}
+
+    -- Enters the value into the stack at the top.
+    -- Returns nil
+    function _stack:push(...)
+        if ... then
+            local table_args = {...}
+            for _, val in ipairs(table_args) do
+                table.insert(self._entries, val)
+            end
+        end
+    end
+
+    -- Removes the last added element
+    -- Returns that last value, if exists
+    function _stack:pop()
+        if #self._entries ~= 0 then 
+            return table.remove(self._entries) 
+        end
+    end
+
+    -- Gets the current size of the stack
+    function _stack:size() 
+        return #self._entries 
+    end
+
+    -- Gets the element at position n, with 1 being the first inserted 
+    -- and #size the last one
+    function _stack:get_at(n)
+        if n <= self:size() then 
+            return self._entries[n] 
+        end
+    end
+
+    -- Iterates through the values, from the last insert to the first
+    function _stack:iterator()
+        local count = self:size()
+        local index = count + 1
+        return function()
+            index = index - 1
+            if index > 0 then 
+                return self:get_at(index) 
+            end
+        end
+    end
+
+    -- Iterates through the values, from the first insert to the last
+    function _stack:iterator_inverse()
+        local index = 0
+        local count = self:size()
+        return function()
+            index = index + 1
+            if index <= count then 
+                return self:get_at(index)
+            end
+        end
+    end
+    return _stack
+end
+
+g_history_stack = Stack:Create()
+
+-- move is a table of the following type
+-- {
+--    "base_name_1" = {
+--       "old" = old_transform_before_move,
+--       "new" = new_transform_after_move
+--    },
+--    "base_name_2" = { ... }
+-- }
+function push_to_history_stack(move) 
+    g_history_stack:push(move) 
+    log('Pushed new move')
+    log(move)
+    log('---')
+    print_debug('History stack size: ' .. g_history_stack:size())
+end
+
+-- Utility function to create moves for the push_to_history_stack
+-- Usage:
+-- local move = {}
+-- add_transform_to_move(move, 'base1', ..., ...)
+-- add_transform_to_move(move, 'base2', ..., ...)
+-- push_to_history_stack(move)
+function add_transform_to_move(move, base_name, old_transform, new_transform)
+    local t = {}
+    t['old'] = old_transform
+    t['new'] = new_transform
+
+    move[base_name] = t
+end
+
+-- Applies and reverts the last move on the histpry stack
+function go_back_history_stack()
+    local last_move = g_history_stack:pop()
+    if not last_move then 
+        return print_important('Cannot go back because there are no saved moves') 
+    end
+
+    log(last_move)
+    print_debug('Going back in history... ')
+    local bases = get_all_bases()
+    local base_objs = {}
+    for base_name, transforms in pairs(last_move) do
+        print_debug('Searching if this base exists: ' .. base_name)
+        local base_obj = nil
+        for _, base in ipairs(bases) do
+            if base.getName() == base_name then
+                base_obj = base
+                break
+            end
+        end
+
+        if base_obj == nil then
+            print_error('Cannot go back with this move '
+                        .. 'because it involves a deleted unit ' 
+                        .. 'or something that cannot be found: ' 
+                        .. base_name)
+            return
+        end
+        base_objs[base_name] = base_obj
+    end
+
+    
+    for base_name, transforms in pairs(last_move) do
+        print_debug('Applying revert to ' .. base_name)
+        local base_obj = base_objs[base_name]
+        apply_transform_obj(base_obj, transforms['new'], transforms['old'])
+    end
+end

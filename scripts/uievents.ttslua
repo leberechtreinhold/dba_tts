@@ -596,3 +596,7 @@ function on_roll_pips_blue(player, value, id)
 
     print_important('Blue: ' .. blue .. ' (Gr: ' .. green .. ' Pr: ' .. purple .. ')')
 end
+
+function on_undo_move(player, value, id)
+    go_back_history_stack()
+end
