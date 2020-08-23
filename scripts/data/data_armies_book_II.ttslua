@@ -103,7 +103,8 @@ armies["Book II"]["II/1 Republican Indian 500-321BC"] = {
     data = {
         aggresiveness = 0,
         terrain = 'Tropical',
-        list = '1xHCh (Gen), 2x3Cv, 1x3/4Bd or 3Lb, 8x3Lb.'
+        list = '1xHCh (Gen), 2x3Cv, 1x3/4Bd or 3Lb, 8x3Lb.',
+        manufacturer = 'Xyston and Essex miniatures'
     },
     base1 = {
         name = 'HCh_Gen',
@@ -210,7 +211,8 @@ armies["Book II"]["II/2 Mountain Indian 500-170BC (Plain)"] = {
     data = {
         aggresiveness = 1,
         terrain = 'Hilly',
-        list = '1x2LH or El (Gen), 2x2LH, 1x4Bd or 3Ax, 4x3Ax, 4x2Ps.'
+        list = '1x2LH or El (Gen), 2x2LH, 1x4Bd or 3Ax, 4x3Ax, 4x2Ps.',
+        manufacturer = 'Xyston and Essex miniatures'
     },
     base1 = {
         name = 'El_Gen',
@@ -310,7 +312,8 @@ armies["Book II"]["II/2 Mountain Indian 500-170BC"] = {
     data = {
         aggresiveness = 1,
         terrain = 'Hilly',
-        list = '1x2LH or El (Gen), 2x2LH, 1x4Bd or 3Ax, 4x3Ax, 4x2Ps.'
+        list = '1x2LH or El (Gen), 2x2LH, 1x4Bd or 3Ax, 4x3Ax, 4x2Ps.',
+        manufacturer = 'Xyston and Essex miniatures'
     },
     base1 = {
         name = 'El_Gen',
@@ -591,7 +594,8 @@ armies["Book II"]["II/3 Classical Indian 500BC-545AD"] = {
     data = {
         aggresiveness = 0,
         terrain = 'Tropical',
-        list = '1xEl (Gen), 2xEl, 2xHCh or LCh or 3/4Lb, 2x3Cv, 1x4Bd or 3/4Lb or 2Ps, 4x3/4Lb.'
+        list = '1xEl (Gen), 2xEl, 2xHCh or LCh or 3/4Lb, 2x3Cv, 1x4Bd or 3/4Lb or 2Ps, 4x3/4Lb.',
+        manufacturer = 'Xyston and Essex miniatures'
     },
 
     base1 = {
@@ -2934,7 +2938,8 @@ armies["Book II"]["II/10 Camillan Roman 400-275BC"] = {
     data = {
         aggresiveness = 1,
         terrain = 'Arable',
-        list = '1x3Cv (Gen), 1x3Cv, 3x4Bd, 5x4Sp, 2x2Ps.'
+        list = '1x3Cv (Gen), 1x3Cv, 3x4Bd, 5x4Sp, 2x2Ps.',
+        manufacturer = 'Essex miniatures'
     },
 
     base1 = {
@@ -9173,7 +9178,8 @@ armies["Book II"]["II/32 Later Carthaginian 275-146BC"] = {
     data = {
         aggresiveness = 3,
         terrain = 'Littoral',
-        list = '1x3Cv (Gen), 1x2LH, 3x4Sp, 1x3/4Ax, 3x3Wb or 2Ps, 1xEl or 3Cv, 1xEl or 2LH, 1x2Ps.'
+        list = '1x3Cv (Gen), 1x2LH, 3x4Sp, 1x3/4Ax, 3x3Wb or 2Ps, 1xEl or 3Cv, 1xEl or 2LH, 1x2Ps.',
+        manufacturer = 'Xyston and Essex miniatures'
     },
 
     base1 = {
@@ -9388,7 +9394,8 @@ armies["Book II"]["II/33 Polybian Roman 275-105BC"] = {
     data = {
         aggresiveness = 1,
         terrain = 'Arable',
-        list = '1x3Cv (Gen), 1x3Cv, 6x4Bd, 2x4Sp, 2x2Ps.'
+        list = '1x3Cv (Gen), 1x3Cv, 6x4Bd, 2x4Sp, 2x2Ps.',
+        manufacturer = 'Essex miniatures'
     },
 
     base1 = {
@@ -10601,7 +10608,8 @@ armies["Book II"]["II/39a Ancient Spanish Iberian Army 240-20BC"] = {
     data = {
         aggresiveness = 0,
         terrain = 'Arable',
-        list = '1x3Cv (Gen), 1x2LH, 6x3Ax, 4x2Ps.'
+        list = '1x3Cv (Gen), 1x2LH, 6x3Ax, 4x2Ps.',
+        manufacturer = 'Corvus Belli miniatures'
     },
 
     base1 = {
@@ -10785,7 +10793,8 @@ armies["Book II"]["II/39b Ancient Spanish Celtiberian Army 240-20BC"] = {
     data = {
         aggresiveness = 0,
         terrain = 'Hilly',
-        list = '1x3Cv (Gen), 1x2LH, 6x3Wb, 4x2Ps.'
+        list = '1x3Cv (Gen), 1x2LH, 6x3Wb, 4x2Ps.',
+        manufacturer = 'Corvus Belli miniatures'
     },
 
     base1 = {
@@ -10981,7 +10990,8 @@ armies["Book II"]["II/39c Ancient Spanish Lusitanian Army 240-20BC"] = {
     data = {
         aggresiveness = 0,
         terrain = 'Arable',
-        list = '1x3Cv (Gen), 1x2LH, 3x3Ax, 6x2Ps, 1x3Wb or 4Bd or 2Ps.'
+        list = '1x3Cv (Gen), 1x2LH, 3x3Ax, 6x2Ps, 1x3Wb or 4Bd or 2Ps.',
+        manufacturer = 'Corvus Belli miniatures'
     },
 
     base1 = {

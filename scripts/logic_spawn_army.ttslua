@@ -252,10 +252,16 @@ function spawn_army(army_name, army, is_red_player, command_color)
         angle = 0
     end
 
+    local maker = ''
+    if army['data']['manufacturer'] ~= nil then
+        maker = '\n\nMiniatures by: ' .. army['data']['manufacturer']
+    end
+
     spawn_note(army_name,
         'Agressiveness: ' .. army['data']['aggresiveness'] .. '\n'
         .. 'Terrain: ' .. army['data']['terrain'] .. '\n'
-        .. army['data']['list'],
+        .. army['data']['list'] 
+        .. maker,
         note_pos,
         angle)
     print_important('Army deployed: ' .. army_name .. ', see chat for options')
