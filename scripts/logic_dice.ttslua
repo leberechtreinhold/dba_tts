@@ -98,7 +98,7 @@ function spawn_all_dice()
     spawn_dice('yellow', {x=-5, y=2, z=-24})
     spawn_dice('orange', {x=-3, y=2, z=-24})
     
-    spawn_dice('blue', {x=-7, y=2, z=24})
+    spawn_dice('blue', {x=-3, y=2, z=24})
     spawn_dice('green', {x=-5, y=2, z=24})
-    spawn_dice('purple', {x=-3, y=2, z=24})
+    spawn_dice('purple', {x=-7, y=2, z=24})
 end
