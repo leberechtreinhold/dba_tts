@@ -2774,7 +2774,7 @@ armies["Book IV"]["IV/13d Medieval German 1479-1519AD"] = {
     data = {
         aggresiveness = 1,
         terrain = 'Arable',
-        list = '1x6Kn (Gen), 2x6Kn, 1x3Cv, 2x4Pk, 2x3/4Sp, 1x4Cb or 2Ps, 2xWWg, 1xArt.'
+        list = '1x4Pk or 3Kn (Gen), 1x3Kn, 2x6Kn, 1x3Cv, 3x4Pk, 1x2Ps, 2xWWg, 1xArt.'
     },
     base1 = {
         name = '3Kn_Gen',
