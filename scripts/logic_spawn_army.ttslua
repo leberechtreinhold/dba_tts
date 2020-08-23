@@ -247,11 +247,17 @@ function spawn_army(army_name, army, is_red_player, command_color)
         z = z_pos * (1 + note_row) + z_pos_0
     }
 
+    local angle = 180
+    if is_red_player then
+        angle = 0
+    end
+
     spawn_note(army_name,
         'Agressiveness: ' .. army['data']['aggresiveness'] .. '\n'
         .. 'Terrain: ' .. army['data']['terrain'] .. '\n'
         .. army['data']['list'],
-        note_pos)
+        note_pos,
+        angle)
     print_important('Army deployed: ' .. army_name .. ', see chat for options')
     print_info('List: ' .. army['data']['list'])
     print_info('Agressiveness: ' .. army['data']['aggresiveness']
@@ -667,11 +673,11 @@ function process_vegetation(terrain_obj, type)
     end
 end
 
-function spawn_note(title, desc, pos)
+function spawn_note(title, desc, pos, y_angle)
     local obj = spawnObject({
         type = "Notecard",
         position          = pos,
-        rotation          = {x=0, y=0, z=0},
+        rotation          = {x=0, y=y_angle, z=0},
         scale             = {x=1, y=1, z=1},
         sound             = false,
         snap_to_grid      = false,
