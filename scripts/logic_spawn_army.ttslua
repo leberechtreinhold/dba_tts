@@ -544,13 +544,13 @@ function delete_all_proxy()
     for _,obj in ipairs(all_objs) do
         local name = obj.getName()
         if str_starts_with(name, 'base Proxy') then
+            -- This executes on next frame
             obj.destroy()
         end
     end
 end
 
-function spawn_proxy_bases()
-    delete_all_proxy()
+function spawn_proxy_after_deletion()
     spawn_base({
         name = 'Proxy 40x15',
         base = 'tile_plain_4Bd_40x15',
@@ -601,6 +601,13 @@ function spawn_proxy_bases()
         ignore_terrain = 'true',
         n_models = 0
     }, {x=-42, y=2, z=15.5}, 180, false)
+end
+
+function spawn_proxy_bases()
+    delete_all_proxy()
+    Wait.frames(function()
+        spawn_proxy_after_deletion()
+    end, 1)
 end
 
 function change_texture_terrain(terrain_obj, new_tex_url)
