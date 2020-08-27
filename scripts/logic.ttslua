@@ -83,24 +83,29 @@ end
 -- Moves one or more DBA bases g_paces_movements paces forward
 -- ASSUMES all bases are in a flat board!!!!
 -- Returns how much it moved (it cna move less in a collision)
-function move_base(obj, how_many_paces)
-    local current_world_pos = obj.getPosition()
+function move_base(obj, how_many_paces, ignore_history)
+    local initial_transform = calculate_transform(obj)
+
     local current_rotation = from_degrees_to_rad(obj.getRotation())
     local displacement_vector = rad_to_vector(current_rotation['y'])
+    
     local magnitude = how_many_paces / 100
-    local destination = vec_add(current_world_pos, vec_mul_escalar(displacement_vector, magnitude))
-    -- print_debug(player.steam_name .. 'Moving ' .. obj.getName() ..
-    -- ' from ' .. vec_to_str(current_world_pos) ..
-    -- ' with rotation ' .. vec_to_str(current_rotation) ..
-    -- ' to ' .. vec_to_str(destination))
+    local destination = vec_add(initial_transform['position'], vec_mul_escalar(displacement_vector, magnitude))
+    
     obj.setPosition(destination)
-    -- TODO: COLISION
+    
+    if not ignore_history then
+        local new_transform = calculate_transform(obj)
+        local move = {}
+        add_transform_to_move(move, obj.getName(), initial_transform, new_transform)
+        push_to_history_stack(move)
+    end
     return how_many_paces
 end
 
 -- Moves ONE single DBA base by it's depth
 function push_back(obj)
-    local current_world_pos = obj.getPosition()
+    local initial_transform = calculate_transform(obj)
     local angle = from_degrees_to_rad(obj.getRotation())['y']
     angle = angle + math.pi
     if angle > 2*math.pi then
@@ -109,21 +114,29 @@ function push_back(obj)
     local displacement_vector = rad_to_vector(angle)
 
     local magnitude = get_size(obj.getName())['z']
-    local destination = vec_add(current_world_pos, vec_mul_escalar(displacement_vector, magnitude))
+    local destination = vec_add(initial_transform['position'], vec_mul_escalar(displacement_vector, magnitude))
     obj.setPosition(destination)
-    -- TODO: COLISION
+    
+    local new_transform = calculate_transform(obj)
+    local move = {}
+    add_transform_to_move(move, obj.getName(), initial_transform, new_transform)
+    push_to_history_stack(move)
 end
 
 -- Like push back but in the other direction
 function push_forward(obj)
-    local current_world_pos = obj.getPosition()
+    local initial_transform = calculate_transform(obj)
     local angle = from_degrees_to_rad(obj.getRotation())['y']
     local displacement_vector = rad_to_vector(angle)
 
     local magnitude = get_size(obj.getName())['z']
-    local destination = vec_add(current_world_pos, vec_mul_escalar(displacement_vector, magnitude))
+    local destination = vec_add(initial_transform['position'], vec_mul_escalar(displacement_vector, magnitude))
     obj.setPosition(destination)
-    -- TODO: COLISION
+    local new_transform = calculate_transform(obj)
+
+    local move = {}
+    add_transform_to_move(move, obj.getName(), initial_transform, new_transform)
+    push_to_history_stack(move)
 end
 
 -- Given a bunch of objects returns them in a column, which is
@@ -415,10 +428,13 @@ function push_back_column(objs)
         angle = angle - 2*math.pi
     end
 
+    local move = {}
+
     -- Move the front_element fist, then align the others to its back
     local displacement_vector = rad_to_vector(angle)
     local destination = vec_add(front_element.getPosition(), vec_mul_escalar(displacement_vector, distance))
     front_element.setPosition(destination)
+    add_transform_to_move(move, front_element.getName(), transforms[front_element], calculate_transform(front_element))
 
     local magnitude = base_depth / 2
     local next_element = behind_of[front_element]
@@ -429,12 +445,15 @@ function push_back_column(objs)
         magnitude = magnitude + base_depth / 2
         local next_destination = vec_add(destination, vec_mul_escalar(displacement_vector, magnitude))
         next_element.setPosition(next_destination)
+        
+        add_transform_to_move(move, next_element.getName(), transforms[next_element], calculate_transform(next_element))
 
         front_element = next_element
         next_element = behind_of[next_element]
 
         magnitude = magnitude + base_depth / 2
     end
+    push_to_history_stack(move)
 end
 
 -- Calculates the future position of the given group of objs, assuming a wheel
@@ -539,18 +558,24 @@ function perform_wheels()
     local front_elements = g_current_wheel_group['front_elements']
     local behind_of = g_current_wheel_group['behind_of']
 
+    local move = {}
     for col, front_element in pairs(front_elements) do
         local current_element = front_element
         apply_transform_obj(current_element,
             old_transforms[current_element],
             new_transforms[current_element])
+            
+        add_transform_to_move(move, current_element.getName(), old_transforms[current_element], new_transforms[current_element])
+
         while behind_of[current_element] ~= nil do
             current_element = behind_of[current_element]
             apply_transform_obj(current_element,
                 old_transforms[current_element],
                 new_transforms[current_element])
+            add_transform_to_move(move, current_element.getName(), old_transforms[current_element], new_transforms[current_element])
         end
     end
+    push_to_history_stack(move)
 end
 
 function calculate_future_position_wheel(obj, transform, pivot_point, angle, is_left, depth)
@@ -966,7 +991,7 @@ function snap_picked_base(obj)
     local initial_corners = g_picked_base_initial_transform['corners']
 
     local pos = obj.getPosition()
-    
+
     if str_has_substr(obj.getName(), 'Camp') then
         -- Always assume that camps are 40mm depth! This may not always be the
         -- case, in which case this code needs to be changed
@@ -1141,13 +1166,13 @@ function onObjectDrop(player_color,  picked_up_object)
     end
 
     local distance = max_distance_between_bases(
-        new_transform['corners'], 
+        new_transform['corners'],
         g_picked_base_initial_transform['corners'])
 
     if distance > 0 then
         print_info(string.format('Movement for %q is %.1f paces',
             picked_up_object.getName(), distance * 100))
-        
+
         local move = {}
         add_transform_to_move(move, picked_up_object.getName(),  g_picked_base_initial_transform, new_transform)
         push_to_history_stack(move)
@@ -1295,7 +1320,7 @@ end
 -- Each second execute this
 function main_loop()
     check_selection_change()
-    check_change_zoc()    
+    check_change_zoc()
 end
 
 
