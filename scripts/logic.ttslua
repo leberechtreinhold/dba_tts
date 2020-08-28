@@ -88,12 +88,12 @@ function move_base(obj, how_many_paces, ignore_history)
 
     local current_rotation = from_degrees_to_rad(obj.getRotation())
     local displacement_vector = rad_to_vector(current_rotation['y'])
-    
+
     local magnitude = how_many_paces / 100
     local destination = vec_add(initial_transform['position'], vec_mul_escalar(displacement_vector, magnitude))
-    
+
     obj.setPosition(destination)
-    
+
     if not ignore_history then
         local new_transform = calculate_transform(obj)
         local move = {}
@@ -116,7 +116,7 @@ function push_back(obj)
     local magnitude = get_size(obj.getName())['z']
     local destination = vec_add(initial_transform['position'], vec_mul_escalar(displacement_vector, magnitude))
     obj.setPosition(destination)
-    
+
     local new_transform = calculate_transform(obj)
     local move = {}
     add_transform_to_move(move, obj.getName(), initial_transform, new_transform)
@@ -445,7 +445,7 @@ function push_back_column(objs)
         magnitude = magnitude + base_depth / 2
         local next_destination = vec_add(destination, vec_mul_escalar(displacement_vector, magnitude))
         next_element.setPosition(next_destination)
-        
+
         add_transform_to_move(move, next_element.getName(), transforms[next_element], calculate_transform(next_element))
 
         front_element = next_element
@@ -564,7 +564,7 @@ function perform_wheels()
         apply_transform_obj(current_element,
             old_transforms[current_element],
             new_transforms[current_element])
-            
+
         add_transform_to_move(move, current_element.getName(), old_transforms[current_element], new_transforms[current_element])
 
         while behind_of[current_element] ~= nil do
@@ -889,7 +889,8 @@ function onObjectPickUp(player_color,  picked_up_object)
     end
 
     if g_picked_base_obj ~= nil then
-        print_error("There's already a player picking up an objectc. Please, wait until he finishes moving.")
+        print_error("There's already a player picking up an object. Please, wait until he finishes moving.")
+        return
     end
 
     g_picked_base_obj = picked_up_object
@@ -1150,7 +1151,7 @@ function onObjectDrop(player_color,  picked_up_object)
         return
     end
 
-    if picked_up_object.getName() ~= g_picked_base_obj.getName() then
+    if g_picked_base_obj == nil or picked_up_object.getName() ~= g_picked_base_obj.getName() then
         -- Ignore, this is not the one we were counting distances
         return
     end
