@@ -30,6 +30,9 @@ end
 
 -- Given a tables with x,y,z numerical components, returns a [x,y,z] string with two decimals of precision
 function vec_to_str(vec)
+    if vec == nil then
+        return '[nil]'
+    end
     return '[' .. string.format('%.2f',vec['x']) .. ', ' .. string.format('%.2f',vec['y']) .. ', ' .. string.format('%.2f',vec['z']) .. ']'
 end
 

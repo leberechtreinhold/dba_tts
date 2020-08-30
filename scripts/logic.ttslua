@@ -1126,13 +1126,12 @@ function snap_picked_base(obj)
         -- Snap back!
         obj.setPosition(g_picked_base_initial_transform['position'])
         obj.setRotation(transform_to_rotation_vector(g_picked_base_initial_transform))
-        return g_picked_base_initial_transform['position']
     else
         -- No snapping, return the distance between positions
         pos['y'] = g_base_height_tabletop + g_table_thickness + g_base_height_inches
         obj.setPosition(pos)
-        return calculate_transform(obj)
     end
+    return calculate_transform(obj)
 end
 
 function get_all_bases()
@@ -1166,6 +1165,8 @@ function onObjectDrop(player_color,  picked_up_object)
         new_transform = calculate_transform(picked_up_object)
     end
 
+    print_debug('New transform: ' .. transform_to_str(new_transform))
+    print_debug('New g_picked_base_initial_transform: ' .. transform_to_str(g_picked_base_initial_transform))
     local distance = max_distance_between_bases(
         new_transform['corners'],
         g_picked_base_initial_transform['corners'])
@@ -1215,6 +1216,13 @@ function calculate_transform(base_obj)
 end
 
 function transform_to_str(transform)
+    if transform == nil then 
+        return 'NIL'
+    end
+    if transform['rotation'] == nil then
+        print_error('Rotation of the given transform is NULL. Report to the developers!!')
+        log(transform)
+    end
     return 'Postion: ' .. vec_to_str(transform['position'])
         .. ' Rotation: ' .. math.deg(transform['rotation'])
 end
