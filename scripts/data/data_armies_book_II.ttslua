@@ -20531,7 +20531,7 @@ armies["Book II"]["II/83b Patrician Roman Eastern Army 425-493AD (Plain)"] = {
     data = {
         aggresiveness = 1,
         terrain = 'Arable',
-        list = '1x3Cv or 3Kn (Gen), 1x3Cv or 2LH, 1x4Bd, 2x4Ax, 2x3Kn, 4x4Wb or 4Ax, 1x2Ps.'
+        list = '1x3Cv o 3Kn (Gen), 1x3/4Kn, 1x3Kn, 2x2LH, 2x4Bd, 2x4Ax, 2x4Wb o 4Ax o 2Ps, 1x2Ps.'
     },
 
     base1 = {
@@ -20549,50 +20549,50 @@ armies["Book II"]["II/83b Patrician Roman Eastern Army 425-493AD (Plain)"] = {
         ignore_terrain = true
     },
     base3 = {
-        name = '3Cv',
-        base = 'tile_plain_3Cv_40x30',
+        name = '3Kn',
+        base = 'tile_plain_3Kn_40x30',
         n_models = 0,
         ignore_terrain = true
     },
     base4 = {
-        name = '2LH',
-        base = 'tile_plain_2LH_40x30',
+        name = '4Kn',
+        base = 'tile_plain_4Kn_40x30',
         n_models = 0,
         ignore_terrain = true
     },
     base5 = {
+        name = '3Kn',
+        base = 'tile_plain_3Kn_40x30',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base6 = {
+        name = '2LH',
+        base = 'tile_plain_3LH_40x30',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base7 = {
+        name = '2LH',
+        base = 'tile_plain_3LH_40x30',
+        n_models = 0,
+        ignore_terrain = true
+    },
+    base8 = {
         name = '4Bd',
         base = 'tile_plain_4Bd_40x15',
         n_models = 0,
         ignore_terrain = true
     },
-    base6 = {
-        name = '4Ax',
-        base = 'tile_plain_4Ax_40x20',
-        n_models = 0,
-        ignore_terrain = true
-    },
-    base7 = {
-        name = '4Ax',
-        base = 'tile_plain_4Ax_40x20',
-        n_models = 0,
-        ignore_terrain = true
-    },
-    base8 = {
-        name = '3Kn',
-        base = 'tile_plain_3Kn_40x30',
-        n_models = 0,
-        ignore_terrain = true
-    },
     base9 = {
-        name = '3Kn',
-        base = 'tile_plain_3Kn_40x30',
+        name = '4Bd',
+        base = 'tile_plain_4Bd_40x15',
         n_models = 0,
         ignore_terrain = true
     },
     base10 = {
-        name = '4Wb',
-        base = 'tile_plain_4Wb_40x15',
+        name = '4Ax',
+        base = 'tile_plain_4Ax_40x20',
         n_models = 0,
         ignore_terrain = true
     },
@@ -20609,14 +20609,14 @@ armies["Book II"]["II/83b Patrician Roman Eastern Army 425-493AD (Plain)"] = {
         ignore_terrain = true
     },
     base13 = {
-        name = '4Ax',
-        base = 'tile_plain_4Ax_40x20',
+        name = '4Wb',
+        base = 'tile_plain_4Wb_40x15',
         n_models = 0,
         ignore_terrain = true
     },
     base14 = {
-        name = '4Wb',
-        base = 'tile_plain_4Wb_40x15',
+        name = '4Ax',
+        base = 'tile_plain_4Ax_40x20',
         n_models = 0,
         ignore_terrain = true
     },
@@ -20627,14 +20627,14 @@ armies["Book II"]["II/83b Patrician Roman Eastern Army 425-493AD (Plain)"] = {
         ignore_terrain = true
     },
     base16 = {
-        name = '4Wb',
-        base = 'tile_plain_4Wb_40x15',
+        name = '2Ps',
+        base = 'tile_plain_2Ps_40x20',
         n_models = 0,
         ignore_terrain = true
     },
     base17 = {
-        name = '4Ax',
-        base = 'tile_plain_4Ax_40x20',
+        name = '2Ps',
+        base = 'tile_plain_2Ps_40x20',
         n_models = 0,
         ignore_terrain = true
     },
