@@ -6970,7 +6970,7 @@ armies["Book I"]["I/32a Western Chou 1100-770BC (Plain)"] = {
     data = {
         aggresiveness = 3,
         terrain = 'Arable',
-        list = '1xHCh (Gen), 1x3Bd, 5x4Bd, 2x3/4Bw, 1x3/4Ax, 1x2Ps.'
+        list = '1xHCh (Gen), 1xHCh, 1x3Bd, 5x4Bd, 2x3/4Bw, 1x3/4Ax, 1x2Ps.'
     },
 
     base1 = {
@@ -6978,6 +6978,12 @@ armies["Book I"]["I/32a Western Chou 1100-770BC (Plain)"] = {
         base = 'tile_plain_HCh_40x40',
         n_models = 1,
         model_data = 'troop_general_plain',
+        ignore_terrain = true
+    },
+    base16 = {
+        name = 'HCh',
+        base = 'tile_plain_HCh_40x40',
+        n_models = 0,
         ignore_terrain = true
     },
     base2 = {
@@ -7070,7 +7076,7 @@ armies["Book I"]["I/32a Western Chou 769-701BC (Plain)"] = {
     data = {
         aggresiveness = 0,
         terrain = 'Arable',
-        list = '1xHCh (Gen), 1x3Bd, 5x4Bd, 2x3/4Bw, 1x3/4Ax, 1x2Ps.'
+        list = '1xHCh (Gen), 1xHCh 1x3Bd, 5x4Bd, 2x3/4Bw, 1x3/4Ax, 1x2Ps.'
     },
 
     base1 = {
@@ -7078,6 +7084,12 @@ armies["Book I"]["I/32a Western Chou 769-701BC (Plain)"] = {
         base = 'tile_plain_HCh_40x40',
         n_models = 1,
         model_data = 'troop_general_plain',
+        ignore_terrain = true
+    },
+    base16 = {
+        name = 'HCh',
+        base = 'tile_plain_HCh_40x40',
+        n_models = 0,
         ignore_terrain = true
     },
     base2 = {
