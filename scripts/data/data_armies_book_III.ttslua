@@ -3134,26 +3134,26 @@ armies["Book III"]["III/17 Maurikian Byzantine 575-650AD (Plain)"] = {
 
     base1 = {
         name = '6Cv_Gen',
-        base = 'tile_plain_3Cv_40x60',
+        base = 'tile_plain_6Cv_40x60',
         n_models = 1,
         model_data = 'troop_general_plain',
         ignore_terrain = true
     },
     base2 = {
         name = '6Cv',
-        base = 'tile_plain_3Cv_40x60',
+        base = 'tile_plain_6Cv_40x60',
         n_models = 0,
         ignore_terrain = true
     },
     base3 = {
         name = '6Cv',
-        base = 'tile_plain_3Cv_40x60',
+        base = 'tile_plain_6Cv_40x60',
         n_models = 0,
         ignore_terrain = true
     },
     base4 = {
         name = '6Cv',
-        base = 'tile_plain_3Cv_40x60',
+        base = 'tile_plain_6Cv_40x60',
         n_models = 0,
         ignore_terrain = true
     },
@@ -3183,13 +3183,13 @@ armies["Book III"]["III/17 Maurikian Byzantine 575-650AD (Plain)"] = {
     },
     base9 = {
         name = '6Cv',
-        base = 'tile_plain_3Cv_40x60',
+        base = 'tile_plain_6Cv_40x60',
         n_models = 0,
         ignore_terrain = true
     },
     base10 = {
         name = '6Cv',
-        base = 'tile_plain_3Cv_40x60',
+        base = 'tile_plain_6Cv_40x60',
         n_models = 0,
         ignore_terrain = true
     },
@@ -5229,20 +5229,20 @@ armies["Book III"]["III/27 Rshtuni Armenian 639-717AD (Plain)"] = {
 
     base1 = {
         name = '6Cv_Gen',
-        base = 'tile_plain_3Cv_40x60',
+        base = 'tile_plain_6Cv_40x60',
         n_models = 1,
         model_data = 'troop_general_plain',
         ignore_terrain = true
     },
     base2 = {
         name = '6Cv',
-        base = 'tile_plain_3Cv_40x60',
+        base = 'tile_plain_6Cv_40x60',
         n_models = 0,
         ignore_terrain = true
     },
     base3 = {
         name = '6Cv',
-        base = 'tile_plain_3Cv_40x60',
+        base = 'tile_plain_6Cv_40x60',
         n_models = 0,
         ignore_terrain = true
     },
@@ -5461,13 +5461,13 @@ armies["Book III"]["III/29 Thematic Byzantine 650-744AD (Plain)"] = {
     },
     base8 = {
         name = '6Cv',
-        base = 'tile_plain_3Cv_40x60',
+        base = 'tile_plain_6Cv_40x60',
         n_models = 0,
         ignore_terrain = true
     },
     base9 = {
         name = '6Cv',
-        base = 'tile_plain_3Cv_40x60',
+        base = 'tile_plain_6Cv_40x60',
         n_models = 0,
         ignore_terrain = true
     },
@@ -5567,13 +5567,13 @@ armies["Book III"]["III/29 Thematic Byzantine 745-963AD (Plain)"] = {
     },
     base8 = {
         name = '6Cv',
-        base = 'tile_plain_3Cv_40x60',
+        base = 'tile_plain_6Cv_40x60',
         n_models = 0,
         ignore_terrain = true
     },
     base9 = {
         name = '6Cv',
-        base = 'tile_plain_3Cv_40x60',
+        base = 'tile_plain_6Cv_40x60',
         n_models = 0,
         ignore_terrain = true
     },
