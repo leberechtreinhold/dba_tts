@@ -33,6 +33,7 @@ function onload()
     reset_state()
     spawn_proxy_bases()
     spawn_all_dice()
+    spawn_dead_zones()
 end
 
 

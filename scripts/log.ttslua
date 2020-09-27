@@ -6,6 +6,7 @@ red   = { r =   1, g = 0.2, b = 0.1}
 -- Prints to all, only if the DEBUG mode is enabled, by the chat command
 g_debug_mode = false
 function print_debug(msg)
+    log(msg)
     if g_debug_mode then
         printToAll('[DEBUG] ' .. msg)
     end

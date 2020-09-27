@@ -23,7 +23,7 @@ g_spawn_from_center_in = 16
 
 -- Distance from the center on the x axis, a general offset to deploy on the
 -- side of the table
-g_offset_deployment_x = 20
+g_offset_deployment_x = 25
 
 -- How many bases needed to create another row of bases
 -- on deployment

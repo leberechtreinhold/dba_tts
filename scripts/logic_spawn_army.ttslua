@@ -127,7 +127,7 @@ function spawn_base(base, pos, y_rotation, is_red_player, command_color)
             base_obj.highlightOn({r=0.3,g=0,b=0.7}, 86400)
         end
     end
-    
+
     local n = base['n_models']
     if n == 0 then
         base_obj.setRotation({0, y_rotation, 0})
@@ -260,7 +260,7 @@ function spawn_army(army_name, army, is_red_player, command_color)
     spawn_note(army_name,
         'Agressiveness: ' .. army['data']['aggresiveness'] .. '\n'
         .. 'Terrain: ' .. army['data']['terrain'] .. '\n'
-        .. army['data']['list'] 
+        .. army['data']['list']
         .. maker,
         note_pos,
         angle)
@@ -608,6 +608,102 @@ function spawn_proxy_bases()
     Wait.frames(function()
         spawn_proxy_after_deletion()
     end, 1)
+end
+
+function spawn_dead_zones()
+    delete_all_dead_zones()
+    Wait.frames(function()
+        spawn_dead_zones_after_deletion()
+    end, 1)
+end
+
+function delete_all_dead_zones()
+    local all_objs = getAllObjects()
+    for _,obj in ipairs(all_objs) do
+        local name = obj.getName()
+        if str_starts_with(name, 'dead zone') then
+            -- This executes on next frame
+            obj.destroy()
+        end
+    end
+end
+
+function create_zone(name, position, size)
+    local zone_spawn = {
+        position = position,
+        scale = size,
+        type = 'ScriptingTrigger',
+        callback = 'callback_zone'
+    }
+    local obj = spawnObject(zone_spawn)
+    obj.setName(name)
+end
+
+function spawn_dead_zones_after_deletion()
+    create_zone('dead zone red',
+                { x = 6, y = 1.6, z = -21 },
+                { x = 10, y = 1, z = 10 })
+    create_zone('dead zone blue',
+                { x = 6, y = 1.6, z = 21 },
+                { x = 10, y = 1, z = 10 })
+end
+
+function update_zone_value(zone)
+    local name = zone.getName()
+    local is_red = false
+    if str_has_substr(name, 'red') then
+        is_red = true
+    end
+
+    local dead = 0
+    for _,obj in ipairs(zone.getObjects()) do
+        log(obj)
+        log('Name is <' .. obj.getName() .. '>')
+        if str_has_substr(obj.getName(), 'base') then
+            dead = dead + 1
+        end
+    end
+
+    if is_red then
+        UI.setValue('text_dead_red', dead)
+        if dead < 3 then
+            UI.setAttribute('dead_red', 'image', 'deadcounter1r')
+        elseif dead >= 3 and dead < 5 then
+            UI.setAttribute('dead_red', 'image', 'deadcounter2r')
+        else
+            UI.setAttribute('dead_red', 'image', 'deadcounter3r')
+        end
+    else
+        UI.setValue('text_dead_blue', dead)
+        if dead < 3 then
+            UI.setAttribute('dead_blue', 'image', 'deadcounter1b')
+        elseif dead >= 3 and dead < 5 then
+            UI.setAttribute('dead_blue', 'image', 'deadcounter2b')
+        else
+            UI.setAttribute('dead_blue', 'image', 'deadcounter3b')
+        end
+    end
+end
+
+function callback_zone(zone, name, color)
+    update_zone_value(zone)
+end
+
+function onObjectEnterScriptingZone(zone, obj)
+    if not str_has_substr(obj.getName(), 'base') then
+        return 
+    end
+    print_debug(obj.getName() .. ' entered ' .. zone.getName())
+    Wait.frames(function() update_zone_value(zone) end, 60)
+end
+
+function onObjectLeaveScriptingZone(zone, obj)
+    print_debug(obj.getName() .. ' entered ' .. zone.getName())
+    if not str_has_substr(obj.getName(), 'base') then
+        return 
+    end
+    print_debug(obj.getName() .. ' entered ' .. zone.getName())
+    Wait.frames(function() update_zone_value(zone) end, 60)
 end
 
 function change_texture_terrain(terrain_obj, new_tex_url)
