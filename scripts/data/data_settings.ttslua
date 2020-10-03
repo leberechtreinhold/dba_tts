@@ -12,6 +12,8 @@ g_table_thickness = 0.11811023622047244094
 
 g_bases_position = g_base_height_inches + g_table_thickness + g_base_height_tabletop
 
+g_terrain_pos = g_base_height_tabletop + g_table_thickness * 2
+
 -- Bow range in inches
 g_bow_range = 2
 

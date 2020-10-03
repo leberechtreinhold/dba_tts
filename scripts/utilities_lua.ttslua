@@ -135,4 +135,3 @@ function equals_float(f1, f2, epsilon)
     epsilon = epsilon or 0.00001
     return math.abs(f1 - f2) < epsilon
 end
-
