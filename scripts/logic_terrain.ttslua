@@ -54,6 +54,35 @@ function snap_waterway(waterway)
     end
 end
 
+function snap_road(road)
+    -- 0 rotation for our waterway objects is looking at -z
+    local rotation = normalize_angle(math.rad(road.getRotation()['y']))
+    local pos = road.getPosition()
+
+    if (equals_float(rotation, 0, 0.17) 
+        or equals_float(rotation, math.pi, 0.17)
+        or equals_float(rotation, 2*math.pi, 0.17))
+        and equals_float(pos['z'], 0, g_max_camp_edge_snap)
+        then
+
+        road.setPosition({x=pos['x'], y=g_terrain_pos, z=0})
+        road.setRotation({x=0, y=0, z=0})
+        print_info('Road Snapping Vertical')
+
+    elseif (equals_float(rotation, math.pi/2, 0.17) 
+            or equals_float(rotation, 3*math.pi/2, 0.17))
+            and equals_float(pos['x'], 0, g_max_camp_edge_snap)
+        then
+
+        road.setPosition({x=0, y=g_terrain_pos, z=pos['z']})
+        road.setRotation({x=0, y=90, z=0})
+        print_info('Road Snapping Horizontal')
+
+    else
+        print_info('Road is not snapping')
+    end
+end
+
 
 function change_texture_terrain(terrain_obj, new_tex_url)
     local custom = terrain_obj.getCustomObject()
