@@ -1,25 +1,74 @@
 Stack = {}
 
+-- This is NOT a true stack, but more like a list that behaves with a browsable
+-- head. It imitates history stacks: you can go down but doesnt remember elements
+-- until you go up. However, if you add something, everything up of the current
+-- is removed.
 function Stack:Create()
     local _stack = {}
+    _stack._current = nil
     _stack._entries = {}
 
     -- Enters the value into the stack at the top.
     -- Returns nil
     function _stack:push(...)
         if ... then
+            self:pop_to_current()
             local table_args = {...}
             for _, val in ipairs(table_args) do
                 table.insert(self._entries, val)
             end
+            self._current = #self._entries
+        end
+    end
+    
+    -- Gets the current element and advances current lower into the stack, as if
+    -- the element is removed (but it isn't). Cannot go lower than the bottom.
+    -- Returns that element if exists.
+    function _stack:pop()
+        if self._current == nil or self._current < 1 then
+            return
+        end
+        self._current = self._current - 1
+        return self._entries[self._current + 1]
+    end
+
+    -- Goes up in the stack, setting the current to the top of the current one,
+    -- and returns it. The stack itself is not modified. Cannot go upper than
+    -- the top.
+    -- Returns that element if it exists
+    function _stack:pop_reverse()
+        if self._current == nil or self._current == #self._entries then
+            return
+        end
+        self._current = self._current + 1
+        return self._entries[self._current]
+    end
+
+
+    -- Removes the last added element. This behaves like a proper stack pop
+    -- Returns that last value, if exists
+    function _stack:real_pop()
+        if #self._entries ~= 0 then 
+            return table.remove(self._entries) 
         end
     end
 
-    -- Removes the last added element
-    -- Returns that last value, if exists
-    function _stack:pop()
+    -- Drops everything on top of the current head. Returns nothing.
+    function _stack:pop_to_current(n)
+        if self._current == nil then
+            return 
+        end
+
+        while #self._entries > self._current do
+            self:real_pop()
+        end
+    end
+
+    -- Gets the last element, if exists
+    function _stack:peek()
         if #self._entries ~= 0 then 
-            return table.remove(self._entries) 
+            return self._entries[#self._entries]
         end
     end
 
@@ -94,18 +143,10 @@ function add_transform_to_move(move, base_name, old_transform, new_transform)
     move[base_name] = t
 end
 
--- Applies and reverts the last move on the histpry stack
-function go_back_history_stack()
-    local last_move = g_history_stack:pop()
-    if not last_move then 
-        return print_important('Cannot go back because there are no saved moves') 
-    end
-
-    log(last_move)
-    print_debug('Going back in history... ')
+function apply_move(move, forward)
     local bases = get_all_bases()
     local base_objs = {}
-    for base_name, transforms in pairs(last_move) do
+    for base_name, transforms in pairs(move) do
         print_debug('Searching if this base exists: ' .. base_name)
         local base_obj = nil
         for _, base in ipairs(bases) do
@@ -116,7 +157,7 @@ function go_back_history_stack()
         end
 
         if base_obj == nil then
-            print_error('Cannot go back with this move '
+            print_error('Cannot apply this move '
                         .. 'because it involves a deleted unit ' 
                         .. 'or something that cannot be found: ' 
                         .. base_name)
@@ -126,9 +167,37 @@ function go_back_history_stack()
     end
 
     
-    for base_name, transforms in pairs(last_move) do
-        print_debug('Applying revert to ' .. base_name)
+    for base_name, transforms in pairs(move) do
+        print_debug('Applying move to ' .. base_name)
         local base_obj = base_objs[base_name]
-        apply_transform_obj(base_obj, transforms['new'], transforms['old'])
+
+        if forward then
+            apply_transform_obj(base_obj, transforms['old'], transforms['new'])
+        else
+            apply_transform_obj(base_obj, transforms['new'], transforms['old'])
+        end
     end
 end
+
+-- Applies the last move on the history stack, going back
+function go_back_history_stack()
+    local last_move = g_history_stack:pop()
+    if not last_move then 
+        return print_important('Cannot go back because there are no saved moves') 
+    end
+
+    print_debug('Going back in history... ')
+    apply_move(last_move, false)
+end
+
+-- Undoes the last move on the history stack, going forward
+function go_forward_history_stack()
+    local last_move = g_history_stack:pop_reverse()
+    if not last_move then 
+        return print_important('Cannot go forward because there are no saved moves') 
+    end
+
+    print_debug('Going forward in history... ')
+    apply_move(last_move, true)
+end
+

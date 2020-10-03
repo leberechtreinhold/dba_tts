@@ -606,3 +606,7 @@ end
 function on_undo_move(player, value, id)
     go_back_history_stack()
 end
+
+function on_redo_move(player, value, id)
+    go_forward_history_stack()
+end
