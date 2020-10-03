@@ -1138,67 +1138,6 @@ function get_all_bases()
     return filter_bases(getAllObjects())
 end
 
-function snap_waterway(waterway)
-
-    -- 0 rotation for our waterway objects is looking at -z
-    local rotation = normalize_angle(math.rad(waterway.getRotation()['y']))
-    local pos = waterway.getPosition()
-    local bounds = waterway.getBoundsNormalized()
-    local scale = waterway.getScale()
-    log(bounds)
-    log(pos)
-
-    local h = bounds['size']['z'] / scale['z']
-    local zpos = g_depth_table_in / 2 - (h / 2 - bounds['offset']['z'])
-    local xpos = g_width_table_in / 2 - (h / 2 - bounds['offset']['z'])
-    if g_is_double_dba then 
-        xpos = xpos + g_width_table_in / 2
-    end
-    log('legit pos are')
-    log(zpos)
-    log(xpos)
-
-    if (equals_float(rotation, 0, 0.17) or equals_float(rotation, 2*math.pi, 0.17))
-        and equals_float(pos['x'], 0, g_max_camp_edge_snap)
-        and equals_float(pos['z'], zpos, g_max_camp_edge_snap)
-        then
-
-        waterway.setPosition({x=0, y=g_terrain_pos, z=zpos})
-        waterway.setRotation({x=0, y=0, z=0})
-        print_info('Waterway Snapping top')
-
-    elseif equals_float(rotation, math.pi/2, 0.17)
-        and equals_float(pos['x'], -xpos, g_max_camp_edge_snap)
-        and equals_float(pos['z'], 0, g_max_camp_edge_snap)
-        then
-
-        waterway.setPosition({x=-xpos, y=g_terrain_pos, z=0})
-        waterway.setRotation({x=0, y=270, z=0})
-        print_info('Waterway Snapping left')
-
-    elseif equals_float(rotation, math.pi, 0.17)
-        and equals_float(pos['x'], 0, g_max_camp_edge_snap)
-        and equals_float(pos['z'], -zpos, g_max_camp_edge_snap)
-        then
-            
-        waterway.setPosition({x=0, y=g_terrain_pos, z=-zpos})
-        waterway.setRotation({x=0, y=180, z=0})
-        print_info('Waterway Snapping bot')
-
-    elseif equals_float(rotation, math.pi*3/2, 0.17)
-        and equals_float(pos['x'], xpos, g_max_camp_edge_snap)
-        and equals_float(pos['z'], 0, g_max_camp_edge_snap)
-        then
-            
-        waterway.setPosition({x=xpos, y=g_terrain_pos, z=0})
-        waterway.setRotation({x=0, y=90, z=0})
-        print_info('Waterway Snapping right')
-
-    else
-        print_info('Waterway is not snapping')
-    end
-end
-
 function onObjectDrop(player_color,  picked_up_object)
     local obj_name = picked_up_object.getName()
     if (str_has_substr(obj_name, 'Waterway')) then

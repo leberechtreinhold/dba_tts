@@ -16,6 +16,7 @@
 #include scripts/log
 #include scripts/utilities_lua
 #include scripts/utilities
+#include scripts/logic_terrain
 #include scripts/logic_gizmos
 #include scripts/logic_spawn_army
 #include scripts/logic_dice
