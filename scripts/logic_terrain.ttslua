@@ -5,8 +5,6 @@ function snap_waterway(waterway)
     local pos = waterway.getPosition()
     local bounds = waterway.getBoundsNormalized()
     local scale = waterway.getScale()
-    log(bounds)
-    log(pos)
 
     local h = bounds['size']['z'] / scale['z']
     local zpos = g_depth_table_in / 2 - (h / 2 - bounds['offset']['z'])
@@ -14,9 +12,6 @@ function snap_waterway(waterway)
     if g_is_double_dba then 
         xpos = xpos + g_width_table_in / 2
     end
-    log('legit pos are')
-    log(zpos)
-    log(xpos)
 
     if (equals_float(rotation, 0, 0.17) or equals_float(rotation, 2*math.pi, 0.17))
         and equals_float(pos['x'], 0, g_max_camp_edge_snap)
