@@ -1300,7 +1300,7 @@ g_selected_objects = {}
 g_last_zoc_value = nil
 
 function check_picked_base()
-    if g_picked_base_obj then
+    if g_picked_base_obj and g_bases[g_picked_base_obj.getName()] then
         local new_corners = compute_corners_base(g_picked_base_obj)
         local distance = max_distance_between_bases(new_corners, g_picked_base_initial_transform['corners']) * 100
 

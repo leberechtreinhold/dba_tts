@@ -403,7 +403,7 @@ function on_load_table(player, value, id)
         else
             spawn_table_obj(tables['model'], tables['height_correction'], tex)
         end
-        
+        change_bases_to_terrain(type)
     else
         print_error('There\'s already a table spawned')
     end

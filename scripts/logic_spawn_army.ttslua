@@ -405,6 +405,30 @@ function spawn_table_obj(model_url, height_correction, texture_array_urls)
     add_context_menu_table(obj)
 end
 
+function change_bases_to_terrain(terrain_type)
+    print_debug('Changing bases to ' .. terrain_type)
+    local all_objs = getAllObjects()
+    local bases = filter_bases(all_objs)
+    for _,base in ipairs(bases) do
+        local name = base.getName()
+        if g_bases[name] ~= nil 
+            and not str_has_substr(g_bases[name]['tile'], 'plain') then
+
+            print_debug('Changing ' .. name)
+            local is_red = g_bases[name]['is_red_player']
+            local tex = tables[terrain_type]['blue_player_base_tex']
+            if is_red then
+                tex = tables[terrain_type]['red_player_base_tex']
+            end
+            local custom = base.getCustomObject()
+            custom['diffuse'] = tex
+            base.setCustomObject(custom)
+            g_ignore_next_delete[name] = true
+            base.reload()
+        end
+    end
+end
+
 function rotate_table()
     local gametable = getObjectFromGUID(g_current_table)
     local newrotation = gametable.getRotation()
@@ -528,8 +552,13 @@ function get_spawn_model(pos, rotation_correction, height_correction, model_scal
     }
 end
 
+g_ignore_next_delete = {}
 function onObjectDestroy(dying_object)
     local name = dying_object.getName()
+    if g_ignore_next_delete[name] ~= nil then
+        g_ignore_next_delete[name] = nil
+        return
+    end
     if is_table(dying_object) then
         print_info('Table removed from play')
         g_current_table = nil
