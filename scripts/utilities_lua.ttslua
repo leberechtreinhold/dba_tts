@@ -129,6 +129,19 @@ function random_element(array)
     return array[index]
 end
 
+-- Given a table of key-values, selects a random key and its value
+function random_kv(tablekv)
+    local keys = {}
+
+    for key,_ in pairs(tablekv) do
+        table.insert(keys, key)
+    end
+
+    local key = keys[math.random(1, #keys)]
+    return key, tablekv[key]
+end
+
+
 -- Returns true if they are roughly the same, as defined by epsilon.
 -- By default precision is 0.00001
 function equals_float(f1, f2, epsilon)

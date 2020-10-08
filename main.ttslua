@@ -125,6 +125,18 @@ function onChat(message, player)
         return false
     end
 
+    if message == '!dba_random_army' then
+        print_info(player.get_steam_name() .. ': ' .. message)
+        local _,book = random_kv(armies)
+        local army_name, army = random_kv(book)
+        
+        print_important('Army selected: ' .. army_name .. '')
+        print_info('List: ' .. army['data']['list'])
+        print_info('Agressiveness: ' .. army['data']['aggresiveness']
+            .. ' Terrain: ' .. army['data']['terrain'])
+        return false
+    end
+
     if str_starts_with(message, '!dba') then
         print_info(player.get_steam_name() .. ': ' .. message)
         print_error('Command not recognized. Please, use !dba_help')
