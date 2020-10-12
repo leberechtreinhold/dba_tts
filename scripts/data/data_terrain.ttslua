@@ -4,6 +4,7 @@ g_terrain = {
             objects = { 
                 'terrain_palm_tree' 
             },
+            multiplier = 1.3,
             texture = { 
                 'http://cloud-3.steamusercontent.com/ugc/1022823759371071004/DC4F81C7F92B971C1D1F83F2B12C0DE1E896ABEE/'
             }
@@ -39,6 +40,7 @@ g_terrain = {
             objects = { 
                 'terrain_nogal'
             },
+            multiplier = 1.5,
             texture = { 
                 'http://cloud-3.steamusercontent.com/ugc/1267149286201969420/6FF3C9E1F3FF49AE28673503D1C73FD7E881F2C0/'
             }
@@ -73,6 +75,7 @@ g_terrain = {
             objects = { 
                 'terrain_fir' 
             },
+            multiplier = 2,
             texture = { 
                 'http://cloud-3.steamusercontent.com/ugc/1267149286201969420/6FF3C9E1F3FF49AE28673503D1C73FD7E881F2C0/'
             }
@@ -107,6 +110,7 @@ g_terrain = {
             objects = { 
                 'terrain_fir' 
             },
+            multiplier = 1.5,
             texture = { 
                 'http://cloud-3.steamusercontent.com/ugc/1267149286201969420/6FF3C9E1F3FF49AE28673503D1C73FD7E881F2C0/'
             }
@@ -142,6 +146,7 @@ g_terrain = {
                 'terrain_nogal',
                 'terrain_shrub_nogal' 
             },
+            multiplier = 1.5,
             texture = { 
                 'http://cloud-3.steamusercontent.com/ugc/1267149286201969420/6FF3C9E1F3FF49AE28673503D1C73FD7E881F2C0/'
             }
@@ -177,6 +182,7 @@ g_terrain = {
                 'terrain_tree',
                 'terrain_palm_shrubs' 
             },
+            multiplier = 2,
             texture = { 
                 'http://cloud-3.steamusercontent.com/ugc/1267149286201969420/6FF3C9E1F3FF49AE28673503D1C73FD7E881F2C0/'
             }

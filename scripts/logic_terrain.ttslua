@@ -92,7 +92,8 @@ end
 
 function set_forest(terrain_obj, terrain_pos, terrain_rotation, terrain_size, table_type)
     local options = g_terrain[table_type]['forest']
-    local ntrees = math.floor((terrain_size['x'] + terrain_size['z'])*1.3)
+    local multiplier = options['multiplier']
+    local ntrees = math.floor((terrain_size['x'] + terrain_size['z'])*multiplier)
     for i=1,ntrees do
         local point = random_point_ellipse(terrain_size['x'] / 2.5, terrain_size['z'] / 2.5)
         new_pos = rotate_point_relative(point, terrain_pos, terrain_rotation)
