@@ -147,6 +147,8 @@ function spawn_base(base, pos, y_rotation, is_red_player, command_color)
     local model_name = base['model_data']
     local meshes = {}
 
+    -- If the element has multiple nonfixed element, select randomly without
+    -- repeating
     if model_name ~= nil then
         meshes = calculate_random_meshes(n, _G[model_name]['mesh'])
     end
@@ -175,11 +177,23 @@ function spawn_base(base, pos, y_rotation, is_red_player, command_color)
         }
 
         local this_model_name = model_name
-        if this_model_name == nil then
+        local soldier_obj = nil
+        if this_model_name ~= nil then
+            -- The object has non-fixed models, so we use any of the
+            -- randomly selected meshes
+            soldier_obj = spawn_model(this_model_name, relative_pos, random_rotation, minimal_collider, is_red_player, nil, meshes[i])
+        else
+            -- Now we have fixed models, so we use the corresponding one
+            -- Except that fixed models may use assets instead of meshes!
             this_model_name = base['fixed_models'][i]
+            if _G[this_model_name]['customasset'] ~= nil then
+                soldier_obj = spawn_asset(this_model_name, relative_pos, random_rotation)
+            else
             meshes[i] = random_element(_G[this_model_name]['mesh'])
+                soldier_obj = spawn_model(this_model_name, relative_pos, random_rotation, minimal_collider, is_red_player, nil, meshes[i])
+            end
         end
-        local soldier_obj = spawn_model(this_model_name, relative_pos, random_rotation, minimal_collider, is_red_player, nil, meshes[i])
+
         base_obj.addAttachment(soldier_obj)
     end
 
@@ -509,6 +523,26 @@ function spawn_model(troop_name, pos, added_y_axis_rotation, collider, is_player
     local obj = spawnObject(spawn_data['spawn'])
     obj.setCustomObject(spawn_data['custom_obj_attrs'])
 
+    return obj
+end
+
+function spawn_asset(asset_name, pos, added_y_axis_rotation)
+    print_debug('Spawning asset ' .. asset_name)
+    if _G[asset_name]['rotation'] then
+        added_y_axis_rotation = added_y_axis_rotation + _G[asset_name]['rotation']
+    end
+
+    local obj = spawnObject({
+        type = 'Custom_Assetbundle',
+        position = pos,
+        rotation = { x = 0, y = added_y_axis_rotation, z = 0},
+        scale = { x = 1, y = 1, z = 1 },
+        sound = false,
+        snap_to_grid = false
+    })
+    obj.setCustomObject({
+        assetbundle = _G[asset_name]['customasset']
+    })
     return obj
 end
 
