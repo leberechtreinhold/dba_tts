@@ -49,7 +49,9 @@ function update_zone_value(zone)
         log(obj)
         log('Name is <' .. obj.getName() .. '>')
         if str_has_substr(obj.getName(), 'base') then
-            dead = dead + 1
+            if not str_has_substr(obj.getName(), 'SCh') then
+                dead = dead + 1
+            end
         end
     end
 
