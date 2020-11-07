@@ -13,17 +13,12 @@ function add_context_menu_base(base_obj)
     end)
     base_obj.addContextMenuItem("Push forward single", function()
         push_forward(base_obj)
-        print_info(base_obj.getName() .. ' pushed forward its own depth')
     end)
     base_obj.addContextMenuItem("Push back single", function()
         push_back(base_obj)
-        print_info(base_obj.getName() .. ' pushed back its own depth')
     end)
     base_obj.addContextMenuItem("Turn around", function()
-        local rotation = base_obj.getRotation()
-        rotation['y'] = rotation['y'] + 180
-        base_obj.setRotation(rotation)
-        print_info(base_obj.getName() .. ' has rotated 180º')
+        turn_around_base(base_obj)
     end)
 end
 

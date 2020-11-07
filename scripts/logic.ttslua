@@ -80,6 +80,23 @@ function filter_bases(list)
     return filtered
 end
 
+-- 180º rotation a base
+function turn_around_base(obj)
+    local initial_transform = calculate_transform(obj)
+    local rotation = obj.getRotation()
+    rotation['y'] = rotation['y'] + 180
+    obj.setRotation(rotation)
+    
+    local new_transform = calculate_transform(obj)
+    local move = {}
+    add_transform_to_move(move, obj.getName(), initial_transform, new_transform)
+    push_to_history_stack(move)
+    
+    local distance = max_distance_between_bases(initial_transform['corners'], new_transform['corners'])
+    print_info(obj.getName() .. ' has turned around 180º, which costs ' 
+        .. string.format('%.2f', distance * 100) .. ' paces')
+end
+
 -- Moves one or more DBA bases g_paces_movements paces forward
 -- ASSUMES all bases are in a flat board!!!!
 -- Returns how much it moved (it cna move less in a collision)
@@ -121,6 +138,10 @@ function push_back(obj)
     local move = {}
     add_transform_to_move(move, obj.getName(), initial_transform, new_transform)
     push_to_history_stack(move)
+    
+    local distance = max_distance_between_bases(initial_transform['corners'], new_transform['corners'])
+    print_info(obj.getName() .. ' has moved backwards its own depth, ' 
+        .. string.format('%.2f', distance * 100) .. ' paces')
 end
 
 -- Like push back but in the other direction
@@ -137,6 +158,10 @@ function push_forward(obj)
     local move = {}
     add_transform_to_move(move, obj.getName(), initial_transform, new_transform)
     push_to_history_stack(move)
+    
+    local distance = max_distance_between_bases(initial_transform['corners'], new_transform['corners'])
+    print_info(obj.getName() .. ' has moved forwards its own depth, ' 
+        .. string.format('%.2f', distance * 100) .. ' paces')
 end
 
 -- Given a bunch of objects returns them in a column, which is
