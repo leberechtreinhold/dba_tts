@@ -1178,6 +1178,8 @@ function onObjectDrop(player_color,  picked_up_object)
     local objs = filter_bases(Player[player_color].getSelectedObjects())
     local n_objs = tlen(objs)
     if n_objs > 1 then
+        picked_up_object.setVelocity({x=0, y=0, z=0})
+        picked_up_object.setAngularVelocity({x=0, y=0, z=0})
         draw_gizmo_future_movements(objs)
         return
     end
