@@ -125,6 +125,12 @@ function onChat(message, player)
         print_info('3D Terrain enabled, when doing a fix&lock on the table 3D objects will load.')
         return false
     end
+    
+    if message == '!dba_regen_dice' then
+        print_info(player.get_steam_name() .. ': ' .. message)
+        spawn_all_dice()
+        return false
+    end
 
     if message == '!dba_random_army' then
         print_info(player.get_steam_name() .. ': ' .. message)

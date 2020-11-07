@@ -75,7 +75,12 @@ end
 
 function roll_dice(color)
     local obj = getObjectFromGUID(g_current_dice[color])
-    
+
+    if obj == nil then
+        print_error('No dice found, please use !dba_regen_dice')
+        return
+    end
+
     local val = math.random(1,6)
     UI.setValue('text_pips_player_' .. color, val)
     obj.setValue(val)
@@ -84,6 +89,7 @@ end
 
 function delete_all_dice()
     local all_objs = getAllObjects()
+    g_current_dice = {}
     for _,obj in ipairs(all_objs) do
         local name = obj.getName()
         if str_starts_with(name, 'PIP dice') then
