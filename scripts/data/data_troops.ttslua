@@ -2653,3 +2653,142 @@ trop_thracian_axgen = {
     player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1483325549680486871/0A938B3E4C7DF597E1ED6C4FC5543C4A6A55FB2F/',
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1483325549680486871/0A938B3E4C7DF597E1ED6C4FC5543C4A6A55FB2F/'
 }
+
+
+------------------------------------------------------------------------------
+--                            EGYPTIAN PHOTOGAMMETRY
+------------------------------------------------------------------------------
+
+troop_egyptian_bd1 = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Egyptian Blade',
+    author = 'Egyptian Blade by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1697255428451801356/66A14C37933263B626FF5FDC7540FE4AA72B167D/',
+          'http://cloud-3.steamusercontent.com/ugc/1697255428451804876/05C8AA38F77032B94F6DB9D070F132200BDA13EA/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1697255428451804706/7D809D4031D5D94406ACE063D3557D936F3C2CD5/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1697255428451804706/7D809D4031D5D94406ACE063D3557D936F3C2CD5/'
+}
+
+troop_egyptian_bd2 = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Egyptian Blade',
+    author = 'Egyptian Blade by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1697255428451811186/AFC3076C1B6B738ED1E48204323CFFE3DFB091A0/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1697255428451811319/E750E2F0D04CAF9133B29A7E0CF598E699E89553/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1697255428451811319/E750E2F0D04CAF9133B29A7E0CF598E699E89553/'
+}
+
+troop_egyptian_bd3 = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Egyptian Blade',
+    author = 'Egyptian Blade by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1697255428451811552/1E98987BBFFA03F846B3FB71D278A921D02A622B/',
+          'http://cloud-3.steamusercontent.com/ugc/1697255428451811718/435C367A051BE6DCA9402B7BFC6AFC60D3EBB367/',
+          'http://cloud-3.steamusercontent.com/ugc/1697255428451811826/130F76104A781157E165A1577899731E4BE45D6B/',
+          'http://cloud-3.steamusercontent.com/ugc/1697255428451811942/9B589D20C6817D5155D472A7A4EE3761F25A0394/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1697255428451811432/7385CCF07171DF33FF6DF4E27044DB45B31647EB/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1697255428451811432/7385CCF07171DF33FF6DF4E27044DB45B31647EB/'
+}
+
+troop_egyptian_bow = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Egyptian Archers',
+    author = 'Egyptian Archers by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1697255428451812192/5CA7FEC23AA4B4DAE417F4B03167A32B5D992605/',
+          'http://cloud-3.steamusercontent.com/ugc/1697255428451812340/EF052B071C3048F2E9B822BC5F05A5007B2CE81F/',
+          'http://cloud-3.steamusercontent.com/ugc/1697255428451812472/2614467F6BBB724D37A1AA4D101C09590E3EA59C/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1697255428451812050/45A4E533B600CD7D33F13AAD861821A760216268/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1697255428451812050/45A4E533B600CD7D33F13AAD861821A760216268/'
+}
+
+troop_egyptian_horde = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Egyptian Horde',
+    author = 'Egyptian Horde by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1697255428451813029/6EBE6E86134140003AA2DDE0118BFCF86F2392E9/',
+          'http://cloud-3.steamusercontent.com/ugc/1697255428451813272/776AB6CF12345813BED73A3A4165C83C81D40A9B/',
+          'http://cloud-3.steamusercontent.com/ugc/1697255428451813410/064D0EFEC4A156B87C625B764D590D866364B788/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1697255428451812619/9C9AF1E79F52E5F30C00B929CC202E9E933E6565/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1697255428451812619/9C9AF1E79F52E5F30C00B929CC202E9E933E6565/'
+}
+
+troop_egyptian_horde_melee = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Egyptian Horde',
+    author = 'Egyptian Horde by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1697255428451812744/5C61A8761625A8E8AE4A9328DCDF18256E9BCADE/',
+          'http://cloud-3.steamusercontent.com/ugc/1697255428451812863/5E74F841476460C233E443B795E244B9882761D4/',
+          'http://cloud-3.steamusercontent.com/ugc/1697255428451813150/2AC1BE1BB953BD95FE1B2A8179D8D61E6CD72278/',
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1697255428451812619/9C9AF1E79F52E5F30C00B929CC202E9E933E6565/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1697255428451812619/9C9AF1E79F52E5F30C00B929CC202E9E933E6565/'
+}
+
+troop_egyptian_lch = {
+    height_correction = 0,
+    scale = 1,
+    rotation = 180,
+    description = 'Egyptian Light Chariot',
+    author = 'Egyptian Light Chariot by Eric Delemer.',
+    customasset = 'http://cloud-3.steamusercontent.com/ugc/1697255614217892175/AF61FF5D8048CC931E5178CB5FC432AAC5BD6FB5/'
+}
+
+troop_egyptian_lch_gen = {
+    height_correction = 0,
+    scale = 1,
+    rotation = 180,
+    description = 'Egyptian Light Chariot General',
+    author = 'Egyptian Light Chariot General by Eric Delemer.',
+    customasset = 'http://cloud-3.steamusercontent.com/ugc/1697255614217892038/20B778D554F7E87A76BA67F2F9FEE0E184A21AA5/'
+}
+
+troop_egyptian_sphinx = {
+    height_correction = 0,
+    scale = 1,
+    rotation = 180,
+    description = 'Egyptian Sphinx',
+    author = 'Egyptian Sphinx by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1697255428451814129/71A6C65D1EE7FF2D64CAC284CE228AB8FCF4476B/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1697255428451814244/DB925B2132A7E6D628F99414CB307B6D957D8079/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1697255428451814244/DB925B2132A7E6D628F99414CB307B6D957D8079/'
+}
+
+troop_egyptian_lybian_wb = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Egyptian Lybian Warband',
+    author = 'Egyptian Lybian Warband by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1697255428451814391/53705296EAD5809F30ACBF5D44A37A0DEB9CE34F/',
+          'http://cloud-3.steamusercontent.com/ugc/1697255428451814701/34BE8D1408E0E16C7F8C09729333B4AC58DAEB8A/',
+          'http://cloud-3.steamusercontent.com/ugc/1697255428451814830/2E80C38AE46E722E095C544B6DD6E30BCE382EC1/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1697255428451814547/966AACF331EE94EFE9487B903F086DF87D316602/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1697255428451814547/966AACF331EE94EFE9487B903F086DF87D316602/'
+}
