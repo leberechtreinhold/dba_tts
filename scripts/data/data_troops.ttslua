@@ -2792,3 +2792,213 @@ troop_egyptian_lybian_wb = {
     player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1697255428451814547/966AACF331EE94EFE9487B903F086DF87D316602/',
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1697255428451814547/966AACF331EE94EFE9487B903F086DF87D316602/'
 }
+
+
+------------------------------------------------------------------------------
+--                            NORMANS MODELS
+------------------------------------------------------------------------------
+
+troop_norman_knight_sword = {
+    height_correction = 0,
+    scale = 2,
+    rotation = 0,
+    description = 'Norman Knight',
+    author = 'Norman Knight by Helveticus.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735687653/868E5B6A8185AE015F7E54BA406E2E6CF2DFA3F1/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735687751/C2837FCB6234513B41C97AC4683D368DDFEC454D/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735687847/C2837FCB6234513B41C97AC4683D368DDFEC454D/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735687988/54A0FD3E59FE85647562E937D7D14581F0F90893/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596735685871/DD8719776E482AE319500D89AC8820DE62EBC7C4/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596735685871/DD8719776E482AE319500D89AC8820DE62EBC7C4/',
+}
+
+troop_norman_knight_lance_pennat = {
+    height_correction = 0,
+    scale = 2,
+    rotation = 0,
+    description = 'Norman Knight',
+    author = 'Norman Knight by Helveticus.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735688302/F6337C0A8353CCCDBBE8F9B543656B8B274E9E36/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735688414/95AF8EB7CB77C293A9AB7C45C02E0F4FB166D1CF/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735688505/72097941CFC2D9B15C80B5E2FB22A716800A2AA9/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735688629/0B808186E89918892B1D16FDB5C7ED6680D9B966/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735688735/C5D9C23BFED1ECE0465DFB6AFD5D951F24B7FDC1/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735688890/865FD7AEAC23EBFA5CD366523B54BB84ABFFBFC5/'
+
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596735685871/DD8719776E482AE319500D89AC8820DE62EBC7C4/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596735685871/DD8719776E482AE319500D89AC8820DE62EBC7C4/',
+}
+
+troop_norman_knight_flag = {
+    height_correction = 0,
+    scale = 2,
+    rotation = 0,
+    description = 'Norman Knight with Flag',
+    author = 'Norman Knight with Flag by Helveticus, modified by LeberechtReinhold',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735688196/B0FCB3C74E40B473E3AE94D706623EB21132E8F4/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596735686886/080E6B739096201C7AF5312C69A1D19959E7CFF0/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596735686886/080E6B739096201C7AF5312C69A1D19959E7CFF0/',
+}
+
+troop_frank_knight_flag = {
+    height_correction = 0,
+    scale = 2,
+    rotation = 0,
+    description = 'Frank Knight with Flag',
+    author = 'Frank Knight with Flag by Helveticus, modified by LeberechtReinhold',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735688196/B0FCB3C74E40B473E3AE94D706623EB21132E8F4/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596735684389/9943F56AA6F72C6F139400C0CBF0638DF10A899A/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596735684389/9943F56AA6F72C6F139400C0CBF0638DF10A899A/',
+}
+
+troop_norman_knight_lance = {
+    height_correction = 0,
+    scale = 2,
+    rotation = 0,
+    description = 'Norman Knight',
+    author = 'Norman Knight by Helveticus.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735686535/D7261E59F7FBA2DDF37085728A5061A8A97AB155/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735686648/97064A5AB7EA340E128C1D582E5ABB19881FEAA2/'
+
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596735685871/DD8719776E482AE319500D89AC8820DE62EBC7C4/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596735685871/DD8719776E482AE319500D89AC8820DE62EBC7C4/',
+}
+
+troop_norman_armor_foot_sword = {
+    height_correction = 0,
+    scale = 2,
+    rotation = 0,
+    description = 'Norman Foot',
+    author = 'Norman Foot by Helveticus.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735685682/F437101F0B39C5F6546D5AC3D158BAB44C7976B8/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735685772/2E028386F06D81F4B14C5E10FEDAD7AA50B8CD17/'
+
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596735689636/75B0FE309A23F3655C21B886BC3DDE56380A2A64/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596735689636/75B0FE309A23F3655C21B886BC3DDE56380A2A64/',
+}
+
+troop_norman_archer = {
+    height_correction = 0.4,
+    scale = 0.4,
+    rotation = 90,
+    description = 'Norman Archer',
+    author = 'Norman Archer by Helveticus.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735685393/081B49E891E32C01B8AFB5B7FFF04297E3E65063/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735685589/91E2E1F590961A99B01CF98C4C540D1EBB4D8727/'
+
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596735685260/C38013C05064CF5F176F04C8FB281DB9287EDB04/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596735685260/C38013C05064CF5F176F04C8FB281DB9287EDB04/',
+}
+
+troop_norman_spear = {
+    height_correction = 0,
+    scale = 2,
+    rotation = 0,
+    description = 'Norman Spear',
+    author = 'Norman Spear by Helveticus.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735691165/4056F186A41EE2C1C2DD5A7B9149FD4A296C0528/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735691064/E71FB5A6F60C1ED6F7EEFE4C4ACEAF44481B0A4C/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735690959/A320F78429C7FD1D87498EEBABBB18FE9501FE54/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735690860/09B434A7228208FE886524F4CFF1AB59CEF17FFC/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735690763/1E174CE8267386D95867D00219B9BDB2430579CF/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735690660/1AD4B344B11BB67C2A8151318FCC495083EBBFC4/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735690305/2B19A9F49BF647BEBE0B6A7EE5D9E0946A277454/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735690210/34AC9BA12AF50B66913A802F22DDC889335129D0/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735690118/9CE04B5F9F3BD35FA757D1B64393727FF408F467/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596735689636/75B0FE309A23F3655C21B886BC3DDE56380A2A64/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596735689636/75B0FE309A23F3655C21B886BC3DDE56380A2A64/',
+}
+
+troop_norman_levy = {
+    height_correction = 0,
+    scale = 2,
+    rotation = 0,
+    description = 'Norman Levy',
+    author = 'Norman Levy by Helveticus.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735677420/0470EFF4EA5095D62A0E41E41FAA7748068BF706/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735684873/E5B92DB8E3A5173BF6EAD9EEB1BFFBA5E43C462E/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735684975/305AA49B6AE3F59E906D4B1F56AA35E54435A0CD/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735685063/F83785285F88EC6AC3E216E5CC207B52DF131DEA/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596735689295/2F646F0D122E17AAD86DD4D6F465766E9EE0219A/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596735689295/2F646F0D122E17AAD86DD4D6F465766E9EE0219A/',
+}
+
+troop_norman_levy_shield = {
+    height_correction = 0,
+    scale = 2,
+    rotation = 0,
+    description = 'Norman Levy',
+    author = 'Norman Levy by Helveticus.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667983596740564856/5FB26488398E839E0C684F78DD9A2F28B0AB5EDD/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596740564965/C4ECF97732F21C414DF7770B88E1DED84796CFB7/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596740565094/F8364FEF16D076CAE39E8E9758ACA61EA8F93D2D/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735677420/0470EFF4EA5095D62A0E41E41FAA7748068BF706/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596735689295/2F646F0D122E17AAD86DD4D6F465766E9EE0219A/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596735689295/2F646F0D122E17AAD86DD4D6F465766E9EE0219A/',
+}
+
+troop_norman_lightcav = {
+    height_correction = 0,
+    scale = 2,
+    rotation = 0,
+    description = 'Norman Light Cavalry',
+    author = 'Norman Light Cavalry by Helveticus, modified by LeberechtReinhold.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667983596740565554/57150702DC0394DA5D5179EFA5C0AE891E337387/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596741052040/6CAE5BE42819989BAB1DC695AE1BA50BDDDB6977/'
+
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596740565795/DC760535845F5B683BDAF2389AE8C90774867F16/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596740565795/DC760535845F5B683BDAF2389AE8C90774867F16/',
+}
+
+troop_norman_crossbow = {
+    height_correction = 0.4,
+    scale = 0.4,
+    rotation = 0,
+    description = 'Norman Crossbowmen',
+    author = 'Norman Crossbowmen by Helveticus.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667983596740487931/2BFB9F1938C4BD9020AD6671B1502C4688476542/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596740487836/1C15672E6AC21F7BC6AA26BB2ADA17BB9DDCC9B3/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596740487695/B08AD20253F9AA1CC7C1181B96D30CE9C3A68FB7/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596740487473/DDCAA52A02EFE76E5B5BC07E56B52A1B27880897/'
+
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596735686329/311EFAAC83CADA0B154642E209F4867647A4E1FA/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596735686329/311EFAAC83CADA0B154642E209F4867647A4E1FA/',
+}
+
+troop_campfire = {
+    height_correction = 0,
+    scale = 0.3,
+    rotation = 0,
+    description = 'Campfire',
+    author = 'Campfire by animatedheaven, modified by LeberechtReinhold.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667983596741013089/234E6650763A7A8F7ECA4EF11733F16BC4F0D3C4/'
+
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596741012875/53F05AE59BD50777066318A6A2CE000140323D88/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596741012875/53F05AE59BD50777066318A6A2CE000140323D88/',
+}
