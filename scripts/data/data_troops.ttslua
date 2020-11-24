@@ -2659,6 +2659,20 @@ trop_thracian_axgen = {
 --                            EGYPTIAN PHOTOGAMMETRY
 ------------------------------------------------------------------------------
 
+troop_hyksos_bd1 = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Hyksus Blade',
+    author = 'Hyksus Blade by Eric Delemer, modified by LeberechtReinhold.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1697255428451801356/66A14C37933263B626FF5FDC7540FE4AA72B167D/',
+          'http://cloud-3.steamusercontent.com/ugc/1697255428451804876/05C8AA38F77032B94F6DB9D070F132200BDA13EA/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596734899210/BD6B31C36A487B49C1DF7F77CBB093B58C975249/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596734899210/BD6B31C36A487B49C1DF7F77CBB093B58C975249/',
+}
+
 troop_egyptian_bd1 = {
     height_correction = 0,
     scale = 0.9,
@@ -2756,6 +2770,24 @@ troop_egyptian_lch = {
     customasset = 'http://cloud-3.steamusercontent.com/ugc/1697255614217892175/AF61FF5D8048CC931E5178CB5FC432AAC5BD6FB5/'
 }
 
+troop_hyksos_lch = {
+    height_correction = 0,
+    scale = 1,
+    rotation = 180,
+    description = 'Hyksos Light Chariot',
+    author = 'Hyksos Light Chariot by Eric Delemer, modified by LeberechtReinhold.',
+    customasset = 'http://cloud-3.steamusercontent.com/ugc/1667983596734977399/E51A29C4380DC60B9A2BDEF5516FED9493C761A0/'
+}
+
+troop_hyksos_lch_gen = {
+    height_correction = 0,
+    scale = 1,
+    rotation = 180,
+    description = 'Hyksos Light Chariot General',
+    author = 'Hyksos Light Chariot General by Eric Delemer, modified by LeberechtReinhold.',
+    customasset = 'http://cloud-3.steamusercontent.com/ugc/1667983596734977584/EBC4BCDCEFB88A11529F82DE43EA5DD4DB52BE8F/'
+}
+
 troop_egyptian_lch_gen = {
     height_correction = 0,
     scale = 1,
@@ -2791,6 +2823,73 @@ troop_egyptian_lybian_wb = {
     },
     player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1697255428451814547/966AACF331EE94EFE9487B903F086DF87D316602/',
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1697255428451814547/966AACF331EE94EFE9487B903F086DF87D316602/'
+}
+
+troop_egyptian_bow_alt = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Egyptian Archers',
+    author = 'Egyptian Archers by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667983596734911092/723988535BE06C5EFAA966B57CA57EB28C1D23C8/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596734911286/02D184C9C1DCD17D1ADE619419E8919500153B13/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596734910890/D2949C455D28843FD337659EEE77B5A34EC859AB/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596734910890/D2949C455D28843FD337659EEE77B5A34EC859AB/'
+}
+
+troop_egyptian_musician = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Egyptian Musician',
+    author = 'Egyptian Musician by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667983596734908419/6FE4DF2B2920D25385E6B1315357D2C3DC9AF7DB/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596734908639/4A57189B3E3C7FCDB77CAB544340C09361287C24/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596734908639/4A57189B3E3C7FCDB77CAB544340C09361287C24/'
+}
+
+troop_egyptian_bearer = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Egyptian Flag Bearer',
+    author = 'Egyptian Flag Bearer by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667983596734908235/3B2AF8D01C3FF51E60882B4E7006BEC2B3CB008D/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596734908639/4A57189B3E3C7FCDB77CAB544340C09361287C24/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596734908639/4A57189B3E3C7FCDB77CAB544340C09361287C24/'
+}
+
+
+troop_egyptian_general = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Egyptian General',
+    author = 'Egyptian General by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667983596734908029/A5B6F2C67923EC1936F197CD25915EA147FA15D5/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596734908639/4A57189B3E3C7FCDB77CAB544340C09361287C24/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596734908639/4A57189B3E3C7FCDB77CAB544340C09361287C24/'
+}
+
+troop_egyptian_drummer = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Egyptian Drummer',
+    author = 'Egyptian Drummer by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667983596734907849/F0D1D6DA257D283EBD22B34BD4615DC3E58B2EB9/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596734908639/4A57189B3E3C7FCDB77CAB544340C09361287C24/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596734908639/4A57189B3E3C7FCDB77CAB544340C09361287C24/'
 }
 
 

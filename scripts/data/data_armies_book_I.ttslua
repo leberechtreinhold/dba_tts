@@ -504,6 +504,123 @@ armies["Book I"]["I/2a Early Egyptians 3000-1640BC (Plain)"] = {
     }
 }
 
+armies["Book I"]["I/2a Early Egyptians 3000-1640BC"] = {
+    data = {
+        aggresiveness = 1,
+        terrain = 'Littoral',
+        list = '1x4Bd or Lit (Gen), 5x4Bw, 2x3Bd, 1x3Bd or 3Bw, 1x7Hd, 2x2Ps.',
+        manufacturer = 'Magister Militum miniatures'
+    },
+    base1 = {
+        name = '4Bd_Gen',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        fixed_models = {
+            [1] = 'troop_egyptian_musician',
+            [2] = 'troop_egyptian_general',
+            [3] = 'troop_egyptian_bearer',
+            [4] = 'troop_egyptian_drummer'
+        }
+    },
+    base2 = {
+        name = 'Lit_Gen',
+        base = 'tile_grass_40x80',
+        n_models = 9,
+        fixed_models = {
+            [1] = 'troop_egyptian_bd1',
+            [2] = 'troop_egyptian_bd1',
+            [3] = 'troop_egyptian_bd1',
+            [4] = 'troop_egyptian_bearer',
+            [5] = 'troop_egyptian_bearer',
+            [6] = 'troop_egyptian_bearer',
+            [7] = 'troop_egyptian_musician',
+            [8] = 'troop_egyptian_general',
+            [9] = 'troop_egyptian_drummer'
+        }
+    },
+    base3 = {
+        name = '4Bw',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_egyptian_bow_alt'
+    },
+    base4 = {
+        name = '4Bw',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_egyptian_bow_alt'
+    },
+    base5 = {
+        name = '4Bw',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_egyptian_bow_alt'
+    },
+    base6 = {
+        name = '4Bw',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_egyptian_bow_alt'
+    },
+    base7 = {
+        name = '4Bw',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_egyptian_bow_alt'
+    },
+    base8 = {
+        name = '3Bd',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_egyptian_bd1'
+    },
+    base9 = {
+        name = '3Bd',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_egyptian_bd1'
+    },
+    base10 = {
+        name = '3Bd',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_egyptian_bd1'
+    },
+    base11 = {
+        name = '3Bw',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_egyptian_bow_alt'
+    },
+    base12 = {
+        name = '7Hd',
+        base = 'tile_grass_40x30',
+        n_models = 7,
+        model_data = 'troop_egyptian_horde_melee',
+        loose = true
+    },
+    base13 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        model_data = 'troop_egyptian_horde',
+        loose = true
+    },
+    base14 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        model_data = 'troop_egyptian_horde',
+        loose = true
+    },
+    base15 = {
+        name = 'Camp',
+        base = 'tile_grass_40x40',
+        n_models = 1,
+        model_data = 'troop_egyptian_sphinx'
+    }
+}
+
 armies["Book I"]["I/2b Early Egyptians 1640-1543BC (Plain)"] = {
     data = {
         aggresiveness = 1,
@@ -594,6 +711,104 @@ armies["Book I"]["I/2b Early Egyptians 1640-1543BC (Plain)"] = {
         base = 'tile_plain_Camp_40x40',
         n_models = 0,
         ignore_terrain = true
+    }
+}
+
+armies["Book I"]["I/2b Early Egyptians 1640-1543BC"] = {
+    data = {
+        aggresiveness = 1,
+        terrain = 'Littoral',
+        list = '1xLCh (Gen), 4x4Bw, 3x3Bd, 1x3Bd or 3Bw, 1x7Hd, 2x2Ps.',
+        manufacturer = 'Magister Militum miniatures'
+    },
+    base1 = {
+        name = 'LCh_Gen',
+        base = 'tile_grass_40x40',
+        n_models = 1,
+        fixed_models = {
+            [1] = 'troop_egyptian_lch_gen'
+        }
+    },
+    base2 = {
+        name = '4Bw',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_egyptian_bow_alt'
+    },
+    base3 = {
+        name = '4Bw',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_egyptian_bow_alt'
+    },
+    base4 = {
+        name = '4Bw',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_egyptian_bow_alt'
+    },
+    base5 = {
+        name = '4Bw',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_egyptian_bow_alt'
+    },
+    base7 = {
+        name = '3Bd',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_egyptian_bd1'
+    },
+    base8 = {
+        name = '3Bd',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_egyptian_bd1'
+    },
+    base9 = {
+        name = '3Bd',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_egyptian_bd1'
+    },
+    base10 = {
+        name = '3Bd',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_egyptian_bd1'
+    },
+    base11 = {
+        name = '3Bw',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_egyptian_bow_alt'
+    },
+    base12 = {
+        name = '7Hd',
+        base = 'tile_grass_40x30',
+        n_models = 7,
+        model_data = 'troop_egyptian_horde_melee',
+        loose = true
+    },
+    base13 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        model_data = 'troop_egyptian_horde',
+        loose = true
+    },
+    base14 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        model_data = 'troop_egyptian_horde',
+        loose = true
+    },
+    base15 = {
+        name = 'Camp',
+        base = 'tile_grass_40x40',
+        n_models = 1,
+        model_data = 'troop_egyptian_sphinx'
     }
 }
 
@@ -4420,32 +4635,32 @@ armies["Book I"]["I/17a Hyksos 1645-1591BC"] = {
         base = 'tile_grass_40x40',
         n_models = 1,
         fixed_models = {
-            [1] = 'troop_egyptian_lch_gen'
+            [1] = 'troop_hyksos_lch_gen'
         }
     },
     base2 = {
         name = '3Bd',
         base = 'tile_grass_40x20',
         n_models = 3,
-        model_data = 'troop_egyptian_bd1'
+        model_data = 'troop_hyksos_bd1'
     },
     base3 = {
         name = '3Bd',
         base = 'tile_grass_40x20',
         n_models = 3,
-        model_data = 'troop_egyptian_bd1'
+        model_data = 'troop_hyksos_bd1'
     },
     base4 = {
         name = '3Bd',
         base = 'tile_grass_40x20',
         n_models = 3,
-        model_data = 'troop_egyptian_bd1'
+        model_data = 'troop_hyksos_bd1'
     },
     base5 = {
         name = '3Bd',
         base = 'tile_grass_40x20',
         n_models = 3,
-        model_data = 'troop_egyptian_bd1'
+        model_data = 'troop_hyksos_bd1'
     },
     base6 = {
         name = '4Ax',
@@ -4610,7 +4825,7 @@ armies["Book I"]["I/17b Hyksos 1590-1537BC"] = {
         base = 'tile_grass_40x40',
         n_models = 1,
         fixed_models = {
-            [1] = 'troop_egyptian_lch_gen'
+            [1] = 'troop_hyksos_lch_gen'
         }
     },
     base2 = {
@@ -4618,7 +4833,7 @@ armies["Book I"]["I/17b Hyksos 1590-1537BC"] = {
         base = 'tile_grass_40x40',
         n_models = 1,
         fixed_models = {
-            [1] = 'troop_egyptian_lch'
+            [1] = 'troop_hyksos_lch'
         }
     },
     base3 = {
@@ -4626,7 +4841,7 @@ armies["Book I"]["I/17b Hyksos 1590-1537BC"] = {
         base = 'tile_grass_40x40',
         n_models = 1,
         fixed_models = {
-            [1] = 'troop_egyptian_lch'
+            [1] = 'troop_hyksos_lch'
         }
     },
     base4 = {
@@ -4634,32 +4849,32 @@ armies["Book I"]["I/17b Hyksos 1590-1537BC"] = {
         base = 'tile_grass_40x40',
         n_models = 1,
         fixed_models = {
-            [1] = 'troop_egyptian_lch'
+            [1] = 'troop_hyksos_lch'
         }
     },
     base5 = {
         name = '3Bd',
         base = 'tile_grass_40x20',
         n_models = 3,
-        model_data = 'troop_egyptian_bd1'
+        model_data = 'troop_hyksos_bd1'
     },
     base6 = {
         name = '3Bd',
         base = 'tile_grass_40x20',
         n_models = 3,
-        model_data = 'troop_egyptian_bd1'
+        model_data = 'troop_hyksos_bd1'
     },
     base7 = {
         name = '3Bd',
         base = 'tile_grass_40x20',
         n_models = 3,
-        model_data = 'troop_egyptian_bd1'
+        model_data = 'troop_hyksos_bd1'
     },
     base8 = {
         name = '3Bd',
         base = 'tile_grass_40x20',
         n_models = 3,
-        model_data = 'troop_egyptian_bd1'
+        model_data = 'troop_hyksos_bd1'
     },
     base9 = {
         name = '4Ax',
