@@ -540,6 +540,25 @@ function draw_pickup_strokes(picked_up_object)
         thickness = g_line_thickness,
         rotation  = {0,0,0}
     })
+    
+    local transform = calculate_transform(picked_up_object)
+    local height = g_picked_base_initial_transform['position'].y
+    transform['corners']['topright'] = { 
+        x = transform['corners']['topright'].x, y = height, z = transform['corners']['topright'].z
+    }
+    transform['corners']['topleft'] = { 
+        x = transform['corners']['topleft'].x, y = height, z = transform['corners']['topleft'].z
+    }
+    transform['corners']['botleft'] = { 
+        x = transform['corners']['botleft'].x, y = height, z = transform['corners']['botleft'].z
+    }
+    transform['corners']['topright'] = { 
+        x = transform['corners']['topright'].x, y = height, z = transform['corners']['topright'].z
+    }
+    transform['corners']['botright'] = { 
+        x = transform['corners']['botright'].x, y = height, z = transform['corners']['botright'].z
+    }
+    table.insert(strokes, get_strokes_future_position(picked_up_object, transform))
     Global.setVectorLines(strokes)
 end
 

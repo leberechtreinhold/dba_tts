@@ -1362,6 +1362,10 @@ end
 function main_loop()
     check_selection_change()
     check_change_zoc()
+    
+    if g_picked_base_obj then
+        draw_pickup_strokes(g_picked_base_obj)
+    end
 end
 
 
