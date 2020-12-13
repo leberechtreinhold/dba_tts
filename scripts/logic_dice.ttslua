@@ -1,6 +1,6 @@
 
 data_dice = {
-    mesh = 'http://cloud-3.steamusercontent.com/ugc/1483325217454079653/599EFF401B1215D3FD34CA5D7A3B2EEDA47123E4/',
+    mesh = 'http://cloud-3.steamusercontent.com/ugc/1667985477144749065/BB7C61EB29049DFAE25D8FDD72B8D85B9D75CB75/',
     textures = {
         -- Dice textures by Eric Delemer
         red = 'http://cloud-3.steamusercontent.com/ugc/1483325549676274833/BA2F1424E61D7B0069F760A5FB583007F598B09C/',
