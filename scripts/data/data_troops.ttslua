@@ -3075,7 +3075,7 @@ troop_egyptian_drummer = {
 
 troop_norman_knight_sword = {
     height_correction = 0,
-    scale = 2,
+    scale = 1.7,
     rotation = 0,
     description = 'Norman Knight',
     author = 'Norman Knight by Helveticus.',
@@ -3091,7 +3091,7 @@ troop_norman_knight_sword = {
 
 troop_norman_knight_lance_pennat = {
     height_correction = 0,
-    scale = 2,
+    scale = 1.7,
     rotation = 0,
     description = 'Norman Knight',
     author = 'Norman Knight by Helveticus.',
@@ -3110,20 +3110,33 @@ troop_norman_knight_lance_pennat = {
 
 troop_norman_knight_flag = {
     height_correction = 0,
-    scale = 2,
+    scale = 1.7,
     rotation = 0,
     description = 'Norman Knight with Flag',
     author = 'Norman Knight with Flag by Helveticus, modified by LeberechtReinhold',
     mesh = {
           'http://cloud-3.steamusercontent.com/ugc/1667983596735688196/B0FCB3C74E40B473E3AE94D706623EB21132E8F4/'
     },
-    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596735686886/080E6B739096201C7AF5312C69A1D19959E7CFF0/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596735686886/080E6B739096201C7AF5312C69A1D19959E7CFF0/',
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667984994449859379/D9318B6173BB036C3F50006BDC4B89BE6D360800/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667984994449859379/D9318B6173BB036C3F50006BDC4B89BE6D360800/',
+}
+
+troop_anglonorman_wagon = {
+    height_correction = 0.38,
+    scale = 0.42,
+    rotation = 0,
+    description = 'Anglo-Norman Command-Wagon',
+    author = 'Anglo-Norman Command-Wagon by Helveticus and Bog Hardlog, modified by LeberechtReinhold',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667984994449859201/00D608CE88F22A4F7B2AE5BBB03D39D7E7F2BF93/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667984994449859650/493524D973DAD8CD98FC658F2ED2AEE9C4C45449/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667984994449859650/493524D973DAD8CD98FC658F2ED2AEE9C4C45449/',
 }
 
 troop_frank_knight_flag = {
     height_correction = 0,
-    scale = 2,
+    scale = 1.7,
     rotation = 0,
     description = 'Frank Knight with Flag',
     author = 'Frank Knight with Flag by Helveticus, modified by LeberechtReinhold',
@@ -3136,7 +3149,7 @@ troop_frank_knight_flag = {
 
 troop_norman_knight_lance = {
     height_correction = 0,
-    scale = 2,
+    scale = 1.7,
     rotation = 0,
     description = 'Norman Knight',
     author = 'Norman Knight by Helveticus.',
@@ -3151,7 +3164,7 @@ troop_norman_knight_lance = {
 
 troop_norman_armor_foot_sword = {
     height_correction = 0,
-    scale = 2,
+    scale = 1.7,
     rotation = 0,
     description = 'Norman Foot',
     author = 'Norman Foot by Helveticus.',
@@ -3166,7 +3179,7 @@ troop_norman_armor_foot_sword = {
 
 troop_norman_archer = {
     height_correction = 0.4,
-    scale = 0.4,
+    scale = 0.3,
     rotation = 90,
     description = 'Norman Archer',
     author = 'Norman Archer by Helveticus.',
@@ -3181,7 +3194,7 @@ troop_norman_archer = {
 
 troop_norman_spear = {
     height_correction = 0,
-    scale = 2,
+    scale = 1.7,
     rotation = 0,
     description = 'Norman Spear',
     author = 'Norman Spear by Helveticus.',
@@ -3202,7 +3215,7 @@ troop_norman_spear = {
 
 troop_norman_levy = {
     height_correction = 0,
-    scale = 2,
+    scale = 1.7,
     rotation = 0,
     description = 'Norman Levy',
     author = 'Norman Levy by Helveticus.',
@@ -3218,7 +3231,7 @@ troop_norman_levy = {
 
 troop_norman_levy_shield = {
     height_correction = 0,
-    scale = 2,
+    scale = 1.7,
     rotation = 0,
     description = 'Norman Levy',
     author = 'Norman Levy by Helveticus.',
@@ -3234,7 +3247,7 @@ troop_norman_levy_shield = {
 
 troop_norman_lightcav = {
     height_correction = 0,
-    scale = 2,
+    scale = 1.7,
     rotation = 0,
     description = 'Norman Light Cavalry',
     author = 'Norman Light Cavalry by Helveticus, modified by LeberechtReinhold.',
@@ -3249,7 +3262,7 @@ troop_norman_lightcav = {
 
 troop_norman_crossbow = {
     height_correction = 0.4,
-    scale = 0.4,
+    scale = 0.3,
     rotation = 0,
     description = 'Norman Crossbowmen',
     author = 'Norman Crossbowmen by Helveticus.',

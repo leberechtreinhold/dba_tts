@@ -552,6 +552,216 @@ armies["Book IV"]["IV/3 Anglo-Norman 1072-1181AD (Plain)"] = {
     }
 }
 
+armies["Book IV"]["IV/3 Anglo-Norman 1072-1181AD"] = {
+    data = {
+        aggresiveness = 2,
+        terrain = 'Arable',
+        list = '1x3Kn//4Sp (Gen), 3x3Kn//4Sp, 1x3Kn//4Bd (Gen), 3x3Kn//4Bd, 4x4Sp, 3x2Ps or 3Bw, 1xWWg or 3Cv or 3Sp'
+    },
+
+    base1 = {
+        name = '3Kn_Gen',
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        fixed_models = {
+            [1] = 'troop_norman_knight_lance_pennat',
+            [2] = 'troop_norman_knight_sword',
+            [3] = 'troop_norman_knight_flag'
+        }
+    },
+    base2 = {
+        name = '4Sp_Gen',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        fixed_models = {
+            [1] = 'troop_norman_spear',
+            [2] = 'troop_norman_armor_foot_sword',
+            [3] = 'troop_norman_spear',
+            [4] = 'troop_norman_spear'
+        }
+    },
+    base3 = {
+        name = '3Kn',
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        model_data = 'troop_norman_knight_lance_pennat'
+    },
+    base4 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_norman_spear'
+    },
+    base5 = {
+        name = '3Kn',
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        model_data = 'troop_norman_knight_lance_pennat'
+    },
+    base6 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_norman_spear'
+    },
+    base7 = {
+        name = '3Kn',
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        model_data = 'troop_norman_knight_lance_pennat'
+    },
+    base8 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_norman_spear'
+    },
+    base9 = {
+        name = '3Kn_Gen',
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        fixed_models = {
+            [1] = 'troop_norman_knight_lance_pennat',
+            [2] = 'troop_norman_knight_sword',
+            [3] = 'troop_norman_knight_flag'
+        }
+    },
+    base10 = {
+        name = '4Bd_Gen',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        fixed_models = {
+            [1] = 'troop_norman_armor_foot_sword',
+            [2] = 'troop_norman_armor_foot_sword',
+            [3] = 'troop_norman_spear',
+            [4] = 'troop_norman_armor_foot_sword'
+        }
+    },
+    base11 = {
+        name = '3Kn',
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        model_data = 'troop_norman_knight_lance_pennat'
+    },
+    base12 = {
+        name = '4Bd',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_norman_armor_foot_sword'
+    },
+    base13 = {
+        name = '3Kn',
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        model_data = 'troop_norman_knight_lance_pennat'
+    },
+    base14 = {
+        name = '4Bd',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_norman_armor_foot_sword'
+    },
+    base15 = {
+        name = '3Kn',
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        model_data = 'troop_norman_knight_lance_pennat'
+    },
+    base16 = {
+        name = '4Bd',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_norman_armor_foot_sword'
+    },
+    base17 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_norman_spear'
+    },
+    base18 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_norman_spear'
+    },
+    base19 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_norman_spear'
+    },
+    base20 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_norman_spear'
+    },
+    base21 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        model_data = 'troop_norman_archer',
+        loose = true
+    },
+    base22 = {
+        name = '3Bw',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_norman_archer'
+    },
+    base23 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        model_data = 'troop_norman_archer',
+        loose = true
+    },
+    base24 = {
+        name = '3Bw',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_norman_archer'
+    },
+    base25 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        model_data = 'troop_norman_archer',
+        loose = true
+    },
+    base26 = {
+        name = '3Bw',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_norman_archer'
+    },
+    base27 = {
+        name = 'WWg',
+        base = 'tile_grass_40x80',
+        n_models = 1,
+        model_data = 'troop_anglonorman_wagon',
+    },
+    base28 = {
+        name = '3Cv',
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        model_data = 'troop_norman_knight_sword'
+    },
+    base29 = {
+        name = '3Sp',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_norman_spear'
+    },
+    base30 = {
+        name = 'Camp',
+        base = 'tile_grass_40x40',
+        n_models = 1,
+        model_data = 'troop_campfire'
+    }
+}
+
 armies["Book IV"]["IV/4a Feudal French 1072-1150AD (Plain)"] = {
     data = {
         aggresiveness = 1,
