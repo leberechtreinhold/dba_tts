@@ -413,6 +413,7 @@ function spawn_table_obj(model_url, height_correction, texture_array_urls)
     print_important('Table spawned, you can now put terrain on top, then use Right Click > Fix terrain.')
 
     add_context_menu_table(obj)
+    obj.setLock(true)
 end
 
 function change_bases_to_terrain(terrain_type)
