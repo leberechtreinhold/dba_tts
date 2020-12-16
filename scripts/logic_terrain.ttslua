@@ -186,12 +186,34 @@ function fix_terrain_and_lock()
 
             print_debug('Found terrain with name ' .. terrain.getName())
 
-            if g_use_3d_terrain then
-                process_vegetation(terrain, terrain_type)
+            local current_scale = terrain.getScale()
+            print_debug('The terrain had scale ' .. vec_to_str(current_scale))
+            if str_has_substr(terrain.getName(), 'Road') then
+                current_scale.y = 0.8 + math.random()*0.1 - 0.05
+            else
+                current_scale.y = 0.1
             end
+            terrain.setScale(current_scale)
 
-            gametable.addAttachment(terrain)
-            print_info('Attaching ' .. terrain.getName())
+            local current_rotation = terrain.getRotation()
+            print_debug('The terrain had rotation ' .. vec_to_str(current_rotation))
+            current_rotation.x = 0
+            current_rotation.z = 0
+            terrain.setRotation(current_rotation)
+
+            local current_pos = terrain.getPosition()
+            print_debug('The terrain had position ' .. vec_to_str(current_pos))
+            current_pos.y = g_terrain_pos
+            terrain.setPosition(current_pos)
+
+            Wait.frames(function ()
+                if g_use_3d_terrain then
+                    process_vegetation(terrain, terrain_type)
+                end
+    
+                gametable.addAttachment(terrain)
+                print_info('Attaching ' .. terrain.getName())                
+            end, 1)
         end
     end
     Wait.frames(function()
