@@ -3146,7 +3146,8 @@ armies["Book II"]["II/11 Gallic 400-50BC"] = {
     data = {
         aggresiveness = '3 (400-225) or 0 (224-50)',
         terrain = 'Arable',
-        list = '1x3/4Wb or LCh (Gen), 2xLCh or 3Cv, 8x3Wb, 1x2Ps.'
+        list = '1x3/4Wb or LCh (Gen), 2xLCh or 3Cv, 8x3Wb, 1x2Ps.',
+        manufacturer = 'J2C Creation miniatures'
     },
 
     base1 = {
