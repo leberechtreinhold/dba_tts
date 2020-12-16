@@ -83,7 +83,6 @@ function snap_road(road)
     end
 end
 
-
 function change_texture_terrain(terrain_obj, new_tex_url)
     local custom = terrain_obj.getCustomObject()
     custom['diffuse'] = new_tex_url
@@ -159,4 +158,47 @@ function process_vegetation(terrain_obj, type)
     if str_starts_with(terrain_obj.getName(), 'terrain Marsh') then
         set_marsh(terrain_obj, terrain_pos, terrain_rotation, terrain_size, type)
     end
+end
+
+function fix_terrain_and_lock()
+    local all_objs = getAllObjects()
+    local terrains = {}
+    for _,obj in ipairs(all_objs) do
+        local name = obj.getName()
+        if str_starts_with(name, 'terrain') then
+            table.insert(terrains, obj)
+        end
+    end
+
+    local gametable = getObjectFromGUID(g_current_table)
+    local size = gametable.getBoundsNormalized()['size']
+    local max_distance_from_table_sq = (size['x']/2)^2 + (size['z'] / 2)^2
+    local pos_table = gametable.getPosition()
+
+    local terrain_type = from_toggle_number_to_table_type(g_current_table_type)
+
+    gametable.setLock(false)
+    for _,terrain in ipairs(terrains) do
+        local terrain_pos = terrain.getPosition()
+        local distance = distance_points_flat_sq(pos_table, terrain_pos)
+        if distance <= max_distance_from_table_sq
+            and pos_table['y'] < terrain_pos['y'] then
+
+            print_debug('Found terrain with name ' .. terrain.getName())
+
+            if g_use_3d_terrain then
+                process_vegetation(terrain, terrain_type)
+            end
+
+            gametable.addAttachment(terrain)
+            print_info('Attaching ' .. terrain.getName())
+        end
+    end
+    Wait.frames(function()
+        g_current_table = gametable.getGUID()
+        gametable.setRotation({ x = 0, y = 0, z = 0})
+        gametable.setPosition({ x = 0, y = g_base_height_tabletop, z = 0})
+        gametable.setLock(true)
+        print_important('Table is now locked')
+    end, 1)
 end
