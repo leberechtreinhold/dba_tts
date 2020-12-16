@@ -3290,3 +3290,114 @@ troop_campfire = {
     player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596741012875/53F05AE59BD50777066318A6A2CE000140323D88/',
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596741012875/53F05AE59BD50777066318A6A2CE000140323D88/',
 }
+
+
+------------------------------------------------------------------------------
+--                            GALLIC MODELS
+------------------------------------------------------------------------------
+
+troop_gallic_cav = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Gallic Calvary',
+    author = 'Gallic Calvary by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667984827364572271/DB64D3A68B4197F834FC54052746296EA652246E/',
+          'http://cloud-3.steamusercontent.com/ugc/1667984827364572431/436C96B28363E42BBC707BC742ED6D3892E1A9B3/',
+          'http://cloud-3.steamusercontent.com/ugc/1667984827364572596/87D305A6C44D6CD182C78F6F0EA515D4D24BBDCC/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667984827364558763/26BF09B8713D1487B0CCDCA9AC5B9D1836C2CB8C/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667984827364558763/26BF09B8713D1487B0CCDCA9AC5B9D1836C2CB8C/',
+}
+
+troop_gallic_cav_bodyguard = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Gallic Calvary',
+    author = 'Gallic Calvary by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667984827364571654/67253190017C66668DF7275818A61A7D4587B7E2/',
+          'http://cloud-3.steamusercontent.com/ugc/1667984827364572127/BF6766EAF29B43847DE377746607820B56C68059/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667984827364571795/12A048547E2514B492C995A9A0C7A01EEEAE5814/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667984827364571795/12A048547E2514B492C995A9A0C7A01EEEAE5814/',
+}
+
+troop_gallic_cav_general = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Gallic General',
+    author = 'Gallic General by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667984827364572008/CB052CA32A6B0BB91B6588966EC26B7BA9E2F1F5/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667984827364571795/12A048547E2514B492C995A9A0C7A01EEEAE5814/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667984827364571795/12A048547E2514B492C995A9A0C7A01EEEAE5814/',
+}
+
+troop_gallic_warband = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Gallic Warband',
+    author = 'Gallic Warband by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667984827364573562/DA5EDB7D18AB5C66B630F7C2ABCEA1E2396039AD/',
+          'http://cloud-3.steamusercontent.com/ugc/1667984827364573682/9DBA150A398B62E8FF696F64DD6C7DD3E3C216E9/',
+          'http://cloud-3.steamusercontent.com/ugc/1667984827364573795/6D77C2D366AC8D4003BED29F095A9B288378FB20/',
+          'http://cloud-3.steamusercontent.com/ugc/1667984827364573984/6E9B36085927C3367E67D48C0E00D502AD368556/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667984827364572720/92128160C20C3EF66C8EF22DE10C53646E990999/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667984827364572720/92128160C20C3EF66C8EF22DE10C53646E990999/',
+}
+
+troop_gallic_warband_general = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Gallic Warband',
+    author = 'Gallic Warband by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667984827364573438/5EABE84DF203A73EDECCAF925262A9C2C49271D8/',
+          'http://cloud-3.steamusercontent.com/ugc/1667984827364573342/AFD5FE9D6ECD28E562E32090C4ABEFBFB2971A92/',
+          'http://cloud-3.steamusercontent.com/ugc/1667984827364573218/74C869D5547B04912C59D7B9A5EEA004E9E25DA4/',
+          'http://cloud-3.steamusercontent.com/ugc/1667984827364572877/D2656778E4A42E643A19A46BA5B15BA8B4F13D90/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667984827364573044/2062F0C4C069BBEF31083360A5DD0C5FD87B3736/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667984827364573044/2062F0C4C069BBEF31083360A5DD0C5FD87B3736/',
+}
+
+troop_gallic_lch_gen = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Gallic Chariot',
+    author = 'Gallic Chariot by Eric Delemer',
+    customasset = 'http://cloud-3.steamusercontent.com/ugc/1667984827364996516/B264D7769CCC44D697ED4956573D52ED2A0C8CEA/'
+}
+
+troop_gallic_lch = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Gallic Chariot',
+    author = 'Gallic Chariot by Eric Delemer',
+    customasset = 'http://cloud-3.steamusercontent.com/ugc/1667984827364996090/D206675F8565E0BF77D9D36CB74F0FAADD2DC7E5/'
+}
+
+troop_gallic_ps = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Gallic Psiloi',
+    author = 'Gallic Psiloi by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667984827364988467/F0DF6DDC93B933631E89B39659E8C9401D9845CA/',
+          'http://cloud-3.steamusercontent.com/ugc/1667984827364988364/B3D449EADDDDEF0EE0657FD221779FA4A4AF174E/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667984827364988092/B2B37D6B20584DDA7245EEF9409943155D4F8B9B/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667984827364988092/B2B37D6B20584DDA7245EEF9409943155D4F8B9B/',
+}

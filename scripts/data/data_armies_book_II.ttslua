@@ -3028,9 +3028,9 @@ armies["Book II"]["II/10 Camillan Roman 400-275BC"] = {
     }
 }
 
-armies["Book II"]["II/11 Gallic 400-225BC (Plain)"] = {
+armies["Book II"]["II/11 Gallic 400-50BC (Plain)"] = {
     data = {
-        aggresiveness = 3,
+        aggresiveness = '3 (400-225) or 0 (224-50)',
         terrain = 'Arable',
         list = '1x3/4Wb or LCh (Gen), 2xLCh or 3Cv, 8x3Wb, 1x2Ps.'
     },
@@ -3142,117 +3142,121 @@ armies["Book II"]["II/11 Gallic 400-225BC (Plain)"] = {
     }
 }
 
-armies["Book II"]["II/11 Gallic 224-50BC (Plain)"] = {
+armies["Book II"]["II/11 Gallic 400-50BC"] = {
     data = {
-        aggresiveness = 0,
+        aggresiveness = '3 (400-225) or 0 (224-50)',
         terrain = 'Arable',
         list = '1x3/4Wb or LCh (Gen), 2xLCh or 3Cv, 8x3Wb, 1x2Ps.'
     },
 
     base1 = {
         name = '3Wb_Gen',
-        base = 'tile_plain_3Wb_40x20',
-        n_models = 1,
-        model_data = 'troop_general_plain',
-        ignore_terrain = true
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_gallic_warband_general'
     },
     base2 = {
         name = '4Wb_Gen',
-        base = 'tile_plain_4Wb_40x15',
-        n_models = 1,
-        model_data = 'troop_general_plain',
-        ignore_terrain = true
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_gallic_warband_general'
     },
     base3 = {
         name = 'LCh_Gen',
-        base = 'tile_plain_LCh_40x40',
+        base = 'tile_grass_40x40',
         n_models = 1,
-        model_data = 'troop_general_plain',
-        ignore_terrain = true
+        fixed_models = {
+            [1] = 'troop_gallic_lch_gen'
+        }
     },
     base4 = {
         name = 'LCh',
-        base = 'tile_plain_LCh_40x40',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x40',
+        n_models = 1,
+        fixed_models = {
+            [1] = 'troop_gallic_lch'
+        }
     },
     base5 = {
         name = '3Cv',
-        base = 'tile_plain_3Cv_40x30',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        model_data = 'troop_gallic_cav'
     },
     base6 = {
         name = 'LCh',
-        base = 'tile_plain_LCh_40x40',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x40',
+        n_models = 1,
+        fixed_models = {
+            [1] = 'troop_gallic_lch'
+        }
     },
     base7 = {
         name = '3Cv',
-        base = 'tile_plain_3Cv_40x30',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        model_data = 'troop_gallic_cav'
     },
     base8 = {
         name = '3Wb',
-        base = 'tile_plain_3Wb_40x20',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_gallic_warband'
     },
     base9 = {
         name = '3Wb',
-        base = 'tile_plain_3Wb_40x20',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_gallic_warband'
     },
     base10 = {
         name = '3Wb',
-        base = 'tile_plain_3Wb_40x20',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_gallic_warband'
     },
     base11 = {
         name = '3Wb',
-        base = 'tile_plain_3Wb_40x20',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_gallic_warband'
     },
     base12 = {
         name = '3Wb',
-        base = 'tile_plain_3Wb_40x20',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_gallic_warband'
     },
     base13 = {
         name = '3Wb',
-        base = 'tile_plain_3Wb_40x20',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_gallic_warband'
     },
     base14 = {
         name = '3Wb',
-        base = 'tile_plain_3Wb_40x20',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_gallic_warband'
     },
     base15 = {
         name = '3Wb',
-        base = 'tile_plain_3Wb_40x20',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_gallic_warband'
     },
     base16 = {
         name = '2Ps',
-        base = 'tile_plain_2Ps_40x20',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        loose = true,
+        model_data = 'troop_gallic_ps'
     },
     base17 = {
         name = 'Camp',
-        base = 'tile_plain_Camp_40x40',
-        n_models = 0,
-        ignore_terrain = true
+        base = 'tile_grass_40x40',
+        n_models = 1,
+        model_data = 'troop_campfire'
     }
 }
 
