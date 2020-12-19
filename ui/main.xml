@@ -8,7 +8,7 @@
     <VerticalLayout>
         <Slider id="slider_paces" minValue="0" maxValue="500" wholeNumbers="true" value="200" colors="#00000000|#00000000|#00000000|#00000000" backgroundcolor="#FFFFFFF" onValueChanged="slider_paces_changed"></Slider>
         <Button id="button_move_forward" onClick="move_bases">Move 200 paces</Button>
-        <Button id="button_wheel" onClick="on_wheel">Wheel Group</Button>
+        <!--<Button id="button_wheel" onClick="on_wheel">Wheel Group</Button>-->
         <Button id="button_push_back" onClick="on_push_back">Push back Column</Button>
         <HorizontalLayout>
             <Button id="button_undo_move" onClick="on_undo_move">Undo</Button>
