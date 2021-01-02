@@ -1405,8 +1405,8 @@ function reset_state()
     for _,obj in ipairs(all_objs) do
         if is_table(obj) then
             g_current_table = obj.getGUID()
-            g_current_table.clearContextMenu()
-            add_context_menu_table(g_current_table)
+            obj.clearContextMenu()
+            add_context_menu_table(obj)
             print_info('Setting as current table = ' .. g_current_table)
         end
     end
