@@ -205,12 +205,7 @@ end
 
 function get_strokes_around(base_obj, transform, range, color)
     local stroke_points = {}
-    print(transform)
-    log(transform)
     local p = transform['corners']['topright']
-    print('huh')
-    print(base_obj.getName())
-    log(get_size(base_obj.getName()))
     local depth = get_size(base_obj.getName())['z']
 
     table.insert(stroke_points, {
