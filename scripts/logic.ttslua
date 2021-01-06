@@ -80,6 +80,20 @@ function filter_bases(list)
     return filtered
 end
 
+-- This is like filter_bases, but instead of a plain array, returns a list
+-- of GUID to base. This useful for when using a big list which will be operated
+-- and searched upon
+function get_bases_with_guid(list)
+    local filtered = {}
+    for _,obj in ipairs(list) do
+        local name = obj.getName()
+        if g_bases[name] ~= nil or str_starts_with(obj.getName(), 'base') then
+            filtered[obj.getGUID()] = obj
+        end
+    end
+    return filtered
+end
+
 -- 180º rotation a base
 function turn_around_base(obj)
     local initial_transform = calculate_transform(obj)
@@ -921,7 +935,7 @@ function onObjectPickUp(player_color,  picked_up_object)
     g_picked_base_obj = picked_up_object
     g_picked_base_initial_transform = calculate_transform(picked_up_object)
 
-    draw_pickup_strokes(picked_up_object)
+    draw_all_gizmos()
 end
 
 function snap_to_base(obj, transformObj, base, transformBase, direction)
@@ -1180,7 +1194,7 @@ function onObjectDrop(player_color,  picked_up_object)
     if n_objs > 1 then
         picked_up_object.setVelocity({x=0, y=0, z=0})
         picked_up_object.setAngularVelocity({x=0, y=0, z=0})
-        draw_gizmo_future_movements(objs)
+        draw_all_gizmos()
         return
     end
 
@@ -1221,7 +1235,7 @@ function onObjectDrop(player_color,  picked_up_object)
 
     -- If its dropped it may have moved, therefore update the gizmo, in case
     -- its selected
-    draw_gizmo_future_movements(objs)
+    draw_all_gizmos()
 end
 
 function calculate_future_position(base_obj, movement)
@@ -1301,7 +1315,7 @@ function on_selection_changed(player_color, new_selected_items)
         -- Do not draw anything while someone is wheeling
         return
     end
-    draw_gizmo_future_movements(new_selected_items)
+    draw_all_gizmos()
 end
 
 function on_zoc_changed()
@@ -1309,9 +1323,7 @@ function on_zoc_changed()
         -- While someone is wheeling we are not going to update the UI
         return
     end
-    for playercolor, selectedobjs in pairs(g_selected_objects) do
-        draw_gizmo_future_movements(selectedobjs)
-    end
+    draw_all_gizmos()
 end
 
 function has_changed_selection_for_player(player_color, selected_objs)
@@ -1363,8 +1375,9 @@ function main_loop()
     check_selection_change()
     check_change_zoc()
     
-    if g_picked_base_obj then
-        draw_pickup_strokes(g_picked_base_obj)
+    if g_draw_all_gizmos or g_picked_base_obj then
+        draw_all_gizmos_execute()
+        g_draw_all_gizmos = false
     end
 end
 

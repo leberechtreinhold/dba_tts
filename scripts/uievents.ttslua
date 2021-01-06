@@ -18,7 +18,7 @@ function slider_paces_changed(player, value, id)
     end, 1)
 
     -- Update any gizmo
-    draw_gizmo_future_movements(player.getSelectedObjects())
+    draw_all_gizmos()
 end
 
 function move_bases(player, value, id)
@@ -40,7 +40,7 @@ function move_bases(player, value, id)
     push_to_history_stack(move)
 
     -- Moving the bases shpuld imply update the gizmos
-    draw_gizmo_future_movements(player.getSelectedObjects())
+    draw_all_gizmos()
 end
 
 function align_bases(player, value, id)
@@ -79,7 +79,7 @@ function align_bases(player, value, id)
     end
 
     -- Moving the bases shpuld imply update the gizmos
-    draw_gizmo_future_movements(player.getSelectedObjects())
+    draw_all_gizmos()
 end
 
 function on_cancel_load_army(player, value, id)
@@ -436,12 +436,12 @@ function on_push_back(player, value, id)
     if len == 1 then
         local obj = table.remove(objs, 1)
         push_back(obj)
-        draw_gizmo_future_movements(player.getSelectedObjects())
+        draw_all_gizmos()
         return
     end
 
     push_back_column(objs)
-    draw_gizmo_future_movements(player.getSelectedObjects())
+    draw_all_gizmos()
 end
 
 g_player_wheeling = nil

@@ -12,7 +12,8 @@
         "broadcastToAll",
         "getAllObjects",
         "getObjectFromGUID",
-        "log"
+        "log",
+        "getSeatedPlayers"
     ],
     "Lua.diagnostics.disable": [
         "lowercase-global"
