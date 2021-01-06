@@ -515,7 +515,7 @@ function wheel_group(objs, angle, direction)
 
         g_current_wheel_group = calculate_group(objs, transforms)
         if g_current_wheel_group == nil then
-            print_warning('Trying to wheel but it\'s not a proper group')
+            print_error('Trying to wheel but it\'s not a proper group')
             return -1
         end
 

@@ -107,6 +107,7 @@ function roll_dice(color)
             g_rolled_dice[color] = false
         end, 10)
     end
+    return val
 end
 
 function delete_all_dice()
