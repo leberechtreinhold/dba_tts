@@ -515,7 +515,7 @@ function wheel_group(objs, angle, direction)
 
         g_current_wheel_group = calculate_group(objs, transforms)
         if g_current_wheel_group == nil then
-            print_error('Trying to wheel but it\'s not a proper group')
+            print_warning('Trying to wheel but it\'s not a proper group')
             return -1
         end
 
@@ -529,6 +529,7 @@ function wheel_group(objs, angle, direction)
         pivot_point = transform_pivot['corners']['topright']
     end
 
+    local front_elements = g_current_wheel_group['front_elements']
     local furthest_element = nil
     local furthest_element_distance = 0
     for obj, transform in pairs(g_current_wheel_transforms) do
@@ -539,7 +540,6 @@ function wheel_group(objs, angle, direction)
         end
     end
 
-    local front_elements = g_current_wheel_group['front_elements']
     local behind_of = g_current_wheel_group['behind_of']
     local depth = g_current_wheel_group['depth']
 
@@ -618,27 +618,14 @@ function perform_wheels()
 end
 
 function calculate_future_position_wheel(obj, transform, pivot_point, angle, is_left, depth)
-    local effective_angle = positive_angle(angle + math.pi / 2)
     local new_angle = positive_angle(transform['rotation'] + angle)
+    local effective_angle = angle
     if not is_left then
-        effective_angle = positive_angle(math.pi/2 - angle)
         new_angle = positive_angle(transform['rotation'] - angle)
+        effective_angle = -angle
     end
 
-    local vec = vec_sub(transform['position'], pivot_point)
-    local relative_pos = rotate_point_relative(vec, {x=0,y=0,z=0}, -transform['rotation'])
-    local border_pos = {x=relative_pos['x'], y=0, z=0}
-    if is_left then
-        border_pos = rotate_point_relative(border_pos, {x=0,y=0,z=0}, angle)
-    else
-        border_pos = rotate_point_relative(border_pos, {x=0,y=0,z=0}, -angle)
-    end
-
-    local displacement_vec = rad_to_vector_xz(effective_angle)
-    local displacement = vec_mul_escalar(displacement_vec, depth+relative_pos['z'])
-    local final_relative_pos = vec_add(border_pos, displacement)
-    local new_pos = vec_add(final_relative_pos, pivot_point)
-    new_pos = rotate_point(new_pos, pivot_point, transform['rotation'])
+    local new_pos = rotate_point(transform['position'], pivot_point, effective_angle)
     local size = get_size(obj.getName())
     local new_corners = compute_corners_coords(size, new_angle, new_pos)
 
