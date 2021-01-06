@@ -8,7 +8,7 @@
     <VerticalLayout>
         <Slider id="slider_paces" minValue="0" maxValue="500" wholeNumbers="true" value="200" colors="#00000000|#00000000|#00000000|#00000000" backgroundcolor="#FFFFFFF" onValueChanged="slider_paces_changed"></Slider>
         <Button id="button_move_forward" onClick="move_bases">Move 200 paces</Button>
-        <!--<Button id="button_wheel" onClick="on_wheel">Wheel Group</Button>-->
+        <Button id="button_wheel" onClick="on_wheel">Pivot Group</Button>
         <Button id="button_push_back" onClick="on_push_back">Push back Column</Button>
         <HorizontalLayout>
             <Button id="button_undo_move" onClick="on_undo_move">Undo</Button>
@@ -27,27 +27,27 @@
     <Text id="text_current_movement_paces" fontSize="24">Current movement: 0 paces</Text>
 </Panel>
 
-<Panel id="panel_dba_pip" width="500" height="100" color="#00000000" outline="#00000000" outlineSize="2" rectAlignment="LowerCenter" raycastTarget="true">
-    <Image image="pip_counter_bg_v4"></Image>
+<Panel id="panel_dba_pip" width="260" height="100" color="#00000000" outline="#00000000" outlineSize="2" rectAlignment="LowerCenter" raycastTarget="true">
+    <Image image="pip_counter_v5"></Image>
 </Panel>
 <Panel id="panel_dba_pip_btns" width="400" height="100" color="#00000000" outline="#00000000" rectAlignment="LowerCenter" raycastTarget="true">
     <HorizontalLayout>
-        <Text id="text_dead_blue" ignoreLayout="true" fontSize="56" position="-205 -10" color="#2e82ec">0</Text>
-        <Panel ignoreLayout="true" width="83" height="80" position="-155 -10">
-            <Image id="dead_blue" image="deadcounter1b"></Image>
+        <Panel ignoreLayout="true" width="120" height="100" position="-187 0">
+            <Image id="dead_blue" image="skeleton0b"></Image>
         </Panel>
-        <Button id="button_roll_blue" ignoreLayout="true" position="-100 -30" width="40" height="30" onClick="on_roll_pips_blue">Roll</Button>
-        <Text id="text_pips_player_blue" ignoreLayout="true" fontSize="48" position="-98 5" color="#2e82ec">0</Text>
-        <Text id="text_pips_player_green" ignoreLayout="true" fontSize="24" position="-60 5" color="#21C51B">0</Text>
-        <Text id="text_pips_player_purple" ignoreLayout="true" fontSize="24" position="-60 -25" color="#641EB3">0</Text>
-        <Text id="text_pips_player_orange" ignoreLayout="true" fontSize="24" position="60 5" color="#E9900C">0</Text>
-        <Text id="text_pips_player_yellow" ignoreLayout="true" fontSize="24" position="60 -25" color="#DDFF00">0</Text>
-        <Text id="text_pips_player_red" ignoreLayout="true" fontSize="48" position="98 5" color="#A0081F">0</Text>
-        <Button id="button_roll_red" ignoreLayout="true" position="100 -30" width="40" height="30" onClick="on_roll_pips_red">Roll</Button>
-        <Panel ignoreLayout="true" width="83" height="80" position="155 -10">
-            <Image id="dead_red" image="deadcounter1r"></Image>
+        <Text id="text_dead_blue" showAnimation="Grow" ignoreLayout="true" fontSize="56" position="-191 -7" color="#2e82ec">0</Text>
+        <Button id="button_roll_blue" ignoreLayout="true" position="-85 -30" width="40" height="30" onClick="on_roll_pips_blue">Roll</Button>
+        <Text id="text_pips_player_blue" showAnimation="Grow" ignoreLayout="true" fontSize="48" position="-88 5" color="#2e82ec">1</Text>
+        <Text id="text_pips_player_green" showAnimation="Grow" ignoreLayout="true" fontSize="24" position="-55 5" color="#21C51B">1</Text>
+        <Text id="text_pips_player_purple" showAnimation="Grow" ignoreLayout="true" fontSize="24" position="-55 -25" color="#641EB3">1</Text>
+        <Text id="text_pips_player_orange" showAnimation="Grow" ignoreLayout="true" fontSize="24" position="55 5" color="#E9900C">1</Text>
+        <Text id="text_pips_player_yellow" showAnimation="Grow" ignoreLayout="true" fontSize="24" position="55 -25" color="#DDFF00">1</Text>
+        <Text id="text_pips_player_red" showAnimation="Grow" ignoreLayout="true" fontSize="48" position="88 5" color="#A0081F">1</Text>
+        <Button id="button_roll_red" ignoreLayout="true" position="85 -30" width="40" height="30" onClick="on_roll_pips_red">Roll</Button>
+        <Panel ignoreLayout="true" width="120" height="100" position="187 0">
+            <Image id="dead_red" image="skeleton0r"></Image>
         </Panel>
-        <Text id="text_dead_red" ignoreLayout="true" fontSize="56" position="205 -10" color="#A0081F">0</Text>
+        <Text id="text_dead_red" showAnimation="Grow" ignoreLayout="true" fontSize="56" position="191 -7" color="#A0081F">0</Text>
     </HorizontalLayout>
 </Panel>
 

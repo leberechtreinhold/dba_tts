@@ -37,6 +37,8 @@ function spawn_dead_zones_after_deletion()
                 { x = 10, y = 1, z = 10 })
 end
 
+local g_updating_zone = {}
+
 function update_zone_value(zone)
     local name = zone.getName()
     local is_red = false
@@ -55,29 +57,51 @@ function update_zone_value(zone)
         end
     end
 
+
+    local text_id = 'text_dead_'
+    local image_id = 'dead_'
+    local image_suffix = ''
     if is_red then
-        UI.setValue('text_dead_red', dead)
-        if dead < 3 then
-            UI.setAttribute('dead_red', 'image', 'deadcounter1r')
-        elseif dead >= 3 and dead < 5 then
-            UI.setAttribute('dead_red', 'image', 'deadcounter2r')
-        else
-            UI.setAttribute('dead_red', 'image', 'deadcounter3r')
-        end
+        text_id = text_id .. 'red'
+        image_id = image_id .. 'red'
+        image_suffix = 'r'
+
+
     else
-        UI.setValue('text_dead_blue', dead)
-        if dead < 3 then
-            UI.setAttribute('dead_blue', 'image', 'deadcounter1b')
-        elseif dead >= 3 and dead < 5 then
-            UI.setAttribute('dead_blue', 'image', 'deadcounter2b')
-        else
-            UI.setAttribute('dead_blue', 'image', 'deadcounter3b')
-        end
+        text_id = text_id .. 'blue'
+        image_id = image_id .. 'blue'
+        image_suffix = 'b'
     end
+    UI.setValue(text_id, dead)
+    UI.hide(text_id)
+    Wait.frames(function ()
+        UI.show(text_id)
+    end, 1)
+    if dead == 0 then
+        UI.setAttribute(image_id, 'image', 'skeleton0' .. image_suffix)
+    elseif dead == 1 or dead == 2 then
+        UI.setAttribute(image_id, 'image', 'skeleton1' .. image_suffix)
+    elseif dead == 3 then
+        UI.setAttribute(image_id, 'image', 'skeleton2' .. image_suffix)
+    elseif dead == 4 then
+        UI.setAttribute(image_id, 'image', 'skeleton3' .. image_suffix)
+    else
+        UI.setAttribute(image_id, 'image', 'skeleton4' .. image_suffix)
+    end
+    print_debug('Updated dead zone ' .. zone.getName())
+    g_updating_zone[zone.getName()] = false
 end
 
 function callback_zone(zone, name, color)
-    update_zone_value(zone)
+    print_debug('Dead zone callback ' .. zone.getName())
+    if not g_updating_zone[zone.getName()] then
+        g_updating_zone[zone.getName()] = true
+        Wait.frames(function ()
+            update_zone_value(zone)
+        end, 30)
+    else
+        print_debug('Ignoring dead callback because already updating')
+    end
 end
 
 function onObjectEnterScriptingZone(zone, obj)
@@ -85,14 +109,23 @@ function onObjectEnterScriptingZone(zone, obj)
         return 
     end
     print_debug(obj.getName() .. ' entered ' .. zone.getName())
-    Wait.frames(function() update_zone_value(zone) end, 60)
+    if not g_updating_zone[zone.getName()] then
+        g_updating_zone[zone.getName()] = true
+        Wait.frames(function() update_zone_value(zone) end, 60)
+    else
+        print_debug('Ignoring dead Enter because already updating')
+    end
 end
 
 function onObjectLeaveScriptingZone(zone, obj)
-    print_debug(obj.getName() .. ' entered ' .. zone.getName())
     if not str_has_substr(obj.getName(), 'base') then
         return 
     end
-    print_debug(obj.getName() .. ' entered ' .. zone.getName())
-    Wait.frames(function() update_zone_value(zone) end, 60)
+    print_debug(obj.getName() .. ' left ' .. zone.getName())
+    if not g_updating_zone[zone.getName()] then
+        g_updating_zone[zone.getName()] = true
+        Wait.frames(function() update_zone_value(zone) end, 60)
+    else
+        print_debug('Ignoring dead Leave because already updating')
+    end
 end

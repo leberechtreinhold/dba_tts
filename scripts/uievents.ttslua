@@ -587,20 +587,40 @@ function update_pip(dice_obj_guid, id_text)
     return val
 end
 
-function on_roll_pips_red(player, value, id)
-    local red = roll_dice('red')
-    local orange = roll_dice('orange')
-    local yellow = roll_dice('yellow')
+-- This exists to avoid players clicking super fast and confusing rivals
+g_roll_lock = {}
 
-    print_important('Red: ' .. red .. ' (Or: ' .. orange .. ' Yw: ' .. yellow .. ')')
+
+function on_roll_pips_red(player, value, id)
+    if g_roll_lock['red'] then
+        print_debug('Ignoring roll because this dice was rolled less than a second ago')
+    else
+        g_roll_lock['red'] = true
+        local red = roll_dice('red')
+        local orange = roll_dice('orange')
+        local yellow = roll_dice('yellow')
+
+        print_important('Red: ' .. red .. ' (Or: ' .. orange .. ' Yw: ' .. yellow .. ')')
+        Wait.time(function ()
+            g_roll_lock['red'] = false
+        end, 0.5)
+    end
 end
 
 function on_roll_pips_blue(player, value, id)
-    local blue = roll_dice('blue')
-    local green = roll_dice('green')
-    local purple = roll_dice('purple')
+    if g_roll_lock['blue'] then
+        print_debug('Ignoring roll because this dice was rolled less than a second ago')
+    else
+        g_roll_lock['blue'] = true
+        local blue = roll_dice('blue')
+        local green = roll_dice('green')
+        local purple = roll_dice('purple')
 
-    print_important('Blue: ' .. blue .. ' (Gr: ' .. green .. ' Pr: ' .. purple .. ')')
+        print_important('Blue: ' .. blue .. ' (Gr: ' .. green .. ' Pr: ' .. purple .. ')')
+        Wait.time(function ()
+            g_roll_lock['blue'] = false
+        end, 0.5)
+    end
 end
 
 function on_undo_move(player, value, id)

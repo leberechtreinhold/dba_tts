@@ -49,12 +49,20 @@ function spawn_dice(color, pos)
     obj.mass = 1.5
     obj.setName('PIP dice ' .. color)
     local code = [[
+        g_is_rolling = false
+
         function onRandomize()
-            startLuaCoroutine(self, 'check_if_at_rest')
+            if not g_is_rolling then
+                g_is_rolling = true
+                startLuaCoroutine(self, 'check_if_at_rest')
+            end
         end
         
-        function onObjectDrop()
-            startLuaCoroutine(self, 'check_if_at_rest')
+        function onDrop()
+            if not g_is_rolling then
+                g_is_rolling = true
+                startLuaCoroutine(self, 'check_if_at_rest')
+            end
         end
         
         function check_if_at_rest()
@@ -66,13 +74,19 @@ function spawn_dice(color, pos)
         end
 
         function on_dice_stopped(dice_obj)
+            g_is_rolling = false
             UI.setValue("text_pips_player_|color|", dice_obj.getRotationValue())
+            UI.hide("text_pips_player_|color|")
+            Wait.frames(function()
+                UI.show("text_pips_player_|color|")
+            end, 1)
         end
     ]]
     code = code:gsub('|color|', color)
     obj.setLuaScript(code)
 end
 
+g_rolled_dice = {}
 function roll_dice(color)
     local obj = getObjectFromGUID(g_current_dice[color])
 
@@ -82,9 +96,17 @@ function roll_dice(color)
     end
 
     local val = math.random(1,6)
-    UI.setValue('text_pips_player_' .. color, val)
+    local dice_id = 'text_pips_player_' .. color
+    UI.setValue(dice_id, val)
     obj.setValue(val)
-    return val
+    if not g_rolled_dice[color] then
+        g_rolled_dice[color] = true
+        UI.hide(dice_id)
+        Wait.frames(function()
+            UI.show(dice_id)
+            g_rolled_dice[color] = false
+        end, 10)
+    end
 end
 
 function delete_all_dice()
