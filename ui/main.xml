@@ -252,7 +252,7 @@
                 <Text fontSize="16">Degrees:</Text>
             </Cell>
             <Cell columnSpan="4" dontUseTableCellBackground="true">
-                <Slider id="slider_wheel_rotation" minValue="0" maxValue="45" wholeNumbers="false" value="0" colors="#00000000|#00000000|#00000000|#00000000" backgroundcolor="#FFFFFFF" onValueChanged="on_rotation_wheel"></Slider>
+                <Slider id="slider_wheel_rotation" minValue="0" maxValue="90" wholeNumbers="false" value="0" colors="#00000000|#00000000|#00000000|#00000000" backgroundcolor="#FFFFFFF" onValueChanged="on_rotation_wheel"></Slider>
             </Cell>
         </Row>
         <Row>
