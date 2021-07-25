@@ -1,0 +1,956 @@
+
+
+------------------------------------------------------------------------------
+--                            SUCCESSORS PHOTOGAMMETRY
+------------------------------------------------------------------------------
+
+troop_successors_bactrian_sp = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 0,
+    description = 'Bactrian Spearmen',
+    author = 'Bactrian Spearmen by Eric Delemer, edited by LeberechtReinhold.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1191713327271756529/8BF5074227E5B3F775CB965F7B73E58883B408AE/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1191713327271756244/09FEB5103B0F710C87F10D40FBC29A426368E1A6/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1191713327271756244/09FEB5103B0F710C87F10D40FBC29A426368E1A6/'
+}
+
+troop_successors_art = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 0,
+    description = 'Oxybele',
+    author = 'Oxybele by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1056604249630022176/CD5B01436C7B0FDDE7E450746BB070350E14EAD8/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1056604249630024584/321D78135E84B5A4EFB47B3F879E8CEEB1A5FE66/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1056604249630024584/321D78135E84B5A4EFB47B3F879E8CEEB1A5FE66/'
+}
+
+troop_successors_ax = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Auxilia',
+    author = 'Auxilia by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150848037/972F27B25766B6E45EA6C2B8A1C97B1707BE5FA5/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150848531/694DABB12D77A77B6C883108EA7A0879E3B85F4A/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150848701/A06D7AA576444E494861D3B7A71E7F431504A4E5/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150848932/7AA17078691C0EF29542E850258DDBC8C74B4DE5/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667985477150848200/49B864A389008ABD885C31CE53D7C7301A035E70/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667985477150848200/49B864A389008ABD885C31CE53D7C7301A035E70/'
+}
+
+troop_successors_ax_red = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Auxilia',
+    author = 'Auxilia by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150848037/972F27B25766B6E45EA6C2B8A1C97B1707BE5FA5/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150848531/694DABB12D77A77B6C883108EA7A0879E3B85F4A/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150848701/A06D7AA576444E494861D3B7A71E7F431504A4E5/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150848932/7AA17078691C0EF29542E850258DDBC8C74B4DE5/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168964391/B58CD3EBBC169CDDB09A7D2823F71D2E7F6D19BE/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168964391/B58CD3EBBC169CDDB09A7D2823F71D2E7F6D19BE/'
+}
+
+troop_successors_ax_black = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Auxilia',
+    author = 'Auxilia by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150848037/972F27B25766B6E45EA6C2B8A1C97B1707BE5FA5/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150848531/694DABB12D77A77B6C883108EA7A0879E3B85F4A/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150848701/A06D7AA576444E494861D3B7A71E7F431504A4E5/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150848932/7AA17078691C0EF29542E850258DDBC8C74B4DE5/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169019351/09165FBD9444D794E03926FD2038F35F692BA576/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169019351/09165FBD9444D794E03926FD2038F35F692BA576/'
+}
+
+troop_successors_ax_blue = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Auxilia',
+    author = 'Auxilia by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150848037/972F27B25766B6E45EA6C2B8A1C97B1707BE5FA5/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150848531/694DABB12D77A77B6C883108EA7A0879E3B85F4A/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150848701/A06D7AA576444E494861D3B7A71E7F431504A4E5/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150848932/7AA17078691C0EF29542E850258DDBC8C74B4DE5/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169020712/E0FCE7F7B585BB11C707D6F89B99DC09A541CFB6/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169020712/E0FCE7F7B585BB11C707D6F89B99DC09A541CFB6/'
+}
+
+troop_successors_ax_green = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Auxilia',
+    author = 'Auxilia by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150848037/972F27B25766B6E45EA6C2B8A1C97B1707BE5FA5/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150848531/694DABB12D77A77B6C883108EA7A0879E3B85F4A/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150848701/A06D7AA576444E494861D3B7A71E7F431504A4E5/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150848932/7AA17078691C0EF29542E850258DDBC8C74B4DE5/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169022175/BEE6CF9C1EBAAAFEC5E8CC92A713814D53DED034/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169022175/BEE6CF9C1EBAAAFEC5E8CC92A713814D53DED034/'
+}
+
+troop_successors_cav = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Cavalry',
+    author = 'Cavalry by Vokuhila, modelled by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150850011/93266FFBECC8ACCA79D4D6C7B308426FDB3228A2/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150850202/58FA4680DBB3888BB7FE1A1D42109B09731ED92A/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150850398/27D0782CE6394BDCACF694C72EEF91FEA7979BCD/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667985477150849070/E32576C8A80005FC4BC7D57BB13C41965F25760B/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667985477150849070/E32576C8A80005FC4BC7D57BB13C41965F25760B/'
+}
+
+troop_successors_cav_red = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Cavalry',
+    author = 'Cavalry by Vokuhila, modelled by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150850011/93266FFBECC8ACCA79D4D6C7B308426FDB3228A2/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150850202/58FA4680DBB3888BB7FE1A1D42109B09731ED92A/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150850398/27D0782CE6394BDCACF694C72EEF91FEA7979BCD/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168964576/DF57EE8C08756CA499757384B537C7CB74BC3294/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168964576/DF57EE8C08756CA499757384B537C7CB74BC3294/'
+}
+
+troop_successors_cav_yellow = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Cavalry',
+    author = 'Cavalry by Vokuhila, modelled by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150850011/93266FFBECC8ACCA79D4D6C7B308426FDB3228A2/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150850202/58FA4680DBB3888BB7FE1A1D42109B09731ED92A/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150850398/27D0782CE6394BDCACF694C72EEF91FEA7979BCD/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168966209/52F55A6BDBA535976F0C0F4BEE3C2420D18E62F6/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168966209/52F55A6BDBA535976F0C0F4BEE3C2420D18E62F6/'
+}
+
+troop_successors_cav_black = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Cavalry',
+    author = 'Cavalry by Vokuhila, modelled by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150850011/93266FFBECC8ACCA79D4D6C7B308426FDB3228A2/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150850202/58FA4680DBB3888BB7FE1A1D42109B09731ED92A/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150850398/27D0782CE6394BDCACF694C72EEF91FEA7979BCD/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169019487/593576447E8E7AC799938478B21122073755D406/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169019487/593576447E8E7AC799938478B21122073755D406/'
+}
+
+troop_successors_cav_blue = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Cavalry',
+    author = 'Cavalry by Vokuhila, modelled by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150850011/93266FFBECC8ACCA79D4D6C7B308426FDB3228A2/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150850202/58FA4680DBB3888BB7FE1A1D42109B09731ED92A/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150850398/27D0782CE6394BDCACF694C72EEF91FEA7979BCD/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169020943/4828815291C4B6C6E78CA54A30B0D356681A61C3/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169020943/4828815291C4B6C6E78CA54A30B0D356681A61C3/'
+}
+
+troop_successors_cav_green = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Cavalry',
+    author = 'Cavalry by Vokuhila, modelled by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150850011/93266FFBECC8ACCA79D4D6C7B308426FDB3228A2/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150850202/58FA4680DBB3888BB7FE1A1D42109B09731ED92A/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150850398/27D0782CE6394BDCACF694C72EEF91FEA7979BCD/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169022305/2546FF108B4C81AB07ADEF6E7E248F795655B75B/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169022305/2546FF108B4C81AB07ADEF6E7E248F795655B75B/'
+}
+
+troop_successors_el = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Elephant',
+    author = 'Elephant by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150850615/F4564A01B2E092A0B3AF77B3A95086E58738E42D/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667985477150850916/C94AF59E40E6D317B61564EBB30EF88E929E9751/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667985477150850916/C94AF59E40E6D317B61564EBB30EF88E929E9751/'
+}
+
+troop_successors_el_red = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Elephant',
+    author = 'Elephant by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150850615/F4564A01B2E092A0B3AF77B3A95086E58738E42D/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168964993/D31D2921DB606653886460F6E83CBDC0A2030548/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168964993/D31D2921DB606653886460F6E83CBDC0A2030548/'
+}
+
+troop_successors_el_yellow = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Elephant',
+    author = 'Elephant by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150850615/F4564A01B2E092A0B3AF77B3A95086E58738E42D/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168966623/38487877D8755D82BD5A69F50CBFCB7010636324/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168966623/38487877D8755D82BD5A69F50CBFCB7010636324/'
+}
+
+troop_successors_el_black = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Elephant',
+    author = 'Elephant by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150850615/F4564A01B2E092A0B3AF77B3A95086E58738E42D/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169019727/BEA8B5705D893BD68F51FBF7DBDC9A1000A93632/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169019727/BEA8B5705D893BD68F51FBF7DBDC9A1000A93632/'
+}
+
+troop_successors_el_blue = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Elephant',
+    author = 'Elephant by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150850615/F4564A01B2E092A0B3AF77B3A95086E58738E42D/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169021249/FDDD7B2191DF8F50722140585613988FBBDA4AB4/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169021249/FDDD7B2191DF8F50722140585613988FBBDA4AB4/'
+}
+
+troop_successors_el_green = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Elephant',
+    author = 'Elephant by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150850615/F4564A01B2E092A0B3AF77B3A95086E58738E42D/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169022574/D8B7AC755E95CEAE1D18CDA48415FA1598C5A502/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169022574/D8B7AC755E95CEAE1D18CDA48415FA1598C5A502/'
+}
+
+troop_successors_lh = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Light Cavalry',
+    author = 'Light Cavalry by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150851295/58152EA7D21BA1ABA9C53D2C84113515FC82F688/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150851599/98076B4F2949C86D077318A1E2C5CE28FCF2623F/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667985477150851141/9F4E64A21A4DC38F74B4A60ACCC263B25A158F96/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667985477150851141/9F4E64A21A4DC38F74B4A60ACCC263B25A158F96/'
+}
+
+troop_successors_lh_yellow = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Light Cavalry',
+    author = 'Light Cavalry by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150851295/58152EA7D21BA1ABA9C53D2C84113515FC82F688/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150851599/98076B4F2949C86D077318A1E2C5CE28FCF2623F/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169352349/8C44BB3F7A41AE7BD2D66FA3361FA73A65366F21/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169352349/8C44BB3F7A41AE7BD2D66FA3361FA73A65366F21/'
+}
+
+troop_successors_lh_blue = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Light Cavalry',
+    author = 'Light Cavalry by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150851295/58152EA7D21BA1ABA9C53D2C84113515FC82F688/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150851599/98076B4F2949C86D077318A1E2C5CE28FCF2623F/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169352495/E5D1222AF2A10C1BC219B68098A80D0EABE95B03/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169352495/E5D1222AF2A10C1BC219B68098A80D0EABE95B03/'
+}
+
+troop_successors_lh_red = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Light Cavalry',
+    author = 'Light Cavalry by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150851295/58152EA7D21BA1ABA9C53D2C84113515FC82F688/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150851599/98076B4F2949C86D077318A1E2C5CE28FCF2623F/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169352830/211AC37055E56B3B4A575A767895AD95589FD824/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169352830/211AC37055E56B3B4A575A767895AD95589FD824/'
+}
+
+troop_successors_lh_black = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Light Cavalry',
+    author = 'Light Cavalry by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150851295/58152EA7D21BA1ABA9C53D2C84113515FC82F688/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150851599/98076B4F2949C86D077318A1E2C5CE28FCF2623F/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169352969/9994005687AA78BA3A196ADB8FA519DC1BC56A82/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169352969/9994005687AA78BA3A196ADB8FA519DC1BC56A82/'
+}
+
+troop_successors_lh_green = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Light Cavalry',
+    author = 'Light Cavalry by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150851295/58152EA7D21BA1ABA9C53D2C84113515FC82F688/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150851599/98076B4F2949C86D077318A1E2C5CE28FCF2623F/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169353179/FE848ED3149036065831E8A8A3C3B78D978F4422/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169353179/FE848ED3149036065831E8A8A3C3B78D978F4422/'
+}
+
+troop_successors_pike1 = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Pike',
+    author = 'Pike by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150851744/51A5EF4EBCE79E9F63DB20608BF5D63163F4C449/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150851951/477C6E1A38B5A0DDF33EA7CDBB980382C8F6D244/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150852099/2B41D83BC2404C3659B2EA0923E3AF184A3DB821/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150852303/4B101AA0BCD7F444F3145814D08F4FFEDB1FF183/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667985477150852453/D4B9431F4B2529BEB67A385883B6F2BD5ABFE832/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667985477150852453/D4B9431F4B2529BEB67A385883B6F2BD5ABFE832/'
+}
+
+troop_successors_pike1_red = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Pike',
+    author = 'Pike by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150851744/51A5EF4EBCE79E9F63DB20608BF5D63163F4C449/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150851951/477C6E1A38B5A0DDF33EA7CDBB980382C8F6D244/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150852099/2B41D83BC2404C3659B2EA0923E3AF184A3DB821/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150852303/4B101AA0BCD7F444F3145814D08F4FFEDB1FF183/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168965156/51DD76E630289859B6FFEADC6049459F6C19CC0E/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168965156/51DD76E630289859B6FFEADC6049459F6C19CC0E/'
+}
+
+troop_successors_pike1_yellow = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Pike',
+    author = 'Pike by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150851744/51A5EF4EBCE79E9F63DB20608BF5D63163F4C449/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150851951/477C6E1A38B5A0DDF33EA7CDBB980382C8F6D244/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150852099/2B41D83BC2404C3659B2EA0923E3AF184A3DB821/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150852303/4B101AA0BCD7F444F3145814D08F4FFEDB1FF183/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168966872/34BB5563D6DE0A5FA21F840DC99133924BD25EE5/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168966872/34BB5563D6DE0A5FA21F840DC99133924BD25EE5/'
+}
+
+troop_successors_pike1_black = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Pike',
+    author = 'Pike by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150851744/51A5EF4EBCE79E9F63DB20608BF5D63163F4C449/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150851951/477C6E1A38B5A0DDF33EA7CDBB980382C8F6D244/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150852099/2B41D83BC2404C3659B2EA0923E3AF184A3DB821/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150852303/4B101AA0BCD7F444F3145814D08F4FFEDB1FF183/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169019859/79F4F4D16BA58157964418C8B8736C261F6B002A/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169019859/79F4F4D16BA58157964418C8B8736C261F6B002A/'
+}
+
+troop_successors_pike1_blue = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Pike',
+    author = 'Pike by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150851744/51A5EF4EBCE79E9F63DB20608BF5D63163F4C449/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150851951/477C6E1A38B5A0DDF33EA7CDBB980382C8F6D244/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150852099/2B41D83BC2404C3659B2EA0923E3AF184A3DB821/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150852303/4B101AA0BCD7F444F3145814D08F4FFEDB1FF183/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169021398/2138FA13EA55755FB5B1A12355C26FD093851A01/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169021398/2138FA13EA55755FB5B1A12355C26FD093851A01/'
+}
+
+troop_successors_pike1_green = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Pike',
+    author = 'Pike by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150851744/51A5EF4EBCE79E9F63DB20608BF5D63163F4C449/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150851951/477C6E1A38B5A0DDF33EA7CDBB980382C8F6D244/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150852099/2B41D83BC2404C3659B2EA0923E3AF184A3DB821/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150852303/4B101AA0BCD7F444F3145814D08F4FFEDB1FF183/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169022862/CB9EC0174DEB6ED4A5096AF8E91DDED1A9AD5779/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169022862/CB9EC0174DEB6ED4A5096AF8E91DDED1A9AD5779/'
+}
+
+troop_successors_pike2 = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Pike',
+    author = 'Pike by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150852679/7AE2CD8E53C31E0EC402762698A3C59783AA3457/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150852847/3EA9E7ABD7B3B0EDEB59B6CF23C403512F54629D/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150853047/CC369BB71CB947148F6E541C6B3CFC12C9BCBA7D/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150853223/2DB1B32DC83577AF2FC4A46DBF8487236BBB77B5/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667985477150853397/5DE3D859A5418033A036AB24C098906FD0576861/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667985477150853397/5DE3D859A5418033A036AB24C098906FD0576861/'
+}
+
+troop_successors_pike2_yellow = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Pike',
+    author = 'Pike by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150852679/7AE2CD8E53C31E0EC402762698A3C59783AA3457/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150852847/3EA9E7ABD7B3B0EDEB59B6CF23C403512F54629D/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150853047/CC369BB71CB947148F6E541C6B3CFC12C9BCBA7D/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150853223/2DB1B32DC83577AF2FC4A46DBF8487236BBB77B5/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168967016/C08E3BD56B627EE717629DE1FC2859909624F090/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168967016/C08E3BD56B627EE717629DE1FC2859909624F090/'
+}
+
+troop_successors_pike2_black = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Pike',
+    author = 'Pike by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150852679/7AE2CD8E53C31E0EC402762698A3C59783AA3457/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150852847/3EA9E7ABD7B3B0EDEB59B6CF23C403512F54629D/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150853047/CC369BB71CB947148F6E541C6B3CFC12C9BCBA7D/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150853223/2DB1B32DC83577AF2FC4A46DBF8487236BBB77B5/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169020134/CEA1D7112E231A863D303FFE29DE6B992200575E/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169020134/CEA1D7112E231A863D303FFE29DE6B992200575E/'
+}
+
+troop_successors_pike2_blue = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Pike',
+    author = 'Pike by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150852679/7AE2CD8E53C31E0EC402762698A3C59783AA3457/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150852847/3EA9E7ABD7B3B0EDEB59B6CF23C403512F54629D/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150853047/CC369BB71CB947148F6E541C6B3CFC12C9BCBA7D/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150853223/2DB1B32DC83577AF2FC4A46DBF8487236BBB77B5/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169021546/1E56BAD8F6F86393A2EB52D665FA17292C7D64F8/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169021546/1E56BAD8F6F86393A2EB52D665FA17292C7D64F8/'
+}
+
+troop_successors_pike2_green = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Pike',
+    author = 'Pike by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150852679/7AE2CD8E53C31E0EC402762698A3C59783AA3457/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150852847/3EA9E7ABD7B3B0EDEB59B6CF23C403512F54629D/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150853047/CC369BB71CB947148F6E541C6B3CFC12C9BCBA7D/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150853223/2DB1B32DC83577AF2FC4A46DBF8487236BBB77B5/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169023130/F0D44DC80050360424D7C695A2BF7005EB8713D7/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169023130/F0D44DC80050360424D7C695A2BF7005EB8713D7/'
+}
+
+troop_successors_psiloi = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Psiloi',
+    author = 'Psiloi by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150853593/741EB974BEE4FE345CBCE5719D2B51B0961424F9/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150853943/735DC6BBD791781A7FD0DE868337650502F156D2/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667985477150853765/88B00A9E9D0FA926265C82DAEEEF658DBB14E022/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667985477150853765/88B00A9E9D0FA926265C82DAEEEF658DBB14E022/'
+}
+
+troop_successors_psiloi_red = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Psiloi',
+    author = 'Psiloi by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150853593/741EB974BEE4FE345CBCE5719D2B51B0961424F9/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150853943/735DC6BBD791781A7FD0DE868337650502F156D2/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168965313/91B074BB21235F29A7B4CDA1485B6805AFD99D45/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168965313/91B074BB21235F29A7B4CDA1485B6805AFD99D45/'
+}
+
+troop_successors_psiloi_black = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Psiloi',
+    author = 'Psiloi by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150853593/741EB974BEE4FE345CBCE5719D2B51B0961424F9/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150853943/735DC6BBD791781A7FD0DE868337650502F156D2/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169020271/0181380F16B5B933B7D6B75F9260EA7E2A63593A/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169020271/0181380F16B5B933B7D6B75F9260EA7E2A63593A/'
+}
+
+troop_successors_psiloi_blue = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Psiloi',
+    author = 'Psiloi by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150853593/741EB974BEE4FE345CBCE5719D2B51B0961424F9/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150853943/735DC6BBD791781A7FD0DE868337650502F156D2/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169021758/130E9CD4D2EFAC7BF12E6EDD40FA04398131D100/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169021758/130E9CD4D2EFAC7BF12E6EDD40FA04398131D100/'
+}
+
+troop_successors_psiloi_green = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Psiloi',
+    author = 'Psiloi by Vokuhila, modelled byEric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150853593/741EB974BEE4FE345CBCE5719D2B51B0961424F9/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150853943/735DC6BBD791781A7FD0DE868337650502F156D2/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169023258/2F663F0B01DF8AB53C421D4EED24DC0B6859AFCB/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169023258/2F663F0B01DF8AB53C421D4EED24DC0B6859AFCB/'
+}
+
+troop_successors_spear1 = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Spear',
+    author = 'Spear by Vokuhila, modelled by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150854131/A846CF00653474206A4840FFB5DCA7B1EEEE6B60/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150854328/44F1942DDDF1550F7E258D398196AD6A13223C49/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150854530/AF3714C7792C24670CC2683C177678FE59E91844/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150854686/9939FA0B4A56D0EA6196D5A9613E6D68B3332C01/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667985477150854827/BFD5EE48F1A031028E701C9C972A26E3D2550A2B/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667985477150854827/BFD5EE48F1A031028E701C9C972A26E3D2550A2B/'
+}
+
+troop_successors_spear1_red = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Spear',
+    author = 'Spear by Vokuhila, modelled by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150854131/A846CF00653474206A4840FFB5DCA7B1EEEE6B60/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150854328/44F1942DDDF1550F7E258D398196AD6A13223C49/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150854530/AF3714C7792C24670CC2683C177678FE59E91844/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150854686/9939FA0B4A56D0EA6196D5A9613E6D68B3332C01/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168965727/07F3F245CCBA515913A86F15E5DFCC8FD323BCA4/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168965727/07F3F245CCBA515913A86F15E5DFCC8FD323BCA4/'
+}
+
+troop_successors_spear1_black = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Spear',
+    author = 'Spear by Vokuhila, modelled by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150854131/A846CF00653474206A4840FFB5DCA7B1EEEE6B60/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150854328/44F1942DDDF1550F7E258D398196AD6A13223C49/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150854530/AF3714C7792C24670CC2683C177678FE59E91844/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150854686/9939FA0B4A56D0EA6196D5A9613E6D68B3332C01/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169020394/4AB4675F26CD9CCE6EBE9079B7409DC1FEE94997/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169020394/4AB4675F26CD9CCE6EBE9079B7409DC1FEE94997/'
+}
+
+troop_successors_spear1_blue = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Spear',
+    author = 'Spear by Vokuhila, modelled by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150854131/A846CF00653474206A4840FFB5DCA7B1EEEE6B60/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150854328/44F1942DDDF1550F7E258D398196AD6A13223C49/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150854530/AF3714C7792C24670CC2683C177678FE59E91844/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150854686/9939FA0B4A56D0EA6196D5A9613E6D68B3332C01/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169021887/26B096D1C7A8EFFF08FD040E71439EB95547AA9B/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169021887/26B096D1C7A8EFFF08FD040E71439EB95547AA9B/'
+}
+
+troop_successors_spear1_green = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Spear',
+    author = 'Spear by Vokuhila, modelled by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150854131/A846CF00653474206A4840FFB5DCA7B1EEEE6B60/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150854328/44F1942DDDF1550F7E258D398196AD6A13223C49/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150854530/AF3714C7792C24670CC2683C177678FE59E91844/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150854686/9939FA0B4A56D0EA6196D5A9613E6D68B3332C01/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169023417/7DA3B95521096E43EC2438AB8C66EAA7BF9C8093/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169023417/7DA3B95521096E43EC2438AB8C66EAA7BF9C8093/'
+}
+
+troop_successors_spear2 = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Spear',
+    author = 'Spear by Vokuhila, modelled by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150855036/B495F8473E7BE227C58993F27C85CA1D2FF28D1F/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150855195/A844F1B0CF7200EDE953E91CF85FC4B42871A9CA/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150855341/A3A9263D7CE81594A8E4BD2252E200B57B58054D/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150855510/685999487355777A7CA67F8289F4C90859999FD8/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667985477150855639/605FD1BC9B95A0547659921ED082602ABAB0C1D2/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667985477150855639/605FD1BC9B95A0547659921ED082602ABAB0C1D2/'
+}
+
+troop_successors_spear2_red = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Spear',
+    author = 'Spear by Vokuhila, modelled by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150855036/B495F8473E7BE227C58993F27C85CA1D2FF28D1F/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150855195/A844F1B0CF7200EDE953E91CF85FC4B42871A9CA/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150855341/A3A9263D7CE81594A8E4BD2252E200B57B58054D/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150855510/685999487355777A7CA67F8289F4C90859999FD8/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168965923/D9623FE31BA1A5EE327BFC7B17ADA3FF0A74558D/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168965923/D9623FE31BA1A5EE327BFC7B17ADA3FF0A74558D/'
+}
+
+troop_successors_spear2_black = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Spear',
+    author = 'Spear by Vokuhila, modelled by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150855036/B495F8473E7BE227C58993F27C85CA1D2FF28D1F/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150855195/A844F1B0CF7200EDE953E91CF85FC4B42871A9CA/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150855341/A3A9263D7CE81594A8E4BD2252E200B57B58054D/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150855510/685999487355777A7CA67F8289F4C90859999FD8/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169020549/87E91DC77E3D26DFD54F0862DA4DE3C4562E90A6/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169020549/87E91DC77E3D26DFD54F0862DA4DE3C4562E90A6/'
+}
+
+troop_successors_spear2_yellow = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Spear',
+    author = 'Spear by Vokuhila, modelled by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150855036/B495F8473E7BE227C58993F27C85CA1D2FF28D1F/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150855195/A844F1B0CF7200EDE953E91CF85FC4B42871A9CA/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150855341/A3A9263D7CE81594A8E4BD2252E200B57B58054D/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150855510/685999487355777A7CA67F8289F4C90859999FD8/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168967183/68AE2EC056CA0A54068A42A8B59954577739AEBB/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168967183/68AE2EC056CA0A54068A42A8B59954577739AEBB/'
+}
+
+troop_successors_spear2_blue = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Spear',
+    author = 'Spear by Vokuhila, modelled by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150855036/B495F8473E7BE227C58993F27C85CA1D2FF28D1F/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150855195/A844F1B0CF7200EDE953E91CF85FC4B42871A9CA/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150855341/A3A9263D7CE81594A8E4BD2252E200B57B58054D/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150855510/685999487355777A7CA67F8289F4C90859999FD8/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169022039/6F892E6EE778D0351BCA2CD35F7515CF794E2359/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169022039/6F892E6EE778D0351BCA2CD35F7515CF794E2359/'
+}
+
+troop_successors_spear2_green = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Spear',
+    author = 'Spear by Vokuhila, modelled by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150855036/B495F8473E7BE227C58993F27C85CA1D2FF28D1F/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150855195/A844F1B0CF7200EDE953E91CF85FC4B42871A9CA/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150855341/A3A9263D7CE81594A8E4BD2252E200B57B58054D/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150855510/685999487355777A7CA67F8289F4C90859999FD8/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169023582/743129131F7BF78564337D808AE2CD2D0C02A59D/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169023582/743129131F7BF78564337D808AE2CD2D0C02A59D/'
+}
+
+troop_successors_cavalry_bodyguard = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Cavalry',
+    author = 'Cavalry by Vokuhila, modelled by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150849269/D4631505EB83526ACE404971185914DC1286ED61/',
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150849659/F616E4430009ED944414F8B9354BB9719DCEEC8F/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667985477150849866/32A477847D766C6AA7404C1E694FF76488532DC1/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667985477150849866/32A477847D766C6AA7404C1E694FF76488532DC1/'
+}
+
+troop_successors_cavalry_bodyguard_red = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Cavalry',
+    author = 'Cavalry by Vokuhila, modelled by Eric Delemer.',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1667985477150849269/D4631505EB83526ACE404971185914DC1286ED61/',
+        'http://cloud-3.steamusercontent.com/ugc/1667985477150849659/F616E4430009ED944414F8B9354BB9719DCEEC8F/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168964785/CF843C442C2C044E116924028CFB5915ACCBEAC7/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168964785/CF843C442C2C044E116924028CFB5915ACCBEAC7/'
+}
+
+troop_successors_cavalry_bodyguard_yellow = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Cavalry',
+    author = 'Cavalry by Vokuhila, modelled by Eric Delemer.',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1667985477150849269/D4631505EB83526ACE404971185914DC1286ED61/',
+        'http://cloud-3.steamusercontent.com/ugc/1667985477150849659/F616E4430009ED944414F8B9354BB9719DCEEC8F/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168966421/B76B55D34C2CDDD6085C146272E0E4A9A83BCC08/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168966421/B76B55D34C2CDDD6085C146272E0E4A9A83BCC08/'
+}
+
+troop_successors_cavalry_bodyguard_black = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Cavalry',
+    author = 'Cavalry by Vokuhila, modelled by Eric Delemer.',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1667985477150849269/D4631505EB83526ACE404971185914DC1286ED61/',
+        'http://cloud-3.steamusercontent.com/ugc/1667985477150849659/F616E4430009ED944414F8B9354BB9719DCEEC8F/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169019609/4901480B0613DCAAFBF74EA658A530745B4D7D52/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169019609/4901480B0613DCAAFBF74EA658A530745B4D7D52/'
+}
+
+troop_successors_cavalry_bodyguard_blue = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Cavalry',
+    author = 'Cavalry by Vokuhila, modelled by Eric Delemer.',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1667985477150849269/D4631505EB83526ACE404971185914DC1286ED61/',
+        'http://cloud-3.steamusercontent.com/ugc/1667985477150849659/F616E4430009ED944414F8B9354BB9719DCEEC8F/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169021098/D469E838901B75C5AF2442236DE6DF9960DD2C76/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169021098/D469E838901B75C5AF2442236DE6DF9960DD2C76/'
+}
+
+troop_successors_cavalry_bodyguard_green = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Cavalry',
+    author = 'Cavalry by Vokuhila, modelled by Eric Delemer.',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1667985477150849269/D4631505EB83526ACE404971185914DC1286ED61/',
+        'http://cloud-3.steamusercontent.com/ugc/1667985477150849659/F616E4430009ED944414F8B9354BB9719DCEEC8F/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169022440/671643EE97F034A09BDD103B5C0EBB87ADAD2305/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169022440/671643EE97F034A09BDD103B5C0EBB87ADAD2305/'
+}
+
+troop_successors_cavalry_general = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'General',
+    author = 'General by Vokuhila, modelled by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150849493/697442C1D8CCEFDECBA9C9D90104651D9DA6BF7F/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667985477150849866/32A477847D766C6AA7404C1E694FF76488532DC1/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667985477150849866/32A477847D766C6AA7404C1E694FF76488532DC1/'
+}
+
+troop_successors_cavalry_general_red = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'General',
+    author = 'General by Vokuhila, modelled by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150849493/697442C1D8CCEFDECBA9C9D90104651D9DA6BF7F/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168964785/CF843C442C2C044E116924028CFB5915ACCBEAC7/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168964785/CF843C442C2C044E116924028CFB5915ACCBEAC7/'
+}
+
+troop_successors_cavalry_general_yellow = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'General',
+    author = 'General by Vokuhila, modelled by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150849493/697442C1D8CCEFDECBA9C9D90104651D9DA6BF7F/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168966421/B76B55D34C2CDDD6085C146272E0E4A9A83BCC08/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168966421/B76B55D34C2CDDD6085C146272E0E4A9A83BCC08/'
+}
+
+troop_successors_cavalry_general_black = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'General',
+    author = 'General by Vokuhila, modelled by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150849493/697442C1D8CCEFDECBA9C9D90104651D9DA6BF7F/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169019609/4901480B0613DCAAFBF74EA658A530745B4D7D52/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062168966421/B76B55D34C2CDDD6085C146272E0E4A9A83BCC08/'
+}
+
+troop_successors_cavalry_general_blue = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'General',
+    author = 'General by Vokuhila, modelled by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150849493/697442C1D8CCEFDECBA9C9D90104651D9DA6BF7F/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169021098/D469E838901B75C5AF2442236DE6DF9960DD2C76/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169021098/D469E838901B75C5AF2442236DE6DF9960DD2C76/'
+}
+
+troop_successors_cavalry_general_green = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'General',
+    author = 'General by Vokuhila, modelled by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667985477150849493/697442C1D8CCEFDECBA9C9D90104651D9DA6BF7F/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169022440/671643EE97F034A09BDD103B5C0EBB87ADAD2305/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667986062169022440/671643EE97F034A09BDD103B5C0EBB87ADAD2305/'
+}
+
+troop_galatian_sch = {
+    height_correction = 0,
+    scale = 1,
+    rotation = 180,
+    description = 'Gallatian Scythed Chariot',
+    author = 'Gallatian Scythed Chariot by Eric Delemer.',
+    customasset = 'http://cloud-3.steamusercontent.com/ugc/1669113173143663962/2A81EF1672D9987F5546FD0C082DF3D410467751/'
+}

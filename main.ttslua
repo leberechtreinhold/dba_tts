@@ -9,6 +9,7 @@
 #include scripts/data/data_tables
 #include scripts/data/data_terrain
 #include scripts/data/data_troops
+#include scripts/data/data_troops_greek_successors
 #include scripts/data/data_armies_book_I
 #include scripts/data/data_armies_book_II
 #include scripts/data/data_armies_book_III
