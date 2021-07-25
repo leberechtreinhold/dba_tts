@@ -3401,3 +3401,145 @@ troop_gallic_ps = {
     player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667984827364988092/B2B37D6B20584DDA7245EEF9409943155D4F8B9B/',
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667984827364988092/B2B37D6B20584DDA7245EEF9409943155D4F8B9B/',
 }
+
+
+------------------------------------------------------------------------------
+--                           VIKING MODELS
+------------------------------------------------------------------------------
+
+troop_viking_berserker = {
+    height_correction = 0,
+    scale = 0.4,
+    rotation = 270,
+    description = 'Viking Bereserkers',
+    author = 'Viking Bereserkers by Dylanb, edited by Arkein',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1762568095380418162/B75EB68F7FB33430C2D9CB056377E6EDDD53A75D/',
+          'http://cloud-3.steamusercontent.com/ugc/1762568095380418934/706901762EF2E70725884287D085A548C7DD072F/',
+          'http://cloud-3.steamusercontent.com/ugc/1762568095380419413/7EA6BB0CB9B4C795AF294F1E118D0DC27E95EF93/',
+          'http://cloud-3.steamusercontent.com/ugc/1762568095380420072/624B91885BA5742BC59AC39BAEFB9900B3DE7197/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1762568095380416535/79784CBFFD0F8D3466C8180A8A134602369F6CE1/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1762568095380416535/79784CBFFD0F8D3466C8180A8A134602369F6CE1/',
+}
+
+troop_viking_huscarl_general = {
+    height_correction = 0,
+    scale = 0.4,
+    rotation = 270,
+    description = 'Viking Huscarles',
+    author = 'Viking Huscarles by Dylanb, edited by Arkein',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1762568095380426661/FD3190937D437CCDC14A59C1174F8AF4083894DE/',
+          'http://cloud-3.steamusercontent.com/ugc/1762568095380468416/5833636ECF09937D247C56131B66121B1404460A/',
+          'http://cloud-3.steamusercontent.com/ugc/1762568095380467950/A56B602B2C76ABFFB6E6317E204544846BB620A3/',
+          'http://cloud-3.steamusercontent.com/ugc/1762568095380429805/4F571F8FA95791D909279B79FBA7D045DA11BC58/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1762568095380426172/ECE7384EE92BBCD42A93EBB9039C99F631373786/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1762568095380426172/ECE7384EE92BBCD42A93EBB9039C99F631373786/',
+}
+
+troop_viking_huscarls = {
+    height_correction = 0,
+    scale = 0.4,
+    rotation = 270,
+    description = 'Viking Huscarles',
+    author = 'Viking Huscarles by Dylanb, edited by Arkein',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1762568095380467950/A56B602B2C76ABFFB6E6317E204544846BB620A3/',
+          'http://cloud-3.steamusercontent.com/ugc/1762568095380429805/4F571F8FA95791D909279B79FBA7D045DA11BC58/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1762568095380426172/ECE7384EE92BBCD42A93EBB9039C99F631373786/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1762568095380426172/ECE7384EE92BBCD42A93EBB9039C99F631373786/',
+}
+
+troop_viking_warrior = {
+    height_correction = 0,
+    scale = 0.41,
+    rotation = 270,
+    description = 'Viking Warrior',
+    author = 'Viking Warrior by Dylanb, edited by Arkein',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1762568095380433117/4584454394B86B82DEE013C0CDAA93850A202E10/',
+          'http://cloud-3.steamusercontent.com/ugc/1762568095380433772/955E95A88A4588D5D87B38D0E54546E9DAC876BA/',
+          'http://cloud-3.steamusercontent.com/ugc/1762568095380434234/6C8CAC94D28535CD950D4B68239854D0EE6B8E92/',
+          'http://cloud-3.steamusercontent.com/ugc/1762568095380434609/68E828D573049745D6AC3A609859A6DE86584BF2/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1762568095380432765/1FA2795E0D032D8E0088483B806C26CC2E399AC5/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1762568095380432765/1FA2795E0D032D8E0088483B806C26CC2E399AC5/',
+}
+
+troop_viking_hird_spear = {
+    height_correction = 0,
+    scale = 0.41,
+    rotation = 270,
+    description = 'Viking Rider',
+    author = 'Viking Rider by Dylanb, edited by Arkein',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1759190632663160583/8471AF079944F377D27EF706331223D70205B3ED/',
+          'http://cloud-3.steamusercontent.com/ugc/1759190632663162223/140F827D218D190EA9CD58CE40E215241EB4E811/',
+          'http://cloud-3.steamusercontent.com/ugc/1759190632663162702/ABC69564BD2D23F6E183D18E945E6F168528695B/',
+          'http://cloud-3.steamusercontent.com/ugc/1759190632663164252/F3751356EBCD8E8CED1399D0BE0EC720CF97D264/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1759190632663159973/FDA01DA568FA59AB3B6C9DA589955D7978FA7DC8/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1759190632663159973/FDA01DA568FA59AB3B6C9DA589955D7978FA7DC8/',
+}
+
+troop_viking_hird_javelin = {
+    height_correction = 0,
+    scale = 0.41,
+    rotation = 270,
+    description = 'Viking Rider',
+    author = 'Viking Rider by Dylanb, edited by Arkein',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1759190632663167049/CC83C61D397BFB4A359CC4C1723BFD19400CCB8F/',
+          'http://cloud-3.steamusercontent.com/ugc/1759190632663168966/C7D0DE1B68A020A569DECA38C1003E15250AAA12/',
+          'http://cloud-3.steamusercontent.com/ugc/1759190632663170361/9AE1DFF2121576DFF50B04677FE211E515419549/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1759190632663166737/5B8FDCB0E084D7D91E8A5AA42CB9843182BB5066/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1759190632663166737/5B8FDCB0E084D7D91E8A5AA42CB9843182BB5066/',
+}
+
+troop_viking_rider_catholic = {
+    height_correction = 0,
+    scale = 0.41,
+    rotation = 270,
+    description = 'Viking Rider',
+    author = 'Viking Rider by Dylanb, edited by Arkein',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1759190632663147316/4E2259F9B0461005892C7205E619CA79E4DD21A9/',
+          'http://cloud-3.steamusercontent.com/ugc/1759190632663212780/A6089F702E3C53D6EE88D36ADFCE5F1A541DD7AE/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1759190632663253137/53433E4C1310C94C50ED2594FC0788673ED41974/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1759190632663253137/53433E4C1310C94C50ED2594FC0788673ED41974/',
+}
+
+
+troop_viking_rider_generic = {
+    height_correction = 0,
+    scale = 0.41,
+    rotation = 270,
+    description = 'Viking Rider',
+    author = 'Viking Rider by Dylanb, edited by Arkein',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1759190632663149612/AA427BDC7A808EA6BD7E50265E0A8EC1143C7861/',
+          'http://cloud-3.steamusercontent.com/ugc/1759190632663213056/1DF65A51FF08517BEDCB47FCC6FB585C5E4B2BB8/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1759190632663253137/53433E4C1310C94C50ED2594FC0788673ED41974/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1759190632663253137/53433E4C1310C94C50ED2594FC0788673ED41974/',
+}
+
+troop_viking_archers = {
+    height_correction = 0,
+    scale = 0.5,
+    rotation = 270,
+    description = 'Viking Warrior',
+    author = 'Viking Warrior by Dylanb, edited by Arkein',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1762568095379509322/DF2318E511241CA66A3C97ACA8610C3030B9DB7D/',
+          'http://cloud-3.steamusercontent.com/ugc/1762568095379510055/3DA9F02A83ECA473013E80B8170041F9A8B9AE58/',
+          'http://cloud-3.steamusercontent.com/ugc/1762568095379511378/DEE20D7B846764A0AB563D67E2F20EF9965CE77F/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1762568095379508433/DDB23A7C6ACC8735A247DC5D631F0F6CE82C18D4/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1762568095379508433/DDB23A7C6ACC8735A247DC5D631F0F6CE82C18D4/',
+}
