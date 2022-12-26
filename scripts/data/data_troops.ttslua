@@ -3102,6 +3102,22 @@ troop_norman_knight_sword = {
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596735685871/DD8719776E482AE319500D89AC8820DE62EBC7C4/',
 }
 
+troop_spanish_knight_sword = {
+    height_correction = 0,
+    scale = 1.7,
+    rotation = 0,
+    description = 'Spanish Knight',
+    author = 'Spanish Knight by Helveticus, modified by LeberechtReinhold.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735687653/868E5B6A8185AE015F7E54BA406E2E6CF2DFA3F1/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735687751/C2837FCB6234513B41C97AC4683D368DDFEC454D/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735687847/C2837FCB6234513B41C97AC4683D368DDFEC454D/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735687988/54A0FD3E59FE85647562E937D7D14581F0F90893/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1682624464135825476/B13FAEDF19F6D5AA03AE67B41227FA85F8B8599C/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1682624464135825476/B13FAEDF19F6D5AA03AE67B41227FA85F8B8599C/',
+}
+
 troop_norman_knight_lance_pennat = {
     height_correction = 0,
     scale = 1.7,
@@ -3121,6 +3137,25 @@ troop_norman_knight_lance_pennat = {
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596735685871/DD8719776E482AE319500D89AC8820DE62EBC7C4/',
 }
 
+troop_spanish_knight_lance_pennat = {
+    height_correction = 0,
+    scale = 1.7,
+    rotation = 0,
+    description = 'Spanish Knight',
+    author = 'Spanish Knight by Helveticus, modified by LeberechtReinhold.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735688302/F6337C0A8353CCCDBBE8F9B543656B8B274E9E36/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735688414/95AF8EB7CB77C293A9AB7C45C02E0F4FB166D1CF/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735688505/72097941CFC2D9B15C80B5E2FB22A716800A2AA9/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735688629/0B808186E89918892B1D16FDB5C7ED6680D9B966/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735688735/C5D9C23BFED1ECE0465DFB6AFD5D951F24B7FDC1/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735688890/865FD7AEAC23EBFA5CD366523B54BB84ABFFBFC5/'
+
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1682624464135825476/B13FAEDF19F6D5AA03AE67B41227FA85F8B8599C/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1682624464135825476/B13FAEDF19F6D5AA03AE67B41227FA85F8B8599C/',
+}
+
 troop_norman_knight_flag = {
     height_correction = 0,
     scale = 1.7,
@@ -3132,6 +3167,19 @@ troop_norman_knight_flag = {
     },
     player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667984994449859379/D9318B6173BB036C3F50006BDC4B89BE6D360800/',
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667984994449859379/D9318B6173BB036C3F50006BDC4B89BE6D360800/',
+}
+
+troop_spanish_knight_flag = {
+    height_correction = 0,
+    scale = 1.7,
+    rotation = 0,
+    description = 'Spanish Knight with Flag',
+    author = 'Spanish Knight with Flag by Helveticus, modified by LeberechtReinhold',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735688196/B0FCB3C74E40B473E3AE94D706623EB21132E8F4/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1682624464135825680/AF4B8FBE5C589C156ABD60E29C9EF57C7EC6FEE8/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1682624464135825680/AF4B8FBE5C589C156ABD60E29C9EF57C7EC6FEE8/',
 }
 
 troop_anglonorman_wagon = {
@@ -3190,6 +3238,24 @@ troop_norman_armor_foot_sword = {
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596735689636/75B0FE309A23F3655C21B886BC3DDE56380A2A64/',
 }
 
+troop_spanish_armor_foot_sword = {
+    height_correction = 0,
+    scale = 1.7,
+    rotation = 0,
+    description = 'Spanish Foot',
+    author = 'Spanish Foot by Helveticus, modified by LeberechtReinhold.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735685682/F437101F0B39C5F6546D5AC3D158BAB44C7976B8/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735685772/2E028386F06D81F4B14C5E10FEDAD7AA50B8CD17/',
+          'http://cloud-3.steamusercontent.com/ugc/1669113275266171326/027E34C2F5BD1FB890E94BB723F5127FA4DBFAC2/',
+          'http://cloud-3.steamusercontent.com/ugc/1669113275266171446/2E20C908B781C1BE387B2F5D46D95F76EEBFA984//',
+          'http://cloud-3.steamusercontent.com/ugc/1669113275266171556/1DECAC04E071C63CCB68FF82D98DD9E7B45422CF/'
+
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1682624464135825942/21A74E7C1C0D4B53DA29507441A4D497D84B1D87/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1682624464135825942/21A74E7C1C0D4B53DA29507441A4D497D84B1D87/',
+}
+
 troop_norman_archer = {
     height_correction = 0.4,
     scale = 0.3,
@@ -3224,6 +3290,27 @@ troop_norman_spear = {
     },
     player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596735689636/75B0FE309A23F3655C21B886BC3DDE56380A2A64/',
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667983596735689636/75B0FE309A23F3655C21B886BC3DDE56380A2A64/',
+}
+
+troop_spanish_spear = {
+    height_correction = 0,
+    scale = 1.7,
+    rotation = 0,
+    description = 'Spanish Spear',
+    author = 'Spanish Spear by Helveticus, modified by LeberechtReinhold.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735691165/4056F186A41EE2C1C2DD5A7B9149FD4A296C0528/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735691064/E71FB5A6F60C1ED6F7EEFE4C4ACEAF44481B0A4C/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735690959/A320F78429C7FD1D87498EEBABBB18FE9501FE54/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735690860/09B434A7228208FE886524F4CFF1AB59CEF17FFC/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735690763/1E174CE8267386D95867D00219B9BDB2430579CF/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735690660/1AD4B344B11BB67C2A8151318FCC495083EBBFC4/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735690305/2B19A9F49BF647BEBE0B6A7EE5D9E0946A277454/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735690210/34AC9BA12AF50B66913A802F22DDC889335129D0/',
+          'http://cloud-3.steamusercontent.com/ugc/1667983596735690118/9CE04B5F9F3BD35FA757D1B64393727FF408F467/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1682624464135825942/21A74E7C1C0D4B53DA29507441A4D497D84B1D87/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1682624464135825942/21A74E7C1C0D4B53DA29507441A4D497D84B1D87/',
 }
 
 troop_norman_levy = {
