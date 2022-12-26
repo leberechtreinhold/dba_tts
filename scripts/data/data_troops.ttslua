@@ -3502,6 +3502,18 @@ troop_gallic_ps = {
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667984827364988092/B2B37D6B20584DDA7245EEF9409943155D4F8B9B/',
 }
 
+troop_gallatian_bd = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Gallic Warband',
+    author = 'Gallic Warband by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1667984827364573438/5EABE84DF203A73EDECCAF925262A9C2C49271D8/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1667984827364573044/2062F0C4C069BBEF31083360A5DD0C5FD87B3736/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1667984827364573044/2062F0C4C069BBEF31083360A5DD0C5FD87B3736/',
+}
 
 ------------------------------------------------------------------------------
 --                           VIKING MODELS
