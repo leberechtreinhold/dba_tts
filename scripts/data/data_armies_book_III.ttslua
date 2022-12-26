@@ -13470,6 +13470,105 @@ armies["Book III"]["III/71 Anglo-Danish 1014-1075AD (Plain)"] = {
     }
 }
 
+armies["Book III"]["III/71 Anglo-Danish 1014-1075AD"] = {
+    data = {
+        aggresiveness = 1,
+        terrain = 'Arable',
+        list = '1x4Bd (Gen), 2x4Bd, 8x4Sp, 1x2Ps or 4Sp.'
+    },
+
+    base1 = {
+        name = '4Bd_Gen',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        fixed_models = {
+            [1] = 'troop_viking_huscarls',
+            [2] = 'troop_viking_huscarl_general',
+            [3] = 'troop_viking_huscarls',
+            [4] = 'troop_viking_huscarls'
+        }
+    },
+    base2 = {
+        name = '4Bd',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_viking_huscarls'
+    },
+    base3 = {
+        name = '4Bd',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_viking_huscarls'
+    },
+    base4 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_viking_hird_spear'
+    },
+    base5 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_viking_hird_spear'
+    },
+    base6 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_viking_hird_spear'
+    },
+    base7 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_viking_hird_spear'
+    },
+    base8 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_viking_hird_spear'
+    },
+    base9 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_viking_hird_spear'
+    },
+    base10 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_viking_hird_spear'
+    },
+    base11 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_viking_hird_spear'
+    },
+    base12 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        loose = true,
+        model_data = 'troop_viking_archers'
+    },
+    base13 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_viking_hird_spear'
+    },
+    base14 = {
+        name = 'Camp',
+        base = 'tile_grass_40x40',
+        n_models = 1,
+        model_data = 'troop_campfire'
+    }
+}
+
 armies["Book III"]["III/72a Communal Italian 1029-1199AD (Plain)"] = {
     data = {
         aggresiveness = 2,
