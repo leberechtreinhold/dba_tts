@@ -147,6 +147,19 @@ tile_plain_4Bd_40x15 = {
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1045345844814500693/5DA685B42E5EDC68FE30356ADC9DC662916F8E22/'
 }
 
+tile_plain_6Bd_40x30 = {
+    height_correction = 0,
+    scale = 1,
+    rotation = 0,
+    depth = 30,
+    description = '40x30 6Bd Tile',
+    author = 'Plain tile, original work by Arkein (model) and Eric Delemer (texture), using troop icon from Lorenzo Moro.',
+    mesh = { 'http://cloud-3.steamusercontent.com/ugc/5111054231574834192/D30DFF48194065F381D0DF4438F4753984E154DD/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1045345844814501365/477FDBEBE9C6BE09FC2BD7B8D1E25ACDF0FED608/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1045345844814500693/5DA685B42E5EDC68FE30356ADC9DC662916F8E22/'
+}
+
 tile_plain_4Pk_40x15 = {
     height_correction = 0,
     scale = 1,
@@ -2061,7 +2074,7 @@ troop_carthaginian_elephant = {
         'http://cloud-3.steamusercontent.com/ugc/1029581967099795314/900A3C519A06303574B99F873BA9C454F297FFB7/'
     },
     player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1029581967099795726/2A25AD1E3719CC81E90193F06D3588BCC4FD9135/',
-    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1029581967099795726/2A25AD1E3719CC81E90193F06D3588BCC4FD9135/'    
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1029581967099795726/2A25AD1E3719CC81E90193F06D3588BCC4FD9135/'
 }
 
 ------------------------------------------------------------------------------
