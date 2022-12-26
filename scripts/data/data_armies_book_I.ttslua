@@ -11000,7 +11000,7 @@ armies["Book I"]["I/48 Thracian 700BC-46AD"] = {
         name = '3Ax',
         base = 'tile_grass_40x20',
         n_models = 3,
-        model_data = 'trop_thracian_ax1'
+        model_data = 'troop_thracian_ax1'
     },
     base4 = {
         name = '2LH',
@@ -11013,7 +11013,7 @@ armies["Book I"]["I/48 Thracian 700BC-46AD"] = {
         name = '3Ax',
         base = 'tile_grass_40x20',
         n_models = 3,
-        model_data = 'trop_thracian_ax1'
+        model_data = 'troop_thracian_ax1'
     },
     base6 = {
         name = '2LH',
@@ -11026,43 +11026,43 @@ armies["Book I"]["I/48 Thracian 700BC-46AD"] = {
         name = '3Ax',
         base = 'tile_grass_40x20',
         n_models = 3,
-        model_data = 'trop_thracian_ax1'
+        model_data = 'troop_thracian_ax1'
     },
     base8 = {
         name = '3Ax',
         base = 'tile_grass_40x20',
         n_models = 3,
-        model_data = 'trop_thracian_ax2'
+        model_data = 'troop_thracian_ax2'
     },
     base9 = {
         name = '3Ax',
         base = 'tile_grass_40x20',
         n_models = 3,
-        model_data = 'trop_thracian_ax2'
+        model_data = 'troop_thracian_ax2'
     },
     base10 = {
         name = '3Ax',
         base = 'tile_grass_40x20',
         n_models = 3,
-        model_data = 'trop_thracian_ax2'
+        model_data = 'troop_thracian_ax2'
     },
     base11 = {
         name = '3Ax',
         base = 'tile_grass_40x20',
         n_models = 3,
-        model_data = 'trop_thracian_ax2'
+        model_data = 'troop_thracian_ax2'
     },
     base12 = {
         name = '3Ax',
         base = 'tile_grass_40x20',
         n_models = 3,
-        model_data = 'trop_thracian_ax2'
+        model_data = 'troop_thracian_ax2'
     },
     base13 = {
         name = '3Ax',
         base = 'tile_grass_40x20',
         n_models = 3,
-        model_data = 'trop_thracian_ax2'
+        model_data = 'troop_thracian_ax2'
     },
     base14 = {
         name = '2Ps',
