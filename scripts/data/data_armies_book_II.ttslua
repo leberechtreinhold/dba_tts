@@ -15590,6 +15590,160 @@ armies["Book II"]["II/53 Ancient British 55BC-75AD (Plain)"] = {
     }
 }
 
+armies["Book II"]["II/53 Ancient British 55BC-75AD"] = {
+    data = {
+        aggresiveness = 0,
+        terrain = 'Hilly',
+        list = '1xLCh or 3/4Wb (Gen), 2x2LH, 3xLCh or 2Ps or 3Wb, 5x3Wb, 1x3Wb or 2Ps.',
+        manufacturer = 'J2C Creation miniatures'
+    },
+
+    base1 = {
+        name = 'LCh_Gen',
+        base = 'tile_grass_40x40',
+        n_models = 1,
+        fixed_models = {
+            [1] = 'troop_gallic_lch_gen'
+        }
+    },
+    base2 = {
+        name = '3Wb_Gen',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_gallic_warband_general'
+    },
+    base3 = {
+        name = '4Wb_Gen',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_gallic_warband_general'
+    },
+    base4 = {
+        name = '2LH',
+        base = 'tile_grass_40x30',
+        n_models = 2,
+        model_data = 'troop_gallic_cav'
+    },
+    base5 = {
+        name = '2LH',
+        base = 'tile_grass_40x30',
+        n_models = 2,
+        model_data = 'troop_gallic_cav'
+    },
+    base6 = {
+        name = 'LCh',
+        base = 'tile_grass_40x40',
+        n_models = 1,
+        fixed_models = {
+            [1] = 'troop_gallic_lch'
+        }
+    },
+    base7 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        loose = true,
+        model_data = 'troop_gallic_ps'
+    },
+    base8 = {
+        name = '3Wb',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_gallic_warband'
+    },
+    base9 = {
+        name = 'LCh',
+        base = 'tile_grass_40x40',
+        n_models = 1,
+        fixed_models = {
+            [1] = 'troop_gallic_lch'
+        }
+    },
+    base10 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        loose = true,
+        model_data = 'troop_gallic_ps'
+    },
+    base11 = {
+        name = '3Wb',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_gallic_warband'
+    },
+    base12 = {
+        name = 'LCh',
+        base = 'tile_grass_40x40',
+        n_models = 1,
+        fixed_models = {
+            [1] = 'troop_gallic_lch'
+        }
+    },
+    base13 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        loose = true,
+        model_data = 'troop_gallic_ps'
+    },
+    base14 = {
+        name = '3Wb',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_gallic_warband'
+    },
+    base15 = {
+        name = '3Wb',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_gallic_warband'
+    },
+    base16 = {
+        name = '3Wb',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_gallic_warband'
+    },
+    base17 = {
+        name = '3Wb',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_gallic_warband'
+    },
+    base18 = {
+        name = '3Wb',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_gallic_warband'
+    },
+    base19 = {
+        name = '3Wb',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_gallic_warband'
+    },
+    base20 = {
+        name = '3Wb',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_gallic_warband'
+    },
+    base21 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        loose = true,
+        model_data = 'troop_gallic_ps'
+    },
+    base22 = {
+        name = 'Camp',
+        base = 'tile_grass_40x40',
+        n_models = 1,
+        model_data = 'troop_campfire'
+    }
+}
+
 armies["Book II"]["II/54a Scots-Irish 55BC-432AD (Plain)"] = {
     data = {
         aggresiveness = 3,
