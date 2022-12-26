@@ -28,15 +28,21 @@
 
 function onload()
     print_info('----------------------------------------------')
-    print_info('                       DBA 2.2 v1.20.0 ')
+    print_info('                       DBA 2.2 v1.21.0 ')
     print_info('----------------------------------------------\n\nCheck the Notebook for instructions.')
-    
+
     Wait.time(main_loop, g_seconds_main_loop, -1)
+
+    g_log_enabled = false
     make_scenery_non_interactable()
     reset_state()
     spawn_proxy_bases()
     spawn_all_dice()
     spawn_dead_zones()
+
+    Wait.time(function ()
+        g_log_enabled = true
+    end, 1, 0)
 end
 
 
@@ -66,7 +72,7 @@ function make_scenery_non_interactable()
     -- Back lights
     getObjectFromGUID('8b3843').interactable = false
     getObjectFromGUID('78eb52').interactable = false
-    
+
     -- Top light for shadows
     getObjectFromGUID('037fab').interactable = false
 
@@ -112,7 +118,7 @@ function onChat(message, player)
             g_debug_mode = false
         else
             print_info('Enabling debug mode, will take effect in three seconds. Note, this will cause decreased performance.')
-            Wait.time(function() 
+            Wait.time(function()
                 g_debug_mode = true
                 print_info('Debug mode ON')
             end, 3)
@@ -137,7 +143,7 @@ function onChat(message, player)
         print_info(player.get_steam_name() .. ': ' .. message)
         local _,book = random_kv(armies)
         local army_name, army = random_kv(book)
-        
+
         print_important('Army selected: ' .. army_name .. '')
         print_info('List: ' .. army['data']['list'])
         print_info('Agressiveness: ' .. army['data']['aggresiveness']
@@ -151,4 +157,3 @@ function onChat(message, player)
     end
     return true
 end
-

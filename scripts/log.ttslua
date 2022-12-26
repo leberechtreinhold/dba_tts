@@ -3,27 +3,37 @@ white = { r =   1, g =   1, b =   1}
 grey  = { r = 0.8, g = 0.8, b = 0.8}
 red   = { r =   1, g = 0.2, b = 0.1}
 
+g_log_enabled = true
+
 -- Prints to all, only if the DEBUG mode is enabled, by the chat command
 g_debug_mode = false
 function print_debug(msg)
+  if g_log_enabled then
     if g_debug_mode then
         printToAll('[DEBUG] ' .. msg)
     end
+  end
 end
 
 
 -- Messages that can be seen by everyone on the textbox
 function print_info(msg)
+  if g_log_enabled then
     printToAll('[INFO] ' .. msg, grey)
+  end
 end
 
 -- Messages that can be seen by everyone on the textbox and indicate
 -- that the user may be doing something wrong
 function print_error(msg)
+  if g_log_enabled then
     printToAll('[ERROR] ' .. msg, red)
+  end
 end
 
 -- Message that will appear TO EVERYONE ON THE SCREEN.
 function print_important(msg)
+  if g_log_enabled then
     broadcastToAll('[IMPORTANT] ' .. msg, grey)
+  end
 end
