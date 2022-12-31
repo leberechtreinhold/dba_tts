@@ -7887,6 +7887,116 @@ armies["Book II"]["II/27b Pyrrhic 280-272BC (Plain)"] = {
     }
 }
 
+armies["Book II"]["II/27b Pyrrhic 280-272BC"] = {
+    data = {
+        aggresiveness = 4,
+        terrain = 'Arable',
+        list = '1x3Kn or 3Cv (Gen), 1x3Cv or 2LH, 1x2LH, 1xEl, 4x4Pk, 2x4Sp, 1x4Ax, 1x2Ps.'
+    },
+
+    base1 = {
+        name = '3Kn_Gen',
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        fixed_models = {
+            [1] = 'troop_successors_cavalry_bodyguard',
+            [2] = 'troop_successors_cavalry_general',
+            [3] = 'troop_successors_cavalry_bodyguard'
+        }
+    },
+    base2 = {
+        name = '3Cv_Gen',
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        fixed_models = {
+            [1] = 'troop_successors_cav',
+            [2] = 'troop_successors_cavalry_general',
+            [3] = 'troop_successors_cav'
+        }
+    },
+    base3 = {
+        name = '3Cv',
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        model_data = 'troop_successors_cav'
+    },
+    base4 = {
+        name = '2LH',
+        base = 'tile_grass_40x30',
+        n_models = 2,
+        loose = true,
+        model_data = 'troop_successors_lh'
+    },
+    base5 = {
+        name = '2LH',
+        base = 'tile_grass_40x30',
+        n_models = 2,
+        loose = true,
+        model_data = 'troop_successors_lh'
+    },
+    base6 = {
+        name = 'El',
+        base = 'tile_grass_40x40',
+        n_models = 1,
+        model_data = 'troop_successors_el'
+    },
+    base7 = {
+        name = '4Pk',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_successors_pike2'
+    },
+    base8 = {
+        name = '4Pk',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_successors_pike1'
+    },
+    base9 = {
+        name = '4Pk',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_successors_pike2'
+    },
+    base10 = {
+        name = '4Pk',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_successors_pike1'
+    },
+    base11 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_successors_spear1'
+    },
+    base12 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_successors_spear1'
+    },
+    base13 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_thracian_ax1'
+    },
+    base14 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        model_data = 'troop_successors_psiloi',
+        loose = true
+    },
+    base15 = {
+        name = 'Camp',
+        base = 'tile_grass_40x40',
+        n_models = 1,
+        model_data = 'troop_carthaginian_camp'
+    }
+}
+
 armies["Book II"]["II/28a Early Armenian Tigranes 83-89AD (Plain)"] = {
     data = {
         aggresiveness = 3,
