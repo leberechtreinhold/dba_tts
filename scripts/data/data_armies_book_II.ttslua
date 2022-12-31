@@ -4339,6 +4339,103 @@ armies["Book II"]["II/17 Lysimachid 320-281BC (Plain)"] = {
     }
 }
 
+armies["Book II"]["II/17 Lysimachid 320-281BC"] = {
+    data = {
+        aggresiveness = 2,
+        terrain = 'Arable',
+        list = '1x3Kn (Gen), 1x2LH, 4x4Pk, 4x3Ax, 1x2Ps, 1x4Sp.',
+        manufacturer = 'Essex miniatures'
+    },
+
+    base1 = {
+        name = '3Kn_Gen',
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        fixed_models = {
+            [1] = 'troop_successors_cavalry_bodyguard_black',
+            [2] = 'troop_successors_cavalry_general_black',
+            [3] = 'troop_successors_cavalry_bodyguard_black'
+        }
+    },
+    base2 = {
+        name = '2LH',
+        base = 'tile_grass_40x30',
+        n_models = 2,
+        model_data = 'troop_successors_lh_black'
+    },
+    base3 = {
+        name = '4Pk',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_successors_pike1_black'
+    },
+    base4 = {
+        name = '4Pk',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_successors_pike2_black'
+    },
+    base5 = {
+        name = '4Pk',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_successors_pike1_black'
+    },
+    base6 = {
+        name = '4Pk',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_successors_pike2_black'
+    },
+    base7 = {
+        name = '3Ax',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_successors_ax_black',
+        loose = true
+    },
+    base8 = {
+        name = '3Ax',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_successors_ax_black',
+        loose = true
+    },
+    base9 = {
+        name = '3Ax',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_successors_ax_black',
+        loose = true
+    },
+    base10 = {
+        name = '3Ax',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_successors_ax_black',
+        loose = true
+    },
+    base11 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        model_data = 'trop_thracian_ps',
+        loose = true
+    },
+    base12 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_successors_spear1_black'
+    },
+    base13 = {
+        name = 'Camp',
+        base = 'tile_grass_40x40',
+        n_models = 1,
+        model_data = 'troop_carthaginian_camp'
+    }
+}
+
 armies["Book II"]["II/18a Antipatros 320-319BC (Plain)"] = {
     data = {
         aggresiveness = 1,
