@@ -3083,6 +3083,88 @@ troop_egyptian_drummer = {
 
 
 ------------------------------------------------------------------------------
+--                            SEA PEOPLES PHOTOGAMMETRY
+------------------------------------------------------------------------------
+
+troop_seapeople_ax = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Sea Peoples Auxilia',
+    author = 'Sea Peoples Auxilia by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1669113275265812454/A7433C021FC2BE9B62EC5FADBDAE76189EC832D8/',
+          'http://cloud-3.steamusercontent.com/ugc/1669113275265812565/7E6C7B8317B8C2307CA2F9A8577FBAA315E1EF04/',
+          'http://cloud-3.steamusercontent.com/ugc/1669113275265812676/1BC746E713AC9770265392CC174F67D55DE986A7/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1669113275265780892/1CC5BC8A477AE6A2CCDF1A3E1C7AE55F234361B2/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1669113275265780892/1CC5BC8A477AE6A2CCDF1A3E1C7AE55F234361B2/',
+}
+
+troop_seapeople_bd = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Sea Peoples Blade',
+    author = 'Sea Peoples Blade by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1669113275265812829/68B47A1EA07B8174D3EEF3E6E086F2E70BBF66C3/',
+          'http://cloud-3.steamusercontent.com/ugc/1669113275265812956/D393E681F2D8B707F8E10C1DCD616D5DEBA16BF7/',
+          'http://cloud-3.steamusercontent.com/ugc/1669113275265813063/98BFADCFBBE10070C887B92BECB8D85C2729ABFD/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1669113275265813256/4FAC90A54DBC245DF918FAB8BA7FDE4993DA7B1F/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1669113275265813256/4FAC90A54DBC245DF918FAB8BA7FDE4993DA7B1F/',
+}
+
+troop_seapeople_bd_general = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Sea Peoples Blade General',
+    author = 'Sea Peoples Blade General by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1669113275265813437/75FDB77440D8FD99F41BFCACAF49DFC16934F6E6/',
+          'http://cloud-3.steamusercontent.com/ugc/1669113275265813547/CDC2C68E3CD9FE6435AE02FED2B750B3DE2E221E/',
+          'http://cloud-3.steamusercontent.com/ugc/1669113275265813709/9A540A5CEDD9922AAC970FB35A2F263E31461200/',
+          'http://cloud-3.steamusercontent.com/ugc/1669113275265813829/B1DFB1C1844D6D0B9DEA2579690C9808150B1D03/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1669113275265813975/15B9835E941F386BB89851C2E1882FD5E11CA864/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1669113275265813975/15B9835E941F386BB89851C2E1882FD5E11CA864/',
+}
+
+troop_seapeople_hch_general = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Sea Peoples Heavy Chariot General',
+    author = 'Sea Peoples Heavy Chariot General by Eric Delemer.',
+    customasset = 'http://cloud-3.steamusercontent.com/ugc/1669113275265955813/E0DD96D9B66F6EEBF3120C3CEA2FA216B54920FA/'
+}
+
+troop_seapeople_lch_general = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Sea Peoples Light Chariot General',
+    author = 'Sea Peoples Light Chariot General by Eric Delemer, modified by LeberechtReinhold.',
+    customasset = 'http://cloud-3.steamusercontent.com/ugc/1669113275265955960/A156C1303504BEB6C1A6FCEF37FB2F113FF47AC8/'
+}
+
+troop_seapeople_ps = {
+    height_correction = 0,
+    scale = 0.9,
+    rotation = 180,
+    description = 'Sea Peoples Psiloi',
+    author = 'Sea Peoples Psiloi by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1669113275265814336/6FC61E7762E52B340B0D3A1A581340CCE6C9DCDF/',
+          'http://cloud-3.steamusercontent.com/ugc/1669113275265814449/BEEEC261E642E9702F3505C37B23D756B6EE5CD8/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1669113275265814563/FD12B4F000AD372B28025F7E24AB2BB0922112E9/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1669113275265814563/FD12B4F000AD372B28025F7E24AB2BB0922112E9/',
+}
+
+------------------------------------------------------------------------------
 --                            NORMANS MODELS
 ------------------------------------------------------------------------------
 
