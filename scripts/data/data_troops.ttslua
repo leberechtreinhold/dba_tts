@@ -3859,3 +3859,108 @@ troop_campanian_roman_cv_gen_blue = {
     player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1792974102886841992/4D8222FB3A3E54C11D51EDD1AB343027B1E554E8/',
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1792974102886841992/4D8222FB3A3E54C11D51EDD1AB343027B1E554E8/'
 }
+
+
+------------------------------------------------------------------------------
+--                          MARIAN ROMAN PHOTOGAMMETRY
+------------------------------------------------------------------------------
+
+troop_marian_roman_bd = {
+    height_correction = 0,
+    scale = 1,
+    rotation = 180,
+    description = 'Marian Roman Blade',
+    author = 'Marian Roman Blade by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866444000/C9590EDD0073EDDE7E6C3C9DFE8D00A8697E4371/',
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866444119/0CF6BE87079230AD07F53B4FB26B6B3AAA4D713E/',
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866444239/8E72006DE77CCF362D9950A5DFE7310E9E47B3E3/',
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866444339/279B4F256E163260DF6B3DDD872D3D55C217508D/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1818869494866443617/63B119F70F80C35FD343BCA86A1C5BB007E5636D/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1818869494866443617/63B119F70F80C35FD343BCA86A1C5BB007E5636D/',
+}
+
+troop_marian_roman_bd_gen = {
+    height_correction = 0,
+    scale = 1,
+    rotation = 180,
+    description = 'Marian Roman Blade General',
+    author = 'Marian Roman Blade General by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866443528/BCF47E5F2C8A0C55A5AB993F6C33C92EB1C13233/',
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866443420/9B013183FAF27D14E471DE69061FCE3FF3DD024E/',
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866443275/14E192281636B67351F93551782C59A5BE88C460/',
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866443163/2D4D546F0A1966FA207F3C345B4E15AFCCFF1D9B/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1818869494866443708/0240B091185814A2F1568700B472A66CCA3131E4/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1818869494866443708/0240B091185814A2F1568700B472A66CCA3131E4/',
+}
+
+troop_marian_roman_cv_gen = {
+    height_correction = 0,
+    scale = 1,
+    rotation = 180,
+    description = 'Marian Roman Cavalry General',
+    author = 'Marian Roman Cavalry General by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866444584/734393902C8C021BDFB39D4ACD42815514559E14/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1818869494866444977/ED3746B6271C073A80B9F652FD92ABC6EA72F601/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1818869494866444977/ED3746B6271C073A80B9F652FD92ABC6EA72F601/',
+}
+
+
+troop_marian_roman_cv_bearer = {
+    height_correction = 0,
+    scale = 1,
+    rotation = 180,
+    description = 'Marian Roman Cavalry Sign Bearer',
+    author = 'Marian Roman Cavalry Sign Bearer by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866444716/5115FF8B60895311339F3815AC50D18BFC9A8148/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1818869494866444977/ED3746B6271C073A80B9F652FD92ABC6EA72F601/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1818869494866444977/ED3746B6271C073A80B9F652FD92ABC6EA72F601/',
+}
+
+troop_marian_roman_cv = {
+    height_correction = 0,
+    scale = 1,
+    rotation = 180,
+    description = 'Marian Roman Cavalry',
+    author = 'Marian Roman Cavalry by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866444852/FB57E38F6276E700B8BF5B95D4CE2F86F904B786/',
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866444460/E61207111A2241F604B6C6771497F6EEFFF87748/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1818869494866444977/ED3746B6271C073A80B9F652FD92ABC6EA72F601/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1818869494866444977/ED3746B6271C073A80B9F652FD92ABC6EA72F601/',
+}
+
+troop_marian_roman_lh = {
+    height_correction = 0,
+    scale = 1,
+    rotation = 180,
+    description = 'Marian Roman Light Cavalry',
+    author = 'Marian Roman Light Cavalry by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866445182/B109897ED9B4656AD1A1563AD5BD6308F87F9C97/',
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866445558/FC039957755495CD4EA895C575EDCC79A4478C96/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1818869494866445378/3E5D4A3DB9AA196ED257F1DEB8182C7C32A7EC26/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1818869494866445378/3E5D4A3DB9AA196ED257F1DEB8182C7C32A7EC26/',
+}
+
+troop_marian_roman_camp = {
+    height_correction = 0,
+    scale = 1,
+    rotation = 180,
+    description = 'Marian Roman Camp',
+    author = 'Marian Roman Camp by Vokuhila, edited by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866445771/10A6CDF0F412D430EB0EE06C5DF7934470E7B827/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1818869494866445648/316362BD711B74D8A1767E20B46D2587274B1D92/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1818869494866445648/316362BD711B74D8A1767E20B46D2587274B1D92/'
+}

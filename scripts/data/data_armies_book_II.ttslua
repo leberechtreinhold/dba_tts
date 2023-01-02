@@ -16353,6 +16353,124 @@ armies["Book II"]["II/49 Marian Roman 105-25BC (Plain)"] = {
     }
 }
 
+armies["Book II"]["II/49 Marian Roman 105-25BC"] = {
+    data = {
+        aggresiveness = 3,
+        terrain = 'Arable',
+        list = '1x3Cv or 4Bd (Gen), 1x3Cv or 2LH, 8x4Bd, 1x3/4Ax or 2Ps, 1x2Ps.',
+        manufacturer = 'Essex Miniatures, J2C Creation Miniatures and Xyston Miniatures'
+    },
+
+    base1 = {
+        name = '3Cv_Gen',
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        fixed_models = {
+            [1] = 'troop_marian_roman_cv_bearer',
+            [2] = 'troop_marian_roman_cv_gen',
+            [3] = 'troop_marian_roman_cv',
+        }
+    },
+    base2 = {
+        name = '4Bd_Gen',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_marian_roman_bd_gen'
+    },
+    base3 = {
+        name = '3Cv',
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        model_data = 'troop_marian_roman_cv'
+    },
+    base4 = {
+        name = '2LH',
+        base = 'tile_grass_40x30',
+        n_models = 2,
+        model_data = 'troop_marian_roman_lh'
+    },
+    base5 = {
+        name = '4Bd',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_marian_roman_bd'
+    },
+    base6 = {
+        name = '4Bd',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_marian_roman_bd'
+    },
+    base7 = {
+        name = '4Bd',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_marian_roman_bd'
+    },
+    base8 = {
+        name = '4Bd',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_marian_roman_bd'
+    },
+    base9 = {
+        name = '4Bd',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_marian_roman_bd'
+    },
+    base10 = {
+        name = '4Bd',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_marian_roman_bd'
+    },
+    base11 = {
+        name = '4Bd',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_marian_roman_bd'
+    },
+    base12 = {
+        name = '4Bd',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_marian_roman_bd'
+    },
+    base13 = {
+        name = '3Ax',
+        base = 'tile_grass_40x20',
+        n_models = 3,
+        model_data = 'troop_gallic_warband'
+    },
+    base14 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_ancient_spanish_scutarii'
+    },
+    base15 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        loose = true,
+        model_data = 'troop_gallic_ps'
+    },
+    base16 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        loose = true,
+        model_data = 'troop_gallic_ps'
+    },
+    base17 = {
+        name = 'Camp',
+        base = 'tile_grass_40x40',
+        n_models = 1,
+        model_data = 'troop_marian_roman_camp'
+    }
+}
+
 armies["Book II"]["II/50 Hasmonean Jewish 103-63BC (Plain)"] = {
     data = {
         aggresiveness = 1,
