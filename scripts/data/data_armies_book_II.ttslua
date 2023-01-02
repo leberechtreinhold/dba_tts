@@ -2463,6 +2463,94 @@ armies["Book II"]["II/8a Bruttian Army 420-203BC (Plain)"] = {
     }
 }
 
+armies["Book II"]["II/8a Bruttian Army 420-203BC"] = {
+    data = {
+        aggresiveness = 1,
+        terrain = 'Hilly',
+        list = '1x3Cv (Gen), 9x4Ax, 2x2Ps.',
+        manufacturer = 'Essex Miniatures'
+    },
+
+    base1 = {
+        name = '3Cv_Gen',
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        model_data = 'troop_campanian_roman_cv_gen_blue'
+    },
+    base2 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_successors_ax_blue',
+    },
+    base3 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_successors_ax_blue',
+    },
+    base4 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_successors_ax_blue',
+    },
+    base5 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_successors_ax_blue',
+    },
+    base6 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_successors_ax_blue',
+    },
+    base7 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_successors_ax_blue',
+    },
+    base8 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_successors_ax_blue',
+    },
+    base9 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_successors_ax_blue',
+    },
+    base10 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_successors_ax_blue',
+    },
+    base11 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        model_data = 'troop_successors_psiloi_blue'
+    },
+    base12 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        model_data = 'troop_successors_psiloi_blue'
+    },
+    base13 = {
+        name = 'Camp',
+        base = 'tile_grass_40x40',
+        n_models = 1,
+        model_data = 'troop_carthaginian_camp'
+    }
+}
+
 armies["Book II"]["II/8a Lucanian Army 420-203BC (Plain)"] = {
     data = {
         aggresiveness = 1,
@@ -2548,6 +2636,94 @@ armies["Book II"]["II/8a Lucanian Army 420-203BC (Plain)"] = {
         base = 'tile_plain_Camp_40x40',
         n_models = 0,
         ignore_terrain = true
+    }
+}
+
+armies["Book II"]["II/8a Lucanian Army 420-203BC"] = {
+    data = {
+        aggresiveness = 1,
+        terrain = 'Arable',
+        list = '1x3Cv (Gen), 9x4Ax, 2x2Ps.',
+        manufacturer = 'Essex Miniatures'
+    },
+
+    base1 = {
+        name = '3Cv_Gen',
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        model_data = 'troop_campanian_roman_cv_gen_blue'
+    },
+    base2 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_successors_ax_blue',
+    },
+    base3 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_successors_ax_blue',
+    },
+    base4 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_successors_ax_blue',
+    },
+    base5 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_successors_ax_blue',
+    },
+    base6 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_successors_ax_blue',
+    },
+    base7 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_successors_ax_blue',
+    },
+    base8 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_successors_ax_blue',
+    },
+    base9 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_successors_ax_blue',
+    },
+    base10 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_successors_ax_blue',
+    },
+    base11 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        model_data = 'troop_successors_psiloi_blue'
+    },
+    base12 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        model_data = 'troop_successors_psiloi_blue'
+    },
+    base13 = {
+        name = 'Camp',
+        base = 'tile_grass_40x40',
+        n_models = 1,
+        model_data = 'troop_carthaginian_camp'
     }
 }
 
@@ -2639,6 +2815,96 @@ armies["Book II"]["II/8b Campanian Army 420-203BC (Plain)"] = {
     }
 }
 
+armies["Book II"]["II/8b Campanian Army 420-203BC"] = {
+    data = {
+        aggresiveness = 1,
+        terrain = 'Arable',
+        list = '1x3Cv (Gen), 1x3Cv, 4x4Sp, 4x4Ax, 2x2Ps.',
+        manufacturer = 'Essex Miniatures'
+    },
+
+    base1 = {
+        name = '3Cv_Gen',
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        model_data = 'troop_campanian_roman_cv_gen'
+    },
+    base2 = {
+        name = '3Cv',
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        model_data = 'troop_campanian_roman_cv'
+    },
+    base3 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_successors_spear1_green'
+    },
+    base4 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_successors_spear1_green'
+    },
+    base5 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_successors_spear1_green'
+    },
+    base6 = {
+        name = '4Sp',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_successors_spear1_green'
+    },
+    base7 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_successors_ax_green'
+    },
+    base8 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_successors_ax_green'
+    },
+    base9 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_successors_ax_green'
+    },
+    base10 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_successors_ax_green'
+    },
+    base11 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        model_data = 'troop_successors_psiloi_green',
+        loose = true
+    },
+    base12 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        model_data = 'troop_successors_psiloi_green',
+        loose = true
+    },
+    base13 = {
+        name = 'Camp',
+        base = 'tile_grass_40x40',
+        n_models = 1,
+        model_data = 'troop_carthaginian_camp'
+    }
+}
+
 armies["Book II"]["II/8c Apulian Army 420-203BC (Plain)"] = {
     data = {
         aggresiveness = 1,
@@ -2724,6 +2990,96 @@ armies["Book II"]["II/8c Apulian Army 420-203BC (Plain)"] = {
         base = 'tile_plain_Camp_40x40',
         n_models = 0,
         ignore_terrain = true
+    }
+}
+
+armies["Book II"]["II/8c Apulian Army 420-203BC"] = {
+    data = {
+        aggresiveness = 1,
+        terrain = 'Arable',
+        list = '1x3Cv (Gen), 2x3Cv, 7x4Ax, 2x2Ps.',
+        manufacturer = 'Essex Miniatures'
+    },
+
+    base1 = {
+        name = '3Cv_Gen',
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        model_data = 'troop_campanian_roman_cv_gen_red'
+    },
+    base2 = {
+        name = '3Cv',
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        model_data = 'troop_campanian_roman_cv_red'
+    },
+    base3 = {
+        name = '3Cv',
+        base = 'tile_grass_40x30',
+        n_models = 3,
+        model_data = 'troop_campanian_roman_cv_red'
+    },
+    base4 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_successors_ax_red'
+    },
+    base5 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_successors_ax_red'
+    },
+    base6 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_successors_ax_red'
+    },
+    base7 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_successors_ax_red'
+    },
+    base8 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_successors_ax_red'
+    },
+    base9 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_successors_ax_red'
+    },
+    base10 = {
+        name = '4Ax',
+        base = 'tile_grass_40x20',
+        n_models = 4,
+        model_data = 'troop_successors_ax_red'
+    },
+    base11 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        model_data = 'troop_successors_psiloi_red',
+        loose = true
+    },
+    base12 = {
+        name = '2Ps',
+        base = 'tile_grass_40x20',
+        n_models = 2,
+        model_data = 'troop_successors_psiloi_red',
+        loose = true
+    },
+    base13 = {
+        name = 'Camp',
+        base = 'tile_grass_40x40',
+        n_models = 1,
+        model_data = 'troop_carthaginian_camp'
     }
 }
 

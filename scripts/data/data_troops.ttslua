@@ -3763,3 +3763,99 @@ troop_viking_archers = {
     player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1762568095379508433/DDB23A7C6ACC8735A247DC5D631F0F6CE82C18D4/',
     player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1762568095379508433/DDB23A7C6ACC8735A247DC5D631F0F6CE82C18D4/',
 }
+
+
+------------------------------------------------------------------------------
+--                        CAMPANIAN ROMAN PHOTOGAMMETRY
+------------------------------------------------------------------------------
+
+troop_campanian_roman_cv = {
+    height_correction = 0,
+    scale = 1,
+    rotation = 180,
+    description = 'Campanian Roman Cavalry',
+    author = 'Campanian Roman Cavalry by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866588295/13A97E0C0BE2E665A820C77E5D647B77A82DAC90/',
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866588150/67858EB089CB19FE2B1B13A7241B4580EBE153A6/',
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866587976/14456F783D3CD36640EB0D27952080B0F8DBB146/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1818869494866588428/936B0442E13BEC0FEF96C6A6567B0DC3B513F4BA/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1818869494866588428/936B0442E13BEC0FEF96C6A6567B0DC3B513F4BA/'
+}
+
+troop_campanian_roman_cv_gen = {
+    height_correction = 0,
+    scale = 1,
+    rotation = 180,
+    description = 'Campanian Roman Cavalry General',
+    author = 'Campanian Roman Cavalry General by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866589056/608F47C19C1CA0FFF95C50BB4C52BA63A4490DCE/',
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866588845/F72D742455E847816AD2D4C678417AEEC45F142D/',
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866588564/3EB686BA2A495E9432B21A88FC4708A996CAE985/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1818869494866588695/E50EC93B5CFBBF28136E784D5AC21EEFF76545BB/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1818869494866588695/E50EC93B5CFBBF28136E784D5AC21EEFF76545BB/'
+}
+
+troop_campanian_roman_cv_red = {
+    height_correction = 0,
+    scale = 1,
+    rotation = 180,
+    description = 'Campanian Roman Cavalry',
+    author = 'Campanian Roman Cavalry by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866588295/13A97E0C0BE2E665A820C77E5D647B77A82DAC90/',
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866588150/67858EB089CB19FE2B1B13A7241B4580EBE153A6/',
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866587976/14456F783D3CD36640EB0D27952080B0F8DBB146/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1792974102886842116/C39B6543DD619F3C337762CBD356E0FBEE589521/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1792974102886842116/C39B6543DD619F3C337762CBD356E0FBEE589521/'
+}
+
+troop_campanian_roman_cv_blue = {
+    height_correction = 0,
+    scale = 1,
+    rotation = 180,
+    description = 'Campanian Roman Cavalry',
+    author = 'Campanian Roman Cavalry by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866588295/13A97E0C0BE2E665A820C77E5D647B77A82DAC90/',
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866588150/67858EB089CB19FE2B1B13A7241B4580EBE153A6/',
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866587976/14456F783D3CD36640EB0D27952080B0F8DBB146/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1792974102886841870/AFF3E975FCB440D4826A6D529FCF44AA343A1299/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1792974102886841870/AFF3E975FCB440D4826A6D529FCF44AA343A1299/'
+}
+
+
+troop_campanian_roman_cv_gen_red = {
+    height_correction = 0,
+    scale = 1,
+    rotation = 180,
+    description = 'Campanian Roman Cavalry General',
+    author = 'Campanian Roman Cavalry General by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866589056/608F47C19C1CA0FFF95C50BB4C52BA63A4490DCE/',
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866588845/F72D742455E847816AD2D4C678417AEEC45F142D/',
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866588564/3EB686BA2A495E9432B21A88FC4708A996CAE985/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1792974102886842262/D882F573FB0B97EE566E5B56C6414DA4DC8B5B35/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1792974102886842262/D882F573FB0B97EE566E5B56C6414DA4DC8B5B35/'
+}
+
+troop_campanian_roman_cv_gen_blue = {
+    height_correction = 0,
+    scale = 1,
+    rotation = 180,
+    description = 'Campanian Roman Cavalry General',
+    author = 'Campanian Roman Cavalry General by Eric Delemer.',
+    mesh = {
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866589056/608F47C19C1CA0FFF95C50BB4C52BA63A4490DCE/',
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866588845/F72D742455E847816AD2D4C678417AEEC45F142D/',
+          'http://cloud-3.steamusercontent.com/ugc/1818869494866588564/3EB686BA2A495E9432B21A88FC4708A996CAE985/'
+    },
+    player_red_tex = 'http://cloud-3.steamusercontent.com/ugc/1792974102886841992/4D8222FB3A3E54C11D51EDD1AB343027B1E554E8/',
+    player_blue_tex = 'http://cloud-3.steamusercontent.com/ugc/1792974102886841992/4D8222FB3A3E54C11D51EDD1AB343027B1E554E8/'
+}
