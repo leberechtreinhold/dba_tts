@@ -100,14 +100,14 @@ function turn_around_base(obj)
     local rotation = obj.getRotation()
     rotation['y'] = rotation['y'] + 180
     obj.setRotation(rotation)
-    
+
     local new_transform = calculate_transform(obj)
     local move = {}
     add_transform_to_move(move, obj.getName(), initial_transform, new_transform)
     push_to_history_stack(move)
-    
+
     local distance = max_distance_between_bases(initial_transform['corners'], new_transform['corners'])
-    print_info(obj.getName() .. ' has turned around 180º, which costs ' 
+    print_info(obj.getName() .. ' has turned around 180º, which costs '
         .. string.format('%.2f', distance * 100) .. ' paces')
 end
 
@@ -145,6 +145,12 @@ function push_back(obj)
     local displacement_vector = rad_to_vector(angle)
 
     local magnitude = get_size(obj.getName())['z']
+    -- Max movement is its front! So bases that are deeper than that move less
+    local max_movement = get_size(obj.getName())['x']
+    if magnitude > max_movement then
+        magnitude = max_movement
+    end
+
     local destination = vec_add(initial_transform['position'], vec_mul_escalar(displacement_vector, magnitude))
     obj.setPosition(destination)
 
@@ -152,9 +158,9 @@ function push_back(obj)
     local move = {}
     add_transform_to_move(move, obj.getName(), initial_transform, new_transform)
     push_to_history_stack(move)
-    
+
     local distance = max_distance_between_bases(initial_transform['corners'], new_transform['corners'])
-    print_info(obj.getName() .. ' has moved backwards its own depth, ' 
+    print_info(obj.getName() .. ' has moved backwards its own depth, '
         .. string.format('%.2f', distance * 100) .. ' paces')
 end
 
@@ -165,6 +171,12 @@ function push_forward(obj)
     local displacement_vector = rad_to_vector(angle)
 
     local magnitude = get_size(obj.getName())['z']
+    -- Max movement is its front! So bases that are deeper than that move less
+    local max_movement = get_size(obj.getName())['x']
+    if magnitude > max_movement then
+        magnitude = max_movement
+    end
+    
     local destination = vec_add(initial_transform['position'], vec_mul_escalar(displacement_vector, magnitude))
     obj.setPosition(destination)
     local new_transform = calculate_transform(obj)
@@ -172,9 +184,9 @@ function push_forward(obj)
     local move = {}
     add_transform_to_move(move, obj.getName(), initial_transform, new_transform)
     push_to_history_stack(move)
-    
+
     local distance = max_distance_between_bases(initial_transform['corners'], new_transform['corners'])
-    print_info(obj.getName() .. ' has moved forwards its own depth, ' 
+    print_info(obj.getName() .. ' has moved forwards its own depth, '
         .. string.format('%.2f', distance * 100) .. ' paces')
 end
 
@@ -1249,7 +1261,7 @@ function calculate_transform(base_obj)
 end
 
 function transform_to_str(transform)
-    if transform == nil then 
+    if transform == nil then
         return 'NIL'
     end
     if transform['rotation'] == nil then
@@ -1361,7 +1373,7 @@ end
 function main_loop()
     check_selection_change()
     check_change_zoc()
-    
+
     if g_draw_all_gizmos or g_picked_base_obj then
         draw_all_gizmos_execute()
         g_draw_all_gizmos = false
