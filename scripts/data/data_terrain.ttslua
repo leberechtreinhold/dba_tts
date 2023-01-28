@@ -1,214 +1,262 @@
 g_terrain = {
     desert = {
         forest = {
-            objects = { 
-                'terrain_palm_tree' 
+            objects = {
+                'terrain_palm_tree'
             },
             multiplier = 1.3,
-            texture = { 
+            texture = {
                 'http://cloud-3.steamusercontent.com/ugc/1022823759371071004/DC4F81C7F92B971C1D1F83F2B12C0DE1E896ABEE/'
             }
         },
         rough = {
-            objects = { 
+            objects = {
                 'terrain_palm_shrubs',
                 'terrain_rock_sand'
             },
-            texture = { 
+            texture = {
                 'http://cloud-3.steamusercontent.com/ugc/1022823759371071004/DC4F81C7F92B971C1D1F83F2B12C0DE1E896ABEE/'
             }
         },
         oasis = {
-            objects = { 
-                'terrain_palm_tree' 
+            objects = {
+                'terrain_palm_tree'
             },
-            texture = { 
+            texture = {
                 'http://cloud-3.steamusercontent.com/ugc/1056604919810095519/542A46C870B041B7DC4B885E338E2D93D0699A2C/'
             }
         },
         marsh = {
-            objects = { 
-                'terrain_palm_shrubs' 
+            objects = {
+                'terrain_palm_shrubs'
             },
-            texture = { 
+            texture = {
                 'http://cloud-3.steamusercontent.com/ugc/1056604919810095379/0D3285C74959280FC90BBF4B968884A74740ED32/'
+            }
+        },
+        urban = {
+            objects = {
+                'terrain_building_antiquity'
+            },
+            texture = {
+                'http://cloud-3.steamusercontent.com/ugc/1294171976562520174/A75E4757707F221084966139B783D65DA2556B50/'
             }
         }
     },
     grass = {
         forest = {
-            objects = { 
+            objects = {
                 'terrain_nogal'
             },
             multiplier = 1.5,
-            texture = { 
+            texture = {
                 'http://cloud-3.steamusercontent.com/ugc/1267149286201969420/6FF3C9E1F3FF49AE28673503D1C73FD7E881F2C0/'
             }
         },
         rough = {
-            objects = { 
+            objects = {
                 'terrain_rock_grey'
             },
-            texture = { 
+            texture = {
                 'http://cloud-3.steamusercontent.com/ugc/1267149286201969420/6FF3C9E1F3FF49AE28673503D1C73FD7E881F2C0/'
             }
         },
         oasis = {
-            objects = { 
-                'terrain_palm_tree' 
+            objects = {
+                'terrain_palm_tree'
             },
-            texture = { 
+            texture = {
                 'http://cloud-3.steamusercontent.com/ugc/1056604919810095519/542A46C870B041B7DC4B885E338E2D93D0699A2C/'
             }
         },
         marsh = {
-            objects = { 
-                'terrain_palm_shrubs' 
+            objects = {
+                'terrain_palm_shrubs'
             },
-            texture = { 
+            texture = {
                 'http://cloud-3.steamusercontent.com/ugc/1056604919810095379/0D3285C74959280FC90BBF4B968884A74740ED32/'
+            }
+        },
+        urban = {
+            objects = {
+                'terrain_building_antiquity'
+            },
+            texture = {
+                'http://cloud-3.steamusercontent.com/ugc/1294171976562520174/A75E4757707F221084966139B783D65DA2556B50/'
             }
         }
     },
     forest = {
         forest = {
-            objects = { 
-                'terrain_fir' 
+            objects = {
+                'terrain_fir'
             },
             multiplier = 2,
-            texture = { 
+            texture = {
                 'http://cloud-3.steamusercontent.com/ugc/1267149286201969420/6FF3C9E1F3FF49AE28673503D1C73FD7E881F2C0/'
             }
         },
         rough = {
-            objects = { 
+            objects = {
                 'terrain_rock_grey'
             },
-            texture = { 
+            texture = {
                 'http://cloud-3.steamusercontent.com/ugc/1267149286201969420/6FF3C9E1F3FF49AE28673503D1C73FD7E881F2C0/'
             }
         },
         oasis = {
-            objects = { 
-                'terrain_palm_tree' 
+            objects = {
+                'terrain_palm_tree'
             },
-            texture = { 
+            texture = {
                 'http://cloud-3.steamusercontent.com/ugc/1056604919810095519/542A46C870B041B7DC4B885E338E2D93D0699A2C/'
             }
         },
         marsh = {
-            objects = { 
-                'terrain_palm_shrubs' 
+            objects = {
+                'terrain_palm_shrubs'
             },
-            texture = { 
+            texture = {
                 'http://cloud-3.steamusercontent.com/ugc/1056604919810095379/0D3285C74959280FC90BBF4B968884A74740ED32/'
+            }
+        },
+        urban = {
+            objects = {
+                'terrain_building_antiquity'
+            },
+            texture = {
+                'http://cloud-3.steamusercontent.com/ugc/1294171976562520174/A75E4757707F221084966139B783D65DA2556B50/'
             }
         }
     },
     mountain = {
         forest = {
-            objects = { 
-                'terrain_fir' 
+            objects = {
+                'terrain_fir'
             },
             multiplier = 1.5,
-            texture = { 
+            texture = {
                 'http://cloud-3.steamusercontent.com/ugc/1267149286201969420/6FF3C9E1F3FF49AE28673503D1C73FD7E881F2C0/'
             }
         },
         rough = {
-            objects = { 
+            objects = {
                 'terrain_rock_grey'
             },
-            texture = { 
+            texture = {
                 'http://cloud-3.steamusercontent.com/ugc/1056604919810095379/0D3285C74959280FC90BBF4B968884A74740ED32/'
             }
         },
         oasis = {
-            objects = { 
-                'terrain_palm_tree' 
+            objects = {
+                'terrain_palm_tree'
             },
-            texture = { 
+            texture = {
                 'http://cloud-3.steamusercontent.com/ugc/1056604919810095519/542A46C870B041B7DC4B885E338E2D93D0699A2C/'
             }
         },
         marsh = {
-            objects = { 
-                'terrain_palm_shrubs' 
+            objects = {
+                'terrain_palm_shrubs'
             },
-            texture = { 
+            texture = {
                 'http://cloud-3.steamusercontent.com/ugc/1056604919810095519/542A46C870B041B7DC4B885E338E2D93D0699A2C/'
+            }
+        },
+        urban = {
+            objects = {
+                'terrain_building_antiquity'
+            },
+            texture = {
+                'http://cloud-3.steamusercontent.com/ugc/1294171976562520174/A75E4757707F221084966139B783D65DA2556B50/'
             }
         }
     },
     steppe = {
         forest = {
-            objects = { 
+            objects = {
                 'terrain_nogal',
-                'terrain_shrub_nogal' 
+                'terrain_shrub_nogal'
             },
             multiplier = 1.5,
-            texture = { 
+            texture = {
                 'http://cloud-3.steamusercontent.com/ugc/1267149286201969420/6FF3C9E1F3FF49AE28673503D1C73FD7E881F2C0/'
             }
         },
         rough = {
-            objects = { 
+            objects = {
                 'terrain_rock_grey'
             },
-            texture = { 
+            texture = {
                 'http://cloud-3.steamusercontent.com/ugc/1267149286201969420/6FF3C9E1F3FF49AE28673503D1C73FD7E881F2C0/'
             }
         },
         oasis = {
-            objects = { 
-                'terrain_palm_tree' 
+            objects = {
+                'terrain_palm_tree'
             },
-            texture = { 
+            texture = {
                 'http://cloud-3.steamusercontent.com/ugc/1056604919810095519/542A46C870B041B7DC4B885E338E2D93D0699A2C/'
             }
         },
         marsh = {
-            objects = { 
-                'terrain_palm_shrubs' 
+            objects = {
+                'terrain_palm_shrubs'
             },
-            texture = { 
+            texture = {
                 'http://cloud-3.steamusercontent.com/ugc/1056604919810095379/0D3285C74959280FC90BBF4B968884A74740ED32/'
+            }
+        },
+        urban = {
+            objects = {
+                'terrain_building_antiquity'
+            },
+            texture = {
+                'http://cloud-3.steamusercontent.com/ugc/1294171976562520174/A75E4757707F221084966139B783D65DA2556B50/'
             }
         }
     },
     tropical = {
         forest = {
-            objects = { 
+            objects = {
                 'terrain_tree',
-                'terrain_palm_shrubs' 
+                'terrain_palm_shrubs'
             },
             multiplier = 2,
-            texture = { 
+            texture = {
                 'http://cloud-3.steamusercontent.com/ugc/1267149286201969420/6FF3C9E1F3FF49AE28673503D1C73FD7E881F2C0/'
             }
         },
         rough = {
-            objects = { 
+            objects = {
                 'terrain_palm_shrubs'
             },
-            texture = { 
+            texture = {
                 'http://cloud-3.steamusercontent.com/ugc/1267149286201969420/6FF3C9E1F3FF49AE28673503D1C73FD7E881F2C0/'
             }
         },
         oasis = {
-            objects = { 
-                'terrain_palm_tree' 
+            objects = {
+                'terrain_palm_tree'
             },
-            texture = { 
+            texture = {
                 'http://cloud-3.steamusercontent.com/ugc/1056604919810095519/542A46C870B041B7DC4B885E338E2D93D0699A2C/'
             }
         },
         marsh = {
-            objects = { 
-                'terrain_palm_shrubs' 
+            objects = {
+                'terrain_palm_shrubs'
             },
-            texture = { 
+            texture = {
                 'http://cloud-3.steamusercontent.com/ugc/1056604919810095379/0D3285C74959280FC90BBF4B968884A74740ED32/'
+            }
+        },
+        urban = {
+            objects = {
+                'terrain_building_antiquity'
+            },
+            texture = {
+                'http://cloud-3.steamusercontent.com/ugc/1294171976562520174/A75E4757707F221084966139B783D65DA2556B50/'
             }
         }
     },
@@ -318,4 +366,16 @@ terrain_shrub_nogal = {
         'http://cloud-3.steamusercontent.com/ugc/1666853884552194857/2EAC3F8728CE5FFCE454C57F9E6ED64305E211B6/'
     },
     texture = 'http://cloud-3.steamusercontent.com/ugc/1666853884552195011/EB014AC2051ABD9E900CBF41FBB7B56750486560/'
+}
+
+terrain_building_antiquity = {
+    height_correction = 0,
+    scale = 0.03,
+    rotation = 0,
+    description = 'Building',
+    author = 'Carthage building by 0AD.',
+    mesh = {
+        'http://cloud-3.steamusercontent.com/ugc/1056603883713299773/D647127C7D1A41378DD4E8288738F595FCD7C126/'
+    },
+    texture = 'http://cloud-3.steamusercontent.com/ugc/1056603883713300439/305F7371766D99ECBBCEE8ACA6A6CB3C06891A76/'
 }

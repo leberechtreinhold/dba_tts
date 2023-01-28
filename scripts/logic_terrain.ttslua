@@ -9,7 +9,7 @@ function snap_waterway(waterway)
     local h = bounds['size']['z'] / scale['z']
     local zpos = g_depth_table_in / 2 - (h / 2 - bounds['offset']['z'])
     local xpos = g_width_table_in / 2 - (h / 2 - bounds['offset']['z'])
-    if g_is_double_dba then 
+    if g_is_double_dba then
         xpos = xpos + g_width_table_in / 2
     end
 
@@ -35,7 +35,7 @@ function snap_waterway(waterway)
         and equals_float(pos['x'], 0, g_max_camp_edge_snap)
         and equals_float(pos['z'], -zpos, g_max_camp_edge_snap)
         then
-            
+
         waterway.setPosition({x=0, y=g_terrain_pos, z=-zpos})
         waterway.setRotation({x=0, y=180, z=0})
         print_info('Waterway Snapping bot')
@@ -44,7 +44,7 @@ function snap_waterway(waterway)
         and equals_float(pos['x'], xpos, g_max_camp_edge_snap)
         and equals_float(pos['z'], 0, g_max_camp_edge_snap)
         then
-            
+
         waterway.setPosition({x=xpos, y=g_terrain_pos, z=0})
         waterway.setRotation({x=0, y=90, z=0})
         print_info('Waterway Snapping right')
@@ -59,7 +59,7 @@ function snap_road(road)
     local rotation = normalize_angle(math.rad(road.getRotation()['y']))
     local pos = road.getPosition()
 
-    if (equals_float(rotation, 0, 0.17) 
+    if (equals_float(rotation, 0, 0.17)
         or equals_float(rotation, math.pi, 0.17)
         or equals_float(rotation, 2*math.pi, 0.17))
         and equals_float(pos['z'], 0, g_max_camp_edge_snap)
@@ -69,7 +69,7 @@ function snap_road(road)
         road.setRotation({x=0, y=0, z=0})
         print_info('Road Snapping Vertical')
 
-    elseif (equals_float(rotation, math.pi/2, 0.17) 
+    elseif (equals_float(rotation, math.pi/2, 0.17)
             or equals_float(rotation, 3*math.pi/2, 0.17))
             and equals_float(pos['x'], 0, g_max_camp_edge_snap)
         then
@@ -142,6 +142,35 @@ function set_marsh(terrain_obj, terrain_pos, terrain_rotation, terrain_size, tab
     change_texture_terrain(terrain_obj, random_element(options['texture']))
 end
 
+function set_urban(terrain_obj, terrain_pos, terrain_rotation, terrain_size, table_type)
+    local options = g_terrain[table_type]['urban']
+    local rows = math.floor(terrain_size['x'] / 1.5)
+    local cols = math.floor(terrain_size['z'] / 1.5)
+    for i=1,rows do
+        for j=1,cols do
+            local point = {
+                x = (i/rows)*terrain_size['x'] - terrain_size['x']/2 - terrain_size['x']/(rows*2) + (math.random()*2-1)*0.3,
+                y = 0,
+                z = (j/cols)*terrain_size['z'] - terrain_size['z']/2  - terrain_size['z']/(cols*2) + (math.random()*2-1)*0.3
+            }
+            new_pos = rotate_point_relative(point, terrain_pos, terrain_rotation)
+            local obj = spawn_model(random_element(options['objects']), new_pos, math.random(1, 359), minimal_collider, true)
+            terrain_obj.addAttachment(obj)
+        end
+    end
+    change_texture_terrain(terrain_obj, tables[table_type]['blue_player_base_tex'])
+end
+
+function set_hill(terrain_obj)
+   local materials = terrain_obj.getMaterialsInChildren()
+
+    for _,mat in ipairs(materials) do
+       if (mat.shader == "Custom/HillShader") then
+         mat.set("_MakeFlat", 1)
+       end
+    end
+end
+
 function process_vegetation(terrain_obj, type)
     local terrain_pos = terrain_obj.getPosition()
     local terrain_rotation = normalize_angle(math.rad(terrain_obj.getRotation()['y']))
@@ -157,6 +186,10 @@ function process_vegetation(terrain_obj, type)
     end
     if str_starts_with(terrain_obj.getName(), 'terrain Marsh') then
         set_marsh(terrain_obj, terrain_pos, terrain_rotation, terrain_size, type)
+    end
+    if str_starts_with(terrain_obj.getName(), 'terrain BUA') then
+        print_error('BUA')
+        set_urban(terrain_obj, terrain_pos, terrain_rotation, terrain_size, type)
     end
 end
 
@@ -210,9 +243,9 @@ function fix_terrain_and_lock()
                 if g_use_3d_terrain then
                     process_vegetation(terrain, terrain_type)
                 end
-    
+
                 gametable.addAttachment(terrain)
-                print_info('Attaching ' .. terrain.getName())                
+                print_info('Attaching ' .. terrain.getName())
             end, 1)
         end
     end
