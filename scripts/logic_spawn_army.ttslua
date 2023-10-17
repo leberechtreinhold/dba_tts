@@ -293,6 +293,7 @@ end
 
 function get_author_base(base)
     if base['n_models'] == 0 then
+        print_debug('Getting data for a base without models: ' .. base['base'])
         return get_author_tile(base['base'])
     end
     local model = base['model_data']
