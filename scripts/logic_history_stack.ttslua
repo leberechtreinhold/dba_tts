@@ -21,7 +21,7 @@ function Stack:Create()
             self._current = #self._entries
         end
     end
-    
+
     -- Gets the current element and advances current lower into the stack, as if
     -- the element is removed (but it isn't). Cannot go lower than the bottom.
     -- Returns that element if exists.
@@ -49,15 +49,15 @@ function Stack:Create()
     -- Removes the last added element. This behaves like a proper stack pop
     -- Returns that last value, if exists
     function _stack:real_pop()
-        if #self._entries ~= 0 then 
-            return table.remove(self._entries) 
+        if #self._entries ~= 0 then
+            return table.remove(self._entries)
         end
     end
 
     -- Drops everything on top of the current head. Returns nothing.
     function _stack:pop_to_current(n)
         if self._current == nil then
-            return 
+            return
         end
 
         while #self._entries > self._current do
@@ -67,21 +67,21 @@ function Stack:Create()
 
     -- Gets the last element, if exists
     function _stack:peek()
-        if #self._entries ~= 0 then 
+        if #self._entries ~= 0 then
             return self._entries[#self._entries]
         end
     end
 
     -- Gets the current size of the stack
-    function _stack:size() 
-        return #self._entries 
+    function _stack:size()
+        return #self._entries
     end
 
-    -- Gets the element at position n, with 1 being the first inserted 
+    -- Gets the element at position n, with 1 being the first inserted
     -- and #size the last one
     function _stack:get_at(n)
-        if n <= self:size() then 
-            return self._entries[n] 
+        if n <= self:size() then
+            return self._entries[n]
         end
     end
 
@@ -91,8 +91,8 @@ function Stack:Create()
         local index = count + 1
         return function()
             index = index - 1
-            if index > 0 then 
-                return self:get_at(index) 
+            if index > 0 then
+                return self:get_at(index)
             end
         end
     end
@@ -103,7 +103,7 @@ function Stack:Create()
         local count = self:size()
         return function()
             index = index + 1
-            if index <= count then 
+            if index <= count then
                 return self:get_at(index)
             end
         end
@@ -121,8 +121,8 @@ g_history_stack = Stack:Create()
 --    },
 --    "base_name_2" = { ... }
 -- }
-function push_to_history_stack(move) 
-    g_history_stack:push(move) 
+function push_to_history_stack(move)
+    g_history_stack:push(move)
     log('Pushed new move')
     log(move)
     log('---')
@@ -158,15 +158,15 @@ function apply_move(move, forward)
 
         if base_obj == nil then
             print_error('Cannot apply this move '
-                        .. 'because it involves a deleted unit ' 
-                        .. 'or something that cannot be found: ' 
+                        .. 'because it involves a deleted unit '
+                        .. 'or something that cannot be found: '
                         .. base_name)
             return
         end
         base_objs[base_name] = base_obj
     end
 
-    
+
     for base_name, transforms in pairs(move) do
         print_debug('Applying move to ' .. base_name)
         local base_obj = base_objs[base_name]
@@ -182,22 +182,23 @@ end
 -- Applies the last move on the history stack, going back
 function go_back_history_stack()
     local last_move = g_history_stack:pop()
-    if not last_move then 
-        return print_important('Cannot go back because there are no saved moves') 
+    if not last_move then
+        return print_important('Cannot go back because there are no saved moves')
     end
 
     print_debug('Going back in history... ')
     apply_move(last_move, false)
+    draw_all_gizmos()
 end
 
 -- Undoes the last move on the history stack, going forward
 function go_forward_history_stack()
     local last_move = g_history_stack:pop_reverse()
-    if not last_move then 
-        return print_important('Cannot go forward because there are no saved moves') 
+    if not last_move then
+        return print_important('Cannot go forward because there are no saved moves')
     end
 
     print_debug('Going forward in history... ')
     apply_move(last_move, true)
+    draw_all_gizmos()
 end
-
