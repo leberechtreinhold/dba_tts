@@ -23936,13 +23936,13 @@ armies["Book II"]["II/83b Patrician Roman Eastern Army 425-493AD (Plain)"] = {
     },
     base6 = {
         name = '2LH',
-        base = 'tile_plain_3LH_40x30',
+        base = 'tile_plain_2LH_40x30',
         n_models = 0,
         ignore_terrain = true
     },
     base7 = {
         name = '2LH',
-        base = 'tile_plain_3LH_40x30',
+        base = 'tile_plain_2LH_40x30',
         n_models = 0,
         ignore_terrain = true
     },
