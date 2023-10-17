@@ -176,7 +176,7 @@ function push_forward(obj)
     if magnitude > max_movement then
         magnitude = max_movement
     end
-    
+
     local destination = vec_add(initial_transform['position'], vec_mul_escalar(displacement_vector, magnitude))
     obj.setPosition(destination)
     local new_transform = calculate_transform(obj)
@@ -936,6 +936,24 @@ function onObjectPickUp(player_color,  picked_up_object)
 
     draw_all_gizmos()
 end
+
+function onObjectRotate(obj, spin, flip, player_color, old_spin, old_flip)
+    if g_bases[obj.getName()] == nil then
+        return
+    end
+
+    local initial_transform = calculate_transform(obj)
+
+    Wait.time(function ()
+        local new_transform = calculate_transform(obj)
+        local move = {}
+        add_transform_to_move(move, obj.getName(), initial_transform, new_transform)
+        push_to_history_stack(move)
+        draw_all_gizmos()
+    end, 0.2)
+
+end
+
 
 function snap_to_base(obj, transformObj, base, transformBase, direction)
     print_info(obj.getName() .. ' is snapping to ' .. base.getName() .. ', ' .. direction)
