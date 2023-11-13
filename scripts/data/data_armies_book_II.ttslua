@@ -9856,7 +9856,7 @@ armies["Book II"]["II/30a Galatian 280-273BC"] = {
     },
     base2 = {
         name = '4Wb_Gen',
-        base = 'tile_grass_40x20',
+        base = 'tile_grass_40x15',
         n_models = 3,
         model_data = 'troop_gallic_warband_general'
     },
@@ -10291,7 +10291,7 @@ armies["Book II"]["II/30b Galatian 188-48BC"] = {
     },
     base3 = {
         name = '4Wb_Gen',
-        base = 'tile_grass_40x20',
+        base = 'tile_grass_40x15',
         n_models = 3,
         model_data = 'troop_gallic_warband_general'
     },
