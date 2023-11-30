@@ -937,22 +937,44 @@ function onObjectPickUp(player_color,  picked_up_object)
     draw_all_gizmos()
 end
 
+-- The Rotate event fires while the user has the rotation key or wheel pressed
+-- To detect the start and end, we flag each firing with an id that keeps increasing
+-- The first event firing will be 1, next will be 2. On each of those we will
+-- redraw gizmos after a short delay, but we will only execute end of rotation
+-- after enough time has passed without increasing
+g_rotating_id = 0
+g_rotating_base_initial_transform = nil
 function onObjectRotate(obj, spin, flip, player_color, old_spin, old_flip)
     if g_bases[obj.getName()] == nil then
         return
     end
 
-    local initial_transform = calculate_transform(obj)
+    if g_picked_base_obj ~= nil then
+        return
+    end
+
+    if g_rotating_id == 0 then
+        g_rotating_base_initial_transform = calculate_transform(obj)
+    end
+    g_rotating_id = g_rotating_id + 1
+    local id = g_rotating_id 
 
     Wait.time(function ()
-        local new_transform = calculate_transform(obj)
-        local move = {}
-        add_transform_to_move(move, obj.getName(), initial_transform, new_transform)
-        push_to_history_stack(move)
+        if id == g_rotating_id then
+            onObjectRotateEnd(obj, g_rotating_base_initial_transform)
+            g_rotating_id = 0
+            g_rotating_base_initial_transform = nil
+        end
         draw_all_gizmos()
-    end, 0.2)
-
+    end, 0.5)
 end
+
+function onObjectRotateEnd(obj, initial_transform)
+    local new_transform = calculate_transform(obj)
+    local move = {}
+    add_transform_to_move(move, obj.getName(), initial_transform, new_transform)
+    push_to_history_stack(move)
+end 
 
 
 function snap_to_base(obj, transformObj, base, transformBase, direction)
