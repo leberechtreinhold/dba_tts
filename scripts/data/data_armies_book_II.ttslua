@@ -16245,7 +16245,7 @@ armies["Book II"]["II/47c Early German Civilis' Batavian 69AD"] = {
     }
 }
 
-armies["Book II"]["II/47d Early German Other Batavian 115BC-205AD Plain)"] = {
+armies["Book II"]["II/47d Early German Other Batavian 115BC-205AD (Plain)"] = {
     data = {
         aggresiveness = 4,
         terrain = 'Littoral',
