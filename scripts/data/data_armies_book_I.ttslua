@@ -6971,7 +6971,7 @@ armies["Book I"]["I/28 Sea Peoples 1208-1176BC (Plain)"] = {
     }
 }
 
-armies["Book I"]["I/28 Sea Peoples 1208-1176BC"] = {
+armies["Book I"]["I/28 Sea Peoples 1208-1176BC)"] = {
     data = {
         aggresiveness = 4,
         terrain = 'Littoral',
@@ -7179,7 +7179,7 @@ armies["Book I"]["I/29a Philistine 1166-1100BC (Plain)"] = {
     }
 }
 
-armies["Book I"]["I/29a Philistine 1166-1100BC)"] = {
+armies["Book I"]["I/29a Philistine 1166-1100BC"] = {
     data = {
         aggresiveness = 3,
         terrain = 'Arable',

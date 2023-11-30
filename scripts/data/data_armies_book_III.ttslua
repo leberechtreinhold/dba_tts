@@ -8250,7 +8250,7 @@ armies["Book III"]["III/40d Leidang 1071-1280AD (Plain)"] = {
     }
 }
 
-armies["Book III"]["III/40d Leidang 1071-1280AD)"] = {
+armies["Book III"]["III/40d Leidang 1071-1280AD"] = {
     data = {
         aggresiveness = 1,
         terrain = 'Littoral',
