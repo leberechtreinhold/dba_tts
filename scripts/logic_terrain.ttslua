@@ -20,7 +20,7 @@ function snap_waterway(waterway)
 
         waterway.setPosition({x=0, y=g_terrain_pos, z=zpos})
         waterway.setRotation({x=0, y=0, z=0})
-        print_info('Waterway Snapping top')
+        Logger.info('Waterway Snapping top')
 
     elseif equals_float(rotation, math.pi/2, 0.17)
         and equals_float(pos['x'], -xpos, g_max_camp_edge_snap)
@@ -29,7 +29,7 @@ function snap_waterway(waterway)
 
         waterway.setPosition({x=-xpos, y=g_terrain_pos, z=0})
         waterway.setRotation({x=0, y=270, z=0})
-        print_info('Waterway Snapping left')
+        Logger.info('Waterway Snapping left')
 
     elseif equals_float(rotation, math.pi, 0.17)
         and equals_float(pos['x'], 0, g_max_camp_edge_snap)
@@ -38,7 +38,7 @@ function snap_waterway(waterway)
 
         waterway.setPosition({x=0, y=g_terrain_pos, z=-zpos})
         waterway.setRotation({x=0, y=180, z=0})
-        print_info('Waterway Snapping bot')
+        Logger.info('Waterway Snapping bot')
 
     elseif equals_float(rotation, math.pi*3/2, 0.17)
         and equals_float(pos['x'], xpos, g_max_camp_edge_snap)
@@ -47,10 +47,10 @@ function snap_waterway(waterway)
 
         waterway.setPosition({x=xpos, y=g_terrain_pos, z=0})
         waterway.setRotation({x=0, y=90, z=0})
-        print_info('Waterway Snapping right')
+        Logger.info('Waterway Snapping right')
 
     else
-        print_info('Waterway is not snapping')
+        Logger.info('Waterway is not snapping')
     end
 end
 
@@ -67,7 +67,7 @@ function snap_road(road)
 
         road.setPosition({x=pos['x'], y=g_terrain_pos, z=0})
         road.setRotation({x=0, y=0, z=0})
-        print_info('Road Snapping Vertical')
+        Logger.info('Road Snapping Vertical')
 
     elseif (equals_float(rotation, math.pi/2, 0.17)
             or equals_float(rotation, 3*math.pi/2, 0.17))
@@ -76,10 +76,10 @@ function snap_road(road)
 
         road.setPosition({x=0, y=g_terrain_pos, z=pos['z']})
         road.setRotation({x=0, y=90, z=0})
-        print_info('Road Snapping Horizontal')
+        Logger.info('Road Snapping Horizontal')
 
     else
-        print_info('Road is not snapping')
+        Logger.info('Road is not snapping')
     end
 end
 
@@ -188,7 +188,7 @@ function process_vegetation(terrain_obj, type)
         set_marsh(terrain_obj, terrain_pos, terrain_rotation, terrain_size, type)
     end
     if str_starts_with(terrain_obj.getName(), 'terrain BUA') then
-        print_error('BUA')
+        Logger.error('BUA')
         set_urban(terrain_obj, terrain_pos, terrain_rotation, terrain_size, type)
     end
 end
@@ -217,10 +217,10 @@ function fix_terrain_and_lock()
         if distance <= max_distance_from_table_sq
             and pos_table['y'] < terrain_pos['y'] then
 
-            print_debug('Found terrain with name ' .. terrain.getName())
+            Logger.debug('Found terrain with name ' .. terrain.getName())
 
             local current_scale = terrain.getScale()
-            print_debug('The terrain had scale ' .. vec_to_str(current_scale))
+            Logger.debug('The terrain had scale ' .. vec_to_str(current_scale))
             if str_has_substr(terrain.getName(), 'Road') then
                 current_scale.y = 0.8 + math.random()*0.1 - 0.05
             else
@@ -229,13 +229,13 @@ function fix_terrain_and_lock()
             terrain.setScale(current_scale)
 
             local current_rotation = terrain.getRotation()
-            print_debug('The terrain had rotation ' .. vec_to_str(current_rotation))
+            Logger.debug('The terrain had rotation ' .. vec_to_str(current_rotation))
             current_rotation.x = 0
             current_rotation.z = 0
             terrain.setRotation(current_rotation)
 
             local current_pos = terrain.getPosition()
-            print_debug('The terrain had position ' .. vec_to_str(current_pos))
+            Logger.debug('The terrain had position ' .. vec_to_str(current_pos))
             current_pos.y = g_terrain_pos
             terrain.setPosition(current_pos)
 
@@ -245,7 +245,7 @@ function fix_terrain_and_lock()
                 end
 
                 gametable.addAttachment(terrain)
-                print_info('Attaching ' .. terrain.getName())
+                Logger.info('Attaching ' .. terrain.getName())
             end, 1)
         end
     end
@@ -254,6 +254,6 @@ function fix_terrain_and_lock()
         gametable.setRotation({ x = 0, y = 0, z = 0})
         gametable.setPosition({ x = 0, y = g_base_height_tabletop, z = 0})
         gametable.setLock(true)
-        print_important('Table is now locked')
+        Logger.important('Table is now locked')
     end, 1)
 end

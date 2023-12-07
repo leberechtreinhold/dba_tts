@@ -25,7 +25,7 @@ function spawn_dice(color, pos)
         callback_function = function(obj)
             g_current_dice[color] = obj.getGUID()
             
-            print_debug('Spawned ' .. color .. ' with guid ' .. g_current_dice[color])
+            Logger.debug('Spawned ' .. color .. ' with guid ' .. g_current_dice[color])
         end
     })
     obj.setCustomObject({
@@ -91,7 +91,7 @@ function roll_dice(color)
     local obj = getObjectFromGUID(g_current_dice[color])
 
     if obj == nil then
-        print_error('No dice found, please use !dba_regen_dice')
+        Logger.error('No dice found, please use !dba_regen_dice')
         return
     end
 

@@ -88,19 +88,19 @@ function update_zone_value(zone)
     else
         UI.setAttribute(image_id, 'image', 'skeleton4' .. image_suffix)
     end
-    print_debug('Updated dead zone ' .. zone.getName())
+    Logger.debug('Updated dead zone ' .. zone.getName())
     g_updating_zone[zone.getName()] = false
 end
 
 function callback_zone(zone, name, color)
-    print_debug('Dead zone callback ' .. zone.getName())
+    Logger.debug('Dead zone callback ' .. zone.getName())
     if not g_updating_zone[zone.getName()] then
         g_updating_zone[zone.getName()] = true
         Wait.frames(function ()
             update_zone_value(zone)
         end, 30)
     else
-        print_debug('Ignoring dead callback because already updating')
+        Logger.debug('Ignoring dead callback because already updating')
     end
 end
 
@@ -108,12 +108,12 @@ function onObjectEnterScriptingZone(zone, obj)
     if not str_has_substr(obj.getName(), 'base') then
         return 
     end
-    print_debug(obj.getName() .. ' entered ' .. zone.getName())
+    Logger.debug(obj.getName() .. ' entered ' .. zone.getName())
     if not g_updating_zone[zone.getName()] then
         g_updating_zone[zone.getName()] = true
         Wait.frames(function() update_zone_value(zone) end, 60)
     else
-        print_debug('Ignoring dead Enter because already updating')
+        Logger.debug('Ignoring dead Enter because already updating')
     end
 end
 
@@ -121,11 +121,11 @@ function onObjectLeaveScriptingZone(zone, obj)
     if not str_has_substr(obj.getName(), 'base') then
         return 
     end
-    print_debug(obj.getName() .. ' left ' .. zone.getName())
+    Logger.debug(obj.getName() .. ' left ' .. zone.getName())
     if not g_updating_zone[zone.getName()] then
         g_updating_zone[zone.getName()] = true
         Wait.frames(function() update_zone_value(zone) end, 60)
     else
-        print_debug('Ignoring dead Leave because already updating')
+        Logger.debug('Ignoring dead Leave because already updating')
     end
 end

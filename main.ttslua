@@ -27,13 +27,13 @@
 History = require('../dbx_tts/History')
 
 function onload()
-    print_info('----------------------------------------------')
-    print_info('                       DBA 2.2 v1.25.0 ')
-    print_info('----------------------------------------------\n\nCheck the Notebook for instructions.')
+    Logger.info('----------------------------------------------')
+    Logger.info('                       DBA 2.2 v1.25.0 ')
+    Logger.info('----------------------------------------------\n\nCheck the Notebook for instructions.')
 
     Wait.time(main_loop, g_seconds_main_loop, -1)
 
-    g_log_enabled = false
+    Logger.enabled = false
     make_scenery_non_interactable()
     reset_state()
     spawn_proxy_bases()
@@ -41,7 +41,7 @@ function onload()
     spawn_dead_zones()
 
     Wait.time(function ()
-        g_log_enabled = true
+        Logger.enabled = true
     end, 1, 0)
 end
 
@@ -83,77 +83,77 @@ function update()
 end
 
 function print_help()
-    print_info('Write commands in the chat by writting !command.')
-    print_info('A extended description can be found on the Notebook.')
-    print_info('Available commands:')
-    print_info('!dba_help: Print this help')
-    print_info('!dba_print_state: Prints the current global vars of bases and table')
-    print_info('!dba_reset: Recalculates the bases and tables using heuristics on the existing objects')
+    Logger.info('Write commands in the chat by writting !command.')
+    Logger.info('A extended description can be found on the Notebook.')
+    Logger.info('Available commands:')
+    Logger.info('!dba_help: Print this help')
+    Logger.info('!dba_print_state: Prints the current global vars of bases and table')
+    Logger.info('!dba_reset: Recalculates the bases and tables using heuristics on the existing objects')
 end
 
 function onChat(message, player)
     if message == '!dba_help' then
-        print_info(player.get_steam_name() .. ': ' .. message)
+        Logger.info(player.get_steam_name() .. ': ' .. message)
         print_help()
         return false
     end
 
     if message == '!dba_reset' then
-        print_info(player.get_steam_name() .. ': ' .. message)
-        print_important('Resetting the state of the board, check the chat')
+        Logger.info(player.get_steam_name() .. ': ' .. message)
+        Logger.important('Resetting the state of the board, check the chat')
         reset_state()
         return false
     end
 
     if message == '!dba_print_state' then
-        print_info(player.get_steam_name() .. ': ' .. message)
+        Logger.info(player.get_steam_name() .. ': ' .. message)
         print_state()
         return false
     end
 
     if message == '!dba_debug' then
-        print_info(player.get_steam_name() .. ': ' .. message)
-        if g_debug_mode then
-            print_info('Disabling debug mode')
-            g_debug_mode = false
+        Logger.info(player.get_steam_name() .. ': ' .. message)
+        if Logger.debug_enabled then
+            Logger.info('Disabling debug mode')
+            Logger.debug_enabled = false
         else
-            print_info('Enabling debug mode, will take effect in three seconds. Note, this will cause decreased performance.')
+            Logger.info('Enabling debug mode, will take effect in three seconds. Note, this will cause decreased performance.')
             Wait.time(function()
-                g_debug_mode = true
-                print_info('Debug mode ON')
+                Logger.debug_enabled = true
+                Logger.info('Debug mode ON')
             end, 3)
         end
         return false
     end
 
     if message == '!dba_3dterrain' then
-        print_info(player.get_steam_name() .. ': ' .. message)
+        Logger.info(player.get_steam_name() .. ': ' .. message)
         g_use_3d_terrain = true
-        print_info('3D Terrain enabled, when doing a fix&lock on the table 3D objects will load.')
+        Logger.info('3D Terrain enabled, when doing a fix&lock on the table 3D objects will load.')
         return false
     end
 
     if message == '!dba_regen_dice' then
-        print_info(player.get_steam_name() .. ': ' .. message)
+        Logger.info(player.get_steam_name() .. ': ' .. message)
         spawn_all_dice()
         return false
     end
 
     if message == '!dba_random_army' then
-        print_info(player.get_steam_name() .. ': ' .. message)
+        Logger.info(player.get_steam_name() .. ': ' .. message)
         local _,book = random_kv(armies)
         local army_name, army = random_kv(book)
 
-        print_important('Army selected: ' .. army_name .. '')
-        print_info('List: ' .. army['data']['list'])
-        print_info('Agressiveness: ' .. army['data']['aggresiveness']
+        Logger.important('Army selected: ' .. army_name .. '')
+        Logger.info('List: ' .. army['data']['list'])
+        Logger.info('Agressiveness: ' .. army['data']['aggresiveness']
             .. ' Terrain: ' .. army['data']['terrain'])
         return false
     end
 
     if str_starts_with(message, '!dba') then
-        print_info(player.get_steam_name() .. ': ' .. message)
-        print_error('Command not recognized. Please, use !dba_help')
+        Logger.info(player.get_steam_name() .. ': ' .. message)
+        Logger.error('Command not recognized. Please, use !dba_help')
     end
     return true
 end

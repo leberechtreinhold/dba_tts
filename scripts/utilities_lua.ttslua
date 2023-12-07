@@ -10,7 +10,7 @@ function on_next_frame(f)
         g_func_next_frame = f
         startLuaCoroutine(self, 'on_next_frame_coroutine')
     else
-        print_error('Trying to add a new coroutine when the next frame has yet to pass')
+        Logger.error('Trying to add a new coroutine when the next frame has yet to pass')
     end
 end
 

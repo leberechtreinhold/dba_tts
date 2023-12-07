@@ -6,11 +6,11 @@ function add_context_menu_base(base_obj)
     base_obj.clearContextMenu()
     base_obj.addContextMenuItem("Move forward single", function()
         local moved_paces = move_base(base_obj, g_paces_movement)
-        print_info(base_obj.getName() .. ' ' .. moved_paces .. ' paces forward')
+        Logger.info(base_obj.getName() .. ' ' .. moved_paces .. ' paces forward')
     end)
     base_obj.addContextMenuItem("Move back single", function()
         local moved_paces = move_base(base_obj, -g_paces_movement)
-        print_info(base_obj.getName() .. ' ' .. moved_paces .. ' paces backwards')
+        Logger.info(base_obj.getName() .. ' ' .. moved_paces .. ' paces backwards')
     end)
     base_obj.addContextMenuItem("Push forward single", function()
         push_forward(base_obj)
@@ -46,7 +46,7 @@ end
 
 function on_clone(source_obj, new_obj)
     local name = source_obj.getName()
-    print_info(name .. " has been duplicated.")
+    Logger.info(name .. " has been duplicated.")
     local new_name = name .. " clone " .. new_obj.getGUID()
     new_obj.setName(new_name)
     g_bases[new_name] = {
@@ -80,7 +80,7 @@ function onObjectSpawn(new_obj)
 end
 
 function spawn_base(base, pos, y_rotation, is_red_player, command_color)
-    print_debug('Spawning base #' .. g_base_index)
+    Logger.debug('Spawning base #' .. g_base_index)
     local overriden_tex = nil
     if base['ignore_terrain'] == nil then
         local type = from_toggle_number_to_table_type(g_current_table_type)
@@ -97,7 +97,7 @@ function spawn_base(base, pos, y_rotation, is_red_player, command_color)
     end
 
     if base['name'] == nil then
-        print_error('One of the bases of this army has no name! Please report to us so we can fix it asap')
+        Logger.error('One of the bases of this army has no name! Please report to us so we can fix it asap')
         return
     end
     local base_obj = spawn_model(base['base'], pos, 0, nil, is_red_player, overriden_tex)
@@ -274,9 +274,9 @@ function spawn_army(army_name, army, is_red_player, command_color)
         .. maker,
         note_pos,
         angle)
-    print_important('Army deployed: ' .. army_name .. ', see chat for options')
-    print_info('List: ' .. army['data']['list'])
-    print_info('Agressiveness: ' .. army['data']['aggresiveness']
+    Logger.important('Army deployed: ' .. army_name .. ', see chat for options')
+    Logger.info('List: ' .. army['data']['list'])
+    Logger.info('Agressiveness: ' .. army['data']['aggresiveness']
         .. ' Terrain: ' .. army['data']['terrain'])
 
 end
@@ -293,7 +293,7 @@ end
 
 function get_author_base(base)
     if base['n_models'] == 0 then
-        print_debug('Getting data for a base without models: ' .. base['base'])
+        Logger.debug('Getting data for a base without models: ' .. base['base'])
         return get_author_tile(base['base'])
     end
     local model = base['model_data']
@@ -307,7 +307,7 @@ function update_authors_text(army)
     local authorship_models = 'The authors of the models are:\n\n'
     local authors_set = {}
     for base_id, base in pairs(army) do
-        print_debug('Getting data of base for author of ' .. base_id)
+        Logger.debug('Getting data of base for author of ' .. base_id)
         if base_id ~= 'data' then
             local author = get_author_base(base)
 
@@ -398,7 +398,7 @@ function spawn_table_obj(model_url, height_correction, texture_array_urls)
         snap_to_grid = false,
         callback_function = function(obj)
             g_current_table = obj.getGUID()
-            print_info('Table is set to ' .. g_current_table)
+            Logger.info('Table is set to ' .. g_current_table)
         end
     })
     local tex_index = math.random(1, #texture_array_urls)
@@ -411,14 +411,14 @@ function spawn_table_obj(model_url, height_correction, texture_array_urls)
         specular_intensity = 0,
         freshnel_strength = 0
     })
-    print_important('Table spawned, you can now put terrain on top, then use Right Click > Fix terrain.')
+    Logger.important('Table spawned, you can now put terrain on top, then use Right Click > Fix terrain.')
 
     add_context_menu_table(obj)
     obj.setLock(true)
 end
 
 function change_bases_to_terrain(terrain_type)
-    print_debug('Changing bases to ' .. terrain_type)
+    Logger.debug('Changing bases to ' .. terrain_type)
     local all_objs = getAllObjects()
     local bases = filter_bases(all_objs)
     for _,base in ipairs(bases) do
@@ -426,7 +426,7 @@ function change_bases_to_terrain(terrain_type)
         if g_bases[name] ~= nil 
             and not str_has_substr(g_bases[name]['tile'], 'plain') then
 
-            print_debug('Changing ' .. name)
+            Logger.debug('Changing ' .. name)
             local is_red = g_bases[name]['is_red_player']
             local tex = tables[terrain_type]['blue_player_base_tex']
             if is_red then
@@ -497,7 +497,7 @@ function spawn_model(troop_name, pos, added_y_axis_rotation, collider, is_player
 end
 
 function spawn_asset(asset_name, pos, added_y_axis_rotation)
-    print_debug('Spawning asset ' .. asset_name)
+    Logger.debug('Spawning asset ' .. asset_name)
     if _G[asset_name]['rotation'] then
         added_y_axis_rotation = added_y_axis_rotation + _G[asset_name]['rotation']
     end
@@ -559,10 +559,10 @@ function onObjectDestroy(dying_object)
         return
     end
     if is_table(dying_object) then
-        print_info('Table removed from play')
+        Logger.info('Table removed from play')
         g_current_table = nil
     elseif g_bases[name] ~= nil then
-        print_info('Base ' .. name .. ' removed from play')
+        Logger.info('Base ' .. name .. ' removed from play')
         g_bases[name] = nil
     end
 end

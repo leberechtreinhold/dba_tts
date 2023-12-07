@@ -24,7 +24,7 @@ end
 function move_bases(player, value, id)
     local objs = filter_bases(player.getSelectedObjects())
     if tlen(objs) < 1 then
-        print_error(player.steam_name ..' is trying to move 100 paces, but (s)he has no object selected, ignoring')
+        Logger.error(player.steam_name ..' is trying to move 100 paces, but (s)he has no object selected, ignoring')
     return
     end
 
@@ -35,7 +35,7 @@ function move_bases(player, value, id)
         local new_transform = calculate_transform(obj)
         History.add_transform_to_move(move, obj.getName(), initial_transform, new_transform)
 
-        print_info(player.steam_name .. ' is moving ' .. obj.getName() .. ' ' .. moved_paces .. ' paces forward')
+        Logger.info(player.steam_name .. ' is moving ' .. obj.getName() .. ' ' .. moved_paces .. ' paces forward')
     end
     History.push_to_history_stack(move)
 
@@ -47,7 +47,7 @@ function align_bases(player, value, id)
     local objs = filter_bases(player.getSelectedObjects())
     local n_objs = tlen(objs)
     if n_objs < 2 then
-        print_error(player.steam_name ..' is trying to align ' .. n_objs .. ' bases, which is not supported')
+        Logger.error(player.steam_name ..' is trying to align ' .. n_objs .. ' bases, which is not supported')
         return
     end
     table.sort(objs, function(l, r)
@@ -67,7 +67,7 @@ function align_bases(player, value, id)
 
         local distance_centers = distance_points_flat_sq(transform['position'], pos)
         if (distance_centers > g_max_distance_alignment) then
-            print_error(player.steam_name .. ' is trying to align but the bases are too far apart, more than 3inch between centers!')
+            Logger.error(player.steam_name .. ' is trying to align but the bases are too far apart, more than 3inch between centers!')
             return
         end
 
@@ -124,7 +124,7 @@ function on_filter_models(player, value, id)
     g_filter_armies_models = value == "True"
     
     local book, army = get_initial_army()
-    print_debug('Selected army is ' .. g_army_selected)
+    Logger.debug('Selected army is ' .. g_army_selected)
 
     on_next_frame(function()
         UI.setAttribute('toggle_filter_modes', 'isOn', g_filter_armies_models)
@@ -148,7 +148,7 @@ function create_army_options_menu(player, value, id)
     end
 
     local book, army = get_initial_army()
-    print_debug('Selected army is ' .. g_army_selected)
+    Logger.debug('Selected army is ' .. g_army_selected)
 
     update_book_menu(1)
     on_next_frame(function()
@@ -207,7 +207,7 @@ function on_book_selected(player, value, id)
         end
     end
     local army = armies[g_book_selected][g_army_selected]
-    print_debug('Selected army is ' .. g_army_selected)
+    Logger.debug('Selected army is ' .. g_army_selected)
 
     on_next_frame(function()
         update_book_menu(selected_book_index)
@@ -227,7 +227,7 @@ g_army_selected = ''
 function on_army_selected(player, value, id)
     g_army_selected = value
     local army = armies[g_book_selected][g_army_selected]
-    print_debug('Selected army is ' .. g_army_selected)
+    Logger.debug('Selected army is ' .. g_army_selected)
 
     update_authors_text(army)
 
@@ -315,7 +315,7 @@ function on_toggle_deployment_lines(player, value, id)
         UI.setAttribute('toggle_deployment_lines', 'text', 'Show deployment rulers')
 
         if g_current_table == nil then
-            print_error('There\'s no table so deployment lines will have no effect. Please reenable when you spawned the table.')
+            Logger.error('There\'s no table so deployment lines will have no effect. Please reenable when you spawned the table.')
         else
             draw_deployment_lines()
         end
@@ -405,7 +405,7 @@ function on_load_table(player, value, id)
         end
         change_bases_to_terrain(type)
     else
-        print_error('There\'s already a table spawned')
+        Logger.error('There\'s already a table spawned')
     end
 
     UI.setAttribute('panel_dba_table_selection_bg', 'active', false)
@@ -429,7 +429,7 @@ function on_push_back(player, value, id)
     local objs = filter_bases(player.getSelectedObjects())
     local len = tlen(objs)
     if len < 1 then
-        print_error(player.steam_name .. ' is pushing back troops but doesn\'t have any base selected')
+        Logger.error(player.steam_name .. ' is pushing back troops but doesn\'t have any base selected')
         return
     end
 
@@ -449,7 +449,7 @@ function on_wheel(player, value, id)
     local objs = filter_bases(player.getSelectedObjects())
     local len = tlen(objs)
     if len < 1 then
-        print_error(player.steam_name .. ' is wheeling troops but doesn\'t have any base selected')
+        Logger.error(player.steam_name .. ' is wheeling troops but doesn\'t have any base selected')
         return
     end
 
@@ -457,7 +457,7 @@ function on_wheel(player, value, id)
     on_change_orientation_wheel_ui('left')
     local distance = preview_wheel(objs)
     if distance < 0 then
-        print_error(player.steam_name .. ' is wheeling troops but doesn\'t have a valid group selected')
+        Logger.error(player.steam_name .. ' is wheeling troops but doesn\'t have a valid group selected')
         return
     end
     g_player_wheeling = player.color
@@ -593,14 +593,14 @@ g_roll_lock = {}
 
 function on_roll_pips_red(player, value, id)
     if g_roll_lock['red'] then
-        print_debug('Ignoring roll because this dice was rolled less than a second ago')
+        Logger.debug('Ignoring roll because this dice was rolled less than a second ago')
     else
         g_roll_lock['red'] = true
         local red = roll_dice('red')
         local orange = roll_dice('orange')
         local yellow = roll_dice('yellow')
 
-        print_important('Red: ' .. red .. ' (Or: ' .. orange .. ' Yw: ' .. yellow .. ')')
+        Logger.important('Red: ' .. red .. ' (Or: ' .. orange .. ' Yw: ' .. yellow .. ')')
         Wait.time(function ()
             g_roll_lock['red'] = false
         end, 0.5)
@@ -609,14 +609,14 @@ end
 
 function on_roll_pips_blue(player, value, id)
     if g_roll_lock['blue'] then
-        print_debug('Ignoring roll because this dice was rolled less than a second ago')
+        Logger.debug('Ignoring roll because this dice was rolled less than a second ago')
     else
         g_roll_lock['blue'] = true
         local blue = roll_dice('blue')
         local green = roll_dice('green')
         local purple = roll_dice('purple')
 
-        print_important('Blue: ' .. blue .. ' (Gr: ' .. green .. ' Pr: ' .. purple .. ')')
+        Logger.important('Blue: ' .. blue .. ' (Gr: ' .. green .. ' Pr: ' .. purple .. ')')
         Wait.time(function ()
             g_roll_lock['blue'] = false
         end, 0.5)
