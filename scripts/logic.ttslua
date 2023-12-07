@@ -103,8 +103,8 @@ function turn_around_base(obj)
 
     local new_transform = calculate_transform(obj)
     local move = {}
-    add_transform_to_move(move, obj.getName(), initial_transform, new_transform)
-    push_to_history_stack(move)
+    History.add_transform_to_move(move, obj.getName(), initial_transform, new_transform)
+    History.push_to_history_stack(move)
 
     local distance = max_distance_between_bases(initial_transform['corners'], new_transform['corners'])
     print_info(obj.getName() .. ' has turned around 180º, which costs '
@@ -128,8 +128,8 @@ function move_base(obj, how_many_paces, ignore_history)
     if not ignore_history then
         local new_transform = calculate_transform(obj)
         local move = {}
-        add_transform_to_move(move, obj.getName(), initial_transform, new_transform)
-        push_to_history_stack(move)
+        History.add_transform_to_move(move, obj.getName(), initial_transform, new_transform)
+        History.push_to_history_stack(move)
     end
     return how_many_paces
 end
@@ -156,8 +156,8 @@ function push_back(obj)
 
     local new_transform = calculate_transform(obj)
     local move = {}
-    add_transform_to_move(move, obj.getName(), initial_transform, new_transform)
-    push_to_history_stack(move)
+    History.add_transform_to_move(move, obj.getName(), initial_transform, new_transform)
+    History.push_to_history_stack(move)
 
     local distance = max_distance_between_bases(initial_transform['corners'], new_transform['corners'])
     print_info(obj.getName() .. ' has moved backwards its own depth, '
@@ -182,8 +182,8 @@ function push_forward(obj)
     local new_transform = calculate_transform(obj)
 
     local move = {}
-    add_transform_to_move(move, obj.getName(), initial_transform, new_transform)
-    push_to_history_stack(move)
+    History.add_transform_to_move(move, obj.getName(), initial_transform, new_transform)
+    History.push_to_history_stack(move)
 
     local distance = max_distance_between_bases(initial_transform['corners'], new_transform['corners'])
     print_info(obj.getName() .. ' has moved forwards its own depth, '
@@ -485,7 +485,7 @@ function push_back_column(objs)
     local displacement_vector = rad_to_vector(angle)
     local destination = vec_add(front_element.getPosition(), vec_mul_escalar(displacement_vector, distance))
     front_element.setPosition(destination)
-    add_transform_to_move(move, front_element.getName(), transforms[front_element], calculate_transform(front_element))
+    History.add_transform_to_move(move, front_element.getName(), transforms[front_element], calculate_transform(front_element))
 
     local magnitude = base_depth / 2
     local next_element = behind_of[front_element]
@@ -497,14 +497,14 @@ function push_back_column(objs)
         local next_destination = vec_add(destination, vec_mul_escalar(displacement_vector, magnitude))
         next_element.setPosition(next_destination)
 
-        add_transform_to_move(move, next_element.getName(), transforms[next_element], calculate_transform(next_element))
+        History.add_transform_to_move(move, next_element.getName(), transforms[next_element], calculate_transform(next_element))
 
         front_element = next_element
         next_element = behind_of[next_element]
 
         magnitude = magnitude + base_depth / 2
     end
-    push_to_history_stack(move)
+    History.push_to_history_stack(move)
 end
 
 -- Calculates the future position of the given group of objs, assuming a wheel
@@ -616,17 +616,17 @@ function perform_wheels()
             old_transforms[current_element],
             new_transforms[current_element])
 
-        add_transform_to_move(move, current_element.getName(), old_transforms[current_element], new_transforms[current_element])
+        History.add_transform_to_move(move, current_element.getName(), old_transforms[current_element], new_transforms[current_element])
 
         while behind_of[current_element] ~= nil do
             current_element = behind_of[current_element]
             apply_transform_obj(current_element,
                 old_transforms[current_element],
                 new_transforms[current_element])
-            add_transform_to_move(move, current_element.getName(), old_transforms[current_element], new_transforms[current_element])
+            History.add_transform_to_move(move, current_element.getName(), old_transforms[current_element], new_transforms[current_element])
         end
     end
-    push_to_history_stack(move)
+    History.push_to_history_stack(move)
 end
 
 function calculate_future_position_wheel(obj, transform, pivot_point, angle, is_left, depth)
@@ -972,8 +972,8 @@ end
 function onObjectRotateEnd(obj, initial_transform)
     local new_transform = calculate_transform(obj)
     local move = {}
-    add_transform_to_move(move, obj.getName(), initial_transform, new_transform)
-    push_to_history_stack(move)
+    History.add_transform_to_move(move, obj.getName(), initial_transform, new_transform)
+    History.push_to_history_stack(move)
 end 
 
 
@@ -1262,8 +1262,8 @@ function onObjectDrop(player_color,  picked_up_object)
         print_info(string.format('Movement for %q is %.1f paces', obj_name, distance * 100))
 
         local move = {}
-        add_transform_to_move(move, obj_name, g_picked_base_initial_transform, new_transform)
-        push_to_history_stack(move)
+        History.add_transform_to_move(move, obj_name, g_picked_base_initial_transform, new_transform)
+        History.push_to_history_stack(move)
     else
         print_info(string.format('Movement for %q has been resetted', obj_name))
     end

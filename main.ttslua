@@ -22,9 +22,9 @@
 #include scripts/logic_spawn_army
 #include scripts/logic_dead
 #include scripts/logic_dice
-#include scripts/logic_history_stack
 #include scripts/logic
 #include scripts/uievents
+History = require('../dbx_tts/History')
 
 function onload()
     print_info('----------------------------------------------')

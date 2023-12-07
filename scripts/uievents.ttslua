@@ -33,11 +33,11 @@ function move_bases(player, value, id)
         local initial_transform = calculate_transform(obj)
         local moved_paces = move_base(obj, g_paces_movement, true)
         local new_transform = calculate_transform(obj)
-        add_transform_to_move(move, obj.getName(), initial_transform, new_transform)
+        History.add_transform_to_move(move, obj.getName(), initial_transform, new_transform)
 
         print_info(player.steam_name .. ' is moving ' .. obj.getName() .. ' ' .. moved_paces .. ' paces forward')
     end
-    push_to_history_stack(move)
+    History.push_to_history_stack(move)
 
     -- Moving the bases shpuld imply update the gizmos
     draw_all_gizmos()
