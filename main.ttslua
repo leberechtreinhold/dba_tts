@@ -24,7 +24,11 @@
 #include scripts/logic_dice
 #include scripts/logic
 #include scripts/uievents
-History = require('../dbx_tts/History')
+
+-- DBX Library
+DBX = require('../dbx_tts/main')
+Logger = DBX.Logger:Create()
+History = DBX.History
 
 function onload()
     Logger.info('----------------------------------------------')
