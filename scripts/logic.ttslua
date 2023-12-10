@@ -44,12 +44,12 @@ function align_two_bases(base2, position, corners, rotation)
     local translation = nil
     -- Note that since we know that base1 is to the left of base2, the angle
     -- is 0-90 or 270-360
-    if relative_angle > g_alignment_angle_side
+    if relative_angle > Settings.alignment_angle_side
        and relative_angle < math.pi then
         -- Angle the back of base2 with the front of base1
         translation = vec_sub(corners['topright'], corners2['botright'])
-    elseif relative_angle <= g_alignment_angle_side
-           or relative_angle >= (2*math.pi - g_alignment_angle_side) then
+    elseif relative_angle <= Settings.alignment_angle_side
+           or relative_angle >= (2*math.pi - Settings.alignment_angle_side) then
         -- Angle the left side of base2 with the right of base1
         translation = vec_sub(corners['topright'], corners2['topleft'])
     else
@@ -469,8 +469,8 @@ function push_back_column(objs)
 
     local base_depth = get_size(front_element.getName())['z']
     local distance = base_depth
-    if distance > g_base_width_inches then
-        distance = g_base_width_inches
+    if distance > Settings.base_width_inches then
+        distance = Settings.base_width_inches
     end
 
     local angle = from_degrees_to_rad(front_element.getRotation())['y']
@@ -651,8 +651,8 @@ function is_behind(transformA, transformB)
     local angleB = transformB['rotation']
     local diff_angle = math.abs(angleB - angleA)
 
-    if diff_angle > g_max_angle_pushback_rad
-       and diff_angle < (2*math.pi - g_max_angle_pushback_rad) then
+    if diff_angle > Settings.max_angle_pushback_rad
+       and diff_angle < (2*math.pi - Settings.max_angle_pushback_rad) then
        -- Angle is too different, skip
        return false
     end
@@ -661,9 +661,9 @@ function is_behind(transformA, transformB)
     local cornersB = transformB['corners']
 
     local distance = distance_points_flat_sq(cornersA['topright'], cornersB['botright'])
-    if distance < g_max_corner_distance_snap then
+    if distance < Settings.max_corner_distance_snap then
         distance = distance_points_flat_sq(cornersA['topleft'], cornersB['botleft'])
-        if distance < g_max_corner_distance_snap then
+        if distance < Settings.max_corner_distance_snap then
             return true
         end
     end
@@ -676,8 +676,8 @@ function is_left_side(transformA, transformB)
     local angleB = transformB['rotation']
     local diff_angle = math.abs(angleB - angleA)
 
-    if diff_angle > g_max_angle_pushback_rad
-       and diff_angle < (2*math.pi - g_max_angle_pushback_rad) then
+    if diff_angle > Settings.max_angle_pushback_rad
+       and diff_angle < (2*math.pi - Settings.max_angle_pushback_rad) then
        -- Angle is too different, skip
        return false
     end
@@ -686,7 +686,7 @@ function is_left_side(transformA, transformB)
     local cornersB = transformB['corners']
 
     local distance = distance_points_flat_sq(cornersA['topright'], cornersB['topleft'])
-    if distance < g_max_corner_distance_snap then
+    if distance < Settings.max_corner_distance_snap then
         -- Note: We do not check the bottom because bases may be of different
         -- sizes and we already check the angle
         return true
@@ -712,8 +712,8 @@ function is_wwg_aligned_right_back(transformWWgA, transformB)
     local diff_angle = math.abs(angleB - angleA)
 
     -- Around 90 or 270 degrees
-    if math.abs(math.pi/2 - diff_angle) > g_max_angle_pushback_rad and
-       math.abs(3*math.pi/2 - diff_angle) > g_max_angle_pushback_rad then
+    if math.abs(math.pi/2 - diff_angle) > Settings.max_angle_pushback_rad and
+       math.abs(3*math.pi/2 - diff_angle) > Settings.max_angle_pushback_rad then
        -- Angle is too different, skip
        return false
     end
@@ -722,7 +722,7 @@ function is_wwg_aligned_right_back(transformWWgA, transformB)
     local cornersB = transformB['corners']
 
     local distance = distance_points_flat_sq(cornersA['botleft'], cornersB['topright'])
-    if distance < g_max_corner_distance_snap then
+    if distance < Settings.max_corner_distance_snap then
         -- Note: We do not check the bottom because bases may be of different
         -- sizes and we already check the angle
         return true
@@ -738,8 +738,8 @@ function is_wwg_aligned_right_front(transformWWgA, transformB)
     local diff_angle = math.abs(angleB - angleA)
 
     -- Around 90 or 270 degrees
-    if math.abs(math.pi/2 - diff_angle) > g_max_angle_pushback_rad and
-       math.abs(3*math.pi/2 - diff_angle) > g_max_angle_pushback_rad then
+    if math.abs(math.pi/2 - diff_angle) > Settings.max_angle_pushback_rad and
+       math.abs(3*math.pi/2 - diff_angle) > Settings.max_angle_pushback_rad then
        -- Angle is too different, skip
        return false
     end
@@ -748,7 +748,7 @@ function is_wwg_aligned_right_front(transformWWgA, transformB)
     local cornersB = transformB['corners']
 
     local distance = distance_points_flat_sq(cornersA['topright'], cornersB['topright'])
-    if distance < g_max_corner_distance_snap then
+    if distance < Settings.max_corner_distance_snap then
         -- Note: We do not check the bottom because bases may be of different
         -- sizes and we already check the angle
         return true
@@ -764,8 +764,8 @@ function is_wwg_aligned_left_back(transformWWgA, transformB)
     local diff_angle = math.abs(angleB - angleA)
 
     -- Around 90 or 270 degrees
-    if math.abs(math.pi/2 - diff_angle) > g_max_angle_pushback_rad and
-       math.abs(3*math.pi/2 - diff_angle) > g_max_angle_pushback_rad then
+    if math.abs(math.pi/2 - diff_angle) > Settings.max_angle_pushback_rad and
+       math.abs(3*math.pi/2 - diff_angle) > Settings.max_angle_pushback_rad then
        -- Angle is too different, skip
        return false
     end
@@ -774,7 +774,7 @@ function is_wwg_aligned_left_back(transformWWgA, transformB)
     local cornersB = transformB['corners']
 
     local distance = distance_points_flat_sq(cornersA['botright'], cornersB['topleft'])
-    if distance < g_max_corner_distance_snap then
+    if distance < Settings.max_corner_distance_snap then
         -- Note: We do not check the bottom because bases may be of different
         -- sizes and we already check the angle
         return true
@@ -790,8 +790,8 @@ function is_wwg_aligned_left_front(transformWWgA, transformB)
     local diff_angle = math.abs(angleB - angleA)
 
     -- Around 90 or 270 degrees
-    if math.abs(math.pi/2 - diff_angle) > g_max_angle_pushback_rad and
-       math.abs(3*math.pi/2 - diff_angle) > g_max_angle_pushback_rad then
+    if math.abs(math.pi/2 - diff_angle) > Settings.max_angle_pushback_rad and
+       math.abs(3*math.pi/2 - diff_angle) > Settings.max_angle_pushback_rad then
        -- Angle is too different, skip
        return false
     end
@@ -800,7 +800,7 @@ function is_wwg_aligned_left_front(transformWWgA, transformB)
     local cornersB = transformB['corners']
 
     local distance = distance_points_flat_sq(cornersA['topleft'], cornersB['topleft'])
-    if distance < g_max_corner_distance_snap then
+    if distance < Settings.max_corner_distance_snap then
         -- Note: We do not check the bottom because bases may be of different
         -- sizes and we already check the angle
         return true
@@ -815,7 +815,7 @@ function is_opposite_front(transformA, transformB)
     local diff_angle = math.abs(angleB - angleA)
     local angle_180 = math.abs(math.pi - diff_angle)
 
-    if angle_180 >= g_max_angle_pushback_rad then
+    if angle_180 >= Settings.max_angle_pushback_rad then
        -- Angle is too different, skip
        return false
     end
@@ -824,9 +824,9 @@ function is_opposite_front(transformA, transformB)
     local cornersB = transformB['corners']
 
     local distance = distance_points_flat_sq(cornersA['topright'], cornersB['topleft'])
-    if distance < g_max_corner_distance_snap then
+    if distance < Settings.max_corner_distance_snap then
         distance = distance_points_flat_sq(cornersA['topleft'], cornersB['topright'])
-        if distance < g_max_corner_distance_snap then
+        if distance < Settings.max_corner_distance_snap then
             return true
         end
     end
@@ -844,7 +844,7 @@ function is_closing_door_to_left(transformA, transformB)
         diff_angle = diff_angle + 2*math.pi
     end
     local angle_90 = math.abs(math.pi/2 - diff_angle)
-    if angle_90 >= g_max_angle_pushback_rad then
+    if angle_90 >= Settings.max_angle_pushback_rad then
        -- Angle is too different, skip
        return false
     end
@@ -853,7 +853,7 @@ function is_closing_door_to_left(transformA, transformB)
     local cornersB = transformB['corners']
 
     local distance = distance_points_flat_sq(cornersA['topleft'], cornersB['topleft'])
-    if distance < g_max_corner_distance_snap then
+    if distance < Settings.max_corner_distance_snap then
         return true
     end
     return false
@@ -867,7 +867,7 @@ function is_closing_door_to_right(transformA, transformB)
         diff_angle = diff_angle + 2*math.pi
     end
     local angle_270 = math.abs(3*math.pi/2 - diff_angle)
-    if angle_270 >= g_max_angle_pushback_rad then
+    if angle_270 >= Settings.max_angle_pushback_rad then
        -- Angle is too different, skip
        return false
     end
@@ -876,7 +876,7 @@ function is_closing_door_to_right(transformA, transformB)
     local cornersB = transformB['corners']
 
     local distance = distance_points_flat_sq(cornersA['topright'], cornersB['topright'])
-    if distance < g_max_corner_distance_snap then
+    if distance < Settings.max_corner_distance_snap then
         return true
     end
     return false
@@ -889,8 +889,8 @@ end
 
 function get_size(base_name)
     return {
-        x = g_base_width_inches,
-        y = g_base_height_inches,
+        x = Settings.base_width_inches,
+        y = Settings.base_height_inches,
         z = get_depth_base(g_bases[base_name]['tile'])
     }
 end
@@ -1074,10 +1074,10 @@ function snap_picked_base(obj)
     if str_has_substr(obj.getName(), 'Camp') then
         -- Always assume that camps are 40mm depth! This may not always be the
         -- case, in which case this code needs to be changed
-        local edge_camp_pos = (g_depth_table_in / 2) - (g_base_width_inches / 2)
+        local edge_camp_pos = (g_depth_table_in / 2) - (Settings.base_width_inches / 2)
         local distance = math.abs(math.abs(pos['z']) - edge_camp_pos)
         Logger.debug('Camp has pos ' .. pos['z'] .. ' which has distance ' .. distance ..' to the edge ' .. edge_camp_pos)
-        if  distance < g_max_camp_edge_snap then
+        if  distance < Settings.max_camp_edge_snap then
             if pos['z'] > 0 then
                 pos['z'] = edge_camp_pos
                 obj.setRotation({x=0, y=180, z=0})
@@ -1085,7 +1085,7 @@ function snap_picked_base(obj)
                 pos['z'] = -edge_camp_pos
                 obj.setRotation({x=0, y=0, z=0})
             end
-            pos['y'] = g_base_height_tabletop + g_table_thickness + g_base_height_inches
+            pos['y'] = g_base_height_tabletop + g_table_thickness + Settings.base_height_inches
             obj.setPosition(pos)
             Logger.info('Camp snapped to battle edge')
         else
@@ -1104,7 +1104,7 @@ function snap_picked_base(obj)
 
         -- Discard fast bases that are too far
         local distance = distance_points_flat_sq(pos, pos_base)
-        local max_distance = g_max_distance_alignment
+        local max_distance = Settings.max_distance_alignment
 
         local is_other_wwg = str_has_substr(base.getName(), 'WWg')
         local is_large_base_other = is_other_wwg or str_has_substr(base.getName(), '6Kn')
@@ -1200,13 +1200,13 @@ function snap_picked_base(obj)
     local new_transform = calculate_transform(obj)
     local new_corners = new_transform['corners']
     local distance = max_distance_between_bases(new_corners, initial_corners)
-    if distance < g_max_inches_snap_reset then
+    if distance < Settings.max_inches_snap_reset then
         -- Snap back!
         obj.setPosition(g_picked_base_initial_transform['position'])
         obj.setRotation(transform_to_rotation_vector(g_picked_base_initial_transform))
     else
         -- No snapping, return the distance between positions
-        pos['y'] = g_base_height_tabletop + g_table_thickness + g_base_height_inches
+        pos['y'] = g_base_height_tabletop + g_table_thickness + Settings.base_height_inches
         obj.setPosition(pos)
     end
     return calculate_transform(obj)
@@ -1473,7 +1473,7 @@ function get_closest_tile(base_obj)
     end
 
     local size = bounds['size']
-    if math.abs(size['x'] - g_base_width_inches) > 0.01 then
+    if math.abs(size['x'] - Settings.base_width_inches) > 0.01 then
         -- Too wide or too small, ignore
         return true
     end

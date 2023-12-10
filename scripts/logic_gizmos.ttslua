@@ -1,6 +1,6 @@
 
 function set_vec_to_above_terrain(vec)
-    vec['y'] = g_terrain_pos + g_base_height_inches
+    vec['y'] = g_terrain_pos + Settings.base_height_inches
     return vec
 end
 
@@ -26,7 +26,7 @@ function get_strokes_future_position(base_obj, transform)
     {
         points    = stroke_points,
         color     = color,
-        thickness = g_line_thickness,
+        thickness = Settings.line_thickness,
         rotation  = {0,0,0}
     }
 end
@@ -38,15 +38,15 @@ function get_strokes_zoc(base_obj, transform)
     table.insert(stroke_points, {
         x = p['x'],
         y = p['y'],
-        z = p['z'] + g_base_width_inches
+        z = p['z'] + Settings.base_width_inches
     })
     table.insert(stroke_points, {
-        x = p['x'] - g_base_width_inches,
+        x = p['x'] - Settings.base_width_inches,
         y = p['y'],
-        z = p['z'] + g_base_width_inches
+        z = p['z'] + Settings.base_width_inches
     })
     table.insert(stroke_points, {
-        x = p['x'] - g_base_width_inches,
+        x = p['x'] - Settings.base_width_inches,
         y = p['y'],
         z = p['z']
     })
@@ -69,7 +69,7 @@ function get_strokes_zoc(base_obj, transform)
     {
         points    = stroke_points,
         color     = color,
-        thickness = g_line_thickness,
+        thickness = Settings.line_thickness,
         rotation  = {0,0,0}
     }
 end
@@ -105,7 +105,7 @@ function get_strokes_fire_arc(base_obj, transform, shooting_range, max_width)
     local stroke_points = {}
     local p = transform['corners']['topright']
 
-    local max_angle_arc = math.acos(g_base_width_inches / shooting_range)
+    local max_angle_arc = math.acos(Settings.base_width_inches / shooting_range)
     local side_height = math.sin(max_angle_arc) * shooting_range
 
     table.insert(stroke_points, p)
@@ -127,7 +127,7 @@ function get_strokes_fire_arc(base_obj, transform, shooting_range, max_width)
     local right_arc = get_coordinates_arc(
         radius_right,
         shooting_range,
-        g_precision_circle / 4,
+        Settings.precision_circle / 4,
         math.deg(max_angle_arc),
         90)
     array_concat(stroke_points, right_arc)
@@ -149,7 +149,7 @@ function get_strokes_fire_arc(base_obj, transform, shooting_range, max_width)
     local left_arc = get_coordinates_arc(
         radius_left,
         shooting_range,
-        g_precision_circle / 4,
+        Settings.precision_circle / 4,
         90,
         90 + (90 - math.deg(max_angle_arc)))
     array_concat(stroke_points, left_arc)
@@ -182,17 +182,17 @@ function get_strokes_fire_arc(base_obj, transform, shooting_range, max_width)
     {
         points    = stroke_points,
         color     = color,
-        thickness = g_line_thickness,
+        thickness = Settings.line_thickness,
         rotation  = {0,0,0}
     }
 end
 
 function get_strokes_bow(base_obj, transform)
-    return get_strokes_fire_arc(base_obj, transform, g_bow_range, g_base_width_inches)
+    return get_strokes_fire_arc(base_obj, transform, g_bow_range, Settings.base_width_inches)
 end
 
 function get_strokes_art(base_obj, transform)
-    return get_strokes_fire_arc(base_obj, transform, g_art_range, g_base_width_inches)
+    return get_strokes_fire_arc(base_obj, transform, g_art_range, Settings.base_width_inches)
 end
 
 function get_strokes_wwg(base_obj, transform)
@@ -214,46 +214,46 @@ function get_strokes_around(base_obj, transform, range, color)
         z = p['z'] + range
     })
     table.insert(stroke_points, {
-        x = p['x'] - g_base_width_inches,
+        x = p['x'] - Settings.base_width_inches,
         y = p['y'],
         z = p['z'] + range
     })
     local radius_topleft = {
-        x = p['x'] - g_base_width_inches,
+        x = p['x'] - Settings.base_width_inches,
         y = p['y'],
         z = p['z']
     }
     local topleft_arc = get_coordinates_arc(
         radius_topleft,
         range,
-        g_precision_circle / 4,
+        Settings.precision_circle / 4,
         90,
         180)
     array_concat(stroke_points, topleft_arc)
     table.insert(stroke_points, {
-        x = p['x'] - g_base_width_inches - range,
+        x = p['x'] - Settings.base_width_inches - range,
         y = p['y'],
         z = p['z']
     })
     table.insert(stroke_points, {
-        x = p['x'] - g_base_width_inches - range,
+        x = p['x'] - Settings.base_width_inches - range,
         y = p['y'],
         z = p['z'] - depth
     })
     local radius_botleft = {
-        x = p['x'] - g_base_width_inches,
+        x = p['x'] - Settings.base_width_inches,
         y = p['y'],
         z = p['z'] - depth
     }
     local botleft_arc = get_coordinates_arc(
         radius_botleft,
         range,
-        g_precision_circle / 4,
+        Settings.precision_circle / 4,
         180,
         270)
     array_concat(stroke_points, botleft_arc)
     table.insert(stroke_points, {
-        x = p['x'] - g_base_width_inches,
+        x = p['x'] - Settings.base_width_inches,
         y = p['y'],
         z = p['z'] - depth - range
     })
@@ -270,7 +270,7 @@ function get_strokes_around(base_obj, transform, range, color)
     local botright_arc = get_coordinates_arc(
         radius_botright,
         range,
-        g_precision_circle / 4,
+        Settings.precision_circle / 4,
         270,
         360)
     array_concat(stroke_points, botright_arc)
@@ -292,7 +292,7 @@ function get_strokes_around(base_obj, transform, range, color)
     local topright_arc = get_coordinates_arc(
         radius_topright,
         range,
-        g_precision_circle / 4,
+        Settings.precision_circle / 4,
         0,
         90)
     array_concat(stroke_points, topright_arc)
@@ -314,7 +314,7 @@ function get_strokes_around(base_obj, transform, range, color)
     {
         points    = stroke_points,
         color     = color,
-        thickness = g_line_thickness,
+        thickness = Settings.line_thickness,
         rotation  = {0,0,0}
     }
 end
@@ -364,9 +364,9 @@ function get_strokes_pickup(picked_up_object)
     local strokes = {}
     table.insert(strokes, get_strokes_arrow_position(picked_up_object, g_picked_base_initial_transform))
     table.insert(strokes, {
-        points    = get_coordinates_circle(pos, radius, g_precision_circle),
+        points    = get_coordinates_circle(pos, radius, Settings.precision_circle),
         color     = color,
-        thickness = g_line_thickness,
+        thickness = Settings.line_thickness,
         rotation  = {0,0,0}
     })
     local transform = calculate_transform(picked_up_object)
@@ -532,24 +532,24 @@ function get_strokes_deployment(pos, color, angle, w, h)
     local center = { x=0, y=0, z=0 }
     local pos1 = rotate_point_relative({
         x = xpos * half_width,
-        y = g_table_thickness + g_base_height_inches / 2,
+        y = g_table_thickness + Settings.base_height_inches / 2,
         z = zpos * half_depth - zpos * g_deploy_home_in
     }, center, -angle)
     local pos2 = rotate_point_relative({
         x = xpos * half_width - xpos * g_deploy_side_in,
-        y = g_table_thickness + g_base_height_inches / 2,
+        y = g_table_thickness + Settings.base_height_inches / 2,
         z = zpos * half_depth - zpos * g_deploy_home_in
     }, center, -angle)
     local pos3 = rotate_point_relative({
         x = xpos * half_width - xpos * g_deploy_side_in,
-        y = g_table_thickness + g_base_height_inches / 2,
+        y = g_table_thickness + Settings.base_height_inches / 2,
         z = zpos * half_depth
     }, center, -angle)
 
     return {
         points    = {pos1, pos2, pos3},
         color     = color,
-        thickness = g_line_thickness,
+        thickness = Settings.line_thickness,
         rotation  = {0,0,0}
     }
 end
@@ -568,18 +568,18 @@ function get_strokes_deployment_between(pos, color, angle, w, h)
     local center = { x=0, y=0, z=0 }
     local pos1 = rotate_point_relative({
         x = -half_width,
-        y = g_table_thickness + g_base_height_inches / 2,
+        y = g_table_thickness + Settings.base_height_inches / 2,
         z = zpos * half_depth - zpos * g_deploy_home_in
     }, center, -angle)
     local pos2 = rotate_point_relative({
         x = half_width,
-        y = g_table_thickness + g_base_height_inches / 2,
+        y = g_table_thickness + Settings.base_height_inches / 2,
         z = zpos * half_depth - zpos * g_deploy_home_in
     }, center, -angle)
     return {
         points    = {pos1, pos2},
         color     = color,
-        thickness = g_line_thickness,
+        thickness = Settings.line_thickness,
         rotation  = {0,0,0}
     }
 end
@@ -663,7 +663,7 @@ function get_strokes_arrow_position(base_obj, transform)
     {
         points    = stroke_points,
         color     = color,
-        thickness = g_line_thickness,
+        thickness = Settings.line_thickness,
         rotation  = {0,0,0}
     }
 end
@@ -680,9 +680,9 @@ function draw_pickup_strokes(picked_up_object)
     local strokes = {}
     table.insert(strokes, get_strokes_arrow_position(picked_up_object, g_picked_base_initial_transform))
     table.insert(strokes, {
-        points    = get_coordinates_circle(pos, radius, g_precision_circle),
+        points    = get_coordinates_circle(pos, radius, Settings.precision_circle),
         color     = color,
-        thickness = g_line_thickness,
+        thickness = Settings.line_thickness,
         rotation  = {0,0,0}
     })
     

@@ -29,13 +29,14 @@
 DBX = require('../dbx_tts/main')
 Logger = DBX.Logger:Create()
 History = DBX.History
+Settings = DBX.Settings
 
 function onload()
     Logger.info('----------------------------------------------')
     Logger.info('                       DBA 2.2 v1.25.0 ')
     Logger.info('----------------------------------------------\n\nCheck the Notebook for instructions.')
 
-    Wait.time(main_loop, g_seconds_main_loop, -1)
+    Wait.time(main_loop, Settings.seconds_main_loop, -1)
 
     Logger.enabled = false
     make_scenery_non_interactable()

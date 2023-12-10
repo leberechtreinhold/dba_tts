@@ -133,7 +133,7 @@ function spawn_base(base, pos, y_rotation, is_red_player, command_color)
 
     local depth = get_depth_base(base['base'])
     local half_depth = depth / 2
-    local half_width = g_base_width_inches / 2
+    local half_width = Settings.base_width_inches / 2
 
     local rows = 1
     local columns = n
@@ -142,7 +142,7 @@ function spawn_base(base, pos, y_rotation, is_red_player, command_color)
         columns = math.ceil(n/rows)
 
     end
-    local column_width = g_base_width_inches / (columns + 1)
+    local column_width = Settings.base_width_inches / (columns + 1)
     local row_depth = depth / (rows + 1)
 
     local model_name = base['model_data']
@@ -167,13 +167,13 @@ function spawn_base(base, pos, y_rotation, is_red_player, command_color)
         local random_x = 0
         local random_z = 0
         if base['loose'] == true then
-            random_x = random_float(-g_max_loose_spawn, g_max_loose_spawn)
-            random_z = random_float(-g_max_loose_spawn, g_max_loose_spawn)
+            random_x = random_float(-Settings.max_loose_spawn, Settings.max_loose_spawn)
+            random_z = random_float(-Settings.max_loose_spawn, Settings.max_loose_spawn)
         end
 
         local relative_pos = {
             x = pos['x'] + column * column_width - half_width + random_x,
-            y = pos['y'] + g_base_height_inches / 2,
+            y = pos['y'] + Settings.base_height_inches / 2,
             z = pos['z'] + row * row_depth - half_depth + random_x
         }
 
@@ -182,7 +182,7 @@ function spawn_base(base, pos, y_rotation, is_red_player, command_color)
         if this_model_name ~= nil then
             -- The object has non-fixed models, so we use any of the
             -- randomly selected meshes
-            soldier_obj = spawn_model(this_model_name, relative_pos, random_rotation, minimal_collider, is_red_player, nil, meshes[i])
+            soldier_obj = spawn_model(this_model_name, relative_pos, random_rotation, Settings.minimal_collider, is_red_player, nil, meshes[i])
         else
             -- Now we have fixed models, so we use the corresponding one
             -- Except that fixed models may use assets instead of meshes!
@@ -191,7 +191,7 @@ function spawn_base(base, pos, y_rotation, is_red_player, command_color)
                 soldier_obj = spawn_asset(this_model_name, relative_pos, random_rotation)
             else
             meshes[i] = random_element(_G[this_model_name]['mesh'])
-                soldier_obj = spawn_model(this_model_name, relative_pos, random_rotation, minimal_collider, is_red_player, nil, meshes[i])
+                soldier_obj = spawn_model(this_model_name, relative_pos, random_rotation, Settings.minimal_collider, is_red_player, nil, meshes[i])
             end
         end
 
@@ -214,7 +214,7 @@ function spawn_army(army_name, army, is_red_player, command_color)
         rows = math.ceil(n_bases / g_max_bases_row)
     end
 
-    local width_army = n_bases * g_base_width_inches
+    local width_army = n_bases * Settings.base_width_inches
 
     local z_pos_0 = g_spawn_from_center_in
     local y_rotation = 180
@@ -241,8 +241,8 @@ function spawn_army(army_name, army, is_red_player, command_color)
             local row_z_pos = z_pos * (1 + row) + z_pos_0
 
             local location = {
-                x = g_offset_deployment_x + column * g_base_width_inches - width_army / 2,
-                y = g_base_height_tabletop + g_table_thickness + g_base_height_inches / 2,
+                x = g_offset_deployment_x + column * Settings.base_width_inches - width_army / 2,
+                y = g_base_height_tabletop + g_table_thickness + Settings.base_height_inches / 2,
                 z = row_z_pos - z_pos_modifier
             }
             spawn_base(base_data, location, y_rotation, is_red_player, command_color)
