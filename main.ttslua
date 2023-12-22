@@ -29,7 +29,14 @@
 DBX = require('../dbx_tts/main')
 Logger = DBX.Logger:Create()
 History = DBX.History
+
 Settings = DBX.Settings
+Settings.units = 1*100
+Settings.unit_str = 'paces'
+Settings.format_precision = '%.1f'
+
+Utils = DBX.Utils
+BasePicker = DBX.BasePicker:Create()
 
 function onload()
     Logger.info('----------------------------------------------')
@@ -84,7 +91,7 @@ function make_scenery_non_interactable()
 end
 
 function update()
-    check_picked_base()
+    BasePicker:check_picked_base()
 end
 
 function print_help()

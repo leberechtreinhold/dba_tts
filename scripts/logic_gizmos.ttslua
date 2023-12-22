@@ -353,7 +353,7 @@ function get_strokes_pickup(picked_up_object)
     if picked_up_object == nil then
         return {}
     end
-    local pos = g_picked_base_initial_transform['position']
+    local pos = BasePicker.picked_base_initial_transform['position']
     local radius = g_paces_movement / 100
 
     local color = g_gizmo_color_player_red
@@ -362,7 +362,7 @@ function get_strokes_pickup(picked_up_object)
     end
 
     local strokes = {}
-    table.insert(strokes, get_strokes_arrow_position(picked_up_object, g_picked_base_initial_transform))
+    table.insert(strokes, get_strokes_arrow_position(picked_up_object, BasePicker.picked_base_initial_transform))
     table.insert(strokes, {
         points    = get_coordinates_circle(pos, radius, Settings.precision_circle),
         color     = color,
@@ -370,7 +370,7 @@ function get_strokes_pickup(picked_up_object)
         rotation  = {0,0,0}
     })
     local transform = calculate_transform(picked_up_object)
-    local height = g_picked_base_initial_transform['position'].y
+    local height = BasePicker.picked_base_initial_transform.position.y
     transform['corners']['topright'] = {
         x = transform['corners']['topright'].x, y = height, z = transform['corners']['topright'].z
     }
@@ -450,10 +450,10 @@ function get_bases_for_gizmos()
     local bases = get_bases_with_guid(all_objs)
 
     local picked_base = nil
-    if g_picked_base_obj then
-        if bases[g_picked_base_obj.getGUID()] then
-            picked_base = g_picked_base_obj
-            bases[g_picked_base_obj.getGUID()] = nil
+    if BasePicker.picked_base_obj then
+        if bases[BasePicker.picked_base_obj.getGUID()] then
+            picked_base = BasePicker.picked_base_obj
+            bases[BasePicker.picked_base_obj.getGUID()] = nil
         end
 
     end
@@ -669,7 +669,7 @@ function get_strokes_arrow_position(base_obj, transform)
 end
 
 function draw_pickup_strokes(picked_up_object)
-    local pos = g_picked_base_initial_transform['position']
+    local pos = BasePicker.picked_base_initial_transform.position
     local radius = g_paces_movement / 100
 
     local color = g_gizmo_color_player_red
@@ -678,7 +678,7 @@ function draw_pickup_strokes(picked_up_object)
     end
 
     local strokes = {}
-    table.insert(strokes, get_strokes_arrow_position(picked_up_object, g_picked_base_initial_transform))
+    table.insert(strokes, get_strokes_arrow_position(picked_up_object, BasePicker.picked_base_initial_transform))
     table.insert(strokes, {
         points    = get_coordinates_circle(pos, radius, Settings.precision_circle),
         color     = color,
@@ -687,7 +687,7 @@ function draw_pickup_strokes(picked_up_object)
     })
     
     local transform = calculate_transform(picked_up_object)
-    local height = g_picked_base_initial_transform['position'].y
+    local height = BasePicker.picked_base_initial_transform.position.y
     transform['corners']['topright'] = { 
         x = transform['corners']['topright'].x, y = height, z = transform['corners']['topright'].z
     }

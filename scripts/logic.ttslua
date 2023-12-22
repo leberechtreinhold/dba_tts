@@ -912,70 +912,13 @@ function max_distance_between_bases(base1_corners, base2_corners)
     })
 end
 
-g_picked_base_obj = nil
-g_picked_base_initial_transform = nil
 function onObjectPickUp(player_color,  picked_up_object)
-    if g_bases[picked_up_object.getName()] == nil then
-        return
-    end
-
-    local objs = filter_bases(Player[player_color].getSelectedObjects())
-    local n_objs = tlen(objs)
-    if n_objs > 1 then
-        -- Ignoring this, we don't want to print the circle for more than one unit
-        return
-    end
-
-    if g_picked_base_obj ~= nil then
-        Logger.error("There's already a player picking up an object. Please, wait until he finishes moving.")
-        return
-    end
-
-    g_picked_base_obj = picked_up_object
-    g_picked_base_initial_transform = calculate_transform(picked_up_object)
-
-    draw_all_gizmos()
+    BasePicker:on_object_pickup(player_color, picked_up_object)
 end
 
--- The Rotate event fires while the user has the rotation key or wheel pressed
--- To detect the start and end, we flag each firing with an id that keeps increasing
--- The first event firing will be 1, next will be 2. On each of those we will
--- redraw gizmos after a short delay, but we will only execute end of rotation
--- after enough time has passed without increasing
-g_rotating_id = 0
-g_rotating_base_initial_transform = nil
 function onObjectRotate(obj, spin, flip, player_color, old_spin, old_flip)
-    if g_bases[obj.getName()] == nil then
-        return
-    end
-
-    if g_picked_base_obj ~= nil then
-        return
-    end
-
-    if g_rotating_id == 0 then
-        g_rotating_base_initial_transform = calculate_transform(obj)
-    end
-    g_rotating_id = g_rotating_id + 1
-    local id = g_rotating_id 
-
-    Wait.time(function ()
-        if id == g_rotating_id then
-            onObjectRotateEnd(obj, g_rotating_base_initial_transform)
-            g_rotating_id = 0
-            g_rotating_base_initial_transform = nil
-        end
-        draw_all_gizmos()
-    end, 0.5)
+    BasePicker:on_object_rotate(obj, spin, flip, player_color, old_spin, old_flip)
 end
-
-function onObjectRotateEnd(obj, initial_transform)
-    local new_transform = calculate_transform(obj)
-    local move = {}
-    History.add_transform_to_move(move, obj.getName(), initial_transform, new_transform)
-    History.push_to_history_stack(move)
-end 
-
 
 function snap_to_base(obj, transformObj, base, transformBase, direction)
     Logger.info(obj.getName() .. ' is snapping to ' .. base.getName() .. ', ' .. direction)
@@ -1067,7 +1010,7 @@ function snap_to_base(obj, transformObj, base, transformBase, direction)
 end
 
 function snap_picked_base(obj)
-    local initial_corners = g_picked_base_initial_transform['corners']
+    local initial_corners = BasePicker.picked_base_initial_transform.corners
 
     local pos = obj.getPosition()
 
@@ -1202,8 +1145,8 @@ function snap_picked_base(obj)
     local distance = max_distance_between_bases(new_corners, initial_corners)
     if distance < Settings.max_inches_snap_reset then
         -- Snap back!
-        obj.setPosition(g_picked_base_initial_transform['position'])
-        obj.setRotation(transform_to_rotation_vector(g_picked_base_initial_transform))
+        obj.setPosition(BasePicker.picked_base_initial_transform.position)
+        obj.setRotation(transform_to_rotation_vector(BasePicker.picked_base_initial_transform))
     else
         -- No snapping, return the distance between positions
         pos['y'] = g_base_height_tabletop + g_table_thickness + Settings.base_height_inches
@@ -1217,64 +1160,7 @@ function get_all_bases()
 end
 
 function onObjectDrop(player_color,  picked_up_object)
-    local obj_name = picked_up_object.getName()
-    if (str_has_substr(obj_name, 'Waterway')) then
-        snap_waterway(picked_up_object)
-    elseif (str_has_substr(obj_name, 'Road')) then
-        snap_road(picked_up_object)
-    end
-
-    if g_bases[obj_name] == nil then
-        return
-    end
-
-    local objs = filter_bases(Player[player_color].getSelectedObjects())
-    local n_objs = tlen(objs)
-    if n_objs > 1 then
-        picked_up_object.setVelocity({x=0, y=0, z=0})
-        picked_up_object.setAngularVelocity({x=0, y=0, z=0})
-        draw_all_gizmos()
-        return
-    end
-
-    if g_picked_base_obj == nil or obj_name ~= g_picked_base_obj.getName() then
-        -- Ignore, this is not the one we were counting distances
-        return
-    end
-
-    local new_transform = nil
-
-    picked_up_object.setVelocity({x=0, y=0, z=0})
-    picked_up_object.setAngularVelocity({x=0, y=0, z=0})
-    if g_snap_mode_enabled then
-        new_transform = snap_picked_base(picked_up_object)
-    else
-        new_transform = calculate_transform(picked_up_object)
-    end
-
-    Logger.debug('New transform: ' .. transform_to_str(new_transform))
-    Logger.debug('New g_picked_base_initial_transform: ' .. transform_to_str(g_picked_base_initial_transform))
-    local distance = max_distance_between_bases(
-        new_transform['corners'],
-        g_picked_base_initial_transform['corners'])
-
-    if distance > 0 then
-        Logger.info(string.format('Movement for %q is %.1f paces', obj_name, distance * 100))
-
-        local move = {}
-        History.add_transform_to_move(move, obj_name, g_picked_base_initial_transform, new_transform)
-        History.push_to_history_stack(move)
-    else
-        Logger.info(string.format('Movement for %q has been resetted', obj_name))
-    end
-
-    g_picked_base_obj = nil
-    g_picked_base_initial_transform = nil
-    Global.setVectorLines({})
-
-    -- If its dropped it may have moved, therefore update the gizmo, in case
-    -- its selected
-    draw_all_gizmos()
+    BasePicker:on_object_drop(player_color, picked_up_object)
 end
 
 function calculate_future_position(base_obj, movement)
@@ -1377,19 +1263,6 @@ end
 g_selected_objects = {}
 g_last_zoc_value = nil
 
-function check_picked_base()
-    if g_picked_base_obj and g_bases[g_picked_base_obj.getName()] then
-        local new_corners = compute_corners_base(g_picked_base_obj)
-        local distance = max_distance_between_bases(new_corners, g_picked_base_initial_transform['corners']) * 100
-
-        UI.setAttribute('panel_current_movement', 'active', true)
-        UI.setValue('text_current_movement_paces',
-            'Current movement: ' .. string.format('%.1f', distance) .. ' paces' )
-    else
-        UI.setAttribute('panel_current_movement', 'active', false)
-    end
-end
-
 function check_selection_change()
     local players = Player.getPlayers()
     for _, player in ipairs(players) do
@@ -1414,7 +1287,7 @@ function main_loop()
     check_selection_change()
     check_change_zoc()
 
-    if g_draw_all_gizmos or g_picked_base_obj then
+    if g_draw_all_gizmos or BasePicker.picked_base_obj then
         draw_all_gizmos_execute()
         g_draw_all_gizmos = false
     end
@@ -1427,8 +1300,7 @@ end
 -- The tile is also given as an aproximation given the current size.
 function reset_state()
     g_selected_objects = {}
-    g_picked_base_obj = nil
-    g_picked_base_initial_transform = nil
+    BasePicker = DBX.BasePicker:Create()
     g_last_zoc_value = nil
     g_current_wheel_group = nil
     g_current_wheel_transforms = nil
