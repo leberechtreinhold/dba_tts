@@ -4344,71 +4344,71 @@ armies["Book II"]["II/16a [DBR] Antigonos 320-301BC"] = {
         n_models = 3,
         model_data = 'troop_successors_cavalry_bodyguard_red'
     },
-    base2 = {
+    base3 = {
         name = '3Cv',
         base = 'tile_grass_40x30',
         n_models = 3,
         loose = true,
         model_data = 'troop_successors_cav_red'
     },
-    base3 = {
+    base4 = {
         name = '2LH',
         base = 'tile_grass_40x30',
         n_models = 2,
         loose = true,
         model_data = 'troop_successors_lh_red'
     },
-    base4 = {
-        name = '4Pk',
-        base = 'tile_grass_40x15',
-        n_models = 4,
-        model_data = 'troop_successors_pike2'
-    },
     base5 = {
         name = '4Pk',
         base = 'tile_grass_40x15',
         n_models = 4,
-        model_data = 'troop_successors_pike1'
+        model_data = 'troop_successors_pike2'
     },
     base6 = {
         name = '4Pk',
         base = 'tile_grass_40x15',
         n_models = 4,
-        model_data = 'troop_successors_pike2'
+        model_data = 'troop_successors_pike1'
     },
     base7 = {
         name = '4Pk',
         base = 'tile_grass_40x15',
         n_models = 4,
-        model_data = 'troop_successors_pike1'
+        model_data = 'troop_successors_pike2'
     },
     base8 = {
         name = '4Pk',
         base = 'tile_grass_40x15',
         n_models = 4,
-        model_data = 'troop_successors_pike2'
+        model_data = 'troop_successors_pike1'
     },
     base9 = {
+        name = '4Pk',
+        base = 'tile_grass_40x15',
+        n_models = 4,
+        model_data = 'troop_successors_pike2'
+    },
+    base10 = {
         name = 'El',
         base = 'tile_grass_40x40',
         n_models = 1,
         model_data = 'troop_successors_el_red'
     },
-    base10 = {
+    base11 = {
         name = '2Ps',
         base = 'tile_grass_40x20',
         n_models = 2,
         model_data = 'troop_successors_psiloi_red',
         loose = true
     },
-    base11 = {
+    base12 = {
         name = '2Ps',
         base = 'tile_grass_40x20',
         n_models = 2,
         model_data = 'trop_thracian_ps',
         loose = true
     },
-    base14 = {
+    base13 = {
         name = 'Camp',
         base = 'tile_grass_40x40',
         n_models = 1,
