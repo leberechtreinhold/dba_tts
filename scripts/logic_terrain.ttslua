@@ -193,6 +193,7 @@ function process_vegetation(terrain_obj, type)
     end
 end
 
+g_is_table_locked = false
 function fix_terrain_and_lock()
     local all_objs = getAllObjects()
     local terrains = {}
@@ -254,6 +255,7 @@ function fix_terrain_and_lock()
         gametable.setRotation({ x = 0, y = 0, z = 0})
         gametable.setPosition({ x = 0, y = g_base_height_tabletop, z = 0})
         gametable.setLock(true)
+        g_is_table_locked = true
         Logger.important('Table is now locked')
     end, 1)
 end
