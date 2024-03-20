@@ -5,26 +5,6 @@
 -- operation is required for scripts. The XML needs to be copied manually
 -- however.
 
-#include scripts/data/data_settings
-#include scripts/data/data_tables
-#include scripts/data/data_terrain
-#include scripts/data/data_troops
-#include scripts/data/data_troops_greek_successors
-#include scripts/data/data_armies_book_I
-#include scripts/data/data_armies_book_II
-#include scripts/data/data_armies_book_III
-#include scripts/data/data_armies_book_IV
-#include scripts/log
-#include scripts/utilities_lua
-#include scripts/utilities
-#include scripts/logic_terrain
-#include scripts/logic_gizmos
-#include scripts/logic_spawn_army
-#include scripts/logic_dead
-#include scripts/logic_dice
-#include scripts/logic
-#include scripts/uievents
-
 -- DBX Library
 DBX = require('../dbx_tts/main')
 Logger = DBX.Logger:Create()
@@ -37,6 +17,26 @@ Settings.format_precision = '%.1f'
 
 Utils = DBX.Utils
 BasePicker = DBX.BasePicker:Create()
+
+#include scripts/data/data_settings
+#include scripts/data/data_tables
+#include scripts/data/data_terrain
+#include scripts/data/data_troops
+#include scripts/data/data_troops_greek_successors
+#include scripts/data/data_armies_book_I
+#include scripts/data/data_armies_book_II
+#include scripts/data/data_armies_book_III
+#include scripts/data/data_armies_book_IV
+#include scripts/utilities_lua
+#include scripts/utilities
+#include scripts/logic_terrain
+#include scripts/logic_gizmos
+#include scripts/logic_spawn_army
+#include scripts/logic_dead
+#include scripts/logic_dice
+#include scripts/logic
+#include scripts/uievents
+
 
 function onload()
     Logger.info('----------------------------------------------')
