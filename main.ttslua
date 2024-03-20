@@ -40,7 +40,7 @@ BasePicker = DBX.BasePicker:Create()
 
 function onload()
     Logger.info('----------------------------------------------')
-    Logger.info('                       DBA 2.2 v1.25.0 ')
+    Logger.info('                       DBA 2.2 v1.26.0 ')
     Logger.info('----------------------------------------------\n\nCheck the Notebook for instructions.')
 
     Wait.time(main_loop, Settings.seconds_main_loop, -1)
