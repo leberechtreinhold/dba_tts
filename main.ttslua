@@ -11,6 +11,7 @@ Logger = DBX.Logger:Create()
 History = DBX.History
 
 Settings = DBX.Settings
+Settings.module_name = 'dba'
 Settings.units = 1*100
 Settings.unit_str = 'paces'
 Settings.format_precision = '%.1f'
