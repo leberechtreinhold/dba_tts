@@ -596,9 +596,9 @@ function on_roll_pips_red(player, value, id)
         Logger.debug('Ignoring roll because this dice was rolled less than a second ago')
     else
         g_roll_lock['red'] = true
-        local red = roll_dice('red')
-        local orange = roll_dice('orange')
-        local yellow = roll_dice('yellow')
+        local red = DiceManager:roll_dice('red')
+        local orange = DiceManager:roll_dice('orange')
+        local yellow = DiceManager:roll_dice('yellow')
 
         Logger.important('Red: ' .. red .. ' (Or: ' .. orange .. ' Yw: ' .. yellow .. ')')
         Wait.time(function ()
@@ -612,9 +612,9 @@ function on_roll_pips_blue(player, value, id)
         Logger.debug('Ignoring roll because this dice was rolled less than a second ago')
     else
         g_roll_lock['blue'] = true
-        local blue = roll_dice('blue')
-        local green = roll_dice('green')
-        local purple = roll_dice('purple')
+        local blue = DiceManager:roll_dice('blue')
+        local green = DiceManager:roll_dice('green')
+        local purple = DiceManager:roll_dice('purple')
 
         Logger.important('Blue: ' .. blue .. ' (Gr: ' .. green .. ' Pr: ' .. purple .. ')')
         Wait.time(function ()
