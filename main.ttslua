@@ -111,6 +111,23 @@ function onChat(message, player)
         return false
     end
 
+    if message == '!dba_test_dice' then
+        Logger.info(player.get_steam_name() .. ': ' .. message)
+        local stats = {}
+        for i=1,10000000 do
+            local result = math.random(1,6)
+            if stats[result] == nil then
+                stats[result] = 1
+            else
+                stats[result] = stats[result]+1
+            end
+        end
+        for val, count in pairs(stats) do
+            Logger.info(tostring(val) .. ": " .. tostring(count))
+        end
+        return false
+    end
+
     if message == '!dba_reset' then
         Logger.info(player.get_steam_name() .. ': ' .. message)
         Logger.important('Resetting the state of the board, check the chat')
