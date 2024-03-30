@@ -213,7 +213,7 @@ function calculate_column(objs, transforms)
                 skip = true
             end
 
-            if not equals_float(transforms[objA]['rotation'],
+            if not Utils.equals_float(transforms[objA]['rotation'],
                                 transforms[objB]['rotation']) then
                 Logger.debug(objA.getName()
                     .. ' doesn\'t have the same rotation ('
