@@ -158,7 +158,7 @@ function onChat(message, player)
 
     if message == '!dba_3dterrain' then
         Logger.info(player.get_steam_name() .. ': ' .. message)
-        g_use_3d_terrain = true
+        TerrainManager:set_use_3d_terrain(true)
         Logger.info('3D Terrain enabled, when doing a fix&lock on the table 3D objects will load.')
         return false
     end
