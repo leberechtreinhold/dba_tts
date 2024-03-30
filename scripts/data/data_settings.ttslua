@@ -1,12 +1,4 @@
--- The default table is not at y=0 position, but rather a bit higher
-g_base_height_tabletop = 1.06
-
--- The DBA tables are 3mm thick/tall
-g_table_thickness = 0.11811023622047244094
-
-g_bases_position = Settings.base_height_inches + g_table_thickness + g_base_height_tabletop
-
-g_terrain_pos = 1.2
+g_bases_position = Settings.base_height_inches + Settings.table_thickness + Settings.base_height_tabletop
 
 -- Bow range in inches
 g_bow_range = 2

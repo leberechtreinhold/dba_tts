@@ -1,6 +1,6 @@
 
 function set_vec_to_above_terrain(vec)
-    vec['y'] = g_terrain_pos + Settings.base_height_inches
+    vec['y'] = TerrainManager:GetTerrainPos() + Settings.base_height_inches
     return vec
 end
 
@@ -532,17 +532,17 @@ function get_strokes_deployment(pos, color, angle, w, h)
     local center = { x=0, y=0, z=0 }
     local pos1 = rotate_point_relative({
         x = xpos * half_width,
-        y = g_table_thickness + Settings.base_height_inches / 2,
+        y = Settings.table_thickness + Settings.base_height_inches / 2,
         z = zpos * half_depth - zpos * g_deploy_home_in
     }, center, -angle)
     local pos2 = rotate_point_relative({
         x = xpos * half_width - xpos * g_deploy_side_in,
-        y = g_table_thickness + Settings.base_height_inches / 2,
+        y = Settings.table_thickness + Settings.base_height_inches / 2,
         z = zpos * half_depth - zpos * g_deploy_home_in
     }, center, -angle)
     local pos3 = rotate_point_relative({
         x = xpos * half_width - xpos * g_deploy_side_in,
-        y = g_table_thickness + Settings.base_height_inches / 2,
+        y = Settings.table_thickness + Settings.base_height_inches / 2,
         z = zpos * half_depth
     }, center, -angle)
 
@@ -568,12 +568,12 @@ function get_strokes_deployment_between(pos, color, angle, w, h)
     local center = { x=0, y=0, z=0 }
     local pos1 = rotate_point_relative({
         x = -half_width,
-        y = g_table_thickness + Settings.base_height_inches / 2,
+        y = Settings.table_thickness + Settings.base_height_inches / 2,
         z = zpos * half_depth - zpos * g_deploy_home_in
     }, center, -angle)
     local pos2 = rotate_point_relative({
         x = half_width,
-        y = g_table_thickness + Settings.base_height_inches / 2,
+        y = Settings.table_thickness + Settings.base_height_inches / 2,
         z = zpos * half_depth - zpos * g_deploy_home_in
     }, center, -angle)
     return {

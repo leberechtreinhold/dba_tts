@@ -1028,7 +1028,7 @@ function snap_picked_base(obj)
                 pos['z'] = -edge_camp_pos
                 obj.setRotation({x=0, y=0, z=0})
             end
-            pos['y'] = g_base_height_tabletop + g_table_thickness + Settings.base_height_inches
+            pos['y'] = Settings.base_height_tabletop + Settings.table_thickness + Settings.base_height_inches
             obj.setPosition(pos)
             Logger.info('Camp snapped to battle edge')
         else
@@ -1149,7 +1149,7 @@ function snap_picked_base(obj)
         obj.setRotation(transform_to_rotation_vector(BasePicker.picked_base_initial_transform))
     else
         -- No snapping, return the distance between positions
-        pos['y'] = g_base_height_tabletop + g_table_thickness + Settings.base_height_inches
+        pos['y'] = Settings.base_height_tabletop + Settings.table_thickness + Settings.base_height_inches
         obj.setPosition(pos)
     end
     return calculate_transform(obj)

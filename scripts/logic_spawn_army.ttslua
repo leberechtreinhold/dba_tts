@@ -242,7 +242,7 @@ function spawn_army(army_name, army, is_red_player, command_color)
 
             local location = {
                 x = g_offset_deployment_x + column * Settings.base_width_inches - width_army / 2,
-                y = g_base_height_tabletop + g_table_thickness + Settings.base_height_inches / 2,
+                y = Settings.base_height_tabletop + Settings.table_thickness + Settings.base_height_inches / 2,
                 z = row_z_pos - z_pos_modifier
             }
             spawn_base(base_data, location, y_rotation, is_red_player, command_color)
@@ -253,7 +253,7 @@ function spawn_army(army_name, army, is_red_player, command_color)
     local note_row = math.floor(i / g_max_bases_row) + 1
     local note_pos = {
         x = g_offset_deployment_x,
-        y = g_base_height_tabletop + g_table_thickness + 1,
+        y = Settings.base_height_tabletop + Settings.table_thickness + 1,
         z = z_pos * (1 + note_row) + z_pos_0
     }
 
@@ -391,7 +391,7 @@ g_current_table = nil
 function spawn_table_obj(model_url, height_correction, texture_array_urls)
     local obj = spawnObject({
         type = 'Custom_Model',
-        position = { x = 0, y = g_base_height_tabletop, z = 0},
+        position = { x = 0, y = Settings.base_height_tabletop, z = 0},
         rotation = { x = 0, y = 0, z = 0},
         scale = { x = 1, y = 1, z = 1},
         sound = false,
