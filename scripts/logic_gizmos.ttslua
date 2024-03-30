@@ -1,6 +1,6 @@
 
 function set_vec_to_above_terrain(vec)
-    vec['y'] = TerrainManager:GetTerrainPos() + Settings.base_height_inches
+    vec['y'] = TerrainManager:get_terrain_pos() + Settings.base_height_inches
     return vec
 end
 
