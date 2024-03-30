@@ -28,7 +28,7 @@ function add_context_menu_table(table_obj)
         rotate_table()
     end)
     table_obj.addContextMenuItem('Fix terrain and lock', function()
-        fix_terrain_and_lock()
+        TerrainManager:fix_terrain_and_lock()
     end)
     table_obj.addContextMenuItem('Toggle rulers', function()
         toggle_deployment_ruler()
@@ -423,7 +423,7 @@ function change_bases_to_terrain(terrain_type)
     local bases = filter_bases(all_objs)
     for _,base in ipairs(bases) do
         local name = base.getName()
-        if g_bases[name] ~= nil 
+        if g_bases[name] ~= nil
             and not str_has_substr(g_bases[name]['tile'], 'plain') then
 
             Logger.debug('Changing ' .. name)
@@ -457,7 +457,7 @@ function rotate_table()
     if not g_is_table_locked and not g_alerted_about_table_lock then
         Logger.error('The table is not locked, shouldnt be rotated. Will be allowed on next attempt.')
         -- Once we have alerted we will do whatever the user wants and let the user rotate if he desires
-        g_alerted_about_table_lock = true        
+        g_alerted_about_table_lock = true
         return
     end
 

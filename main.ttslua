@@ -19,6 +19,7 @@ Settings.format_precision = '%.1f'
 Utils = DBX.Utils
 BasePicker = DBX.BasePicker:Create()
 DiceManager = DBX.DiceManager:Create()
+TerrainManager = DBX.TerrainManager:Create()
 
 #include scripts/data/data_settings
 #include scripts/data/data_tables
@@ -31,11 +32,9 @@ DiceManager = DBX.DiceManager:Create()
 #include scripts/data/data_armies_book_IV
 #include scripts/utilities_lua
 #include scripts/utilities
-#include scripts/logic_terrain
 #include scripts/logic_gizmos
 #include scripts/logic_spawn_army
 #include scripts/logic_dead
-#include scripts/logic_dice
 #include scripts/logic
 #include scripts/uievents
 
