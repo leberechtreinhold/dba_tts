@@ -9,6 +9,7 @@
 DBX = require('../dbx_tts/main')
 Logger = DBX.Logger:Create()
 History = DBX.History
+Utils = DBX.Utils
 
 Settings = DBX.Settings
 Settings.module_name = 'dba'
@@ -16,7 +17,6 @@ Settings.units = 1*100
 Settings.unit_str = 'paces'
 Settings.format_precision = '%.1f'
 
-Utils = DBX.Utils
 BasePicker = DBX.BasePicker:Create()
 DiceManager = DBX.DiceManager:Create()
 TerrainManager = DBX.TerrainManager:Create()
@@ -41,7 +41,7 @@ TerrainManager = DBX.TerrainManager:Create()
 
 function onload()
     Logger.info('----------------------------------------------')
-    Logger.info('                       DBA 2.2 v1.26.0 ')
+    Logger.info('                       DBA 2.2 v1.27.0 ')
     Logger.info('----------------------------------------------\n\nCheck the Notebook for instructions.')
 
     Wait.time(main_loop, Settings.seconds_main_loop, -1)
