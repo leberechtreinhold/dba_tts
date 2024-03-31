@@ -884,7 +884,7 @@ end
 
 function get_depth_base(tile_name)
     local base_data = _G[tile_name]
-    return from_mm_to_in(base_data['depth'])
+    return Utils.from_mm_to_in(base_data['depth'])
 end
 
 function get_size(base_name)
@@ -1350,27 +1350,27 @@ function get_closest_tile(base_obj)
         return true
     end
 
-    if math.abs(size['z'] - from_mm_to_in(15)) < 0.01 then
+    if math.abs(size['z'] - Utils.from_mm_to_in(15)) < 0.01 then
         return 'tile_grass_40x15'
     end
 
-    if math.abs(size['z'] - from_mm_to_in(20)) < 0.01 then
+    if math.abs(size['z'] - Utils.from_mm_to_in(20)) < 0.01 then
         return 'tile_grass_40x20'
     end
 
-    if math.abs(size['z'] - from_mm_to_in(30)) < 0.01 then
+    if math.abs(size['z'] - Utils.from_mm_to_in(30)) < 0.01 then
         return 'tile_grass_40x30'
     end
 
-    if math.abs(size['z'] - from_mm_to_in(40)) < 0.01 then
+    if math.abs(size['z'] - Utils.from_mm_to_in(40)) < 0.01 then
         return 'tile_grass_40x40'
     end
 
-    if math.abs(size['z'] - from_mm_to_in(60)) < 0.01 then
+    if math.abs(size['z'] - Utils.from_mm_to_in(60)) < 0.01 then
         return 'tile_grass_40x60'
     end
 
-    if math.abs(size['z'] - from_mm_to_in(80)) < 0.01 then
+    if math.abs(size['z'] - Utils.from_mm_to_in(80)) < 0.01 then
         return 'tile_grass_40x80'
     end
 
